@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Box } from "theme-ui"
 
 // import app components
-import Header from "./header/Header"
+import Header from "./Header"
 import Footer from "./Footer"
 import LightBox from "./lightBox"
 import { LoginDialog } from "../auth/components"

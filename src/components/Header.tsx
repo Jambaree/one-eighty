@@ -4,13 +4,13 @@ import HamburgerMenu from "react-hamburger-menu"
 import { Container, Box, Flex } from "theme-ui"
 
 // import app components
-import Edges from "../Edges"
-import Button from "../Button"
-import Avatar from "../Avatar"
-import Search from "../Search"
-import { useStore } from "../../store"
-import theme from "../../theme"
-import Logo from "../../icons/logo.svg"
+import Edges from "./Edges"
+import Button from "./Button"
+import Avatar from "./Avatar"
+import Search from "./Search"
+import { useStore } from "../store"
+import theme from "../theme"
+import Logo from "../icons/logo.svg"
 
 const Header = (props) => {
   const {
