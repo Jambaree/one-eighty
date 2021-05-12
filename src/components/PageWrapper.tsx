@@ -1,0 +1,43 @@
+import React from "react"
+import { Container, Box } from "theme-ui"
+
+// import app components
+import Header from "./header/Header"
+import Footer from "./Footer"
+import LightBox from "./lightBox"
+import { LoginDialog } from "../auth/components"
+import { useAuthServices } from "../auth"
+import Modal from "./Modal"
+
+const Layout = (props) => {
+  useAuthServices(props?.location?.pathname)
+
+  console.log(props)
+
+  return (
+    <>
+      <Container
+        pt={`${({ theme: { headerHeight } }) => headerHeight}px`}
+        sx={{ justifyContent: "center" }}
+      >
+        <Header {...props} />
+        <Box
+          as="main"
+          {...props}
+          sx={{
+            minHeight: `calc(100vh- ${({ theme: { headerHeight } }) =>
+              headerHeight}px)`,
+          }}
+        >
+          {props?.children}
+        </Box>
+        <Footer />
+      </Container>
+      <LightBox />
+      <LoginDialog />
+      <Modal />
+    </>
+  )
+}
+
+export default Layout
