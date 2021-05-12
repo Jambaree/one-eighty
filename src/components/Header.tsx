@@ -5,9 +5,9 @@ import { Container, Box, Flex } from "theme-ui"
 
 // import app components
 import Edges from "./Edges"
-import Button from "./Button"
-import Avatar from "./Avatar"
-import Search from "./Search"
+// import Button from "./Button"
+// import Avatar from "./Avatar"
+// import Search from "./Search"
 import { useStore } from "../store"
 import theme from "../theme"
 import Logo from "../icons/logo.svg"
@@ -73,9 +73,9 @@ const Header = (props) => {
                 <Logo />
               </Link>
             </Box>
-            <Box>
+            {/* <Box>
               <Search />
-            </Box>
+            </Box> */}
 
             <Flex sx={{ alignItems: "center" }}>
               {menu &&
@@ -89,7 +89,7 @@ const Header = (props) => {
                   )
                 })}
 
-              <div
+              {/* <div
                 onClick={() =>
                   dispatch({
                     type: "SET_MODAL",
@@ -98,10 +98,10 @@ const Header = (props) => {
                 }
               >
                 Modal
-              </div>
-              {!isLoggedIn ? (
-                <Box>
-                  <Button
+              </div> */}
+              {/* {!isLoggedIn ? (
+                <Box> */}
+              {/* <Button
                     variant="contained"
                     color="primary"
                     children="Login"
@@ -112,11 +112,11 @@ const Header = (props) => {
                         payload: true,
                       })
                     }
-                  />
-                </Box>
-              ) : (
-                user && <Avatar {...{ user, dispatch }} />
-              )}
+                  /> */}
+              {/* </Box>
+              ) : ( */}
+              {/* user && <Avatar {...{ user, dispatch }} />
+              )} */}
               <Box
                 sx={{
                   transform: "translateX(15px)",
