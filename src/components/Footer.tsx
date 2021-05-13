@@ -18,7 +18,14 @@ import FooterMenu from "./menu/FooterMenu"
 import Logo from "../icons/logo.svg"
 import themeUi from "../gatsby-plugin-theme-ui"
 
-const Footer = () => {
+const Footer = (props) => {
+  const {
+    path,
+    pageContext: {
+      themeOptions: { footer },
+    },
+  } = props
+  console.log(footer)
   // const {
   //   themeOptions: {
   //     siteOptions: {
@@ -113,10 +120,10 @@ const Footer = () => {
         <Divider />
 
         <Grid color="textLight" columns={[1, "1fr 1fr"]}>
+          <Logo style={{ transform: "rotate(270deg)" }} />
           <Box pt={3}>
             {`Copyright ${currentYear} Lorem Inc. All rights reserved.`}
           </Box>
-
           <Flex
             sx={{
               justifyContent: "flex-end",

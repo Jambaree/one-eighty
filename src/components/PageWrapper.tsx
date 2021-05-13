@@ -29,7 +29,7 @@ const Layout = (props) => {
         >
           {props?.children}
         </Box>
-        <Footer />
+        <Footer {...props} />
       </Container>
       <LightBox />
       <LoginDialog />

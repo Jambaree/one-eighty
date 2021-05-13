@@ -76,20 +76,22 @@ const Header = (props) => {
               {menu &&
                 menu.map(({ title, children }, i) => {
                   return (
-                    <ul
-                      key={i}
-                      style={{ listStyleType: "none" }}
-                      onClick={() => setHeaderMenu(!headerMenu)}
-                    >
-                      {title}
+                    <li key={i} style={{ listStyleType: "none" }}>
+                      <span
+                        onClick={() =>
+                          setHeaderMenu(headerMenu === i ? null : i)
+                        }
+                      >
+                        {title}
+                      </span>
                       <Box
                         sx={{
                           position: "absolute",
-                          display: !headerMenu ? "none" : "flex",
+                          display: headerMenu === i ? "flex" : "none",
                           flexDirection: "column",
                           backgroundColor: "text",
                           padding: 18,
-                          width: 300,
+                          width: 294,
                           a: {
                             color: "muted",
                             fontFamily: "heading",
@@ -112,7 +114,7 @@ const Header = (props) => {
                             </Link>
                           ))}
                       </Box>
-                    </ul>
+                    </li>
                   )
                 })}
               {/* <Box
