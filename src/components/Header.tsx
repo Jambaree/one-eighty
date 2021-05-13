@@ -36,7 +36,7 @@ const Header = (props) => {
   return (
     <>
       <Container
-        bg="background"
+        bg="white"
         p="20px 0"
         sx={{
           height: `${({ theme: { headerHeight } }) => headerHeight}px`,
@@ -76,7 +76,12 @@ const Header = (props) => {
               {menu &&
                 menu.map(({ title, children }, i) => {
                   return (
-                    <li key={i} style={{ listStyleType: "none" }}>
+                    <li
+                      key={i}
+                      style={{
+                        listStyleType: "none",
+                      }}
+                    >
                       <span
                         onClick={() =>
                           setHeaderMenu(headerMenu === i ? null : i)
@@ -89,16 +94,16 @@ const Header = (props) => {
                           position: "absolute",
                           display: headerMenu === i ? "flex" : "none",
                           flexDirection: "column",
-                          backgroundColor: "text",
+                          backgroundColor: "charcoalDark",
                           padding: 18,
                           width: 294,
                           a: {
-                            color: "muted",
+                            color: "white",
                             fontFamily: "heading",
                             padding: "12px 0",
                           },
                           "a:hover": {
-                            color: "primary",
+                            color: "coral",
                           },
                         }}
                       >

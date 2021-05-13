@@ -3,11 +3,10 @@ const themeUi = {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: "Poppins",
     heading: "Poppins",
-    monospace: "Menlo, monospace",
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [12, 14, 15, 20, 24, 32, 46, 65, 96],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -18,36 +17,68 @@ const themeUi = {
     heading: 1.125,
   },
   colors: {
-    text: "#22303D",
-    background: "#fff",
-    primary: "#E86140",
-    secondary: "#30c",
-    muted: "#DBDBDB",
-    success: "#0fbb0f",
-    textLight: "#808080",
+    charcoalLight: "#3F576E",
+    charcoal: "#2D4052",
+    charcoalDark: "#22303D",
+    almondLight: "#F5F4F1",
+    almond: "#DDDAD7",
+    almondDark: "#C4BFBB",
+    coralLight: "#FF7B59",
+    coral: "#E86140",
+    coralDark: "#AD4930",
+    flaxLight: "#F0E3AC",
+    flax: "#E5D282",
+    flaxDark: "#AB9D61",
+    turquoiseLight: "#A8E6E4",
+    turquoise: "#66D7D1",
+    turquoiseDark: "#4DA39F",
+    plumLight: "#9083B2",
+    plum: "#756999",
+    plumDark: "#564F78",
+    black: "#000000",
+    black75: "#414141",
+    black50: "#848484",
+    black25: "#DBDBDB",
+    black10: "#F7F7F7",
+    white: "#FFFFFF",
+    critical: "#DE0000",
+    criticalLight: "#EBC7C4",
+    success: "#6BAB33",
+    successLight: "#DEF2D6",
+    warning: "#FFD905",
+    warningLight: "#F7F2D6",
+    notice: "#3382E5",
+    noticeLight: "#E0F0FF",
   },
   text: {
     heading: {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: 4,
+      color: "charcoal",
     },
   },
   buttons: {
     primary: {
-      color: "background",
-      bg: "primary",
+      color: "white",
+      bg: "coral",
+      borderRadius: 6,
       "&:hover": {
-        bg: "text",
+        bg: "coral",
+      },
+      "&:focus": {
+        bg: "coralLight",
+      },
+      "&:disabled": {
+        bg: "black25",
       },
     },
-    secondary: {
-      color: "background",
-      bg: "secondary",
-    },
+    // secondary: {
+    //   color: "background",
+    //   bg: "secondary",
+    // },
     icon: {
-      color: "primary",
+      color: "coral",
     },
   },
   styles: {
@@ -58,52 +89,60 @@ const themeUi = {
     },
     h1: {
       variant: "text.heading",
-      fontSize: 5,
+      fontSize: 8,
+      letterSpacing: "-1.63px",
     },
     h2: {
       variant: "text.heading",
-      fontSize: 4,
+      fontSize: 7,
+      letterSpacing: "-1.15px",
     },
     h3: {
       variant: "text.heading",
-      fontSize: 3,
+      fontSize: 6,
+      letterSpacing: "-.64px",
     },
-    h4: {
-      variant: "text.heading",
+    p: {
       fontSize: 2,
+      color: "black75",
+      fontWeight: 300,
     },
-    h5: {
-      variant: "text.heading",
-      fontSize: 1,
-    },
-    h6: {
-      variant: "text.heading",
-      fontSize: 0,
-    },
-    pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
-      code: {
-        color: "inherit",
-      },
-    },
-    code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
-    },
-    table: {
-      width: "100%",
-      borderCollapse: "separate",
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
+    // h4: {
+    //   variant: "text.heading",
+    //   fontSize: 2,
+    // },
+    // h5: {
+    //   variant: "text.heading",
+    //   fontSize: 1,
+    // },
+    // h6: {
+    //   variant: "text.heading",
+    //   fontSize: 0,
+    // },
+    // pre: {
+    //   fontFamily: "monospace",
+    //   overflowX: "auto",
+    //   code: {
+    //     color: "inherit",
+    //   },
+    // },
+    // code: {
+    //   fontFamily: "monospace",
+    //   fontSize: "inherit",
+    // },
+    // table: {
+    //   width: "100%",
+    //   borderCollapse: "separate",
+    //   borderSpacing: 0,
+    // },
+    // th: {
+    //   textAlign: "left",
+    //   borderBottomStyle: "solid",
+    // },
+    // td: {
+    //   textAlign: "left",
+    //   borderBottomStyle: "solid",
+    // },
   },
 }
 
