@@ -5,9 +5,6 @@ import { Container, Box, Flex } from "theme-ui"
 
 // import app components
 import Edges from "./Edges"
-// import Button from "./Button"
-// import Avatar from "./Avatar"
-// import Search from "./Search"
 import { useStore } from "../store"
 import theme from "../theme"
 import Logo from "../icons/logo.svg"
@@ -21,8 +18,6 @@ const Header = (props) => {
       },
     },
   } = props
-
-  console.log(menu)
 
   const [
     {
@@ -40,7 +35,7 @@ const Header = (props) => {
     <>
       <Container
         bg="background"
-        p="10px 0"
+        p="20px 0"
         sx={{
           height: `${({ theme: { headerHeight } }) => headerHeight}px`,
           position: "fixed",
@@ -66,57 +61,51 @@ const Header = (props) => {
               pr={2}
               sx={{ textDecoration: "none", svg: { height: "60px" } }}
             >
-              <Link
-                to="/"
-                onClick={() => dispatch({ type: "SET_MENU", payload: false })}
-              >
-                <Logo />
-              </Link>
+              <Logo style={{ height: "30px" }} />
             </Box>
-            {/* <Box>
-              <Search />
-            </Box> */}
 
-            <Flex sx={{ alignItems: "center" }}>
+            <Flex
+              sx={{
+                alignItems: "center",
+                width: "20%",
+                justifyContent: "space-between",
+              }}
+            >
               {menu &&
-                menu.map((o, i) => {
+                menu.map(({ title, children }, i) => {
                   return (
-                    <li key={i}>
-                      <Link to={o.url} aria-label={o.title} title={o.title}>
-                        {o.title}
-                      </Link>
-                    </li>
+                    <ul key={i} style={{ listStyleType: "none" }}>
+                      {title}
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          backgroundColor: "text",
+                          padding: 24,
+                          a: {
+                            color: "muted",
+                            fontFamily: "heading",
+                          },
+                          "a:hover": {
+                            color: "primary",
+                          },
+                        }}
+                      >
+                        {children &&
+                          children.map((child, j) => (
+                            <Link
+                              key={j}
+                              to={child.url}
+                              aria-label={child.title}
+                              title={child.title}
+                            >
+                              {child.title}
+                            </Link>
+                          ))}
+                      </Box>
+                    </ul>
                   )
                 })}
-
-              {/* <div
-                onClick={() =>
-                  dispatch({
-                    type: "SET_MODAL",
-                    payload: { headline: "Testing", text: "Testing text" },
-                  })
-                }
-              >
-                Modal
-              </div> */}
-              {/* {!isLoggedIn ? (
-                <Box> */}
-              {/* <Button
-                    variant="contained"
-                    color="primary"
-                    children="Login"
-                    ml={20}
-                    onClick={() =>
-                      dispatch({
-                        type: "SET_LOGIN_DIALOG",
-                        payload: true,
-                      })
-                    }
-                  /> */}
-              {/* </Box>
-              ) : ( */}
-              {/* user && <Avatar {...{ user, dispatch }} />
-              )} */}
               <Box
                 sx={{
                   transform: "translateX(15px)",

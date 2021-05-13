@@ -12,8 +12,6 @@ import Modal from "./Modal"
 const Layout = (props) => {
   useAuthServices(props?.location?.pathname)
 
-  console.log(props)
-
   return (
     <>
       <Container

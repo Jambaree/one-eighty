@@ -3,8 +3,7 @@ const themeUi = {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "Poppins",
     monospace: "Menlo, monospace",
   },
@@ -19,13 +18,13 @@ const themeUi = {
     heading: 1.125,
   },
   colors: {
-    text: "#000",
+    text: "#22303D",
     background: "#fff",
-    primary: "#07c",
+    primary: "#E86140",
     secondary: "#30c",
-    muted: "#f6f6f6",
+    muted: "#DBDBDB",
     success: "#0fbb0f",
-    textLight: '#808080',
+    textLight: "#808080",
   },
   text: {
     heading: {
@@ -48,8 +47,8 @@ const themeUi = {
       bg: "secondary",
     },
     icon: {
-      color: "primary"
-    }
+      color: "primary",
+    },
   },
   styles: {
     root: {
