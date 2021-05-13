@@ -74,11 +74,16 @@ const Header = (props) => {
               {menu &&
                 menu.map(({ title, children }, i) => {
                   return (
-                    <ul key={i} style={{ listStyleType: "none" }}>
+                    <ul
+                      key={i}
+                      style={{ listStyleType: "none" }}
+                      onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+                    >
                       {title}
                       <Box
                         sx={{
-                          display: "flex",
+                          position: "absolute",
+                          display: !menuActive ? "none" : "flex",
                           flexDirection: "column",
                           backgroundColor: "text",
                           padding: 24,
@@ -106,7 +111,7 @@ const Header = (props) => {
                     </ul>
                   )
                 })}
-              <Box
+              {/* <Box
                 sx={{
                   transform: "translateX(15px)",
                   cursor: "pointer",
@@ -123,7 +128,7 @@ const Header = (props) => {
                   strokeWidth={2}
                   menuClicked={() => ""}
                 />
-              </Box>
+              </Box> */}
             </Flex>
           </Flex>
         </Edges>
