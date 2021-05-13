@@ -25,6 +25,10 @@ const config = {
         },
       ],
     },
+    {
+      id: "footer",
+      global: true,
+    },
   ],
 }
 

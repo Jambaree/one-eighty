@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import HamburgerMenu from "react-hamburger-menu"
 import { Container, Box, Flex } from "theme-ui"
@@ -30,6 +30,8 @@ const Header = (props) => {
   useEffect(() => {
     dispatch({ type: "SET_MENU", payload: false })
   }, [path, dispatch])
+
+  const [headerMenu, setHeaderMenu] = useState(false)
 
   return (
     <>
@@ -77,19 +79,21 @@ const Header = (props) => {
                     <ul
                       key={i}
                       style={{ listStyleType: "none" }}
-                      onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+                      onClick={() => setHeaderMenu(!headerMenu)}
                     >
                       {title}
                       <Box
                         sx={{
                           position: "absolute",
-                          display: !menuActive ? "none" : "flex",
+                          display: !headerMenu ? "none" : "flex",
                           flexDirection: "column",
                           backgroundColor: "text",
-                          padding: 24,
+                          padding: 18,
+                          width: 300,
                           a: {
                             color: "muted",
                             fontFamily: "heading",
+                            padding: "12px 0",
                           },
                           "a:hover": {
                             color: "primary",
