@@ -9,6 +9,7 @@ import Edges from "./Edges"
 import { useStore } from "../store"
 // import theme from "../theme"
 import Logo from "../icons/logo.svg"
+import ChevronDown from "../icons/chevron-down.svg"
 
 const Header = (props) => {
   const {
@@ -94,8 +95,14 @@ const Header = (props) => {
                         onClick={() =>
                           setHeaderMenu(headerMenu === i ? null : i)
                         }
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "center",
+                        }}
                       >
                         {title}
+                        <ChevronDown />
                       </span>
                       <Box
                         sx={{

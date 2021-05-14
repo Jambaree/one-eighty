@@ -1,22 +1,10 @@
 import React from "react"
-import {
-  Container,
-  // Flex,
-  Box,
-  Grid,
-  Text,
-  // Divider,
-  Link as ThemeLink,
-} from "theme-ui"
-// import { graphql, useStaticQuery } from "gatsby"
-// import Parser from "html-react-parser"
+import { Container, Box, Grid, Text, Link as ThemeLink } from "theme-ui"
 
 // import app components
 import Edges from "./Edges"
 import Socials from "./Socials"
-// import FooterMenu from "./menu/FooterMenu"
 import Logo from "../icons/logo.svg"
-// import themeUi from "../gatsby-plugin-theme-ui"
 
 const Footer = (props) => {
   const {
@@ -95,14 +83,18 @@ const Footer = (props) => {
                     )
                   })}
               </Box>
-              {copyright && (
-                <Text sx={{ color: "white", fontSize: "0" }}>{copyright}</Text>
-              )}
-              {disclaimer && (
-                <Text sx={{ color: "black50", fontSize: "0" }}>
-                  {disclaimer}
-                </Text>
-              )}
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                {copyright && (
+                  <Text sx={{ color: "white", fontSize: "0" }}>
+                    {copyright}
+                  </Text>
+                )}
+                {disclaimer && (
+                  <Text sx={{ color: "black50", fontSize: "0" }}>
+                    {disclaimer}
+                  </Text>
+                )}
+              </Box>
             </Box>
             <Box>
               {phonenumber && (
