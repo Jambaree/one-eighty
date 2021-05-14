@@ -41,7 +41,7 @@ const Footer = (props) => {
           pb={4}
           gap={2}
           columns={[1, "1fr 3fr"]}
-          sx={{ display: ["flex"], flexDirection: ["row", "column"] }}
+          sx={{ display: ["flex"], flexDirection: ["column", "column", "row"] }}
         >
           <Box
             sx={{
@@ -67,12 +67,15 @@ const Footer = (props) => {
             <br />
           </Box>
 
-          <Grid columns={[1, "3fr 1fr"]} sx={{ alignItems: "center" }}>
+          <Grid
+            columns={[1, "3fr 1fr"]}
+            sx={{ alignItems: "center", display: ["unset", "unset", "grid"] }}
+          >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Box
                 sx={{
                   display: "flex",
-                  flexDirection: ["column", "row"],
+                  flexDirection: ["column", "column", "row"],
                   mb: 24,
                 }}
               >
@@ -82,7 +85,10 @@ const Footer = (props) => {
                       <ThemeLink
                         key={i}
                         href={o.url}
-                        sx={{ color: "white", m: ["12px 0", "0 36px 0 0"] }}
+                        sx={{
+                          color: "white",
+                          m: ["12px 0", "12px 0", "0 36px 0 0"],
+                        }}
                       >
                         {o.title}
                       </ThemeLink>
