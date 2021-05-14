@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import HamburgerMenu from "react-hamburger-menu"
-import { Themed, Container, Box, Flex } from "theme-ui"
+import { Themed, Container, Box, Flex, Link } from "theme-ui"
+import { Close } from "mdi-material-ui"
 
 // import app components
 import Edges from "./Edges"
@@ -62,7 +63,11 @@ const Header = (props) => {
           >
             <Box
               pr={2}
-              sx={{ textDecoration: "none", svg: { height: "60px" } }}
+              sx={{
+                textDecoration: "none",
+                ".a": { fill: "charcoalDark" },
+                svg: { height: "60px" },
+              }}
             >
               <Logo style={{ height: "30px" }} />
             </Box>
@@ -95,26 +100,41 @@ const Header = (props) => {
                           position: "absolute",
                           display: headerMenu === i ? "flex" : "none",
                           flexDirection: "column",
-                          backgroundColor: "charcoal",
-                          padding: 18,
-                          width: 294,
+                          backgroundColor: "charcoalDark",
+                          mt: 24,
+                          pb: 40,
+                          width: "auto",
+                          right: 0,
+
                           a: {
-                            color: "white",
                             fontFamily: "heading",
-                            padding: "12px 0",
                           },
                           "a:hover": {
                             color: "coral",
                           },
                         }}
                       >
+                        <li
+                          style={{
+                            margin: "6px 6px 6px auto",
+                            color: "coral",
+                          }}
+                        >
+                          <Close
+                            onClick={() =>
+                              setHeaderMenu(headerMenu === i ? null : i)
+                            }
+                          />
+                        </li>
                         {children &&
                           children.map((child, j) => (
                             <Link
                               key={j}
-                              to={child.url}
+                              href={child.url}
                               aria-label={child.title}
                               title={child.title}
+                              variant="clickListMenu"
+                              sx={{ p: "16px 80px" }}
                             >
                               {child.title}
                             </Link>

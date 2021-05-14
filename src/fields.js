@@ -41,18 +41,19 @@ const fields = {
           label: "Footer Menu",
         },
         {
-          id: "text",
-          type: "wysiwyg",
-          label: "Text",
+          id: "copyright",
+          type: "text",
+          label: "Copyright",
+        },
+        {
+          id: "disclaimer",
+          type: "text",
+          label: "Disclaimer",
         },
         {
           id: "phonenumber",
-          type: "number",
+          type: "text",
           label: "Phone Number",
-          defaultValue: 1111111111, // optional
-          // min: 1, // optional
-          // max: 4, // optional
-          // step: 1 // optional
         },
         {
           id: "emailaddress",

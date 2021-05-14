@@ -1,32 +1,38 @@
 import React from "react"
 import {
   Container,
-  Flex,
+  // Flex,
   Box,
   Grid,
   Text,
-  Divider,
+  // Divider,
   Link as ThemeLink,
 } from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
-import Parser from "html-react-parser"
+// import { graphql, useStaticQuery } from "gatsby"
+// import Parser from "html-react-parser"
 
 // import app components
 import Edges from "./Edges"
 import Socials from "./Socials"
-import FooterMenu from "./menu/FooterMenu"
+// import FooterMenu from "./menu/FooterMenu"
 import Logo from "../icons/logo.svg"
-import themeUi from "../gatsby-plugin-theme-ui"
+// import themeUi from "../gatsby-plugin-theme-ui"
 
 const Footer = (props) => {
   const {
     pageContext: {
       themeOptions: {
-        footer: { emailaddress, footermenu, image, phonenumber, text },
+        footer: {
+          emailaddress,
+          footermenu,
+          image,
+          phonenumber,
+          copyright,
+          disclaimer,
+        },
       },
     },
   } = props
-  console.log(emailaddress)
   // const {
   //   themeOptions: {
   //     siteOptions: {
@@ -40,7 +46,7 @@ const Footer = (props) => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <Container p={4} bg="charcoal">
+    <Container p={4} bg="charcoalDark">
       <Edges size="xlg">
         <Grid pb={4} gap={2} columns={[1, "1fr 3fr"]}>
           <Box
@@ -57,10 +63,9 @@ const Footer = (props) => {
               <Logo
                 style={{
                   transform: "rotate(270deg)",
+                  transformOrigin: "right",
                   height: "auto",
                   width: 120,
-                  position: "absolute",
-                  bottom: 180,
                 }}
               />
             </Box>
@@ -83,14 +88,21 @@ const Footer = (props) => {
                     )
                   })}
               </Box>
-              {text && <Text sx={{ color: "black50" }}>{text}</Text>}
+              {copyright && (
+                <Text sx={{ color: "white", fontSize: "0" }}>{copyright}</Text>
+              )}
+              {disclaimer && (
+                <Text sx={{ color: "black50", fontSize: "0" }}>
+                  {disclaimer}
+                </Text>
+              )}
             </Box>
             <Box>
               {phonenumber && (
-                <Box pt={2}>
-                  <span>Phone</span>
+                <Box pt={2} sx={{ display: "flex", flexDirection: "column" }}>
+                  <Text variant="footerHeading2">Phone</Text>
                   <ThemeLink
-                    sx={{ textDecoration: "none" }}
+                    sx={{ textDecoration: "none", color: "white" }}
                     href={`tel:${phonenumber}`}
                   >
                     {phonenumber}
@@ -98,10 +110,10 @@ const Footer = (props) => {
                 </Box>
               )}
               {emailaddress && (
-                <Box pt={2}>
-                  <span>Email</span>
+                <Box pt={2} sx={{ display: "flex", flexDirection: "column" }}>
+                  <Text variant="footerHeading2">Email</Text>
                   <ThemeLink
-                    sx={{ textDecoration: "none" }}
+                    sx={{ textDecoration: "none", color: "coral" }}
                     href={`mailto:${emailaddress}`}
                   >
                     {emailaddress}

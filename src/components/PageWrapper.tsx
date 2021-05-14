@@ -11,12 +11,16 @@ import Modal from "./Modal"
 
 const Layout = (props) => {
   useAuthServices(props?.location?.pathname)
+  console.log(props)
 
   return (
     <>
       <Container
         pt={`${({ theme: { headerHeight } }) => headerHeight}px`}
-        sx={{ justifyContent: "center" }}
+        sx={{
+          justifyContent: "center",
+          // width: props?.jamCMS?.sidebar ? "calc(100vw - 320px)" : "auto",
+        }}
       >
         <Header {...props} />
         <Box
