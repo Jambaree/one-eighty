@@ -10,69 +10,67 @@ import InstagramIcon from "../icons/instagram.svg"
 import YoutubeIcon from "../icons/youtube.svg"
 
 const Socials = (props) => {
-  const { color } = props
-
-  // const {
-  //   themeOptions: {
-  //     siteOptions: {
-  //       socialMedia: { facebook, instagram, twitter, youtube },
-  //     },
-  //   },
-  // } = useOptionsQuery()
+  const {
+    pageContext: {
+      themeOptions: {
+        footer: { instagram, facebook, youtube, twitter },
+      },
+    },
+  } = props
 
   return (
     <Container>
-      {/* {facebook && (
+      {facebook && (
         <Link
           href={facebook}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Facebook"
-        > */}
-      <IconButton>
-        <FacebookIcon />
-      </IconButton>
-      {/* </Link> */}
-      {/* )} */}
+        >
+          <IconButton>
+            <FacebookIcon />
+          </IconButton>
+        </Link>
+      )}
 
-      {/* {instagram && (
+      {instagram && (
         <Link
           href={instagram}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
-        > */}
-      <IconButton>
-        <InstagramIcon />
-      </IconButton>
-      {/* </Link>
-      )} */}
+        >
+          <IconButton>
+            <InstagramIcon />
+          </IconButton>
+        </Link>
+      )}
 
-      {/* {youtube && (
+      {youtube && (
         <Link
           href={youtube}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
-        > */}
-      <IconButton>
-        <YoutubeIcon />
-      </IconButton>
-      {/* </Link>
-      )} */}
+        >
+          <IconButton>
+            <YoutubeIcon />
+          </IconButton>
+        </Link>
+      )}
 
-      {/* {twitter && (
+      {twitter && (
         <Link
           href={twitter}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Twitter"
-        > */}
-      <IconButton>
-        <TwitterIcon />
-      </IconButton>
-      {/* </Link>
-      )} */}
+        >
+          <IconButton>
+            <TwitterIcon />
+          </IconButton>
+        </Link>
+      )}
     </Container>
   )
 }

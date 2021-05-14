@@ -60,6 +60,26 @@ const fields = {
           type: "text",
           label: "Email Address",
         },
+        {
+          id: "facebook",
+          type: "text",
+          label: "Facebook",
+        },
+        {
+          id: "instagram",
+          type: "text",
+          label: "Instagram",
+        },
+        {
+          id: "youtube",
+          type: "text",
+          label: "YouTube",
+        },
+        {
+          id: "twitter",
+          type: "text",
+          label: "Twitter",
+        },
       ],
     },
   ],

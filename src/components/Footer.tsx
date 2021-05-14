@@ -33,25 +33,20 @@ const Footer = (props) => {
       },
     },
   } = props
-  // const {
-  //   themeOptions: {
-  //     siteOptions: {
-  //       contact: { email, address, phone },
-  //       company: { slogan },
-  //       socialMedia: { description },
-  //     },
-  //   },
-  // } = useFooterQuery()
-
-  const currentYear = new Date().getFullYear()
 
   return (
     <Container p={4} bg="charcoalDark">
       <Edges size="xlg">
-        <Grid pb={4} gap={2} columns={[1, "1fr 3fr"]}>
+        <Grid
+          pb={4}
+          gap={2}
+          columns={[1, "1fr 3fr"]}
+          sx={{ display: ["flex"], flexDirection: ["row", "column"] }}
+        >
           <Box
             sx={{
               width: ["100%", "75%", "50%"],
+              flexDirection: ["row", "column"],
             }}
           >
             <Box
@@ -74,14 +69,20 @@ const Footer = (props) => {
 
           <Grid columns={[1, "3fr 1fr"]} sx={{ alignItems: "center" }}>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <Box sx={{ display: "flex", mb: 24 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: ["column", "row"],
+                  mb: 24,
+                }}
+              >
                 {footermenu &&
                   footermenu.map((o, i) => {
                     return (
                       <ThemeLink
                         key={i}
                         href={o.url}
-                        sx={{ color: "white", mr: 36 }}
+                        sx={{ color: "white", m: ["12px 0", "0 36px 0 0"] }}
                       >
                         {o.title}
                       </ThemeLink>
@@ -120,7 +121,7 @@ const Footer = (props) => {
                   </ThemeLink>
                 </Box>
               )}
-              <Socials />
+              <Socials {...props} />
             </Box>
           </Grid>
         </Grid>
