@@ -29,53 +29,53 @@ const Socials = (props) => {
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Facebook"
-        >
-          <IconButton>
-            <FacebookIcon />
-          </IconButton>
-        </Link>
-      )}
+        > */}
+      <IconButton>
+        <FacebookIcon />
+      </IconButton>
+      {/* </Link> */}
+      {/* )} */}
 
-      {instagram && (
+      {/* {instagram && (
         <Link
           color={color}
           href={instagram}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
-        >
-          <IconButton>
-            <InstagramIcon />
-          </IconButton>
-        </Link>
-      )}
+        > */}
+      <IconButton>
+        <InstagramIcon />
+      </IconButton>
+      {/* </Link>
+      )} */}
 
-      {youtube && (
+      {/* {youtube && (
         <Link
           color={color}
           href={youtube}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
-        >
-          <IconButton>
-            <YoutubeIcon />
-          </IconButton>
-        </Link>
-      )}
+        > */}
+      <IconButton>
+        <YoutubeIcon />
+      </IconButton>
+      {/* </Link>
+      )} */}
 
-      {twitter && (
+      {/* {twitter && (
         <Link
           color={color}
           href={twitter}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Twitter"
-        >
-          <IconButton>
-            <TwitterIcon />
-          </IconButton>
-        </Link>
+        > */}
+      <IconButton>
+        <TwitterIcon />
+      </IconButton>
+      {/* </Link>
       )} */}
     </Container>
   )
