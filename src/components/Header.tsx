@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import HamburgerMenu from "react-hamburger-menu"
-import { Container, Box, Flex } from "theme-ui"
+import { Themed, Container, Box, Flex } from "theme-ui"
 
 // import app components
 import Edges from "./Edges"
 import { useStore } from "../store"
-import theme from "../theme"
+// import theme from "../theme"
 import Logo from "../icons/logo.svg"
 
 const Header = (props) => {
@@ -35,8 +35,9 @@ const Header = (props) => {
 
   return (
     <>
+      <Themed.h1>Test</Themed.h1>
       <Container
-        bg="background"
+        bg="white"
         p="20px 0"
         sx={{
           height: `${({ theme: { headerHeight } }) => headerHeight}px`,
@@ -76,7 +77,12 @@ const Header = (props) => {
               {menu &&
                 menu.map(({ title, children }, i) => {
                   return (
-                    <li key={i} style={{ listStyleType: "none" }}>
+                    <li
+                      key={i}
+                      style={{
+                        listStyleType: "none",
+                      }}
+                    >
                       <span
                         onClick={() =>
                           setHeaderMenu(headerMenu === i ? null : i)
@@ -93,12 +99,12 @@ const Header = (props) => {
                           padding: 18,
                           width: 294,
                           a: {
-                            color: "muted",
+                            color: "white",
                             fontFamily: "heading",
                             padding: "12px 0",
                           },
                           "a:hover": {
-                            color: "primary",
+                            color: "coral",
                           },
                         }}
                       >
