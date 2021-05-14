@@ -26,6 +26,7 @@ const Footer = (props) => {
       },
     },
   } = props
+  console.log(emailaddress)
   // const {
   //   themeOptions: {
   //     siteOptions: {
@@ -41,7 +42,7 @@ const Footer = (props) => {
   return (
     <Container p={4} bg="charcoal">
       <Edges size="xlg">
-        <Grid pb={4} gap={2} columns={[1, "2fr 2fr"]}>
+        <Grid pb={4} gap={2} columns={[1, "1fr 3fr"]}>
           <Box
             sx={{
               width: ["100%", "75%", "50%"],
@@ -50,24 +51,39 @@ const Footer = (props) => {
             <Box
               sx={{
                 width: ["40%", "40%", "40%"],
+                ".a": { fill: "white" },
               }}
             >
-              <Logo style={{ transform: "rotate(270deg)" }} />
+              <Logo
+                style={{
+                  transform: "rotate(270deg)",
+                  height: "auto",
+                  width: 120,
+                  position: "absolute",
+                  bottom: 180,
+                }}
+              />
             </Box>
             <br />
           </Box>
 
-          <Grid columns={[1, "1fr 1fr"]}>
-            <Box>
-              {footermenu &&
-                footermenu.map((o, i) => {
-                  return (
-                    <ThemeLink key={i} href={o.url}>
-                      {o.title}
-                    </ThemeLink>
-                  )
-                })}
-              {text && <Text>{text}</Text>}
+          <Grid columns={[1, "3fr 1fr"]} sx={{ alignItems: "center" }}>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Box sx={{ display: "flex", mb: 36 }}>
+                {footermenu &&
+                  footermenu.map((o, i) => {
+                    return (
+                      <ThemeLink
+                        key={i}
+                        href={o.url}
+                        sx={{ color: "white", mr: 36 }}
+                      >
+                        {o.title}
+                      </ThemeLink>
+                    )
+                  })}
+              </Box>
+              {text && <Text sx={{ color: "black50" }}>{text}</Text>}
             </Box>
             <Box>
               {phonenumber && (

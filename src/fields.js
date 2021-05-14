@@ -42,10 +42,9 @@ const fields = {
         },
         {
           id: "text",
-          type: "text",
+          type: "wysiwyg",
           label: "Text",
         },
-
         {
           id: "phonenumber",
           type: "number",

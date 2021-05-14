@@ -57,6 +57,7 @@ const themeUi = {
       fontWeight: "heading",
       color: "charcoal",
     },
+    introduction: {},
   },
   buttons: {
     primary: {
