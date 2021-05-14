@@ -86,6 +86,8 @@ const Header = (props) => {
                       key={i}
                       style={{
                         listStyleType: "none",
+                        borderBottom:
+                          headerMenu === i ? "4px solid coral" : "none",
                       }}
                     >
                       <span
