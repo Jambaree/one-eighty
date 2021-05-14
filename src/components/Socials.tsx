@@ -24,7 +24,6 @@ const Socials = (props) => {
     <Container>
       {/* {facebook && (
         <Link
-          color={color}
           href={facebook}
           target="_blank"
           rel="noreferrer nofollow"
@@ -38,7 +37,6 @@ const Socials = (props) => {
 
       {/* {instagram && (
         <Link
-          color={color}
           href={instagram}
           target="_blank"
           rel="noreferrer nofollow"
@@ -52,7 +50,6 @@ const Socials = (props) => {
 
       {/* {youtube && (
         <Link
-          color={color}
           href={youtube}
           target="_blank"
           rel="noreferrer nofollow"
@@ -66,7 +63,6 @@ const Socials = (props) => {
 
       {/* {twitter && (
         <Link
-          color={color}
           href={twitter}
           target="_blank"
           rel="noreferrer nofollow"

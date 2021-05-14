@@ -69,7 +69,7 @@ const Footer = (props) => {
 
           <Grid columns={[1, "3fr 1fr"]} sx={{ alignItems: "center" }}>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <Box sx={{ display: "flex", mb: 36 }}>
+              <Box sx={{ display: "flex", mb: 24 }}>
                 {footermenu &&
                   footermenu.map((o, i) => {
                     return (

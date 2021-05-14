@@ -6,7 +6,7 @@ const themeUi = {
     body: "Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
     heading: "Poppins",
   },
-  fontSizes: [12, 14, 15, 20, 24, 32, 46, 65],
+  fontSizes: [12, 14, 15, 18, 20, 24, 32, 46, 65],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -57,7 +57,12 @@ const themeUi = {
       fontWeight: "heading",
       color: "charcoal",
     },
-    introduction: {},
+    introduction: {
+      fontSize: 3,
+      fontWeight: 300,
+      letterSpacing: "-0.27px",
+      color: "black75",
+    },
   },
   buttons: {
     primary: {
@@ -90,17 +95,17 @@ const themeUi = {
     },
     h1: {
       variant: "text.heading",
-      fontSize: 7,
+      fontSize: 8,
       letterSpacing: "-1.63px",
     },
     h2: {
       variant: "text.heading",
-      fontSize: 6,
+      fontSize: 7,
       letterSpacing: "-1.15px",
     },
     h3: {
       variant: "text.heading",
-      fontSize: 5,
+      fontSize: 6,
       letterSpacing: "-.64px",
     },
     p: {
@@ -110,15 +115,15 @@ const themeUi = {
     },
     h4: {
       variant: "text.heading",
-      fontSize: 4,
+      fontSize: 5,
     },
     h5: {
       variant: "text.heading",
-      fontSize: 3,
+      fontSize: 4,
     },
     h6: {
       variant: "text.heading",
-      fontSize: 2,
+      fontSize: 3,
     },
     pre: {
       fontFamily: "monospace",
