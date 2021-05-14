@@ -152,7 +152,7 @@ const Header = (props) => {
                     </li>
                   )
                 })}
-              {/* <Box
+              <Box
                 sx={{
                   transform: "translateX(15px)",
                   cursor: "pointer",
@@ -162,14 +162,14 @@ const Header = (props) => {
                 onClick={() => dispatch({ type: "TOGGLE_MENU" })}
               >
                 <HamburgerMenu
-                  color={theme.colors.primary}
+                  color={"coral"}
                   isOpen={menuActive}
                   width={26}
                   height={15}
                   strokeWidth={2}
                   menuClicked={() => ""}
                 />
-              </Box> */}
+              </Box>
             </Flex>
           </Flex>
         </Edges>
