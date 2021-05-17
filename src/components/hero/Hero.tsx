@@ -16,13 +16,17 @@ const Hero = (props) => {
       <Edges size="lg">
         <MediaContainer>
           {image && (
-            <GatsbyImage image={image} alt={image.altText} sx={{ top: 100 }} />
+            <GatsbyImage
+              image={image}
+              alt={image.altText}
+              sx={{ top: 100, height: [435, "unset", "unset"] }}
+            />
           )}
         </MediaContainer>
         <Content>
           {headline && (
             <Heading
-              as="h1"
+              // as="h1"
               variant="styles.h1"
               sx={{ fontWeight: "heading" }}
               children={headline}
@@ -42,12 +46,21 @@ const Container = styled.div`
   height: auto;
   /* ${({ theme: { headerHeight } }) => `calc(100vh - ${headerHeight}px)`}; */
   margin: 24px 0;
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
 `
 
 const MediaContainer = styled.div`
   left: 0;
   z-index: 2;
   height: 600px;
+  @media (max-width: 1024px) {
+    height: 400px;
+  }
+  @media (max-width: 767px) {
+    height: 600px;
+  }
 `
 
 const Content = styled.div`
@@ -60,6 +73,11 @@ const Content = styled.div`
   flex-direction: column;
   margin: 24px auto;
   height: 400px;
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 36px;
+  }
 `
 
 export default Hero

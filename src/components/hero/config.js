@@ -12,7 +12,6 @@ const config = {
       type: "text",
       label: "Headline",
     },
-
     {
       id: "text",
       type: "text",
