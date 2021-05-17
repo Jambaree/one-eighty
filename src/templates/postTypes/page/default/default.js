@@ -4,9 +4,11 @@ import { graphql } from "gatsby"
 // import app components
 import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
+import hero from "../../../../components/hero/Hero"
 
 const blocks = {
   textimage,
+  hero,
 }
 
 const Template = (props) => {
@@ -17,6 +19,7 @@ const Template = (props) => {
       },
     },
   } = props
+  // console.log(props)
 
   return (
     <Layout {...props}>
