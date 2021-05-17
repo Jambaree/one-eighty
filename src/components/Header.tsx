@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-// import { Link } from "gatsby"
 import HamburgerMenu from "react-hamburger-menu"
 import { Themed, Container, Box, Flex, Link } from "theme-ui"
 import { Close } from "mdi-material-ui"
@@ -37,17 +36,17 @@ const Header = (props) => {
 
   return (
     <>
-      <Themed.h1>Test</Themed.h1>
       <Container
         bg="white"
-        p="20px 0"
         sx={{
-          height: `${({ theme: { headerHeight } }) => headerHeight}px`,
+          height: 94,
           position: "fixed",
           left: 0,
           top: 0,
           width: ["100%", "100%", "100%"],
           zIndex: "999",
+          display: "flex",
+          alignItems: "center",
         }}
       >
         <Edges size="lg">
@@ -55,11 +54,6 @@ const Header = (props) => {
             sx={{
               alignItems: "center",
               justifyContent: "space-between",
-              ".desktop-menu": {
-                "@media (max-width: 959px)": {
-                  display: "none",
-                },
-              },
             }}
           >
             <Box
@@ -76,19 +70,37 @@ const Header = (props) => {
             <Flex
               sx={{
                 alignItems: "center",
-                width: "20%",
+                width: ["unset", "unset", "20%"],
                 justifyContent: "space-between",
+
+                "@media (max-width: 959px)": {
+                  display: "none",
+                },
               }}
             >
               {menu &&
                 menu.map(({ title, children }, i) => {
                   return (
-                    <li
+                    <Box
                       key={i}
-                      style={{
+                      sx={{
+                        position: "relative",
+                        height: 94,
+                        display: "flex",
+                        alignItems: "center",
                         listStyleType: "none",
-                        borderBottom:
-                          headerMenu === i ? "4px solid coral" : "none",
+                        "&:before": {
+                          content: "''",
+                          display: headerMenu === i ? "block" : "none",
+                          position: "absolute",
+                          bottom: 0,
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          height: 10,
+                          width: 40,
+                          zIndex: 1,
+                          backgroundColor: "coral",
+                        },
                       }}
                     >
                       <span
@@ -110,8 +122,9 @@ const Header = (props) => {
                           display: headerMenu === i ? "flex" : "none",
                           flexDirection: "column",
                           backgroundColor: "charcoalDark",
-                          mt: 24,
+                          top: 94,
                           pb: 40,
+                          minWidth: 400,
                           width: "auto",
                           right: 0,
 
@@ -149,28 +162,28 @@ const Header = (props) => {
                             </Link>
                           ))}
                       </Box>
-                    </li>
+                    </Box>
                   )
                 })}
-              <Box
-                sx={{
-                  transform: "translateX(15px)",
-                  cursor: "pointer",
-                  "@media (min-width: 960px)": { display: "none" },
-                }}
-                p={15}
-                onClick={() => dispatch({ type: "TOGGLE_MENU" })}
-              >
-                <HamburgerMenu
-                  color={"coral"}
-                  isOpen={menuActive}
-                  width={26}
-                  height={15}
-                  strokeWidth={2}
-                  menuClicked={() => ""}
-                />
-              </Box>
             </Flex>
+            <Box
+              sx={{
+                transform: "translateX(15px)",
+                cursor: "pointer",
+                "@media (min-width: 960px)": { display: "none" },
+              }}
+              p={15}
+              onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+            >
+              <HamburgerMenu
+                color={"coral"}
+                isOpen={menuActive}
+                width={26}
+                height={15}
+                strokeWidth={2}
+                menuClicked={() => ""}
+              />
+            </Box>
           </Flex>
         </Edges>
       </Container>
