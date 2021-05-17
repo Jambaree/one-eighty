@@ -25,16 +25,10 @@ const Footer = (props) => {
   return (
     <Container p={4} bg="charcoalDark">
       <Edges size="xlg">
-        <Grid
-          pb={4}
-          gap={2}
-          columns={[1, "1fr 3fr"]}
-          sx={{ display: ["flex"], flexDirection: ["column", "column", "row"] }}
-        >
+        <Grid pb={4} gap={3} columns={["12fr", "12fr", "2fr 10fr"]}>
           <Box
             sx={{
               width: ["100%", "75%", "50%"],
-              flexDirection: ["row", "column"],
             }}
           >
             <Box
@@ -57,16 +51,13 @@ const Footer = (props) => {
             <br />
           </Box>
 
-          <Grid
-            columns={[1, "3fr 1fr"]}
-            sx={{ alignItems: "center", display: ["unset", "unset", "grid"] }}
-          >
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Grid columns={["12fr", "12fr", "3fr 1fr"]}>
+            <Box sx={{ display: "grid" }}>
               <Box
                 sx={{
-                  display: "flex",
-                  flexDirection: ["column", "column", "row"],
-                  mb: 24,
+                  display: "grid",
+                  gridTemplateColumns: ["12fr", "12fr", "1fr 1fr 1fr 1fr"],
+                  width: "50%",
                 }}
               >
                 {footermenu &&
@@ -85,7 +76,7 @@ const Footer = (props) => {
                     )
                   })}
               </Box>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Box className="legal" sx={{ display: "grid" }}>
                 {copyright && (
                   <Text sx={{ color: "white", fontSize: "0" }}>
                     {copyright}
@@ -100,7 +91,7 @@ const Footer = (props) => {
             </Box>
             <Box>
               {phonenumber && (
-                <Box pt={2} sx={{ display: "flex", flexDirection: "column" }}>
+                <Box pt={2} sx={{ display: "grid" }}>
                   <Text variant="footerHeading2">Phone</Text>
                   <ThemeLink
                     sx={{ textDecoration: "none", color: "white" }}
@@ -111,7 +102,7 @@ const Footer = (props) => {
                 </Box>
               )}
               {emailaddress && (
-                <Box pt={2} sx={{ display: "flex", flexDirection: "column" }}>
+                <Box pt={2} sx={{ display: "grid" }}>
                   <Text variant="footerHeading2">Email</Text>
                   <ThemeLink
                     sx={{ textDecoration: "none", color: "coral" }}
