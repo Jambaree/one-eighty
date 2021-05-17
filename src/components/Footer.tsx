@@ -43,14 +43,16 @@ const Footer = (props) => {
                 ".a": { fill: "white" },
               }}
             >
-              <Logo
-                style={{
-                  transform: "rotate(270deg)",
+              <Box
+                sx={{
+                  transform: ["rotate(0)", "rotate(0)", "rotate(270deg)"],
                   transformOrigin: "right",
                   height: "auto",
                   width: 120,
                 }}
-              />
+              >
+                <Logo />
+              </Box>
             </Box>
             <br />
           </Box>
