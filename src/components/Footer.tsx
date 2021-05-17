@@ -58,6 +58,7 @@ const Footer = (props) => {
                   display: "grid",
                   gridTemplateColumns: ["12fr", "12fr", "1fr 1fr 1fr 1fr"],
                   width: "50%",
+                  gridArea: "1 / 1 / 2 / 4",
                 }}
               >
                 {footermenu &&
@@ -76,43 +77,50 @@ const Footer = (props) => {
                     )
                   })}
               </Box>
-              <Box className="legal" sx={{ display: "grid" }}>
-                {copyright && (
-                  <Text sx={{ color: "white", fontSize: "0" }}>
-                    {copyright}
-                  </Text>
-                )}
-                {disclaimer && (
-                  <Text sx={{ color: "black50", fontSize: "0" }}>
-                    {disclaimer}
-                  </Text>
-                )}
-              </Box>
             </Box>
-            <Box>
-              {phonenumber && (
-                <Box pt={2} sx={{ display: "grid" }}>
-                  <Text variant="footerHeading2">Phone</Text>
-                  <ThemeLink
-                    sx={{ textDecoration: "none", color: "white" }}
-                    href={`tel:${phonenumber}`}
-                  >
-                    {phonenumber}
-                  </ThemeLink>
-                </Box>
+            <Box
+              className="legal"
+              sx={{
+                display: "grid",
+                gridArea: "2 / 1 / 2 / 2",
+                gridRow: [4, 4, "unset"],
+              }}
+            >
+              {copyright && (
+                <Text sx={{ color: "white", fontSize: "0" }}>{copyright}</Text>
               )}
-              {emailaddress && (
-                <Box pt={2} sx={{ display: "grid" }}>
-                  <Text variant="footerHeading2">Email</Text>
-                  <ThemeLink
-                    sx={{ textDecoration: "none", color: "coral" }}
-                    href={`mailto:${emailaddress}`}
-                  >
-                    {emailaddress}
-                  </ThemeLink>
-                </Box>
+              {disclaimer && (
+                <Text sx={{ color: "black50", fontSize: "0" }}>
+                  {disclaimer}
+                </Text>
               )}
-              <Socials {...props} />
+            </Box>
+            <Box sx={{ gridArea: ["3/1/4/5", "3/1/4/5", "1/3/3/4"] }}>
+              <Box>
+                {phonenumber && (
+                  <Box pt={2} sx={{ display: "grid" }}>
+                    <Text variant="footerHeading2">Phone</Text>
+                    <ThemeLink
+                      sx={{ textDecoration: "none", color: "white" }}
+                      href={`tel:${phonenumber}`}
+                    >
+                      {phonenumber}
+                    </ThemeLink>
+                  </Box>
+                )}
+                {emailaddress && (
+                  <Box pt={2} sx={{ display: "grid" }}>
+                    <Text variant="footerHeading2">Email</Text>
+                    <ThemeLink
+                      sx={{ textDecoration: "none", color: "coral" }}
+                      href={`mailto:${emailaddress}`}
+                    >
+                      {emailaddress}
+                    </ThemeLink>
+                  </Box>
+                )}
+                <Socials {...props} />
+              </Box>
             </Box>
           </Grid>
         </Grid>
