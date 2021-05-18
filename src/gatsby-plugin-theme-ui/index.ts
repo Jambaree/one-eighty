@@ -6,7 +6,7 @@ const themeUi = {
     body: "Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
     heading: "Poppins",
   },
-  fontSizes: [12, 14, 15, 18, 20, 24, 32, 36, 46, 65],
+  fontSizes: [12, 14, 15, 18, 20, 24, 28, 32, 36, 46, 65],
   fontWeights: {
     light: 300,
     medium: 400,
@@ -102,7 +102,7 @@ const themeUi = {
   },
   links: {
     clickListMenu: {
-      fontSize: 7,
+      fontSize: 8,
       fontWeight: "light",
       letterSpacing: "-0.9px",
       color: "almond",
@@ -116,20 +116,23 @@ const themeUi = {
     },
     h1: {
       variant: "text.heading",
-      fontSize: 9,
+      fontSize: 10,
       letterSpacing: "-1.63px",
       "@media (max-width: 767px)": {
-        fontSize: 7,
+        fontSize: 8,
       },
     },
     h2: {
       variant: "text.heading",
-      fontSize: 8,
+      fontSize: 9,
       letterSpacing: "-1.15px",
+      "@media (max-width: 767px)": {
+        fontSize: 6,
+      },
     },
     h3: {
       variant: "text.heading",
-      fontSize: 6,
+      fontSize: 7,
       letterSpacing: "-.64px",
     },
     p: {

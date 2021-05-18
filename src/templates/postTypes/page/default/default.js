@@ -21,7 +21,6 @@ const Template = (props) => {
       },
     },
   } = props
-  // console.log(props)
 
   return (
     <Layout {...props}>
@@ -44,11 +43,55 @@ export const CollectionQuery = graphql`
       title
       slug
       uri
-      #template {
-      #  ... on WpDefaultTemplate {
-      #
-      #  }
-      #}
+      template {
+        ... on WpDefaultTemplate {
+          templateName
+          acf {
+            content {
+              flex {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Hero {
+                  fieldGroupName
+                  headline
+                  image {
+                    id
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                  link {
+                    target
+                    title
+                    url
+                  }
+                  text
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Introduction {
+                  fieldGroupName
+                  headline
+                  text
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
+                  alignment
+                  fieldGroupName
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                  text
+                }
+              }
+            }
+            fieldGroupName
+          }
+        }
+      }
     }
   }
 `
