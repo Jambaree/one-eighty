@@ -11,8 +11,25 @@ const Cards = (props) => {
   console.log(props)
 
   return (
-    <Box sx={{ bg: "almondLight", py: 100 }}>
+    <Box sx={{ bg: "almondLight", py: [90, 164, 164] }}>
       <Edges size="md">
+        <Box
+          sx={{
+            display: ["none", "block", "block"],
+            position: "absolute",
+            height: 168,
+            width: 168,
+            bg: "flax",
+            borderRadius: "50%",
+            zIndex: 0,
+            mr: 0,
+            transform: [
+              "unset",
+              "translate(198%, -48%)",
+              "translate(296%, -48%)",
+            ],
+          }}
+        />
         <Box
           sx={{
             display: "flex",
@@ -35,7 +52,7 @@ const Cards = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: 41 }}
+              sx={{ mb: [36, 36, 60], zIndex: 1 }}
             />
           )}
         </Box>

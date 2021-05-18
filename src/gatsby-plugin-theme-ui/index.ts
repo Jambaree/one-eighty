@@ -103,6 +103,11 @@ const themeUi = {
   links: {
     hyperlink: {
       color: "coral",
+      fontSize: 2,
+      fontFamily: "body",
+      "@media (max-width: 767px)": {
+        fontSize: 1,
+      },
       "&:hover": {
         color: "coralDark",
       },
