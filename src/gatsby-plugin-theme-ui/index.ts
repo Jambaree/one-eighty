@@ -101,6 +101,18 @@ const themeUi = {
     },
   },
   links: {
+    hyperlink: {
+      color: "coral",
+      "&:hover": {
+        color: "coralDark",
+      },
+      "&:focus": {
+        color: "coralLight",
+      },
+      "&:disabled": {
+        color: "black25",
+      },
+    },
     clickListMenu: {
       fontSize: 8,
       fontWeight: "light",
@@ -134,6 +146,9 @@ const themeUi = {
       variant: "text.heading",
       fontSize: 7,
       letterSpacing: "-.64px",
+      "@media (max-width: 767px)": {
+        fontSize: 4,
+      },
     },
     p: {
       fontSize: 1,

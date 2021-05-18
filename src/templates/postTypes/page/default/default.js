@@ -6,11 +6,13 @@ import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
+import cards from "../../../../components/cards/Cards"
 
 const blocks = {
   textimage,
   hero,
   introduction,
+  cards,
 }
 
 const Template = (props) => {
