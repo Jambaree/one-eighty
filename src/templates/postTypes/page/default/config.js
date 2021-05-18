@@ -1,6 +1,7 @@
 // import fleixble content blocks
 import textimage from "../../../../components/textImage/config"
 import hero from "../../../../components/hero/config"
+import introduction from "../../../../components/introduction/config"
 
 const config = {
   id: "default",
@@ -23,6 +24,7 @@ const config = {
           items: Object.values({
             textimage,
             hero,
+            introduction,
           }),
         },
       ],

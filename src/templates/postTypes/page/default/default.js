@@ -5,10 +5,12 @@ import { graphql } from "gatsby"
 import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
+import introduction from "../../../../components/introduction/Introduction"
 
 const blocks = {
   textimage,
   hero,
+  introduction,
 }
 
 const Template = (props) => {
