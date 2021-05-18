@@ -26,13 +26,14 @@ const Hero = (props) => {
         <Content>
           {headline && (
             <Heading
-              // as="h1"
               variant="styles.h1"
-              sx={{ fontWeight: "heading" }}
+              sx={{ fontWeight: "heading", mb: "4" }}
               children={headline}
             />
           )}
-          {text && <Text variant="introduction" children={text} />}
+          {text && (
+            <Text variant="introduction" children={text} sx={{ mb: "4" }} />
+          )}
           {link && <Button to={link.url} children={link.title} />}
         </Content>
       </Edges>
@@ -69,14 +70,19 @@ const Content = styled.div`
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   margin: 24px auto;
-  height: 400px;
+  height: 550px;
   @media (max-width: 1024px) {
+    height: 480px;
+    margin-bottom: 0;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     margin-bottom: 36px;
+    text-align: left;
+    align-items: flex-start;
+    height: 360px;
   }
 `
 
