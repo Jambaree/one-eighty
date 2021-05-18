@@ -45,7 +45,11 @@ const Cards = (props) => {
             <Heading
               children={mainheadline}
               variant="styles.h2"
-              sx={{ mb: [41, 24, 24], width: ["65%", "100%", "100%"] }}
+              sx={{
+                mb: [41, 24, 24],
+                width: ["65%", "100%", "100%"],
+                zIndex: 1,
+              }}
             />
           )}
           {subheading && (
