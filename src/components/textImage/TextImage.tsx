@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "theme-ui"
+import { Box, Heading } from "theme-ui"
 
 // import app components
 import Textarea from "../Textarea"
@@ -8,7 +8,7 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const TextImage = (props) => {
-  const { image, alignment, text, link } = props
+  const { image, alignment, headline, text, link } = props
 
   return (
     <>
@@ -36,7 +36,9 @@ const TextImage = (props) => {
             bottom: [null, null, 0],
           }}
         >
-          {image && <BackgroundImage image={image} />}
+          {image && (
+            <BackgroundImage image={image} sx={{}} backgroundSize="contain" />
+          )}
         </Box>
         <Edges size="md">
           <Box
@@ -52,6 +54,7 @@ const TextImage = (props) => {
               alignItems: "flex-start",
             }}
           >
+            {headline && <Heading children={headline} variant="styles.h2" />}
             {text && <Textarea content={text} />}
             {link && (
               <Button variant="primary" to={link.url}>

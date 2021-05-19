@@ -7,7 +7,7 @@ import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 
 const Cards = (props) => {
-  const { columns, mainheadline, subheading, cards } = props
+  const { columns, headline, subheading, cards } = props
   console.log(props)
 
   return (
@@ -41,9 +41,9 @@ const Cards = (props) => {
             mb: 36,
           }}
         >
-          {mainheadline && (
+          {headline && (
             <Heading
-              children={mainheadline}
+              children={headline}
               variant="styles.h2"
               sx={{ mb: [41, 24, 24], width: ["65%", "100%", "100%"] }}
             />
@@ -64,8 +64,8 @@ const Cards = (props) => {
                   <Box
                     sx={{
                       position: "relative",
-                      height: [179, 179, 300],
-                      width: [287, 287, 480],
+                      height: [180, 180, 300],
+                      width: ["100%", 290, 480],
                     }}
                   >
                     {o.image && (

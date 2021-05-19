@@ -3,9 +3,9 @@ const config = {
   label: "Cards",
   fields: [
     {
-      id: "mainheadline",
+      id: "headline",
       type: "text",
-      label: "Main Headline",
+      label: "Headline",
     },
     {
       id: "subheading",
