@@ -14,8 +14,8 @@ const Introduction = (props) => {
         aspectRatio: "33%/66%",
         backgroundImage: [
           "unset",
-          `url(${background.url})`,
-          `url(${background.url})`,
+          `url(${background?.url})`,
+          `url(${background?.url})`,
         ],
         backgroundColor: [backgroundcolor, "unset", "unset"],
         backgroundSize: "cover",

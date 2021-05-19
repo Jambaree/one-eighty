@@ -88,6 +88,29 @@ export const CollectionQuery = graphql`
                   }
                   text
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
+                  fieldGroupName
+                  headline
+                  cards {
+                    fieldGroupName
+                    headline
+                    image {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
+                    }
+                    link {
+                      target
+                      title
+                      url
+                    }
+                    text
+                  }
+                  subheading
+                }
               }
             }
             fieldGroupName
