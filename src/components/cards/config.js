@@ -3,6 +3,11 @@ const config = {
   label: "Cards",
   fields: [
     {
+      id: "columns",
+      type: "number",
+      label: "Columns",
+    },
+    {
       id: "headline",
       type: "text",
       label: "Headline",
