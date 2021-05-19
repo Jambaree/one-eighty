@@ -9,16 +9,16 @@ const Benefits = (props) => {
   const { columns, headline, subheading, icon, cards } = props
 
   return (
-    <Box sx={{ bg: "white", mt: [104], mb: 154 }}>
+    <Box sx={{ bg: "white", mt: 104, mb: 154 }}>
       <Edges size="md">
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: ["flex-start", "center", "center"],
-            textAlign: ["left", "center", "center"],
-            width: [283, 600, 730],
-            m: ["unset", "0 auto", "0 auto"],
+            justifyContent: "center",
+            textAlign: "center",
+            width: ["100%", "100%", 730],
+            m: "0 auto",
             mb: 36,
           }}
         >
@@ -27,8 +27,9 @@ const Benefits = (props) => {
               children={headline}
               variant="styles.h2"
               sx={{
-                mb: ["unset", "unset", 36],
-                width: ["65%", "100%", "100%"],
+                m: "0 auto",
+                mb: 36,
+                width: ["80%", "100%", "100%"],
               }}
             />
           )}
@@ -48,7 +49,7 @@ const Benefits = (props) => {
                   <Box
                     sx={{
                       position: "relative",
-                      height: [180, 180, 186],
+                      height: 186,
                     }}
                   >
                     {o.icon && (
@@ -64,9 +65,10 @@ const Benefits = (props) => {
                     sx={{
                       display: "flex",
                       flexDirection: "column",
-                      justifyContent: ["flex-start", "center", "center"],
-                      textAlign: ["left", "center", "center"],
-                      alignItems: ["center"],
+                      justifyContent: "center",
+                      textAlign: "center",
+                      alignItems: "center",
+                      mx: [40, 20, "unset"],
                     }}
                   >
                     {o.headline && (
