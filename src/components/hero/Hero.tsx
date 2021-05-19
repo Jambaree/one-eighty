@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
-import { Heading, Text, Themed } from "theme-ui"
+import { Heading, Text, Box, Themed } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
 
 // import app components
@@ -9,21 +9,57 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const Hero = (props) => {
-  const { headline, link, image, text } = props
+  const { headline, link, image, mobileimage, text } = props
 
   return (
-    <Container>
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "calc(100vh - 94px)",
+        height: "auto",
+        m: "24px 0",
+        p: [12, 0, 0],
+      }}
+    >
       <Edges size="lg">
-        <MediaContainer>
+        <Box sx={{ left: 0, zIndex: 2, height: [600, 400, 600] }}>
           {image && (
             <GatsbyImage
               image={image}
               alt={image.altText}
-              sx={{ top: 100, height: [435, "unset", "unset"] }}
+              sx={{
+                top: 100,
+                height: [435, "unset", "unset"],
+                display: ["none", "block", "block"],
+              }}
             />
           )}
-        </MediaContainer>
-        <Content>
+          {mobileimage && (
+            <GatsbyImage
+              image={mobileimage}
+              alt={mobileimage.altText}
+              sx={{
+                top: 100,
+                height: 435,
+                display: ["block", "none", "none"],
+              }}
+            />
+          )}
+        </Box>
+        <Box
+          sx={{
+            zIndex: 4,
+            maxWidth: 600,
+            textAlign: ["left", "center", "center"],
+            display: "flex",
+            alignItems: ["flex-start", "center", "center"],
+            justifyContent: "center",
+            flexDirection: "column",
+            m: "24px auto",
+            mb: [36, 0, 24],
+            height: [360, 480, 550],
+          }}
+        >
           {headline && (
             <Heading
               variant="styles.h1"
@@ -35,55 +71,10 @@ const Hero = (props) => {
             <Text variant="introduction" children={text} sx={{ mb: "4" }} />
           )}
           {link && <Button to={link.url} children={link.title} />}
-        </Content>
+        </Box>
       </Edges>
-    </Container>
+    </Box>
   )
 }
-
-const Container = styled.div`
-  position: relative;
-  min-height: calc(100vh - 94px);
-  height: auto;
-  /* ${({ theme: { headerHeight } }) => `calc(100vh - ${headerHeight}px)`}; */
-  margin: 24px 0;
-  @media (max-width: 768px) {
-    padding: 12px;
-  }
-`
-
-const MediaContainer = styled.div`
-  left: 0;
-  z-index: 2;
-  height: 600px;
-  @media (max-width: 1024px) {
-    height: 400px;
-  }
-  @media (max-width: 767px) {
-    height: 600px;
-  }
-`
-
-const Content = styled.div`
-  z-index: 4;
-  max-width: 600px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 24px auto;
-  height: 550px;
-  @media (max-width: 1024px) {
-    height: 480px;
-    margin-bottom: 0;
-  }
-  @media (max-width: 767px) {
-    margin-bottom: 36px;
-    text-align: left;
-    align-items: flex-start;
-    height: 360px;
-  }
-`
 
 export default Hero
