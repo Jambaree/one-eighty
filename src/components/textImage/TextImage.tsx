@@ -18,7 +18,9 @@ const TextImage = (props) => {
           display: "flex",
           flexWrap: "wrap-reverse",
           alignItems: "center",
-          minHeight: [null, null, 400],
+          minHeight: [null, null, 600],
+          mb: [36, 36, 0],
+          textAlign: "left",
           "p:last-child": {
             mb: [16, 18, 24],
           },
@@ -29,11 +31,12 @@ const TextImage = (props) => {
             left: alignment === "left" ? 0 : "unset",
             right: alignment === "right" ? 0 : "unset",
             position: ["relative", null, "absolute"],
-            height: [200, 300, "auto"],
-            width: ["100%", null, "calc(50% - 25px)"],
+            height: [434, 550, "auto"],
+            width: ["100%", "100%", "calc(50% - 25px)"],
             order: 1,
             top: [null, null, 0],
             bottom: [null, null, 0],
+            my: 24,
           }}
         >
           {image && (
@@ -48,14 +51,27 @@ const TextImage = (props) => {
               width: ["100%", null, "calc(50% - 25px)"],
               height: "100%",
               my: "auto",
-              py: 40,
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
+              pt: 36,
             }}
           >
-            {headline && <Heading children={headline} variant="styles.h2" />}
-            {text && <Textarea content={text} />}
+            {headline && (
+              <Heading
+                children={headline}
+                variant="styles.h2"
+                sx={{ pb: 36 }}
+              />
+            )}
+            {text && (
+              <Textarea
+                content={text}
+                style={{
+                  paddingBottom: 36,
+                }}
+              />
+            )}
             {link && (
               <Button variant="primary" to={link.url}>
                 {link.title}
