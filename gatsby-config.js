@@ -91,29 +91,29 @@ const gatsbyConfig = {
     //     },
     //   },
     // },
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        exclude: ["/preview/*"],
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage(filter: {context: {id: {ne: null}}}) {
-            edges {
-              node {
-                path
-                context {
-                  id
-                }
-              }
-            }
-          }
-      }`,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-sitemap",
+    //   options: {
+    //     exclude: ["/preview/*"],
+    //     query: `{
+    //       site {
+    //         siteMetadata {
+    //           siteUrl
+    //         }
+    //       }
+    //       allSitePage(filter: {context: {id: {ne: null}}}) {
+    //         edges {
+    //           node {
+    //             path
+    //             context {
+    //               id
+    //             }
+    //           }
+    //         }
+    //       }
+    //   }`,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
