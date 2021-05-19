@@ -3,7 +3,7 @@ import textimage from "../../../../components/textImage/config"
 import hero from "../../../../components/hero/config"
 import introduction from "../../../../components/introduction/config"
 import cards from "../../../../components/cards/config"
-import testimonialSlider from "../../../../components/testimonialSlider/config"
+import testimonialslider from "../../../../components/testimonialSlider/config"
 
 const config = {
   id: "default",
@@ -28,7 +28,7 @@ const config = {
             hero,
             introduction,
             cards,
-            testimonialSlider,
+            testimonialslider,
           }),
         },
       ],

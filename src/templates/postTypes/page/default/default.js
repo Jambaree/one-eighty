@@ -8,14 +8,14 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
-import testimonialSlider from "../../../../components/testimonialSlider/TestimonialSlider"
+import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 
 const blocks = {
   textimage,
   hero,
   introduction,
   cards,
-  testimonialSlider,
+  testimonialslider,
 }
 
 const Template = (props) => {
@@ -123,6 +123,18 @@ export const CollectionQuery = graphql`
                     text
                   }
                   subheading
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
+                  fieldGroupName
+                  backgroundcolor
+                  slide {
+                    fieldGroupName
+                    headline
+                    name
+                    position
+                    quote
+                    subheading
+                  }
                 }
               }
             }
