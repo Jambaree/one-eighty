@@ -5,12 +5,12 @@ import { graphql } from "gatsby"
 import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
-// import introduction from "../../../../components/introduction/Introduction"
+import introduction from "../../../../components/introduction/Introduction"
 
 const blocks = {
   textimage,
   hero,
-  // introduction,
+  introduction,
 }
 
 const Template = (props) => {
@@ -68,7 +68,11 @@ export const CollectionQuery = graphql`
                   }
                   text
                 }
-
+                ... on WpDefaultTemplate_Acf_Content_Flex_Introduction {
+                  fieldGroupName
+                  headline
+                  text
+                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   alignment
                   fieldGroupName
