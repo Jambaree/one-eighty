@@ -24,9 +24,24 @@ const config = {
       ],
     },
     {
+      id: "headline",
+      type: "text",
+      label: "Headline",
+    },
+    {
       id: "text",
-      type: "wysiwyg",
+      type: "text",
       label: "Text",
+    },
+    // {
+    //   id: "wysiwygtext",
+    //   type: "wysiwyg",
+    //   label: "Text",
+    // },
+    {
+      id: "link",
+      type: "link",
+      label: "Link",
     },
   ],
 }
