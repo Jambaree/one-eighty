@@ -8,7 +8,6 @@ import BackgroundImage from "../BackgroundImage"
 
 const Cards = (props) => {
   const { columns, headline, subheading, cards } = props
-  console.log(props)
 
   return (
     <Box sx={{ bg: "almondLight", py: [90, 164, 164] }}>
@@ -45,7 +44,11 @@ const Cards = (props) => {
             <Heading
               children={headline}
               variant="styles.h2"
-              sx={{ mb: [41, 24, 24], width: ["65%", "100%", "100%"] }}
+              sx={{
+                mb: [41, 24, 24],
+                width: ["65%", "100%", "100%"],
+                zIndex: 1,
+              }}
             />
           )}
           {subheading && (
@@ -56,7 +59,7 @@ const Cards = (props) => {
             />
           )}
         </Box>
-        <Grid gap={5} columns={[1, 2, 2]}>
+        <Grid gap={5} columns={[1, 2, columns]}>
           {cards &&
             cards.map((o, i) => {
               return (
@@ -90,7 +93,10 @@ const Cards = (props) => {
                       <Heading
                         children={o.headline}
                         variant="styles.h3"
-                        sx={{ mb: 12, mt: 36 }}
+                        sx={{
+                          mb: 12,
+                          mt: 36,
+                        }}
                       />
                     )}
                     {o.text && (
