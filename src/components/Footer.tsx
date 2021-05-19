@@ -1,10 +1,12 @@
 import React from "react"
-import { Container, Box, Grid, Text, Link as ThemeLink } from "theme-ui"
+import { Container, Box, Flex, Text, Link as ThemeLink } from "theme-ui"
 
 // import app components
 import Edges from "./Edges"
 import Socials from "./Socials"
+
 import Logo from "../icons/logo.svg"
+import LogoVertical from "../icons/logo-vertical.svg"
 
 const Footer = (props) => {
   const {
@@ -13,52 +15,58 @@ const Footer = (props) => {
         footer: {
           emailaddress,
           footermenu,
-          image,
           phonenumber,
           copyright,
           disclaimer,
+          instagram,
+          facebook,
+          youtube,
+          twitter,
         },
       },
     },
   } = props
 
   return (
-    <Container p={4} bg="charcoalDark">
-      <Edges size="xlg">
-        <Grid pb={4} gap={3} columns={["12fr", "12fr", "2fr 10fr"]}>
-          <Box
+    <Container bg="charcoalDark">
+      <Edges size="lg">
+        <Flex
+          sx={{
+            flexWrap: "wrap",
+            flexDirection: "column",
+
+            paddingTop: "60px",
+            paddingBottom: "60px",
+
+            "@media (min-width: 800px)": {
+              flexDirection: "row",
+              paddingTop: "91px",
+              paddingBottom: "86px",
+            },
+          }}
+        >
+          <FooterLogo />
+
+          <Flex
             sx={{
-              width: ["100%", "75%", "50%"],
+              flexDirection: "column",
+
+              "@media (min-width: 800px)": {
+                justifyContent: "space-between",
+                flexDirection: "row",
+                width: "calc(100% - 150px - 120px)",
+              },
             }}
           >
-            <Box
-              sx={{
-                width: ["40%", "40%", "40%"],
-                ".a": { fill: "white" },
-              }}
-            >
-              <Box
+            <Box mr="24px">
+              <Flex
+                mb="24px"
                 sx={{
-                  transform: ["rotate(0)", "rotate(0)", "rotate(270deg)"],
-                  transformOrigin: "right",
-                  height: "auto",
-                  width: 120,
-                }}
-              >
-                <Logo />
-              </Box>
-            </Box>
-            <br />
-          </Box>
-
-          <Grid columns={["12fr", "12fr", "3fr 1fr"]}>
-            <Box sx={{ display: "grid" }}>
-              <Box
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: ["12fr", "12fr", "1fr 1fr 1fr 1fr"],
-                  width: "50%",
-                  gridArea: "1 / 1 / 2 / 4",
+                  flexWrap: "wrap",
+                  flexDirection: "column",
+                  "@media (min-width: 800px)": {
+                    flexDirection: "row",
+                  },
                 }}
               >
                 {footermenu &&
@@ -67,94 +75,143 @@ const Footer = (props) => {
                       <ThemeLink
                         key={i}
                         href={o.url}
-                        sx={{
-                          color: "white",
-                          m: ["12px 0", "12px 0", "0 36px 0 0"],
-                        }}
+                        color="white"
+                        mr="24px"
+                        mb="21px"
                       >
                         {o.title}
                       </ThemeLink>
                     )
                   })}
-              </Box>
+              </Flex>
+
+              <LegalText copyright={copyright} disclaimer={disclaimer} />
             </Box>
+
             <Box
-              className="legal"
+              mb="55px"
               sx={{
-                display: "grid",
-                gridArea: "2 / 1 / 2 / 2",
-                gridRow: [4, 4, "unset"],
+                "@media (min-width: 800px)": {
+                  width: "255px",
+                  marginBottom: 0,
+                },
               }}
             >
-              {copyright && (
-                <Text sx={{ color: "white", fontSize: "0" }}>{copyright}</Text>
+              {phonenumber && (
+                <Box mb="24px">
+                  <Text variant="footerHeading2" sx={{ display: "block" }}>
+                    Phone
+                  </Text>
+
+                  <ThemeLink
+                    sx={{ textDecoration: "none", color: "white" }}
+                    href={`tel:${phonenumber}`}
+                  >
+                    {phonenumber}
+                  </ThemeLink>
+                </Box>
               )}
-              {disclaimer && (
-                <Text sx={{ color: "black50", fontSize: "0" }}>
-                  {disclaimer}
-                </Text>
+
+              {emailaddress && (
+                <Box mb="24px">
+                  <Text variant="footerHeading2" sx={{ display: "block" }}>
+                    Email
+                  </Text>
+
+                  <ThemeLink
+                    sx={{ textDecoration: "none", color: "coral" }}
+                    href={`mailto:${emailaddress}`}
+                  >
+                    {emailaddress}
+                  </ThemeLink>
+                </Box>
               )}
+
+              <Socials socials={{ instagram, facebook, youtube, twitter }} />
             </Box>
-            <Box sx={{ gridArea: ["3/1/4/5", "3/1/4/5", "1/3/3/4"] }}>
-              <Box>
-                {phonenumber && (
-                  <Box pt={2} sx={{ display: "grid" }}>
-                    <Text variant="footerHeading2">Phone</Text>
-                    <ThemeLink
-                      sx={{ textDecoration: "none", color: "white" }}
-                      href={`tel:${phonenumber}`}
-                    >
-                      {phonenumber}
-                    </ThemeLink>
-                  </Box>
-                )}
-                {emailaddress && (
-                  <Box pt={2} sx={{ display: "grid" }}>
-                    <Text variant="footerHeading2">Email</Text>
-                    <ThemeLink
-                      sx={{ textDecoration: "none", color: "coral" }}
-                      href={`mailto:${emailaddress}`}
-                    >
-                      {emailaddress}
-                    </ThemeLink>
-                  </Box>
-                )}
-                <Socials {...props} />
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
+
+            <LegalText copyright={copyright} disclaimer={disclaimer} mobile />
+          </Flex>
+        </Flex>
       </Edges>
     </Container>
   )
 }
 
-// const useFooterQuery = () => {
-//   const { wp } = useStaticQuery(
-//     graphql`
-//       query {
-//         wp {
-//           themeOptions {
-//             siteOptions {
-//               contact {
-//                 email
-//                 address
-//                 phone
-//               }
-//               company {
-//                 slogan
-//                 logo
-//               }
-//               socialMedia {
-//                 description
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
-//   return wp
-// }
+const FooterLogo = () => (
+  <Box
+    mr="24px"
+    sx={{
+      "> svg": {
+        width: "100%",
+        height: "auto",
+      },
+      ".logo-vert": {
+        display: "none",
+      },
+      ".logo-hor": {
+        marginBottom: "60px",
+      },
+
+      width: "160px",
+
+      "@media (min-width: 800px)": {
+        marginRight: "60px",
+        width: "35px",
+
+        ".logo-vert": {
+          display: "block",
+        },
+
+        ".logo-hor": {
+          display: "none",
+        },
+      },
+
+      "@media (min-width: 1100px)": {
+        marginRight: "120px",
+      },
+    }}
+  >
+    <LogoVertical className="logo-vert" />
+
+    <Logo className="logo-hor" />
+  </Box>
+)
+
+interface LegalTextProps {
+  copyright?: string
+  disclaimer?: string
+  mobile?: boolean
+}
+
+const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
+  const { copyright, disclaimer, mobile } = props
+
+  return (
+    <Box
+      aria-hidden={!!mobile}
+      sx={{
+        maxWidth: "477px",
+        display: mobile ? "block" : "none",
+        "@media (min-width: 800px)": {
+          display: mobile ? "none" : "block",
+        },
+      }}
+    >
+      {copyright && (
+        <Text sx={{ display: "block", color: "white", fontSize: "0" }}>
+          {copyright}
+        </Text>
+      )}
+
+      {disclaimer && (
+        <Text sx={{ display: "block", color: "black50", fontSize: "0" }}>
+          {disclaimer}
+        </Text>
+      )}
+    </Box>
+  )
+}
 
 export default Footer

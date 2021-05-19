@@ -11,7 +11,11 @@ import useMenuItems from "./useMenuItems"
 import { formatLink } from "../../utils"
 import theme from "../../theme"
 
-const MobileMenu = (props) => {
+interface Props {
+  items?: [any]
+}
+
+const MobileMenu: React.FC<Props> = (props: Props) => {
   const [
     {
       appState: { menu },
@@ -19,7 +23,9 @@ const MobileMenu = (props) => {
     dispatch,
   ] = useStore()
 
-  const items = useMenuItems("desktop-main-menu")
+  const { items } = props
+
+  console.log({ items })
 
   const [activeItems, setActiveItems] = useState([])
 
@@ -41,14 +47,14 @@ const MobileMenu = (props) => {
     <>
       <Menu {...props} menuState={menu}>
         {items &&
-          items.map(({ id, url, label, childItems, cssClasses }) => {
+          items.map(({ key: id, url, title, children }) => {
             return (
               <MenuItem key={id}>
-                {childItems && childItems.nodes.length ? (
+                {children?.length ? (
                   <>
                     {url === "#" ? (
                       <MenuLinkContainer onClick={() => handleArrowClick(id)}>
-                        {Parser(label)}
+                        {title && Parser(title)}
                         <ChevronContainer>
                           <ChevronDown />
                         </ChevronContainer>
@@ -60,7 +66,7 @@ const MobileMenu = (props) => {
                           activeStyle={{ color: theme.colors.primary }}
                           onClick={handleCloseMenu}
                         >
-                          {Parser(label)}
+                          {Parser(title)}
                         </MenuLink>
                         <ChevronContainer onClick={() => handleArrowClick(id)}>
                           <ChevronDown />
@@ -69,10 +75,10 @@ const MobileMenu = (props) => {
                     )}
 
                     <SubMenu
-                      className={`sub-menu ${cssClasses.join(" ")}`}
+                      className={`sub-menu`}
                       active={activeItems.includes(id)}
                     >
-                      {childItems.nodes.map((o, i) => {
+                      {children.map((o, i) => {
                         return (
                           <SubMenuLink
                             key={i}
@@ -80,7 +86,7 @@ const MobileMenu = (props) => {
                             activeClassName="active"
                             onClick={handleCloseMenu}
                           >
-                            {Parser(o.label)}
+                            {o?.title && Parser(o.title)}
                           </SubMenuLink>
                         )
                       })}
@@ -90,10 +96,9 @@ const MobileMenu = (props) => {
                   <MenuLink
                     to={formatLink(url)}
                     onClick={handleCloseMenu}
-                    activeStyle={{ color: theme.colors.primary }}
-                    className={cssClasses.join(" ")}
+                    activeStyle={{ color: "red" }}
                   >
-                    {Parser(label)}
+                    {title && Parser(title)}
                   </MenuLink>
                 )}
               </MenuItem>

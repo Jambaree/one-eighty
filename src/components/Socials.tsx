@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { graphql, useStaticQuery } from "gatsby"
-import { IconButton } from "theme-ui"
 
 // import app components
 import FacebookIcon from "../icons/facebook.svg"
@@ -9,13 +7,18 @@ import TwitterIcon from "../icons/twitter.svg"
 import InstagramIcon from "../icons/instagram.svg"
 import YoutubeIcon from "../icons/youtube.svg"
 
-const Socials = (props) => {
+interface Props {
+  socials?: {
+    instagram?: string
+    facebook?: string
+    youtube?: string
+    twitter?: string
+  }
+}
+
+const Socials: React.FC<Props> = (props: Props) => {
   const {
-    pageContext: {
-      themeOptions: {
-        footer: { instagram, facebook, youtube, twitter },
-      },
-    },
+    socials: { instagram, facebook, youtube, twitter },
   } = props
 
   return (
@@ -27,9 +30,7 @@ const Socials = (props) => {
           rel="noreferrer nofollow"
           aria-label="Facebook"
         >
-          <IconButton>
-            <FacebookIcon />
-          </IconButton>
+          <FacebookIcon />
         </Link>
       )}
 
@@ -40,9 +41,7 @@ const Socials = (props) => {
           rel="noreferrer nofollow"
           aria-label="Linkedin"
         >
-          <IconButton>
-            <InstagramIcon />
-          </IconButton>
+          <InstagramIcon />
         </Link>
       )}
 
@@ -53,9 +52,7 @@ const Socials = (props) => {
           rel="noreferrer nofollow"
           aria-label="Linkedin"
         >
-          <IconButton>
-            <YoutubeIcon />
-          </IconButton>
+          <YoutubeIcon />
         </Link>
       )}
 
@@ -66,9 +63,7 @@ const Socials = (props) => {
           rel="noreferrer nofollow"
           aria-label="Twitter"
         >
-          <IconButton>
-            <TwitterIcon />
-          </IconButton>
+          <TwitterIcon />
         </Link>
       )}
     </Container>
@@ -77,13 +72,12 @@ const Socials = (props) => {
 
 const Container = styled.div`
   display: flex;
-  transform: translateX(-10px);
 `
 
 const Link = styled.a`
   text-decoration: none;
   display: inline-block;
-  margin: 0 5px;
+  margin-right: 18px;
   cursor: pointer;
 
   svg {
@@ -95,27 +89,5 @@ const Link = styled.a`
     }
   }
 `
-
-// const useOptionsQuery = () => {
-//   const { wp } = useStaticQuery(
-//     graphql`
-//       query {
-//         wp {
-//           themeOptions {
-//             siteOptions {
-//               socialMedia {
-//                 facebook
-//                 instagram
-//                 twitter
-//                 youtube
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
-//   return wp
-// }
 
 export default Socials
