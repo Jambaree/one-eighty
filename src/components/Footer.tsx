@@ -31,14 +31,17 @@ const Footer = (props) => {
     <Container bg="charcoalDark">
       <Edges size="lg">
         <Flex
-          pt="91px"
-          pb="86px"
           sx={{
             flexWrap: "wrap",
             flexDirection: "column",
 
+            paddingTop: "60px",
+            paddingBottom: "60px",
+
             "@media (min-width: 800px)": {
               flexDirection: "row",
+              paddingTop: "91px",
+              paddingBottom: "86px",
             },
           }}
         >
@@ -56,40 +59,41 @@ const Footer = (props) => {
             }}
           >
             <Box mr="24px">
-              <Flex mb="37px" sx={{ flexWrap: "wrap" }}>
+              <Flex
+                mb="24px"
+                sx={{
+                  flexWrap: "wrap",
+                  flexDirection: "column",
+                  "@media (min-width: 800px)": {
+                    flexDirection: "row",
+                  },
+                }}
+              >
                 {footermenu &&
                   footermenu.map((o, i) => {
                     return (
-                      <ThemeLink key={i} href={o.url} color="white" mr="24px">
+                      <ThemeLink
+                        key={i}
+                        href={o.url}
+                        color="white"
+                        mr="24px"
+                        mb="21px"
+                      >
                         {o.title}
                       </ThemeLink>
                     )
                   })}
               </Flex>
 
-              <Box sx={{ maxWidth: "477px" }} mb="24px">
-                {copyright && (
-                  <Text
-                    sx={{ display: "block", color: "white", fontSize: "0" }}
-                  >
-                    {copyright}
-                  </Text>
-                )}
-
-                {disclaimer && (
-                  <Text
-                    sx={{ display: "block", color: "black50", fontSize: "0" }}
-                  >
-                    {disclaimer}
-                  </Text>
-                )}
-              </Box>
+              <LegalText copyright={copyright} disclaimer={disclaimer} />
             </Box>
 
             <Box
+              mb="55px"
               sx={{
                 "@media (min-width: 800px)": {
                   width: "255px",
+                  marginBottom: 0,
                 },
               }}
             >
@@ -125,6 +129,8 @@ const Footer = (props) => {
 
               <Socials socials={{ instagram, facebook, youtube, twitter }} />
             </Box>
+
+            <LegalText copyright={copyright} disclaimer={disclaimer} mobile />
           </Flex>
         </Flex>
       </Edges>
@@ -134,7 +140,7 @@ const Footer = (props) => {
 
 const FooterLogo = () => (
   <Box
-    mr={"24px"}
+    mr="24px"
     sx={{
       "> svg": {
         width: "100%",
@@ -144,7 +150,7 @@ const FooterLogo = () => (
         display: "none",
       },
       ".logo-hor": {
-        marginBottom: "24px",
+        marginBottom: "60px",
       },
 
       width: "160px",
@@ -172,5 +178,40 @@ const FooterLogo = () => (
     <Logo className="logo-hor" />
   </Box>
 )
+
+interface LegalTextProps {
+  copyright?: string
+  disclaimer?: string
+  mobile?: boolean
+}
+
+const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
+  const { copyright, disclaimer, mobile } = props
+
+  return (
+    <Box
+      aria-hidden={!!mobile}
+      sx={{
+        maxWidth: "477px",
+        display: mobile ? "block" : "none",
+        "@media (min-width: 800px)": {
+          display: mobile ? "none" : "block",
+        },
+      }}
+    >
+      {copyright && (
+        <Text sx={{ display: "block", color: "white", fontSize: "0" }}>
+          {copyright}
+        </Text>
+      )}
+
+      {disclaimer && (
+        <Text sx={{ display: "block", color: "black50", fontSize: "0" }}>
+          {disclaimer}
+        </Text>
+      )}
+    </Box>
+  )
+}
 
 export default Footer
