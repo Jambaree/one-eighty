@@ -1,16 +1,14 @@
-import React, { useEffect } from "react"
-import { Link } from "gatsby"
+import React, { useEffect, useState } from "react"
 import HamburgerMenu from "react-hamburger-menu"
-import { Container, Box, Flex } from "theme-ui"
+import { Themed, Container, Box, Flex, Link } from "theme-ui"
+import { Close } from "mdi-material-ui"
 
 // import app components
 import Edges from "./Edges"
-import Button from "./Button"
-import Avatar from "./Avatar"
-import Search from "./Search"
 import { useStore } from "../store"
-import theme from "../theme"
+// import theme from "../theme"
 import Logo from "../icons/logo.svg"
+import ChevronDown from "../icons/chevron-down.svg"
 
 const Header = (props) => {
   const {
@@ -21,8 +19,6 @@ const Header = (props) => {
       },
     },
   } = props
-
-  console.log(menu)
 
   const [
     {
@@ -36,18 +32,21 @@ const Header = (props) => {
     dispatch({ type: "SET_MENU", payload: false })
   }, [path, dispatch])
 
+  const [headerMenu, setHeaderMenu] = useState(false)
+
   return (
     <>
       <Container
-        bg="background"
-        p="10px 0"
+        bg="white"
         sx={{
-          height: `${({ theme: { headerHeight } }) => headerHeight}px`,
+          height: 94,
           position: "fixed",
           left: 0,
           top: 0,
           width: ["100%", "100%", "100%"],
           zIndex: "999",
+          display: "flex",
+          alignItems: "center",
         }}
       >
         <Edges size="lg">
@@ -55,87 +54,136 @@ const Header = (props) => {
             sx={{
               alignItems: "center",
               justifyContent: "space-between",
-              ".desktop-menu": {
-                "@media (max-width: 959px)": {
-                  display: "none",
-                },
-              },
             }}
           >
             <Box
               pr={2}
-              sx={{ textDecoration: "none", svg: { height: "60px" } }}
+              sx={{
+                textDecoration: "none",
+                ".a": { fill: "charcoalDark" },
+                svg: { height: "60px" },
+              }}
             >
-              <Link
-                to="/"
-                onClick={() => dispatch({ type: "SET_MENU", payload: false })}
-              >
-                <Logo />
-              </Link>
-            </Box>
-            <Box>
-              <Search />
+              <Logo style={{ height: "30px" }} />
             </Box>
 
-            <Flex sx={{ alignItems: "center" }}>
+            <Flex
+              sx={{
+                alignItems: "center",
+                width: ["unset", "unset", "20%"],
+                justifyContent: "space-between",
+
+                "@media (max-width: 959px)": {
+                  display: "none",
+                },
+              }}
+            >
               {menu &&
-                menu.map((o, i) => {
+                menu.map(({ title, children }, i) => {
                   return (
-                    <li key={i}>
-                      <Link to={o.url} aria-label={o.title} title={o.title}>
-                        {o.title}
-                      </Link>
-                    </li>
+                    <Box
+                      key={i}
+                      sx={{
+                        position: "relative",
+                        height: 94,
+                        display: "flex",
+                        alignItems: "center",
+                        listStyleType: "none",
+                        "&:before": {
+                          content: "''",
+                          display: headerMenu === i ? "block" : "none",
+                          position: "absolute",
+                          bottom: 0,
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          height: 10,
+                          width: 40,
+                          zIndex: 1,
+                          backgroundColor: "coral",
+                        },
+                      }}
+                    >
+                      <span
+                        onClick={() =>
+                          setHeaderMenu(headerMenu === i ? null : i)
+                        }
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "center",
+                        }}
+                      >
+                        {title}
+                        <ChevronDown />
+                      </span>
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          display: headerMenu === i ? "flex" : "none",
+                          flexDirection: "column",
+                          backgroundColor: "charcoalDark",
+                          top: 94,
+                          pb: 40,
+                          minWidth: 400,
+                          width: "auto",
+                          right: 0,
+
+                          a: {
+                            fontFamily: "heading",
+                          },
+                          "a:hover": {
+                            color: "coral",
+                          },
+                        }}
+                      >
+                        <li
+                          style={{
+                            margin: "6px 6px 6px auto",
+                            color: "coral",
+                          }}
+                        >
+                          <Close
+                            onClick={() =>
+                              setHeaderMenu(headerMenu === i ? null : i)
+                            }
+                          />
+                        </li>
+                        {children &&
+                          children.map((child, j) => (
+                            <Link
+                              key={j}
+                              href={child.url}
+                              aria-label={child.title}
+                              title={child.title}
+                              variant="clickListMenu"
+                              sx={{ p: "16px 80px" }}
+                            >
+                              {child.title}
+                            </Link>
+                          ))}
+                      </Box>
+                    </Box>
                   )
                 })}
-
-              <div
-                onClick={() =>
-                  dispatch({
-                    type: "SET_MODAL",
-                    payload: { headline: "Testing", text: "Testing text" },
-                  })
-                }
-              >
-                Modal
-              </div>
-              {!isLoggedIn ? (
-                <Box>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    children="Login"
-                    ml={20}
-                    onClick={() =>
-                      dispatch({
-                        type: "SET_LOGIN_DIALOG",
-                        payload: true,
-                      })
-                    }
-                  />
-                </Box>
-              ) : (
-                user && <Avatar {...{ user, dispatch }} />
-              )}
-              <Box
-                sx={{
-                  transform: "translateX(15px)",
-                  cursor: "pointer",
-                  "@media (min-width: 960px)": { display: "none" },
-                }}
-                p={15}
-                onClick={() => dispatch({ type: "TOGGLE_MENU" })}
-              >
-                <HamburgerMenu
-                  color={theme.colors.primary}
-                  isOpen={menuActive}
-                  width={26}
-                  height={15}
-                  strokeWidth={2}
-                  menuClicked={() => ""}
-                />
-              </Box>
             </Flex>
+            <Box
+              sx={{
+                transform: "translateX(15px)",
+                cursor: "pointer",
+                "@media (min-width: 960px)": { display: "none" },
+              }}
+              p={15}
+              onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+            >
+              <HamburgerMenu
+                color={"coral"}
+                isOpen={menuActive}
+                width={26}
+                height={15}
+                strokeWidth={2}
+                menuClicked={() => ""}
+              />
+            </Box>
           </Flex>
         </Edges>
       </Container>

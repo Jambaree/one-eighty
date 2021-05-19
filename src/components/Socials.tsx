@@ -10,21 +10,18 @@ import InstagramIcon from "../icons/instagram.svg"
 import YoutubeIcon from "../icons/youtube.svg"
 
 const Socials = (props) => {
-  const { color } = props
-
-  // const {
-  //   themeOptions: {
-  //     siteOptions: {
-  //       socialMedia: { facebook, instagram, twitter, youtube },
-  //     },
-  //   },
-  // } = useOptionsQuery()
+  const {
+    pageContext: {
+      themeOptions: {
+        footer: { instagram, facebook, youtube, twitter },
+      },
+    },
+  } = props
 
   return (
     <Container>
-      {/* {facebook && (
+      {facebook && (
         <Link
-          color={color}
           href={facebook}
           target="_blank"
           rel="noreferrer nofollow"
@@ -38,7 +35,6 @@ const Socials = (props) => {
 
       {instagram && (
         <Link
-          color={color}
           href={instagram}
           target="_blank"
           rel="noreferrer nofollow"
@@ -52,7 +48,6 @@ const Socials = (props) => {
 
       {youtube && (
         <Link
-          color={color}
           href={youtube}
           target="_blank"
           rel="noreferrer nofollow"
@@ -66,7 +61,6 @@ const Socials = (props) => {
 
       {twitter && (
         <Link
-          color={color}
           href={twitter}
           target="_blank"
           rel="noreferrer nofollow"
@@ -76,7 +70,7 @@ const Socials = (props) => {
             <TwitterIcon />
           </IconButton>
         </Link>
-      )} */}
+      )}
     </Container>
   )
 }

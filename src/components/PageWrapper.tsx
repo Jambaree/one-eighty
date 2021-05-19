@@ -12,13 +12,13 @@ import Modal from "./Modal"
 const Layout = (props) => {
   useAuthServices(props?.location?.pathname)
 
-  console.log(props)
-
   return (
     <>
       <Container
         pt={`${({ theme: { headerHeight } }) => headerHeight}px`}
-        sx={{ justifyContent: "center" }}
+        sx={{
+          justifyContent: "center",
+        }}
       >
         <Header {...props} />
         <Box
@@ -31,7 +31,7 @@ const Layout = (props) => {
         >
           {props?.children}
         </Box>
-        <Footer />
+        <Footer {...props} />
       </Container>
       <LightBox />
       <LoginDialog />

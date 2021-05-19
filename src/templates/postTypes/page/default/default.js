@@ -4,9 +4,13 @@ import { graphql } from "gatsby"
 // import app components
 import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
+import hero from "../../../../components/hero/Hero"
+// import introduction from "../../../../components/introduction/Introduction"
 
 const blocks = {
   textimage,
+  hero,
+  // introduction,
 }
 
 const Template = (props) => {
@@ -39,11 +43,51 @@ export const CollectionQuery = graphql`
       title
       slug
       uri
-      #template {
-      #  ... on WpDefaultTemplate {
-      #
-      #  }
-      #}
+      template {
+        ... on WpDefaultTemplate {
+          templateName
+          acf {
+            content {
+              flex {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Hero {
+                  fieldGroupName
+                  headline
+                  image {
+                    id
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                  link {
+                    target
+                    title
+                    url
+                  }
+                  text
+                }
+
+                ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
+                  alignment
+                  fieldGroupName
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                  text
+                }
+              }
+            }
+            fieldGroupName
+          }
+        }
+      }
     }
   }
 `

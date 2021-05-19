@@ -1,40 +1,31 @@
 import React from "react"
-import {
-  Container,
-  Flex,
-  Box,
-  Grid,
-  Text,
-  Divider,
-  Link as ThemeLink,
-} from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
-import Parser from "html-react-parser"
+import { Container, Box, Grid, Text, Link as ThemeLink } from "theme-ui"
 
 // import app components
 import Edges from "./Edges"
 import Socials from "./Socials"
-import FooterMenu from "./menu/FooterMenu"
 import Logo from "../icons/logo.svg"
-import themeUi from "../gatsby-plugin-theme-ui"
 
-const Footer = () => {
-  // const {
-  //   themeOptions: {
-  //     siteOptions: {
-  //       contact: { email, address, phone },
-  //       company: { slogan },
-  //       socialMedia: { description },
-  //     },
-  //   },
-  // } = useFooterQuery()
-
-  const currentYear = new Date().getFullYear()
+const Footer = (props) => {
+  const {
+    pageContext: {
+      themeOptions: {
+        footer: {
+          emailaddress,
+          footermenu,
+          image,
+          phonenumber,
+          copyright,
+          disclaimer,
+        },
+      },
+    },
+  } = props
 
   return (
-    <Container p={4} bg="muted">
+    <Container p={4} bg="charcoalDark">
       <Edges size="xlg">
-        {/* <Grid pb={4} gap={2} columns={[1, "2fr 2fr"]}>
+        <Grid pb={4} gap={3} columns={["12fr", "12fr", "2fr 10fr"]}>
           <Box
             sx={{
               width: ["100%", "75%", "50%"],
@@ -43,93 +34,95 @@ const Footer = () => {
             <Box
               sx={{
                 width: ["40%", "40%", "40%"],
+                ".a": { fill: "white" },
               }}
             >
-              <Logo />
+              <Box
+                sx={{
+                  transform: ["rotate(0)", "rotate(0)", "rotate(270deg)"],
+                  transformOrigin: "right",
+                  height: "auto",
+                  width: 120,
+                }}
+              >
+                <Logo />
+              </Box>
             </Box>
             <br />
-            {slogan && <Text>{Parser(slogan)}</Text>}
           </Box>
 
-          <Grid columns={[1, "1fr 1fr"]}>
-            <Box>
-              <Text
+          <Grid columns={["12fr", "12fr", "3fr 1fr"]}>
+            <Box sx={{ display: "grid" }}>
+              <Box
                 sx={{
-                  fontSize: 2,
-                  fontWeight: "bold",
+                  display: "grid",
+                  gridTemplateColumns: ["12fr", "12fr", "1fr 1fr 1fr 1fr"],
+                  width: "50%",
+                  gridArea: "1 / 1 / 2 / 4",
                 }}
               >
-                Contacts
-              </Text>
-              {phone && (
-                <Box pt={2}>
-                  Phone:{" "}
-                  <ThemeLink
-                    sx={{ textDecoration: "none" }}
-                    href={`tel:${phone}`}
-                  >
-                    {Parser(phone)}
-                  </ThemeLink>
-                </Box>
+                {footermenu &&
+                  footermenu.map((o, i) => {
+                    return (
+                      <ThemeLink
+                        key={i}
+                        href={o.url}
+                        sx={{
+                          color: "white",
+                          m: ["12px 0", "12px 0", "0 36px 0 0"],
+                        }}
+                      >
+                        {o.title}
+                      </ThemeLink>
+                    )
+                  })}
+              </Box>
+            </Box>
+            <Box
+              className="legal"
+              sx={{
+                display: "grid",
+                gridArea: "2 / 1 / 2 / 2",
+                gridRow: [4, 4, "unset"],
+              }}
+            >
+              {copyright && (
+                <Text sx={{ color: "white", fontSize: "0" }}>{copyright}</Text>
               )}
-              {email && (
-                <Box pt={2}>
-                  Email:{" "}
-                  <ThemeLink
-                    sx={{ textDecoration: "none" }}
-                    href={`mailto:${email}`}
-                  >
-                    {Parser(email)}
-                  </ThemeLink>
-                </Box>
-              )}
-              {address && (
-                <Box pt={2}>
-                  Address:{" "}
-                  <ThemeLink sx={{ textDecoration: "none" }} href={address}>
-                    {Parser(address)}
-                  </ThemeLink>
-                </Box>
+              {disclaimer && (
+                <Text sx={{ color: "black50", fontSize: "0" }}>
+                  {disclaimer}
+                </Text>
               )}
             </Box>
-            <Box>
-              <Text
-                sx={{
-                  fontSize: 2,
-                  fontWeight: "bold",
-                }}
-              >
-                Social
-              </Text>
-
-              <Socials color={themeUi.colors.textLight} />
-              {description && (
-                <Text color="textLight">{Parser(description)}</Text>
-              )}
+            <Box sx={{ gridArea: ["3/1/4/5", "3/1/4/5", "1/3/3/4"] }}>
+              <Box>
+                {phonenumber && (
+                  <Box pt={2} sx={{ display: "grid" }}>
+                    <Text variant="footerHeading2">Phone</Text>
+                    <ThemeLink
+                      sx={{ textDecoration: "none", color: "white" }}
+                      href={`tel:${phonenumber}`}
+                    >
+                      {phonenumber}
+                    </ThemeLink>
+                  </Box>
+                )}
+                {emailaddress && (
+                  <Box pt={2} sx={{ display: "grid" }}>
+                    <Text variant="footerHeading2">Email</Text>
+                    <ThemeLink
+                      sx={{ textDecoration: "none", color: "coral" }}
+                      href={`mailto:${emailaddress}`}
+                    >
+                      {emailaddress}
+                    </ThemeLink>
+                  </Box>
+                )}
+                <Socials {...props} />
+              </Box>
             </Box>
           </Grid>
-        </Grid> */}
-
-        <Divider />
-
-        <Grid color="textLight" columns={[1, "1fr 1fr"]}>
-          <Box pt={3}>
-            {`Copyright ${currentYear} Lorem Inc. All rights reserved.`}
-          </Box>
-
-          <Flex
-            sx={{
-              justifyContent: "flex-end",
-              "@media screen and (max-width: 40rem)": {
-                justifyContent: "flex-start",
-                flexDirection: "column",
-              },
-            }}
-          >
-            <Box>
-              <FooterMenu />
-            </Box>
-          </Flex>
         </Grid>
       </Edges>
     </Container>

@@ -9,3 +9,4 @@ yarn-error.log
 *.zip
 .eslintrc
 .wordpress-cache
+.env.development

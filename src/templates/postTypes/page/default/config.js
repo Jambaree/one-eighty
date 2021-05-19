@@ -1,5 +1,6 @@
 // import fleixble content blocks
 import textimage from "../../../../components/textImage/config"
+import hero from "../../../../components/hero/config"
 
 const config = {
   id: "default",
@@ -21,9 +22,14 @@ const config = {
           type: "flexible_content",
           items: Object.values({
             textimage,
+            hero,
           }),
         },
       ],
+    },
+    {
+      id: "footer",
+      global: true,
     },
   ],
 }
