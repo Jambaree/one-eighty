@@ -2,6 +2,7 @@
 import textimage from "../../../../components/textImage/config"
 import hero from "../../../../components/hero/config"
 import introduction from "../../../../components/introduction/config"
+import cards from "../../../../components/cards/config"
 
 const config = {
   id: "default",
@@ -25,6 +26,7 @@ const config = {
             textimage,
             hero,
             introduction,
+            cards,
           }),
         },
       ],
