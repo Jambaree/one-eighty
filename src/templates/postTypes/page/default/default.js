@@ -9,6 +9,7 @@ import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
+import benefits from "../../../../components/benefits/Benefits"
 
 const blocks = {
   textimage,
@@ -16,6 +17,7 @@ const blocks = {
   introduction,
   cards,
   testimonialslider,
+  benefits,
 }
 
 const Template = (props) => {

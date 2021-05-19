@@ -60,9 +60,17 @@ const themeUi = {
       color: "charcoal",
     },
     introduction: {
+      fontFamily: "body",
       fontSize: 3,
       fontWeight: "light",
       letterSpacing: "-0.27px",
+      color: "black75",
+    },
+    paragraph: {
+      fontFamily: "body",
+      fontSize: 2,
+      fontWeight: "light",
+      letterSpacing: "-0.23px",
       color: "black75",
     },
     footerHeading1: {

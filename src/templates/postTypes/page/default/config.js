@@ -4,6 +4,7 @@ import hero from "../../../../components/hero/config"
 import introduction from "../../../../components/introduction/config"
 import cards from "../../../../components/cards/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
+import benefits from "../../../../components/benefits/config"
 
 const config = {
   id: "default",
@@ -29,6 +30,7 @@ const config = {
             introduction,
             cards,
             testimonialslider,
+            benefits,
           }),
         },
       ],
