@@ -1,8 +1,7 @@
 import React from "react"
-import { Box, Heading } from "theme-ui"
+import { Box, Heading, Text } from "theme-ui"
 
 // import app components
-import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
 import Edges from "../Edges"
 import Button from "../Button"
@@ -36,7 +35,7 @@ const TextImage = (props) => {
             order: 1,
             top: [null, null, 0],
             bottom: [null, null, 0],
-            my: 24,
+            m: 24,
           }}
         >
           {image && (
@@ -65,14 +64,15 @@ const TextImage = (props) => {
               />
             )}
             {text && (
-              <Textarea
-                content={text}
-                style={{
+              <Text
+                children={text}
+                variant="text.paragraph"
+                sx={{
                   paddingBottom: 36,
                 }}
               />
             )}
-            {link && (
+            {link?.url && (
               <Button variant="primary" to={link.url}>
                 {link.title}
               </Button>
