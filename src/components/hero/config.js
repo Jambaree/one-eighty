@@ -8,6 +8,11 @@ const config = {
       label: "Image",
     },
     {
+      id: "mobileimage",
+      type: "image",
+      label: "Mobile Image",
+    },
+    {
       id: "headline",
       type: "text",
       label: "Headline",

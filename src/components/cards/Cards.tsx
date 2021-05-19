@@ -8,7 +8,6 @@ import BackgroundImage from "../BackgroundImage"
 
 const Cards = (props) => {
   const { columns, headline, subheading, cards } = props
-  console.log(props)
 
   return (
     <Box sx={{ bg: "almondLight", py: [90, 164, 164] }}>
@@ -48,6 +47,7 @@ const Cards = (props) => {
               sx={{
                 mb: [41, 24, 24],
                 width: ["65%", "100%", "100%"],
+                zIndex: 1,
               }}
             />
           )}
