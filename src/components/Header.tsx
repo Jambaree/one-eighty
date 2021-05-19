@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import HamburgerMenu from "react-hamburger-menu"
-import { Themed, Container, Box, Flex, Link } from "theme-ui"
-import { Close } from "mdi-material-ui"
+import { Container, Box, Flex } from "theme-ui"
+
+import Link from "./Link"
 
 // import app components
 import Edges from "./Edges"
+import DesktopMenu from "./menu/DesktopMenu"
+import MobileMenu from "./menu/MobileMenu"
+
 import { useStore } from "../store"
-// import theme from "../theme"
+
 import Logo from "../icons/logo.svg"
-import ChevronDown from "../icons/chevron-down.svg"
 
 const Header = (props) => {
   const {
@@ -31,8 +34,6 @@ const Header = (props) => {
   useEffect(() => {
     dispatch({ type: "SET_MENU", payload: false })
   }, [path, dispatch])
-
-  const [headerMenu, setHeaderMenu] = useState(false)
 
   return (
     <>
@@ -64,108 +65,14 @@ const Header = (props) => {
                 svg: { height: "60px" },
               }}
             >
-              <Logo style={{ height: "30px" }} />
+              <Link to="/">
+                <Logo style={{ height: "auto", width: "160px" }} />
+              </Link>
             </Box>
 
-            <Flex
-              sx={{
-                alignItems: "center",
-                width: ["unset", "unset", "20%"],
-                justifyContent: "space-between",
+            <DesktopMenu items={menu} />
+            <MobileMenu items={menu} />
 
-                "@media (max-width: 959px)": {
-                  display: "none",
-                },
-              }}
-            >
-              {menu &&
-                menu.map(({ title, children }, i) => {
-                  return (
-                    <Box
-                      key={i}
-                      sx={{
-                        position: "relative",
-                        height: 94,
-                        display: "flex",
-                        alignItems: "center",
-                        listStyleType: "none",
-                        "&:before": {
-                          content: "''",
-                          display: headerMenu === i ? "block" : "none",
-                          position: "absolute",
-                          bottom: 0,
-                          left: "50%",
-                          transform: "translateX(-50%)",
-                          height: 10,
-                          width: 40,
-                          zIndex: 1,
-                          backgroundColor: "coral",
-                        },
-                      }}
-                    >
-                      <span
-                        onClick={() =>
-                          setHeaderMenu(headerMenu === i ? null : i)
-                        }
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                        }}
-                      >
-                        {title}
-                        <ChevronDown />
-                      </span>
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          display: headerMenu === i ? "flex" : "none",
-                          flexDirection: "column",
-                          backgroundColor: "charcoalDark",
-                          top: 94,
-                          pb: 40,
-                          minWidth: 400,
-                          width: "auto",
-                          right: 0,
-
-                          a: {
-                            fontFamily: "heading",
-                          },
-                          "a:hover": {
-                            color: "coral",
-                          },
-                        }}
-                      >
-                        <li
-                          style={{
-                            margin: "6px 6px 6px auto",
-                            color: "coral",
-                          }}
-                        >
-                          <Close
-                            onClick={() =>
-                              setHeaderMenu(headerMenu === i ? null : i)
-                            }
-                          />
-                        </li>
-                        {children &&
-                          children.map((child, j) => (
-                            <Link
-                              key={j}
-                              href={child.url}
-                              aria-label={child.title}
-                              title={child.title}
-                              variant="clickListMenu"
-                              sx={{ p: "16px 80px" }}
-                            >
-                              {child.title}
-                            </Link>
-                          ))}
-                      </Box>
-                    </Box>
-                  )
-                })}
-            </Flex>
             <Box
               sx={{
                 transform: "translateX(15px)",
