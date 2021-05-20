@@ -15,7 +15,7 @@ const isUrlExternal = (link) => {
   }
 }
 
-const Link = ({ to, ...rest }) => {
+const Link = ({ to, activeStyle, ...rest }) => {
   if (!to || to === null || to === 0) {
     return (
       <div style={{ textDecoration: "none", color: "inherit" }} {...rest} />
@@ -35,6 +35,7 @@ const Link = ({ to, ...rest }) => {
       <GatsbyLink
         style={{ textDecoration: "none", color: "inherit" }}
         to={decodeURI(formatLink(to))}
+        activeStyle={activeStyle}
         {...rest}
       />
     )

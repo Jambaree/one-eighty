@@ -27,6 +27,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "dotenv": "^9.0.2",
     "excerpt-html": "^1.2.2",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.5.0",
     "gatsby-cli": "^3.5.0",
     "gatsby-image": "^3.5.0",

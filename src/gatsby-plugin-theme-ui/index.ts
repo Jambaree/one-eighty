@@ -70,12 +70,31 @@ const themeUi = {
       color: "white",
       fontWeight: "medium",
       letterSpacing: "-0.15px",
+      fontFamily: "body",
     },
     footerHeading2: {
       fontSize: 0,
       letterSpacing: "-0.12px",
       color: "black50",
+      fontFamily: "body",
     },
+    desktopSubMenuItem: {
+      fontSize: 7,
+      fontFamily: "body",
+      fontWeight: "light",
+      letterSpacing: "-0.9px",
+      color: "almond",
+    },
+    mobileMenuItem:{
+      fontFamily: "body",
+      fontSize: 2,
+      fontWeight: "medium"
+    },
+    mobileSubMenuItem:{
+      fontFamily: "body",
+      fontSize: 2,
+      fontWeight:"light"
+    }
   },
   buttons: {
     primary: {
@@ -92,10 +111,13 @@ const themeUi = {
         bg: "black25",
       },
     },
-    // secondary: {
-    //   color: "background",
-    //   bg: "secondary",
-    // },
+    navButton:{
+      bg:"transparent",
+      color: "#1C1C1C",
+      fontSize: 3,
+      fontFamily: "body",
+      lineHeight: "body",
+    },
     icon: {
       color: "coral",
     },
@@ -103,6 +125,7 @@ const themeUi = {
   links: {
     clickListMenu: {
       fontSize: 7,
+      fontFamily: "body",
       fontWeight: "light",
       letterSpacing: "-0.9px",
       color: "almond",

@@ -192,7 +192,7 @@ const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
     <Box
       aria-hidden={!!mobile}
       sx={{
-        maxWidth: "477px",
+        maxWidth: "520px",
         display: mobile ? "block" : "none",
         "@media (min-width: 800px)": {
           display: mobile ? "none" : "block",
@@ -200,13 +200,27 @@ const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
       }}
     >
       {copyright && (
-        <Text sx={{ display: "block", color: "white", fontSize: "0" }}>
+        <Text
+          sx={{
+            fontFamily: "body",
+            display: "block",
+            color: "white",
+            fontSize: "0",
+          }}
+        >
           {copyright}
         </Text>
       )}
 
       {disclaimer && (
-        <Text sx={{ display: "block", color: "black50", fontSize: "0" }}>
+        <Text
+          sx={{
+            fontFamily: "body",
+            display: "block",
+            color: "black50",
+            fontSize: "0",
+          }}
+        >
           {disclaimer}
         </Text>
       )}

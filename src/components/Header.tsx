@@ -48,6 +48,7 @@ const Header = (props) => {
           zIndex: "999",
           display: "flex",
           alignItems: "center",
+          borderBottom: "1px solid #D3D3D3",
         }}
       >
         <Edges size="lg">
@@ -71,19 +72,18 @@ const Header = (props) => {
             </Box>
 
             <DesktopMenu items={menu} />
-            <MobileMenu items={menu} />
 
             <Box
               sx={{
                 transform: "translateX(15px)",
                 cursor: "pointer",
-                "@media (min-width: 960px)": { display: "none" },
+                "@media (min-width: 1024px)": { display: "none" },
               }}
               p={15}
               onClick={() => dispatch({ type: "TOGGLE_MENU" })}
             >
               <HamburgerMenu
-                color={"coral"}
+                color={menuActive ? "coral" : "#2D4052"}
                 isOpen={menuActive}
                 width={26}
                 height={15}
@@ -91,6 +91,8 @@ const Header = (props) => {
                 menuClicked={() => ""}
               />
             </Box>
+
+            <MobileMenu items={menu} />
           </Flex>
         </Edges>
       </Container>
