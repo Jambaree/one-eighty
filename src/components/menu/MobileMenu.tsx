@@ -104,9 +104,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                   <MenuLink
                     to={formatLink(url)}
                     onClick={handleCloseMenu}
-                    activeStyle={{ color: "red" }}
+                    activeStyle={{ color: theme.colors.coral }}
                   >
-                    {title && Parser(title)}
+                    <Text color="inherit" variant="mobileMenuItem">
+                      {title && Parser(title)}
+                    </Text>
                   </MenuLink>
                 )}
               </MenuItem>
@@ -208,6 +210,7 @@ const MenuItem = styled.div`
 
 const MenuLink = styled(Link)`
   ${item};
+  color: #fff;
   &:hover {
     color: ${theme.colors.coral};
   }
