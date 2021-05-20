@@ -1,7 +1,12 @@
 import React from "react"
 import { Container } from "theme-ui"
 
-const Edges = (props) => {
+interface Props {
+  size?: "sm" | "md" | "lg"
+  children?: any
+}
+
+const Edges = (props: Props) => {
   const { size } = props
 
   return (
