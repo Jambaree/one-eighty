@@ -79,7 +79,7 @@ const Footer = (props) => {
                         mr="24px"
                         mb="21px"
                       >
-                        {o.title}
+                        <Text sx={{ fontFamily: "body" }}>{o.title}</Text>
                       </ThemeLink>
                     )
                   })}
@@ -204,7 +204,7 @@ const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
             fontFamily: "body",
             display: "block",
             color: "white",
-            fontSize: "0",
+            fontSize: 0,
           }}
         >
           {copyright}
@@ -217,7 +217,7 @@ const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
             fontFamily: "body",
             display: "block",
             color: "black50",
-            fontSize: "0",
+            fontSize: 0,
           }}
         >
           {disclaimer}
