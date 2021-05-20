@@ -60,18 +60,21 @@ const themeUi = {
       color: "charcoal",
     },
     introduction: {
+      fontFamily: "body",
       fontSize: 3,
       fontWeight: "light",
       letterSpacing: "-0.27px",
       color: "black75",
     },
     footerHeading1: {
+      fontFamily: "body",
       fontSize: 2,
       color: "white",
       fontWeight: "medium",
       letterSpacing: "-0.15px",
     },
     footerHeading2: {
+      fontFamily: "body",
       fontSize: 0,
       letterSpacing: "-0.12px",
       color: "black50",
@@ -79,11 +82,17 @@ const themeUi = {
   },
   buttons: {
     primary: {
+      fontFamily: "body",
+      fontSize: 3,
+      letterSpacing: "-0.18px",
       color: "white",
       bg: "coral",
       borderRadius: 6,
+      width: 240,
+      height: 48,
       "&:hover": {
         bg: "coral",
+        boxShadow: "0px 10px 20px #00000029",
       },
       "&:focus": {
         bg: "coralLight",
@@ -119,6 +128,7 @@ const themeUi = {
       },
     },
     clickListMenu: {
+      fontFamily: "body",
       fontSize: 9,
       fontWeight: "light",
       letterSpacing: "-0.9px",
