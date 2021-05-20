@@ -17,7 +17,7 @@ const Hero = (props) => {
         position: "relative",
         minHeight: "calc(100vh - 94px)",
         height: "auto",
-        mt: 24,
+        mt: [60, 24, 24],
         mb: [98, 0, 160],
       }}
     >
@@ -58,11 +58,7 @@ const Hero = (props) => {
           }}
         >
           {headline && (
-            <Heading
-              variant="styles.h1"
-              sx={{ fontWeight: "heading", mb: "4" }}
-              children={headline}
-            />
+            <Heading variant="styles.h1" sx={{ mb: "4" }} children={headline} />
           )}
           {text && (
             <Text variant="introduction" children={text} sx={{ mb: "4" }} />

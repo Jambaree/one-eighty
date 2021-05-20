@@ -60,9 +60,17 @@ const themeUi = {
       color: "charcoal",
     },
     introduction: {
+      fontFamily: "body",
       fontSize: 3,
       fontWeight: "light",
       letterSpacing: "-0.27px",
+      color: "black75",
+    },
+    paragraph: {
+      fontFamily: "body",
+      fontSize: 2,
+      fontWeight: "light",
+      letterSpacing: "-0.23px",
       color: "black75",
     },
     footerHeading1: {
@@ -134,6 +142,7 @@ const themeUi = {
     h1: {
       variant: "text.heading",
       fontSize: 11,
+      fontWeight: "heading",
       letterSpacing: "-1.63px",
       "@media (max-width: 767px)": {
         fontSize: 9,
@@ -151,9 +160,6 @@ const themeUi = {
       variant: "text.heading",
       fontSize: 8,
       letterSpacing: "-.64px",
-      "@media (max-width: 767px)": {
-        fontSize: 4,
-      },
     },
     p: {
       fontSize: 1,
@@ -167,6 +173,8 @@ const themeUi = {
     h5: {
       variant: "text.heading",
       fontSize: 4,
+      letterSpacing: "-0.64px",
+      lineHeight: "32px",
     },
     h6: {
       variant: "text.heading",
