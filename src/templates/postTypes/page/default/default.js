@@ -7,12 +7,14 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
+import textform from "../../../../components/textForm/TextForm"
 
 const blocks = {
   textimage,
   hero,
   introduction,
   cards,
+  textform,
 }
 
 const Template = (props) => {
