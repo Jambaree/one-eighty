@@ -59,7 +59,7 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(width: 1920)
                       }
                     }
                   }
@@ -82,7 +82,7 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(width: 1920)
                       }
                     }
                   }
@@ -98,7 +98,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData
+                          gatsbyImageData(width: 1920)
                         }
                       }
                     }
