@@ -44,7 +44,11 @@ const Cards = (props) => {
             <Heading
               children={headline}
               variant="styles.h2"
-              sx={{ mb: [41, 24, 24], width: ["65%", "100%", "100%"] }}
+              sx={{
+                mb: [41, 24, 24],
+                width: ["65%", "100%", "100%"],
+                zIndex: 1,
+              }}
             />
           )}
           {subheading && (
@@ -89,7 +93,10 @@ const Cards = (props) => {
                       <Heading
                         children={o.headline}
                         variant="styles.h3"
-                        sx={{ mb: 12, mt: 36 }}
+                        sx={{
+                          mb: 12,
+                          mt: 36,
+                        }}
                       />
                     )}
                     {o.text && (

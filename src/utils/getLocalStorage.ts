@@ -4,13 +4,12 @@ import isBrowser from "./isBrowser"
  * @param {string} key
  */
 
-const getLocalStorage = key => {
+const getLocalStorage = (key) => {
   if (!isBrowser) {
     return
   }
 
   if (!key) {
-    console.warn("getLocalStorage requires a key!")
     return
   }
 

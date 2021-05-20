@@ -1,152 +1,129 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
-import Parser from "html-react-parser"
-import { Box } from "theme-ui"
+import React, { useState } from "react"
+import { Box, Flex, Text } from "theme-ui"
 
-// import app components
-import useMenuItems from "./useMenuItems"
-import theme from "../../theme"
-import { formatLink } from "../../utils"
+import { Close } from "mdi-material-ui"
+
+import Link from "../Link"
+
 import ChevronDown from "../../icons/chevron-down.svg"
 
-const DesktopMenu = (props) => {
-  const items = useMenuItems("desktop-main-menu")
-
-  return (
-    <Menu {...props}>
-      {items &&
-        items.map(({ id, url, label, childItems }) => (
-          <MenuItem key={id}>
-            <Box>
-              {childItems && childItems.nodes.length ? (
-                <>
-                  {url === "#" ? (
-                    <MenuLinkContainer>
-                      {Parser(label)}
-                      <ChevronDown />
-                    </MenuLinkContainer>
-                  ) : (
-                    <MenuLink
-                      to={formatLink(url)}
-                      activeStyle={{ color: theme.colors.primary }}
-                    >
-                      {Parser(label)}
-
-                      <ChevronDown />
-                    </MenuLink>
-                  )}
-
-                  <SubMenu className="sub-menu">
-                    {childItems.nodes.map((o, i) => (
-                      <SubMenuItem
-                        key={i}
-                        to={formatLink(o.url)}
-                        activeClassName="active"
-                      >
-                        {Parser(o.label)}
-                      </SubMenuItem>
-                    ))}
-                  </SubMenu>
-                </>
-              ) : (
-                <MenuLink
-                  to={formatLink(url)}
-                  activeStyle={{ color: theme.colors.primary }}
-                >
-                  {Parser(label)}
-                </MenuLink>
-              )}
-            </Box>
-          </MenuItem>
-        ))}
-    </Menu>
-  )
+interface Props {
+  items?: [any]
 }
 
-const Menu = styled.div`
-  display: flex;
-  a {
-    text-decoration: none;
+const DesktopMenu: React.FC<Props> = (props: Props) => {
+  const { items } = props
+
+  const [headerMenu, setHeaderMenu] = useState(null)
+
+  if (!items) {
+    return null
   }
-`
-const MenuItem = styled.div`
-  display: flex;
-  position: relative;
 
-  &:hover {
-    .sub-menu {
-      opacity: 1;
-      pointer-events: all;
-    }
-  }
-  .sub-menu {
-    opacity: 0;
-    pointer-events: none;
-  }
-`
+  return (
+    <Flex
+      sx={{
+        alignItems: "center",
+        "@media (max-width: 959px)": {
+          display: "none",
+        },
+      }}
+    >
+      {items.map(({ title, children }, i) => {
+        return (
+          <Box
+            ml="48px"
+            key={i}
+            sx={{
+              position: "relative",
+              height: 94,
+              display: "flex",
+              alignItems: "center",
+              listStyleType: "none",
+              "&:before": {
+                content: "''",
+                display: headerMenu === i ? "block" : "none",
+                position: "absolute",
+                bottom: 0,
+                left: "50%",
+                transform: "translateX(-50%)",
+                height: 10,
+                width: 40,
+                zIndex: 1,
+                backgroundColor: "coral",
+              },
+            }}
+          >
+            <span
+              onClick={() => setHeaderMenu(headerMenu === i ? null : i)}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              {title}
+              <ChevronDown />
+            </span>
+            <Box
+              sx={{
+                position: "absolute",
+                display: headerMenu === i ? "flex" : "none",
+                flexDirection: "column",
+                backgroundColor: "charcoalDark",
+                top: 94,
+                pb: 40,
+                minWidth: 400,
+                width: "auto",
+                right: 0,
 
-const MenuLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
-  margin-left: 20px;
-  color: ${theme.colors.text};
+                a: {
+                  fontFamily: "heading",
+                },
+                "a:hover": {
+                  color: "coral",
+                },
+              }}
+            >
+              <li
+                style={{
+                  margin: "6px 6px 6px auto",
+                  color: "coral",
+                }}
+              >
+                <Close
+                  onClick={() => setHeaderMenu(headerMenu === i ? null : i)}
+                />
+              </li>
 
-  &:hover {
-    color: ${theme.colors.primary};
-  }
-`
-
-const SubMenu = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 100%;
-  left: calc(50% + 15px);
-  transform: translateX(-50%);
-  background: ${theme.colors.background};
-  border: 1px solid ${theme.colors.primary};
-
-  &:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -8px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid ${theme.colors.primary};
-  }
-`
-
-const SubMenuItem = styled(Link)`
-  padding: 15px 30px;
-  flex-shrink: 0;
-  white-space: nowrap;
-  color: ${theme.colors.text};
-
-  &:hover,
-  &.active {
-    background: ${theme.colors.primary};
-    color: #fff;
-  }
-`
-
-const MenuLinkContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 20px 10px;
-  margin-left: 20px;
-  color: #fff;
-  cursor: pointer;
-
-  svg {
-    margin-left: 5px;
-  }
-`
+              {children &&
+                children.map((child, j) => (
+                  <Link
+                    key={j}
+                    to={child.url}
+                    aria-label={child.title}
+                    title={child.title}
+                  >
+                    <Text
+                      variant="clickListMenu"
+                      sx={{
+                        p: "16px 80px",
+                        fontSize: 7,
+                        fontWeight: "light",
+                        letterSpacing: "-0.9px",
+                        color: "almond",
+                      }}
+                    >
+                      {child.title}
+                    </Text>
+                  </Link>
+                ))}
+            </Box>
+          </Box>
+        )
+      })}
+    </Flex>
+  )
+}
 
 export default DesktopMenu
