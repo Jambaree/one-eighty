@@ -18,7 +18,7 @@ const TextImage = (props) => {
           flexWrap: "wrap-reverse",
           alignItems: "center",
           minHeight: [null, null, 600],
-          mb: [36, 36, 0],
+          my: [48, 48, 0],
           textAlign: "left",
           "p:last-child": {
             mb: [16, 18, 24],
@@ -35,7 +35,7 @@ const TextImage = (props) => {
             order: 1,
             top: [null, null, 0],
             bottom: [null, null, 0],
-            m: "52px 24px",
+            m: [24, 24, "52px 24px"],
           }}
         >
           {image && <BackgroundImage image={image} backgroundSize="contain" />}
