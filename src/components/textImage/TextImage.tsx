@@ -2,7 +2,6 @@ import React from "react"
 import { Box, Heading, Text } from "theme-ui"
 
 // import app components
-// import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
 import Edges from "../Edges"
 import Button from "../Button"
@@ -36,12 +35,10 @@ const TextImage = (props) => {
             order: 1,
             top: [null, null, 0],
             bottom: [null, null, 0],
-            m: 24,
+            m: "52px 24px",
           }}
         >
-          {image && (
-            <BackgroundImage image={image} sx={{}} backgroundSize="contain" />
-          )}
+          {image && <BackgroundImage image={image} backgroundSize="contain" />}
         </Box>
         <Edges size="md">
           <Box
