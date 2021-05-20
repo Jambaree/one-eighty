@@ -15,32 +15,14 @@ const TextForm = (props) => {
         sx={{
           position: "relative",
           display: "flex",
+          flexDirection: ["column", "column", "row"],
           flexWrap: "wrap-reverse",
           alignItems: "center",
           minHeight: [null, null, 600],
           mb: [36, 36, 0],
           textAlign: "left",
-          "p:last-child": {
-            mb: [16, 18, 24],
-          },
         }}
       >
-        <Box
-          sx={{
-            left: alignment === "left" ? 0 : "unset",
-            right: alignment === "right" ? 0 : "unset",
-            position: ["relative", null, "absolute"],
-            height: [434, 500, "auto"],
-            width: ["100%", "100%", "calc(50% - 25px)"],
-            order: 1,
-            top: [null, null, 0],
-            bottom: [null, null, 0],
-            m: 24,
-            bg: formbackground,
-          }}
-        >
-          {/* form here */}
-        </Box>
         <Edges size="md">
           <Box
             sx={{
@@ -48,7 +30,7 @@ const TextForm = (props) => {
               mr: alignment === "right" ? "auto" : "unset",
               width: ["100%", null, "calc(50% - 25px)"],
               height: "100%",
-              my: "auto",
+              my: [93, 93, "auto"],
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -71,8 +53,25 @@ const TextForm = (props) => {
                 variant="text.introduction"
               />
             )}
+            {disclaimer && (
+              <Text children={disclaimer} variant="text.paragraph" />
+            )}
           </Box>
         </Edges>
+        <Box
+          sx={{
+            left: alignment === "left" ? 0 : "unset",
+            right: alignment === "right" ? 0 : "unset",
+            position: ["relative", null, "absolute"],
+            height: [434, 500, "auto"],
+            width: ["100%", "100%", "calc(50% - 25px)"],
+            top: [null, null, 0],
+            bottom: [null, null, 0],
+            bg: formbackground,
+          }}
+        >
+          {/* form here */}
+        </Box>
       </Box>
     </>
   )
