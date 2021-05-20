@@ -159,7 +159,6 @@ const Menu = styled.div`
 
   position: fixed;
   top: 94px;
-  height: 100%;
   width: calc(100% - 70px);
   right: 0;
   z-index: -2;
@@ -170,6 +169,7 @@ const Menu = styled.div`
   background: var(--theme-ui-colors-charcoalDark);
   padding-top: 32px;
   padding-bottom: 32px;
+  max-height: calc(100vh - 94px);
   overflow-y: auto;
 
   @media (min-width: 1024px) {
@@ -235,7 +235,7 @@ const Gradient = styled.div`
   left: 0;
   top: 94px;
   z-index: -3;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   opacity: ${(props: any) => (!!props.menuState ? 1 : 0)};
   pointer-events: ${(props: any) => (!!props.menuState ? "all" : "none")};
   transition: ease all 0.2s;
