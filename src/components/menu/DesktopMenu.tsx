@@ -50,7 +50,7 @@ const DesktopMenu = (props: Props) => {
     >
       {items.map((item: MenuItem, index: number) => {
         return (
-          <MenuItem
+          <MenuButton
             key={item.key}
             item={item}
             active={index === activeMenuIndex}
@@ -65,24 +65,33 @@ const DesktopMenu = (props: Props) => {
 
 export default DesktopMenu
 
-interface MenuItemProps {
+interface MenuButtonProps {
   active?: boolean
   item?: MenuItem
   onOpen?: () => void // this is how to define a function type
   onClose?: () => void
 }
 
-const MenuItem = (props: MenuItemProps) => {
+const MenuButton = (props: MenuButtonProps) => {
   const {
-    item: { title, children },
+    item: { title, children, url },
     onClose,
     onOpen,
     active,
   } = props
 
+  const linkProps =
+    children?.length === 0
+      ? {
+          as: Link, // make Button function as a Link if no children
+          to: url,
+        }
+      : {}
+
   return (
     <>
       <Button
+        {...linkProps}
         ml="48px"
         variant="navButton"
         onClick={onOpen}
@@ -99,6 +108,7 @@ const MenuItem = (props: MenuItemProps) => {
             },
           },
           "&:before": {
+            pointerEvents: "none",
             content: "''",
             opacity: active ? 1 : 0,
             transition: "opacity 150ms ease-in-out",
@@ -114,7 +124,8 @@ const MenuItem = (props: MenuItemProps) => {
         }}
       >
         {title}
-        <ChevronDown />
+
+        {children?.length > 0 && <ChevronDown />}
       </Button>
 
       {active && children?.length > 0 && (
