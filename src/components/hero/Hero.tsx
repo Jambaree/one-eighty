@@ -17,20 +17,19 @@ const Hero = (props) => {
         position: "relative",
         minHeight: "calc(100vh - 94px)",
         height: "auto",
-        m: "24px 0",
-        p: [12, 0, 0],
+        mt: 24,
+        mb: [98, 0, 160],
       }}
     >
       <Edges size="lg">
-        <Box sx={{ left: 0, zIndex: 2, height: [600, 400, 600] }}>
+        <Box sx={{ left: 0, zIndex: 2 }}>
           {image && (
             <GatsbyImage
               image={image}
               alt={image.altText}
               sx={{
-                top: 100,
-                height: [435, "unset", "unset"],
                 display: ["none", "block", "block"],
+                objectFit: "contain",
               }}
             />
           )}
@@ -39,9 +38,8 @@ const Hero = (props) => {
               image={mobileimage}
               alt={mobileimage.altText}
               sx={{
-                top: 100,
-                height: 435,
                 display: ["block", "none", "none"],
+                objectFit: "contain",
               }}
             />
           )}
@@ -55,9 +53,8 @@ const Hero = (props) => {
             alignItems: ["flex-start", "center", "center"],
             justifyContent: "center",
             flexDirection: "column",
-            m: "24px auto",
-            mb: [36, 0, 24],
-            height: [360, 480, 550],
+            mt: 36,
+            mx: "auto",
           }}
         >
           {headline && (
