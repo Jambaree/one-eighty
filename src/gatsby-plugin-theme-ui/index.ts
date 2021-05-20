@@ -159,9 +159,7 @@ const themeUi = {
       variant: "text.heading",
       fontSize: 8,
       letterSpacing: "-.64px",
-      "@media (max-width: 767px)": {
-        fontSize: 4,
-      },
+      lineHeight: "46px",
     },
     p: {
       fontSize: 1,
@@ -175,6 +173,8 @@ const themeUi = {
     h5: {
       variant: "text.heading",
       fontSize: 4,
+      letterSpacing: "-0.64px",
+      lineHeight: "32px",
     },
     h6: {
       variant: "text.heading",

@@ -9,20 +9,20 @@ const config = {
       defaultValue: "#ffffff", // optional
     },
     {
+      id: "headline",
+      type: "text",
+      label: "Headline",
+    },
+    {
+      id: "subheading",
+      type: "text",
+      label: "Sub Heading",
+    },
+    {
       id: "slide",
       type: "repeater",
       label: "Slide",
       items: [
-        {
-          id: "headline",
-          type: "text",
-          label: "Headline",
-        },
-        {
-          id: "subheading",
-          type: "text",
-          label: "Sub Heading",
-        },
         {
           id: "quote",
           type: "text",

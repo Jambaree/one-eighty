@@ -129,13 +129,13 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
                   fieldGroupName
                   backgroundcolor
+                  headline
+                  subheading
                   slide {
                     fieldGroupName
-                    headline
                     name
                     position
                     quote
-                    subheading
                   }
                 }
               }
