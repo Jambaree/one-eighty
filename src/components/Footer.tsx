@@ -29,7 +29,7 @@ const Footer = (props) => {
 
   return (
     <Container bg="charcoalDark">
-      <Edges size="lg">
+      <Edges size="md">
         <Flex
           sx={{
             flexWrap: "wrap",
@@ -92,7 +92,6 @@ const Footer = (props) => {
               mb="55px"
               sx={{
                 "@media (min-width: 800px)": {
-                  width: "255px",
                   marginBottom: 0,
                 },
               }}
