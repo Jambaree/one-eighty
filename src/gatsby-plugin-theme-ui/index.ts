@@ -160,6 +160,7 @@ const themeUi = {
       variant: "text.heading",
       fontSize: 8,
       letterSpacing: "-.64px",
+      lineHeight: "46px",
     },
     p: {
       fontSize: 1,

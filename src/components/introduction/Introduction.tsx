@@ -37,7 +37,7 @@ const Introduction = (props) => {
             <Heading
               sx={{
                 width: ["unset", 300, 450],
-                pr: ["unset", 20, 80],
+                pr: ["unset", 20, 60],
                 mb: [36, 0, 0],
                 variant: "styles.h2",
                 borderRight: [
@@ -66,7 +66,7 @@ const Introduction = (props) => {
             variant="text.introduction"
             sx={{
               width: ["100%", 400, "unset"],
-              pl: [0, 20, 80],
+              pl: [0, 20, 60],
             }}
           >
             {text && <Textarea content={text} />}
