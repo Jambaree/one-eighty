@@ -89,6 +89,8 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   alignment
                   fieldGroupName
+                  headline
+                  text
                   image {
                     altText
                     localFile {
@@ -97,7 +99,11 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
-                  text
+                  link {
+                    target
+                    title
+                    url
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
                   fieldGroupName
