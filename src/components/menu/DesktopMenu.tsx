@@ -27,7 +27,12 @@ const DesktopMenu = (props: Props) => {
 
   const [activeMenuIndex, setActiveMenuIndex] = useState(null)
 
-  const handleOpen = (itemIndex: number) => {
+  const handleOpen = (itemIndex: number, hasSubMenu?: boolean) => {
+    if (!hasSubMenu) {
+      setActiveMenuIndex(null)
+      return
+    }
+
     if (itemIndex === activeMenuIndex) {
       setActiveMenuIndex(null)
     } else {
@@ -54,7 +59,7 @@ const DesktopMenu = (props: Props) => {
             key={item.key}
             item={item}
             active={index === activeMenuIndex}
-            onOpen={() => handleOpen(index)}
+            onOpen={() => handleOpen(index, !!(item?.children?.length > 0))}
             onClose={handleClose}
           />
         )
@@ -85,6 +90,11 @@ const MenuButton = (props: MenuButtonProps) => {
       ? {
           as: Link, // make Button function as a Link if no children
           to: url,
+          activeStyle: {
+            "&:before": {
+              opacity: 1,
+            },
+          },
         }
       : {}
 
@@ -135,64 +145,83 @@ const MenuButton = (props: MenuButtonProps) => {
   )
 }
 
-const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
+const SubMenu = (props: {
+  items?: MenuItem[]
+  onClose?: () => void
+  [x: string]: any
+}) => {
   // the types can also be defined ^here^ instead of creating an interface
-  const { items, onClose } = props
+  const { items, onClose, ...rest } = props
 
   return (
-    <Flex
-      bg="charcoalDark"
-      sx={{
-        position: "absolute",
-        flexDirection: "column",
-        right: 0,
-        top: 94,
-        maxHeight: "calc(100vh - 94px)",
-        width: "50%",
-        overflow: "auto",
-      }}
-      p={85}
-    >
-      <IconButton
+    <>
+      <Box // click away listener
         onClick={onClose}
-        color="coral"
         sx={{
-          cursor: "pointer",
           position: "absolute",
-          top: 40,
-          right: 40,
-          "> svg": {
-            width: "35px",
-            height: "35px",
-          },
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: "100%",
+          height: "100vh",
         }}
-      >
-        <Close />
-      </IconButton>
+      />
 
-      {items &&
-        items.map((item: MenuItem, index: number) => (
-          <Link
-            key={index}
-            to={item.url}
-            onClick={onClose}
-            aria-label={item.title}
-            title={item.title}
-            style={{
-              display: "inline-block",
-              marginBottom: "40px",
-              color: theme.colors.black25,
-              "&:hover": {
-                color: theme.colors.coral,
-              },
-            }}
-            activeStyle={{ color: theme.colors.coral }}
-          >
-            <Text variant="desktopSubMenuItem" color="inherit">
-              {item.title}
-            </Text>
-          </Link>
-        ))}
-    </Flex>
+      <Flex
+        bg="charcoalDark"
+        sx={{
+          position: "absolute",
+          flexDirection: "column",
+          right: 0,
+          top: 94,
+          maxHeight: "calc(100vh - 94px)",
+          width: "50%",
+          overflow: "auto",
+        }}
+        p={85}
+      >
+        <IconButton
+          onClick={onClose}
+          color="coral"
+          sx={{
+            cursor: "pointer",
+            position: "absolute",
+            top: 40,
+            right: 40,
+            "> svg": {
+              width: "35px",
+              height: "35px",
+            },
+          }}
+        >
+          <Close />
+        </IconButton>
+
+        {items &&
+          items.map((item: MenuItem, index: number) => (
+            <Link
+              key={index}
+              to={item.url}
+              onClick={onClose}
+              aria-label={item.title}
+              title={item.title}
+              style={{
+                display: "inline-block",
+                marginBottom: "40px",
+                color: theme.colors.black25,
+                "&:hover": {
+                  color: theme.colors.coral,
+                },
+              }}
+              activeStyle={{ color: theme.colors.coral }}
+            >
+              <Text variant="desktopSubMenuItem" color="inherit">
+                {item.title}
+              </Text>
+            </Link>
+          ))}
+      </Flex>
+    </>
   )
 }
