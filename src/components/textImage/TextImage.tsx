@@ -67,10 +67,10 @@ const TextImage = (props) => {
             {text && (
               <Text
                 children={text}
+                variant="text.paragraph"
                 sx={{
                   paddingBottom: 36,
                 }}
-                variant="text.introduction"
               />
             )}
             {link?.url && (
