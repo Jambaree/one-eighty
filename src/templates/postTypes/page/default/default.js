@@ -140,6 +140,25 @@ export const CollectionQuery = graphql`
                     quote
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Benefits {
+                  columns
+                  fieldGroupName
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    headline
+                    text
+                    icon {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 200)
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
             fieldGroupName
