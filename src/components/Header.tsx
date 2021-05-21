@@ -37,68 +37,68 @@ const Header = (props) => {
   }, [path, dispatch])
 
   return (
-    <>
-      <Container
-        bg="white"
-        sx={{
-          height: 94,
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: ["100%", "100%", "100%"],
-          zIndex: "999",
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "1px solid #D3D3D3",
-          paddingLeft: sidebar ? sidebarWidth : 0,
-        }}
-      >
-        <Edges size="lg">
-          <Flex
+    <Container
+      sx={{
+        background: "#fff",
+        height: 94,
+        position: "fixed",
+        left: 0,
+        top: 0,
+        width: ["100%", "100%", "100%"],
+        zIndex: 999,
+        display: "flex",
+        alignItems: "center",
+        borderBottom: "1px solid #D3D3D3",
+        paddingLeft: sidebar ? sidebarWidth : 0,
+      }}
+    >
+      <Edges size="lg">
+        <Flex
+          sx={{
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box
+            pr={2}
             sx={{
-              alignItems: "center",
-              justifyContent: "space-between",
+              position: "relative",
+              zIndex: 3,
+              textDecoration: "none",
+              ".a": { fill: "charcoalDark" },
+              svg: { height: "60px" },
             }}
           >
-            <Box
-              pr={2}
-              sx={{
-                textDecoration: "none",
-                ".a": { fill: "charcoalDark" },
-                svg: { height: "60px" },
-              }}
-            >
-              <Link to="/">
-                <Logo style={{ height: "auto", width: "160px" }} />
-              </Link>
-            </Box>
+            <Link to="/">
+              <Logo style={{ height: "auto", width: "160px" }} />
+            </Link>
+          </Box>
 
-            <DesktopMenu items={menu} />
+          <DesktopMenu items={menu} />
 
-            <Box
-              sx={{
-                transform: "translateX(15px)",
-                cursor: "pointer",
-                "@media (min-width: 1024px)": { display: "none" },
-              }}
-              p={15}
-              onClick={() => dispatch({ type: "TOGGLE_MENU" })}
-            >
-              <HamburgerMenu
-                color={menuActive ? "coral" : "#2D4052"}
-                isOpen={menuActive}
-                width={26}
-                height={15}
-                strokeWidth={2}
-                menuClicked={() => ""}
-              />
-            </Box>
+          <Box
+            sx={{
+              transform: "translateX(15px)",
+              cursor: "pointer",
+              "@media (min-width: 1024px)": { display: "none" },
+            }}
+            p={15}
+            onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+          >
+            <HamburgerMenu
+              color={menuActive ? "coral" : "#2D4052"}
+              isOpen={menuActive}
+              width={26}
+              height={15}
+              strokeWidth={2}
+              menuClicked={() => ""}
+            />
+          </Box>
 
-            <MobileMenu items={menu} />
-          </Flex>
-        </Edges>
-      </Container>
-    </>
+          <MobileMenu items={menu} />
+        </Flex>
+      </Edges>
+    </Container>
   )
 }
 

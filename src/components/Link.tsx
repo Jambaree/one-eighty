@@ -15,7 +15,13 @@ const isUrlExternal = (link) => {
   }
 }
 
-const Link = ({ to, activeStyle, ...rest }) => {
+interface Props {
+  to?: string | number
+  activeStyle?: any
+  [x: string]: any
+}
+
+const Link = ({ to, activeStyle, ...rest }: Props) => {
   if (!to || to === null || to === 0) {
     return (
       <div style={{ textDecoration: "none", color: "inherit" }} {...rest} />

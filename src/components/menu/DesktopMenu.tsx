@@ -1,8 +1,10 @@
 import React, { useState } from "react"
-import { IconButton, Box, Flex, Text, Button } from "theme-ui"
+import { IconButton, Box, Flex, Text, Button, Container } from "theme-ui"
+import { motion, AnimatePresence } from "framer-motion"
 
 import { Close } from "mdi-material-ui"
 
+import Edges from "../Edges"
 import Link from "../Link"
 
 import ChevronDown from "../../icons/chevron-down.svg"
@@ -45,26 +47,48 @@ const DesktopMenu = (props: Props) => {
   }
 
   return (
-    <Flex
+    <Container
       sx={{
-        alignItems: "center",
-        "@media (max-width: 1023px)": {
-          display: "none",
-        },
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        left: 0,
+        top: 0,
+        background: "#fff",
       }}
     >
-      {items.map((item: MenuItem, index: number) => {
-        return (
-          <MenuButton
-            key={item.key}
-            item={item}
-            active={index === activeMenuIndex}
-            onOpen={() => handleOpen(index, !!(item?.children?.length > 0))}
-            onClose={handleClose}
-          />
-        )
-      })}
-    </Flex>
+      <Edges size="lg">
+        <Flex sx={{ justifyContent: "space-between" }}>
+          <Box
+            pr={2}
+            style={{ width: "160px", flexShrink: 0 }}
+            // logo placeholder
+          ></Box>
+          <Flex
+            sx={{
+              alignItems: "center",
+              "@media (max-width: 1023px)": {
+                display: "none",
+              },
+            }}
+          >
+            {items.map((item: MenuItem, index: number) => {
+              return (
+                <MenuButton
+                  key={item.key}
+                  item={item}
+                  active={index === activeMenuIndex}
+                  onOpen={() =>
+                    handleOpen(index, !!(item?.children?.length > 0))
+                  }
+                  onClose={handleClose}
+                />
+              )
+            })}
+          </Flex>
+        </Flex>
+      </Edges>
+    </Container>
   )
 }
 
@@ -138,26 +162,25 @@ const MenuButton = (props: MenuButtonProps) => {
         {children?.length > 0 && <ChevronDown />}
       </Button>
 
-      {active && children?.length > 0 && (
-        <SubMenu items={children} onClose={onClose} />
-      )}
+      <AnimatePresence>
+        {active && children?.length > 0 && (
+          <SubMenu items={children} onClose={onClose} />
+        )}
+      </AnimatePresence>
     </>
   )
 }
 
-const SubMenu = (props: {
-  items?: MenuItem[]
-  onClose?: () => void
-  [x: string]: any
-}) => {
+const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
   // the types can also be defined ^here^ instead of creating an interface
-  const { items, onClose, ...rest } = props
+  const { items, onClose } = props
 
   return (
     <>
       <Box // click away listener
         onClick={onClose}
         sx={{
+          zIndex: -1,
           position: "absolute",
           top: 0,
           left: 0,
@@ -168,9 +191,15 @@ const SubMenu = (props: {
         }}
       />
 
-      <Flex
-        bg="charcoalDark"
-        sx={{
+      <motion.div
+        initial={{ opacity: 0, y: "-100%" }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+        exit={{ opacity: 0, y: "-100%", transition: { duration: 0.3 } }}
+        style={{
+          zIndex: -1,
+          display: "flex",
+          padding: "85px",
+          background: theme.colors.charcoalDark,
           position: "absolute",
           flexDirection: "column",
           right: 0,
@@ -179,7 +208,6 @@ const SubMenu = (props: {
           width: "50%",
           overflow: "auto",
         }}
-        p={85}
       >
         <IconButton
           onClick={onClose}
@@ -221,7 +249,7 @@ const SubMenu = (props: {
               </Text>
             </Link>
           ))}
-      </Flex>
+      </motion.div>
     </>
   )
 }
