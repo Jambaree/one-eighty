@@ -71,7 +71,7 @@ const TextForm = (props) => {
             bg: formbackground,
           }}
         >
-          <Form />
+          <Form {...props} />
         </Box>
       </Box>
     </>

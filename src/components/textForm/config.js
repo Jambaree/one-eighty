@@ -39,6 +39,12 @@ const config = {
       label: "Form Background",
       defaultValue: "white", // optional
     },
+    {
+      id: "formid",
+      type: "number",
+      label: "Form ID",
+      defaultValue: 1, // optional
+    },
   ],
 }
 

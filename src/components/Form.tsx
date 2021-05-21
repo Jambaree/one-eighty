@@ -9,10 +9,10 @@ import { GravityForm } from "./gravityForm"
 import theme from "../theme"
 
 const Form = (props) => {
-  const { formId, buttonText, hideTitle, hiddenFields, hidden, ...rest } = props
+  const { formid, buttonText, hideTitle, hiddenFields, hidden, ...rest } = props
 
-  // let { allGfForm } = useGravityData()
-  // const form = allGfForm.nodes.find((o) => +o.formId === +formId)
+  let { allGfForm } = useGravityData()
+  const form = allGfForm.nodes.find((o) => +o.formid === +formid)
 
   const [success, setSuccess] = useState(null)
 
@@ -22,7 +22,7 @@ const Form = (props) => {
 
   return (
     <Container {...rest}>
-      {/* {!success && (
+      {!success && (
         <GravityForm
           hiddenFields={hiddenFields}
           hideTitle={hideTitle}
@@ -38,7 +38,7 @@ const Form = (props) => {
             />
           }
         />
-      )} */}
+      )}
 
       {success && (
         <Message>
@@ -353,53 +353,53 @@ const Message = styled.div`
   padding: 20px;
 `
 
-// const useGravityData = () => {
-//   const { allGfForm } = useStaticQuery(
-//     graphql`
-//       query {
-//         allGfForm {
-//           nodes {
-//             formId
-//             title
-//             slug
-//             apiURL
-//             labelPlacement
-//             descriptionPlacement
-//             formFields {
-//               id
-//               label
-//               labelPlacement
-//               isRequired
-//               conditionalLogic
-//               description
-//               descriptionPlacement
-//               type
-//               choices
-//               content
-//               errorMessage
-//               inputMaskValue
-//               visibility
-//               cssClass
-//               placeholder
-//               size
-//               defaultValue
-//               maxLength
-//             }
-//             button {
-//               text
-//             }
-//             confirmations {
-//               id
-//               name
-//               type
-//               message
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
-//   return { allGfForm }
-// }
+const useGravityData = () => {
+  const { allGfForm } = useStaticQuery(
+    graphql`
+      query {
+        allGfForm {
+          nodes {
+            formid
+            title
+            slug
+            apiURL
+            labelPlacement
+            descriptionPlacement
+            formFields {
+              id
+              label
+              labelPlacement
+              isRequired
+              conditionalLogic
+              description
+              descriptionPlacement
+              type
+              choices
+              content
+              errorMessage
+              inputMaskValue
+              visibility
+              cssClass
+              placeholder
+              size
+              defaultValue
+              maxLength
+            }
+            button {
+              text
+            }
+            confirmations {
+              id
+              name
+              type
+              message
+            }
+          }
+        }
+      }
+    `
+  )
+  return { allGfForm }
+}
 
 export default Form
