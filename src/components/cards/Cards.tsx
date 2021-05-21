@@ -14,14 +14,15 @@ const Cards = (props) => {
       <Edges size="md">
         <Box
           sx={{
-            display: ["none", "block", "block"],
-            overflow: "hidden",
             height: 168,
             width: 168,
             bg: "flax",
             borderRadius: "50%",
+
+            display: ["none", "block", "block"],
+            overflow: "hidden",
             float: "right",
-            marginRight: ["unset", "-14%", "-18%"],
+            marginRight: ["unset", "-14%", "-25%"],
             marginTop: "-10%",
             position: "relative",
             zIndex: 0,
@@ -33,7 +34,7 @@ const Cards = (props) => {
             flexDirection: "column",
             justifyContent: ["flex-start", "center", "center"],
             textAlign: ["left", "center", "center"],
-            width: [283, 600, 730],
+            // width: [283, 600, 730],
             m: ["unset", "0 auto", "0 auto"],
             mb: 36,
           }}
@@ -44,7 +45,7 @@ const Cards = (props) => {
               variant="styles.h2"
               sx={{
                 mb: [41, 24, 24],
-                width: ["65%", "100%", "100%"],
+                width: ["50%", "100%", "100%"],
                 zIndex: 1,
               }}
             />
@@ -53,7 +54,10 @@ const Cards = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 60], zIndex: 1 }}
+              sx={{
+                zIndex: 1,
+                m: ["0 24px 36px 0", "0 80px 36px 80px", "0 150px 60px 150px"],
+              }}
             />
           )}
         </Box>
@@ -84,9 +88,9 @@ const Cards = (props) => {
                       flexDirection: "column",
                       justifyContent: ["flex-start", "center", "center"],
                       textAlign: ["left", "center", "center"],
-                      width: [287, 287, 480],
                       maxWidth: "100%",
                       m: ["unset", "0 auto", "0 auto"],
+                      pr: [30, "unset", "unset"],
                     }}
                   >
                     {o.headline && (
