@@ -198,7 +198,7 @@ const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
         style={{
           zIndex: -1,
           display: "flex",
-          padding: "85px",
+          padding: "85px 85px 55px",
           background: theme.colors.charcoalDark,
           position: "absolute",
           flexDirection: "column",
