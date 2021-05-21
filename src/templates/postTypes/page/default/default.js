@@ -20,6 +20,7 @@ const blocks = {
   textform,
   testimonialslider,
   benefits,
+  textform,
 }
 
 const Template = (props) => {

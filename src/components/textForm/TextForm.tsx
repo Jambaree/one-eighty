@@ -5,6 +5,7 @@ import { Box, Heading, Text } from "theme-ui"
 import BackgroundImage from "../BackgroundImage"
 import Edges from "../Edges"
 import Button from "../Button"
+import Form from "../../components/Form"
 
 const TextForm = (props) => {
   const { formbackground, alignment, headline, text, disclaimer } = props
@@ -70,7 +71,7 @@ const TextForm = (props) => {
             bg: formbackground,
           }}
         >
-          Form here...
+          <Form />
         </Box>
       </Box>
     </>
