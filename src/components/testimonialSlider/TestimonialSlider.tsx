@@ -25,7 +25,7 @@ const TestimonialSlider = (props) => {
     <Box sx={{ bg: backgroundcolor, pb: 144 }}>
       <Box
         sx={{
-          width: ["350px", "600px", "950px"],
+          width: "100%",
           m: "0 auto",
           ".slick-dots": {
             position: "relative",
