@@ -89,15 +89,21 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   alignment
                   fieldGroupName
+                  headline
+                  text
                   image {
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(width: 1920)
+                        gatsbyImageData(width: 700)
                       }
                     }
                   }
-                  text
+                  link {
+                    target
+                    title
+                    url
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
                   fieldGroupName
