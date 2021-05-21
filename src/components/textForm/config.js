@@ -3,12 +3,6 @@ const config = {
   label: "Text & Form",
   fields: [
     {
-      id: "formbackground",
-      type: "color_picker",
-      label: "Form Background",
-      defaultValue: "white", // optional
-    },
-    {
       id: "alignment",
       type: "select",
       label: "Image Alignment",
@@ -38,6 +32,12 @@ const config = {
       id: "disclaimer",
       type: "text",
       label: "Disclaimer",
+    },
+    {
+      id: "formbackground",
+      type: "color_picker",
+      label: "Form Background",
+      defaultValue: "white", // optional
     },
   ],
 }

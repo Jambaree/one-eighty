@@ -70,7 +70,7 @@ const TextForm = (props) => {
             bg: formbackground,
           }}
         >
-          {/* form here */}
+          Form here...
         </Box>
       </Box>
     </>
