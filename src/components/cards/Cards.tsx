@@ -66,7 +66,7 @@ const Cards = (props) => {
                     sx={{
                       position: "relative",
                       height: [180, 180, 300],
-                      width: ["100%", 290, 480],
+                      width: "100%",
                     }}
                   >
                     {o.image && (
@@ -85,6 +85,8 @@ const Cards = (props) => {
                       justifyContent: ["flex-start", "center", "center"],
                       textAlign: ["left", "center", "center"],
                       width: [287, 287, 480],
+                      maxWidth: "100%",
+                      m: ["unset", "0 auto", "0 auto"],
                     }}
                   >
                     {o.headline && (
