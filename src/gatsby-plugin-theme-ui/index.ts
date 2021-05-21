@@ -6,7 +6,7 @@ const themeUi = {
     body: "Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
     heading: "Poppins",
   },
-  fontSizes: [12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
+  fontSizes: [11, 12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
   fontWeights: {
     light: 300,
     medium: 400,
@@ -60,20 +60,30 @@ const themeUi = {
       color: "charcoal",
     },
     introduction: {
+      fontFamily: "body",
       fontSize: 3,
       fontWeight: "light",
       letterSpacing: "-0.27px",
       color: "black75",
     },
-    footerHeading1: {
+    paragraph: {
+      fontFamily: "body",
       fontSize: 2,
+      fontWeight: "light",
+      letterSpacing: "-0.23px",
+      color: "black75",
+    },
+    footerHeading1: {
+      fontFamily: "body",
+      fontSize: 3,
       color: "white",
       fontWeight: "medium",
       letterSpacing: "-0.15px",
       fontFamily: "body",
     },
     footerHeading2: {
-      fontSize: 0,
+      fontFamily: "body",
+      fontSize: 1,
       letterSpacing: "-0.12px",
       color: "black50",
       fontFamily: "body",
@@ -85,24 +95,30 @@ const themeUi = {
       letterSpacing: "-0.9px",
       color: "almond",
     },
-    mobileMenuItem:{
+    mobileMenuItem: {
       fontFamily: "body",
       fontSize: 2,
-      fontWeight: "medium"
+      fontWeight: "medium",
     },
-    mobileSubMenuItem:{
+    mobileSubMenuItem: {
       fontFamily: "body",
       fontSize: 2,
-      fontWeight:"light"
-    }
+      fontWeight: "light",
+    },
   },
   buttons: {
     primary: {
+      fontFamily: "body",
+      fontSize: 4,
+      letterSpacing: "-0.18px",
       color: "white",
       bg: "coral",
       borderRadius: 6,
+      width: 240,
+      height: 48,
       "&:hover": {
         bg: "coral",
+        boxShadow: "0px 10px 20px #00000029",
       },
       "&:focus": {
         bg: "coralLight",
@@ -111,8 +127,8 @@ const themeUi = {
         bg: "black25",
       },
     },
-    navButton:{
-      bg:"transparent",
+    navButton: {
+      bg: "transparent",
       color: "#1C1C1C",
       fontSize: 3,
       fontFamily: "body",
@@ -121,14 +137,51 @@ const themeUi = {
     icon: {
       color: "coral",
     },
+    entryfield: {
+      label: {
+        fontSize: 0,
+        textTranform: "uppercase",
+        "&:after": {
+          content: "*",
+          color: "coral",
+          "&:disabled": {
+            bg: "black25",
+          },
+        },
+        "&:disabled": {
+          bg: "black25",
+        },
+      },
+      field: {
+        fontSize: 3,
+        lineHeight: "25px",
+        p: "13px 69px 2px 13px",
+        width: 304,
+        height: 37,
+        border: "1px solid black25",
+        "&:placeholder": {
+          color: "black25",
+        },
+        "&:hover": {
+          borderColor: "black50",
+        },
+        "&:focus": {
+          borderColor: "coralLight",
+        },
+        "&:disabled": {
+          border: "black25",
+          color: "black10",
+        },
+      },
+    },
   },
   links: {
     hyperlink: {
       color: "coral",
-      fontSize: 2,
+      fontSize: 3,
       fontFamily: "body",
       "@media (max-width: 767px)": {
-        fontSize: 1,
+        fontSize: 2,
       },
       "&:hover": {
         color: "coralDark",
@@ -141,7 +194,8 @@ const themeUi = {
       },
     },
     clickListMenu: {
-      fontSize: 9,
+      fontFamily: "body",
+      fontSize: 10,
       fontWeight: "light",
       letterSpacing: "-0.9px",
       color: "almond",
@@ -156,43 +210,44 @@ const themeUi = {
     h1: {
       variant: "text.heading",
       fontSize: 11,
+      fontWeight: "heading",
       letterSpacing: "-1.63px",
       "@media (max-width: 767px)": {
-        fontSize: 9,
+        fontSize: 10,
       },
     },
     h2: {
       variant: "text.heading",
-      fontSize: 10,
+      fontSize: 11,
       letterSpacing: "-1.15px",
       "@media (max-width: 767px)": {
-        fontSize: 7,
+        fontSize: 8,
       },
     },
     h3: {
       variant: "text.heading",
-      fontSize: 8,
+      fontSize: 9,
       letterSpacing: "-.64px",
-      "@media (max-width: 767px)": {
-        fontSize: 4,
-      },
+      lineHeight: "46px",
     },
     p: {
-      fontSize: 1,
+      fontSize: 2,
       color: "black75",
       fontWeight: 300,
     },
     h4: {
       variant: "text.heading",
-      fontSize: 6,
+      fontSize: 7,
     },
     h5: {
       variant: "text.heading",
       fontSize: 4,
+      letterSpacing: "-0.64px",
+      lineHeight: "32px",
     },
     h6: {
       variant: "text.heading",
-      fontSize: 3,
+      fontSize: 4,
     },
     pre: {
       fontFamily: "monospace",
