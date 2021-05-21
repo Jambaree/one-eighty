@@ -15,7 +15,7 @@ import Logo from "../icons/logo.svg"
 
 const Header = (props) => {
   const {
-    jamCMS: { sidebar, sidebarWidth },
+    jamCMS,
     path,
     pageContext: {
       themeOptions: {
@@ -49,7 +49,7 @@ const Header = (props) => {
         display: "flex",
         alignItems: "center",
         borderBottom: "1px solid #D3D3D3",
-        paddingLeft: sidebar ? sidebarWidth : 0,
+        paddingLeft: jamCMS?.sidebar ? jamCMS?.sidebarWidth : 0,
       }}
     >
       <Edges size="lg">
