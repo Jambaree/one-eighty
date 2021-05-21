@@ -47,6 +47,7 @@ const TestimonialSlider = (props) => {
           },
           ".slick-dots .slick-active button:before": {
             color: "coral",
+            opacity: "unset",
           },
         }}
       >
@@ -85,6 +86,7 @@ const TestimonialSlider = (props) => {
                     textAlign: "left",
                     mb: 24,
                     mr: [100, 50, 0],
+                    mt: [0, 0, 60],
                     pl: [0, 0, 24],
                     fontSize: "5",
                     letterSpacing: "-0.33px",
