@@ -24,8 +24,8 @@ const Cards = (props) => {
             mr: 0,
             transform: [
               "unset",
-              "translate(198%, -48%)",
-              "translate(296%, -48%)",
+              "translate(366%, -48%)",
+              "translate(618%, -48%)",
             ],
           }}
         />

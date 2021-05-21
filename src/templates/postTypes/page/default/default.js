@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Box } from "theme-ui"
 
 // import app components
 import Layout from "../../../../components/Layout"
@@ -8,6 +9,8 @@ import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
 import textform from "../../../../components/textForm/TextForm"
+import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
+import benefits from "../../../../components/benefits/Benefits"
 
 const blocks = {
   textimage,
@@ -15,6 +18,8 @@ const blocks = {
   introduction,
   cards,
   textform,
+  testimonialslider,
+  benefits,
 }
 
 const Template = (props) => {
@@ -34,7 +39,13 @@ const Template = (props) => {
             const id = fieldId || fieldGroupName?.split("_").pop().toLowerCase()
 
             const Component = blocks?.[id]
-            return Component && <Component key={index} {...rest} />
+            return (
+              Component && (
+                <Box key={index}>
+                  <Component {...rest} />
+                </Box>
+              )
+            )
           }
         )}
     </Layout>
@@ -61,7 +72,7 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(width: 1920)
                       }
                     }
                   }
@@ -84,7 +95,7 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(width: 1920)
                       }
                     }
                   }
@@ -100,7 +111,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData
+                          gatsbyImageData(width: 1920)
                         }
                       }
                     }
@@ -112,6 +123,18 @@ export const CollectionQuery = graphql`
                     text
                   }
                   subheading
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
+                  fieldGroupName
+                  backgroundcolor
+                  headline
+                  subheading
+                  slide {
+                    fieldGroupName
+                    name
+                    position
+                    quote
+                  }
                 }
               }
             }

@@ -31,11 +31,6 @@ const fields = {
       hide: true,
       fields: [
         {
-          id: "image",
-          type: "image",
-          label: "Image",
-        },
-        {
           id: "footermenu",
           type: "menu",
           label: "Footer Menu",
