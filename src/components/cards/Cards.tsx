@@ -10,23 +10,21 @@ const Cards = (props) => {
   const { columns, headline, subheading, cards } = props
 
   return (
-    <Box sx={{ bg: "almondLight", py: [90, 164, 164] }}>
+    <Box sx={{ bg: "almondLight", py: [90, 164, 164], overflow: "hidden" }}>
       <Edges size="md">
         <Box
           sx={{
             display: ["none", "block", "block"],
-            position: "absolute",
+            overflow: "hidden",
             height: 168,
             width: 168,
             bg: "flax",
             borderRadius: "50%",
+            float: "right",
+            marginRight: ["unset", "-14%", "-18%"],
+            marginTop: "-10%",
+            position: "relative",
             zIndex: 0,
-            mr: 0,
-            transform: [
-              "unset",
-              "translate(366%, -48%)",
-              "translate(618%, -48%)",
-            ],
           }}
         />
         <Box
