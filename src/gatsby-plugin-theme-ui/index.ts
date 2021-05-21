@@ -119,6 +119,7 @@ const themeUi = {
       "&:hover": {
         bg: "coral",
         boxShadow: "0px 10px 20px #00000029",
+        transition: "box-shadow 0.2s",
       },
       "&:focus": {
         bg: "coralLight",
