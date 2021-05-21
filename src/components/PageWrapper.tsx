@@ -15,7 +15,7 @@ const Layout = (props) => {
   return (
     <>
       <Container
-        pt={`${({ theme: { headerHeight } }) => headerHeight}px`}
+        pt={"94px"}
         sx={{
           justifyContent: "center",
         }}
@@ -25,8 +25,7 @@ const Layout = (props) => {
           as="main"
           {...props}
           sx={{
-            minHeight: `calc(100vh- ${({ theme: { headerHeight } }) =>
-              headerHeight}px)`,
+            minHeight: `calc(100vh - 94px)`,
           }}
         >
           {props?.children}
