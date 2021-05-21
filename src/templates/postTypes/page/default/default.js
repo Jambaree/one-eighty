@@ -39,11 +39,7 @@ const Template = (props) => {
             const Component = blocks?.[id]
             return (
               Component && (
-                <Box
-                  key={index}
-                  mt={index === 0 ? "94px" : [3, 5]}
-                  mb={index < acf.content.flex.length ? [3, 5] : 0}
-                >
+                <Box key={index}>
                   <Component {...rest} />
                 </Box>
               )
