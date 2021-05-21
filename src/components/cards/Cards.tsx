@@ -11,7 +11,7 @@ const Cards = (props) => {
 
   return (
     <Box sx={{ bg: "almondLight", py: [90, 164, 164], overflow: "hidden" }}>
-      <Edges size="md">
+      <Edges size="md" sx={{ position: "relative" }}>
         <Box
           sx={{
             height: 168,
@@ -21,10 +21,9 @@ const Cards = (props) => {
 
             display: ["none", "block", "block"],
             overflow: "hidden",
-            float: "right",
-            marginRight: ["unset", "-14%", "-25%"],
-            marginTop: "-10%",
-            position: "relative",
+            marginTop: [null, "-12%", "-7%"],
+            position: "absolute",
+            right: "-4%",
             zIndex: 0,
           }}
         />
@@ -34,7 +33,6 @@ const Cards = (props) => {
             flexDirection: "column",
             justifyContent: ["flex-start", "center", "center"],
             textAlign: ["left", "center", "center"],
-            // width: [283, 600, 730],
             m: ["unset", "0 auto", "0 auto"],
             mb: 36,
           }}
