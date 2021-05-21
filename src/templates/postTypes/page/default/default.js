@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Box } from "theme-ui"
 
 // import app components
 import Layout from "../../../../components/Layout"
@@ -7,12 +8,16 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
+import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
+import benefits from "../../../../components/benefits/Benefits"
 
 const blocks = {
   textimage,
   hero,
   introduction,
   cards,
+  testimonialslider,
+  benefits,
 }
 
 const Template = (props) => {
@@ -32,7 +37,17 @@ const Template = (props) => {
             const id = fieldId || fieldGroupName?.split("_").pop().toLowerCase()
 
             const Component = blocks?.[id]
-            return Component && <Component key={index} {...rest} />
+            return (
+              Component && (
+                <Box
+                  key={index}
+                  mt={index === 0 ? "94px" : [3, 5]}
+                  mb={index < acf.content.flex.length ? [3, 5] : 0}
+                >
+                  <Component {...rest} />
+                </Box>
+              )
+            )
           }
         )}
     </Layout>
@@ -110,6 +125,18 @@ export const CollectionQuery = graphql`
                     text
                   }
                   subheading
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
+                  fieldGroupName
+                  backgroundcolor
+                  headline
+                  subheading
+                  slide {
+                    fieldGroupName
+                    name
+                    position
+                    quote
+                  }
                 }
               }
             }
