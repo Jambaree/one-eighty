@@ -54,8 +54,12 @@ const Container = styled.div`
   position: relative;
   padding: 100px 150px;
 
+  @media (max-width: 1260px) {
+    padding: 80px 130px;
+  }
+
   @media (max-width: 640px) {
-    padding: 60px 30px;
+    padding: 60px;
   }
 
   .gravityForm {
@@ -141,6 +145,13 @@ const Container = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 8px;
+
+      .checkbox-inline span {
+        text-transform: capitalize;
+        font-family: ${theme.fonts.body};
+        font-weight: ${theme.fontWeights.light};
+        font-size: ${theme.fontSizes[2]}px;
+      }
     }
   }
 
