@@ -55,7 +55,11 @@ const Container = styled.div`
   padding: 100px 150px;
 
   @media (max-width: 1260px) {
-    padding: 80px 130px;
+    padding: 80px 100px;
+  }
+
+  @media (max-width: 860px) {
+    padding: 60px 80px;
   }
 
   @media (max-width: 640px) {
@@ -146,7 +150,15 @@ const Container = styled.div`
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 12px 2px;
 
-      @media (max-width: 640px) {
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media (max-width: 540px) {
         grid-template-columns: 1fr 1fr;
       }
 
