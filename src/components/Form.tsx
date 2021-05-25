@@ -12,7 +12,7 @@ const Form = (props) => {
   const { formid, buttonText, hideTitle, hiddenFields, hidden, ...rest } = props
 
   let { allGfForm } = useGravityData()
-  const form = allGfForm.nodes.find((o) => +o.formid === +formid)
+  const form = allGfForm.nodes.find((o) => +o.formId === +formid)
 
   const [success, setSuccess] = useState(null)
 
@@ -359,7 +359,7 @@ const useGravityData = () => {
       query {
         allGfForm {
           nodes {
-            formid
+            formId
             title
             slug
             apiURL
