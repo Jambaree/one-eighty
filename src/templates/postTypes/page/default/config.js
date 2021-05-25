@@ -5,6 +5,7 @@ import introduction from "../../../../components/introduction/config"
 import cards from "../../../../components/cards/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
 import benefits from "../../../../components/benefits/config"
+import logos from "../../../../components/logos/config"
 
 const config = {
   id: "default",
@@ -31,6 +32,7 @@ const config = {
             cards,
             testimonialslider,
             benefits,
+            logos,
           }),
         },
       ],
