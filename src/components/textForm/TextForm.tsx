@@ -19,7 +19,7 @@ const TextForm = (props) => {
           flexDirection: ["column", "column", "row"],
           flexWrap: "wrap-reverse",
           alignItems: "center",
-          minHeight: [null, null, 775],
+          minHeight: 750,
           mb: [36, 36, 0],
           textAlign: "left",
         }}
@@ -64,7 +64,7 @@ const TextForm = (props) => {
             left: alignment === "left" ? 0 : "unset",
             right: alignment === "right" ? 0 : "unset",
             position: ["relative", null, "absolute"],
-            height: [434, 500, "auto"],
+            height: "auto",
             width: ["100%", "100%", "calc(50% - 25px)"],
             top: [null, null, 0],
             bottom: [null, null, 0],

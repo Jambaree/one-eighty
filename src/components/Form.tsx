@@ -54,6 +54,10 @@ const Container = styled.div`
   position: relative;
   padding: 100px 150px;
 
+  @media (max-width: 640px) {
+    padding: 60px 30px;
+  }
+
   .gravityForm {
     display: flex;
     align-items: center;
@@ -136,6 +140,7 @@ const Container = styled.div`
     .checkboxes {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 8px;
     }
   }
 
