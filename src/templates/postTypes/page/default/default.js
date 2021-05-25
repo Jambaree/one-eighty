@@ -73,8 +73,8 @@ export const CollectionQuery = graphql`
                         gatsbyImageData(
                           width: 1920
                           tracedSVGOptions: {
-                            background: "flax"
-                            color: "charcoal"
+                            background: "#E5D282"
+                            color: "#2D4052"
                           }
                           placeholder: TRACED_SVG
                           layout: CONSTRAINED
@@ -106,8 +106,8 @@ export const CollectionQuery = graphql`
                         gatsbyImageData(
                           width: 700
                           tracedSVGOptions: {
-                            background: "flax"
-                            color: "charcoal"
+                            background: "#E5D282"
+                            color: "#2D4052"
                           }
                           placeholder: TRACED_SVG
                           layout: CONSTRAINED
@@ -134,8 +134,8 @@ export const CollectionQuery = graphql`
                           gatsbyImageData(
                             width: 550
                             tracedSVGOptions: {
-                              background: "flax"
-                              color: "charcoal"
+                              background: "#E5D282"
+                              color: "#2D4052"
                             }
                             placeholder: TRACED_SVG
                             layout: CONSTRAINED
@@ -180,8 +180,8 @@ export const CollectionQuery = graphql`
                           gatsbyImageData(
                             width: 200
                             tracedSVGOptions: {
-                              background: "flax"
-                              color: "charcoal"
+                              background: "#E5D282"
+                              color: "#2D4052"
                             }
                             placeholder: TRACED_SVG
                             layout: CONSTRAINED
