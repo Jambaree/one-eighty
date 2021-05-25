@@ -122,13 +122,21 @@ const Container = styled.div`
   }
 
   .required {
-    display: none;
+    padding-left: 4px;
   }
 
   .form-inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    .field--multiselect .control-label {
+      margin-bottom: 8px;
+    }
+    .checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   .field {
@@ -150,10 +158,6 @@ const Container = styled.div`
 
     &.fullwidth {
       width: 100%;
-    }
-
-    .checkboxes {
-      display: flex;
     }
   }
 
@@ -199,7 +203,6 @@ const Container = styled.div`
     margin: 0 auto;
     appearance: none;
     border-radius: 6px;
-    box-shadow: none;
     outline: none;
     line-height: 25px;
     padding: 13px 15px;
@@ -217,7 +220,8 @@ const Container = styled.div`
       color: ${theme.colors.black75};
     }
 
-    &:focus {
+    &:focus,
+    &:focus-visible {
       border: 1px solid ${theme.colors.coralLight};
     }
   }
@@ -277,11 +281,11 @@ const Container = styled.div`
     width: 100% !important;
   }
 
-  .hide-asterix {
+  /* .hide-asterix {
     .control-label {
       display: none;
     }
-  }
+  } */
 
   .grid {
     .checkboxes {
