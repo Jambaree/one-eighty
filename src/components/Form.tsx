@@ -313,12 +313,6 @@ const Container = styled.div`
     width: 100% !important;
   }
 
-  /* .hide-asterix {
-    .control-label {
-      display: none;
-    }
-  } */
-
   .grid {
     .checkboxes {
       display: flex;
