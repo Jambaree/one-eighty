@@ -79,14 +79,12 @@ const themeUi = {
       color: "white",
       fontWeight: "medium",
       letterSpacing: "-0.15px",
-      fontFamily: "body",
     },
     footerHeading2: {
       fontFamily: "body",
       fontSize: 1,
       letterSpacing: "-0.12px",
       color: "black50",
-      fontFamily: "body",
     },
     desktopSubMenuItem: {
       fontSize: 7,
@@ -94,6 +92,9 @@ const themeUi = {
       fontWeight: "light",
       letterSpacing: "-0.9px",
       color: "almond",
+      "&:hover": {
+        color: "coral",
+      },
     },
     mobileMenuItem: {
       fontFamily: "body",
