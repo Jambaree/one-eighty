@@ -144,7 +144,11 @@ const Container = styled.div`
     .checkboxes {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 8px;
+      grid-gap: 12px 2px;
+
+      @media (max-width: 640px) {
+        grid-template-columns: 1fr 1fr;
+      }
 
       .checkbox-inline span {
         text-transform: capitalize;
