@@ -35,6 +35,7 @@ const Form = (props) => {
               children={buttonText || form?.button?.text || "Submit"}
               aria-label="Submit Form"
               type="submit"
+              style={{ width: "100%" }}
             />
           }
         />
@@ -51,6 +52,14 @@ const Form = (props) => {
 
 const Container = styled.div`
   position: relative;
+  padding: 100px 150px;
+
+  .gravityForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
   .radio-buttons {
     .field-radio-group {
@@ -88,7 +97,7 @@ const Container = styled.div`
     }
 
     input[type="radio"]:checked ~ span {
-      background: #00b040 !important;
+      background: ${theme.colors.success};
       color: white !important;
     }
 
@@ -109,6 +118,7 @@ const Container = styled.div`
 
   legend {
     margin-bottom: 20px;
+    display: none;
   }
 
   .required {
@@ -118,7 +128,7 @@ const Container = styled.div`
   .form-inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .field {
@@ -140,6 +150,10 @@ const Container = styled.div`
 
     &.fullwidth {
       width: 100%;
+    }
+
+    .checkboxes {
+      display: flex;
     }
   }
 
@@ -177,20 +191,34 @@ const Container = styled.div`
   input[type="email"],
   input[type="number"],
   textarea {
+    font-family: ${theme.fonts.body};
+    font-weight: ${theme.fontWeights.light};
+    letter-spacing: -0.23px;
     position: relative;
-    height: 62px;
     width: 100%;
-    margin: 0;
-    background: transparent;
-    border: 1px solid #e5efef;
+    margin: 0 auto;
     appearance: none;
-    border-radius: 0;
+    border-radius: 6px;
     box-shadow: none;
     outline: none;
-    padding: 16px 20px;
+    line-height: 25px;
+    padding: 13px 15px;
+    height: 47;
+    border: 1px solid ${theme.colors.black25};
+    &:hover {
+      border-color: ${theme.colors.black50};
+    }
+    &:disabled {
+      border: ${theme.colors.black25};
+      color: ${theme.colors.black10};
+    }
+
+    ::placeholder {
+      color: ${theme.colors.black75};
+    }
 
     &:focus {
-      border: 1px solid ${theme.colors.primary};
+      border: 1px solid ${theme.colors.coralLight};
     }
   }
 
@@ -276,14 +304,14 @@ const Container = styled.div`
 
   .btn-info {
     color: #fff;
-    background-color: #5bc0de;
-    border-color: #46b8da;
+    background-color: ${theme.colors.noticeLight};
+    border-color: ${theme.colors.notice};
   }
 
   .btn-danger {
     color: #fff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
+    background-color: ${theme.colors.criticalLight};
+    border-color: ${theme.colors.critical};
     flex: none !important;
   }
 
@@ -330,7 +358,7 @@ const Container = styled.div`
 
   .error-detail {
     width: 100%;
-    background: #e24141;
+    background: ${theme.colors.critical};
     color: #fff;
     padding: 5px 10px;
     margin-top: 10px;
