@@ -79,7 +79,14 @@ const Footer = (props) => {
                         mr="24px"
                         mb="21px"
                       >
-                        <Text sx={{ fontFamily: "body" }}>{o.title}</Text>
+                        <Text
+                          sx={{
+                            fontFamily: "body",
+                            "&:hover": { color: "coral" },
+                          }}
+                        >
+                          {o.title}
+                        </Text>
                       </ThemeLink>
                     )
                   })}
@@ -103,7 +110,11 @@ const Footer = (props) => {
                   </Text>
 
                   <ThemeLink
-                    sx={{ textDecoration: "none", color: "white" }}
+                    sx={{
+                      textDecoration: "none",
+                      color: "white",
+                      "&:hover": { color: "coral" },
+                    }}
                     href={`tel:${phonenumber}`}
                   >
                     {phonenumber}
@@ -118,7 +129,11 @@ const Footer = (props) => {
                   </Text>
 
                   <ThemeLink
-                    sx={{ textDecoration: "none", color: "coral" }}
+                    sx={{
+                      textDecoration: "none",
+                      color: "coral",
+                      "&:hover": { color: "coral" },
+                    }}
                     href={`mailto:${emailaddress}`}
                   >
                     {emailaddress}
