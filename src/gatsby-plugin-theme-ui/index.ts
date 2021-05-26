@@ -4,7 +4,7 @@ const themeUi = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: "Poppins, 'Verdana', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
-    heading: "Poppins",
+    heading: "Poppins, 'Verdana'",
   },
   fontSizes: [11, 12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
   fontWeights: {
