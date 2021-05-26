@@ -55,15 +55,15 @@ const Container = styled.div`
   padding: 100px 0;
 
   @media (min-width: 640px) {
-    padding: 100px;
+    padding: 100px 20px;
   }
 
   @media (min-width: 800px) {
-    padding: 50px 20px;
+    padding: 100px 20px;
   }
 
   @media (min-width: 1260px) {
-    padding: 80px 100px;
+    padding: 100px 100px;
   }
 
   .gravityForm {
