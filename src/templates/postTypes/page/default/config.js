@@ -3,8 +3,10 @@ import textimage from "../../../../components/textImage/config"
 import hero from "../../../../components/hero/config"
 import introduction from "../../../../components/introduction/config"
 import cards from "../../../../components/cards/config"
+import textform from "../../../../components/textForm/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
 import benefits from "../../../../components/benefits/config"
+import logos from "../../../../components/logos/config"
 
 const config = {
   id: "default",
@@ -29,8 +31,10 @@ const config = {
             hero,
             introduction,
             cards,
+            textform,
             testimonialslider,
             benefits,
+            logos,
           }),
         },
       ],

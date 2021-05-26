@@ -8,16 +8,20 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
+import textform from "../../../../components/textForm/TextForm"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import benefits from "../../../../components/benefits/Benefits"
+import logos from "../../../../components/logos/Logos"
 
 const blocks = {
   textimage,
   hero,
   introduction,
   cards,
+  textform,
   testimonialslider,
   benefits,
+  logos,
 }
 
 const Template = (props) => {
@@ -184,6 +188,29 @@ export const CollectionQuery = graphql`
                             }
                             placeholder: TRACED_SVG
                             layout: CONSTRAINED
+                          )
+                        }
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
+                  columns
+                  fieldGroupName
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    text
+                    logo {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            width: 10
+                            placeholder: TRACED_SVG
+                            layout: CONSTRAINED
+                            tracedSVGOptions: { background: "", color: "" }
                           )
                         }
                       }
