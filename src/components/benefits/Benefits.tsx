@@ -75,7 +75,13 @@ const Benefits = (props) => {
                       <Heading
                         children={o.headline}
                         variant="styles.h3"
-                        sx={{ mb: 12, mt: 36, fontSize: "5", width: 255 }}
+                        sx={{
+                          mb: 12,
+                          mt: 36,
+                          fontSize: "5",
+                          width: ["100%"],
+                          lineHeight: "28px",
+                        }}
                       />
                     )}
                     {o.text && (
