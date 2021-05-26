@@ -38,6 +38,10 @@ const gatsbyConfig = {
               family: "Poppins",
               variants: ["100", "300", "400", "500", "700"],
             },
+            {
+              family: "Open Sans",
+              variants: ["100", "300", "400", "500", "700"],
+            },
           ],
         },
       },

@@ -3,7 +3,7 @@ const themeUi = {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: "Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
+    body: "Poppins, 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
     heading: "Poppins",
   },
   fontSizes: [11, 12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
