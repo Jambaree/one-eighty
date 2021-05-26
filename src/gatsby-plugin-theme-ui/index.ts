@@ -92,6 +92,9 @@ const themeUi = {
       fontWeight: "light",
       letterSpacing: "-0.9px",
       color: "almond",
+      "&:hover": {
+        color: "coral",
+      },
     },
     mobileMenuItem: {
       fontFamily: "body",
