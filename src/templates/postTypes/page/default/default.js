@@ -68,7 +68,6 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   headline
                   image {
-                    id
                     altText
                     localFile {
                       childImageSharp {
