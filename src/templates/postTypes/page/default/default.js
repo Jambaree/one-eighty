@@ -8,6 +8,7 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
+import textform from "../../../../components/textForm/TextForm"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import benefits from "../../../../components/benefits/Benefits"
 
@@ -16,6 +17,7 @@ const blocks = {
   hero,
   introduction,
   cards,
+  textform,
   testimonialslider,
   benefits,
 }

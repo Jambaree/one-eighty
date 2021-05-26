@@ -9,10 +9,10 @@ import { GravityForm } from "./gravityForm"
 import theme from "../theme"
 
 const Form = (props) => {
-  const { formId, buttonText, hideTitle, hiddenFields, hidden, ...rest } = props
+  const { formid, buttonText, hideTitle, hiddenFields, hidden, ...rest } = props
 
-  // let { allGfForm } = useGravityData()
-  // const form = allGfForm.nodes.find((o) => +o.formId === +formId)
+  let { allGfForm } = useGravityData()
+  const form = allGfForm.nodes.find((o) => +o.formId === +formid)
 
   const [success, setSuccess] = useState(null)
 
@@ -22,7 +22,7 @@ const Form = (props) => {
 
   return (
     <Container {...rest}>
-      {/* {!success && (
+      {!success && (
         <GravityForm
           hiddenFields={hiddenFields}
           hideTitle={hideTitle}
@@ -35,10 +35,11 @@ const Form = (props) => {
               children={buttonText || form?.button?.text || "Submit"}
               aria-label="Submit Form"
               type="submit"
+              style={{ width: "90%" }}
             />
           }
         />
-      )} */}
+      )}
 
       {success && (
         <Message>
@@ -51,6 +52,26 @@ const Form = (props) => {
 
 const Container = styled.div`
   position: relative;
+  padding: 100px 0;
+
+  @media (min-width: 640px) {
+    padding: 100px 20px;
+  }
+
+  @media (min-width: 800px) {
+    padding: 100px 20px;
+  }
+
+  @media (min-width: 1260px) {
+    padding: 100px 100px;
+  }
+
+  .gravityForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
   .radio-buttons {
     .field-radio-group {
@@ -88,7 +109,7 @@ const Container = styled.div`
     }
 
     input[type="radio"]:checked ~ span {
-      background: #00b040 !important;
+      background: ${theme.colors.success};
       color: white !important;
     }
 
@@ -109,20 +130,49 @@ const Container = styled.div`
 
   legend {
     margin-bottom: 20px;
+    display: none;
   }
 
   .required {
-    display: none;
+    padding-left: 4px;
   }
 
   .form-inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+
+    .field--multiselect .control-label {
+      margin-bottom: 8px;
+    }
+    .checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 12px 2px;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media (max-width: 540px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .checkbox-inline span {
+        text-transform: capitalize;
+        font-family: ${theme.fonts.body};
+        font-weight: ${theme.fontWeights.light};
+        font-size: ${theme.fontSizes[2]}px;
+      }
+    }
   }
 
   .field {
-    width: 100%;
+    width: 90%;
     margin-bottom: 25px;
 
     &--small {
@@ -177,20 +227,34 @@ const Container = styled.div`
   input[type="email"],
   input[type="number"],
   textarea {
+    font-family: ${theme.fonts.body};
+    font-weight: ${theme.fontWeights.light};
+    letter-spacing: -0.23px;
     position: relative;
-    height: 62px;
     width: 100%;
-    margin: 0;
-    background: transparent;
-    border: 1px solid #e5efef;
+    margin: 0 auto;
     appearance: none;
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: 6px;
     outline: none;
-    padding: 16px 20px;
+    line-height: 25px;
+    padding: 13px 15px;
+    height: 47;
+    border: 1px solid ${theme.colors.black25};
+    &:hover {
+      border-color: ${theme.colors.black50};
+    }
+    &:disabled {
+      border: ${theme.colors.black25};
+      color: ${theme.colors.black10};
+    }
 
-    &:focus {
-      border: 1px solid ${theme.colors.primary};
+    ::placeholder {
+      color: ${theme.colors.black75};
+    }
+
+    &:focus,
+    &:focus-visible {
+      border: 1px solid ${theme.colors.coralLight};
     }
   }
 
@@ -246,13 +310,7 @@ const Container = styled.div`
     height: auto;
     min-height: 150px;
     max-width: 100%;
-    width: 100% !important;
-  }
-
-  .hide-asterix {
-    .control-label {
-      display: none;
-    }
+    /* width: 100% !important; */
   }
 
   .grid {
@@ -276,14 +334,14 @@ const Container = styled.div`
 
   .btn-info {
     color: #fff;
-    background-color: #5bc0de;
-    border-color: #46b8da;
+    background-color: ${theme.colors.noticeLight};
+    border-color: ${theme.colors.notice};
   }
 
   .btn-danger {
     color: #fff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
+    background-color: ${theme.colors.criticalLight};
+    border-color: ${theme.colors.critical};
     flex: none !important;
   }
 
@@ -330,7 +388,7 @@ const Container = styled.div`
 
   .error-detail {
     width: 100%;
-    background: #e24141;
+    background: ${theme.colors.critical};
     color: #fff;
     padding: 5px 10px;
     margin-top: 10px;
@@ -353,53 +411,53 @@ const Message = styled.div`
   padding: 20px;
 `
 
-// const useGravityData = () => {
-//   const { allGfForm } = useStaticQuery(
-//     graphql`
-//       query {
-//         allGfForm {
-//           nodes {
-//             formId
-//             title
-//             slug
-//             apiURL
-//             labelPlacement
-//             descriptionPlacement
-//             formFields {
-//               id
-//               label
-//               labelPlacement
-//               isRequired
-//               conditionalLogic
-//               description
-//               descriptionPlacement
-//               type
-//               choices
-//               content
-//               errorMessage
-//               inputMaskValue
-//               visibility
-//               cssClass
-//               placeholder
-//               size
-//               defaultValue
-//               maxLength
-//             }
-//             button {
-//               text
-//             }
-//             confirmations {
-//               id
-//               name
-//               type
-//               message
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
-//   return { allGfForm }
-// }
+const useGravityData = () => {
+  const { allGfForm } = useStaticQuery(
+    graphql`
+      query {
+        allGfForm {
+          nodes {
+            formId
+            title
+            slug
+            apiURL
+            labelPlacement
+            descriptionPlacement
+            formFields {
+              id
+              label
+              labelPlacement
+              isRequired
+              conditionalLogic
+              description
+              descriptionPlacement
+              type
+              choices
+              content
+              errorMessage
+              inputMaskValue
+              visibility
+              cssClass
+              placeholder
+              size
+              defaultValue
+              maxLength
+            }
+            button {
+              text
+            }
+            confirmations {
+              id
+              name
+              type
+              message
+            }
+          }
+        }
+      }
+    `
+  )
+  return { allGfForm }
+}
 
 export default Form
