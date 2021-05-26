@@ -39,7 +39,7 @@ const gatsbyConfig = {
               variants: ["100", "300", "400", "500", "700"],
             },
             {
-              family: "Open Sans",
+              family: "Verdana",
               variants: ["100", "300", "400", "500", "700"],
             },
           ],
