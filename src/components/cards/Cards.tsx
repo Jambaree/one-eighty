@@ -10,7 +10,13 @@ const Cards = (props) => {
   const { columns, headline, subheading, cards } = props
 
   return (
-    <Box sx={{ bg: "almondLight", py: [90, 164, 164], overflow: "hidden" }}>
+    <Box
+      sx={{
+        bg: "almondLight",
+        py: [90, 164, 164],
+        overflow: "hidden",
+      }}
+    >
       <Edges size="md" sx={{ position: "relative" }}>
         <Box
           sx={{
@@ -35,6 +41,7 @@ const Cards = (props) => {
             textAlign: ["left", "center", "center"],
             m: ["unset", "0 auto", "0 auto"],
             mb: 36,
+            px: [16, 30, 120],
           }}
         >
           {headline && (
@@ -54,12 +61,18 @@ const Cards = (props) => {
               variant="text.introduction"
               sx={{
                 zIndex: 1,
-                m: ["0 24px 36px 0", "0 80px 36px 80px", "0 150px 60px 150px"],
+                m: ["0 36px 0 0", "0 36px 36px 36px", "0 36px 36px 36px"],
               }}
             />
           )}
         </Box>
-        <Grid gap={5} columns={[1, 2, columns]}>
+        <Grid
+          gap={5}
+          columns={[1, 2, columns]}
+          sx={{
+            px: [16, 30, 120],
+          }}
+        >
           {cards &&
             cards.map((o, i) => {
               return (
