@@ -24,7 +24,7 @@ const Logos = (props) => {
             "&:after": {
               content: "''",
               position: "absolute",
-              marginBottom: "-160px",
+              marginBottom: ["-210px", "-230px", "-160px"],
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
@@ -69,6 +69,7 @@ const Logos = (props) => {
                           borderRadius: 6,
                           marginBottom: 16,
                         }}
+                        backgroundSize="contain"
                       />
                     )}
                   </Box>
