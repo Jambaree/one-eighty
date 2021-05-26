@@ -1,5 +1,7 @@
 // import templates
 import pageDefault from "./templates/postTypes/page/default/config"
+import postDefault from "./templates/postTypes/post/default/config"
+import postArchive from "./templates/postTypes/post/archive/config"
 
 const fields = {
   postTypes: [
@@ -7,6 +9,11 @@ const fields = {
       id: "page",
       title: "Page",
       templates: [pageDefault],
+    },
+    {
+      id: "post",
+      title: "Post",
+      templates: [postDefault, postArchive],
     },
   ],
   taxonomies: [],
