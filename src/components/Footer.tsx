@@ -78,6 +78,7 @@ const Footer = (props) => {
                         color="white"
                         mr="24px"
                         mb="21px"
+                        variant="hyperlink"
                       >
                         <Text
                           sx={{
@@ -116,6 +117,7 @@ const Footer = (props) => {
                       "&:hover": { color: "coral" },
                     }}
                     href={`tel:${phonenumber}`}
+                    variant="hyperlink"
                   >
                     {phonenumber}
                   </ThemeLink>
@@ -135,6 +137,7 @@ const Footer = (props) => {
                       "&:hover": { color: "coral" },
                     }}
                     href={`mailto:${emailaddress}`}
+                    variant="hyperlink"
                   >
                     {emailaddress}
                   </ThemeLink>
