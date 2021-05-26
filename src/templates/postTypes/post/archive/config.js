@@ -36,23 +36,27 @@ const config = {
       type: "group",
       fields: [
         {
+          id: "backgroundImage",
+          type: "image",
+          label: "Background Image",
+        },
+        {
           id: "tag",
           type: "text",
           label: "Tag",
-          defaultValue: "Mustache try-hard",
+          defaultValue: "",
         },
         {
           id: "headline",
           type: "text",
           label: "Headline",
-          defaultValue: "Glossier chia salvia gastropub tote bag master",
+          defaultValue: "",
         },
         {
           id: "text",
           type: "text",
           label: "Text",
-          defaultValue:
-            "Next level cred squid, butcher kombucha woke vexillologist art party poke. Mlkshk flannel tbh DIY.",
+          defaultValue: "",
         },
       ],
     },

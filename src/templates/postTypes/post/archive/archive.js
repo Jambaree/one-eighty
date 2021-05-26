@@ -1,5 +1,8 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
+// import { GatsbyImage } from "jam-cms"
+import { Grid, Box, Heading, Text, Link } from "theme-ui"
+import { ChevronLeft, ChevronRight } from "mdi-material-ui"
 
 // import app components
 import Layout from "../../../../components/Layout"
@@ -24,6 +27,8 @@ const Template = (props) => {
     },
   } = props
 
+  console.log(posts)
+
   const renderPagination = () => {
     const items = []
 
@@ -39,34 +44,82 @@ const Template = (props) => {
       }
 
       items.push(
-        <li key={i}>
+        <li
+          key={i}
+          style={{
+            width: "23px",
+            height: "23px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "14px 8px 14px 0",
+          }}
+        >
           <Link to={pathname}>{i}</Link>
         </li>
       )
     }
 
     return (
-      <div>
+      <Box>
         <nav>
-          <ul>{items}</ul>
+          <ul
+            style={{
+              width: 304,
+              height: 50,
+              display: "flex",
+              alignItems: "center",
+              color: "#FFF",
+              borderRadius: 6,
+            }}
+          >
+            <ChevronLeft
+              style={{
+                fill: "coral",
+                border: "1 solid #DBDBDB",
+                borderRadius: "50%",
+              }}
+            />
+            {items}
+            <ChevronRight
+              style={{
+                fill: "coral",
+                border: "1 solid #DBDBDB",
+                borderRadius: "50%",
+              }}
+            />
+          </ul>
         </nav>
-      </div>
+      </Box>
     )
   }
 
   return (
     <Layout {...props} seo={seo}>
-      <div>
-        <div>
-          <div>{acf?.content?.tag && <p>{acf.content.tag}</p>}</div>
-          {acf?.content?.headline && (
-            <h2>
-              <span>{acf.content.headline}</span>
-            </h2>
-          )}
-          {acf?.content?.text && <p>{acf.content.text}</p>}
-        </div>
-        <div>
+      <Box
+        sx={{
+          border: "2px solid purple",
+          height: 353,
+          backgroundImage: acf.backgroundImage || null,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {acf?.content?.headline && (
+          <Heading variant="styles.h1">{acf.content.headline}</Heading>
+        )}
+        {acf?.content?.text && (
+          <Text variant="text.introduction">{acf.content.text}</Text>
+        )}
+      </Box>
+      <Grid
+        columns={[1, null, "5fr 7fr"]}
+        sx={{ p: "118px 138px", backgroundColor: "almondLight" }}
+      >
+        <Box>Search and Categories</Box>
+        <Box>
           {posts &&
             posts
               .slice(
@@ -74,16 +127,28 @@ const Template = (props) => {
                 (page - 1) * postsPerPage + postsPerPage
               )
               .map((o) => (
-                <div key={o.id}>
-                  <p>{o.date}</p>
-                  <Link to={o.uri} aria-label="Read article" title={o.title}>
-                    Read More →
-                  </Link>
-                </div>
+                <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
+                  <Box>
+                    <Text>{o.date}</Text>
+                  </Box>
+                  <Box>
+                    <Heading variant="styles.h5" sx={{ fontSize: "6" }}>
+                      {o.title}
+                    </Heading>
+                    <Link
+                      href={o.uri}
+                      aria-label="Read article"
+                      title={o.title}
+                      variant="links.hyperlink"
+                    >
+                      Read more →
+                    </Link>
+                  </Box>
+                </Grid>
               ))}
-        </div>
-        {renderPagination()}
-      </div>
+          {renderPagination()}
+        </Box>
+      </Grid>
     </Layout>
   )
 }
@@ -108,6 +173,19 @@ export const Query = graphql`
               tag
               headline
               text
+              backgroundimage {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 10
+                      tracedSVGOptions: { background: "", color: "" }
+                      placeholder: TRACED_SVG
+                      layout: FULL_WIDTH
+                    )
+                  }
+                }
+              }
             }
           }
         }
