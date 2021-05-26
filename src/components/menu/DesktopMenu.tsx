@@ -148,7 +148,7 @@ const MenuButton = (props: MenuButtonProps) => {
             transition: "opacity 150ms ease-in-out",
             position: "absolute",
             bottom: 0,
-            left: "50%",
+            left: "45%",
             transform: "translateX(-50%)",
             height: 9,
             width: 40,
