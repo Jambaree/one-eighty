@@ -35,7 +35,7 @@ const Form = (props) => {
               children={buttonText || form?.button?.text || "Submit"}
               aria-label="Submit Form"
               type="submit"
-              style={{ width: "100%" }}
+              style={{ width: "90%" }}
             />
           }
         />
@@ -52,18 +52,18 @@ const Form = (props) => {
 
 const Container = styled.div`
   position: relative;
-  padding: 100px 150px;
+  padding: 100px 0;
 
-  @media (max-width: 1260px) {
+  @media (min-width: 640px) {
+    padding: 100px;
+  }
+
+  @media (min-width: 800px) {
+    padding: 50px 20px;
+  }
+
+  @media (min-width: 1260px) {
     padding: 80px 100px;
-  }
-
-  @media (max-width: 860px) {
-    padding: 60px 80px;
-  }
-
-  @media (max-width: 640px) {
-    padding: 60px;
   }
 
   .gravityForm {
@@ -172,7 +172,7 @@ const Container = styled.div`
   }
 
   .field {
-    width: 100%;
+    width: 90%;
     margin-bottom: 25px;
 
     &--small {
@@ -310,7 +310,7 @@ const Container = styled.div`
     height: auto;
     min-height: 150px;
     max-width: 100%;
-    width: 100% !important;
+    /* width: 100% !important; */
   }
 
   .grid {

@@ -19,8 +19,8 @@ const TextForm = (props) => {
           flexDirection: ["column", "column", "row"],
           flexWrap: "wrap-reverse",
           alignItems: "center",
-          minHeight: 750,
-          mb: [36, 36, 0],
+          minHeight: 800,
+          height: "auto",
           textAlign: "left",
         }}
       >
