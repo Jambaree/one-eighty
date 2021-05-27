@@ -19,53 +19,87 @@ const TextForm = (props) => {
           flexDirection: ["column", "column", "row"],
           flexWrap: "wrap-reverse",
           alignItems: "center",
-          minHeight: 800,
           height: "auto",
           textAlign: "left",
         }}
       >
-        <Edges size="md">
+        <Box
+          sx={{
+            ml: alignment === "left" ? "auto" : "unset",
+            mr: alignment === "right" ? "auto" : "unset",
+            order: alignment === "left" ? 1 : 2,
+            width: ["100%", null, "calc(50% - 140px)"],
+            height: "100%",
+            my: [93, 93, "auto"],
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            pt: 36,
+          }}
+        >
           <Box
             sx={{
-              ml: alignment === "left" ? "auto" : "unset",
-              mr: alignment === "right" ? "auto" : "unset",
-              width: ["100%", null, "calc(50% - 25px)"],
-              height: "100%",
-              my: [93, 93, "auto"],
+              height: 168,
+              width: 168,
+              bg: "plumLight",
+              borderRadius: "50%",
+              display: "block",
+              overflow: "hidden",
+              top: 0,
+              position: "absolute",
+              left: alignment === "left" ? "-3%" : "unset",
+              right: alignment === "right" ? "-3%" : "unset",
+              zIndex: 0,
+            }}
+          />
+          <Box
+            sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-start",
-              pt: 36,
+              pl: [24, 24, alignment === "left" ? "5%" : "24px"],
+              pr: [24, 24, alignment === "right" ? "5%" : "24px"],
+              margin: "0 auto",
             }}
           >
             {headline && (
               <Heading
                 children={headline}
                 variant="styles.h2"
-                sx={{ pb: 36 }}
+                sx={{ pt: 65, pb: 36, zIndex: 1, maxWidth: "540px" }}
               />
             )}
             {text && (
               <Text
                 children={text}
                 sx={{
-                  paddingBottom: 36,
+                  paddingBottom: 70,
+                  maxWidth: "540px",
                 }}
                 variant="text.introduction"
               />
             )}
             {disclaimer && (
-              <Text children={disclaimer} variant="text.paragraph" />
+              <Text
+                children={disclaimer}
+                variant="text.paragraph"
+                sx={{
+                  fontSize: "10px",
+                  letterSpacing: "-0.1px",
+                  color: "black50",
+                  maxWidth: "540px",
+                }}
+              />
             )}
           </Box>
-        </Edges>
+        </Box>
         <Box
           sx={{
-            left: alignment === "left" ? 0 : "unset",
-            right: alignment === "right" ? 0 : "unset",
-            position: ["relative", null, "absolute"],
+            // left: alignment === "left" ? 0 : "unset",
+            // right: alignment === "right" ? 0 : "unset",
+            // position: ["relative", null, "absolute"],
+            order: alignment === "left" ? 2 : 1,
             height: "auto",
-            width: ["100%", "100%", "calc(50% - 25px)"],
+            width: ["100%", "100%", "50%"],
             top: [null, null, 0],
             bottom: [null, null, 0],
             bg: formbackground,
