@@ -72,8 +72,25 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Introduction {
                   fieldGroupName
+                  backgroundcolor
                   headline
                   text
+                  background {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: TRACED_SVG
+                          tracedSVGOptions: {
+                            color: "#E5D282"
+                            background: "#FFF"
+                          }
+                          width: 1920
+                        )
+                      }
+                    }
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   alignment
