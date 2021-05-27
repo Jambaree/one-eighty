@@ -177,6 +177,16 @@ const themeUi = {
         },
       },
     },
+    checkbox: {
+      width: "23px",
+      height: "23px",
+
+      // input: {
+      //   "&:focus": {
+      //     borderColor: "coralLight",
+      //   },
+      // },
+    },
   },
   links: {
     hyperlink: {

@@ -1,7 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
-// import { GatsbyImage } from "jam-cms"
-import { Grid, Box, Heading, Text, Link, Checkbox } from "theme-ui"
+import { Grid, Box, Heading, Text, Link, Checkbox, Label } from "theme-ui"
 import { ChevronLeft, ChevronRight } from "mdi-material-ui"
 import moment from "moment"
 
@@ -14,7 +13,11 @@ const Template = (props) => {
     data: {
       wpPage: {
         seo,
-        template: { acf },
+        template: {
+          acf: {
+            content: { headline, text, backgroundimage },
+          },
+        },
       },
       allWpPost: { nodes: posts },
     },
@@ -28,6 +31,18 @@ const Template = (props) => {
       },
     },
   } = props
+
+  const [search, setSearch] = useState("")
+  const [category, setCategory] = useState([])
+
+  const handleChange = (e) => {
+    if (e.target.value && !category.includes(e.target.name)) {
+      setCategory([...category, e.target.name])
+    } else {
+      setCategory(category.filter((item) => item !== e.target.name))
+    }
+    console.log(category)
+  }
 
   const renderPagination = () => {
     const items = []
@@ -53,6 +68,10 @@ const Template = (props) => {
             justifyContent: "center",
             alignItems: "center",
             margin: "14px 8px 14px 0",
+
+            "&:hover": {
+              backgroundColor: "red",
+            },
           }}
         >
           <Link to={pathname}>{i}</Link>
@@ -101,20 +120,36 @@ const Template = (props) => {
     <Layout {...props} seo={seo}>
       <Box
         sx={{
-          border: "2px solid purple",
+          backgroundImage: [`url(${backgroundimage?.url})`],
           height: 353,
-          backgroundImage: acf.backgroundImage || null,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        {acf?.content?.headline && (
-          <Heading variant="styles.h1">{acf.content.headline}</Heading>
+        {headline && (
+          <Heading
+            variant="styles.h1"
+            sx={{
+              fontSize: "65px",
+              color: "almondLight",
+              mb: 36,
+            }}
+          >
+            {headline}
+          </Heading>
         )}
-        {acf?.content?.text && (
-          <Text variant="text.introduction">{acf.content.text}</Text>
+        {text && (
+          <Text
+            variant="text.introduction"
+            sx={{
+              color: "almondLight",
+              fontSize: "18px",
+            }}
+          >
+            {text}
+          </Text>
         )}
       </Box>
       <Grid
@@ -145,18 +180,37 @@ const Template = (props) => {
             Type
           </Text>
           <Box>
-            <Box sx={{ display: "flex" }}>
-              <Checkbox defaultValue={true} />
-              <Text>Press Releases</Text>
-            </Box>
-            <Box sx={{ display: "flex" }}>
-              <Checkbox />
-              <Text>Case Studies</Text>
-            </Box>
-            <Box sx={{ display: "flex" }}>
-              <Checkbox />
-              <Text>News</Text>
-            </Box>
+            <Label sx={{ display: "flex" }}>
+              <Checkbox
+                id={1}
+                value={false}
+                defaultChecked={false}
+                name="press-releases"
+                onChange={handleChange}
+                variant="buttons.checkbox"
+              />
+              Press Releases
+            </Label>
+            <Label sx={{ display: "flex" }}>
+              <Checkbox
+                id={2}
+                value={false}
+                defaultChecked={false}
+                name="case-studies"
+                onChange={handleChange}
+              />
+              Case Studies
+            </Label>
+            <Label sx={{ display: "flex" }}>
+              <Checkbox
+                id={3}
+                value={false}
+                defaultChecked={false}
+                name="news"
+                onChange={handleChange}
+              />
+              News
+            </Label>
           </Box>
         </Box>
         <Box>
@@ -169,7 +223,17 @@ const Template = (props) => {
               .map((o) => (
                 <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
                   <Box>
-                    <Text>{moment(o.date).format("DD MMM")}</Text>
+                    <Text
+                      sx={{
+                        fontFamily: "fonts.body",
+                        textTransform: "uppercase",
+                        color: "plumLight",
+                        letterSpacing: "1.1px",
+                        fontSize: "11px",
+                      }}
+                    >
+                      {moment(o.date).format("DD MMM")}
+                    </Text>
                   </Box>
                   <Box>
                     <Heading variant="styles.h5" sx={{ fontSize: "6" }}>
@@ -186,7 +250,7 @@ const Template = (props) => {
                   </Box>
                 </Grid>
               ))}
-          {renderPagination()}
+          {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
     </Layout>
