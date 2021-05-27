@@ -45,11 +45,15 @@ const Searchbar = () => {
       <SearchBar>
         <Form onSubmit={onSubmit}>
           <Input
-            placeholder="Search"
+            placeholder="Search what's new..."
             value={value}
             onChange={({ target }) => setValue(target.value)}
             onKeyDown={(e) => e.key === "Escape" && setIsOpen(false)}
-            style={{ paddingRight: 40 }}
+            style={{
+              paddingRight: 40,
+              backgroundColor: "white",
+            }}
+            variant="text.paragraph"
           />
           {loading ? (
             <StyledSpinner size={20} />
@@ -85,7 +89,7 @@ const Searchbar = () => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
 `
 
@@ -137,9 +141,13 @@ const ToggleButton = styled.button`
   font: inherit;
   line-height: normal;
   margin-left: 15px;
-  color: grey;
+  color: "coral";
   cursor: pointer;
   outline: none;
+
+  svg path {
+    fill: #e86140;
+  }
 
   &:hover {
     color: black;
@@ -150,6 +158,7 @@ const Form = styled.form`
   position: relative;
   display: flex;
   align-items: center;
+  width: 350px;
 `
 
 const StyledSpinner = styled(Spinner)`

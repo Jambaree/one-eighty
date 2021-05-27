@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "mdi-material-ui"
 
 // import app components
 import Layout from "../../../../components/Layout"
+import Search from "../../../../components/Search"
 
 const Template = (props) => {
   const {
@@ -69,23 +70,26 @@ const Template = (props) => {
               height: 50,
               display: "flex",
               alignItems: "center",
-              color: "#FFF",
+              backgroundColor: "#FFF",
               borderRadius: 6,
+              padding: 10,
             }}
           >
             <ChevronLeft
               style={{
                 fill: "coral",
-                border: "1 solid #DBDBDB",
+                border: "1px solid #DBDBDB",
                 borderRadius: "50%",
+                marginRight: 20,
               }}
             />
             {items}
             <ChevronRight
               style={{
                 fill: "coral",
-                border: "1 solid #DBDBDB",
+                border: "1px solid #DBDBDB",
                 borderRadius: "50%",
+                marginLeft: 20,
               }}
             />
           </ul>
@@ -118,7 +122,20 @@ const Template = (props) => {
         columns={[1, null, "5fr 7fr"]}
         sx={{ p: "118px 138px", backgroundColor: "almondLight" }}
       >
-        <Box>Search and Categories</Box>
+        <Box>
+          <Text
+            sx={{
+              fontFamily: "fonts.heading",
+              fontSize: 0,
+              textTransform: "uppercase",
+              letterSpacing: "1.1px",
+              pl: "10px",
+            }}
+          >
+            Search
+          </Text>
+          <Search />
+        </Box>
         <Box>
           {posts &&
             posts
