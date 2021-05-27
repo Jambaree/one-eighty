@@ -38,24 +38,46 @@ const TextForm = (props) => {
               pt: 36,
             }}
           >
+            <Box
+              sx={{
+                height: 168,
+                width: 168,
+                bg: "plumLight",
+                borderRadius: "50%",
+                display: "block",
+                overflow: "hidden",
+                top: 0,
+                position: "absolute",
+                left: "-3%",
+                zIndex: 0,
+              }}
+            />
             {headline && (
               <Heading
                 children={headline}
                 variant="styles.h2"
-                sx={{ pb: 36 }}
+                sx={{ pt: 65, pb: 36, zIndex: 1 }}
               />
             )}
             {text && (
               <Text
                 children={text}
                 sx={{
-                  paddingBottom: 36,
+                  paddingBottom: 70,
                 }}
                 variant="text.introduction"
               />
             )}
             {disclaimer && (
-              <Text children={disclaimer} variant="text.paragraph" />
+              <Text
+                children={disclaimer}
+                variant="text.paragraph"
+                sx={{
+                  fontSize: "10px",
+                  letterSpacing: "-0.1px",
+                  color: "black50",
+                }}
+              />
             )}
           </Box>
         </Edges>
