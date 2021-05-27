@@ -34,6 +34,7 @@ const TextForm = (props) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
+            overflow: "hidden",
           }}
         >
           <Box
@@ -44,7 +45,7 @@ const TextForm = (props) => {
               borderRadius: "50%",
               display: "block",
               overflow: "hidden",
-              top: 0,
+              top: alignment === "right" ? ["62%", "64%", 0] : 0,
               position: "absolute",
               left: alignment === "left" ? "-3%" : "unset",
               right: alignment === "right" ? "-3%" : "unset",
