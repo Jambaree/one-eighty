@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 // import { GatsbyImage } from "jam-cms"
-import { Grid, Box, Heading, Text, Link } from "theme-ui"
+import { Grid, Box, Heading, Text, Link, Checkbox } from "theme-ui"
 import { ChevronLeft, ChevronRight } from "mdi-material-ui"
+import moment from "moment"
 
 // import app components
 import Layout from "../../../../components/Layout"
@@ -27,8 +28,6 @@ const Template = (props) => {
       },
     },
   } = props
-
-  console.log(posts)
 
   const renderPagination = () => {
     const items = []
@@ -135,6 +134,30 @@ const Template = (props) => {
             Search
           </Text>
           <Search />
+          <Text
+            sx={{
+              fontFamily: "fonts.heading",
+              fontSize: 0,
+              textTransform: "uppercase",
+              letterSpacing: "1.1px",
+            }}
+          >
+            Type
+          </Text>
+          <Box>
+            <Box sx={{ display: "flex" }}>
+              <Checkbox defaultValue={true} />
+              <Text>Press Releases</Text>
+            </Box>
+            <Box sx={{ display: "flex" }}>
+              <Checkbox />
+              <Text>Case Studies</Text>
+            </Box>
+            <Box sx={{ display: "flex" }}>
+              <Checkbox />
+              <Text>News</Text>
+            </Box>
+          </Box>
         </Box>
         <Box>
           {posts &&
@@ -146,7 +169,7 @@ const Template = (props) => {
               .map((o) => (
                 <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
                   <Box>
-                    <Text>{o.date}</Text>
+                    <Text>{moment(o.date).format("DD MMM")}</Text>
                   </Box>
                   <Box>
                     <Heading variant="styles.h5" sx={{ fontSize: "6" }}>

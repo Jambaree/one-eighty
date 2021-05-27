@@ -36,7 +36,7 @@ const config = {
       type: "group",
       fields: [
         {
-          id: "backgroundImage",
+          id: "backgroundimage",
           type: "image",
           label: "Background Image",
         },

@@ -49,9 +49,24 @@ const Searchbar = () => {
             value={value}
             onChange={({ target }) => setValue(target.value)}
             onKeyDown={(e) => e.key === "Escape" && setIsOpen(false)}
-            style={{
+            sx={{
               paddingRight: 40,
               backgroundColor: "white",
+              outline: "none",
+              border: "1px solid #DBDBDB",
+              "&:hover": {
+                borderColor: "black50",
+              },
+              "&:disabled": {
+                borderColor: "black25",
+                color: "black10",
+              },
+              "&:focus": {
+                border: "1px solid #FF7B59",
+              },
+              "&:focus-visible": {
+                border: "1px solid #FF7B59",
+              },
             }}
             variant="text.paragraph"
           />
@@ -91,6 +106,7 @@ const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  margin-bottom: 60px;
 `
 
 const SearchBar = styled.div`
