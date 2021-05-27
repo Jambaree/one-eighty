@@ -264,7 +264,7 @@ const Container = styled.div`
     &:before {
       content: "";
       position: absolute;
-      right: 110px;
+      right: 10px;
       top: 58%;
       transform: translateY(-50%);
       width: 30px;
