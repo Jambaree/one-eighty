@@ -237,6 +237,7 @@ const Container = styled.div`
     letter-spacing: -0.23px;
     position: relative;
     width: 100%;
+    max-width: 350px;
     margin: 0 auto;
     appearance: none;
     border-radius: 6px;
@@ -244,7 +245,7 @@ const Container = styled.div`
     line-height: 25px;
     padding: 13px 15px;
     height: 47;
-    border: 1px solid ${theme.colors.black25};
+    border: 1px solid #63a19e;
     &:hover {
       border-color: ${theme.colors.black50};
     }
