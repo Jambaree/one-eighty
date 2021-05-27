@@ -5,7 +5,7 @@ const config = {
     {
       id: "alignment",
       type: "select",
-      label: "Image Alignment",
+      label: "Alignment",
       defaultValue: "left",
       options: [
         {
