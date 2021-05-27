@@ -35,7 +35,7 @@ const Form = (props) => {
               children={buttonText || form?.button?.text || "Submit"}
               aria-label="Submit Form"
               type="submit"
-              style={{ width: "90%" }}
+              style={{ width: "90%", maxWidth: "350px" }}
             />
           }
         />
@@ -141,7 +141,8 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    max-width: 350px;
+    margin: 0 auto;
     .field .control-label {
       margin-bottom: 5px;
       color: ${theme.colors.charcoal};
@@ -152,20 +153,8 @@ const Container = styled.div`
     }
     .checkboxes {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-gap: 12px 2px;
-
-      @media (max-width: 1200px) {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      @media (max-width: 800px) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      @media (max-width: 540px) {
-        grid-template-columns: 1fr 1fr;
-      }
 
       .checkbox-inline span {
         text-transform: capitalize;
@@ -195,6 +184,7 @@ const Container = styled.div`
 
     &.fullwidth {
       width: 100%;
+      max-width: 350px;
     }
   }
 
