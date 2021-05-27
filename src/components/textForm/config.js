@@ -1,12 +1,7 @@
 const config = {
-  id: "textimage",
-  label: "Text & Image",
+  id: "textform",
+  label: "Text & Form",
   fields: [
-    {
-      id: "image",
-      type: "image",
-      label: "Edit Image",
-    },
     {
       id: "alignment",
       type: "select",
@@ -30,18 +25,25 @@ const config = {
     },
     {
       id: "text",
-      type: "wysiwyg",
+      type: "text",
       label: "Text",
     },
-    // {
-    //   id: "wysiwygtext",
-    //   type: "wysiwyg",
-    //   label: "Text",
-    // },
     {
-      id: "link",
-      type: "link",
-      label: "Link",
+      id: "disclaimer",
+      type: "text",
+      label: "Disclaimer",
+    },
+    {
+      id: "formbackground",
+      type: "color_picker",
+      label: "Form Background",
+      defaultValue: "white", // optional
+    },
+    {
+      id: "formid",
+      type: "number",
+      label: "Form ID",
+      defaultValue: 1, // optional
     },
   ],
 }

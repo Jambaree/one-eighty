@@ -10,23 +10,27 @@ const Cards = (props) => {
   const { columns, headline, subheading, cards } = props
 
   return (
-    <Box sx={{ bg: "almondLight", py: [90, 164, 164] }}>
-      <Edges size="md">
+    <Box
+      sx={{
+        bg: "almondLight",
+        py: [90, 164, 164],
+        overflow: "hidden",
+      }}
+    >
+      <Edges size="md" sx={{ position: "relative" }}>
         <Box
           sx={{
-            display: ["none", "block", "block"],
-            position: "absolute",
             height: 168,
             width: 168,
             bg: "flax",
             borderRadius: "50%",
+
+            display: ["none", "block", "block"],
+            overflow: "hidden",
+            marginTop: [null, "-12%", "-7%"],
+            position: "absolute",
+            right: "-4%",
             zIndex: 0,
-            mr: 0,
-            transform: [
-              "unset",
-              "translate(198%, -48%)",
-              "translate(296%, -48%)",
-            ],
           }}
         />
         <Box
@@ -35,9 +39,9 @@ const Cards = (props) => {
             flexDirection: "column",
             justifyContent: ["flex-start", "center", "center"],
             textAlign: ["left", "center", "center"],
-            width: [283, 600, 730],
             m: ["unset", "0 auto", "0 auto"],
             mb: 36,
+            px: [16, 30, 120],
           }}
         >
           {headline && (
@@ -46,7 +50,7 @@ const Cards = (props) => {
               variant="styles.h2"
               sx={{
                 mb: [41, 24, 24],
-                width: ["65%", "100%", "100%"],
+                width: ["50%", "100%", "100%"],
                 zIndex: 1,
               }}
             />
@@ -55,11 +59,20 @@ const Cards = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 60], zIndex: 1 }}
+              sx={{
+                zIndex: 1,
+                m: ["0 36px 0 0", "0 36px 36px 36px", "0 36px 36px 36px"],
+              }}
             />
           )}
         </Box>
-        <Grid gap={5} columns={[1, 2, columns]}>
+        <Grid
+          gap={5}
+          columns={[1, 2, columns]}
+          sx={{
+            px: [16, 30, 120],
+          }}
+        >
           {cards &&
             cards.map((o, i) => {
               return (
@@ -68,7 +81,7 @@ const Cards = (props) => {
                     sx={{
                       position: "relative",
                       height: [180, 180, 300],
-                      width: ["100%", 290, 480],
+                      width: "100%",
                     }}
                   >
                     {o.image && (
@@ -86,7 +99,9 @@ const Cards = (props) => {
                       flexDirection: "column",
                       justifyContent: ["flex-start", "center", "center"],
                       textAlign: ["left", "center", "center"],
-                      width: [287, 287, 480],
+                      maxWidth: "100%",
+                      m: ["unset", "0 auto", "0 auto"],
+                      pr: [30, "unset", "unset"],
                     }}
                   >
                     {o.headline && (

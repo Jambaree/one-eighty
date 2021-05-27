@@ -29,7 +29,7 @@ const Footer = (props) => {
 
   return (
     <Container bg="charcoalDark">
-      <Edges size="lg">
+      <Edges size="md">
         <Flex
           sx={{
             flexWrap: "wrap",
@@ -78,8 +78,16 @@ const Footer = (props) => {
                         color="white"
                         mr="24px"
                         mb="21px"
+                        variant="hyperlink"
                       >
-                        {o.title}
+                        <Text
+                          sx={{
+                            fontFamily: "body",
+                            "&:hover": { color: "coral" },
+                          }}
+                        >
+                          {o.title}
+                        </Text>
                       </ThemeLink>
                     )
                   })}
@@ -92,7 +100,6 @@ const Footer = (props) => {
               mb="55px"
               sx={{
                 "@media (min-width: 800px)": {
-                  width: "255px",
                   marginBottom: 0,
                 },
               }}
@@ -104,8 +111,13 @@ const Footer = (props) => {
                   </Text>
 
                   <ThemeLink
-                    sx={{ textDecoration: "none", color: "white" }}
+                    sx={{
+                      textDecoration: "none",
+                      color: "white",
+                      "&:hover": { color: "coral" },
+                    }}
                     href={`tel:${phonenumber}`}
+                    variant="hyperlink"
                   >
                     {phonenumber}
                   </ThemeLink>
@@ -119,8 +131,13 @@ const Footer = (props) => {
                   </Text>
 
                   <ThemeLink
-                    sx={{ textDecoration: "none", color: "coral" }}
+                    sx={{
+                      textDecoration: "none",
+                      color: "coral",
+                      "&:hover": { color: "coral" },
+                    }}
                     href={`mailto:${emailaddress}`}
+                    variant="hyperlink"
                   >
                     {emailaddress}
                   </ThemeLink>
@@ -192,7 +209,7 @@ const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
     <Box
       aria-hidden={!!mobile}
       sx={{
-        maxWidth: "477px",
+        maxWidth: "520px",
         display: mobile ? "block" : "none",
         "@media (min-width: 800px)": {
           display: mobile ? "none" : "block",
@@ -200,13 +217,27 @@ const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
       }}
     >
       {copyright && (
-        <Text sx={{ display: "block", color: "white", fontSize: "0" }}>
+        <Text
+          sx={{
+            fontFamily: "body",
+            display: "block",
+            color: "white",
+            fontSize: 0,
+          }}
+        >
           {copyright}
         </Text>
       )}
 
       {disclaimer && (
-        <Text sx={{ display: "block", color: "black50", fontSize: "0" }}>
+        <Text
+          sx={{
+            fontFamily: "body",
+            display: "block",
+            color: "black50",
+            fontSize: 0,
+          }}
+        >
           {disclaimer}
         </Text>
       )}

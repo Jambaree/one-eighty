@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Box } from "theme-ui"
 
 // import app components
 import Layout from "../../../../components/Layout"
@@ -7,12 +8,20 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
+import textform from "../../../../components/textForm/TextForm"
+import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
+import benefits from "../../../../components/benefits/Benefits"
+import logos from "../../../../components/logos/Logos"
 
 const blocks = {
   textimage,
   hero,
   introduction,
   cards,
+  textform,
+  testimonialslider,
+  benefits,
+  logos,
 }
 
 const Template = (props) => {
@@ -32,7 +41,13 @@ const Template = (props) => {
             const id = fieldId || fieldGroupName?.split("_").pop().toLowerCase()
 
             const Component = blocks?.[id]
-            return Component && <Component key={index} {...rest} />
+            return (
+              Component && (
+                <Box key={index}>
+                  <Component {...rest} />
+                </Box>
+              )
+            )
           }
         )}
     </Layout>
@@ -55,11 +70,18 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   headline
                   image {
-                    id
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(
+                          width: 1920
+                          tracedSVGOptions: {
+                            background: "#fff"
+                            color: "#E5D282"
+                          }
+                          placeholder: TRACED_SVG
+                          layout: CONSTRAINED
+                        )
                       }
                     }
                   }
@@ -95,15 +117,29 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   alignment
                   fieldGroupName
+                  headline
+                  text
                   image {
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(
+                          width: 700
+                          tracedSVGOptions: {
+                            background: "#fff"
+                            color: "#E5D282"
+                          }
+                          placeholder: TRACED_SVG
+                          layout: CONSTRAINED
+                        )
                       }
                     }
                   }
-                  text
+                  link {
+                    target
+                    title
+                    url
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
                   fieldGroupName
@@ -115,7 +151,15 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData
+                          gatsbyImageData(
+                            width: 550
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
+                            placeholder: TRACED_SVG
+                            layout: CONSTRAINED
+                          )
                         }
                       }
                     }
@@ -127,6 +171,68 @@ export const CollectionQuery = graphql`
                     text
                   }
                   subheading
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
+                  fieldGroupName
+                  backgroundcolor
+                  headline
+                  subheading
+                  slide {
+                    fieldGroupName
+                    name
+                    position
+                    quote
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Benefits {
+                  columns
+                  fieldGroupName
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    headline
+                    text
+                    icon {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            width: 200
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
+                            placeholder: TRACED_SVG
+                            layout: CONSTRAINED
+                          )
+                        }
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
+                  columns
+                  fieldGroupName
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    text
+                    logo {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            width: 10
+                            placeholder: TRACED_SVG
+                            layout: CONSTRAINED
+                            tracedSVGOptions: { background: "", color: "" }
+                          )
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
