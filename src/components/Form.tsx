@@ -274,14 +274,14 @@ const Container = styled.div`
     &:before {
       content: "";
       position: absolute;
-      right: 30px;
-      top: 50%;
+      right: 110px;
+      top: 58%;
       transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid #ccd7de;
+      width: 30px;
+      height: 30px;
+      border: 1px solid ${theme.colors.black25};
+      border-radius: 50%;
+      z-index: 2;
     }
   }
 
