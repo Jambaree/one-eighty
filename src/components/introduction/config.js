@@ -8,11 +8,6 @@ const config = {
       label: "Headline",
     },
     {
-      id: "background",
-      type: "image",
-      label: "Background",
-    },
-    {
       id: "backgroundcolor",
       type: "color_picker",
       label: "Background Color",
