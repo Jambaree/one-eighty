@@ -142,8 +142,13 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 
-    .field--multiselect .control-label {
-      margin-bottom: 8px;
+    .field .control-label {
+      margin-bottom: 5px;
+      color: ${theme.colors.charcoal};
+      letter-spacing: 1.1px;
+      font-size: 11px;
+      font-weight: 400;
+      padding-left: 15px;
     }
     .checkboxes {
       display: grid;
