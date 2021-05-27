@@ -4,26 +4,33 @@ import { Heading, Box, Divider } from "theme-ui"
 // import app components
 import Edges from "../Edges"
 import Textarea from "../Textarea"
+import Hexagon from "../Hexagon"
 
 const Introduction = (props) => {
-  const { backgroundcolor, background, headline, text } = props
+  const { backgroundcolor, headline, text } = props
 
   return (
     <Box
       sx={{
+        position: "relative",
+        overflow: "hidden",
         aspectRatio: "33%/66%",
-        backgroundImage: [
-          "unset",
-          `url(${background?.url})`,
-          `url(${background?.url})`,
-        ],
-        backgroundColor: [backgroundcolor, "unset", "unset"],
+        backgroundColor: backgroundcolor,
         backgroundSize: "cover",
         height: [448, 380, 380],
         display: "flex",
         alignItems: "center",
       }}
     >
+      <Hexagon
+        style={{
+          position: "absolute",
+          left: -50,
+          top: -70,
+          transform: "rotate(30deg)",
+        }}
+      />
+
       <Edges size="md">
         <Box
           sx={{

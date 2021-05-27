@@ -148,7 +148,7 @@ const Container = styled.div`
       color: ${theme.colors.charcoal};
       letter-spacing: 1.1px;
       font-size: 11px;
-      font-weight: 400;
+      font-weight: 500;
       padding-left: 15px;
     }
     .checkboxes {
@@ -264,7 +264,7 @@ const Container = styled.div`
     &:before {
       content: "";
       position: absolute;
-      right: 110px;
+      right: 10px;
       top: 58%;
       transform: translateY(-50%);
       width: 30px;

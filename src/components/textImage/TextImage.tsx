@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Heading, Text } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import BackgroundImage from "../BackgroundImage"
@@ -63,7 +64,7 @@ const TextImage = (props) => {
             )}
             {text && (
               <Text
-                children={text}
+                children={Parser(text)}
                 variant="text.paragraph"
                 sx={{
                   paddingBottom: 36,
