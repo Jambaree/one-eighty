@@ -35,7 +35,7 @@ const Form = (props) => {
               children={buttonText || form?.button?.text || "Submit"}
               aria-label="Submit Form"
               type="submit"
-              style={{ width: "90%" }}
+              style={{ width: "90%", maxWidth: "350px" }}
             />
           }
         />
@@ -141,26 +141,20 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    .field--multiselect .control-label {
-      margin-bottom: 8px;
+    max-width: 350px;
+    margin: 0 auto;
+    .field .control-label {
+      margin-bottom: 5px;
+      color: ${theme.colors.charcoal};
+      letter-spacing: 1.1px;
+      font-size: 11px;
+      font-weight: 400;
+      padding-left: 15px;
     }
     .checkboxes {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-gap: 12px 2px;
-
-      @media (max-width: 1200px) {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      @media (max-width: 800px) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      @media (max-width: 540px) {
-        grid-template-columns: 1fr 1fr;
-      }
 
       .checkbox-inline span {
         text-transform: capitalize;
@@ -190,6 +184,7 @@ const Container = styled.div`
 
     &.fullwidth {
       width: 100%;
+      max-width: 350px;
     }
   }
 
@@ -232,6 +227,7 @@ const Container = styled.div`
     letter-spacing: -0.23px;
     position: relative;
     width: 100%;
+    max-width: 350px;
     margin: 0 auto;
     appearance: none;
     border-radius: 6px;
@@ -239,7 +235,7 @@ const Container = styled.div`
     line-height: 25px;
     padding: 13px 15px;
     height: 47;
-    border: 1px solid ${theme.colors.black25};
+    border: 1px solid #63a19e;
     &:hover {
       border-color: ${theme.colors.black50};
     }
@@ -268,14 +264,14 @@ const Container = styled.div`
     &:before {
       content: "";
       position: absolute;
-      right: 30px;
-      top: 50%;
+      right: 110px;
+      top: 58%;
       transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid #ccd7de;
+      width: 30px;
+      height: 30px;
+      border: 1px solid ${theme.colors.black25};
+      border-radius: 50%;
+      z-index: 2;
     }
   }
 
