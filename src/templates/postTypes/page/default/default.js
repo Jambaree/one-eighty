@@ -211,12 +211,24 @@ export const CollectionQuery = graphql`
                             width: 10
                             placeholder: TRACED_SVG
                             layout: CONSTRAINED
-                            tracedSVGOptions: { background: "", color: "" }
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
                           )
                         }
                       }
                     }
                   }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Textform {
+                  fieldGroupName
+                  alignment
+                  formbackground
+                  formid
+                  headline
+                  text
+                  disclaimer
                 }
               }
             }
