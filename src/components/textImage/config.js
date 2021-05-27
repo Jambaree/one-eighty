@@ -30,7 +30,7 @@ const config = {
     },
     {
       id: "text",
-      type: "text",
+      type: "wysiwyg",
       label: "Text",
     },
     // {
