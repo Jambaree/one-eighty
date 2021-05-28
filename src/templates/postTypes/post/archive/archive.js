@@ -193,7 +193,16 @@ const Template = (props) => {
             Type
           </Text>
           <Box>
-            <Label sx={{ display: "flex" }}>
+            <Label
+              variant="text.paragraph"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                my: "8px",
+                fontSize: "15px",
+                lineHeight: "35px",
+              }}
+            >
               <Checkbox
                 id={1}
                 value={false}
@@ -204,23 +213,43 @@ const Template = (props) => {
               />
               Press Releases
             </Label>
-            <Label sx={{ display: "flex" }}>
+            <Label
+              variant="text.paragraph"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mb: "8px",
+                fontSize: "15px",
+                lineHeight: "35px",
+              }}
+            >
               <Checkbox
                 id={2}
                 value={false}
                 defaultChecked={false}
                 name="case-studies"
                 onChange={handleChange}
+                variant="buttons.checkbox"
               />
               Case Studies
             </Label>
-            <Label sx={{ display: "flex" }}>
+            <Label
+              variant="text.paragraph"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mb: "8px",
+                fontSize: "15px",
+                lineHeight: "35px",
+              }}
+            >
               <Checkbox
                 id={3}
                 value={false}
                 defaultChecked={false}
                 name="news"
                 onChange={handleChange}
+                variant="buttons.checkbox"
               />
               News
             </Label>

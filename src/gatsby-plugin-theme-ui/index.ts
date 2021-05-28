@@ -180,11 +180,14 @@ const themeUi = {
     checkbox: {
       width: "23px",
       height: "23px",
+      backgroundColor: "white",
+      border: "1px solid black25",
 
-      // input: {
-      //   "&:focus": {
-      //     borderColor: "coralLight",
-      //   },
+      "&:hover": {
+        border: "1px solid coral",
+      },
+      // "input:focus": {
+      //   backgroundColor: "coralLight",
       // },
     },
   },
