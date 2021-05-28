@@ -85,7 +85,7 @@ const CardCarousel = (props) => {
                   display: "flex",
                   flexDirection: ["column", "row", "row"],
                   alignItems: ["flex-start", "center", "center"],
-                  p: ["48px 15px 38px 15px", "124px 15px", "124px 15px"],
+                  p: ["48px 15px 38px 15px", "80px 15px", "124px 15px"],
                 }}
               >
                 {headline && (
