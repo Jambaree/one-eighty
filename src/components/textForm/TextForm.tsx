@@ -21,6 +21,7 @@ const TextForm = (props) => {
           alignItems: "center",
           height: "auto",
           textAlign: "left",
+          my: "100px",
         }}
       >
         <Box
