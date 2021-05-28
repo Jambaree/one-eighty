@@ -90,8 +90,13 @@ const Logos = (props) => {
                   </Box>
                   <Box sx={{ width: 50, m: "0 auto" }}>
                     {o.link && (
-                      <Link href={o.link.url}>
-                        <ChevronRightCircle style={{ fill: "coral" }} />
+                      <Link href={o.link.url} sx={{ fill: "#D6694A" }}>
+                        <ChevronRightCircle
+                          style={{
+                            fill: "inherit",
+                            fontSize: 36,
+                          }}
+                        />
                       </Link>
                     )}
                   </Box>
