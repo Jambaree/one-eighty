@@ -1,16 +1,17 @@
 import React from "react"
-import { Box, Grid, Heading, Text, Link, jsx } from "theme-ui"
+import { Box, Grid, Heading, Text, Link } from "theme-ui"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
+import Button from "../Button"
 
 const Partners = (props) => {
   const { columns, backgroundcolor, headline, subheading, cards, mainbutton } =
     props
 
   return (
-    <Box sx={{ bg: backgroundcolor, mt: 104, mb: 154 }}>
+    <Box sx={{ bg: backgroundcolor, pt: 100, pb: 150 }}>
       <Edges size="md">
         <Box
           sx={{
@@ -26,7 +27,7 @@ const Partners = (props) => {
           {headline && (
             <Heading
               children={headline}
-              variant="styles.h2"
+              variant="styles.h3"
               sx={{
                 m: "0 auto",
                 mb: 36,
@@ -38,7 +39,12 @@ const Partners = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 60], zIndex: 1 }}
+              sx={{
+                fontSize: "18px",
+                lineHeight: "30px",
+                mb: [36, 36, 60],
+                zIndex: 1,
+              }}
             />
           )}
         </Box>
@@ -50,12 +56,15 @@ const Partners = (props) => {
                   <Box
                     sx={{
                       position: "relative",
-                      height: 186,
+                      width: "204px",
+                      height: "74px",
+                      mb: 25,
                     }}
                   >
                     {o.icon && (
                       <BackgroundImage
                         image={o.icon}
+                        backgroundSize="contain"
                         style={{
                           borderRadius: 6,
                         }}
@@ -85,14 +94,26 @@ const Partners = (props) => {
                         }}
                       />
                     )}
-                    {o.text && (
-                      <Text children={o.text} variant="text.paragraph" />
+                    {o.link && (
+                      <Link children={o.link.title} variant="links.hyperlink" />
                     )}
                   </Box>
                 </Box>
               )
             })}
         </Grid>
+        {mainbutton?.url && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              mt: 80,
+            }}
+          >
+            <Button to={mainbutton.url}>{mainbutton.title}</Button>
+          </Box>
+        )}
       </Edges>
     </Box>
   )
