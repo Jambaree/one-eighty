@@ -22,6 +22,26 @@ const CardCarousel = (props) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
 
   return (
@@ -39,34 +59,52 @@ const CardCarousel = (props) => {
             border: "1px solid",
             borderColor: "black25",
             borderRadius: "50%",
-            width: "38px",
-            height: "38px",
-            top: "130%",
+            p: "8px 16px 10px",
+          },
+          ".slick-next:before": {
+            content: "'›'",
+          },
+          ".slick-prev:before": {
+            content: "'‹'",
           },
           ".slick-prev": {
-            left: "46%",
+            left: ["38%", "42%", "45%"],
+            top: "130%",
           },
           ".slick-next": {
-            right: "46%",
+            right: ["38%", "42%", "45%"],
+            top: "130%",
           },
         }}
       >
         <Edges size="md">
           <Box sx={{ pb: 250 }}>
             <Box>
-              <Box sx={{ display: "flex", alignItems: "center", py: 124 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: ["column", "row", "row"],
+                  alignItems: ["flex-start", "center", "center"],
+                  p: ["48px 15px 38px 15px", "124px 15px", "124px 15px"],
+                }}
+              >
                 {headline && (
                   <Heading
                     children={headline}
                     variant="styles.h1"
                     sx={{
                       fontSize: "12",
+                      pb: ["24px", "unset", "unset"],
                     }}
                   />
                 )}
 
                 {subheading && (
-                  <Text children={subheading} variant="text.introduction" />
+                  <Text
+                    children={subheading}
+                    variant="text.introduction"
+                    sx={{ pl: ["unset", "30px", "30px"] }}
+                  />
                 )}
               </Box>
               <Slider {...settings}>
@@ -76,44 +114,36 @@ const CardCarousel = (props) => {
                       <Box
                         key={i}
                         sx={{
-                          maxWidth: 350,
+                          maxWidth: "100%",
                           px: 15,
+                          m: "0 auto",
                         }}
                       >
                         {o.image && (
-                          <GatsbyImage image={o.image} alt={o.image.altText} />
+                          <GatsbyImage
+                            image={o.image}
+                            alt={o.image.altText}
+                            sx={{ border: "5px solid red" }}
+                          />
                         )}
                         {o.heading && (
                           <Heading
                             children={o.heading}
-                            // variant="styles.h3"
-                            // sx={{
-                            //   display: "block",
-                            //   mb: 86,
-                            //   fontSize: ["26px", "32px", "32px"],
-                            //   lineHeight: ["39px", "46px", "46px"],
-                            // }}
+                            variant="styles.h5"
+                            sx={{
+                              pt: 34,
+                              fontSize: "22px",
+                              letterSpacing: "-0.33px",
+                            }}
                           />
                         )}
                         {o.text && (
                           <Text
                             children={o.text}
-                            // variant="text.heading"
-                            // sx={{
-                            //   display: "block",
-                            //   mb: "8px",
-                            //   fontSize: "5",
-                            //   letterSpacing: "-0.33px",
-                            //   "&:before": {
-                            //     content: "''",
-                            //     position: "absolute",
-                            //     m: "-15px 0",
-                            //     height: 4,
-                            //     width: 38,
-                            //     zIndex: 1,
-                            //     backgroundColor: "charcoal",
-                            //   },
-                            // }}
+                            variant="text.introduction"
+                            sx={{
+                              lineHeight: "25px",
+                            }}
                           />
                         )}
                       </Box>
