@@ -2,9 +2,6 @@ import React from "react"
 import { Box, Heading, Text } from "theme-ui"
 
 // import app components
-import BackgroundImage from "../BackgroundImage"
-import Edges from "../Edges"
-import Button from "../Button"
 import Form from "../../components/Form"
 
 const TextForm = (props) => {
