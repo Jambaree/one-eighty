@@ -9,7 +9,7 @@ import SearchIcon from "../icons/search.svg"
 import { CONTENT_NODES_QUERY } from "../apollo/query"
 import { formatLink } from "../utils"
 
-const Searchbar = () => {
+const Searchbar = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   const [value, setValue] = useState("")
 
@@ -25,6 +25,7 @@ const Searchbar = () => {
   useEffect(() => {
     if (value === "") {
       setIsOpen(false)
+      props.setSearch("")
     }
   }, [value])
 
@@ -38,6 +39,7 @@ const Searchbar = () => {
       })
 
     setIsOpen(true)
+    props.setSearch(value)
   }
 
   return (

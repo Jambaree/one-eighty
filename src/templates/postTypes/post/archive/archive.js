@@ -181,7 +181,7 @@ const Template = (props) => {
           >
             Search
           </Text>
-          <Search />
+          <Search setSearch={setSearch} />
           <Text
             sx={{
               fontFamily: "fonts.heading",
