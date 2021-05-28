@@ -177,14 +177,17 @@ const themeUi = {
         },
       },
     },
+  },
+  forms: {
     checkbox: {
       width: "23px",
       height: "23px",
       backgroundColor: "white",
-      border: "1px solid black25",
+      border: "1px solid",
+      borderColor: "black25",
 
       "&:hover": {
-        border: "1px solid coral",
+        borderColor: "coral",
       },
       // "input:focus": {
       //   backgroundColor: "coralLight",

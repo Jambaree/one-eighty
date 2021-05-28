@@ -32,6 +32,7 @@ const Template = (props) => {
     },
   } = props
 
+  const [currentPage, setPage] = useState(1)
   const [search, setSearch] = useState("")
   const [category, setCategory] = useState([])
 
@@ -42,6 +43,18 @@ const Template = (props) => {
       setCategory(category.filter((item) => item !== e.target.name))
     }
     console.log(category)
+  }
+
+  const prevPage = (e) => {
+    if (currentPage > 2) {
+      setPage(currentPage - 1)
+      props.history.push(`${basePath}page/${currentPage}`)
+    } else if (currentPage === 2) {
+      setPage(currentPage - 1)
+      props.history.push(`${basePath}`)
+    } else {
+      console.log("No previous page")
+    }
   }
 
   const renderPagination = () => {
@@ -63,7 +76,7 @@ const Template = (props) => {
           key={i}
           as="li"
           sx={{
-            color: "black75",
+            color: currentPage === i ? "white" : "black75",
             width: "23px",
             height: "23px",
             display: "flex",
@@ -71,6 +84,7 @@ const Template = (props) => {
             alignItems: "center",
             margin: "14px 8px 14px 0",
             borderRadius: "6px",
+            backgroundColor: currentPage === i && "coral",
 
             a: {
               color: "black75",
@@ -85,7 +99,7 @@ const Template = (props) => {
             },
           }}
         >
-          <Link to={pathname} style={{}}>
+          <Link href={pathname} onClick={() => setPage(i)}>
             {i}
           </Link>
         </Text>
@@ -106,6 +120,7 @@ const Template = (props) => {
               padding: 10,
             }}
           >
+            {/* <Link href={basePath + "page/" + (currentPage - 1)}> */}
             <ChevronLeft
               style={{
                 fill: "coral",
@@ -113,16 +128,20 @@ const Template = (props) => {
                 borderRadius: "50%",
                 marginRight: 20,
               }}
+              onClick={(e) => prevPage(e)}
             />
+            {/* </Link> */}
             {items}
-            <ChevronRight
-              style={{
-                fill: "coral",
-                border: "1px solid #DBDBDB",
-                borderRadius: "50%",
-                marginLeft: 20,
-              }}
-            />
+            <Link href={basePath + "page/" + (currentPage + 1)}>
+              <ChevronRight
+                style={{
+                  fill: "coral",
+                  border: "1px solid #DBDBDB",
+                  borderRadius: "50%",
+                  marginLeft: 20,
+                }}
+              />
+            </Link>
           </ul>
         </nav>
       </Box>
@@ -209,7 +228,7 @@ const Template = (props) => {
                 defaultChecked={false}
                 name="press-releases"
                 onChange={handleChange}
-                variant="buttons.checkbox"
+                variant="forms.checkbox"
               />
               Press Releases
             </Label>
@@ -229,7 +248,7 @@ const Template = (props) => {
                 defaultChecked={false}
                 name="case-studies"
                 onChange={handleChange}
-                variant="buttons.checkbox"
+                variant="forms.checkbox"
               />
               Case Studies
             </Label>
@@ -249,7 +268,7 @@ const Template = (props) => {
                 defaultChecked={false}
                 name="news"
                 onChange={handleChange}
-                variant="buttons.checkbox"
+                variant="forms.checkbox"
               />
               News
             </Label>
