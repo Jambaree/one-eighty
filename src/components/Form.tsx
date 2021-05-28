@@ -273,6 +273,19 @@ const Container = styled.div`
       border-radius: 50%;
       z-index: 2;
     }
+    &:after {
+      content: "⌄";
+      font-size: 20px;
+      position: absolute;
+      right: 1px;
+      top: 52%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+      color: ${theme.colors.coral};
+    }
   }
 
   .checkbox-inline,
