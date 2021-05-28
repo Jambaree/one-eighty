@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
-import { ChevronRightCircle } from "mdi-material-ui"
+import { ChevronRight, ChevronRightBox } from "mdi-material-ui"
 
 // import app components
 import Edges from "../Edges"
@@ -90,11 +90,14 @@ const Logos = (props) => {
                   </Box>
                   <Box sx={{ width: 50, m: "0 auto" }}>
                     {o.link && (
-                      <Link href={o.link.url} sx={{ fill: "#D6694A" }}>
-                        <ChevronRightCircle
+                      <Link href={o.link.url} sx={{ fill: "white" }}>
+                        <ChevronRight
                           style={{
                             fill: "inherit",
-                            fontSize: 36,
+                            height: "30px",
+                            width: "30px",
+                            borderRadius: "50%",
+                            backgroundColor: "#D6694A",
                           }}
                         />
                       </Link>
