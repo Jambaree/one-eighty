@@ -44,15 +44,24 @@ const Partners = (props) => {
                 lineHeight: "30px",
                 mb: [36, 36, 60],
                 zIndex: 1,
+                p: "0 18px",
               }}
             />
           )}
         </Box>
-        <Grid gap={4} columns={[1, 2, columns]}>
+        <Grid gap={["90px", 4, 4]} columns={[1, 2, columns]}>
           {cards &&
             cards.map((o, i) => {
               return (
-                <Box key={i}>
+                <Box
+                  key={i}
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <Box
                     sx={{
                       position: "relative",
