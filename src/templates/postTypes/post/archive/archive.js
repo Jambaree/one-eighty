@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Grid, Box, Heading, Text, Link, Checkbox, Label } from "theme-ui"
 import { ChevronLeft, ChevronRight } from "mdi-material-ui"
 import moment from "moment"
+import produce from "immer"
 
 // import app components
 import Layout from "../../../../components/Layout"
@@ -37,25 +38,27 @@ const Template = (props) => {
   const [category, setCategory] = useState([])
 
   const handleChange = (e) => {
-    if (e.target.value && !category.includes(e.target.name)) {
+    if (!category.includes(e.target.name)) {
       setCategory([...category, e.target.name])
     } else {
       setCategory(category.filter((item) => item !== e.target.name))
     }
-    console.log(category)
   }
 
+  console.log(category)
   const prevPage = (e) => {
     if (currentPage > 2) {
       setPage(currentPage - 1)
-      props.history.push(`${basePath}page/${currentPage}`)
+      // props.history.push(`${basePath}page/${currentPage}`)
     } else if (currentPage === 2) {
       setPage(currentPage - 1)
-      props.history.push(`${basePath}`)
+      // props.history.push(`${basePath}`)
     } else {
       console.log("No previous page")
     }
   }
+
+  console.log(`current page: ${currentPage}`)
 
   const renderPagination = () => {
     const items = []
@@ -99,9 +102,7 @@ const Template = (props) => {
             },
           }}
         >
-          <Link href={pathname} onClick={() => setPage(i)}>
-            {i}
-          </Link>
+          <Link href={pathname}>{i}</Link>
         </Text>
       )
     }
@@ -120,17 +121,17 @@ const Template = (props) => {
               padding: 10,
             }}
           >
-            {/* <Link href={basePath + "page/" + (currentPage - 1)}> */}
-            <ChevronLeft
-              style={{
-                fill: "coral",
-                border: "1px solid #DBDBDB",
-                borderRadius: "50%",
-                marginRight: 20,
-              }}
-              onClick={(e) => prevPage(e)}
-            />
-            {/* </Link> */}
+            <Link href={basePath + "page/" + (currentPage - 1)}>
+              <ChevronLeft
+                style={{
+                  fill: "coral",
+                  border: "1px solid #DBDBDB",
+                  borderRadius: "50%",
+                  marginRight: 20,
+                }}
+                // onClick={(e) => prevPage(e)}
+              />
+            </Link>
             {items}
             <Link href={basePath + "page/" + (currentPage + 1)}>
               <ChevronRight
@@ -224,7 +225,7 @@ const Template = (props) => {
             >
               <Checkbox
                 id={1}
-                value={false}
+                value="press-releases"
                 defaultChecked={false}
                 name="press-releases"
                 onChange={handleChange}
@@ -244,7 +245,7 @@ const Template = (props) => {
             >
               <Checkbox
                 id={2}
-                value={false}
+                value="case-studies"
                 defaultChecked={false}
                 name="case-studies"
                 onChange={handleChange}
@@ -264,7 +265,7 @@ const Template = (props) => {
             >
               <Checkbox
                 id={3}
-                value={false}
+                value="news"
                 defaultChecked={false}
                 name="news"
                 onChange={handleChange}
