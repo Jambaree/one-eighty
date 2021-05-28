@@ -12,6 +12,7 @@ import textform from "../../../../components/textForm/TextForm"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
+import partners from "../../../../components/partners/Partners"
 
 const blocks = {
   textimage,
@@ -22,6 +23,7 @@ const blocks = {
   testimonialslider,
   benefits,
   logos,
+  partners,
 }
 
 const Template = (props) => {
@@ -229,6 +231,37 @@ export const CollectionQuery = graphql`
                   headline
                   text
                   disclaimer
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
+                  fieldGroupName
+                  backgroundcolor
+                  columns
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    icon {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: CONSTRAINED
+                            placeholder: TRACED_SVG
+                            width: 10
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
+                          )
+                        }
+                      }
+                    }
+                    link {
+                      target
+                      title
+                      url
+                    }
+                  }
                 }
               }
             }
