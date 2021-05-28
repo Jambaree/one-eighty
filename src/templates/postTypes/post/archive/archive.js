@@ -59,23 +59,36 @@ const Template = (props) => {
       }
 
       items.push(
-        <li
+        <Text
           key={i}
-          style={{
+          as="li"
+          sx={{
+            color: "black75",
             width: "23px",
             height: "23px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             margin: "14px 8px 14px 0",
+            borderRadius: "6px",
+
+            a: {
+              color: "black75",
+            },
 
             "&:hover": {
-              backgroundColor: "red",
+              backgroundColor: "coral",
+
+              a: {
+                color: "white",
+              },
             },
           }}
         >
-          <Link to={pathname}>{i}</Link>
-        </li>
+          <Link to={pathname} style={{}}>
+            {i}
+          </Link>
+        </Text>
       )
     }
 
