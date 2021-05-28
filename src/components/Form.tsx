@@ -236,6 +236,7 @@ const Container = styled.div`
     padding: 13px 15px;
     height: 47;
     border: 1px solid #63a19e;
+
     &:hover {
       border-color: ${theme.colors.black50};
     }
@@ -245,7 +246,7 @@ const Container = styled.div`
     }
 
     ::placeholder {
-      color: ${theme.colors.black75};
+      color: ${theme.colors.black50};
     }
 
     &:focus,
@@ -258,6 +259,10 @@ const Container = styled.div`
     min-height: 200px;
   }
 
+  select {
+    cursor: pointer;
+  }
+
   .field--select {
     position: relative;
 
@@ -265,26 +270,26 @@ const Container = styled.div`
       content: "";
       position: absolute;
       right: 10px;
-      top: 58%;
-      transform: translateY(-50%);
+      bottom: 21px;
       width: 30px;
       height: 30px;
       border: 1px solid ${theme.colors.black25};
       border-radius: 50%;
       z-index: 2;
+      pointer-events: none;
     }
     &:after {
-      content: "⌄";
-      font-size: 20px;
+      content: " ";
       position: absolute;
-      right: 1px;
-      top: 52%;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      right: 18px;
+      bottom: 30px;
+      transform: rotate(-45deg) translateY(-50%);
+      width: 8px;
+      height: 8px;
       z-index: 2;
-      color: ${theme.colors.coral};
+      border-left: 2px solid ${theme.colors.coral};
+      border-bottom: 2px solid ${theme.colors.coral};
+      pointer-events: none;
     }
   }
 
