@@ -1,8 +1,14 @@
 const config = {
   id: "archive",
   postTypeID: "post",
-  label: "Posts",
+  label: "Press Room",
   query: `{
+      allWpCategory: categories {
+        nodes {
+          name
+          databaseId
+        }
+      }
       allWpPost: posts {
         nodes {
           id
@@ -22,6 +28,12 @@ const config = {
               }
             }
           }
+          categories {
+            nodes {
+              name
+              databaseId
+            }
+          }
         }
       }
     }`,
@@ -35,17 +47,6 @@ const config = {
       label: "Content",
       type: "group",
       fields: [
-        {
-          id: "backgroundimage",
-          type: "image",
-          label: "Background Image",
-        },
-        {
-          id: "tag",
-          type: "text",
-          label: "Tag",
-          defaultValue: "",
-        },
         {
           id: "headline",
           type: "text",
