@@ -111,7 +111,6 @@ const Template = (props) => {
           key={i}
           as="li"
           sx={{
-            color: page === i ? "white" : "black75",
             width: "23px",
             height: "23px",
             display: "flex",
@@ -122,7 +121,7 @@ const Template = (props) => {
             backgroundColor: page === i && "coral",
 
             a: {
-              color: "black75",
+              color: page === i ? "white" : "black75",
             },
 
             "&:hover": {
@@ -151,6 +150,7 @@ const Template = (props) => {
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: 10,
+              marginLeft: 20,
             }}
           >
             {page > 1 && (
@@ -223,6 +223,7 @@ const Template = (props) => {
       </Box>
       <Grid
         columns={[1, null, "5fr 7fr"]}
+        gap={"45px"}
         sx={{ p: "118px 138px", backgroundColor: "almondLight" }}
       >
         <Box>
@@ -237,13 +238,34 @@ const Template = (props) => {
           >
             Search
           </Text>
-          <Input value={search} onChange={(e) => setSearch(e.target.value)} />
-          <Text
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search what’s new…"
             sx={{
-              fontFamily: "fonts.heading",
+              bg: "white",
+              border: "1px solid",
+              borderColor: "black25",
+              borderRadius: "6px",
+
+              "::placeholder": {
+                color: "black50",
+                letterSpacing: "-0.23px",
+                fontWeight: 300,
+                fontSize: "15px",
+                lineHeight: "25px",
+                fontFamily: "body",
+              },
+            }}
+          />
+          <Text
+            as="p"
+            sx={{
+              fontFamily: "heading",
               fontSize: 0,
               textTransform: "uppercase",
               letterSpacing: "1.1px",
+              mt: 58,
             }}
           >
             Type
