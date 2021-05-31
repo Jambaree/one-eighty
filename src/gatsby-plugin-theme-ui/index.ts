@@ -66,6 +66,10 @@ const themeUi = {
       fontWeight: "light",
       letterSpacing: "-0.27px",
       color: "black75",
+      "@media (max-width: 767px)": {
+        letterSpacing: "-0.24px",
+        fontSize: "16px",
+      },
     },
     paragraph: {
       fontFamily: "body",
@@ -233,6 +237,7 @@ const themeUi = {
       letterSpacing: "-1.63px",
       "@media (max-width: 767px)": {
         fontSize: 10,
+        letterSpacing: "-0.9px",
       },
     },
     h2: {
