@@ -18,7 +18,7 @@ const CardCarousel = (props) => {
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 3.5,
     slidesToScroll: 1,
     pauseOnHover: false,
@@ -53,6 +53,9 @@ const CardCarousel = (props) => {
     >
       <Box
         sx={{
+          ".slick-list": {
+            paddingLeft: ["unset", "unset", "15%"],
+          },
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
             backgroundColor: "white",
@@ -84,7 +87,7 @@ const CardCarousel = (props) => {
                 sx={{
                   display: "flex",
                   flexDirection: ["column", "row", "row"],
-                  alignItems: ["flex-start", "center", "center"],
+                  alignItems: "flex-start",
                   p: ["48px 15px 38px 15px", "80px 15px", "124px 15px"],
                 }}
               >
