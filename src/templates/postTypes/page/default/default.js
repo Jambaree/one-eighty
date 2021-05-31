@@ -13,6 +13,7 @@ import testimonialslider from "../../../../components/testimonialSlider/Testimon
 import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
+import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
 
 const blocks = {
   textimage,
@@ -24,6 +25,7 @@ const blocks = {
   benefits,
   logos,
   partners,
+  cardcarousel,
 }
 
 const Template = (props) => {
@@ -247,7 +249,7 @@ export const CollectionQuery = graphql`
                           gatsbyImageData(
                             layout: CONSTRAINED
                             placeholder: TRACED_SVG
-                            width: 10
+                            width: 350
                             tracedSVGOptions: {
                               background: "#fff"
                               color: "#E5D282"
@@ -260,6 +262,37 @@ export const CollectionQuery = graphql`
                       target
                       title
                       url
+                    }
+                  }
+                  mainbutton {
+                    target
+                    title
+                    url
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
+                  fieldGroupName
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    heading
+                    text
+                    image {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: CONSTRAINED
+                            placeholder: TRACED_SVG
+                            width: 350
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
+                          )
+                        }
+                      }
                     }
                   }
                 }

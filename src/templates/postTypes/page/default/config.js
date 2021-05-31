@@ -8,6 +8,7 @@ import testimonialslider from "../../../../components/testimonialSlider/config"
 import benefits from "../../../../components/benefits/config"
 import logos from "../../../../components/logos/config"
 import partners from "../../../../components/partners/config"
+import cardcarousel from "../../../../components/cardCarousel/config"
 
 const config = {
   id: "default",
@@ -37,6 +38,7 @@ const config = {
             benefits,
             logos,
             partners,
+            cardcarousel,
           }),
         },
       ],
