@@ -11,7 +11,7 @@ const Logos = (props) => {
   console.log(props)
 
   return (
-    <Box sx={{ bg: "white", mt: 104, mb: 154 }}>
+    <Box sx={{ bg: "white", mt: 104, mb: 154, position: "relative" }}>
       <Edges size="md">
         <Box
           sx={{
