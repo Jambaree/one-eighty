@@ -1,6 +1,6 @@
 import React from "react"
 import ReactModal from "react-modal"
-import { Heading, Box, Paragraph, Close } from "theme-ui"
+import { Heading, Box, Paragraph, Close, Link } from "theme-ui"
 
 // import app components
 import { useStore } from "../store"
@@ -46,6 +46,7 @@ const Modal = (props) => {
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
           {modal?.text && <Paragraph>{modal.text}</Paragraph>}
+          {modal?.link && <Link href={modal.link.url}>{modal.link.title}</Link>}
         </Box>
         <Box>
           {modal?.image && (
