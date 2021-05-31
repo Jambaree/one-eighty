@@ -1,14 +1,23 @@
 import React from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
-import { ChevronRight, ChevronRightBox } from "mdi-material-ui"
+import { ChevronRight } from "mdi-material-ui"
+import { useStore } from "../../store"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
+// import Modal from "../Modal"
 
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
-  console.log(props)
+
+  const [
+    {
+      appState: { menu },
+      userState: { isLoggedIn, user },
+    },
+    dispatch,
+  ] = useStore()
 
   return (
     <Box sx={{ bg: "white", mt: 104, mb: 154, position: "relative" }}>
@@ -89,18 +98,29 @@ const Logos = (props) => {
                     )}
                   </Box>
                   <Box sx={{ width: 50, m: "0 auto" }}>
-                    {o.link && (
-                      <Link href={o.link.url} sx={{ fill: "white" }}>
+                    {o.modal && (
+                      <Box
+                        onClick={() =>
+                          dispatch({
+                            type: "SET_MODAL",
+                            payload: {
+                              text: o.modal.modaltext,
+                              image: o.modal.modalimage,
+                              link: o.modal.modallink,
+                            },
+                          })
+                        }
+                      >
                         <ChevronRight
                           style={{
-                            fill: "inherit",
                             height: "30px",
                             width: "30px",
                             borderRadius: "50%",
                             backgroundColor: "#D6694A",
+                            fill: "white",
                           }}
                         />
-                      </Link>
+                      </Box>
                     )}
                   </Box>
                 </Box>

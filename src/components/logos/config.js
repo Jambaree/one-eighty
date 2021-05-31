@@ -37,6 +37,28 @@ const config = {
           type: "link",
           label: "Link",
         },
+        {
+          id: "modal",
+          label: "Modal",
+          type: "group",
+          fields: [
+            {
+              id: "modaltext",
+              type: "text",
+              label: "Modal Text",
+            },
+            {
+              id: "modallink",
+              type: "link",
+              label: "Modal Link",
+            },
+            {
+              id: "modalimage",
+              type: "image",
+              label: "Modal Image",
+            },
+          ],
+        },
       ],
     },
   ],
