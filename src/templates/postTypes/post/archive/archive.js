@@ -1,13 +1,21 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import { Grid, Box, Heading, Text, Link, Checkbox, Label } from "theme-ui"
+import {
+  Grid,
+  Box,
+  Heading,
+  Text,
+  Link,
+  Checkbox,
+  Label,
+  Input,
+} from "theme-ui"
 import { ChevronLeft, ChevronRight } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
 
 // import app components
 import Layout from "../../../../components/Layout"
-import Search from "../../../../components/Search"
 
 const Template = (props) => {
   const {
@@ -16,11 +24,12 @@ const Template = (props) => {
         seo,
         template: {
           acf: {
-            content: { headline, text, backgroundimage },
+            content: { headline, text },
           },
         },
       },
       allWpPost: { nodes: posts },
+      allWpCategory: { nodes: categories },
     },
     pageContext: {
       pagination: {
@@ -33,32 +42,55 @@ const Template = (props) => {
     },
   } = props
 
-  const [currentPage, setPage] = useState(1)
   const [search, setSearch] = useState("")
   const [category, setCategory] = useState([])
 
-  const handleChange = (e) => {
-    if (!category.includes(e.target.name)) {
-      setCategory([...category, e.target.name])
-    } else {
-      setCategory(category.filter((item) => item !== e.target.name))
-    }
+  let activePosts = []
+
+  if (search || category.length > 0) {
+    activePosts = posts.filter((o) => {
+      if (search) {
+        if (!o.title.toLowerCase().includes(search.toLowerCase())) {
+          return null
+        }
+      }
+
+      if (category.length > 0) {
+        const ids = o?.categories?.nodes.map((p) => p.databaseId)
+
+        if (!category.every((id) => ids.includes(id))) {
+          return null
+        }
+      }
+
+      return o
+    })
+  } else {
+    activePosts =
+      posts &&
+      posts.slice(
+        (page - 1) * postsPerPage,
+        (page - 1) * postsPerPage + postsPerPage
+      )
   }
 
-  console.log(category)
-  const prevPage = (e) => {
-    if (currentPage > 2) {
-      setPage(currentPage - 1)
-      // props.history.push(`${basePath}page/${currentPage}`)
-    } else if (currentPage === 2) {
-      setPage(currentPage - 1)
-      // props.history.push(`${basePath}`)
-    } else {
-      console.log("No previous page")
-    }
-  }
+  const handleChangeCategory = (e) => {
+    const value = parseInt(e.target.value)
 
-  console.log(`current page: ${currentPage}`)
+    const nextCategory = produce(category, (draft) => {
+      const index = draft.findIndex((id) => id === value)
+
+      if (index > -1) {
+        draft.splice(index, 1)
+      } else {
+        draft.push(value)
+      }
+
+      return draft
+    })
+
+    setCategory(nextCategory)
+  }
 
   const renderPagination = () => {
     const items = []
@@ -79,7 +111,7 @@ const Template = (props) => {
           key={i}
           as="li"
           sx={{
-            color: currentPage === i ? "white" : "black75",
+            color: page === i ? "white" : "black75",
             width: "23px",
             height: "23px",
             display: "flex",
@@ -87,7 +119,7 @@ const Template = (props) => {
             alignItems: "center",
             margin: "14px 8px 14px 0",
             borderRadius: "6px",
-            backgroundColor: currentPage === i && "coral",
+            backgroundColor: page === i && "coral",
 
             a: {
               color: "black75",
@@ -121,28 +153,32 @@ const Template = (props) => {
               padding: 10,
             }}
           >
-            <Link href={basePath + "page/" + (currentPage - 1)}>
-              <ChevronLeft
-                style={{
-                  fill: "coral",
-                  border: "1px solid #DBDBDB",
-                  borderRadius: "50%",
-                  marginRight: 20,
-                }}
-                // onClick={(e) => prevPage(e)}
-              />
-            </Link>
+            {page > 1 && (
+              <Link href={basePath + "page/" + (page - 1)}>
+                <ChevronLeft
+                  style={{
+                    fill: "coral",
+                    border: "1px solid #DBDBDB",
+                    borderRadius: "50%",
+                    marginRight: 20,
+                  }}
+                />
+              </Link>
+            )}
             {items}
-            <Link href={basePath + "page/" + (currentPage + 1)}>
-              <ChevronRight
-                style={{
-                  fill: "coral",
-                  border: "1px solid #DBDBDB",
-                  borderRadius: "50%",
-                  marginLeft: 20,
-                }}
-              />
-            </Link>
+
+            {page < numberOfPages && (
+              <Link href={basePath + "page/" + (page + 1)}>
+                <ChevronRight
+                  style={{
+                    fill: "coral",
+                    border: "1px solid #DBDBDB",
+                    borderRadius: "50%",
+                    marginLeft: 20,
+                  }}
+                />
+              </Link>
+            )}
           </ul>
         </nav>
       </Box>
@@ -153,7 +189,7 @@ const Template = (props) => {
     <Layout {...props} seo={seo}>
       <Box
         sx={{
-          backgroundImage: [`url(${backgroundimage?.url})`],
+          background: (theme) => theme.colors.plumDark,
           height: 353,
           display: "flex",
           flexDirection: "column",
@@ -201,7 +237,7 @@ const Template = (props) => {
           >
             Search
           </Text>
-          <Search setSearch={setSearch} />
+          <Input value={search} onChange={(e) => setSearch(e.target.value)} />
           <Text
             sx={{
               fontFamily: "fonts.heading",
@@ -213,105 +249,64 @@ const Template = (props) => {
             Type
           </Text>
           <Box>
-            <Label
-              variant="text.paragraph"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                my: "8px",
-                fontSize: "15px",
-                lineHeight: "35px",
-              }}
-            >
-              <Checkbox
-                id={1}
-                value="press-releases"
-                defaultChecked={false}
-                name="press-releases"
-                onChange={handleChange}
-                variant="forms.checkbox"
-              />
-              Press Releases
-            </Label>
-            <Label
-              variant="text.paragraph"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                mb: "8px",
-                fontSize: "15px",
-                lineHeight: "35px",
-              }}
-            >
-              <Checkbox
-                id={2}
-                value="case-studies"
-                defaultChecked={false}
-                name="case-studies"
-                onChange={handleChange}
-                variant="forms.checkbox"
-              />
-              Case Studies
-            </Label>
-            <Label
-              variant="text.paragraph"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                mb: "8px",
-                fontSize: "15px",
-                lineHeight: "35px",
-              }}
-            >
-              <Checkbox
-                id={3}
-                value="news"
-                defaultChecked={false}
-                name="news"
-                onChange={handleChange}
-                variant="forms.checkbox"
-              />
-              News
-            </Label>
+            {categories &&
+              categories.map((o) => {
+                return (
+                  <Label
+                    key={o.databaseId}
+                    variant="text.paragraph"
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      my: "8px",
+                      fontSize: "15px",
+                      lineHeight: "35px",
+                    }}
+                  >
+                    <Checkbox
+                      id={1}
+                      value={o.databaseId}
+                      defaultChecked={category.includes(o.databaseId)}
+                      onChange={handleChangeCategory}
+                      variant="forms.checkbox"
+                    />
+                    {o.name}
+                  </Label>
+                )
+              })}
           </Box>
         </Box>
         <Box>
-          {posts &&
-            posts
-              .slice(
-                (page - 1) * postsPerPage,
-                (page - 1) * postsPerPage + postsPerPage
-              )
-              .map((o) => (
-                <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
-                  <Box>
-                    <Text
-                      sx={{
-                        fontFamily: "fonts.body",
-                        textTransform: "uppercase",
-                        color: "plumLight",
-                        letterSpacing: "1.1px",
-                        fontSize: "11px",
-                      }}
-                    >
-                      {moment(o.date).format("DD MMM")}
-                    </Text>
-                  </Box>
-                  <Box>
-                    <Heading variant="styles.h5" sx={{ fontSize: "6" }}>
-                      {o.title}
-                    </Heading>
-                    <Link
-                      href={o.uri}
-                      aria-label="Read article"
-                      title={o.title}
-                      variant="links.hyperlink"
-                    >
-                      Read more →
-                    </Link>
-                  </Box>
-                </Grid>
-              ))}
+          {activePosts.map((o) => (
+            <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
+              <Box>
+                <Text
+                  sx={{
+                    fontFamily: "fonts.body",
+                    textTransform: "uppercase",
+                    color: "plumLight",
+                    letterSpacing: "1.1px",
+                    fontSize: "11px",
+                  }}
+                >
+                  {moment(o.date).format("DD MMM")}
+                </Text>
+              </Box>
+              <Box>
+                <Heading variant="styles.h5" sx={{ fontSize: "6" }}>
+                  {o.title}
+                </Heading>
+                <Link
+                  href={o.uri}
+                  aria-label="Read article"
+                  title={o.title}
+                  variant="links.hyperlink"
+                >
+                  Read more →
+                </Link>
+              </Box>
+            </Grid>
+          ))}
           {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
@@ -336,25 +331,17 @@ export const Query = graphql`
           templateName
           acf {
             content {
-              tag
               headline
               text
-              backgroundimage {
-                altText
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 10
-                      tracedSVGOptions: { background: "", color: "" }
-                      placeholder: TRACED_SVG
-                      layout: FULL_WIDTH
-                    )
-                  }
-                }
-              }
             }
           }
         }
+      }
+    }
+    allWpCategory {
+      nodes {
+        name
+        databaseId
       }
     }
     allWpPost {
@@ -371,6 +358,12 @@ export const Query = graphql`
                 gatsbyImageData(width: 400, placeholder: BLURRED)
               }
             }
+          }
+        }
+        categories {
+          nodes {
+            name
+            databaseId
           }
         }
       }
