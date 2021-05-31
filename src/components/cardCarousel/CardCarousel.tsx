@@ -130,8 +130,17 @@ const CardCarousel = (props) => {
                           },
                         }}
                       >
-                        {o.image && (
+                        {o.image ? (
                           <GatsbyImage image={o.image} alt={o.image.altText} />
+                        ) : (
+                          <Box
+                            sx={{
+                              bg: "almondDark",
+                              borderRadius: "6px",
+                              width: 262,
+                              height: 164,
+                            }}
+                          />
                         )}
                         {o.heading && (
                           <Heading
