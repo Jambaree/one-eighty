@@ -8415,10 +8415,10 @@ gatsby-source-gravityforms@^1.0.17:
     nanoid "^3.1.20"
     oauth-signature "^1.5.0"
 
-gatsby-source-jam-cms@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-jam-cms/-/gatsby-source-jam-cms-1.6.0.tgz#82b8fac7a686495a909be811c90652ca7383e9fd"
-  integrity sha512-hnQMzNy8PudoS8Tg+Y3mv1UJgZASyHUvO3lff3JmepGAPsNb8CkCXJDQe8u/C450fCn6TNnXsypt+apm1bL3tw==
+gatsby-source-jam-cms@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-jam-cms/-/gatsby-source-jam-cms-1.6.1.tgz#e7ed0c8e256d6e28a366dd33fb31967c5c27cfb9"
+  integrity sha512-+4j5JVd9gjxXcGIgV/z1OUwW6nOXPXUS5hkdcXThD191HsFAZC6wSos77xQ4ZyIqNl3QzF9534QuLe4Tk/pUIg==
   dependencies:
     "@babel/register" "^7.13.16"
     axios "^0.21.1"
