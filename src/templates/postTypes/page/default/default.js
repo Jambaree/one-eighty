@@ -12,6 +12,7 @@ import textform from "../../../../components/textForm/TextForm"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
+import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
 
 const blocks = {
   textimage,
@@ -22,6 +23,7 @@ const blocks = {
   testimonialslider,
   benefits,
   logos,
+  cardcarousel,
 }
 
 const Template = (props) => {
@@ -259,6 +261,32 @@ export const CollectionQuery = graphql`
                   headline
                   text
                   disclaimer
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
+                  fieldGroupName
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    heading
+                    text
+                    image {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            width: 350
+                            placeholder: TRACED_SVG
+                            layout: CONSTRAINED
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
+                          )
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
