@@ -19,7 +19,7 @@ const CardCarousel = (props) => {
     infinite: true,
     autoplaySpeed: 8000,
     autoplay: true,
-    slidesToShow: 3,
+    slidesToShow: 3.5,
     slidesToScroll: 1,
     pauseOnHover: false,
     responsive: [
