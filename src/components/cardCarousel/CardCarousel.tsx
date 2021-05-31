@@ -88,7 +88,11 @@ const CardCarousel = (props) => {
                   display: "flex",
                   flexDirection: ["column", "row", "row"],
                   alignItems: "flex-start",
-                  p: ["48px 15px 38px 15px", "80px 15px", "124px 15px"],
+                  p: [
+                    "48px 15px 38px 15px",
+                    "80px 15px",
+                    "100px 15px 76px 15px",
+                  ],
                 }}
               >
                 {headline && (
@@ -98,6 +102,7 @@ const CardCarousel = (props) => {
                     sx={{
                       fontSize: "12",
                       pb: ["24px", "unset", "unset"],
+                      pr: "10px",
                     }}
                   />
                 )}
@@ -106,7 +111,7 @@ const CardCarousel = (props) => {
                   <Text
                     children={subheading}
                     variant="text.introduction"
-                    sx={{ pl: ["unset", "30px", "30px"] }}
+                    sx={{ pt: "8px", fontSize: "18px", lineHeight: "30px" }}
                   />
                 )}
               </Box>
