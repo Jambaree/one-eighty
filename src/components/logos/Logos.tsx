@@ -56,7 +56,7 @@ const Logos = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 104], zIndex: 1 }}
+              sx={{ mb: [36, 36, 104] }}
             />
           )}
         </Box>

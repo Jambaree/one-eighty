@@ -38,6 +38,9 @@ const Modal = (props) => {
           borderRadius: 6,
           display: "flex",
         },
+        overlay: {
+          background: "rgba(0, 0, 0, 0.75)",
+        },
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", p: 48 }}>
@@ -46,7 +49,11 @@ const Modal = (props) => {
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
           {modal?.text && <Paragraph>{modal.text}</Paragraph>}
-          {modal?.link && <Link href={modal.link.url}>{modal.link.title}</Link>}
+          {modal?.link && (
+            <Link href={modal.link.url} variant="links.hyperlink">
+              {modal.link.title}
+            </Link>
+          )}
         </Box>
         <Box>
           {modal?.image && (
