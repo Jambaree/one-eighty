@@ -10,7 +10,7 @@ import BackgroundImage from "../BackgroundImage"
 
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
-
+  console.log(props)
   const [
     {
       appState: { menu },

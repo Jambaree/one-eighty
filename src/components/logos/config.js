@@ -44,7 +44,7 @@ const config = {
           fields: [
             {
               id: "modaltext",
-              type: "text",
+              type: "wysiwyg",
               label: "Modal Text",
             },
             {
