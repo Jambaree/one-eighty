@@ -120,14 +120,13 @@ const CardCarousel = (props) => {
                           maxWidth: "100%",
                           px: 15,
                           m: "0 auto",
+                          img: {
+                            borderRadius: "6px",
+                          },
                         }}
                       >
                         {o.image && (
-                          <GatsbyImage
-                            image={o.image}
-                            alt={o.image.altText}
-                            sx={{ border: "5px solid red" }}
-                          />
+                          <GatsbyImage image={o.image} alt={o.image.altText} />
                         )}
                         {o.heading && (
                           <Heading
