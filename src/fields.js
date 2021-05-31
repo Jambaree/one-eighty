@@ -16,7 +16,13 @@ const fields = {
       templates: [postDefault, postArchive],
     },
   ],
-  taxonomies: [],
+  taxonomies: [
+    {
+      id: "category",
+      title: "Category",
+      postTypes: ["post"],
+    },
+  ],
   themeOptions: [
     {
       id: "header",
