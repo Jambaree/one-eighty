@@ -7,6 +7,7 @@ import textform from "../../../../components/textForm/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
 import benefits from "../../../../components/benefits/config"
 import logos from "../../../../components/logos/config"
+import cardcarousel from "../../../../components/cardCarousel/config"
 
 const config = {
   id: "default",
@@ -35,6 +36,7 @@ const config = {
             testimonialslider,
             benefits,
             logos,
+            cardcarousel,
           }),
         },
       ],
