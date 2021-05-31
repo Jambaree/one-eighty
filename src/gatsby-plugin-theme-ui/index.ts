@@ -182,6 +182,22 @@ const themeUi = {
       },
     },
   },
+  forms: {
+    checkbox: {
+      width: "23px",
+      height: "23px",
+      backgroundColor: "white",
+      border: "1px solid",
+      borderColor: "black25",
+
+      "&:hover": {
+        borderColor: "coral",
+      },
+      // "input:focus": {
+      //   backgroundColor: "coralLight",
+      // },
+    },
+  },
   links: {
     hyperlink: {
       color: "coral",
