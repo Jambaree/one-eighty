@@ -162,12 +162,22 @@ const themeUi = {
       field: {
         fontSize: 3,
         lineHeight: "25px",
-        p: "13px 69px 2px 13px",
         width: 304,
         height: 37,
-        border: "1px solid black25",
+        border: "1px solid",
+        borderColor: "black25",
+        bg: "white",
+        borderRadius: "6px",
+        p: "15px 10px",
+        fontFamily: "body",
+
         "&:placeholder": {
-          color: "black25",
+          color: "black50",
+          letterSpacing: "-0.23px",
+          fontWeight: 300,
+          fontSize: "15px",
+          lineHeight: "25px",
+          // fontFamily: "body",
         },
         "&:hover": {
           borderColor: "black50",

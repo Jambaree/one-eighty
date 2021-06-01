@@ -242,22 +242,17 @@ const Template = (props) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search what’s new…"
+            variant="buttons.entryfield.field"
             sx={{
-              bg: "white",
-              border: "1px solid",
-              borderColor: "black25",
-              borderRadius: "6px",
-
-              "::placeholder": {
-                color: "black50",
-                letterSpacing: "-0.23px",
-                fontWeight: 300,
-                fontSize: "15px",
-                lineHeight: "25px",
-                fontFamily: "body",
+              "&:after": {
+                content: "'*'",
+                display: "inline-block",
+                height: 25,
+                width: 25,
               },
             }}
           />
+
           <Text
             as="p"
             sx={{
