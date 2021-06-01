@@ -234,17 +234,25 @@ const Template = (props) => {
               textTransform: "uppercase",
               letterSpacing: "1.1px",
               pl: "10px",
+              pb: "5px",
             }}
           >
             Search
           </Text>
-          <Box sx={{ display: "flex", alignItems: "center", width: 350 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              width: 350,
+              height: 47,
+            }}
+          >
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search what’s new…"
               variant="buttons.entryfield.field"
-              sx={{ width: "100%" }}
+              sx={{ width: "100%", height: "auto" }}
             />
             <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
           </Box>

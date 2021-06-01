@@ -145,20 +145,20 @@ const themeUi = {
       color: "coral",
     },
     entryfield: {
-      label: {
-        fontSize: 0,
-        textTranform: "uppercase",
-        "&:after": {
-          content: "*",
-          color: "coral",
-          "&:disabled": {
-            bg: "black25",
-          },
-        },
-        "&:disabled": {
-          bg: "black25",
-        },
-      },
+      // label: {
+      //   fontSize: 0,
+      //   textTranform: "uppercase",
+      //   "&:after": {
+      //     content: "*",
+      //     color: "coral",
+      //     "&:disabled": {
+      //       bg: "black25",
+      //     },
+      //   },
+      //   "&:disabled": {
+      //     bg: "black25",
+      //   },
+      // },
       field: {
         fontSize: 3,
         lineHeight: "25px",
@@ -168,21 +168,21 @@ const themeUi = {
         borderColor: "black25",
         bg: "white",
         borderRadius: "6px",
-        p: "15px 10px",
+        p: "10px 15px",
         fontFamily: "body",
+        fontWeight: 300,
+        outline: "none",
 
         "&:placeholder": {
           color: "black50",
           letterSpacing: "-0.23px",
-          fontWeight: 300,
           fontSize: "15px",
           lineHeight: "25px",
-          // fontFamily: "body",
         },
         "&:hover": {
           borderColor: "black50",
         },
-        "&:focus": {
+        ":focus": {
           borderColor: "coralLight",
         },
         "&:disabled": {
