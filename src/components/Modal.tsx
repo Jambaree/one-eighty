@@ -38,7 +38,7 @@ const Modal = (props) => {
           transform: "translate(-50%, -50%)",
           borderRadius: 6,
           display: "flex",
-          zIndex: 1,
+          zIndex: 5,
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",

@@ -97,7 +97,7 @@ const Logos = (props) => {
                       <Text children={o.text} variant="text.paragraph" />
                     )}
                   </Box>
-                  <Box sx={{ width: 50, m: "0 auto" }}>
+                  <Box sx={{ width: 30, m: "0 auto" }}>
                     {o.modal && (
                       <Box
                         sx={{
