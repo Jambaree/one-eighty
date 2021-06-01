@@ -274,16 +274,15 @@ export const CollectionQuery = graphql`
                     fieldGroupName
                     icon {
                       altText
+                      sourceUrl
+                      svg
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
                             layout: CONSTRAINED
                             placeholder: TRACED_SVG
                             width: 350
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
+                            tracedSVGOptions: {}
                           )
                         }
                       }
