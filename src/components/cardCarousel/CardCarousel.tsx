@@ -18,8 +18,8 @@ const CardCarousel = (props) => {
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
-    autoplay: true,
-    slidesToShow: 3,
+    autoplay: false,
+    slidesToShow: 3.5,
     slidesToScroll: 1,
     pauseOnHover: false,
     responsive: [
@@ -53,6 +53,9 @@ const CardCarousel = (props) => {
     >
       <Box
         sx={{
+          ".slick-list": {
+            paddingLeft: ["unset", "unset", "15%"],
+          },
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
             backgroundColor: "white",
@@ -84,8 +87,12 @@ const CardCarousel = (props) => {
                 sx={{
                   display: "flex",
                   flexDirection: ["column", "row", "row"],
-                  alignItems: ["flex-start", "center", "center"],
-                  p: ["48px 15px 38px 15px", "80px 15px", "124px 15px"],
+                  alignItems: "flex-start",
+                  p: [
+                    "48px 15px 38px 15px",
+                    "80px 15px",
+                    "100px 15px 76px 15px",
+                  ],
                 }}
               >
                 {headline && (
@@ -95,6 +102,7 @@ const CardCarousel = (props) => {
                     sx={{
                       fontSize: "12",
                       pb: ["24px", "unset", "unset"],
+                      pr: "10px",
                     }}
                   />
                 )}
@@ -103,7 +111,7 @@ const CardCarousel = (props) => {
                   <Text
                     children={subheading}
                     variant="text.introduction"
-                    sx={{ pl: ["unset", "30px", "30px"] }}
+                    sx={{ pt: "8px", fontSize: "18px", lineHeight: "30px" }}
                   />
                 )}
               </Box>
@@ -117,13 +125,21 @@ const CardCarousel = (props) => {
                           maxWidth: "100%",
                           px: 15,
                           m: "0 auto",
+                          img: {
+                            borderRadius: "6px",
+                          },
                         }}
                       >
-                        {o.image && (
-                          <GatsbyImage
-                            image={o.image}
-                            alt={o.image.altText}
-                            sx={{ border: "5px solid red" }}
+                        {o.image ? (
+                          <GatsbyImage image={o.image} alt={o.image.altText} />
+                        ) : (
+                          <Box
+                            sx={{
+                              bg: "almondDark",
+                              borderRadius: "6px",
+                              width: 262,
+                              height: 164,
+                            }}
                           />
                         )}
                         {o.heading && (
