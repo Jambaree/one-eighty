@@ -105,8 +105,16 @@ const Logos = (props) => {
                           height: "30px",
                           width: "30px",
                           borderRadius: "50%",
+                          bg: "coral",
+                          transition: "box-shadow 0.2s",
                           "&:hover": {
                             boxShadow: "0px 5px 10px #00000029",
+                          },
+                          "&:focus": {
+                            bg: "coralLight",
+                          },
+                          "&:disabled": {
+                            bg: "black25",
                           },
                         }}
                         onClick={() =>
@@ -125,7 +133,7 @@ const Logos = (props) => {
                             height: "30px",
                             width: "30px",
                             borderRadius: "50%",
-                            backgroundColor: "coral",
+                            backgroundColor: "transparent",
                             fill: "white",
                           }}
                         />
