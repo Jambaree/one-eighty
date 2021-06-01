@@ -10,7 +10,7 @@ import {
   Label,
   Input,
 } from "theme-ui"
-import { ChevronLeft, ChevronRight } from "mdi-material-ui"
+import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
 
@@ -238,20 +238,16 @@ const Template = (props) => {
           >
             Search
           </Text>
-          <Input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search what’s new…"
-            variant="buttons.entryfield.field"
-            sx={{
-              "&:after": {
-                content: "'*'",
-                display: "inline-block",
-                height: 25,
-                width: 25,
-              },
-            }}
-          />
+          <Box sx={{ display: "flex", alignItems: "center", width: 350 }}>
+            <Input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search what’s new…"
+              variant="buttons.entryfield.field"
+              sx={{ width: "100%" }}
+            />
+            <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
+          </Box>
 
           <Text
             as="p"
