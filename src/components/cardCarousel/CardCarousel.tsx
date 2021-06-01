@@ -11,15 +11,13 @@ import "../../styles/slick/slick-theme.css"
 const CardCarousel = (props) => {
   const { headline, subheading, cards } = props
 
-  console.log(props)
-
   const settings = {
     arrows: true,
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
     autoplay: false,
-    slidesToShow: 3.5,
+    slidesToShow: 3,
     slidesToScroll: 1,
     pauseOnHover: false,
     responsive: [
