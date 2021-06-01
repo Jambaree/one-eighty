@@ -189,13 +189,11 @@ const themeUi = {
       backgroundColor: "white",
       border: "1px solid",
       borderColor: "black25",
+      color: "coral",
 
       "&:hover": {
         borderColor: "coral",
       },
-      // "input:focus": {
-      //   backgroundColor: "coralLight",
-      // },
     },
   },
   links: {
