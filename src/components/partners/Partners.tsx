@@ -71,8 +71,8 @@ const Partners = (props) => {
                     }}
                   >
                     {o.icon &&
-                      (image?.svg ? (
-                        Parser(image.svg)
+                      (o.icon?.svg ? (
+                        Parser(o.icon.svg)
                       ) : (
                         <BackgroundImage
                           image={o.icon}
