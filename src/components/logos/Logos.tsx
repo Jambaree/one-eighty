@@ -28,7 +28,6 @@ const Logos = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-            width: "100%",
             m: "162px auto 36px auto",
             "&:after": {
               content: "''",
@@ -37,7 +36,6 @@ const Logos = (props) => {
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
-              width: 140,
               backgroundColor: "charcoalDark",
             },
           }}
@@ -103,7 +101,6 @@ const Logos = (props) => {
                         sx={{
                           cursor: "pointer",
                           height: "30px",
-                          width: "30px",
                           borderRadius: "50%",
                           bg: "coral",
                           transition: "box-shadow 0.2s",
