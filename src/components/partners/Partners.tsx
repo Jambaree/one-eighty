@@ -70,15 +70,18 @@ const Partners = (props) => {
                       mb: 25,
                     }}
                   >
-                    {o.icon && (
-                      <BackgroundImage
-                        image={o.icon}
-                        backgroundSize="contain"
-                        style={{
-                          borderRadius: 6,
-                        }}
-                      />
-                    )}
+                    {o.icon &&
+                      (image?.svg ? (
+                        Parser(image.svg)
+                      ) : (
+                        <BackgroundImage
+                          image={o.icon}
+                          backgroundSize="contain"
+                          style={{
+                            borderRadius: 6,
+                          }}
+                        />
+                      ))}
                   </Box>
                   <Box
                     sx={{
