@@ -100,6 +100,15 @@ const Logos = (props) => {
                   <Box sx={{ width: 50, m: "0 auto" }}>
                     {o.modal && (
                       <Box
+                        sx={{
+                          cursor: "pointer",
+                          height: "30px",
+                          width: "30px",
+                          borderRadius: "50%",
+                          "&:hover": {
+                            boxShadow: "0px 5px 10px #00000029",
+                          },
+                        }}
                         onClick={() =>
                           dispatch({
                             type: "SET_MODAL",
@@ -116,7 +125,7 @@ const Logos = (props) => {
                             height: "30px",
                             width: "30px",
                             borderRadius: "50%",
-                            backgroundColor: "#D6694A",
+                            backgroundColor: "coral",
                             fill: "white",
                           }}
                         />

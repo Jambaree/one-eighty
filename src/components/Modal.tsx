@@ -72,7 +72,10 @@ const Modal = (props) => {
           )}
         </Box>
       </Box>
-      <Close style={{ minWidth: "unset" }} onClick={handleClose} />
+      <Close
+        style={{ minWidth: "unset", cursor: "pointer" }}
+        onClick={handleClose}
+      />
     </ReactModal>
   )
 }
