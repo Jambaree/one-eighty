@@ -12,6 +12,7 @@ import textform from "../../../../components/textForm/TextForm"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
+import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
 
 const blocks = {
@@ -23,6 +24,7 @@ const blocks = {
   testimonialslider,
   benefits,
   logos,
+  partners,
   cardcarousel,
 }
 
@@ -198,26 +200,56 @@ export const CollectionQuery = graphql`
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
-                  columns
                   fieldGroupName
+                  columns
                   headline
                   subheading
                   cards {
                     fieldGroupName
                     text
+                    link {
+                      target
+                      title
+                      url
+                    }
                     logo {
                       altText
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            width: 10
-                            placeholder: TRACED_SVG
                             layout: CONSTRAINED
+                            placeholder: TRACED_SVG
+                            width: 10
                             tracedSVGOptions: {
                               background: "#fff"
                               color: "#E5D282"
                             }
                           )
+                        }
+                      }
+                    }
+                    modal {
+                      fieldGroupName
+                      modaltext
+                      modallink {
+                        target
+                        title
+                        url
+                      }
+                      modalimage {
+                        altText
+                        localFile {
+                          childImageSharp {
+                            gatsbyImageData(
+                              layout: CONSTRAINED
+                              placeholder: TRACED_SVG
+                              width: 10
+                              tracedSVGOptions: {
+                                background: "#fff"
+                                color: "#E5D282"
+                              }
+                            )
+                          }
                         }
                       }
                     }
@@ -232,6 +264,42 @@ export const CollectionQuery = graphql`
                   text
                   disclaimer
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
+                  fieldGroupName
+                  backgroundcolor
+                  columns
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    icon {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: CONSTRAINED
+                            placeholder: TRACED_SVG
+                            width: 350
+                            tracedSVGOptions: {
+                              background: "#fff"
+                              color: "#E5D282"
+                            }
+                          )
+                        }
+                      }
+                    }
+                    link {
+                      target
+                      title
+                      url
+                    }
+                  }
+                  mainbutton {
+                    target
+                    title
+                    url
+                  }
+                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
                   fieldGroupName
                   headline
@@ -245,9 +313,9 @@ export const CollectionQuery = graphql`
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            width: 350
-                            placeholder: TRACED_SVG
                             layout: CONSTRAINED
+                            placeholder: TRACED_SVG
+                            width: 350
                             tracedSVGOptions: {
                               background: "#fff"
                               color: "#E5D282"
