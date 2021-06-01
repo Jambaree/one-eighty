@@ -150,6 +150,7 @@ const Template = (props) => {
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: 10,
+              marginTop: 64,
               marginLeft: 20,
             }}
           >
@@ -314,7 +315,7 @@ const Template = (props) => {
                 </Text>
               </Box>
               <Box>
-                <Heading variant="styles.h5" sx={{ fontSize: "6" }}>
+                <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
                   {o.title}
                 </Heading>
                 <Link
