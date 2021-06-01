@@ -141,8 +141,9 @@ const Template = (props) => {
     return (
       <Box>
         <nav>
-          <ul
-            style={{
+          <Text
+            as="ul"
+            sx={{
               width: 304,
               height: 50,
               display: "flex",
@@ -150,8 +151,7 @@ const Template = (props) => {
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: 10,
-              marginTop: 64,
-              marginLeft: 20,
+              m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
             {page > 1 && (
@@ -180,7 +180,7 @@ const Template = (props) => {
                 />
               </Link>
             )}
-          </ul>
+          </Text>
         </nav>
       </Box>
     )
@@ -195,7 +195,7 @@ const Template = (props) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: ["flex-start", "center", "center"],
         }}
       >
         {headline && (
@@ -205,6 +205,7 @@ const Template = (props) => {
               fontSize: "65px",
               color: "almondLight",
               mb: 36,
+              pl: ["18px", "18px", "unset"],
             }}
           >
             {headline}
@@ -216,6 +217,7 @@ const Template = (props) => {
             sx={{
               color: "almondLight",
               fontSize: "18px",
+              px: ["18px", "24px", "unset"],
             }}
           >
             {text}
@@ -223,11 +225,14 @@ const Template = (props) => {
         )}
       </Box>
       <Grid
-        columns={[1, null, "5fr 7fr"]}
+        columns={[1, 1, "4fr 8fr"]}
         gap={"45px"}
-        sx={{ p: "118px 138px", backgroundColor: "almondLight" }}
+        sx={{
+          p: ["52px 32px 100px 32px", "52px 32px 0px 32px", "118px 138px"],
+          backgroundColor: "almondLight",
+        }}
       >
-        <Box>
+        <Box sx={{ m: "0 auto" }}>
           <Text
             sx={{
               fontFamily: "fonts.heading",
@@ -244,7 +249,9 @@ const Template = (props) => {
             sx={{
               display: "flex",
               alignItems: "center",
-              width: 350,
+              width: ["100%", null, "50%"],
+              minWidth: 250,
+              maxWidth: "100%",
               height: 47,
             }}
           >
@@ -265,7 +272,7 @@ const Template = (props) => {
               fontSize: 0,
               textTransform: "uppercase",
               letterSpacing: "1.1px",
-              mt: 58,
+              mt: 60,
             }}
           >
             Type
@@ -280,7 +287,7 @@ const Template = (props) => {
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      my: "8px",
+                      my: "20px",
                       fontSize: "15px",
                       lineHeight: "35px",
                     }}
@@ -300,7 +307,16 @@ const Template = (props) => {
         </Box>
         <Box>
           {activePosts.map((o) => (
-            <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
+            <Grid
+              key={o.id}
+              columns={["2fr 6fr", null, "2fr 10fr"]}
+              gap={["28px", 3, 3]}
+              sx={{
+                pb: 36,
+                m: ["0 auto", "0 auto", "unset"],
+                width: ["100%", "50%", "50%"],
+              }}
+            >
               <Box>
                 <Text
                   sx={{
