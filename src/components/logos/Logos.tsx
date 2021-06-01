@@ -1,17 +1,26 @@
 import React from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
-import { ChevronRightCircle } from "mdi-material-ui"
+import { ChevronRight } from "mdi-material-ui"
+import { useStore } from "../../store"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
+// import Modal from "../Modal"
 
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
-  console.log(props)
+
+  const [
+    {
+      appState: { menu },
+      userState: { isLoggedIn, user },
+    },
+    dispatch,
+  ] = useStore()
 
   return (
-    <Box sx={{ bg: "white", mt: 104, mb: 154 }}>
+    <Box sx={{ bg: "white", mt: 104, mb: 154, position: "relative" }}>
       <Edges size="md">
         <Box
           sx={{
@@ -47,7 +56,7 @@ const Logos = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 104], zIndex: 1 }}
+              sx={{ mb: [36, 36, 104] }}
             />
           )}
         </Box>
@@ -89,10 +98,29 @@ const Logos = (props) => {
                     )}
                   </Box>
                   <Box sx={{ width: 50, m: "0 auto" }}>
-                    {o.link && (
-                      <Link href={o.link.url}>
-                        <ChevronRightCircle style={{ fill: "coral" }} />
-                      </Link>
+                    {o.modal && (
+                      <Box
+                        onClick={() =>
+                          dispatch({
+                            type: "SET_MODAL",
+                            payload: {
+                              text: o.modal.modaltext,
+                              image: o.modal.modalimage,
+                              link: o.modal.modallink,
+                            },
+                          })
+                        }
+                      >
+                        <ChevronRight
+                          style={{
+                            height: "30px",
+                            width: "30px",
+                            borderRadius: "50%",
+                            backgroundColor: "#D6694A",
+                            fill: "white",
+                          }}
+                        />
+                      </Box>
                     )}
                   </Box>
                 </Box>

@@ -200,26 +200,56 @@ export const CollectionQuery = graphql`
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
-                  columns
                   fieldGroupName
+                  columns
                   headline
                   subheading
                   cards {
                     fieldGroupName
                     text
+                    link {
+                      target
+                      title
+                      url
+                    }
                     logo {
                       altText
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            width: 10
-                            placeholder: TRACED_SVG
                             layout: CONSTRAINED
+                            placeholder: TRACED_SVG
+                            width: 10
                             tracedSVGOptions: {
                               background: "#fff"
                               color: "#E5D282"
                             }
                           )
+                        }
+                      }
+                    }
+                    modal {
+                      fieldGroupName
+                      modaltext
+                      modallink {
+                        target
+                        title
+                        url
+                      }
+                      modalimage {
+                        altText
+                        localFile {
+                          childImageSharp {
+                            gatsbyImageData(
+                              layout: CONSTRAINED
+                              placeholder: TRACED_SVG
+                              width: 10
+                              tracedSVGOptions: {
+                                background: "#fff"
+                                color: "#E5D282"
+                              }
+                            )
+                          }
                         }
                       }
                     }

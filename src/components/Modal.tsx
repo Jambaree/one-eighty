@@ -1,10 +1,11 @@
 import React from "react"
 import ReactModal from "react-modal"
-import { Heading, Box, Paragraph, Close } from "theme-ui"
+import { Heading, Box, Paragraph, Close, Link } from "theme-ui"
 
 // import app components
 import { useStore } from "../store"
 import BackgroundImage from "./BackgroundImage"
+import Textarea from "./Textarea"
 
 ReactModal.setAppElement("#___gatsby")
 
@@ -38,14 +39,29 @@ const Modal = (props) => {
           borderRadius: 6,
           display: "flex",
         },
+        overlay: {
+          background: "rgba(0, 0, 0, 0.75)",
+        },
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", p: 48 }}>
-        <Box sx={{ mr: 24 }}>
+        <Box sx={{ mr: 66 }}>
           {modal?.headline && (
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
-          {modal?.text && <Paragraph>{modal.text}</Paragraph>}
+          {modal?.text && (
+            <Box
+              variant="text.introduction"
+              sx={{ mb: 30, letterSpacing: "-.23px", lineHeight: "25px" }}
+            >
+              <Textarea content={modal.text} />
+            </Box>
+          )}
+          {modal?.link && (
+            <Link href={modal.link.url} variant="links.hyperlink">
+              {modal.link.title}
+            </Link>
+          )}
         </Box>
         <Box>
           {modal?.image && (
