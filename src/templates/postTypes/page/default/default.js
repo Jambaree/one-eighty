@@ -274,6 +274,8 @@ export const CollectionQuery = graphql`
                     fieldGroupName
                     icon {
                       altText
+                      sourceUrl
+                      svg
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
