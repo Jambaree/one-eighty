@@ -282,10 +282,7 @@ export const CollectionQuery = graphql`
                             layout: CONSTRAINED
                             placeholder: TRACED_SVG
                             width: 350
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
+                            tracedSVGOptions: {}
                           )
                         }
                       }
