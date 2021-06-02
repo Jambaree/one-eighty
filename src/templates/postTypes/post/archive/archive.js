@@ -338,6 +338,11 @@ const Template = (props) => {
                 <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
                   {o.title}
                 </Heading>
+
+                {o?.acf?.excerpt?.text && (
+                  <Text sx={{ display: "block" }}>{o.acf.excerpt.text}</Text>
+                )}
+
                 <Link
                   href={o.uri}
                   aria-label="Read article"
@@ -400,6 +405,11 @@ export const Query = graphql`
                 gatsbyImageData(width: 400, placeholder: BLURRED)
               }
             }
+          }
+        }
+        acf {
+          excerpt {
+            text
           }
         }
         categories {

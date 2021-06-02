@@ -28,6 +28,11 @@ const config = {
               }
             }
           }
+          acf {
+            excerpt {
+              text
+            }
+          }
           categories {
             nodes {
               name
