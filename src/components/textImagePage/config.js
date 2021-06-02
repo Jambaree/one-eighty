@@ -1,6 +1,6 @@
 const config = {
   id: "textimagepage",
-  label: "Text/Image Page",
+  label: "[WIP] Text & Image Repeater",
   fields: [
     {
       id: "headline",
@@ -16,7 +16,7 @@ const config = {
       id: "textimage",
       label: "Text Image",
       type: "repeater",
-      fields: [
+      items: [
         {
           id: "image",
           type: "image",
