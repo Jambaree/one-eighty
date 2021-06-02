@@ -32,8 +32,8 @@ const Logos = (props) => {
             "&:after": {
               content: "''",
               position: "relative",
-              mt: 90,
-              mb: ["-210px", "-230px", "-82px"],
+              mt: [80, 90, 90],
+              mb: ["-80px", "-80px", "-82px"],
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
@@ -56,7 +56,11 @@ const Logos = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ px: 250 }}
+              sx={{
+                m: "0 auto",
+                maxWidth: [640],
+                width: ["unset", "75%", "50%"],
+              }}
             />
           )}
         </Box>
