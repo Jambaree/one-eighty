@@ -145,34 +145,44 @@ const themeUi = {
       color: "coral",
     },
     entryfield: {
-      label: {
-        fontSize: 0,
-        textTranform: "uppercase",
-        "&:after": {
-          content: "*",
-          color: "coral",
-          "&:disabled": {
-            bg: "black25",
-          },
-        },
-        "&:disabled": {
-          bg: "black25",
-        },
-      },
+      // label: {
+      //   fontSize: 0,
+      //   textTranform: "uppercase",
+      //   "&:after": {
+      //     content: "*",
+      //     color: "coral",
+      //     "&:disabled": {
+      //       bg: "black25",
+      //     },
+      //   },
+      //   "&:disabled": {
+      //     bg: "black25",
+      //   },
+      // },
       field: {
         fontSize: 3,
         lineHeight: "25px",
-        p: "13px 69px 2px 13px",
         width: 304,
         height: 37,
-        border: "1px solid black25",
+        border: "1px solid",
+        borderColor: "black25",
+        bg: "white",
+        borderRadius: "6px",
+        p: "10px 15px",
+        fontFamily: "body",
+        fontWeight: 300,
+        outline: "none",
+
         "&:placeholder": {
-          color: "black25",
+          color: "black50",
+          letterSpacing: "-0.23px",
+          fontSize: "15px",
+          lineHeight: "25px",
         },
         "&:hover": {
           borderColor: "black50",
         },
-        "&:focus": {
+        ":focus": {
           borderColor: "coralLight",
         },
         "&:disabled": {
@@ -189,13 +199,11 @@ const themeUi = {
       backgroundColor: "white",
       border: "1px solid",
       borderColor: "black25",
+      color: "coral",
 
       "&:hover": {
         borderColor: "coral",
       },
-      // "input:focus": {
-      //   backgroundColor: "coralLight",
-      // },
     },
   },
   links: {

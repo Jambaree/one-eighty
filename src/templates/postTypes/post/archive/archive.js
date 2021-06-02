@@ -10,7 +10,7 @@ import {
   Label,
   Input,
 } from "theme-ui"
-import { ChevronLeft, ChevronRight } from "mdi-material-ui"
+import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
 
@@ -111,7 +111,6 @@ const Template = (props) => {
           key={i}
           as="li"
           sx={{
-            color: page === i ? "white" : "black75",
             width: "23px",
             height: "23px",
             display: "flex",
@@ -122,7 +121,7 @@ const Template = (props) => {
             backgroundColor: page === i && "coral",
 
             a: {
-              color: "black75",
+              color: page === i ? "white" : "black75",
             },
 
             "&:hover": {
@@ -142,8 +141,9 @@ const Template = (props) => {
     return (
       <Box>
         <nav>
-          <ul
-            style={{
+          <Text
+            as="ul"
+            sx={{
               width: 304,
               height: 50,
               display: "flex",
@@ -151,12 +151,14 @@ const Template = (props) => {
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: 10,
+              m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
             {page > 1 && (
               <Link href={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
+                    display: "flex",
                     fill: "coral",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
@@ -171,6 +173,7 @@ const Template = (props) => {
               <Link href={basePath + "page/" + (page + 1)}>
                 <ChevronRight
                   style={{
+                    display: "flex",
                     fill: "coral",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
@@ -179,7 +182,7 @@ const Template = (props) => {
                 />
               </Link>
             )}
-          </ul>
+          </Text>
         </nav>
       </Box>
     )
@@ -194,7 +197,7 @@ const Template = (props) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: ["flex-start", "center", "center"],
         }}
       >
         {headline && (
@@ -204,6 +207,7 @@ const Template = (props) => {
               fontSize: "65px",
               color: "almondLight",
               mb: 36,
+              pl: ["18px", "18px", "unset"],
             }}
           >
             {headline}
@@ -215,6 +219,7 @@ const Template = (props) => {
             sx={{
               color: "almondLight",
               fontSize: "18px",
+              px: ["18px", "24px", "12px"],
             }}
           >
             {text}
@@ -222,10 +227,18 @@ const Template = (props) => {
         )}
       </Box>
       <Grid
-        columns={[1, null, "5fr 7fr"]}
-        sx={{ p: "118px 138px", backgroundColor: "almondLight" }}
+        columns={[1, 1, "4fr 8fr"]}
+        gap={"45px"}
+        sx={{
+          p: ["52px 32px 100px 32px", "52px 32px 0px 32px", "118px 138px"],
+          backgroundColor: "almondLight",
+        }}
       >
-        <Box>
+        <Box
+          sx={{
+            maxWidth: ["100%", "80%", "100%"],
+          }}
+        >
           <Text
             sx={{
               fontFamily: "fonts.heading",
@@ -233,17 +246,37 @@ const Template = (props) => {
               textTransform: "uppercase",
               letterSpacing: "1.1px",
               pl: "10px",
+              pb: "5px",
             }}
           >
             Search
           </Text>
-          <Input value={search} onChange={(e) => setSearch(e.target.value)} />
-          <Text
+          <Box
             sx={{
-              fontFamily: "fonts.heading",
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
+              height: 47,
+            }}
+          >
+            <Input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search what’s new…"
+              variant="buttons.entryfield.field"
+              sx={{ width: "100%", height: "auto" }}
+            />
+            <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
+          </Box>
+
+          <Text
+            as="p"
+            sx={{
+              fontFamily: "heading",
               fontSize: 0,
               textTransform: "uppercase",
               letterSpacing: "1.1px",
+              mt: 60,
             }}
           >
             Type
@@ -258,7 +291,7 @@ const Template = (props) => {
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      my: "8px",
+                      my: "20px",
                       fontSize: "15px",
                       lineHeight: "35px",
                     }}
@@ -278,7 +311,16 @@ const Template = (props) => {
         </Box>
         <Box>
           {activePosts.map((o) => (
-            <Grid key={o.id} columns={["2fr 10fr"]} gap={3} sx={{ pb: 36 }}>
+            <Grid
+              key={o.id}
+              columns={["2fr 6fr", null, "2fr 10fr"]}
+              gap={["28px", 3, 3]}
+              sx={{
+                pb: 36,
+                m: ["0 auto", "unset", "unset"],
+                width: ["100%", "50%", "50%"],
+              }}
+            >
               <Box>
                 <Text
                   sx={{
@@ -293,7 +335,7 @@ const Template = (props) => {
                 </Text>
               </Box>
               <Box>
-                <Heading variant="styles.h5" sx={{ fontSize: "6" }}>
+                <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
                   {o.title}
                 </Heading>
                 <Link
