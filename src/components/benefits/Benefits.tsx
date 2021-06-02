@@ -55,6 +55,7 @@ const Benefits = (props) => {
                     {o.icon && (
                       <BackgroundImage
                         image={o.icon}
+                        backgroundSize="contain"
                         style={{
                           borderRadius: 6,
                         }}
