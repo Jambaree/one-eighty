@@ -198,6 +198,11 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                  link {
+                    target
+                    title
+                    url
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
                   fieldGroupName
