@@ -24,6 +24,7 @@ const TextImagePage = (props) => {
       <Box
         sx={{
           backgroundImage: backgroundimage,
+          backgroundSize: "cover",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
