@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Text } from "theme-ui"
+import { Box, Flex, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
 
 // import app components
@@ -11,26 +11,45 @@ const TextImagePage = (props) => {
   const {
     backgroundimage,
     fontcolor,
-    headline,
+    mainheadline,
     subheading,
     textimage,
     mainlink,
   } = props
 
+  console.log(props)
+
   return (
     <>
-      <Box>
-        {headline && (
-          <Heading children={headline} variant="styles.h2" sx={{ pb: 36 }} />
+      <Box
+        sx={{
+          backgroundImage: backgroundimage,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        {mainheadline && (
+          <Heading
+            children={mainheadline}
+            variant="styles.h2"
+            sx={{ pb: 36, color: fontcolor }}
+          />
         )}
-        {subheading && <Text children={subheading} />}
+        {subheading && (
+          <Text
+            as="p"
+            variant="text.introduction"
+            children={subheading}
+            sx={{ color: fontcolor, mb: 68 }}
+          />
+        )}
         <Box
           sx={{
             position: "relative",
             display: "flex",
-            flexWrap: "wrap-reverse",
+            flexDirection: "column",
             alignItems: "center",
-            minHeight: [null, null, 600],
             my: [48, 48, 0],
             textAlign: "left",
             "p:last-child": {
@@ -41,24 +60,21 @@ const TextImagePage = (props) => {
           {textimage &&
             textimage.map((o, i) => {
               return (
-                <Box key={i}>
+                <Box key={i} sx={{ mb: 24 }}>
                   <Box
                     sx={{
-                      left: textimage.alignment === "left" ? 0 : "unset",
-                      right: textimage.alignment === "right" ? 0 : "unset",
+                      left: o.alignment === "left" ? 0 : "unset",
+                      right: o.alignment === "right" ? 0 : "unset",
                       position: ["relative", null, "absolute"],
-                      height: [434, 500, "auto"],
+                      height: 278,
                       width: ["100%", "100%", "calc(50% - 25px)"],
-                      order: 1,
-                      top: [null, null, 0],
-                      bottom: [null, null, 0],
-                      m: [24, 24, "52px 24px"],
                     }}
                   >
                     {o.image && (
                       <BackgroundImage
                         image={o.image}
                         backgroundSize="contain"
+                        style={{ boxShadow: "0px 20px 40px #00000066" }}
                       />
                     )}
                   </Box>
@@ -80,7 +96,7 @@ const TextImagePage = (props) => {
                         <Heading
                           children={o.headline}
                           variant="styles.h2"
-                          sx={{ pb: 36 }}
+                          sx={{ pb: 36, color: fontcolor }}
                         />
                       )}
                       {o.text && (
@@ -89,6 +105,7 @@ const TextImagePage = (props) => {
                           variant="text.paragraph"
                           sx={{
                             paddingBottom: 36,
+                            color: fontcolor,
                           }}
                         />
                       )}
@@ -103,6 +120,13 @@ const TextImagePage = (props) => {
               )
             })}
         </Box>
+        {mainlink?.url && (
+          <Box sx={{ mt: 114, mb: 178 }}>
+            <Button variant="primary" to={mainlink.url}>
+              {mainlink.title}
+            </Button>
+          </Box>
+        )}
       </Box>
     </>
   )

@@ -24,9 +24,9 @@ const config = {
       ],
     },
     {
-      id: "headline",
+      id: "mainheadline",
       type: "text",
-      label: "Headline",
+      label: "Main Headline",
     },
     {
       id: "subheading",

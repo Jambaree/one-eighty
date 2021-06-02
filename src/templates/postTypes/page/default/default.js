@@ -332,6 +332,53 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
+                  fieldGroupName
+                  fontcolor
+                  backgroundimage {
+                    altText
+                    sourceUrl
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: TRACED_SVG
+                          width: 1920
+                          tracedSVGOptions: {}
+                        )
+                      }
+                    }
+                  }
+                  mainheadline
+                  subheading
+                  textimage {
+                    fieldGroupName
+                    alignment
+                    headline
+                    text
+                    image {
+                      altText
+                      sourceUrl
+                      svg
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: FULL_WIDTH
+                            placeholder: TRACED_SVG
+                            width: 250
+                            tracedSVGOptions: {}
+                          )
+                        }
+                      }
+                    }
+                  }
+                  mainlink {
+                    target
+                    title
+                    url
+                  }
+                }
               }
             }
             fieldGroupName
