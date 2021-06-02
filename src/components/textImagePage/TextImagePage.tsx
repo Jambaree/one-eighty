@@ -32,8 +32,13 @@ const TextImagePage = (props) => {
         {mainheadline && (
           <Heading
             children={mainheadline}
-            variant="styles.h2"
-            sx={{ pb: 36, color: fontcolor }}
+            variant="styles.h1"
+            sx={{
+              pb: 36,
+              color: fontcolor,
+              letterSpacing: "-1.15px",
+              lineHeight: "54px",
+            }}
           />
         )}
         {subheading && (
@@ -41,7 +46,13 @@ const TextImagePage = (props) => {
             as="p"
             variant="text.introduction"
             children={subheading}
-            sx={{ color: fontcolor, mb: 68 }}
+            sx={{
+              color: fontcolor,
+              mb: 68,
+              fontSize: "18px",
+              lineHeight: "30px",
+              fontWeight: 400,
+            }}
           />
         )}
         <Box
@@ -74,7 +85,7 @@ const TextImagePage = (props) => {
                       <BackgroundImage
                         image={o.image}
                         backgroundSize="contain"
-                        style={{ boxShadow: "0px 20px 40px #00000066" }}
+                        // style={{ boxShadow: "0px 20px 40px #00000066" }}
                       />
                     )}
                   </Box>
@@ -95,17 +106,25 @@ const TextImagePage = (props) => {
                       {o.headline && (
                         <Heading
                           children={o.headline}
-                          variant="styles.h2"
-                          sx={{ pb: 36, color: fontcolor }}
+                          variant="styles.h3"
+                          sx={{
+                            pb: 36,
+                            color: fontcolor,
+                            fontSize: "22px",
+                            letterSpacing: "-0.33px",
+                            lineHeight: "32px",
+                          }}
                         />
                       )}
                       {o.text && (
                         <Text
                           children={Parser(o.text)}
-                          variant="text.paragraph"
+                          variant="text.introduction"
                           sx={{
                             paddingBottom: 36,
                             color: fontcolor,
+                            letterSpacing: "-0.23px",
+                            lineHeight: "25px",
                           }}
                         />
                       )}
