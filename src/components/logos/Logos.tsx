@@ -51,11 +51,7 @@ const Logos = (props) => {
             />
           )}
           {subheading && (
-            <Text
-              children={subheading}
-              variant="text.introduction"
-              sx={{ mb: [36, 36, 104] }}
-            />
+            <Text children={subheading} variant="text.introduction" />
           )}
         </Box>
         <Grid gap={5} columns={[1, 2, columns]}>
@@ -65,8 +61,7 @@ const Logos = (props) => {
                 <Box key={i}>
                   <Box
                     sx={{
-                      position: "relative",
-                      height: 186,
+                      mt: [80, 100, 100],
                     }}
                   >
                     {o.logo && (
@@ -74,7 +69,8 @@ const Logos = (props) => {
                         image={o.logo}
                         style={{
                           borderRadius: 6,
-                          marginBottom: 16,
+                          height: 186,
+                          position: "relative",
                         }}
                         backgroundSize="contain"
                       />
@@ -89,6 +85,7 @@ const Logos = (props) => {
                       alignItems: "center",
                       mx: [40, 20, "unset"],
                       mb: 12,
+                      mt: [16, "unset", "unset"],
                     }}
                   >
                     {o.text && (
@@ -96,7 +93,7 @@ const Logos = (props) => {
                     )}
                   </Box>
                   <Box sx={{ width: 30, m: "0 auto" }}>
-                    {o.modal && (
+                    {o.modal?.modallink?.url && (
                       <Box
                         sx={{
                           cursor: "pointer",
