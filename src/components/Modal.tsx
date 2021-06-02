@@ -68,7 +68,8 @@ const Modal = (props) => {
           {modal?.image && (
             <BackgroundImage
               image={modal.image}
-              style={{ position: "relative", height: 200 }}
+              style={{ position: "relative", height: 343 }}
+              backgroundSize="contain"
             />
           )}
         </Box>
