@@ -51,7 +51,7 @@ const TextImagePage = (props) => {
             sx={{
               color: fontcolor,
               mb: [42, 68, 68],
-              px: [18, "unset", "unset"],
+              px: [18, 18, "unset"],
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
