@@ -158,6 +158,7 @@ const Template = (props) => {
               <Link href={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
+                    display: "flex",
                     fill: "coral",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
@@ -172,6 +173,7 @@ const Template = (props) => {
               <Link href={basePath + "page/" + (page + 1)}>
                 <ChevronRight
                   style={{
+                    display: "flex",
                     fill: "coral",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
