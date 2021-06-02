@@ -27,6 +27,22 @@ const config = {
       type: "link",
       label: "Link",
     },
+    {
+      id: "linktype",
+      type: "select",
+      label: "Link Type",
+      defaultValue: "button",
+      options: [
+        {
+          name: "Button",
+          value: "button",
+        },
+        {
+          name: "Hyperlink",
+          value: "hyperlink",
+        },
+      ],
+    },
   ],
 }
 
