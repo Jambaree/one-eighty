@@ -33,11 +33,6 @@ const config = {
       type: "wysiwyg",
       label: "Text",
     },
-    // {
-    //   id: "wysiwygtext",
-    //   type: "wysiwyg",
-    //   label: "Text",
-    // },
     {
       id: "link",
       type: "link",

@@ -7,7 +7,7 @@ import BackgroundImage from "../BackgroundImage"
 import Button from "../Button"
 
 const Benefits = (props) => {
-  const { columns, headline, subheading, icon, cards, link } = props
+  const { columns, headline, subheading, cards, link } = props
 
   return (
     <Box sx={{ bg: "white", mt: 104, mb: 154 }}>
