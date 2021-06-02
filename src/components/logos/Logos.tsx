@@ -31,11 +31,13 @@ const Logos = (props) => {
             m: "162px auto 36px auto",
             "&:after": {
               content: "''",
-              position: "absolute",
-              marginBottom: ["-210px", "-230px", "-160px"],
+              position: "relative",
+              mt: 90,
+              mb: ["-210px", "-230px", "-82px"],
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
+              width: 140,
               backgroundColor: "charcoalDark",
             },
           }}
@@ -51,7 +53,11 @@ const Logos = (props) => {
             />
           )}
           {subheading && (
-            <Text children={subheading} variant="text.introduction" />
+            <Text
+              children={subheading}
+              variant="text.introduction"
+              sx={{ px: 250 }}
+            />
           )}
         </Box>
         <Grid gap={5} columns={[1, 2, columns]}>
