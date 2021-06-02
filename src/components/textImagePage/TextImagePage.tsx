@@ -34,7 +34,9 @@ const TextImagePage = (props) => {
             children={mainheadline}
             variant="styles.h1"
             sx={{
-              pb: 36,
+              pt: 100,
+              pb: [28, 36, 36],
+              px: [18, "unset", "unset"],
               color: fontcolor,
               letterSpacing: "-1.15px",
               lineHeight: "54px",
@@ -48,7 +50,8 @@ const TextImagePage = (props) => {
             children={subheading}
             sx={{
               color: fontcolor,
-              mb: 68,
+              mb: [42, 68, 68],
+              px: [18, "unset", "unset"],
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
@@ -63,15 +66,12 @@ const TextImagePage = (props) => {
             alignItems: "center",
             my: [48, 48, 0],
             textAlign: "left",
-            "p:last-child": {
-              mb: [16, 18, 24],
-            },
           }}
         >
           {textimage &&
             textimage.map((o, i) => {
               return (
-                <Box key={i} sx={{ mb: 24 }}>
+                <Box key={i} sx={{ mt: ["unset", 48, 48] }}>
                   <Box
                     sx={{
                       left: o.alignment === "left" ? 0 : "unset",
@@ -100,7 +100,7 @@ const TextImagePage = (props) => {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "flex-start",
-                        pt: 36,
+                        pt: [26, 36, 36],
                       }}
                     >
                       {o.headline && (
@@ -108,7 +108,7 @@ const TextImagePage = (props) => {
                           children={o.headline}
                           variant="styles.h3"
                           sx={{
-                            pb: 36,
+                            pb: "8px",
                             color: fontcolor,
                             fontSize: "22px",
                             letterSpacing: "-0.33px",
@@ -140,7 +140,7 @@ const TextImagePage = (props) => {
             })}
         </Box>
         {mainlink?.url && (
-          <Box sx={{ mt: 114, mb: 178 }}>
+          <Box sx={{ mt: ["unset", 114, 114], mb: [100, 178, 178] }}>
             <Button variant="primary" to={mainlink.url}>
               {mainlink.title}
             </Button>
