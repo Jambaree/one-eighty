@@ -217,7 +217,7 @@ const Template = (props) => {
             sx={{
               color: "almondLight",
               fontSize: "18px",
-              px: ["18px", "24px", "unset"],
+              px: ["18px", "24px", "12px"],
             }}
           >
             {text}
@@ -232,7 +232,7 @@ const Template = (props) => {
           backgroundColor: "almondLight",
         }}
       >
-        <Box sx={{ m: "0 auto" }}>
+        <Box>
           <Text
             sx={{
               fontFamily: "fonts.heading",
@@ -313,7 +313,7 @@ const Template = (props) => {
               gap={["28px", 3, 3]}
               sx={{
                 pb: 36,
-                m: ["0 auto", "0 auto", "unset"],
+                m: ["0 auto", "unset", "unset"],
                 width: ["100%", "50%", "50%"],
               }}
             >
