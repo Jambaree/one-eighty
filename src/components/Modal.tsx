@@ -60,7 +60,7 @@ const Modal = (props) => {
           )}
           {modal?.link && (
             <Link href={modal.link.url} variant="links.hyperlink">
-              {modal.link.title}
+              {modal.link.title} →
             </Link>
           )}
         </Box>
