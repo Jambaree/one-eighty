@@ -232,7 +232,11 @@ const Template = (props) => {
           backgroundColor: "almondLight",
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            maxWidth: ["100%", "80%", "100%"],
+          }}
+        >
           <Text
             sx={{
               fontFamily: "fonts.heading",
@@ -249,9 +253,7 @@ const Template = (props) => {
             sx={{
               display: "flex",
               alignItems: "center",
-              width: ["100%", null, "50%"],
-              minWidth: 250,
-              maxWidth: "100%",
+              width: "100%",
               height: 47,
             }}
           >
