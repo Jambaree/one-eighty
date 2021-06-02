@@ -10,6 +10,18 @@ const config = {
       global: true,
     },
     {
+      id: "excerpt",
+      label: "Excerpt",
+      type: "group",
+      fields: [
+        {
+          id: "text",
+          label: "Text",
+          type: "text",
+        },
+      ],
+    },
+    {
       id: "text",
       label: "Content",
       type: "group",
