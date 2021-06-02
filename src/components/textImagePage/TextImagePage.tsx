@@ -32,14 +32,14 @@ const TextImagePage = (props) => {
         {mainheadline && (
           <Heading
             children={mainheadline}
-            variant="styles.h1"
             sx={{
               pt: 100,
               pb: [28, 36, 36],
               px: [18, "unset", "unset"],
               color: fontcolor,
-              letterSpacing: "-1.15px",
-              lineHeight: "54px",
+              letterSpacing: ["-0.42px", "-1.15px", "-1.15px"],
+              lineHeight: ["30px", "54px", "54px"],
+              fontSize: [28, 46, 46],
             }}
           />
         )}
