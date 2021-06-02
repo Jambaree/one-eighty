@@ -51,9 +51,6 @@ const CardCarousel = (props) => {
     >
       <Box
         sx={{
-          ".slick-list": {
-            paddingLeft: ["unset", "unset", "15%"],
-          },
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
             backgroundColor: "white",
