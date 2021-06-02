@@ -3,6 +3,27 @@ const config = {
   label: "[WIP] Text & Image Repeater",
   fields: [
     {
+      id: "backgroundimage",
+      type: "image",
+      label: "Background Image",
+    },
+    {
+      id: "fontcolor",
+      type: "select",
+      label: "Choose Font Color",
+      defaultValue: "charcoal",
+      options: [
+        {
+          name: "Charcoal",
+          value: "charcoal",
+        },
+        {
+          name: "Light Almond",
+          value: "almondLight",
+        },
+      ],
+    },
+    {
       id: "headline",
       type: "text",
       label: "Headline",
