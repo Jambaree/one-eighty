@@ -33,11 +33,6 @@ const config = {
           label: "Text",
         },
         {
-          id: "link",
-          type: "link",
-          label: "Link",
-        },
-        {
           id: "modal",
           label: "Modal",
           type: "group",

@@ -207,11 +207,6 @@ export const CollectionQuery = graphql`
                   cards {
                     fieldGroupName
                     text
-                    link {
-                      target
-                      title
-                      url
-                    }
                     logo {
                       altText
                       localFile {
