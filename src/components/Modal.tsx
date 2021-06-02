@@ -1,6 +1,6 @@
 import React from "react"
 import ReactModal from "react-modal"
-import { Heading, Box, Paragraph, Close, Link } from "theme-ui"
+import { Heading, Box, Close, Link } from "theme-ui"
 
 // import app components
 import { useStore } from "../store"
@@ -31,7 +31,7 @@ const Modal = (props) => {
       style={{
         content: {
           top: "50%",
-          left: "50%",
+          left: props.jamCMS.sidebar ? "60%" : "50%",
           right: "auto",
           bottom: "auto",
           marginRight: "-20%",

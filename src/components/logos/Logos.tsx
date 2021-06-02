@@ -128,6 +128,7 @@ const Logos = (props) => {
                               text: o.modal.modaltext,
                               image: o.modal.modalimage,
                               link: o.modal.modallink,
+                              props: props,
                             },
                           })
                         }
