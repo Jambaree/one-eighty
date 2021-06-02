@@ -45,7 +45,7 @@ const Header = (props) => {
         left: 0,
         top: 0,
         width: ["100%", "100%", "100%"],
-        zIndex: 999,
+        zIndex: 3,
         display: "flex",
         alignItems: "center",
         borderBottom: "1px solid #D3D3D3",
@@ -63,7 +63,7 @@ const Header = (props) => {
             pr={2}
             sx={{
               position: "relative",
-              zIndex: 3,
+              zIndex: 2,
               textDecoration: "none",
               ".a": { fill: "charcoalDark" },
               svg: { height: "60px" },

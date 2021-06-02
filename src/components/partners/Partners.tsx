@@ -43,7 +43,6 @@ const Partners = (props) => {
                 fontSize: "18px",
                 lineHeight: "30px",
                 mb: [36, 36, 60],
-                zIndex: 1,
                 p: "0 18px",
               }}
             />

@@ -243,7 +243,7 @@ export const CollectionQuery = graphql`
                             gatsbyImageData(
                               layout: CONSTRAINED
                               placeholder: TRACED_SVG
-                              width: 10
+                              width: 312
                               tracedSVGOptions: {
                                 background: "#fff"
                                 color: "#E5D282"

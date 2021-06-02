@@ -28,7 +28,6 @@ const Logos = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-            width: "100%",
             m: "162px auto 36px auto",
             "&:after": {
               content: "''",
@@ -37,7 +36,6 @@ const Logos = (props) => {
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
-              width: 140,
               backgroundColor: "charcoalDark",
             },
           }}
@@ -97,9 +95,25 @@ const Logos = (props) => {
                       <Text children={o.text} variant="text.paragraph" />
                     )}
                   </Box>
-                  <Box sx={{ width: 50, m: "0 auto" }}>
+                  <Box sx={{ width: 30, m: "0 auto" }}>
                     {o.modal && (
                       <Box
+                        sx={{
+                          cursor: "pointer",
+                          height: "30px",
+                          borderRadius: "50%",
+                          bg: "coral",
+                          transition: "box-shadow 0.2s",
+                          "&:hover": {
+                            boxShadow: "0px 5px 10px #00000029",
+                          },
+                          "&:focus": {
+                            bg: "coralLight",
+                          },
+                          "&:disabled": {
+                            bg: "black25",
+                          },
+                        }}
                         onClick={() =>
                           dispatch({
                             type: "SET_MODAL",
@@ -116,7 +130,7 @@ const Logos = (props) => {
                             height: "30px",
                             width: "30px",
                             borderRadius: "50%",
-                            backgroundColor: "#D6694A",
+                            backgroundColor: "transparent",
                             fill: "white",
                           }}
                         />

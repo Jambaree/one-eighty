@@ -38,6 +38,7 @@ const Modal = (props) => {
           transform: "translate(-50%, -50%)",
           borderRadius: 6,
           display: "flex",
+          zIndex: 5,
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
@@ -72,7 +73,10 @@ const Modal = (props) => {
           )}
         </Box>
       </Box>
-      <Close style={{ minWidth: "unset" }} onClick={handleClose} />
+      <Close
+        style={{ minWidth: "unset", cursor: "pointer" }}
+        onClick={handleClose}
+      />
     </ReactModal>
   )
 }
