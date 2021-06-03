@@ -155,22 +155,35 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-            {page > 1 && (
+            {page > 1 ? (
               <Link href={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
                     display: "flex",
                     fill: "coral",
-                    border: "1px solid #DBDBDB",
+                    border: "1px solid",
+                    borderColor: "#DBDBDB",
                     borderRadius: "50%",
                     marginRight: 20,
                   }}
                 />
               </Link>
+            ) : (
+              <ChevronLeft
+                style={{
+                  display: "flex",
+                  fill: "white",
+                  background: "#DBDBDB",
+                  border: "1px solid #DBDBDB",
+                  borderRadius: "50%",
+                  marginRight: 20,
+                }}
+                disabled
+              />
             )}
             {items}
 
-            {page < numberOfPages && (
+            {page < numberOfPages ? (
               <Link href={basePath + "page/" + (page + 1)}>
                 <ChevronRight
                   style={{
@@ -182,6 +195,17 @@ const Template = (props) => {
                   }}
                 />
               </Link>
+            ) : (
+              <ChevronRight
+                style={{
+                  display: "flex",
+                  fill: "white",
+                  background: "#DBDBDB",
+                  border: "1px solid #DBDBDB",
+                  borderRadius: "50%",
+                  marginLeft: 20,
+                }}
+              />
             )}
           </Text>
         </nav>
