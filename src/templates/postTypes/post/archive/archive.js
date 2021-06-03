@@ -1,15 +1,6 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
-import {
-  Grid,
-  Box,
-  Heading,
-  Text,
-  Link,
-  Checkbox,
-  Label,
-  Input,
-} from "theme-ui"
+import { graphql, Link } from "gatsby"
+import { Grid, Box, Heading, Text, Checkbox, Label, Input } from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -107,34 +98,30 @@ const Template = (props) => {
       }
 
       items.push(
-        <Text
-          key={i}
-          as="li"
-          sx={{
-            width: "23px",
-            height: "23px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: "14px 8px 14px 0",
-            borderRadius: "6px",
-            backgroundColor: page === i && "coral",
+        <Link to={pathname} key={i}>
+          <Text
+            as="li"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "23px",
+              height: "23px",
+              margin: "14px 8px 14px 0",
+              borderRadius: "6px",
 
-            a: {
               color: page === i ? "white" : "black75",
-            },
+              bg: page === i ? "coral" : "white",
 
-            "&:hover": {
-              backgroundColor: "coral",
-
-              a: {
+              "&:hover": {
                 color: "white",
+                bg: "coral",
               },
-            },
-          }}
-        >
-          <Link href={pathname}>{i}</Link>
-        </Text>
+            }}
+          >
+            {i}
+          </Text>
+        </Link>
       )
     }
 
@@ -144,7 +131,8 @@ const Template = (props) => {
           <Text
             as="ul"
             sx={{
-              width: 304,
+              width: "auto",
+              maxWidth: 500,
               height: 50,
               display: "flex",
               alignItems: "center",
@@ -154,22 +142,35 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-            {page > 1 && (
+            {page > 1 ? (
               <Link href={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
                     display: "flex",
                     fill: "coral",
-                    border: "1px solid #DBDBDB",
+                    border: "1px solid",
+                    borderColor: "#DBDBDB",
                     borderRadius: "50%",
-                    marginRight: 20,
+                    marginRight: 16,
                   }}
                 />
               </Link>
+            ) : (
+              <ChevronLeft
+                style={{
+                  display: "flex",
+                  fill: "white",
+                  background: "#DBDBDB",
+                  border: "1px solid #DBDBDB",
+                  borderRadius: "50%",
+                  marginRight: 16,
+                }}
+                disabled
+              />
             )}
             {items}
 
-            {page < numberOfPages && (
+            {page < numberOfPages ? (
               <Link href={basePath + "page/" + (page + 1)}>
                 <ChevronRight
                   style={{
@@ -177,10 +178,21 @@ const Template = (props) => {
                     fill: "coral",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
-                    marginLeft: 20,
+                    marginLeft: 8,
                   }}
                 />
               </Link>
+            ) : (
+              <ChevronRight
+                style={{
+                  display: "flex",
+                  fill: "white",
+                  background: "#DBDBDB",
+                  border: "1px solid #DBDBDB",
+                  borderRadius: "50%",
+                  marginLeft: 8,
+                }}
+              />
             )}
           </Text>
         </nav>
@@ -237,6 +249,7 @@ const Template = (props) => {
         <Box
           sx={{
             maxWidth: ["100%", "80%", "100%"],
+            minWidth: 200,
           }}
         >
           <Text
@@ -264,7 +277,7 @@ const Template = (props) => {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search what’s new…"
               variant="buttons.entryfield.field"
-              sx={{ width: "100%", height: "auto" }}
+              sx={{ width: "100%", height: "auto", maxWidth: 500 }}
             />
             <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
           </Box>
@@ -293,7 +306,7 @@ const Template = (props) => {
                       alignItems: "center",
                       my: "20px",
                       fontSize: "15px",
-                      lineHeight: "35px",
+                      height: 16,
                     }}
                   >
                     <Checkbox
@@ -316,9 +329,8 @@ const Template = (props) => {
               columns={["2fr 6fr", null, "2fr 10fr"]}
               gap={["28px", 3, 3]}
               sx={{
-                pb: 36,
+                pb: 100,
                 m: ["0 auto", "unset", "unset"],
-                width: ["100%", "50%", "50%"],
               }}
             >
               <Box>
@@ -339,8 +351,18 @@ const Template = (props) => {
                   {o.title}
                 </Heading>
 
-                {o?.acf?.excerpt?.text && (
-                  <Text sx={{ display: "block" }}>{o.acf.excerpt.text}</Text>
+                {o.acf?.excerpt?.text && (
+                  <Text
+                    variant="text.introduction"
+                    sx={{
+                      display: "block",
+                      letterSpacing: "-0.23px",
+                      lineHeight: "25px",
+                      mb: "11px",
+                    }}
+                  >
+                    {o.acf.excerpt.text}
+                  </Text>
                 )}
 
                 <Link
@@ -349,7 +371,7 @@ const Template = (props) => {
                   title={o.title}
                   variant="links.hyperlink"
                 >
-                  Read more →
+                  {o.title} →
                 </Link>
               </Box>
             </Grid>
