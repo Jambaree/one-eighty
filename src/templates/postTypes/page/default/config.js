@@ -10,6 +10,7 @@ import logos from "../../../../components/logos/config"
 import partners from "../../../../components/partners/config"
 import cardcarousel from "../../../../components/cardCarousel/config"
 import accordion from "../../../../components/accordion/config"
+import textimagepage from "../../../../components/textImagePage/config"
 
 const config = {
   id: "default",
@@ -41,6 +42,7 @@ const config = {
             partners,
             cardcarousel,
             accordion,
+            textimagepage,
           }),
         },
       ],

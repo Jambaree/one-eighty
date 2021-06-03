@@ -4,9 +4,10 @@ import { Box, Grid, Heading, Text, Link, jsx } from "theme-ui"
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
+import Button from "../Button"
 
 const Benefits = (props) => {
-  const { columns, headline, subheading, icon, cards } = props
+  const { columns, headline, subheading, cards, link } = props
 
   return (
     <Box sx={{ bg: "white", mt: 104, mb: 154 }}>
@@ -55,6 +56,7 @@ const Benefits = (props) => {
                     {o.icon && (
                       <BackgroundImage
                         image={o.icon}
+                        backgroundSize="contain"
                         style={{
                           borderRadius: 6,
                         }}
@@ -92,6 +94,18 @@ const Benefits = (props) => {
               )
             })}
         </Grid>
+        {link?.url && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              mt: 80,
+            }}
+          >
+            <Button to={link.url}>{link.title}</Button>
+          </Box>
+        )}
       </Edges>
     </Box>
   )

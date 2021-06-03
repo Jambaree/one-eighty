@@ -1,15 +1,16 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
-import { Heading, Text, Box, Themed } from "theme-ui"
+import { Heading, Text, Box } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
+import { Link } from "gatsby"
 
 // import app components
 import Edges from "../Edges"
 import Button from "../Button"
 
 const Hero = (props) => {
-  const { headline, link, image, mobileimage, text } = props
+  const { headline, link, image, mobileimage, text, linktype } = props
 
   return (
     <Box
@@ -63,7 +64,13 @@ const Hero = (props) => {
           {text && (
             <Text variant="introduction" children={text} sx={{ mb: "4" }} />
           )}
-          {link && <Button to={link.url} children={link.title} />}
+          {link && linktype === "button" ? (
+            <Button to={link.url} children={link.title} />
+          ) : (
+            <Link to={link.url}>
+              <Box variant="links.hyperlink">{link.title}</Box>
+            </Link>
+          )}
         </Box>
       </Edges>
     </Box>

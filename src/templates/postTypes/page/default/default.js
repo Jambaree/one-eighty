@@ -15,6 +15,7 @@ import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
 import accordion from "../../../../components/accordion/Accordion"
+import textimagepage from "../../../../components/textImagePage/TextImagePage"
 
 const blocks = {
   textimage,
@@ -28,6 +29,7 @@ const blocks = {
   partners,
   cardcarousel,
   accordion,
+  textimagepage,
 }
 
 const Template = (props) => {
@@ -200,6 +202,11 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                  link {
+                    target
+                    title
+                    url
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
                   fieldGroupName
@@ -209,11 +216,6 @@ export const CollectionQuery = graphql`
                   cards {
                     fieldGroupName
                     text
-                    link {
-                      target
-                      title
-                      url
-                    }
                     logo {
                       altText
                       localFile {
@@ -325,6 +327,53 @@ export const CollectionQuery = graphql`
                         }
                       }
                     }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
+                  fieldGroupName
+                  fontcolor
+                  backgroundimage {
+                    altText
+                    sourceUrl
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: TRACED_SVG
+                          width: 1920
+                          tracedSVGOptions: {}
+                        )
+                      }
+                    }
+                  }
+                  mainheadline
+                  subheading
+                  textimage {
+                    fieldGroupName
+                    alignment
+                    headline
+                    text
+                    image {
+                      altText
+                      sourceUrl
+                      svg
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: FULL_WIDTH
+                            placeholder: TRACED_SVG
+                            width: 250
+                            tracedSVGOptions: {}
+                          )
+                        }
+                      }
+                    }
+                  }
+                  mainlink {
+                    target
+                    title
+                    url
                   }
                 }
               }

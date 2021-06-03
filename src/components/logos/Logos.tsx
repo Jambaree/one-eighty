@@ -31,11 +31,13 @@ const Logos = (props) => {
             m: "162px auto 36px auto",
             "&:after": {
               content: "''",
-              position: "absolute",
-              marginBottom: ["-210px", "-230px", "-160px"],
+              position: "relative",
+              mt: [80, 90, 90],
+              mb: ["-80px", "-80px", "-82px"],
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
+              width: 140,
               backgroundColor: "charcoalDark",
             },
           }}
@@ -54,7 +56,11 @@ const Logos = (props) => {
             <Text
               children={subheading}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 104] }}
+              sx={{
+                m: "0 auto",
+                maxWidth: [640],
+                width: ["unset", "75%", "50%"],
+              }}
             />
           )}
         </Box>
@@ -65,8 +71,7 @@ const Logos = (props) => {
                 <Box key={i}>
                   <Box
                     sx={{
-                      position: "relative",
-                      height: 186,
+                      mt: [80, 100, 100],
                     }}
                   >
                     {o.logo && (
@@ -74,7 +79,8 @@ const Logos = (props) => {
                         image={o.logo}
                         style={{
                           borderRadius: 6,
-                          marginBottom: 16,
+                          height: 186,
+                          position: "relative",
                         }}
                         backgroundSize="contain"
                       />
@@ -89,6 +95,7 @@ const Logos = (props) => {
                       alignItems: "center",
                       mx: [40, 20, "unset"],
                       mb: 12,
+                      mt: [16, "unset", "unset"],
                     }}
                   >
                     {o.text && (
@@ -96,7 +103,7 @@ const Logos = (props) => {
                     )}
                   </Box>
                   <Box sx={{ width: 30, m: "0 auto" }}>
-                    {o.modal && (
+                    {o.modal?.modallink?.url && (
                       <Box
                         sx={{
                           cursor: "pointer",
@@ -121,6 +128,7 @@ const Logos = (props) => {
                               text: o.modal.modaltext,
                               image: o.modal.modalimage,
                               link: o.modal.modallink,
+                              props: props,
                             },
                           })
                         }
