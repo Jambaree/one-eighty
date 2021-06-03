@@ -67,19 +67,21 @@ const Accordion = (props) => {
                   )}
                   <Grid
                     key={i}
+                    columns={[1, 2, 2]}
                     sx={{
                       display: activeIndex === i ? "block" : "none",
                       bg: "white",
                       borderRadius: "0 0 8px 8px",
+                      p: "26px 30px",
                     }}
                   >
                     {o.address &&
                       o.address.map((o, i) => {
                         return (
-                          <>
+                          <Box sx={{ width: "48%" }}>
                             <Heading children={o.addressheading} />
                             <Textarea content={o.addresscontent} />
-                          </>
+                          </Box>
                         )
                       })}
                   </Grid>
