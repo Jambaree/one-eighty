@@ -1,6 +1,6 @@
 const config = {
   id: "accordion",
-  label: "Accordion",
+  label: "[WIP] Accordion",
   fields: [
     {
       id: "locations",
