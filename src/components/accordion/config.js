@@ -44,7 +44,7 @@ const config = {
             },
             {
               id: "email",
-              type: "link",
+              type: "text",
               label: "Email Address",
             },
           ],

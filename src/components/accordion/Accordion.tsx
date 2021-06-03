@@ -103,9 +103,9 @@ const Accordion = (props) => {
                             {o.email && (
                               <Link
                                 sx={{ display: "block" }}
-                                href={`mailto:${o.email.title}`}
+                                href={`mailto:${o.email}`}
                               >
-                                {o.email.title}
+                                {o.email}
                               </Link>
                             )}
                           </Box>
