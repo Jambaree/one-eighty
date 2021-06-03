@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import { Box, Heading, IconButton, Flex } from "theme-ui"
+import { Box, Heading, IconButton, Flex, Text, Link } from "theme-ui"
 import { ChevronUp } from "mdi-material-ui"
 
 // import app components
 import Edges from "../Edges"
-import Textarea from "../Textarea"
 
 const Accordion = (props) => {
   const {
@@ -88,7 +87,27 @@ const Accordion = (props) => {
                               variant="styles.addheading"
                               sx={{ mb: "10px" }}
                             />
-                            <Textarea content={o.addresscontent} />
+                            {o.addresslineone && (
+                              <Text children={o.addresslineone} />
+                            )}
+                            {o.addresslinetwo && (
+                              <Text children={o.addresslinetwo} />
+                            )}
+                            {o.phoneone && (
+                              <Text
+                                children={o.phoneone}
+                                sx={{ display: "block" }}
+                              />
+                            )}
+                            {o.phonetwo && <Text children={o.phonetwo} />}
+                            {o.email && (
+                              <Link
+                                sx={{ display: "block" }}
+                                href={`mailto:${o.email.title}`}
+                              >
+                                {o.email.title}
+                              </Link>
+                            )}
                           </Box>
                         )
                       })}

@@ -23,9 +23,29 @@ const config = {
               label: "Address Heading",
             },
             {
-              id: "addresscontent",
-              type: "wysiwyg",
-              label: "Address Content",
+              id: "addresslineone",
+              type: "text",
+              label: "Address Line 1",
+            },
+            {
+              id: "addresslinetwo",
+              type: "text",
+              label: "Address Line 2",
+            },
+            {
+              id: "phoneone",
+              type: "text",
+              label: "Phone 1",
+            },
+            {
+              id: "phonetwo",
+              type: "text",
+              label: "Phone 2",
+            },
+            {
+              id: "email",
+              type: "link",
+              label: "Email Address",
             },
           ],
         },
