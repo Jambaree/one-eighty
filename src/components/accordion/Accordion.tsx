@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Box, Heading, IconButton, Grid } from "theme-ui"
+import { Box, Heading, IconButton, Flex } from "theme-ui"
 import { ChevronUp } from "mdi-material-ui"
 
 // import app components
@@ -65,26 +65,34 @@ const Accordion = (props) => {
                       </IconButton>
                     </Box>
                   )}
-                  <Grid
+                  <Flex
                     key={i}
-                    columns={[1, 2, 2]}
                     sx={{
-                      display: activeIndex === i ? "block" : "none",
                       bg: "white",
                       borderRadius: "0 0 8px 8px",
-                      p: "26px 30px",
+                      p: activeIndex === i ? "26px 30px" : "0",
                     }}
                   >
                     {o.address &&
-                      o.address.map((o, i) => {
+                      o.address.map((o, j) => {
                         return (
-                          <Box sx={{ width: "48%" }}>
-                            <Heading children={o.addressheading} />
+                          <Box
+                            key={j}
+                            sx={{
+                              display: activeIndex === i ? "block" : "none",
+                              width: "50%",
+                            }}
+                          >
+                            <Heading
+                              children={o.addressheading}
+                              variant="styles.addheading"
+                              sx={{ mb: "10px" }}
+                            />
                             <Textarea content={o.addresscontent} />
                           </Box>
                         )
                       })}
-                  </Grid>
+                  </Flex>
                 </Box>
               )
             })}

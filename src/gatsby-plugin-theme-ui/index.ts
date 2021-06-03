@@ -288,6 +288,13 @@ const themeUi = {
       lineHeight: "32px",
       color: "charcoal",
     },
+    addheading: {
+      variant: "text.heading",
+      fontSize: 4,
+      letterSpacing: "-0.18px",
+      color: "charcoal",
+      lineHeight: "26px",
+    },
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
