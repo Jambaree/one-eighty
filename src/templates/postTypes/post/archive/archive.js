@@ -1,15 +1,6 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
-import {
-  Grid,
-  Box,
-  Heading,
-  Text,
-  Link,
-  Checkbox,
-  Label,
-  Input,
-} from "theme-ui"
+import { graphql, Link } from "gatsby"
+import { Grid, Box, Heading, Text, Checkbox, Label, Input } from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -107,33 +98,29 @@ const Template = (props) => {
       }
 
       items.push(
-        <Link
-          href={pathname}
-          key={i}
-          sx={{
-            width: "23px",
-            height: "23px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: "14px 8px 14px 0",
-            borderRadius: "6px",
-            backgroundColor: page === i && "coral",
+        <Link to={pathname} key={i}>
+          <Text
+            as="li"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "23px",
+              height: "23px",
+              margin: "14px 8px 14px 0",
+              borderRadius: "6px",
 
-            li: {
               color: page === i ? "white" : "black75",
-            },
+              bg: page === i ? "coral" : "white",
 
-            "&:hover": {
-              backgroundColor: "coral",
-
-              li: {
+              "&:hover": {
                 color: "white",
+                bg: "coral",
               },
-            },
-          }}
-        >
-          <Text as="li">{i}</Text>
+            }}
+          >
+            {i}
+          </Text>
         </Link>
       )
     }
