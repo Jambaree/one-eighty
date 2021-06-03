@@ -14,6 +14,7 @@ import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
+import accordion from "../../../../components/accordion/Accordion"
 
 const blocks = {
   textimage,
@@ -26,6 +27,7 @@ const blocks = {
   logos,
   partners,
   cardcarousel,
+  accordion,
 }
 
 const Template = (props) => {

@@ -9,6 +9,7 @@ import benefits from "../../../../components/benefits/config"
 import logos from "../../../../components/logos/config"
 import partners from "../../../../components/partners/config"
 import cardcarousel from "../../../../components/cardCarousel/config"
+import accordion from "../../../../components/accordion/config"
 
 const config = {
   id: "default",
@@ -39,6 +40,7 @@ const config = {
             logos,
             partners,
             cardcarousel,
+            accordion,
           }),
         },
       ],
