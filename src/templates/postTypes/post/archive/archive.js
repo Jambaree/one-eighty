@@ -262,6 +262,7 @@ const Template = (props) => {
         <Box
           sx={{
             maxWidth: ["100%", "80%", "100%"],
+            minWidth: 200,
           }}
         >
           <Text
