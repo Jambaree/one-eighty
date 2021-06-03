@@ -264,7 +264,7 @@ const Template = (props) => {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search what’s new…"
               variant="buttons.entryfield.field"
-              sx={{ width: "100%", height: "auto" }}
+              sx={{ width: "100%", height: "auto", maxWidth: 500 }}
             />
             <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
           </Box>
