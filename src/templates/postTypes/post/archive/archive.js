@@ -133,33 +133,7 @@ const Template = (props) => {
             },
           }}
         >
-          <Text
-            as="li"
-            // sx={{
-            //   width: "23px",
-            //   height: "23px",
-            //   display: "flex",
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            //   margin: "14px 8px 14px 0",
-            //   borderRadius: "6px",
-            //   backgroundColor: page === i && "coral",
-
-            //   a: {
-            //     color: page === i ? "white" : "black75",
-            //   },
-
-            //   "&:hover": {
-            //     backgroundColor: "coral",
-
-            //     a: {
-            //       color: "white",
-            //     },
-            //   },
-            // }}
-          >
-            {i}
-          </Text>
+          <Text as="li">{i}</Text>
         </Link>
       )
     }
