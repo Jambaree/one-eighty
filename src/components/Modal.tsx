@@ -1,6 +1,6 @@
 import React from "react"
 import ReactModal from "react-modal"
-import { Heading, Box, Paragraph, Close, Link } from "theme-ui"
+import { Heading, Box, Close, Link } from "theme-ui"
 
 // import app components
 import { useStore } from "../store"
@@ -60,7 +60,7 @@ const Modal = (props) => {
           )}
           {modal?.link && (
             <Link href={modal.link.url} variant="links.hyperlink">
-              {modal.link.title}
+              {modal.link.title} →
             </Link>
           )}
         </Box>
@@ -68,7 +68,8 @@ const Modal = (props) => {
           {modal?.image && (
             <BackgroundImage
               image={modal.image}
-              style={{ position: "relative", height: 200 }}
+              style={{ position: "relative", height: 343 }}
+              backgroundSize="contain"
             />
           )}
         </Box>
