@@ -17,8 +17,6 @@ const TextImagePage = (props) => {
     mainlink,
   } = props
 
-  console.log(props)
-
   return (
     <>
       <Box
@@ -86,7 +84,6 @@ const TextImagePage = (props) => {
                       <BackgroundImage
                         image={o.image}
                         backgroundSize="contain"
-                        // style={{ boxShadow: "0px 20px 40px #00000066" }}
                       />
                     )}
                   </Box>

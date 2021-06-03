@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
-import { Heading, Text, Box, Link } from "theme-ui"
+import { Heading, Text, Box } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
+import { Link } from "gatsby"
 
 // import app components
 import Edges from "../Edges"
@@ -66,8 +67,8 @@ const Hero = (props) => {
           {link && linktype === "button" ? (
             <Button to={link.url} children={link.title} />
           ) : (
-            <Link href={link.url} variant="links.hyperlink">
-              {link.title}
+            <Link to={link.url}>
+              <Box variant="links.hyperlink">{link.title}</Box>
             </Link>
           )}
         </Box>
