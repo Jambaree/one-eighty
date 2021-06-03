@@ -318,7 +318,7 @@ const Template = (props) => {
                       alignItems: "center",
                       my: "20px",
                       fontSize: "15px",
-                      lineHeight: "35px",
+                      height: 16,
                     }}
                   >
                     <Checkbox
