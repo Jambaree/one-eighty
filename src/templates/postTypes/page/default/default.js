@@ -14,6 +14,7 @@ import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
+import textimagepage from "../../../../components/textImagePage/TextImagePage"
 
 const blocks = {
   textimage,
@@ -26,6 +27,7 @@ const blocks = {
   logos,
   partners,
   cardcarousel,
+  textimagepage,
 }
 
 const Template = (props) => {
@@ -198,6 +200,11 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                  link {
+                    target
+                    title
+                    url
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
                   fieldGroupName
@@ -323,6 +330,53 @@ export const CollectionQuery = graphql`
                         }
                       }
                     }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
+                  fieldGroupName
+                  fontcolor
+                  backgroundimage {
+                    altText
+                    sourceUrl
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: TRACED_SVG
+                          width: 1920
+                          tracedSVGOptions: {}
+                        )
+                      }
+                    }
+                  }
+                  mainheadline
+                  subheading
+                  textimage {
+                    fieldGroupName
+                    alignment
+                    headline
+                    text
+                    image {
+                      altText
+                      sourceUrl
+                      svg
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: FULL_WIDTH
+                            placeholder: TRACED_SVG
+                            width: 250
+                            tracedSVGOptions: {}
+                          )
+                        }
+                      }
+                    }
+                  }
+                  mainlink {
+                    target
+                    title
+                    url
                   }
                 }
               }

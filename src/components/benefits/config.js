@@ -39,6 +39,11 @@ const config = {
         },
       ],
     },
+    {
+      id: "link",
+      type: "link",
+      label: "Link",
+    },
   ],
 }
 
