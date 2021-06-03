@@ -341,9 +341,8 @@ const Template = (props) => {
               columns={["2fr 6fr", null, "2fr 10fr"]}
               gap={["28px", 3, 3]}
               sx={{
-                pb: 36,
+                pb: 100,
                 m: ["0 auto", "unset", "unset"],
-                width: ["100%", "50%", "50%"],
               }}
             >
               <Box>
@@ -364,8 +363,18 @@ const Template = (props) => {
                   {o.title}
                 </Heading>
 
-                {o?.acf?.excerpt?.text && (
-                  <Text sx={{ display: "block" }}>{o.acf.excerpt.text}</Text>
+                {o.acf?.excerpt?.text && (
+                  <Text
+                    variant="text.introduction"
+                    sx={{
+                      display: "block",
+                      letterSpacing: "-0.23px",
+                      lineHeight: "25px",
+                      mb: "11px",
+                    }}
+                  >
+                    {o.acf.excerpt.text}
+                  </Text>
                 )}
 
                 <Link
@@ -374,7 +383,7 @@ const Template = (props) => {
                   title={o.title}
                   variant="links.hyperlink"
                 >
-                  Read more →
+                  {o.title} →
                 </Link>
               </Box>
             </Grid>
