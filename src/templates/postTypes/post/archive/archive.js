@@ -164,7 +164,7 @@ const Template = (props) => {
                     border: "1px solid",
                     borderColor: "#DBDBDB",
                     borderRadius: "50%",
-                    marginRight: 20,
+                    marginRight: 16,
                   }}
                 />
               </Link>
@@ -176,7 +176,7 @@ const Template = (props) => {
                   background: "#DBDBDB",
                   border: "1px solid #DBDBDB",
                   borderRadius: "50%",
-                  marginRight: 20,
+                  marginRight: 16,
                 }}
                 disabled
               />
@@ -191,7 +191,7 @@ const Template = (props) => {
                     fill: "coral",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
-                    marginLeft: 20,
+                    marginLeft: 8,
                   }}
                 />
               </Link>
@@ -203,7 +203,7 @@ const Template = (props) => {
                   background: "#DBDBDB",
                   border: "1px solid #DBDBDB",
                   borderRadius: "50%",
-                  marginLeft: 20,
+                  marginLeft: 8,
                 }}
               />
             )}
