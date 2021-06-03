@@ -23,9 +23,9 @@ const config = {
               label: "Address Heading",
             },
             {
-              id: "address",
+              id: "addresscontent",
               type: "wysiwyg",
-              label: "Address & Contact",
+              label: "Address Content",
             },
           ],
         },

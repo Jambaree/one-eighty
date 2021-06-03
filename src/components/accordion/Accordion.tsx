@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Box, Heading, IconButton } from "theme-ui"
+import { Box, Heading, IconButton, Grid } from "theme-ui"
 import { ChevronUp } from "mdi-material-ui"
 
 // import app components
@@ -7,61 +7,88 @@ import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Accordion = (props) => {
-  const { items } = props
+  const {
+    locations,
+    locations: { mainheading, address },
+  } = props
   const [activeIndex, setActiveIndex] = useState(null)
 
   return (
-    <Edges size="md">
-      <Box
-        sx={{
-          "p:last-child": {
-            mb: [12, 16, 20],
-          },
-          a: {
-            "font-style": "normal",
-            color: "secondary",
-            display: "inline-block",
-          },
-        }}
-      >
-        {items &&
-          items.map((o, i) => {
-            return (
-              <Box
-                key={i}
-                onClick={() => {
-                  setActiveIndex(i === activeIndex ? null : i)
-                }}
-              >
-                {o.title && (
-                  <Box
+    <Box sx={{ bg: "almondLight", p: "100px 280px 160px" }}>
+      <Edges size="md">
+        <Box>
+          {locations &&
+            locations.map((o, i) => {
+              return (
+                <Box
+                  key={i}
+                  onClick={() => {
+                    setActiveIndex(i === activeIndex ? null : i)
+                  }}
+                  sx={{
+                    border: "1px solid",
+                    borderColor: activeIndex === i ? "coral" : "transparent",
+                    borderRadius: "8px",
+                  }}
+                >
+                  {o.mainheading && (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        cursor: "pointer",
+                        borderRadius: activeIndex === i ? "8px 8px 0 0" : "8px",
+                        bg: "white",
+                        p: [12, 16, "26px 30px"],
+                      }}
+                    >
+                      <Heading
+                        variant="styles.accheading"
+                        children={o.mainheading}
+                      />
+                      <IconButton
+                        sx={{
+                          border: "1px solid",
+                          borderColor: "black25",
+                          borderRadius: "50%",
+                        }}
+                      >
+                        <ChevronUp
+                          style={{
+                            transform:
+                              activeIndex === i
+                                ? "rotate(0)"
+                                : "rotate(180deg)",
+                          }}
+                        />
+                      </IconButton>
+                    </Box>
+                  )}
+                  <Grid
+                    key={i}
                     sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      cursor: "pointer",
+                      display: activeIndex === i ? "block" : "none",
+                      bg: "white",
+                      borderRadius: "0 0 8px 8px",
                     }}
                   >
-                    <Heading children={o.title} sx={{ mb: [12, 16, 20] }} />
-                    <IconButton>
-                      <ChevronUp
-                        style={{
-                          transform:
-                            activeIndex === i ? "rotate(0)" : "rotate(180deg)",
-                        }}
-                      />
-                    </IconButton>
-                  </Box>
-                )}
-                {o.text && (
-                  <Box sx={{ display: activeIndex === i ? "block" : "none" }}>
-                    <Textarea content={o.text} />
-                  </Box>
-                )}
-              </Box>
-            )
-          })}
-      </Box>
-    </Edges>
+                    {o.address &&
+                      o.address.map((o, i) => {
+                        return (
+                          <>
+                            <Heading children={o.addressheading} />
+                            <Textarea content={o.addresscontent} />
+                          </>
+                        )
+                      })}
+                  </Grid>
+                </Box>
+              )
+            })}
+        </Box>
+      </Edges>
+    </Box>
   )
 }
 

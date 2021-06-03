@@ -281,6 +281,13 @@ const themeUi = {
       variant: "text.heading",
       fontSize: 4,
     },
+    accheading: {
+      variant: "text.heading",
+      fontSize: 6,
+      letterSpacing: "-0.33px",
+      lineHeight: "32px",
+      color: "charcoal",
+    },
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
