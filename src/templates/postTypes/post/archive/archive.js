@@ -107,9 +107,9 @@ const Template = (props) => {
       }
 
       items.push(
-        <Text
+        <Link
+          href={pathname}
           key={i}
-          as="li"
           sx={{
             width: "23px",
             height: "23px",
@@ -120,21 +120,47 @@ const Template = (props) => {
             borderRadius: "6px",
             backgroundColor: page === i && "coral",
 
-            a: {
+            li: {
               color: page === i ? "white" : "black75",
             },
 
             "&:hover": {
               backgroundColor: "coral",
 
-              a: {
+              li: {
                 color: "white",
               },
             },
           }}
         >
-          <Link href={pathname}>{i}</Link>
-        </Text>
+          <Text
+            as="li"
+            // sx={{
+            //   width: "23px",
+            //   height: "23px",
+            //   display: "flex",
+            //   justifyContent: "center",
+            //   alignItems: "center",
+            //   margin: "14px 8px 14px 0",
+            //   borderRadius: "6px",
+            //   backgroundColor: page === i && "coral",
+
+            //   a: {
+            //     color: page === i ? "white" : "black75",
+            //   },
+
+            //   "&:hover": {
+            //     backgroundColor: "coral",
+
+            //     a: {
+            //       color: "white",
+            //     },
+            //   },
+            // }}
+          >
+            {i}
+          </Text>
+        </Link>
       )
     }
 
