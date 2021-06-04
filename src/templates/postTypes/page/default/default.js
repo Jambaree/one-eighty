@@ -14,6 +14,7 @@ import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
+import accordion from "../../../../components/accordion/Accordion"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 
 const blocks = {
@@ -27,6 +28,7 @@ const blocks = {
   logos,
   partners,
   cardcarousel,
+  accordion,
   textimagepage,
 }
 
@@ -372,6 +374,22 @@ export const CollectionQuery = graphql`
                     target
                     title
                     url
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Accordion {
+                  fieldGroupName
+                  locations {
+                    fieldGroupName
+                    mainheading
+                    address {
+                      fieldGroupName
+                      addressheading
+                      addresslineone
+                      addresslinetwo
+                      phoneone
+                      phonetwo
+                      email
+                    }
                   }
                 }
               }
