@@ -28,8 +28,9 @@ const Accordion = (props) => {
                   }}
                   sx={{
                     border: "1px solid",
-                    borderColor: activeIndex === i ? "coral" : "transparent",
+                    borderColor: activeIndex === i ? "coral" : "black25",
                     borderRadius: "8px",
+                    my: "12px",
                   }}
                 >
                   {o.mainheading && (
@@ -51,7 +52,7 @@ const Accordion = (props) => {
                       <IconButton
                         sx={{
                           border: "1px solid",
-                          borderColor: "black25",
+                          borderColor: activeIndex === i ? "coral" : "black25",
                           borderRadius: "50%",
                         }}
                       >
@@ -69,6 +70,7 @@ const Accordion = (props) => {
                   <Flex
                     key={i}
                     sx={{
+                      flexWrap: "wrap",
                       bg: "white",
                       borderRadius: "0 0 8px 8px",
                       p: activeIndex === i ? "26px 30px" : "0",
@@ -82,6 +84,7 @@ const Accordion = (props) => {
                             sx={{
                               display: activeIndex === i ? "block" : "none",
                               width: "50%",
+                              pb: 55,
                             }}
                           >
                             <Heading
