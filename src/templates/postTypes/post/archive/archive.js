@@ -151,6 +151,7 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
+<<<<<<< Updated upstream
             {page === 2 ? (
               <Link href={basePath}>
                 <ChevronLeft
@@ -166,6 +167,10 @@ const Template = (props) => {
               </Link>
             ) : page > 2 ? (
               <Link href={basePath + "page/" + (page - 1)}>
+=======
+            {page > 1 ? (
+              <Link to={basePath + "page/" + (page - 1)}>
+>>>>>>> Stashed changes
                 <ChevronLeft
                   style={{
                     display: "flex",
@@ -194,7 +199,7 @@ const Template = (props) => {
             {items}
 
             {page < numberOfPages ? (
-              <Link href={basePath + "page/" + (page + 1)}>
+              <Link to={basePath + "page/" + (page + 1)}>
                 <ChevronRight
                   style={{
                     display: "flex",
@@ -379,6 +384,7 @@ const Template = (props) => {
                     {o.title}
                   </Heading>
 
+<<<<<<< Updated upstream
                   {o.acf?.excerpt?.text && (
                     <Text
                       variant="text.introduction"
@@ -417,6 +423,19 @@ const Template = (props) => {
               </Text>
             </>
           )}
+=======
+                <Link
+                  to={o.uri}
+                  aria-label="Read article"
+                  title={o.title}
+                  variant="links.hyperlink"
+                >
+                  {o.title} →
+                </Link>
+              </Box>
+            </Grid>
+          ))}
+>>>>>>> Stashed changes
           {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
