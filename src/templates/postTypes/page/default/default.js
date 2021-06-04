@@ -291,30 +291,35 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(layout: FULL_WIDTH, width: 1920)
+                        gatsbyImageData(width: 1920, placeholder: BLURRED)
                       }
                     }
                   }
                   mainheadline
                   subheading
+                  mainlink {
+                    target
+                    title
+                    url
+                  }
                   textimage {
                     fieldGroupName
                     alignment
                     headline
                     text
+                    link {
+                      target
+                      title
+                      url
+                    }
                     image {
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(layout: FULL_WIDTH, width: 250)
+                          gatsbyImageData(width: 250, placeholder: BLURRED)
                         }
                       }
                     }
-                  }
-                  mainlink {
-                    target
-                    title
-                    url
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Accordion {
