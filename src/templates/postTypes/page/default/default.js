@@ -108,46 +108,47 @@ export const CollectionQuery = graphql`
                   text
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
-                  alignment
                   fieldGroupName
+                  alignment
                   headline
                   text
-                  image {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(width: 700, layout: CONSTRAINED)
-                      }
-                    }
-                  }
                   link {
                     target
                     title
                     url
                   }
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 700, placeholder: BLURRED)
+                      }
+                    }
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
                   fieldGroupName
+                  columns
                   headline
+                  subheading
                   cards {
                     fieldGroupName
                     headline
-                    image {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(width: 550, layout: CONSTRAINED)
-                        }
-                      }
-                    }
+                    text
                     link {
                       target
                       title
                       url
                     }
-                    text
+                    image {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 550, placeholder: BLURRED)
+                        }
+                      }
+                    }
                   }
-                  subheading
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
                   fieldGroupName
