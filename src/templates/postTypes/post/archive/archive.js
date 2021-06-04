@@ -142,7 +142,20 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-            {page > 1 ? (
+            {page === 2 ? (
+              <Link href={basePath}>
+                <ChevronLeft
+                  style={{
+                    display: "flex",
+                    fill: "coral",
+                    border: "1px solid",
+                    borderColor: "#DBDBDB",
+                    borderRadius: "50%",
+                    marginRight: 16,
+                  }}
+                />
+              </Link>
+            ) : page > 2 ? (
               <Link href={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
