@@ -12,6 +12,8 @@ const Accordion = (props) => {
   } = props
   const [activeIndex, setActiveIndex] = useState(null)
 
+  console.log(props)
+
   return (
     <Box sx={{ bg: "almondLight", p: "100px 280px 160px" }}>
       <Edges size="md">
@@ -88,20 +90,48 @@ const Accordion = (props) => {
                               sx={{ mb: "10px" }}
                             />
                             {o.addresslineone && (
-                              <Text children={o.addresslineone} />
+                              <Text
+                                children={o.addresslineone}
+                                variant="text.paragraph"
+                                sx={{
+                                  display: "block",
+                                  lineHeight: "25px",
+                                  fontSize: 3,
+                                }}
+                              />
                             )}
                             {o.addresslinetwo && (
-                              <Text children={o.addresslinetwo} />
+                              <Text
+                                children={o.addresslinetwo}
+                                variant="text.paragraph"
+                                sx={{
+                                  display: "block",
+                                  lineHeight: "25px",
+                                  fontSize: 3,
+                                }}
+                              />
                             )}
                             {o.phoneone && (
                               <Text
                                 children={o.phoneone}
-                                sx={{ display: "block" }}
+                                variant="text.paragraph"
+                                sx={{
+                                  display: "block",
+                                  lineHeight: "25px",
+                                  fontSize: 3,
+                                }}
                               />
                             )}
-                            {o.phonetwo && <Text children={o.phonetwo} />}
+                            {o.phonetwo && (
+                              <Text
+                                children={o.phonetwo}
+                                variant="text.paragraph"
+                                sx={{ lineHeight: "25px", fontSize: 3 }}
+                              />
+                            )}
                             {o.email && (
                               <Link
+                                variant="links.hyperlink"
                                 sx={{ display: "block" }}
                                 href={`mailto:${o.email}`}
                               >

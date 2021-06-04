@@ -376,6 +376,22 @@ export const CollectionQuery = graphql`
                     url
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Accordion {
+                  fieldGroupName
+                  locations {
+                    fieldGroupName
+                    mainheading
+                    address {
+                      fieldGroupName
+                      addressheading
+                      addresslineone
+                      addresslinetwo
+                      phoneone
+                      phonetwo
+                      email
+                    }
+                  }
+                }
               }
             }
             fieldGroupName
