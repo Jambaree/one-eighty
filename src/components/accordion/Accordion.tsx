@@ -130,6 +130,9 @@ const Accordion = (props) => {
                                 variant="links.hyperlink"
                                 sx={{ display: "block" }}
                                 href={`tel:${o.phoneone}`}
+                                onClick={(event) => {
+                                  event.stopPropagation()
+                                }}
                               >
                                 {o.phoneone}
                               </Link>
@@ -139,6 +142,9 @@ const Accordion = (props) => {
                                 variant="links.hyperlink"
                                 sx={{ display: "block" }}
                                 href={`tel:${o.phonetwo}`}
+                                onClick={(event) => {
+                                  event.stopPropagation()
+                                }}
                               >
                                 {o.phonetwo}
                               </Link>
@@ -148,6 +154,9 @@ const Accordion = (props) => {
                                 variant="links.hyperlink"
                                 sx={{ display: "block" }}
                                 href={`mailto:${o.email}`}
+                                onClick={(event) => {
+                                  event.stopPropagation()
+                                }}
                               >
                                 {o.email}
                               </Link>
