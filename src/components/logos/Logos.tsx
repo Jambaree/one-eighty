@@ -103,7 +103,7 @@ const Logos = (props) => {
                     )}
                   </Box>
                   <Box sx={{ width: 30, m: "0 auto" }}>
-                    {o.modal?.modallink?.url && (
+                    {o.modal && (
                       <Box
                         sx={{
                           cursor: "pointer",

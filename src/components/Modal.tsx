@@ -58,7 +58,7 @@ const Modal = (props) => {
               <Textarea content={modal.text} />
             </Box>
           )}
-          {modal?.link && (
+          {modal?.link?.url && (
             <Link href={modal.link.url} variant="links.hyperlink">
               {modal.link.title} →
             </Link>
