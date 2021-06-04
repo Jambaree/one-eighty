@@ -126,22 +126,22 @@ const Accordion = (props) => {
                               />
                             )}
                             {o.phoneone && (
-                              <Text
-                                children={o.phoneone}
-                                variant="text.paragraph"
-                                sx={{
-                                  display: "block",
-                                  lineHeight: "25px",
-                                  fontSize: 3,
-                                }}
-                              />
+                              <Link
+                                variant="links.hyperlink"
+                                sx={{ display: "block" }}
+                                href={`tel:${o.phoneone}`}
+                              >
+                                {o.phoneone}
+                              </Link>
                             )}
                             {o.phonetwo && (
-                              <Text
-                                children={o.phonetwo}
-                                variant="text.paragraph"
-                                sx={{ lineHeight: "25px", fontSize: 3 }}
-                              />
+                              <Link
+                                variant="links.hyperlink"
+                                sx={{ display: "block" }}
+                                href={`tel:${o.phonetwo}`}
+                              >
+                                {o.phonetwo}
+                              </Link>
                             )}
                             {o.email && (
                               <Link
