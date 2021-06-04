@@ -66,23 +66,23 @@ const CardCarousel = (props) => {
             content: "'‹'",
           },
           ".slick-prev": {
-            left: "50%",
+            left: ["53%", "52%", "51%"],
             transform: "translateX(-60px)",
-            top: "calc(100% + 100px)",
+            top: "calc(100% + 45px)",
             width: 42,
             height: 42,
           },
           ".slick-next": {
-            right: "50%",
+            right: ["53%", "52%", "52%"],
             transform: "translateX(60px)",
-            top: "calc(100% + 100px)",
+            top: "calc(100% + 45px)",
             width: 42,
             height: 42,
           },
         }}
       >
         <Edges size="md">
-          <Box sx={{ pb: 250 }}>
+          <Box sx={{ pb: 125 }}>
             <Box>
               <Box
                 sx={{
@@ -132,15 +132,11 @@ const CardCarousel = (props) => {
                         }}
                       >
                         {o.image ? (
-                          <GatsbyImage image={o.image} alt={o.image.altText} />
+                          <GatsbyImage image={o.image} alt={o.image?.altText} />
                         ) : (
-                          <Box
-                            sx={{
-                              bg: "almondDark",
-                              borderRadius: "6px",
-                              width: 262,
-                              height: 164,
-                            }}
+                          <GatsbyImage
+                            image={o.defaultimage}
+                            alt={o.defaultimage?.altText}
                           />
                         )}
                         {o.heading && (

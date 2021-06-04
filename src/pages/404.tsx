@@ -1,42 +1,40 @@
 import React from "react"
-import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import { Box, Heading, Text } from "theme-ui"
 
 // import app components
-import theme from "../theme"
 
 const FourOhFor = () => {
   return (
-    <Container>
-      <ErrorMessage>
-        <h1>404</h1>
-      </ErrorMessage>
-      <p>Oops, we can't find the page you're looking for.</p>
-      <p>
-        Return <Link to="/">home</Link>.
-      </p>
-    </Container>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        p: "5vw",
+      }}
+    >
+      <Heading variant="styles.h1" sx={{ mb: 24 }}>
+        404
+      </Heading>
+      <Text as="p" variant="text.introduction" sx={{ mb: 24 }}>
+        We're sorry, we can't find the page you're looking for.
+      </Text>
+      <Link to="/">
+        <Box
+          variant="buttons.primary"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          Return Home
+        </Box>
+      </Link>
+    </Box>
   )
 }
 
 export default FourOhFor
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 5vw;
-
-  a {
-    color: inherit;
-    &:hover {
-      color: ${theme.colors.primary};
-    }
-  }
-`
-
-const ErrorMessage = styled.div`
-  color: ${theme.colors.primary};
-  opacity: 0.8;
-`

@@ -32,6 +32,11 @@ const config = {
           type: "image",
           label: "Image",
         },
+        {
+          id: "defaultimage",
+          type: "image",
+          label: "Default Image",
+        },
       ],
     },
   ],
