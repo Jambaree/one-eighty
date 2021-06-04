@@ -150,17 +150,17 @@ const Accordion = (props) => {
                               </Link>
                             )}
                             {o.email && (
-                              <Box sx={{ display: "block" }}>
-                                <Link
-                                  variant="links.hyperlink"
-                                  href={`mailto:${o.email}`}
-                                  onClick={(event) => {
-                                    event.stopPropagation()
-                                  }}
-                                >
-                                  {o.email}
-                                </Link>
-                              </Box>
+                              // <Box sx={{ display: "block" }}>
+                              <Link
+                                variant="links.hyperlink"
+                                href={`mailto:${o.email}`}
+                                onClick={(event) => {
+                                  event.stopPropagation()
+                                }}
+                              >
+                                {o.email}
+                              </Link>
+                              // </Box>
                             )}
                           </Box>
                         )
