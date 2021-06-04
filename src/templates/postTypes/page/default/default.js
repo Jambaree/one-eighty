@@ -236,26 +236,26 @@ export const CollectionQuery = graphql`
                   columns
                   headline
                   subheading
+                  mainbutton {
+                    target
+                    title
+                    url
+                  }
                   cards {
                     fieldGroupName
-                    icon {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(layout: CONSTRAINED, width: 350)
-                        }
-                      }
-                    }
                     link {
                       target
                       title
                       url
                     }
-                  }
-                  mainbutton {
-                    target
-                    title
-                    url
+                    icon {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                        }
+                      }
+                    }
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
@@ -270,7 +270,15 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(layout: CONSTRAINED, width: 350)
+                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                        }
+                      }
+                    }
+                    defaultimage {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 350, placeholder: BLURRED)
                         }
                       }
                     }
