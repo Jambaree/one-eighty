@@ -126,28 +126,30 @@ const Accordion = (props) => {
                               />
                             )}
                             {o.phoneone && (
-                              <Link
-                                variant="links.hyperlink"
-                                sx={{ display: "block" }}
-                                href={`tel:${o.phoneone}`}
-                                onClick={(event) => {
-                                  event.stopPropagation()
-                                }}
-                              >
-                                {o.phoneone}
-                              </Link>
+                              <Box sx={{ display: "block" }}>
+                                <Link
+                                  variant="links.hyperlink"
+                                  href={`tel:${o.phoneone}`}
+                                  onClick={(event) => {
+                                    event.stopPropagation()
+                                  }}
+                                >
+                                  {o.phoneone}
+                                </Link>
+                              </Box>
                             )}
                             {o.phonetwo && (
-                              <Link
-                                variant="links.hyperlink"
-                                sx={{ display: "block" }}
-                                href={`tel:${o.phonetwo}`}
-                                onClick={(event) => {
-                                  event.stopPropagation()
-                                }}
-                              >
-                                {o.phonetwo}
-                              </Link>
+                              <Box sx={{ display: "block" }}>
+                                <Link
+                                  variant="links.hyperlink"
+                                  href={`tel:${o.phonetwo}`}
+                                  onClick={(event) => {
+                                    event.stopPropagation()
+                                  }}
+                                >
+                                  {o.phonetwo}
+                                </Link>
+                              </Box>
                             )}
                             {o.email && (
                               <Box sx={{ display: "block" }}>
