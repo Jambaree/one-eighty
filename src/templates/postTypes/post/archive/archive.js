@@ -1,6 +1,15 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import { Grid, Box, Heading, Text, Checkbox, Label, Input } from "theme-ui"
+import {
+  Grid,
+  Box,
+  Heading,
+  Text,
+  Checkbox,
+  Label,
+  Input,
+  IconButton,
+} from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -144,55 +153,63 @@ const Template = (props) => {
           >
             {page > 1 ? (
               <Link href={basePath + "page/" + (page - 1)}>
+                <IconButton>
+                  <ChevronLeft
+                    style={{
+                      display: "flex",
+                      fill: "coral",
+                      border: "1px solid",
+                      borderColor: "#DBDBDB",
+                      borderRadius: "50%",
+                      marginRight: 16,
+                    }}
+                  />
+                </IconButton>
+              </Link>
+            ) : (
+              <IconButton>
                 <ChevronLeft
                   style={{
                     display: "flex",
-                    fill: "coral",
-                    border: "1px solid",
-                    borderColor: "#DBDBDB",
+                    fill: "white",
+                    background: "#DBDBDB",
+                    border: "1px solid #DBDBDB",
                     borderRadius: "50%",
                     marginRight: 16,
                   }}
+                  disabled
                 />
-              </Link>
-            ) : (
-              <ChevronLeft
-                style={{
-                  display: "flex",
-                  fill: "white",
-                  background: "#DBDBDB",
-                  border: "1px solid #DBDBDB",
-                  borderRadius: "50%",
-                  marginRight: 16,
-                }}
-                disabled
-              />
+              </IconButton>
             )}
             {items}
 
             {page < numberOfPages ? (
               <Link href={basePath + "page/" + (page + 1)}>
+                <IconButton>
+                  <ChevronRight
+                    style={{
+                      display: "flex",
+                      fill: "coral",
+                      border: "1px solid #DBDBDB",
+                      borderRadius: "50%",
+                      marginLeft: 8,
+                    }}
+                  />
+                </IconButton>
+              </Link>
+            ) : (
+              <IconButton>
                 <ChevronRight
                   style={{
                     display: "flex",
-                    fill: "coral",
+                    fill: "white",
+                    background: "#DBDBDB",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
                     marginLeft: 8,
                   }}
                 />
-              </Link>
-            ) : (
-              <ChevronRight
-                style={{
-                  display: "flex",
-                  fill: "white",
-                  background: "#DBDBDB",
-                  border: "1px solid #DBDBDB",
-                  borderRadius: "50%",
-                  marginLeft: 8,
-                }}
-              />
+              </IconButton>
             )}
           </Text>
         </nav>
