@@ -107,7 +107,7 @@ const Template = (props) => {
       }
 
       items.push(
-        <Link href={pathname} key={i}>
+        <Link to={pathname} key={i}>
           <Text
             as="li"
             sx={{
@@ -151,7 +151,20 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-            {page > 1 ? (
+            {page === 2 ? (
+              <Link href={basePath}>
+                <ChevronLeft
+                  style={{
+                    display: "flex",
+                    fill: "coral",
+                    border: "1px solid",
+                    borderColor: "#DBDBDB",
+                    borderRadius: "50%",
+                    marginRight: 16,
+                  }}
+                />
+              </Link>
+            ) : page > 2 ? (
               <Link to={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
@@ -177,7 +190,6 @@ const Template = (props) => {
                 disabled
               />
             )}
-
             {items}
 
             {page < numberOfPages ? (
@@ -366,18 +378,50 @@ const Template = (props) => {
                     {o.title}
                   </Heading>
 
-                <Link
-                  to={o.uri}
-                  aria-label="Read article"
-                  title={o.title}
-                  variant="links.hyperlink"
-                >
-                  {o.title} →
-                </Link>
-              </Box>
-            </Grid>
-            ))}
-            {!search && category.length === 0 && renderPagination()}
+                  {o.acf?.excerpt?.text && (
+                    <Text
+                      variant="text.introduction"
+                      sx={{
+                        display: "block",
+                        letterSpacing: "-0.23px",
+                        lineHeight: "25px",
+                        mb: "11px",
+                      }}
+                    >
+                      {o.acf.excerpt.text}
+                    </Text>
+                  )}
+
+                  <Link
+                    to={o.uri}
+                    aria-label="Read article"
+                    title={o.title}
+                    variant="links.hyperlink"
+                  >
+                    {o.title} →
+                  </Link>
+                </Box>
+              </Grid>
+            ))
+          ) : (
+            <>
+              <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
+                No Results
+              </Heading>
+              <Text
+                variant="text.introduction"
+                sx={{
+                  display: "block",
+                  letterSpacing: "-0.23px",
+                  lineHeight: "25px",
+                  mb: "11px",
+                }}
+              >
+                Please try a different query
+              </Text>
+            </>
+          )}
+          {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
     </Layout>
