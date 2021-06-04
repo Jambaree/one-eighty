@@ -132,7 +132,7 @@ const CardCarousel = (props) => {
                         }}
                       >
                         {o.image ? (
-                          <GatsbyImage image={o.image} alt={o.image.altText} />
+                          <GatsbyImage image={o.image} alt={o.image?.altText} />
                         ) : (
                           <GatsbyImage
                             image={o.defaultimage}
