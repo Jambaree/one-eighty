@@ -163,10 +163,15 @@ export const CollectionQuery = graphql`
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Benefits {
-                  columns
                   fieldGroupName
+                  columns
                   headline
                   subheading
+                  link {
+                    target
+                    title
+                    url
+                  }
                   cards {
                     fieldGroupName
                     headline
@@ -175,15 +180,10 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 200, layout: CONSTRAINED)
+                          gatsbyImageData(width: 200, placeholder: BLURRED)
                         }
                       }
                     }
-                  }
-                  link {
-                    target
-                    title
-                    url
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
@@ -198,7 +198,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(layout: CONSTRAINED, width: 10)
+                          gatsbyImageData(width: 244, placeholder: BLURRED)
                         }
                       }
                     }
@@ -214,7 +214,7 @@ export const CollectionQuery = graphql`
                         altText
                         localFile {
                           childImageSharp {
-                            gatsbyImageData(layout: CONSTRAINED, width: 312)
+                            gatsbyImageData(width: 244, placeholder: BLURRED)
                           }
                         }
                       }
