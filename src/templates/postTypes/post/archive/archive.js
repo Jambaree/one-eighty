@@ -152,7 +152,7 @@ const Template = (props) => {
             }}
           >
             {page < 2 ? (
-              <IconButton>
+              <IconButton sx={{ height: 30 }}>
                 <ChevronLeft
                   style={{
                     display: "flex",
@@ -167,7 +167,7 @@ const Template = (props) => {
               </IconButton>
             ) : page === 2 ? (
               <Link href={basePath}>
-                <IconButton>
+                <IconButton sx={{ height: 30 }}>
                   <ChevronLeft
                     style={{
                       display: "flex",
@@ -182,7 +182,7 @@ const Template = (props) => {
               </Link>
             ) : (
               <Link to={basePath + "page/" + (page - 1)}>
-                <IconButton>
+                <IconButton sx={{ height: 30 }}>
                   <ChevronLeft
                     style={{
                       display: "flex",
@@ -201,7 +201,7 @@ const Template = (props) => {
 
             {page < numberOfPages ? (
               <Link to={basePath + "page/" + (page + 1)}>
-                <IconButton>
+                <IconButton sx={{ height: 30 }}>
                   <ChevronRight
                     style={{
                       display: "flex",
@@ -215,7 +215,7 @@ const Template = (props) => {
                 </IconButton>
               </Link>
             ) : (
-              <IconButton>
+              <IconButton sx={{ height: 30 }}>
                 <ChevronRight
                   style={{
                     display: "flex",
