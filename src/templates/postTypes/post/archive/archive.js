@@ -1,6 +1,15 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import { Grid, Box, Heading, Text, Checkbox, Label, Input } from "theme-ui"
+import {
+  Grid,
+  Box,
+  Heading,
+  Text,
+  Checkbox,
+  Label,
+  Input,
+  IconButton,
+} from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -132,18 +141,31 @@ const Template = (props) => {
             as="ul"
             sx={{
               width: "auto",
-              maxWidth: 500,
               height: 50,
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: 10,
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-            {page > 1 ? (
-              <Link href={basePath + "page/" + (page - 1)}>
+            {page === 2 ? (
+              <Link href={basePath}>
+                <ChevronLeft
+                  style={{
+                    display: "flex",
+                    fill: "coral",
+                    border: "1px solid",
+                    borderColor: "#DBDBDB",
+                    borderRadius: "50%",
+                    marginRight: 16,
+                  }}
+                />
+              </Link>
+            ) : page > 2 ? (
+              <Link to={basePath + "page/" + (page - 1)}>
                 <ChevronLeft
                   style={{
                     display: "flex",
@@ -171,7 +193,7 @@ const Template = (props) => {
             {items}
 
             {page < numberOfPages ? (
-              <Link href={basePath + "page/" + (page + 1)}>
+              <Link to={basePath + "page/" + (page + 1)}>
                 <ChevronRight
                   style={{
                     display: "flex",
@@ -279,7 +301,11 @@ const Template = (props) => {
               variant="buttons.entryfield.field"
               sx={{ width: "100%", height: "auto", maxWidth: 500 }}
             />
-            <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
+            <IconButton
+              sx={{ ml: "-34px", fill: "coral", maxHeight: 18, maxWidth: 18 }}
+            >
+              <Magnify />
+            </IconButton>
           </Box>
 
           <Text
@@ -323,59 +349,78 @@ const Template = (props) => {
           </Box>
         </Box>
         <Box>
-          {activePosts.map((o) => (
-            <Grid
-              key={o.id}
-              columns={["2fr 6fr", null, "2fr 10fr"]}
-              gap={["28px", 3, 3]}
-              sx={{
-                pb: 100,
-                m: ["0 auto", "unset", "unset"],
-              }}
-            >
-              <Box>
-                <Text
-                  sx={{
-                    fontFamily: "fonts.body",
-                    textTransform: "uppercase",
-                    color: "plumLight",
-                    letterSpacing: "1.1px",
-                    fontSize: "11px",
-                  }}
-                >
-                  {moment(o.date).format("DD MMM")}
-                </Text>
-              </Box>
-              <Box>
-                <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
-                  {o.title}
-                </Heading>
-
-                {o.acf?.excerpt?.text && (
+          {activePosts.length > 0 ? (
+            activePosts.map((o) => (
+              <Grid
+                key={o.id}
+                columns={["2fr 6fr", null, "2fr 10fr"]}
+                gap={["28px", 3, 3]}
+                sx={{
+                  pb: 100,
+                  m: ["0 auto", "unset", "unset"],
+                }}
+              >
+                <Box>
                   <Text
-                    variant="text.introduction"
                     sx={{
-                      display: "block",
-                      letterSpacing: "-0.23px",
-                      lineHeight: "25px",
-                      mb: "11px",
+                      fontFamily: "fonts.body",
+                      textTransform: "uppercase",
+                      color: "plumLight",
+                      letterSpacing: "1.1px",
+                      fontSize: "11px",
                     }}
                   >
-                    {o.acf.excerpt.text}
+                    {moment(o.date).format("DD MMM")}
                   </Text>
-                )}
+                </Box>
+                <Box>
+                  <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
+                    {o.title}
+                  </Heading>
 
-                <Link
-                  href={o.uri}
-                  aria-label="Read article"
-                  title={o.title}
-                  variant="links.hyperlink"
-                >
-                  {o.title} →
-                </Link>
-              </Box>
-            </Grid>
-          ))}
+                  {o.acf?.excerpt?.text && (
+                    <Text
+                      variant="text.introduction"
+                      sx={{
+                        display: "block",
+                        letterSpacing: "-0.23px",
+                        lineHeight: "25px",
+                        mb: "11px",
+                      }}
+                    >
+                      {o.acf.excerpt.text}
+                    </Text>
+                  )}
+
+                  <Link
+                    to={o.uri}
+                    aria-label="Read article"
+                    title={o.title}
+                    variant="links.hyperlink"
+                  >
+                    {o.title} →
+                  </Link>
+                </Box>
+              </Grid>
+            ))
+          ) : (
+            <>
+              <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
+                No Results
+              </Heading>
+              <Text
+                variant="text.introduction"
+                sx={{
+                  display: "block",
+                  letterSpacing: "-0.23px",
+                  lineHeight: "25px",
+                  mb: "11px",
+                }}
+              >
+                Please try a different query
+              </Text>
+            </>
+          )}
           {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
