@@ -66,14 +66,14 @@ const CardCarousel = (props) => {
             content: "'‹'",
           },
           ".slick-prev": {
-            left: "50%",
+            left: ["53%", "52%", "51%"],
             transform: "translateX(-60px)",
             top: "calc(100% + 100px)",
             width: 42,
             height: 42,
           },
           ".slick-next": {
-            right: "50%",
+            right: ["53%", "52%", "52%"],
             transform: "translateX(60px)",
             top: "calc(100% + 100px)",
             width: 42,
@@ -138,8 +138,8 @@ const CardCarousel = (props) => {
                             sx={{
                               bg: "almondDark",
                               borderRadius: "6px",
-                              width: 262,
-                              height: 164,
+                              width: 312,
+                              height: 195,
                             }}
                           />
                         )}
