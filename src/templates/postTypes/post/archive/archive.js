@@ -151,26 +151,8 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-<<<<<<< Updated upstream
-            {page === 2 ? (
-              <Link href={basePath}>
-                <ChevronLeft
-                  style={{
-                    display: "flex",
-                    fill: "coral",
-                    border: "1px solid",
-                    borderColor: "#DBDBDB",
-                    borderRadius: "50%",
-                    marginRight: 16,
-                  }}
-                />
-              </Link>
-            ) : page > 2 ? (
-              <Link href={basePath + "page/" + (page - 1)}>
-=======
             {page > 1 ? (
               <Link to={basePath + "page/" + (page - 1)}>
->>>>>>> Stashed changes
                 <ChevronLeft
                   style={{
                     display: "flex",
@@ -384,46 +366,6 @@ const Template = (props) => {
                     {o.title}
                   </Heading>
 
-<<<<<<< Updated upstream
-                  {o.acf?.excerpt?.text && (
-                    <Text
-                      variant="text.introduction"
-                      sx={{
-                        display: "block",
-                        letterSpacing: "-0.23px",
-                        lineHeight: "25px",
-                        mb: "11px",
-                      }}
-                    >
-                      {o.acf.excerpt.text}
-                    </Text>
-                  )}
-
-                  <Link href={o.uri} aria-label="Read article" title={o.title}>
-                    <Box variant="links.hyperlink">{o.title} →</Box>
-                  </Link>
-                </Box>
-              </Grid>
-            ))
-          ) : (
-            <>
-              <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
-                No Results
-              </Heading>
-              <Text
-                variant="text.introduction"
-                sx={{
-                  display: "block",
-                  letterSpacing: "-0.23px",
-                  lineHeight: "25px",
-                  mb: "11px",
-                }}
-              >
-                Please try a different query
-              </Text>
-            </>
-          )}
-=======
                 <Link
                   to={o.uri}
                   aria-label="Read article"
@@ -434,9 +376,8 @@ const Template = (props) => {
                 </Link>
               </Box>
             </Grid>
-          ))}
->>>>>>> Stashed changes
-          {!search && category.length === 0 && renderPagination()}
+            ))}
+            {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
     </Layout>
