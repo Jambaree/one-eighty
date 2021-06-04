@@ -81,15 +81,7 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(
-                          width: 1920
-                          tracedSVGOptions: {
-                            background: "#fff"
-                            color: "#E5D282"
-                          }
-                          placeholder: TRACED_SVG
-                          layout: CONSTRAINED
-                        )
+                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
                       }
                     }
                   }
@@ -115,15 +107,7 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(
-                          width: 700
-                          tracedSVGOptions: {
-                            background: "#fff"
-                            color: "#E5D282"
-                          }
-                          placeholder: TRACED_SVG
-                          layout: CONSTRAINED
-                        )
+                        gatsbyImageData(width: 700, layout: CONSTRAINED)
                       }
                     }
                   }
@@ -143,15 +127,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            width: 550
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                            placeholder: TRACED_SVG
-                            layout: CONSTRAINED
-                          )
+                          gatsbyImageData(width: 550, layout: CONSTRAINED)
                         }
                       }
                     }
@@ -189,15 +165,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            width: 200
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                            placeholder: TRACED_SVG
-                            layout: CONSTRAINED
-                          )
+                          gatsbyImageData(width: 200, layout: CONSTRAINED)
                         }
                       }
                     }
@@ -220,15 +188,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: TRACED_SVG
-                            width: 10
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                          )
+                          gatsbyImageData(layout: CONSTRAINED, width: 10)
                         }
                       }
                     }
@@ -244,15 +204,7 @@ export const CollectionQuery = graphql`
                         altText
                         localFile {
                           childImageSharp {
-                            gatsbyImageData(
-                              layout: CONSTRAINED
-                              placeholder: TRACED_SVG
-                              width: 312
-                              tracedSVGOptions: {
-                                background: "#fff"
-                                color: "#E5D282"
-                              }
-                            )
+                            gatsbyImageData(layout: CONSTRAINED, width: 312)
                           }
                         }
                       }
@@ -278,16 +230,9 @@ export const CollectionQuery = graphql`
                     fieldGroupName
                     icon {
                       altText
-                      sourceUrl
-                      svg
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: TRACED_SVG
-                            width: 350
-                            tracedSVGOptions: {}
-                          )
+                          gatsbyImageData(layout: CONSTRAINED, width: 350)
                         }
                       }
                     }
@@ -315,15 +260,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: TRACED_SVG
-                            width: 350
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                          )
+                          gatsbyImageData(layout: CONSTRAINED, width: 350)
                         }
                       }
                     }
@@ -334,16 +271,9 @@ export const CollectionQuery = graphql`
                   fontcolor
                   backgroundimage {
                     altText
-                    sourceUrl
-                    svg
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(
-                          layout: FULL_WIDTH
-                          placeholder: TRACED_SVG
-                          width: 1920
-                          tracedSVGOptions: {}
-                        )
+                        gatsbyImageData(layout: FULL_WIDTH, width: 1920)
                       }
                     }
                   }
@@ -356,16 +286,9 @@ export const CollectionQuery = graphql`
                     text
                     image {
                       altText
-                      sourceUrl
-                      svg
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: FULL_WIDTH
-                            placeholder: TRACED_SVG
-                            width: 250
-                            tracedSVGOptions: {}
-                          )
+                          gatsbyImageData(layout: FULL_WIDTH, width: 250)
                         }
                       }
                     }
