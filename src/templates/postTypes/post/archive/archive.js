@@ -365,13 +365,8 @@ const Template = (props) => {
                   </Text>
                 )}
 
-                <Link
-                  href={o.uri}
-                  aria-label="Read article"
-                  title={o.title}
-                  variant="links.hyperlink"
-                >
-                  {o.title} →
+                <Link href={o.uri} aria-label="Read article" title={o.title}>
+                  <Box variant="links.hyperlink">{o.title} →</Box>
                 </Link>
               </Box>
             </Grid>
