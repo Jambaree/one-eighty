@@ -18,7 +18,7 @@ const TextImagePage = (props) => {
           height: 1350,
           zIndex: 0,
           bg: "charcoal",
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 36%)",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 48%)",
         }}
       />
       <Box
