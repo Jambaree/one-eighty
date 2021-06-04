@@ -1,6 +1,15 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import { Grid, Box, Heading, Text, Checkbox, Label, Input } from "theme-ui"
+import {
+  Grid,
+  Box,
+  Heading,
+  Text,
+  Checkbox,
+  Label,
+  Input,
+  IconButton,
+} from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -293,7 +302,11 @@ const Template = (props) => {
               variant="buttons.entryfield.field"
               sx={{ width: "100%", height: "auto", maxWidth: 500 }}
             />
-            <Magnify style={{ marginLeft: "-30px", fill: "coral" }} />
+            <IconButton
+              sx={{ ml: "-34px", fill: "coral", maxHeight: 18, maxWidth: 18 }}
+            >
+              <Magnify />
+            </IconButton>
           </Box>
 
           <Text
