@@ -132,10 +132,10 @@ const Template = (props) => {
             as="ul"
             sx={{
               width: "auto",
-              maxWidth: 500,
               height: 50,
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: 10,
@@ -168,6 +168,7 @@ const Template = (props) => {
                 disabled
               />
             )}
+
             {items}
 
             {page < numberOfPages ? (
