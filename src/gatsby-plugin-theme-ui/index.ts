@@ -145,20 +145,6 @@ const themeUi = {
       color: "coral",
     },
     entryfield: {
-      // label: {
-      //   fontSize: 0,
-      //   textTranform: "uppercase",
-      //   "&:after": {
-      //     content: "*",
-      //     color: "coral",
-      //     "&:disabled": {
-      //       bg: "black25",
-      //     },
-      //   },
-      //   "&:disabled": {
-      //     bg: "black25",
-      //   },
-      // },
       field: {
         fontSize: 3,
         lineHeight: "25px",
@@ -287,6 +273,11 @@ const themeUi = {
       letterSpacing: "-0.33px",
       lineHeight: "32px",
       color: "charcoal",
+      "@media (max-width: 767px)": {
+        fontSize: 5,
+        letterSpacing: "-0.4px",
+        lineHeight: "22px",
+      },
     },
     addheading: {
       variant: "text.heading",
@@ -294,6 +285,11 @@ const themeUi = {
       letterSpacing: "-0.18px",
       color: "charcoal",
       lineHeight: "26px",
+      "@media (max-width: 767px)": {
+        fontSize: "16px",
+        letterSpacing: "-0.16px",
+        lineHeight: "26px",
+      },
     },
     pre: {
       fontFamily: "monospace",

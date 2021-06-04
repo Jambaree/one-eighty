@@ -15,7 +15,12 @@ const Accordion = (props) => {
   console.log(props)
 
   return (
-    <Box sx={{ bg: "almondLight", p: "100px 280px 160px" }}>
+    <Box
+      sx={{
+        bg: "almondLight",
+        p: ["100px 12px 160px", "100px 100px 160px", "100px 10% 160px"],
+      }}
+    >
       <Edges size="md">
         <Box>
           {locations &&
@@ -42,7 +47,10 @@ const Accordion = (props) => {
                         cursor: "pointer",
                         borderRadius: activeIndex === i ? "8px 8px 0 0" : "8px",
                         bg: "white",
-                        p: [12, 16, "26px 30px"],
+                        p:
+                          activeIndex === i
+                            ? ["18px 18px 64px 18px", "26px 30px", "26px 30px"]
+                            : ["18px 12px", "26px 30px", "26px 30px"],
                       }}
                     >
                       <Heading
@@ -73,7 +81,10 @@ const Accordion = (props) => {
                       flexWrap: "wrap",
                       bg: "white",
                       borderRadius: "0 0 8px 8px",
-                      p: activeIndex === i ? "26px 30px" : "0",
+                      p:
+                        activeIndex === i
+                          ? ["18px 18px 64px 18px", "26px 30px", "26px 30px"]
+                          : "0",
                     }}
                   >
                     {o.address &&
@@ -83,7 +94,7 @@ const Accordion = (props) => {
                             key={j}
                             sx={{
                               display: activeIndex === i ? "block" : "none",
-                              width: "50%",
+                              width: ["100%", "50%", "50%"],
                               pb: 55,
                             }}
                           >
