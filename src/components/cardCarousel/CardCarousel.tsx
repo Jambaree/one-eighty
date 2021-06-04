@@ -51,6 +51,9 @@ const CardCarousel = (props) => {
     >
       <Box
         sx={{
+          ".slick-slider": {
+            px: 50,
+          },
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
             backgroundColor: "white",
@@ -66,18 +69,16 @@ const CardCarousel = (props) => {
             content: "'‹'",
           },
           ".slick-prev": {
-            left: ["53%", "52%", "51%"],
-            transform: "translateX(-60px)",
-            top: "calc(100% + 45px)",
+            transform: "unset",
             width: 42,
             height: 42,
+            left: "-12px",
           },
           ".slick-next": {
-            right: ["53%", "52%", "52%"],
-            transform: "translateX(60px)",
-            top: "calc(100% + 45px)",
+            transform: "unset",
             width: 42,
             height: 42,
+            right: 0,
           },
         }}
       >

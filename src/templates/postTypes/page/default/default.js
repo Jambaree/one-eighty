@@ -286,15 +286,6 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
                   fieldGroupName
-                  fontcolor
-                  backgroundimage {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(width: 1920, placeholder: BLURRED)
-                      }
-                    }
-                  }
                   mainheadline
                   subheading
                   mainlink {
