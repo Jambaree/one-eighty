@@ -77,28 +77,29 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Hero {
                   fieldGroupName
                   headline
-                  image {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(
-                          width: 1920
-                          tracedSVGOptions: {
-                            background: "#fff"
-                            color: "#E5D282"
-                          }
-                          placeholder: TRACED_SVG
-                          layout: CONSTRAINED
-                        )
-                      }
-                    }
-                  }
+                  text
+                  linktype
                   link {
                     target
                     title
                     url
                   }
-                  text
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 1920, placeholder: BLURRED)
+                      }
+                    }
+                  }
+                  mobileimage {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 375, placeholder: BLURRED)
+                      }
+                    }
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Introduction {
                   fieldGroupName
@@ -107,62 +108,47 @@ export const CollectionQuery = graphql`
                   text
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
-                  alignment
                   fieldGroupName
+                  alignment
                   headline
                   text
-                  image {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(
-                          width: 700
-                          tracedSVGOptions: {
-                            background: "#fff"
-                            color: "#E5D282"
-                          }
-                          placeholder: TRACED_SVG
-                          layout: CONSTRAINED
-                        )
-                      }
-                    }
-                  }
                   link {
                     target
                     title
                     url
                   }
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 700, placeholder: BLURRED)
+                      }
+                    }
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
                   fieldGroupName
+                  columns
                   headline
+                  subheading
                   cards {
                     fieldGroupName
                     headline
-                    image {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 550
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                            placeholder: TRACED_SVG
-                            layout: CONSTRAINED
-                          )
-                        }
-                      }
-                    }
+                    text
                     link {
                       target
                       title
                       url
                     }
-                    text
+                    image {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 550, placeholder: BLURRED)
+                        }
+                      }
+                    }
                   }
-                  subheading
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
                   fieldGroupName
@@ -177,10 +163,15 @@ export const CollectionQuery = graphql`
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Benefits {
-                  columns
                   fieldGroupName
+                  columns
                   headline
                   subheading
+                  link {
+                    target
+                    title
+                    url
+                  }
                   cards {
                     fieldGroupName
                     headline
@@ -189,23 +180,10 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            width: 200
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                            placeholder: TRACED_SVG
-                            layout: CONSTRAINED
-                          )
+                          gatsbyImageData(width: 200, placeholder: BLURRED)
                         }
                       }
                     }
-                  }
-                  link {
-                    target
-                    title
-                    url
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
@@ -220,15 +198,7 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: TRACED_SVG
-                            width: 10
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                          )
+                          gatsbyImageData(width: 244, placeholder: BLURRED)
                         }
                       }
                     }
@@ -244,15 +214,7 @@ export const CollectionQuery = graphql`
                         altText
                         localFile {
                           childImageSharp {
-                            gatsbyImageData(
-                              layout: CONSTRAINED
-                              placeholder: TRACED_SVG
-                              width: 312
-                              tracedSVGOptions: {
-                                background: "#fff"
-                                color: "#E5D282"
-                              }
-                            )
+                            gatsbyImageData(width: 244, placeholder: BLURRED)
                           }
                         }
                       }
@@ -274,33 +236,26 @@ export const CollectionQuery = graphql`
                   columns
                   headline
                   subheading
+                  mainbutton {
+                    target
+                    title
+                    url
+                  }
                   cards {
                     fieldGroupName
-                    icon {
-                      altText
-                      sourceUrl
-                      svg
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: TRACED_SVG
-                            width: 350
-                            tracedSVGOptions: {}
-                          )
-                        }
-                      }
-                    }
                     link {
                       target
                       title
                       url
                     }
-                  }
-                  mainbutton {
-                    target
-                    title
-                    url
+                    icon {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                        }
+                      }
+                    }
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
@@ -315,15 +270,15 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: TRACED_SVG
-                            width: 350
-                            tracedSVGOptions: {
-                              background: "#fff"
-                              color: "#E5D282"
-                            }
-                          )
+                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                        }
+                      }
+                    }
+                    defaultimage {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(width: 350, placeholder: BLURRED)
                         }
                       }
                     }
@@ -334,46 +289,37 @@ export const CollectionQuery = graphql`
                   fontcolor
                   backgroundimage {
                     altText
-                    sourceUrl
-                    svg
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(
-                          layout: FULL_WIDTH
-                          placeholder: TRACED_SVG
-                          width: 1920
-                          tracedSVGOptions: {}
-                        )
+                        gatsbyImageData(width: 1920, placeholder: BLURRED)
                       }
                     }
                   }
                   mainheadline
                   subheading
+                  mainlink {
+                    target
+                    title
+                    url
+                  }
                   textimage {
                     fieldGroupName
                     alignment
                     headline
                     text
+                    link {
+                      target
+                      title
+                      url
+                    }
                     image {
                       altText
-                      sourceUrl
-                      svg
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(
-                            layout: FULL_WIDTH
-                            placeholder: TRACED_SVG
-                            width: 250
-                            tracedSVGOptions: {}
-                          )
+                          gatsbyImageData(width: 250, placeholder: BLURRED)
                         }
                       }
                     }
-                  }
-                  mainlink {
-                    target
-                    title
-                    url
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Accordion {

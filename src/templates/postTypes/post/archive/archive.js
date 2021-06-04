@@ -140,7 +140,7 @@ const Template = (props) => {
           <Text
             as="ul"
             sx={{
-              width: "auto",
+              width: "fit-content",
               height: 50,
               display: "flex",
               alignItems: "center",
@@ -151,70 +151,83 @@ const Template = (props) => {
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
-            {page === 2 ? (
+            {page < 2 ? (
+              <IconButton>
+                <ChevronLeft
+                  style={{
+                    display: "flex",
+                    fill: "white",
+                    background: "#DBDBDB",
+                    border: "1px solid #DBDBDB",
+                    borderRadius: "50%",
+                    marginRight: 16,
+                  }}
+                  disabled
+                />
+              </IconButton>
+            ) : page === 2 ? (
               <Link href={basePath}>
-                <ChevronLeft
-                  style={{
-                    display: "flex",
-                    fill: "coral",
-                    border: "1px solid",
-                    borderColor: "#DBDBDB",
-                    borderRadius: "50%",
-                    marginRight: 16,
-                  }}
-                />
-              </Link>
-            ) : page > 2 ? (
-              <Link to={basePath + "page/" + (page - 1)}>
-                <ChevronLeft
-                  style={{
-                    display: "flex",
-                    fill: "coral",
-                    border: "1px solid",
-                    borderColor: "#DBDBDB",
-                    borderRadius: "50%",
-                    marginRight: 16,
-                  }}
-                />
+                <IconButton>
+                  <ChevronLeft
+                    style={{
+                      display: "flex",
+                      fill: "coral",
+                      border: "1px solid",
+                      borderColor: "#DBDBDB",
+                      borderRadius: "50%",
+                      marginRight: 16,
+                    }}
+                  />
+                </IconButton>
               </Link>
             ) : (
-              <ChevronLeft
-                style={{
-                  display: "flex",
-                  fill: "white",
-                  background: "#DBDBDB",
-                  border: "1px solid #DBDBDB",
-                  borderRadius: "50%",
-                  marginRight: 16,
-                }}
-                disabled
-              />
+              <Link to={basePath + "page/" + (page - 1)}>
+                <IconButton>
+                  <ChevronLeft
+                    style={{
+                      display: "flex",
+                      fill: "coral",
+                      border: "1px solid",
+                      borderColor: "#DBDBDB",
+                      borderRadius: "50%",
+                      marginRight: 16,
+                    }}
+                  />
+                </IconButton>
+              </Link>
             )}
+
             {items}
 
             {page < numberOfPages ? (
               <Link to={basePath + "page/" + (page + 1)}>
+                <IconButton>
+                  <ChevronRight
+                    style={{
+                      display: "flex",
+                      fill: "coral",
+                      border: "1px solid",
+                      borderColor: "#DBDBDB",
+                      borderRadius: "50%",
+                      marginRight: 16,
+                    }}
+                  />
+                </IconButton>
+              </Link>
+            ) : (
+              <IconButton>
                 <ChevronRight
                   style={{
                     display: "flex",
-                    fill: "coral",
+                    fill: "white",
+                    background: "#DBDBDB",
                     border: "1px solid #DBDBDB",
                     borderRadius: "50%",
                     marginLeft: 8,
                   }}
+                  disabled
                 />
-              </Link>
-            ) : (
-              <ChevronRight
-                style={{
-                  display: "flex",
-                  fill: "white",
-                  background: "#DBDBDB",
-                  border: "1px solid #DBDBDB",
-                  borderRadius: "50%",
-                  marginLeft: 8,
-                }}
-              />
+              </IconButton>
             )}
           </Text>
         </nav>
@@ -392,13 +405,8 @@ const Template = (props) => {
                     </Text>
                   )}
 
-                  <Link
-                    to={o.uri}
-                    aria-label="Read article"
-                    title={o.title}
-                    variant="links.hyperlink"
-                  >
-                    {o.title} →
+                  <Link to={o.uri} aria-label="Read article" title={o.title}>
+                    <Box variant="links.hyperlink">{o.title} →</Box>
                   </Link>
                 </Box>
               </Grid>
