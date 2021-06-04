@@ -337,54 +337,73 @@ const Template = (props) => {
           </Box>
         </Box>
         <Box>
-          {activePosts.map((o) => (
-            <Grid
-              key={o.id}
-              columns={["2fr 6fr", null, "2fr 10fr"]}
-              gap={["28px", 3, 3]}
-              sx={{
-                pb: 100,
-                m: ["0 auto", "unset", "unset"],
-              }}
-            >
-              <Box>
-                <Text
-                  sx={{
-                    fontFamily: "fonts.body",
-                    textTransform: "uppercase",
-                    color: "plumLight",
-                    letterSpacing: "1.1px",
-                    fontSize: "11px",
-                  }}
-                >
-                  {moment(o.date).format("DD MMM")}
-                </Text>
-              </Box>
-              <Box>
-                <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
-                  {o.title}
-                </Heading>
-
-                {o.acf?.excerpt?.text && (
+          {activePosts.length > 0 ? (
+            activePosts.map((o) => (
+              <Grid
+                key={o.id}
+                columns={["2fr 6fr", null, "2fr 10fr"]}
+                gap={["28px", 3, 3]}
+                sx={{
+                  pb: 100,
+                  m: ["0 auto", "unset", "unset"],
+                }}
+              >
+                <Box>
                   <Text
-                    variant="text.introduction"
                     sx={{
-                      display: "block",
-                      letterSpacing: "-0.23px",
-                      lineHeight: "25px",
-                      mb: "11px",
+                      fontFamily: "fonts.body",
+                      textTransform: "uppercase",
+                      color: "plumLight",
+                      letterSpacing: "1.1px",
+                      fontSize: "11px",
                     }}
                   >
-                    {o.acf.excerpt.text}
+                    {moment(o.date).format("DD MMM")}
                   </Text>
-                )}
+                </Box>
+                <Box>
+                  <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
+                    {o.title}
+                  </Heading>
 
-                <Link href={o.uri} aria-label="Read article" title={o.title}>
-                  <Box variant="links.hyperlink">{o.title} →</Box>
-                </Link>
-              </Box>
-            </Grid>
-          ))}
+                  {o.acf?.excerpt?.text && (
+                    <Text
+                      variant="text.introduction"
+                      sx={{
+                        display: "block",
+                        letterSpacing: "-0.23px",
+                        lineHeight: "25px",
+                        mb: "11px",
+                      }}
+                    >
+                      {o.acf.excerpt.text}
+                    </Text>
+                  )}
+
+                  <Link href={o.uri} aria-label="Read article" title={o.title}>
+                    <Box variant="links.hyperlink">{o.title} →</Box>
+                  </Link>
+                </Box>
+              </Grid>
+            ))
+          ) : (
+            <>
+              <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
+                No Results
+              </Heading>
+              <Text
+                variant="text.introduction"
+                sx={{
+                  display: "block",
+                  letterSpacing: "-0.23px",
+                  lineHeight: "25px",
+                  mb: "11px",
+                }}
+              >
+                Please try a different query
+              </Text>
+            </>
+          )}
           {!search && category.length === 0 && renderPagination()}
         </Box>
       </Grid>
