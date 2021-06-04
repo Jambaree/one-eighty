@@ -98,7 +98,7 @@ const Template = (props) => {
       }
 
       items.push(
-        <Link to={pathname} key={i}>
+        <Link href={pathname} key={i}>
           <Text
             as="li"
             sx={{
@@ -365,13 +365,8 @@ const Template = (props) => {
                   </Text>
                 )}
 
-                <Link
-                  href={o.uri}
-                  aria-label="Read article"
-                  title={o.title}
-                  variant="links.hyperlink"
-                >
-                  {o.title} →
+                <Link href={o.uri} aria-label="Read article" title={o.title}>
+                  <Box variant="links.hyperlink">{o.title} →</Box>
                 </Link>
               </Box>
             </Grid>
