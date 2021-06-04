@@ -7,12 +7,21 @@ const config = {
       type: "number",
       label: "Columns",
     },
-
     {
       id: "backgroundcolor",
-      type: "color_picker",
+      type: "select",
       label: "Background Color",
-      defaultValue: "#FFF",
+      defaultValue: "White",
+      options: [
+        {
+          name: "White",
+          value: "#FFF",
+        },
+        {
+          name: "Light Almond",
+          value: "#F5F4F1",
+        },
+      ],
     },
     {
       id: "headline",
