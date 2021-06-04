@@ -77,20 +77,29 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Hero {
                   fieldGroupName
                   headline
-                  image {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
-                      }
-                    }
-                  }
+                  text
+                  linktype
                   link {
                     target
                     title
                     url
                   }
-                  text
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 1920, placeholder: BLURRED)
+                      }
+                    }
+                  }
+                  mobileimage {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 375, placeholder: BLURRED)
+                      }
+                    }
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Introduction {
                   fieldGroupName
