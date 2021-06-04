@@ -140,8 +140,7 @@ const Template = (props) => {
           <Text
             as="ul"
             sx={{
-              width: "auto",
-              maxWidth: 500,
+              width: "fit-content",
               height: 50,
               display: "flex",
               alignItems: "center",
