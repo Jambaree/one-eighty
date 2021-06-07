@@ -315,7 +315,7 @@ const Template = (props) => {
               sx={{ width: "100%", height: "auto", maxWidth: 500 }}
             />
             <IconButton
-              sx={{ ml: "-34px", fill: "coral", maxHeight: 18, maxWidth: 18 }}
+              sx={{ ml: "-34px", fill: "coral", height: 18, maxWidth: 18 }}
             >
               <Magnify />
             </IconButton>
