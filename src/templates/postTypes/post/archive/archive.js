@@ -158,7 +158,6 @@ const Template = (props) => {
                     cursor: "pointer",
                     height: 22,
                     width: 22,
-                    display: "flex",
                     fill: "white",
                     background: "#DBDBDB",
                     border: "unset",
@@ -177,7 +176,6 @@ const Template = (props) => {
                   <ChevronLeft
                     style={{
                       cursor: "pointer",
-                      display: "flex",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
@@ -196,7 +194,6 @@ const Template = (props) => {
                   <ChevronLeft
                     style={{
                       cursor: "pointer",
-                      display: "flex",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
@@ -219,7 +216,6 @@ const Template = (props) => {
                   <ChevronRight
                     style={{
                       cursor: "pointer",
-                      display: "flex",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
@@ -240,7 +236,6 @@ const Template = (props) => {
                     cursor: "pointer",
                     height: 22,
                     width: 22,
-                    display: "flex",
                     fill: "white",
                     background: "#DBDBDB",
                     border: "unset",
