@@ -164,6 +164,9 @@ const Template = (props) => {
                     border: "unset",
                     borderRadius: "50%",
                     marginRight: 20,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                   disabled
                 />
@@ -180,6 +183,9 @@ const Template = (props) => {
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
                       marginRight: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   />
                 </IconButton>
@@ -196,6 +202,9 @@ const Template = (props) => {
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
                       marginRight: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   />
                 </IconButton>
@@ -217,6 +226,9 @@ const Template = (props) => {
                       borderRadius: "50%",
                       marginRight: 16,
                       marginLeft: 12,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   />
                 </IconButton>
@@ -234,6 +246,9 @@ const Template = (props) => {
                     border: "unset",
                     borderRadius: "50%",
                     marginLeft: 8,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                   disabled
                 />
