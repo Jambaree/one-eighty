@@ -126,31 +126,43 @@ const Accordion = (props) => {
                               />
                             )}
                             {o.phoneone && (
-                              <Text
-                                children={o.phoneone}
-                                variant="text.paragraph"
-                                sx={{
-                                  display: "block",
-                                  lineHeight: "25px",
-                                  fontSize: 3,
-                                }}
-                              />
+                              <Box sx={{ display: "block" }}>
+                                <Link
+                                  variant="links.hyperlink"
+                                  href={`tel:${o.phoneone}`}
+                                  onClick={(event) => {
+                                    event.stopPropagation()
+                                  }}
+                                >
+                                  {o.phoneone}
+                                </Link>
+                              </Box>
                             )}
                             {o.phonetwo && (
-                              <Text
-                                children={o.phonetwo}
-                                variant="text.paragraph"
-                                sx={{ lineHeight: "25px", fontSize: 3 }}
-                              />
+                              <Box sx={{ display: "block" }}>
+                                <Link
+                                  variant="links.hyperlink"
+                                  href={`tel:${o.phonetwo}`}
+                                  onClick={(event) => {
+                                    event.stopPropagation()
+                                  }}
+                                >
+                                  {o.phonetwo}
+                                </Link>
+                              </Box>
                             )}
                             {o.email && (
-                              <Link
-                                variant="links.hyperlink"
-                                sx={{ display: "block" }}
-                                href={`mailto:${o.email}`}
-                              >
-                                {o.email}
-                              </Link>
+                              <Box sx={{ display: "block" }}>
+                                <Link
+                                  variant="links.hyperlink"
+                                  href={`mailto:${o.email}`}
+                                  onClick={(event) => {
+                                    event.stopPropagation()
+                                  }}
+                                >
+                                  {o.email}
+                                </Link>
+                              </Box>
                             )}
                           </Box>
                         )
