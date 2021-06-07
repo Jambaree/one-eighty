@@ -6,6 +6,8 @@ const config = {
       id: "columns",
       type: "number",
       label: "Columns",
+      min: 1, // optional
+      max: 4, // optional
     },
     {
       id: "headline",
