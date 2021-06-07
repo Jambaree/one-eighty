@@ -92,9 +92,6 @@ const Accordion = (props) => {
                               width: ["100%", "50%", "50%"],
                               pb: 55,
                             }}
-                            onClick={(event) => {
-                              event.stopPropagation()
-                            }}
                           >
                             <Heading
                               children={o.addressheading}
