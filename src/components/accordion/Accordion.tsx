@@ -92,6 +92,9 @@ const Accordion = (props) => {
                               width: ["100%", "50%", "50%"],
                               pb: 55,
                             }}
+                            onClick={(event) => {
+                              event.stopPropagation()
+                            }}
                           >
                             <Heading
                               children={o.addressheading}
@@ -125,9 +128,6 @@ const Accordion = (props) => {
                                 <Link
                                   variant="links.hyperlink"
                                   href={`tel:${o.phoneone}`}
-                                  onClick={(event) => {
-                                    event.stopPropagation()
-                                  }}
                                 >
                                   {o.phoneone}
                                 </Link>
@@ -138,9 +138,6 @@ const Accordion = (props) => {
                                 <Link
                                   variant="links.hyperlink"
                                   href={`tel:${o.phonetwo}`}
-                                  onClick={(event) => {
-                                    event.stopPropagation()
-                                  }}
                                 >
                                   {o.phonetwo}
                                 </Link>
@@ -151,9 +148,6 @@ const Accordion = (props) => {
                                 <Link
                                   variant="links.hyperlink"
                                   href={`mailto:${o.email}`}
-                                  onClick={(event) => {
-                                    event.stopPropagation()
-                                  }}
                                 >
                                   {o.email}
                                 </Link>
