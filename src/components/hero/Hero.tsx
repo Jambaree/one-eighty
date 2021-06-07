@@ -16,7 +16,6 @@ const Hero = (props) => {
     <Box
       sx={{
         position: "relative",
-        minHeight: "calc(100vh - 94px)",
         height: "auto",
         mt: [60, 24, 24],
         mb: [98, 0, 160],
