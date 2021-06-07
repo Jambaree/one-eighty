@@ -116,7 +116,7 @@ const Template = (props) => {
               alignItems: "center",
               width: "23px",
               height: "23px",
-              margin: "14px 8px 14px 0",
+              m: "14px 8px 14px 0",
               borderRadius: "6px",
 
               color: page === i ? "white" : "black75",
@@ -147,7 +147,7 @@ const Template = (props) => {
               justifyContent: "center",
               backgroundColor: "#FFF",
               borderRadius: 6,
-              padding: 10,
+              padding: "10px 10px 10px 15px",
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
