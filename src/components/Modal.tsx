@@ -46,7 +46,7 @@ const Modal = (props) => {
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", p: 48 }}>
-        <Box sx={{ mr: 66 }}>
+        <Box sx={{ mr: 66, minWidth: "40%" }}>
           {modal?.headline && (
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
@@ -58,7 +58,7 @@ const Modal = (props) => {
               <Textarea content={modal.text} />
             </Box>
           )}
-          {modal?.link && (
+          {modal?.link?.url && (
             <Link href={modal.link.url} variant="links.hyperlink">
               {modal.link.title} →
             </Link>

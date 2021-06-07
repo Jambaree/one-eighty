@@ -8,24 +8,26 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const TextImagePage = (props) => {
-  const {
-    backgroundimage,
-    fontcolor,
-    mainheadline,
-    subheading,
-    textimage,
-    mainlink,
-  } = props
+  const { mainheadline, subheading, textimage, mainlink } = props
 
   return (
-    <>
+    <Box sx={{ bg: "charcoalLight" }}>
       <Box
         sx={{
-          backgroundImage: backgroundimage,
-          backgroundSize: "cover",
+          position: "relative",
+          height: 1350,
+          zIndex: 0,
+          bg: "charcoal",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 48%)",
+        }}
+      />
+      <Box
+        sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          zIndex: 2,
+          mt: -1250,
         }}
       >
         {mainheadline && (
@@ -35,10 +37,11 @@ const TextImagePage = (props) => {
               pt: 100,
               pb: [28, 36, 36],
               px: [18, "unset", "unset"],
-              color: fontcolor,
+              color: "almondLight",
               letterSpacing: ["-0.42px", "-1.15px", "-1.15px"],
               lineHeight: ["30px", "54px", "54px"],
               fontSize: [28, 46, 46],
+              zIndex: 2,
             }}
           />
         )}
@@ -48,12 +51,13 @@ const TextImagePage = (props) => {
             variant="text.introduction"
             children={subheading}
             sx={{
-              color: fontcolor,
+              color: "almondLight",
               mb: [42, 68, 68],
               px: [18, 18, "unset"],
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
+              zIndex: 2,
             }}
           />
         )}
@@ -107,7 +111,7 @@ const TextImagePage = (props) => {
                           variant="styles.h3"
                           sx={{
                             pb: "8px",
-                            color: fontcolor,
+                            color: "almondLight",
                             fontSize: "22px",
                             letterSpacing: "-0.33px",
                             lineHeight: "32px",
@@ -120,7 +124,7 @@ const TextImagePage = (props) => {
                           variant="text.introduction"
                           sx={{
                             paddingBottom: 36,
-                            color: fontcolor,
+                            color: "almondLight",
                             letterSpacing: "-0.23px",
                             lineHeight: "25px",
                           }}
@@ -145,7 +149,7 @@ const TextImagePage = (props) => {
           </Box>
         )}
       </Box>
-    </>
+    </Box>
   )
 }
 

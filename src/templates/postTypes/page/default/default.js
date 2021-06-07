@@ -14,7 +14,7 @@ import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
-import accordion from "../../../../components/accordion/Accordion"
+import locations from "../../../../components/accordion/Accordion"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 
 const blocks = {
@@ -28,7 +28,7 @@ const blocks = {
   logos,
   partners,
   cardcarousel,
-  accordion,
+  locations,
   textimagepage,
 }
 
@@ -286,15 +286,6 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
                   fieldGroupName
-                  fontcolor
-                  backgroundimage {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(width: 1920, placeholder: BLURRED)
-                      }
-                    }
-                  }
                   mainheadline
                   subheading
                   mainlink {
@@ -322,9 +313,9 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Accordion {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Locations {
                   fieldGroupName
-                  locations {
+                  location {
                     fieldGroupName
                     mainheading
                     address {
