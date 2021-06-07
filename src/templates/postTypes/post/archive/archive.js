@@ -16,6 +16,8 @@ import produce from "immer"
 
 // import app components
 import Layout from "../../../../components/Layout"
+import Hexagon from "../../../../components/Hexagon"
+import theme from "../../../../theme"
 
 const Template = (props) => {
   const {
@@ -116,7 +118,7 @@ const Template = (props) => {
               alignItems: "center",
               width: "23px",
               height: "23px",
-              margin: "14px 8px 14px 0",
+              m: "14px 8px 14px 0",
               borderRadius: "6px",
 
               color: page === i ? "white" : "black75",
@@ -147,7 +149,7 @@ const Template = (props) => {
               justifyContent: "center",
               backgroundColor: "#FFF",
               borderRadius: 6,
-              padding: 10,
+              padding: "10px 10px 10px 15px",
               m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
             }}
           >
@@ -155,12 +157,17 @@ const Template = (props) => {
               <IconButton sx={{ height: 30 }}>
                 <ChevronLeft
                   style={{
-                    display: "flex",
+                    cursor: "pointer",
+                    height: 22,
+                    width: 22,
                     fill: "white",
                     background: "#DBDBDB",
-                    border: "1px solid #DBDBDB",
+                    border: "unset",
                     borderRadius: "50%",
-                    marginRight: 16,
+                    marginRight: 20,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                   disabled
                 />
@@ -170,12 +177,15 @@ const Template = (props) => {
                 <IconButton sx={{ height: 30 }}>
                   <ChevronLeft
                     style={{
-                      display: "flex",
+                      cursor: "pointer",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
-                      marginRight: 16,
+                      marginRight: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   />
                 </IconButton>
@@ -185,12 +195,15 @@ const Template = (props) => {
                 <IconButton sx={{ height: 30 }}>
                   <ChevronLeft
                     style={{
-                      display: "flex",
+                      cursor: "pointer",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
-                      marginRight: 16,
+                      marginRight: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   />
                 </IconButton>
@@ -204,12 +217,16 @@ const Template = (props) => {
                 <IconButton sx={{ height: 30 }}>
                   <ChevronRight
                     style={{
-                      display: "flex",
+                      cursor: "pointer",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
                       marginRight: 16,
+                      marginLeft: 12,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   />
                 </IconButton>
@@ -218,12 +235,17 @@ const Template = (props) => {
               <IconButton sx={{ height: 30 }}>
                 <ChevronRight
                   style={{
-                    display: "flex",
+                    cursor: "pointer",
+                    height: 22,
+                    width: 22,
                     fill: "white",
                     background: "#DBDBDB",
-                    border: "1px solid #DBDBDB",
+                    border: "unset",
                     borderRadius: "50%",
                     marginLeft: 8,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                   disabled
                 />
@@ -237,6 +259,15 @@ const Template = (props) => {
 
   return (
     <Layout {...props} seo={seo}>
+      <Hexagon
+        background={theme.colors.plum}
+        style={{
+          transform: "rotate(30deg)",
+          position: "absolute",
+          left: "-50px",
+          top: "18px",
+        }}
+      />
       <Box
         sx={{
           background: (theme) => theme.colors.plumDark,
@@ -245,6 +276,7 @@ const Template = (props) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: ["flex-start", "center", "center"],
+          mt: "-24px",
         }}
       >
         {headline && (
@@ -315,7 +347,7 @@ const Template = (props) => {
               sx={{ width: "100%", height: "auto", maxWidth: 500 }}
             />
             <IconButton
-              sx={{ ml: "-34px", fill: "coral", maxHeight: 18, maxWidth: 18 }}
+              sx={{ ml: "-34px", fill: "coral", height: 18, maxWidth: 18 }}
             >
               <Magnify />
             </IconButton>

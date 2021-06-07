@@ -8,13 +8,13 @@ const Hexagon = (props) => {
         {...props}
         sx={{
           width: 200,
-          display: ["none", "inline-block"],
+          display: ["inline-block"],
           color: "turquoise",
           filter: 'url("#goo")',
           "&:before": {
             content: "''",
             display: "block",
-            background: "currentColor",
+            background: props.background,
             paddingTop: "86.6%",
             clipPath:
               "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
