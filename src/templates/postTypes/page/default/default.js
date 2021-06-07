@@ -313,9 +313,9 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Accordion {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Locations {
                   fieldGroupName
-                  locations {
+                  location {
                     fieldGroupName
                     mainheading
                     address {
