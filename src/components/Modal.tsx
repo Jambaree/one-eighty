@@ -81,6 +81,7 @@ const Modal = (props) => {
         </Box>
         <Box
           sx={{
+            width: 312,
             maxWidth: "100%",
           }}
         >
