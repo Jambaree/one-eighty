@@ -74,14 +74,14 @@ const TextImagePage = (props) => {
           {textimage &&
             textimage.map((o, i) => {
               return (
-                <Box key={i} sx={{ mt: ["unset", 48, 48] }}>
+                <Box key={i} sx={{ mt: ["unset", 48, 48], width: "80%" }}>
                   <Box
                     sx={{
                       left: o.alignment === "left" ? 0 : "unset",
                       right: o.alignment === "right" ? 0 : "unset",
                       position: ["relative", null, "absolute"],
                       height: 278,
-                      width: ["100%", "100%", "calc(50% - 25px)"],
+                      width: ["100%", "100%", "50%"],
                     }}
                   >
                     {o.image && (
@@ -96,7 +96,7 @@ const TextImagePage = (props) => {
                       sx={{
                         ml: o.alignment === "left" ? "auto" : "unset",
                         mr: o.alignment === "right" ? "auto" : "unset",
-                        width: ["100%", null, "calc(50% - 25px)"],
+                        width: ["100%", null, "calc(42% - 25px)"],
                         height: "100%",
                         my: "auto",
                         display: "flex",
