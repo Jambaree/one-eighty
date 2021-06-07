@@ -15,10 +15,14 @@ const TextImagePage = (props) => {
       <Box
         sx={{
           position: "relative",
-          height: 1350,
+          height: [900, 1200, 1350],
           zIndex: 0,
           bg: "charcoal",
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 48%)",
+          clipPath: [
+            "polygon(0 0, 100% 0, 100% 100%, 0 88%)",
+            "polygon(0 0, 100% 0, 100% 100%, 0 70%)",
+            "polygon(0 0, 100% 0, 100% 100%, 0 50%)",
+          ],
         }}
       />
       <Box
@@ -27,7 +31,7 @@ const TextImagePage = (props) => {
           flexDirection: "column",
           alignItems: "center",
           zIndex: 2,
-          mt: -1250,
+          mt: [-850, -1150, -1250],
         }}
       >
         {mainheadline && (
@@ -74,14 +78,24 @@ const TextImagePage = (props) => {
           {textimage &&
             textimage.map((o, i) => {
               return (
-                <Box key={i} sx={{ mt: ["unset", 48, 48] }}>
+                <Box
+                  key={i}
+                  sx={{
+                    mt: ["unset", 48, 60],
+                    width: "80%",
+                    minHeight: 278,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <Box
                     sx={{
                       left: o.alignment === "left" ? 0 : "unset",
                       right: o.alignment === "right" ? 0 : "unset",
                       position: ["relative", null, "absolute"],
                       height: 278,
-                      width: ["100%", "100%", "calc(50% - 25px)"],
+                      width: ["100%", "100%", "50%"],
                     }}
                   >
                     {o.image && (
@@ -96,13 +110,12 @@ const TextImagePage = (props) => {
                       sx={{
                         ml: o.alignment === "left" ? "auto" : "unset",
                         mr: o.alignment === "right" ? "auto" : "unset",
-                        width: ["100%", null, "calc(50% - 25px)"],
+                        width: ["100%", null, "calc(42% - 25px)"],
                         height: "100%",
                         my: "auto",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "flex-start",
-                        pt: [26, 36, 36],
                       }}
                     >
                       {o.headline && (
@@ -123,7 +136,6 @@ const TextImagePage = (props) => {
                           children={Parser(o.text)}
                           variant="text.introduction"
                           sx={{
-                            paddingBottom: 36,
                             color: "almondLight",
                             letterSpacing: "-0.23px",
                             lineHeight: "25px",

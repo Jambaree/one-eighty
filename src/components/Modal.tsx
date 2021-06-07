@@ -39,21 +39,36 @@ const Modal = (props) => {
           borderRadius: 6,
           display: "flex",
           zIndex: 5,
+          maxWidth: "70%",
+          padding: 0,
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
         },
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center", p: 48 }}>
-        <Box sx={{ mr: 66, minWidth: "40%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: ["column-reverse", "column-reverse", "row"],
+          p: ["24px 0", "24px 0", 48],
+        }}
+      >
+        <Box sx={{ width: ["80%", "60%", "60%"] }}>
           {modal?.headline && (
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
           {modal?.text && (
             <Box
               variant="text.introduction"
-              sx={{ mb: 30, letterSpacing: "-.23px", lineHeight: "25px" }}
+              sx={{
+                mb: 30,
+                letterSpacing: "-.23px",
+                lineHeight: "25px",
+                width: ["100%", "100%", "70%"],
+              }}
             >
               <Textarea content={modal.text} />
             </Box>
@@ -64,11 +79,19 @@ const Modal = (props) => {
             </Link>
           )}
         </Box>
-        <Box>
+        <Box
+          sx={{
+            width: 312,
+            maxWidth: "100%",
+          }}
+        >
           {modal?.image && (
             <BackgroundImage
               image={modal.image}
-              style={{ position: "relative", height: 343 }}
+              style={{
+                position: "relative",
+                textAlign: "right",
+              }}
               backgroundSize="contain"
             />
           )}
