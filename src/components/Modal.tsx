@@ -53,10 +53,10 @@ const Modal = (props) => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: ["column-reverse", "column-reverse", "row"],
-          p: [0, 0, 48],
+          p: ["24px 0", "24px 0", 48],
         }}
       >
-        <Box sx={{ width: "60%" }}>
+        <Box sx={{ width: ["80%", "60%", "60%"] }}>
           {modal?.headline && (
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
