@@ -155,12 +155,13 @@ const Template = (props) => {
               <IconButton sx={{ height: 30 }}>
                 <ChevronLeft
                   style={{
+                    cursor: "pointer",
                     display: "flex",
                     fill: "white",
                     background: "#DBDBDB",
-                    border: "1px solid #DBDBDB",
+                    border: "unset",
                     borderRadius: "50%",
-                    marginRight: 16,
+                    marginRight: 20,
                   }}
                   disabled
                 />
@@ -170,12 +171,13 @@ const Template = (props) => {
                 <IconButton sx={{ height: 30 }}>
                   <ChevronLeft
                     style={{
+                      cursor: "pointer",
                       display: "flex",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
-                      marginRight: 16,
+                      marginRight: 20,
                     }}
                   />
                 </IconButton>
@@ -185,12 +187,13 @@ const Template = (props) => {
                 <IconButton sx={{ height: 30 }}>
                   <ChevronLeft
                     style={{
+                      cursor: "pointer",
                       display: "flex",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
-                      marginRight: 16,
+                      marginRight: 20,
                     }}
                   />
                 </IconButton>
@@ -204,12 +207,14 @@ const Template = (props) => {
                 <IconButton sx={{ height: 30 }}>
                   <ChevronRight
                     style={{
+                      cursor: "pointer",
                       display: "flex",
                       fill: "coral",
                       border: "1px solid",
                       borderColor: "#DBDBDB",
                       borderRadius: "50%",
                       marginRight: 16,
+                      marginLeft: 12,
                     }}
                   />
                 </IconButton>
@@ -218,10 +223,11 @@ const Template = (props) => {
               <IconButton sx={{ height: 30 }}>
                 <ChevronRight
                   style={{
+                    cursor: "pointer",
                     display: "flex",
                     fill: "white",
                     background: "#DBDBDB",
-                    border: "1px solid #DBDBDB",
+                    border: "unset",
                     borderRadius: "50%",
                     marginLeft: 8,
                   }}
