@@ -116,7 +116,6 @@ const TextImagePage = (props) => {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "flex-start",
-                        // pt: [26, 36, 36],
                       }}
                     >
                       {o.headline && (
@@ -137,7 +136,6 @@ const TextImagePage = (props) => {
                           children={Parser(o.text)}
                           variant="text.introduction"
                           sx={{
-                            // paddingBottom: 36,
                             color: "almondLight",
                             letterSpacing: "-0.23px",
                             lineHeight: "25px",
