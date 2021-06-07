@@ -1,11 +1,11 @@
 const config = {
-  id: "accordion",
-  label: "[WIP] Accordion",
+  id: "locations",
+  label: "[WIP] Locations",
   fields: [
     {
-      id: "locations",
+      id: "location",
       type: "repeater",
-      label: "Locations",
+      label: "Location",
       items: [
         {
           id: "mainheading",

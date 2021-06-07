@@ -11,15 +11,23 @@ const TextImagePage = (props) => {
   const { mainheadline, subheading, textimage, mainlink } = props
 
   return (
-    <>
+    <Box sx={{ bg: "charcoalLight" }}>
       <Box
         sx={{
-          backgroundImage: null,
-          backgroundSize: "cover",
-          backgroundColor: "charcoalLight",
+          position: "relative",
+          height: 1350,
+          zIndex: 0,
+          bg: "charcoal",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 48%)",
+        }}
+      />
+      <Box
+        sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          zIndex: 2,
+          mt: -1250,
         }}
       >
         {mainheadline && (
@@ -33,6 +41,7 @@ const TextImagePage = (props) => {
               letterSpacing: ["-0.42px", "-1.15px", "-1.15px"],
               lineHeight: ["30px", "54px", "54px"],
               fontSize: [28, 46, 46],
+              zIndex: 2,
             }}
           />
         )}
@@ -48,6 +57,7 @@ const TextImagePage = (props) => {
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
+              zIndex: 2,
             }}
           />
         )}
@@ -139,7 +149,7 @@ const TextImagePage = (props) => {
           </Box>
         )}
       </Box>
-    </>
+    </Box>
   )
 }
 
