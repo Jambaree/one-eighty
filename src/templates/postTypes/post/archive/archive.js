@@ -16,6 +16,8 @@ import produce from "immer"
 
 // import app components
 import Layout from "../../../../components/Layout"
+import Hexagon from "../../../../components/Hexagon"
+import theme from "../../../../theme"
 
 const Template = (props) => {
   const {
@@ -257,6 +259,15 @@ const Template = (props) => {
 
   return (
     <Layout {...props} seo={seo}>
+      <Hexagon
+        background={theme.colors.plum}
+        style={{
+          transform: "rotate(30deg)",
+          position: "absolute",
+          left: "-50px",
+          top: "18px",
+        }}
+      />
       <Box
         sx={{
           background: (theme) => theme.colors.plumDark,
@@ -265,6 +276,7 @@ const Template = (props) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: ["flex-start", "center", "center"],
+          mt: "-24px",
         }}
       >
         {headline && (
