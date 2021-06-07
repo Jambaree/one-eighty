@@ -156,6 +156,8 @@ const Template = (props) => {
                 <ChevronLeft
                   style={{
                     cursor: "pointer",
+                    height: 22,
+                    width: 22,
                     display: "flex",
                     fill: "white",
                     background: "#DBDBDB",
@@ -224,6 +226,8 @@ const Template = (props) => {
                 <ChevronRight
                   style={{
                     cursor: "pointer",
+                    height: 22,
+                    width: 22,
                     display: "flex",
                     fill: "white",
                     background: "#DBDBDB",
