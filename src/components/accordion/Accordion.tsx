@@ -6,13 +6,8 @@ import { ChevronUp } from "mdi-material-ui"
 import Edges from "../Edges"
 
 const Accordion = (props) => {
-  const {
-    locations,
-    locations: { mainheading, address },
-  } = props
+  const { location } = props
   const [activeIndex, setActiveIndex] = useState(null)
-
-  console.log(props)
 
   return (
     <Box
@@ -23,8 +18,8 @@ const Accordion = (props) => {
     >
       <Edges size="md">
         <Box>
-          {locations &&
-            locations.map((o, i) => {
+          {location &&
+            location.map((o, i) => {
               return (
                 <Box
                   key={i}
