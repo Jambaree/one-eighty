@@ -11,6 +11,7 @@ const config = {
       id: "subheading",
       type: "text",
       label: "Subheading",
+      rows: 4,
     },
     {
       id: "videoalignment",
@@ -32,6 +33,7 @@ const config = {
       id: "videolink",
       type: "text",
       label: "Video Link",
+      instructions: "Paste in the URL of your video",
     },
   ],
 }

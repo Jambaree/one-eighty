@@ -39,7 +39,7 @@ const Modal = (props) => {
           borderRadius: 6,
           display: "flex",
           zIndex: 5,
-          maxWidth: "70%",
+          maxWidth: ["100%", "85%", "75%"],
           padding: 0,
         },
         overlay: {
@@ -53,10 +53,10 @@ const Modal = (props) => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: ["column-reverse", "column-reverse", "row"],
-          p: ["24px 0", "24px 0", 48],
+          p: ["24px 0 24px 24px", "24px 0 24px 24px", "48px 0 48px 48px"],
         }}
       >
-        <Box sx={{ width: ["80%", "60%", "60%"] }}>
+        <Box sx={{ width: ["90%", "85%", "95%"] }}>
           {modal?.headline && (
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
