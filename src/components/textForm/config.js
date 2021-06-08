@@ -9,11 +9,11 @@ const config = {
       defaultValue: "left",
       options: [
         {
-          name: "Left",
+          name: "Headline Left",
           value: "left",
         },
         {
-          name: "Right",
+          name: "Headline Right",
           value: "right",
         },
       ],
@@ -27,23 +27,36 @@ const config = {
       id: "text",
       type: "text",
       label: "Text",
+      rows: 4,
     },
     {
       id: "disclaimer",
       type: "text",
       label: "Disclaimer",
+      rows: 2,
     },
     {
       id: "formbackground",
-      type: "color_picker",
+      type: "select",
       label: "Form Background",
-      defaultValue: "white", // optional
+      defaultValue: "#FFF",
+      options: [
+        {
+          name: "White",
+          value: "#FFF",
+        },
+        {
+          name: "Light Turquoise",
+          value: "#A8E6E4",
+        },
+      ],
     },
     {
       id: "formid",
       type: "number",
       label: "Form ID",
       defaultValue: 1, // optional
+      instructions: "Choose the ID of the form you wish to display",
     },
   ],
 }
