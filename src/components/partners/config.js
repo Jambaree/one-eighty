@@ -11,7 +11,7 @@ const config = {
       id: "backgroundcolor",
       type: "select",
       label: "Background Color",
-      defaultValue: "White",
+      defaultValue: "#FFF",
       options: [
         {
           name: "White",
@@ -32,6 +32,7 @@ const config = {
       id: "subheading",
       type: "text",
       label: "Subheading",
+      rows: 3,
     },
     {
       id: "cards",
