@@ -42,6 +42,7 @@ const config = {
       id: "headline",
       type: "text",
       label: "Headline",
+      defaultValue: "Please place the desired headline or title here",
     },
     {
       id: "subheading",
