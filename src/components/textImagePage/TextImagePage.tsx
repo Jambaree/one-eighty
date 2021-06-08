@@ -31,7 +31,7 @@ const TextImagePage = (props) => {
           flexDirection: "column",
           alignItems: "center",
           zIndex: 2,
-          mt: [-850, -1150, -1250],
+          mt: [-900, -1200, -1300],
         }}
       >
         {mainheadline && (
@@ -40,7 +40,8 @@ const TextImagePage = (props) => {
             sx={{
               pt: 100,
               pb: [28, 36, 36],
-              px: [18, "unset", "unset"],
+              pl: [35, "auto", 0],
+              pr: [60, "auto", 0],
               color: "almondLight",
               letterSpacing: ["-0.42px", "-1.15px", "-1.15px"],
               lineHeight: ["30px", "54px", "54px"],
@@ -57,7 +58,8 @@ const TextImagePage = (props) => {
             sx={{
               color: "almondLight",
               mb: [42, 68, 68],
-              px: [18, 18, "unset"],
+              pr: [18, "auto", 0],
+              pl: [35, "auto", 0],
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
@@ -71,7 +73,6 @@ const TextImagePage = (props) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            my: [48, 48, 0],
             textAlign: "left",
           }}
         >
@@ -85,6 +86,7 @@ const TextImagePage = (props) => {
                     width: "80%",
                     minHeight: 278,
                     display: "flex",
+                    flexDirection: ["column", "row", "row"],
                     justifyContent: "center",
                     alignItems: "center",
                   }}
@@ -105,7 +107,7 @@ const TextImagePage = (props) => {
                       />
                     )}
                   </Box>
-                  <Edges size="md">
+                  <Box sx={{ width: "100%", pt: 28, pb: 66 }}>
                     <Box
                       sx={{
                         ml: o.alignment === "left" ? "auto" : "unset",
@@ -148,7 +150,7 @@ const TextImagePage = (props) => {
                         </Button>
                       )}
                     </Box>
-                  </Edges>
+                  </Box>
                 </Box>
               )
             })}
