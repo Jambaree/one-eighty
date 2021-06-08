@@ -33,7 +33,7 @@ const config = {
       id: "videolink",
       type: "text",
       label: "Video Link",
-      instructions: "Please paste in the URL of the video you want to display",
+      instructions: "Paste in the URL of your video",
     },
   ],
 }
