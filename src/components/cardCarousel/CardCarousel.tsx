@@ -69,16 +69,16 @@ const CardCarousel = (props) => {
             content: "'‹'",
           },
           ".slick-prev": {
-            transform: "unset",
+            transform: ["translateY(250px)", "translateY(250px)", "unset"],
             width: 42,
             height: 42,
-            left: "-12px",
+            left: ["35%", "42%", "-60px"],
           },
           ".slick-next": {
-            transform: "unset",
+            transform: ["translateY(250px)", "translateY(250px)", "unset"],
             width: 42,
             height: 42,
-            right: 0,
+            right: ["35%", "42%", "-60px"],
           },
         }}
       >
