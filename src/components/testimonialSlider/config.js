@@ -16,7 +16,8 @@ const config = {
     {
       id: "subheading",
       type: "text",
-      label: "Sub Heading",
+      label: "Subheading",
+      rows: 2,
     },
     {
       id: "slide",
@@ -27,6 +28,7 @@ const config = {
           id: "quote",
           type: "text",
           label: "Quote",
+          rows: 4,
         },
         {
           id: "name",
@@ -38,6 +40,8 @@ const config = {
           id: "position",
           type: "text",
           label: "Position",
+          instructions:
+            "Type the professional position of the person who gave this quote",
         },
       ],
     },
