@@ -333,6 +333,13 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Herovideo {
+                  fieldGroupName
+                  headline
+                  subheading
+                  videoalignment
+                  videolink
+                }
               }
             }
             fieldGroupName
