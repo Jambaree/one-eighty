@@ -23,9 +23,6 @@ const Accordion = (props) => {
               return (
                 <Box
                   key={i}
-                  onClick={() => {
-                    setActiveIndex(i === activeIndex ? null : i)
-                  }}
                   sx={{
                     border: "1px solid",
                     borderColor: activeIndex === i ? "coral" : "black25",
@@ -35,6 +32,9 @@ const Accordion = (props) => {
                 >
                   {o.mainheading && (
                     <Box
+                      onClick={() => {
+                        setActiveIndex(i === activeIndex ? null : i)
+                      }}
                       sx={{
                         display: "flex",
                         justifyContent: "space-between",
@@ -91,9 +91,6 @@ const Accordion = (props) => {
                               display: activeIndex === i ? "block" : "none",
                               width: ["100%", "50%", "50%"],
                               pb: 55,
-                            }}
-                            onClick={(event) => {
-                              event.stopPropagation()
                             }}
                           >
                             <Heading
