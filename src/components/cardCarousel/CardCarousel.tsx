@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Text, Grid } from "theme-ui"
+import { Box, Heading, Text } from "theme-ui"
 import Slider from "react-slick"
 import { GatsbyImage } from "jam-cms"
 
@@ -51,9 +51,6 @@ const CardCarousel = (props) => {
     >
       <Box
         sx={{
-          ".slick-slider": {
-            px: 50,
-          },
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
             backgroundColor: "white",

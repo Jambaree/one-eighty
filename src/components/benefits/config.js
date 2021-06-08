@@ -18,6 +18,7 @@ const config = {
       id: "subheading",
       type: "text",
       label: "Subheading",
+      rows: 6,
     },
     {
       id: "cards",
@@ -38,6 +39,7 @@ const config = {
           id: "text",
           type: "text",
           label: "Text",
+          rows: 4,
         },
       ],
     },

@@ -84,7 +84,7 @@ const TestimonialSlider = (props) => {
               </svg>
             </IconButton>
             <Box>
-              {headline && (
+              {headline ? (
                 <Heading
                   children={headline}
                   sx={{
@@ -97,6 +97,8 @@ const TestimonialSlider = (props) => {
                     letterSpacing: "-0.33px",
                   }}
                 />
+              ) : (
+                <Box sx={{ height: 50 }} />
               )}
 
               {subheading && (
