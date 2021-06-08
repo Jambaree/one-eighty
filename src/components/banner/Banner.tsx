@@ -12,20 +12,32 @@ const Banner = (props) => {
     <Edges size="md">
       <Box
         sx={{
-          height: 585,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          px: 115,
         }}
       >
         {/* {image && <BackgroundImage image={image} />} */}
 
         {headline && (
-          <Heading as="h1" variant="styles.h1" children={headline} sx={{}} />
+          <Heading
+            as="h1"
+            variant="styles.h1"
+            children={headline}
+            sx={{ mt: 160, mb: 30, fontSize: "65px", lineHeight: "65px" }}
+          />
         )}
 
-        {text && <Text as="p" variant="introduction" children={text} />}
+        {text && (
+          <Text
+            as="p"
+            variant="introduction"
+            children={text}
+            sx={{ mb: 160, fontSize: "18px", lineHeight: "30px" }}
+          />
+        )}
       </Box>
     </Edges>
   )
