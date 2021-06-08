@@ -17,6 +17,7 @@ const config = {
       id: "text",
       type: "text",
       label: "Text",
+      rows: 4,
     },
   ],
 }
