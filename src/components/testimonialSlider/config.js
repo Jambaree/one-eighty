@@ -23,22 +23,6 @@ const config = {
       ],
     },
     {
-      id: "dots",
-      type: "select",
-      label: "Show Dots",
-      defaultValue: "Yes",
-      options: [
-        {
-          name: "Yes",
-          value: true,
-        },
-        {
-          name: "No",
-          value: false,
-        },
-      ],
-    },
-    {
       id: "headline",
       type: "text",
       label: "Headline",

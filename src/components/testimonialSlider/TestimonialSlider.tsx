@@ -8,11 +8,11 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
 const TestimonialSlider = (props) => {
-  const { backgroundcolor, headline, subheading, slide, dots } = props
+  const { backgroundcolor, headline, subheading, slide } = props
 
   const settings = {
     arrows: false,
-    dots: dots,
+    dots: true,
     infinite: true,
     autoplaySpeed: 8000,
     autoplay: true,
