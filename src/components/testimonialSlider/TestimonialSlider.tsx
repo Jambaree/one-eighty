@@ -8,11 +8,11 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
 const TestimonialSlider = (props) => {
-  const { backgroundcolor, headline, subheading, slide } = props
+  const { backgroundcolor, headline, subheading, slide, dots } = props
 
   const settings = {
     arrows: false,
-    dots: true,
+    dots: dots,
     infinite: true,
     autoplaySpeed: 8000,
     autoplay: true,
@@ -84,7 +84,7 @@ const TestimonialSlider = (props) => {
               </svg>
             </IconButton>
             <Box>
-              {headline && (
+              {headline ? (
                 <Heading
                   children={headline}
                   sx={{
@@ -97,6 +97,8 @@ const TestimonialSlider = (props) => {
                     letterSpacing: "-0.33px",
                   }}
                 />
+              ) : (
+                <Box sx={{ height: 50 }} />
               )}
 
               {subheading && (
