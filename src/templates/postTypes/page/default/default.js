@@ -17,6 +17,7 @@ import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
 import locations from "../../../../components/accordion/Accordion"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
+import banner from "../../../../components/banner/Banner"
 
 const blocks = {
   textimage,
@@ -32,6 +33,7 @@ const blocks = {
   locations,
   textimagepage,
   herovideo,
+  banner,
 }
 
 const Template = (props) => {
