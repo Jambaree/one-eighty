@@ -11,6 +11,7 @@ const config = {
       id: "subheading",
       type: "text",
       label: "Sub Heading",
+      rows: 3,
     },
     {
       id: "cards",
@@ -26,6 +27,7 @@ const config = {
           id: "text",
           type: "text",
           label: "Text",
+          rows: 6,
         },
         {
           id: "image",
@@ -36,6 +38,8 @@ const config = {
           id: "defaultimage",
           type: "image",
           label: "Default Image",
+          instructions:
+            "This will only be used if a main image is not uploaded",
         },
       ],
     },
