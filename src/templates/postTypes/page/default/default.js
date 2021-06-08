@@ -16,6 +16,7 @@ import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
 import locations from "../../../../components/accordion/Accordion"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
+import herovideo from "../../../../components/heroVideo/HeroVideo"
 
 const blocks = {
   textimage,
@@ -30,6 +31,7 @@ const blocks = {
   cardcarousel,
   locations,
   textimagepage,
+  herovideo,
 }
 
 const Template = (props) => {
