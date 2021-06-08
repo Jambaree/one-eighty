@@ -11,6 +11,7 @@ const config = {
       id: "subheading",
       type: "text",
       label: "Subheading",
+      rows: 3,
     },
     {
       id: "textimage",
