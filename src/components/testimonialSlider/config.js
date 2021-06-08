@@ -26,7 +26,7 @@ const config = {
       id: "dots",
       type: "select",
       label: "Show Dots",
-      defaultValue: null,
+      defaultValue: "Yes",
       options: [
         {
           name: "Yes",
