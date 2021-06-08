@@ -20,6 +20,10 @@ const config = {
           name: "Light Turquoise",
           value: "#A8E6E4",
         },
+        {
+          name: "Light Almond",
+          value: "#F5F4F1",
+        },
       ],
     },
     {
