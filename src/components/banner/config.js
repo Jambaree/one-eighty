@@ -1,6 +1,6 @@
 const config = {
   id: "banner",
-  label: "Banner",
+  label: "[WIP] Banner",
   fields: [
     {
       id: "image",
