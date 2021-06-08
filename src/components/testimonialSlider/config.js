@@ -4,14 +4,33 @@ const config = {
   fields: [
     {
       id: "backgroundcolor",
-      type: "color_picker",
+      type: "select",
       label: "Background Color",
-      defaultValue: "#ffffff", // optional
+      defaultValue: "White",
+      options: [
+        {
+          name: "White",
+          value: "#ffffff",
+        },
+        {
+          name: "Flax",
+          value: "#E5D282",
+        },
+        {
+          name: "Light Turquoise",
+          value: "#A8E6E4",
+        },
+        {
+          name: "Light Almond",
+          value: "#F5F4F1",
+        },
+      ],
     },
     {
       id: "headline",
       type: "text",
       label: "Headline",
+      defaultValue: "Please place the desired headline or title here",
     },
     {
       id: "subheading",
