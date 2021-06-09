@@ -92,7 +92,7 @@ const TestimonialSlider = (props) => {
                     mb: 24,
                     mr: [100, 50, 0],
                     mt: [0, 0, 60],
-                    pl: [0, 0, 24],
+                    pl: [0, 0, 40],
                     fontSize: "5",
                     letterSpacing: "-0.33px",
                   }}
@@ -110,7 +110,7 @@ const TestimonialSlider = (props) => {
                     display: "block",
                     mb: 64,
                     mr: [0, 50, 200],
-                    pl: [0, 0, 24],
+                    pl: [0, 0, 40],
                   }}
                 />
               )}
