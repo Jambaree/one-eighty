@@ -1,23 +1,29 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
 import { ChevronRight } from "mdi-material-ui"
-import { useStore } from "../../store"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
-// import Modal from "../Modal"
+import Modal from "../Modal"
 
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
+  const [modalState, setModal] = useState(false)
+  const [modalContent, setContent] = useState({
+    text: "",
+    image: "",
+    link: "",
+  })
 
-  const [
-    {
-      appState: { menu },
-      userState: { isLoggedIn, user },
-    },
-    dispatch,
-  ] = useStore()
+  const handleClick = (o, i) => {
+    setModal(true)
+    setContent({
+      text: o.modal.modaltext,
+      image: o.modal.modalimage,
+      link: o.modal.modallink,
+    })
+  }
 
   return (
     <Box sx={{ bg: "white", mt: 104, mb: 154, position: "relative" }}>
@@ -121,17 +127,7 @@ const Logos = (props) => {
                             bg: "black25",
                           },
                         }}
-                        onClick={() =>
-                          dispatch({
-                            type: "SET_MODAL",
-                            payload: {
-                              text: o.modal.modaltext,
-                              image: o.modal.modalimage,
-                              link: o.modal.modallink,
-                              props: props,
-                            },
-                          })
-                        }
+                        onClick={() => handleClick(o, i)}
                       >
                         <ChevronRight
                           style={{
@@ -148,6 +144,15 @@ const Logos = (props) => {
                 </Box>
               )
             })}
+          {modalState && (
+            <Modal
+              modalState={modalState}
+              setModal={setModal}
+              text={modalContent.text}
+              image={modalContent.image}
+              link={modalContent.link}
+            />
+          )}
         </Grid>
       </Edges>
     </Box>
