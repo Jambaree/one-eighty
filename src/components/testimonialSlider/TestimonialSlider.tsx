@@ -62,7 +62,7 @@ const TestimonialSlider = (props) => {
               display: "flex",
               justifyContent: "flex-start",
               flexDirection: ["column", "column", "row"],
-              pt: 160,
+              pt: 144,
             }}
           >
             <IconButton
@@ -98,7 +98,7 @@ const TestimonialSlider = (props) => {
                   }}
                 />
               ) : (
-                <Box sx={{ height: 50 }} />
+                <Box sx={{ height: 60 }} />
               )}
 
               {subheading && (
@@ -133,7 +133,7 @@ const TestimonialSlider = (props) => {
                             variant="styles.h3"
                             sx={{
                               display: "block",
-                              mb: 86,
+                              mb: 60,
                               fontSize: ["26px", "32px", "32px"],
                               lineHeight: ["39px", "46px", "46px"],
                             }}
