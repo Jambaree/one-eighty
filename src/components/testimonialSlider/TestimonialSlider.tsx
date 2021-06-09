@@ -121,7 +121,7 @@ const TestimonialSlider = (props) => {
                       <Box
                         key={i}
                         sx={{
-                          pl: [0, 0, 24],
+                          pl: [0, 0, 40],
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "flex-start",
