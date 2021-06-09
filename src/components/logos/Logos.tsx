@@ -10,6 +10,20 @@ import Modal from "../Modal"
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
   const [modalState, setModal] = useState(false)
+  const [modalContent, setContent] = useState({
+    text: "",
+    image: "",
+    link: "",
+  })
+
+  const handleClick = (o, i) => {
+    setModal(true)
+    setContent({
+      text: o.modal.modaltext,
+      image: o.modal.modalimage,
+      link: o.modal.modallink,
+    })
+  }
 
   return (
     <Box sx={{ bg: "white", mt: 104, mb: 154, position: "relative" }}>
@@ -113,7 +127,7 @@ const Logos = (props) => {
                             bg: "black25",
                           },
                         }}
-                        onClick={(i) => setModal(true)}
+                        onClick={() => handleClick(o, i)}
                       >
                         <ChevronRight
                           style={{
@@ -127,17 +141,18 @@ const Logos = (props) => {
                       </Box>
                     )}
                   </Box>
-                  <Modal
-                    key={i}
-                    modalState={modalState}
-                    setModal={setModal}
-                    text={o.modal.modaltext}
-                    image={o.modal.modalimage}
-                    link={o.modal.modallink}
-                  />
                 </Box>
               )
             })}
+          {modalState && (
+            <Modal
+              modalState={modalState}
+              setModal={setModal}
+              text={modalContent.text}
+              image={modalContent.image}
+              link={modalContent.link}
+            />
+          )}
         </Grid>
       </Edges>
     </Box>
