@@ -74,6 +74,8 @@ const TextImagePage = (props) => {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "left",
+            width: [800],
+            maxWidth: "100%",
           }}
         >
           {textimage &&
@@ -83,7 +85,6 @@ const TextImagePage = (props) => {
                   key={i}
                   sx={{
                     mt: ["unset", 48, 60],
-                    width: "80%",
                     minHeight: 278,
                     display: "flex",
                     flexDirection: ["column", "row", "row"],
@@ -130,7 +131,7 @@ const TextImagePage = (props) => {
                             fontSize: "22px",
                             letterSpacing: "-0.33px",
                             lineHeight: "32px",
-                            pl: [0, 24, 0],
+                            pl: [18, 24, 0],
                           }}
                         />
                       )}
@@ -142,7 +143,7 @@ const TextImagePage = (props) => {
                             color: "almondLight",
                             letterSpacing: "-0.23px",
                             lineHeight: "25px",
-                            pl: [0, 24, 0],
+                            px: [18, 24, 0],
                           }}
                         />
                       )}
