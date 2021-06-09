@@ -3,30 +3,19 @@ import ReactModal from "react-modal"
 import { Heading, Box, Close, Link } from "theme-ui"
 
 // import app components
-import { useStore } from "../store"
 import BackgroundImage from "./BackgroundImage"
 import Textarea from "./Textarea"
 
 ReactModal.setAppElement("#___gatsby")
 
 const Modal = (props) => {
-  const [
-    {
-      appState: { modal },
-    },
-    dispatch,
-  ] = useStore()
-
   const handleClose = () => {
-    dispatch({
-      type: "SET_MODAL",
-      payload: false,
-    })
+    props.setModal(false)
   }
 
   return (
     <ReactModal
-      isOpen={modal}
+      isOpen={props.modalState}
       onRequestClose={handleClose}
       style={{
         content: {
@@ -58,10 +47,10 @@ const Modal = (props) => {
         }}
       >
         <Box sx={{ width: [320, 450, 500], maxWidth: "100%" }}>
-          {modal?.headline && (
-            <Heading children={modal.headline} sx={{ mb: 24 }} />
+          {props.headline && (
+            <Heading children={props.modal.headline} sx={{ mb: 24 }} />
           )}
-          {modal?.text && (
+          {props.text && (
             <Box
               variant="text.introduction"
               sx={{
@@ -71,12 +60,12 @@ const Modal = (props) => {
                 width: ["100%", "100%", "90%"],
               }}
             >
-              <Textarea content={modal.text} />
+              <Textarea content={props.text} />
             </Box>
           )}
-          {modal?.link?.url && (
-            <Link href={modal.link.url} variant="links.hyperlink">
-              {modal.link.title} →
+          {props.link?.url && (
+            <Link href={props.link.url} variant="links.hyperlink">
+              {props.link.title} →
             </Link>
           )}
         </Box>
@@ -87,9 +76,9 @@ const Modal = (props) => {
             pb: [28, 28, 0],
           }}
         >
-          {modal?.image && (
+          {props.image && (
             <BackgroundImage
-              image={modal.image}
+              image={props.image}
               style={{
                 position: "relative",
                 textAlign: "right",
