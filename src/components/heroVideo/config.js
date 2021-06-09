@@ -1,6 +1,6 @@
 const config = {
   id: "herovideo",
-  label: "[WIP] Hero Video",
+  label: "Hero Video",
   fields: [
     {
       id: "headline",
