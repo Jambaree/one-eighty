@@ -12,8 +12,7 @@ const Banner = (props) => {
     <Box
       sx={{
         background:
-          backgroundimage &&
-          `url(${backgroundimage.url}) no-repeat fixed center`,
+          backgroundimage && `url(${backgroundimage.url}) no-repeat center`,
       }}
     >
       <Edges size="md">
@@ -25,7 +24,7 @@ const Banner = (props) => {
             alignItems: "center",
             textAlign: "center",
 
-            px: 146,
+            px: [0, 146, 146],
           }}
         >
           {headline && (
@@ -33,7 +32,12 @@ const Banner = (props) => {
               as="h1"
               variant="styles.h1"
               children={headline}
-              sx={{ mt: 140, mb: 32, fontSize: "65px", lineHeight: "65px" }}
+              sx={{
+                mt: [118, 138, 138],
+                mb: 32,
+                fontSize: "65px",
+                lineHeight: ["36px", "65px", "65px"],
+              }}
             />
           )}
 
@@ -42,7 +46,12 @@ const Banner = (props) => {
               as="p"
               variant="introduction"
               children={text}
-              sx={{ mb: 200, fontSize: "18px", lineHeight: "30px" }}
+              sx={{
+                mb: [240, 205, 205],
+                fontSize: "18px",
+                lineHeight: ["25px", "30px", "30px"],
+                px: [24, 0, 0],
+              }}
             />
           )}
         </Box>
