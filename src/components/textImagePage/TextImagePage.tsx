@@ -130,6 +130,7 @@ const TextImagePage = (props) => {
                             fontSize: "22px",
                             letterSpacing: "-0.33px",
                             lineHeight: "32px",
+                            pl: [0, 24, 0],
                           }}
                         />
                       )}
@@ -141,6 +142,7 @@ const TextImagePage = (props) => {
                             color: "almondLight",
                             letterSpacing: "-0.23px",
                             lineHeight: "25px",
+                            pl: [0, 24, 0],
                           }}
                         />
                       )}
