@@ -18,6 +18,11 @@ const config = {
       label: "Text",
       rows: 6,
     },
+    {
+      id: "link",
+      type: "link",
+      label: "Link",
+    },
   ],
 }
 

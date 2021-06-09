@@ -1,12 +1,13 @@
 import React from "react"
 import { Box, Heading, Text } from "theme-ui"
+import { Link } from "gatsby"
 
 // import app components
+import theme from "../../theme"
 import Edges from "../Edges"
-import BackgroundImage from "../BackgroundImage"
 
 const Banner = (props) => {
-  const { backgroundimage, headline, text } = props
+  const { backgroundimage, headline, text, link } = props
 
   return (
     <Box
@@ -23,8 +24,8 @@ const Banner = (props) => {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-
-            px: [0, 146, 146],
+            px: [0, 0, 45],
+            my: [96, 120, 157],
           }}
         >
           {headline && (
@@ -33,7 +34,6 @@ const Banner = (props) => {
               variant="styles.h1"
               children={headline}
               sx={{
-                mt: [118, 138, 138],
                 mb: 32,
                 fontSize: "65px",
                 lineHeight: ["36px", "65px", "65px"],
@@ -47,12 +47,27 @@ const Banner = (props) => {
               variant="introduction"
               children={text}
               sx={{
-                mb: [240, 205, 205],
                 fontSize: "18px",
                 lineHeight: ["25px", "30px", "30px"],
-                px: [24, 0, 0],
+                // px: [24, 0, 12],
+                mb: 50,
               }}
             />
+          )}
+
+          {link && (
+            <Box variant="links.hyperlink">
+              <Link
+                to={link.url}
+                style={{
+                  letterSpacing: "-0.23px",
+                  lineHeight: "25px",
+                  color: theme.colors.coral,
+                }}
+              >
+                {link.title} →
+              </Link>
+            </Box>
           )}
         </Box>
       </Edges>
