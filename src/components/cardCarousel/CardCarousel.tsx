@@ -66,16 +66,34 @@ const CardCarousel = (props) => {
             content: "'‹'",
           },
           ".slick-prev": {
-            transform: ["translateY(250px)", "translateY(250px)", "unset"],
             width: 42,
             height: 42,
-            left: ["35%", "42%", "-60px"],
+            left: -60,
+            "@media (max-width: 1200px)": {
+              transform: "translateY(250px)",
+              left: "45%",
+            },
+            "@media (max-width: 1000px)": {
+              left: "42%",
+            },
+            "@media (max-width: 660px)": {
+              left: "36%",
+            },
           },
           ".slick-next": {
-            transform: ["translateY(250px)", "translateY(250px)", "unset"],
             width: 42,
             height: 42,
-            right: ["35%", "42%", "-60px"],
+            right: -60,
+            "@media (max-width: 1200px)": {
+              transform: "translateY(250px)",
+              right: "45%",
+            },
+            "@media (max-width: 1000px)": {
+              right: "42%",
+            },
+            "@media (max-width: 660px)": {
+              right: "36%",
+            },
           },
         }}
       >
@@ -110,7 +128,11 @@ const CardCarousel = (props) => {
                   <Text
                     children={subheading}
                     variant="text.introduction"
-                    sx={{ pt: "8px", fontSize: "18px", lineHeight: "30px" }}
+                    sx={{
+                      pt: "8px",
+                      fontSize: "18px",
+                      lineHeight: ["25px", "30px", "30px"],
+                    }}
                   />
                 )}
               </Box>
