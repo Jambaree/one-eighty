@@ -136,7 +136,7 @@ const TestimonialSlider = (props) => {
                               mb: 60,
                               fontSize: ["26px", "32px", "32px"],
                               lineHeight: ["39px", "46px", "46px"],
-                              pr: [65, 85, 105],
+                              pr: [0, 85, 105],
                             }}
                           />
                         )}
