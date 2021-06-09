@@ -11,7 +11,7 @@ const Video = (props) => {
   return (
     <Box
       sx={{
-        paddingBottom: 160,
+        paddingBottom: videoalignment == "first" ? 150 : 160,
         paddingTop: 100,
         bg: "almondLight",
       }}
@@ -36,11 +36,19 @@ const Video = (props) => {
               <Heading
                 variant="styles.h1"
                 sx={{
-                  my: [12, 24, 24],
-                  fontSize: 12,
+                  m:
+                    videoalignment === "first"
+                      ? ["12px 0", "24px 0", "62px 0 22px 0"]
+                      : ["12px 0", "24px 0", "24px 0"],
+                  fontSize: videoalignment === "first" ? "46px" : 12,
                   pr: [100, 0, 0],
                   pb: 25,
-                  lineHeight: ["36px", "65px", "65px"],
+                  lineHeight:
+                    videoalignment === "first"
+                      ? ["36px", "54px", "54px"]
+                      : ["36px", "65px", "65px"],
+                  letterSpacing:
+                    videoalignment === "first" ? "-1.15px" : "-1.63px",
                 }}
               >
                 {headline}
@@ -53,7 +61,7 @@ const Video = (props) => {
                 sx={{
                   fontSize: "18px",
                   lineHeight: "30px",
-                  mb: 96,
+                  mb: videoalignment === "first" ? 0 : 90,
                   pr: [35, 0, 0],
                 }}
               >

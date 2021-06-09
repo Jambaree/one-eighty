@@ -62,7 +62,7 @@ const TestimonialSlider = (props) => {
               display: "flex",
               justifyContent: "flex-start",
               flexDirection: ["column", "column", "row"],
-              pt: 160,
+              pt: 144,
             }}
           >
             <IconButton
@@ -92,13 +92,13 @@ const TestimonialSlider = (props) => {
                     mb: 24,
                     mr: [100, 50, 0],
                     mt: [0, 0, 60],
-                    pl: [0, 0, 24],
+                    pl: [0, 0, 40],
                     fontSize: "5",
                     letterSpacing: "-0.33px",
                   }}
                 />
               ) : (
-                <Box sx={{ height: 50 }} />
+                <Box sx={{ height: [0, 0, 60], width: [0, 0, 892] }} />
               )}
 
               {subheading && (
@@ -110,7 +110,7 @@ const TestimonialSlider = (props) => {
                     display: "block",
                     mb: 64,
                     mr: [0, 50, 200],
-                    pl: [0, 0, 24],
+                    pl: [0, 0, 40],
                   }}
                 />
               )}
@@ -121,7 +121,7 @@ const TestimonialSlider = (props) => {
                       <Box
                         key={i}
                         sx={{
-                          pl: [0, 0, 24],
+                          pl: [0, 0, 40],
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "flex-start",
@@ -133,9 +133,10 @@ const TestimonialSlider = (props) => {
                             variant="styles.h3"
                             sx={{
                               display: "block",
-                              mb: 86,
+                              mb: 60,
                               fontSize: ["26px", "32px", "32px"],
                               lineHeight: ["39px", "46px", "46px"],
+                              pr: [0, 85, 105],
                             }}
                           />
                         )}

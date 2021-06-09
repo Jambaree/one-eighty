@@ -39,7 +39,8 @@ const Modal = (props) => {
           borderRadius: 6,
           display: "flex",
           zIndex: 5,
-          maxWidth: ["100%", "85%", "75%"],
+          width: [320, 500, 700],
+          maxWidth: "100%",
           padding: 0,
         },
         overlay: {
@@ -56,7 +57,7 @@ const Modal = (props) => {
           p: ["24px 0 24px 24px", "24px 0 24px 24px", "48px 0 48px 48px"],
         }}
       >
-        <Box sx={{ width: ["90%", "85%", "95%"] }}>
+        <Box sx={{ width: [320, 450, 500], maxWidth: "100%" }}>
           {modal?.headline && (
             <Heading children={modal.headline} sx={{ mb: 24 }} />
           )}
@@ -67,7 +68,7 @@ const Modal = (props) => {
                 mb: 30,
                 letterSpacing: "-.23px",
                 lineHeight: "25px",
-                width: ["100%", "100%", "70%"],
+                width: ["100%", "100%", "90%"],
               }}
             >
               <Textarea content={modal.text} />
@@ -83,6 +84,7 @@ const Modal = (props) => {
           sx={{
             width: 312,
             maxWidth: "100%",
+            pb: [28, 28, 0],
           }}
         >
           {modal?.image && (
