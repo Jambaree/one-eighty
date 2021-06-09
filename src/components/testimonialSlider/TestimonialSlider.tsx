@@ -98,7 +98,7 @@ const TestimonialSlider = (props) => {
                   }}
                 />
               ) : (
-                <Box sx={{ height: 60 }} />
+                <Box sx={{ height: [0, 0, 60], width: [0, 0, 892] }} />
               )}
 
               {subheading && (
@@ -136,6 +136,7 @@ const TestimonialSlider = (props) => {
                               mb: 60,
                               fontSize: ["26px", "32px", "32px"],
                               lineHeight: ["39px", "46px", "46px"],
+                              pr: [65, 85, 105],
                             }}
                           />
                         )}
