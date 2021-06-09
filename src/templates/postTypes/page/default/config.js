@@ -12,6 +12,7 @@ import cardcarousel from "../../../../components/cardCarousel/config"
 import accordion from "../../../../components/accordion/config"
 import textimagepage from "../../../../components/textImagePage/config"
 import herovideo from "../../../../components/heroVideo/config"
+import banner from "../../../../components/banner/config"
 
 const config = {
   id: "default",
@@ -45,6 +46,7 @@ const config = {
             accordion,
             textimagepage,
             herovideo,
+            banner,
           }),
         },
       ],
