@@ -340,6 +340,19 @@ export const CollectionQuery = graphql`
                   videoalignment
                   videolink
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Banner {
+                  fieldGroupName
+                  headline
+                  text
+                  backgroundimage {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 1920, layout: FULL_WIDTH)
+                      }
+                    }
+                  }
+                }
               }
             }
             fieldGroupName
