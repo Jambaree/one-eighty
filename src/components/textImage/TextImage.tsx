@@ -8,12 +8,13 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const TextImage = (props) => {
-  const { image, alignment, headline, text, link } = props
+  const { backgroundcolor, image, alignment, headline, text, link } = props
 
   return (
     <>
       <Box
         sx={{
+          backgroundColor: backgroundcolor,
           position: "relative",
           display: "flex",
           flexWrap: "wrap-reverse",
