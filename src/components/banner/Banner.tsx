@@ -14,6 +14,7 @@ const Banner = (props) => {
       sx={{
         background:
           backgroundimage && `url(${backgroundimage.url}) no-repeat center`,
+        backgroundSize: "cover",
       }}
     >
       <Edges size="md">
@@ -25,7 +26,7 @@ const Banner = (props) => {
             alignItems: "center",
             textAlign: "center",
             px: [0, 0, 45],
-            my: [96, 120, 157],
+            py: [96, 120, 157],
           }}
         >
           {headline && (
@@ -49,7 +50,6 @@ const Banner = (props) => {
               sx={{
                 fontSize: "18px",
                 lineHeight: ["25px", "30px", "30px"],
-                // px: [24, 0, 12],
                 mb: 50,
               }}
             />
