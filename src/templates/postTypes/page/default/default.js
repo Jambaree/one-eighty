@@ -356,6 +356,15 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Addresses {
+                  fieldGroupName
+                  columns
+                  backgroundcolor
+                  address {
+                    fieldGroupName
+                    contactinfo
+                  }
+                }
               }
             }
             fieldGroupName
