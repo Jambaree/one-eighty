@@ -1,6 +1,5 @@
-import React, { useState } from "react"
-import { Box, Heading, IconButton, Flex, Text, Link } from "theme-ui"
-import { ChevronUp, ConsoleLine } from "mdi-material-ui"
+import React from "react"
+import { Box, Flex } from "theme-ui"
 
 // import app components
 import Edges from "../Edges"
@@ -9,7 +8,6 @@ import theme from "../../theme"
 
 const Addresses = (props) => {
   const { columns, backgroundcolor, address } = props
-  console.log(props)
 
   return (
     <Box sx={{ bg: backgroundcolor, py: 80 }}>
@@ -39,21 +37,19 @@ const Addresses = (props) => {
                     justifyContent: "center",
                   }}
                 >
-                  <TextArea
-                    content={o.contactinfo}
-                    style={{
-                      fontFamily: theme.fonts.body,
-                      fontSize: theme.fontSizes[3],
-                      fontWeight: theme.fontWeights.light,
-                      lineHeight: "25px",
-                      letterSpacing: "-0.23px",
-                      marginTop: "unset",
-
-                      p: {
-                        color: "red",
-                      },
-                    }}
-                  />
+                  <Box sx={{ p: { lineHeight: 1.6 } }}>
+                    <TextArea
+                      content={o.contactinfo}
+                      style={{
+                        fontFamily: theme.fonts.body,
+                        fontSize: theme.fontSizes[3],
+                        fontWeight: theme.fontWeights.light,
+                        lineHeight: "25px",
+                        letterSpacing: "-0.23px",
+                        marginTop: "unset",
+                      }}
+                    />
+                  </Box>
                 </Box>
               )
             })}
