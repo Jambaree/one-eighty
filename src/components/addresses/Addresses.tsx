@@ -44,6 +44,7 @@ const Addresses = (props) => {
                     style={{
                       fontFamily: theme.fonts.body,
                       fontSize: theme.fontSizes[3],
+                      fontWeight: theme.fontWeights.light,
                       lineHeight: "25px",
                       letterSpacing: "-0.23px",
                       marginTop: "unset",

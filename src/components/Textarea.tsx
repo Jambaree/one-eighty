@@ -99,7 +99,7 @@ const Container = styled.div`
     }
   }
 
-  p {
+  /* p {
     &:first-child {
       margin-top: 0;
     }
@@ -111,7 +111,7 @@ const Container = styled.div`
     &:last-child {
       margin-bottom: 0;
     }
-  }
+  } */
 
   a {
     text-decoration: underline;
