@@ -5,6 +5,7 @@ import { ChevronUp, ConsoleLine } from "mdi-material-ui"
 // import app components
 import Edges from "../Edges"
 import TextArea from "../TextArea"
+import theme from "../../theme"
 
 const Addresses = (props) => {
   const { columns, backgroundcolor, address } = props
@@ -38,7 +39,20 @@ const Addresses = (props) => {
                     justifyContent: "center",
                   }}
                 >
-                  <TextArea content={o.contactinfo} />
+                  <TextArea
+                    content={o.contactinfo}
+                    style={{
+                      fontFamily: theme.fonts.body,
+                      fontSize: theme.fontSizes[3],
+                      lineHeight: "25px",
+                      letterSpacing: "-0.23px",
+                      marginTop: "unset",
+
+                      p: {
+                        color: "red",
+                      },
+                    }}
+                  />
                 </Box>
               )
             })}
