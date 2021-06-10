@@ -117,7 +117,7 @@ const Container = styled.div`
     text-decoration: underline;
     font-style: italic;
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.coral};
   }
 
   figcaption {

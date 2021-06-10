@@ -34,6 +34,8 @@ const Addresses = (props) => {
                         : ["100%", "50%", "24%"],
                     pb: 55,
                     mr: columns === 3 ? "30px" : columns === 4 ? "1%" : 0,
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
                   <TextArea content={o.contactinfo} />
