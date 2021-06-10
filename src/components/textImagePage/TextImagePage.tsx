@@ -74,7 +74,7 @@ const TextImagePage = (props) => {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "left",
-            width: [800],
+            width: 750,
             maxWidth: "100%",
           }}
         >
@@ -99,6 +99,8 @@ const TextImagePage = (props) => {
                       position: ["relative", null, "absolute"],
                       height: 278,
                       width: ["100%", "100%", "50%"],
+                      mb: [28, 0, 0],
+                      mt: [48, 0, 0],
                     }}
                   >
                     {o.image && (
@@ -108,12 +110,12 @@ const TextImagePage = (props) => {
                       />
                     )}
                   </Box>
-                  <Box sx={{ width: "100%", pt: 28, pb: 66 }}>
+                  <Box sx={{ width: "100%" }}>
                     <Box
                       sx={{
                         ml: o.alignment === "left" ? "auto" : "unset",
                         mr: o.alignment === "right" ? "auto" : "unset",
-                        width: ["100%", null, "calc(42% - 25px)"],
+                        width: ["100%", null, "50%"],
                         height: "100%",
                         my: "auto",
                         display: "flex",
