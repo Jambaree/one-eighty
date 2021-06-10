@@ -57,7 +57,6 @@ const TextImagePage = (props) => {
             children={subheading}
             sx={{
               color: "almondLight",
-              mb: [42, 68, 68],
               pr: [18, "auto", 0],
               pl: [35, "auto", 0],
               fontSize: "18px",
@@ -74,7 +73,7 @@ const TextImagePage = (props) => {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "left",
-            width: 750,
+            width: 700,
             maxWidth: "100%",
           }}
         >
