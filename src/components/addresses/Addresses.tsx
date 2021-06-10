@@ -23,21 +23,26 @@ const Addresses = (props) => {
                 <Box
                   key={i}
                   sx={{
-                    width:
-                      columns === 1
-                        ? "100%"
-                        : columns === 2
-                        ? ["100%", "50%", "50%"]
-                        : columns === 3
-                        ? ["100%", "30%", "30%"]
-                        : ["100%", "50%", "24%"],
+                    width: "100%",
+                    "@media (min-width: 600px)": {
+                      width: columns === 1 ? "100%" : "50%",
+                    },
+                    "@media (min-width: 1100px)": {
+                      width:
+                        columns === 1
+                          ? "100%"
+                          : columns === 2
+                          ? "50%"
+                          : columns === 3
+                          ? "30%"
+                          : "24%",
+                    },
                     pb: 55,
-                    mr: columns === 3 ? "30px" : columns === 4 ? "1%" : 0,
                     display: "flex",
                     justifyContent: "center",
                   }}
                 >
-                  <Box sx={{ p: { lineHeight: 1.6 } }}>
+                  <Box sx={{ width: "100%", p: { lineHeight: 1.6 } }}>
                     <TextArea
                       content={o.contactinfo}
                       style={{
