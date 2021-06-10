@@ -18,6 +18,7 @@ import locations from "../../../../components/accordion/Accordion"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
+import addresses from "../../../../components/addresses/Addresses"
 
 const blocks = {
   textimage,
@@ -34,6 +35,7 @@ const blocks = {
   textimagepage,
   herovideo,
   banner,
+  addresses,
 }
 
 const Template = (props) => {

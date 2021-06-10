@@ -1,0 +1,49 @@
+import React, { useState } from "react"
+import { Box, Heading, IconButton, Flex, Text, Link } from "theme-ui"
+import { ChevronUp, ConsoleLine } from "mdi-material-ui"
+
+// import app components
+import Edges from "../Edges"
+import TextArea from "../TextArea"
+
+const Addresses = (props) => {
+  const { columns, backgroundcolor, address } = props
+  console.log(props)
+
+  return (
+    <Box sx={{ bg: backgroundcolor, py: 80 }}>
+      <Edges size="md">
+        <Flex
+          sx={{
+            flexWrap: "wrap",
+          }}
+        >
+          {address &&
+            address.map((o, i) => {
+              return (
+                <Box
+                  key={i}
+                  sx={{
+                    width:
+                      columns === 1
+                        ? "100%"
+                        : columns === 2
+                        ? ["100%", "50%", "50%"]
+                        : columns === 3
+                        ? ["100%", "30%", "30%"]
+                        : ["100%", "50%", "24%"],
+                    pb: 55,
+                    mr: columns === 3 ? "30px" : columns === 4 ? "1%" : 0,
+                  }}
+                >
+                  <TextArea content={o.contactinfo} />
+                </Box>
+              )
+            })}
+        </Flex>
+      </Edges>
+    </Box>
+  )
+}
+
+export default Addresses

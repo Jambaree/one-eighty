@@ -13,6 +13,7 @@ import accordion from "../../../../components/accordion/config"
 import textimagepage from "../../../../components/textImagePage/config"
 import herovideo from "../../../../components/heroVideo/config"
 import banner from "../../../../components/banner/config"
+import addresses from "../../../../components/addresses/config"
 
 const config = {
   id: "default",
@@ -47,6 +48,7 @@ const config = {
             textimagepage,
             herovideo,
             banner,
+            addresses,
           }),
         },
       ],
