@@ -98,7 +98,18 @@ const TestimonialSlider = (props) => {
                   }}
                 />
               ) : (
-                <Box sx={{ height: [0, 0, 60], width: [0, 0, 892] }} />
+                <Box
+                  sx={{
+                    height: [0, 0, 60],
+                    width: "300px",
+                    "@media (min-width: 600px)": {
+                      width: "400px",
+                    },
+                    "@media (min-width: 1100px)": {
+                      width: "892px",
+                    },
+                  }}
+                />
               )}
 
               {subheading && (
