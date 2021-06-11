@@ -8,7 +8,7 @@ import TextEditor from "../../../../components/textEditor/TextEditor"
 const Template = (props) => {
   const {
     data: {
-      page: { title, date, acf, categories, seo },
+      wpPost: { title, date, acf, categories, seo },
     },
   } = props
 
@@ -35,7 +35,7 @@ const Template = (props) => {
 
 export const Query = graphql`
   query PostDefault($id: String!) {
-    page: wpPost(id: { eq: $id }) {
+    wpPost(id: { eq: $id }) {
       title
       categories {
         nodes {

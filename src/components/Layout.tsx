@@ -26,7 +26,11 @@ const Layout = (props) => {
           <meta name="description" />
         </Helmet>
 
-        <Seo siteTitle={"SnapAV"} href={uri} seo={data?.page?.seo} />
+        <Seo
+          siteTitle={"SnapAV"}
+          href={uri}
+          seo={data?.wpPage?.seo || data?.wpPost?.seo}
+        />
 
         <PageWrapper {...props}>{props?.children}</PageWrapper>
       </StoreProvider>

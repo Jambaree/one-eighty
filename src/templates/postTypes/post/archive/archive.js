@@ -22,7 +22,7 @@ import theme from "../../../../theme"
 const Template = (props) => {
   const {
     data: {
-      page: {
+      wpPage: {
         seo,
         template: {
           acf: {
@@ -470,7 +470,7 @@ const Template = (props) => {
 
 export const Query = graphql`
   query PostArchive($id: String!) {
-    page: wpPage(id: { eq: $id }) {
+    wpPage(id: { eq: $id }) {
       id
       title
       seo {
