@@ -10,7 +10,7 @@ const People = (props) => {
   const { columns, backgroundcolor, headline, subheading, cards } = props
 
   return (
-    <Box sx={{ bg: backgroundcolor, pt: 100, pb: 150 }}>
+    <Box sx={{ bg: backgroundcolor, pt: 100, pb: 164 }}>
       <Edges size="md">
         <Box
           sx={{
@@ -20,17 +20,18 @@ const People = (props) => {
             textAlign: "center",
             width: ["100%", "100%", 730],
             m: "0 auto",
-            mb: [72, 72, 96],
           }}
         >
           {headline && (
             <Heading
               children={headline}
-              variant="styles.h3"
+              variant="styles.h1"
               sx={{
                 m: "0 auto",
-                mb: 36,
+                mb: 78,
                 width: ["80%", "100%", "100%"],
+                lineHeight: "54px",
+                letterSpacing: "-1.15px",
               }}
             />
           )}
@@ -64,7 +65,7 @@ const People = (props) => {
                       position: "relative",
                       width: 140,
                       height: 140,
-                      mb: 25,
+                      mb: 21,
                     }}
                   >
                     {o.avatar &&
@@ -90,16 +91,28 @@ const People = (props) => {
                       mx: [40, 20, "unset"],
                     }}
                   >
+                    {o.name && (
+                      <Heading
+                        children={o.name}
+                        variant="styles.h3"
+                        sx={{
+                          fontSize: "4",
+                          width: ["100%"],
+                          lineHeight: "26px",
+                          letterSpacing: "-0.18px",
+                        }}
+                      />
+                    )}
                     {o.position && (
                       <Heading
                         children={o.position}
-                        variant="styles.h3"
+                        variant="text.introduction"
                         sx={{
                           mb: 12,
-                          mt: 36,
-                          fontSize: "5",
+                          fontSize: "3",
                           width: ["100%"],
-                          lineHeight: "28px",
+                          lineHeight: "25px",
+                          letterSpacing: "-0.23px",
                         }}
                       />
                     )}

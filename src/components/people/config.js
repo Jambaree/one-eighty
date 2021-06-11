@@ -47,6 +47,11 @@ const config = {
           label: "Avatar",
         },
         {
+          id: "name",
+          type: "text",
+          label: "Name",
+        },
+        {
           id: "position",
           type: "text",
           label: "Position",
