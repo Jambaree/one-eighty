@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Box, Grid, Heading } from "theme-ui"
+import { Box, Grid, Flex, Heading } from "theme-ui"
 
 // import app components
 import Edges from "../Edges"
@@ -17,47 +17,47 @@ const Tabs = (props) => {
       }}
     >
       <Edges size="md">
-        <Grid columns={2} gap={2}>
-          {tabs &&
-            tabs.map((o, i) => {
-              return (
-                <>
-                  {o.heading && (
-                    <Box
-                      onClick={() => {
-                        setActiveIndex(i === activeIndex ? activeIndex : i)
-                      }}
-                      sx={{
-                        width: "50%",
-                        gridColumn: 1,
-                      }}
-                    >
-                      <Heading
-                        variant="text.introduction"
-                        children={o.heading}
-                        sx={{
-                          cursor: "pointer",
-                          width: "fit-content",
-                          color: activeIndex === i ? "coral" : "charcoal",
-                          fontWeight: activeIndex === i ? "400" : "300",
-                          "&:hover": {
-                            color: "coral",
-                          },
-                          mb: "20px",
+        <Flex>
+          <Flex sx={{ flexDirection: "column", width: "50%" }}>
+            {tabs &&
+              tabs.map((o, i) => {
+                return (
+                  <Box key={i}>
+                    {o.heading && (
+                      <Box
+                        onClick={() => {
+                          setActiveIndex(i === activeIndex ? activeIndex : i)
                         }}
-                      />
-                    </Box>
-                  )}
-                </>
-              )
-            })}
+                        sx={{
+                          width: "50%",
+                          gridColumn: 1,
+                        }}
+                      >
+                        <Heading
+                          variant="text.introduction"
+                          children={o.heading}
+                          sx={{
+                            cursor: "pointer",
+                            width: "fit-content",
+                            color: activeIndex === i ? "coral" : "charcoal",
+                            fontWeight: activeIndex === i ? "400" : "300",
+                            "&:hover": {
+                              color: "coral",
+                            },
+                            mb: "20px",
+                          }}
+                        />
+                      </Box>
+                    )}
+                  </Box>
+                )
+              })}
+          </Flex>
           {tabs[activeIndex].text && (
             <Box
               variant="text.introduction"
               sx={{
                 width: "50%",
-                gridRow: 1,
-                gridColumn: 2,
               }}
             >
               <Heading
@@ -74,7 +74,7 @@ const Tabs = (props) => {
               <Textarea content={tabs[activeIndex].text} />
             </Box>
           )}
-        </Grid>
+        </Flex>
       </Edges>
     </Box>
   )
