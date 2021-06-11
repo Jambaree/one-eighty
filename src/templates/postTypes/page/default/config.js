@@ -14,6 +14,7 @@ import textimagepage from "../../../../components/textImagePage/config"
 import herovideo from "../../../../components/heroVideo/config"
 import banner from "../../../../components/banner/config"
 import addresses from "../../../../components/addresses/config"
+import tabs from "../../../../components/tabs/config"
 
 const config = {
   id: "default",
@@ -49,6 +50,7 @@ const config = {
             herovideo,
             banner,
             addresses,
+            tabs,
           }),
         },
       ],

@@ -19,6 +19,7 @@ import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
 import addresses from "../../../../components/addresses/Addresses"
+import tabs from "../../../../components/tabs/Tabs"
 
 const blocks = {
   textimage,
@@ -36,6 +37,7 @@ const blocks = {
   herovideo,
   banner,
   addresses,
+  tabs,
 }
 
 const Template = (props) => {
