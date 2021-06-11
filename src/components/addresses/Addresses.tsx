@@ -3,7 +3,7 @@ import { Box, Flex } from "theme-ui"
 
 // import app components
 import Edges from "../Edges"
-import TextArea from "../TextArea"
+import TextArea from "../Textarea"
 import theme from "../../theme"
 
 const Addresses = (props) => {
