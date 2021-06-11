@@ -3,6 +3,14 @@ const config = {
   label: "[WIP] People",
   fields: [
     {
+      id: "displayamount",
+      type: "number",
+      label: "Show Initially",
+      min: 1, // optional
+      max: 16, // optional
+      instructions: "How many cards would you like to display on initial load?",
+    },
+    {
       id: "columns",
       type: "number",
       label: "Columns",

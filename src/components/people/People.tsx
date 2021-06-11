@@ -7,7 +7,14 @@ import BackgroundImage from "../BackgroundImage"
 import Button from "../Button"
 
 const People = (props) => {
-  const { columns, backgroundcolor, headline, subheading, cards } = props
+  const {
+    displayamount,
+    columns,
+    backgroundcolor,
+    headline,
+    subheading,
+    cards,
+  } = props
 
   return (
     <Box sx={{ bg: backgroundcolor, pt: 100, pb: 164 }}>
