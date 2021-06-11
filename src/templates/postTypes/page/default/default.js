@@ -39,7 +39,7 @@ const blocks = {
 const Template = (props) => {
   const {
     data: {
-      wpPage: {
+      page: {
         template: { acf },
       },
     },
@@ -68,10 +68,17 @@ const Template = (props) => {
 
 export const CollectionQuery = graphql`
   query DefaultPage($id: String!) {
-    wpPage(id: { eq: $id }) {
+    page: wpPage(id: { eq: $id }) {
       title
       slug
       uri
+      seo {
+        title
+        metaDesc
+        opengraphImage {
+          sourceUrl
+        }
+      }
       template {
         ... on WpDefaultTemplate {
           templateName
