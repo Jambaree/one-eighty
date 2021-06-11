@@ -13,12 +13,18 @@ const Tabs = (props) => {
     <Box
       sx={{
         bg: "almondLight",
-        p: "120px 138px",
+        p: ["120px 0", "120px 64px", "120px 138px"],
       }}
     >
       <Edges size="md">
-        <Flex>
-          <Flex sx={{ flexDirection: "column", width: "50%" }}>
+        <Flex sx={{ flexDirection: ["column", "row", "row"] }}>
+          <Flex
+            sx={{
+              flexDirection: "column",
+              width: ["100%", "40%", "40%"],
+              pb: ["24px", 0, 0],
+            }}
+          >
             {tabs &&
               tabs.map((o, i) => {
                 return (
@@ -27,10 +33,6 @@ const Tabs = (props) => {
                       <Box
                         onClick={() => {
                           setActiveIndex(i === activeIndex ? activeIndex : i)
-                        }}
-                        sx={{
-                          width: "50%",
-                          gridColumn: 1,
                         }}
                       >
                         <Heading
@@ -57,7 +59,8 @@ const Tabs = (props) => {
             <Box
               variant="text.introduction"
               sx={{
-                width: "50%",
+                width: ["100%", "100%", "60%"],
+                mt: -24,
               }}
             >
               <Heading
