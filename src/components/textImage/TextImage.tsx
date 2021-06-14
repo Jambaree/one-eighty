@@ -58,7 +58,7 @@ const TextImage = (props) => {
           >
             {headline && (
               <Heading
-                children={headline}
+                children={Parser(headline)}
                 variant="styles.h2"
                 sx={{ pb: 36 }}
               />
@@ -74,7 +74,7 @@ const TextImage = (props) => {
             )}
             {link?.url && (
               <Button variant="primary" to={link.url}>
-                {link.title}
+                {Parser(link.title)}
               </Button>
             )}
           </Box>
