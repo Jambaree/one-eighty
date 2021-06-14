@@ -114,7 +114,7 @@ const Logos = (props) => {
                       <Box
                         sx={{
                           position: "absolute",
-                          bottom: "-30px",
+                          bottom: "-48px",
                           cursor: "pointer",
                           height: "30px",
                           borderRadius: "50%",
