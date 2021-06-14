@@ -1,5 +1,6 @@
 import React from "react"
-import { Box, Grid, Heading, Text, Link, jsx } from "theme-ui"
+import { Box, Grid, Heading, Text } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -25,7 +26,7 @@ const Benefits = (props) => {
         >
           {headline && (
             <Heading
-              children={headline}
+              children={Parser(headline)}
               variant="styles.h2"
               sx={{
                 m: "0 auto",
@@ -36,7 +37,7 @@ const Benefits = (props) => {
           )}
           {subheading && (
             <Text
-              children={subheading}
+              children={Parser(subheading)}
               variant="text.introduction"
               sx={{ mb: [36, 36, 60], zIndex: 1 }}
             />
@@ -75,7 +76,7 @@ const Benefits = (props) => {
                   >
                     {o.headline && (
                       <Heading
-                        children={o.headline}
+                        children={Parser(o.headline)}
                         variant="styles.h3"
                         sx={{
                           mb: 12,
@@ -87,7 +88,10 @@ const Benefits = (props) => {
                       />
                     )}
                     {o.text && (
-                      <Text children={o.text} variant="text.paragraph" />
+                      <Text
+                        children={Parser(o.text)}
+                        variant="text.paragraph"
+                      />
                     )}
                   </Box>
                 </Box>
@@ -103,7 +107,7 @@ const Benefits = (props) => {
               mt: 80,
             }}
           >
-            <Button to={link.url}>{link.title}</Button>
+            <Button to={link.url}>{Parser(link.title)}</Button>
           </Box>
         )}
       </Edges>
