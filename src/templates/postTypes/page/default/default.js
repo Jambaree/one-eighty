@@ -374,6 +374,14 @@ export const CollectionQuery = graphql`
                     contactinfo
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tabs {
+                  fieldGroupName
+                  tabs {
+                    fieldGroupName
+                    heading
+                    text
+                  }
+                }
               }
             }
             fieldGroupName
