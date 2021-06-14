@@ -13,7 +13,7 @@ const Tabs = (props) => {
     <Box
       sx={{
         bg: "almondLight",
-        p: ["120px 0", "120px 64px", "120px 138px"],
+        p: ["60px 0 120px 0", "120px 64px", "120px 138px"],
       }}
     >
       <Edges size="md">
@@ -55,7 +55,7 @@ const Tabs = (props) => {
                 )
               })}
           </Flex>
-          {tabs[activeIndex].text && (
+          {tabs[activeIndex]?.text && (
             <Box
               variant="text.introduction"
               sx={{
@@ -72,6 +72,7 @@ const Tabs = (props) => {
                   letterSpacing: "-0.33px",
                   lineHeight: "32px",
                   mb: 24,
+                  mt: [40, 0, 0],
                 }}
               />
               <Textarea content={tabs[activeIndex].text} />
