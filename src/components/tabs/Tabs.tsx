@@ -23,6 +23,7 @@ const Tabs = (props) => {
               flexDirection: "column",
               width: ["100%", "40%", "40%"],
               pb: ["24px", 0, 0],
+              pr: "24px",
             }}
           >
             {tabs &&
