@@ -113,10 +113,11 @@ const Logos = (props) => {
                     {o.modal && (
                       <Box
                         sx={{
+                          position: "absolute",
+                          bottom: "-30px",
                           cursor: "pointer",
                           height: "30px",
                           borderRadius: "50%",
-                          // bg: "coral",
                           transition: "box-shadow 0.2s",
                           "&:hover": {
                             boxShadow: "0px 5px 10px #00000029",
