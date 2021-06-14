@@ -5,6 +5,7 @@ import { Box, Grid, Heading, Text, Link } from "theme-ui"
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Button from "../Button"
+import theme from "../../theme"
 
 const People = (props) => {
   const {
@@ -75,8 +76,8 @@ const People = (props) => {
                       mb: 21,
                     }}
                   >
-                    {o.avatar &&
-                      (o.avatar?.svg ? (
+                    {o.avatar ? (
+                      o.avatar?.svg ? (
                         Parser(o.avatar.svg)
                       ) : (
                         <BackgroundImage
@@ -86,7 +87,17 @@ const People = (props) => {
                             borderRadius: "50%",
                           }}
                         />
-                      ))}
+                      )
+                    ) : (
+                      <Box
+                        sx={{
+                          borderRadius: "50%",
+                          backgroundColor: "black25",
+                          width: 140,
+                          height: 140,
+                        }}
+                      />
+                    )}
                   </Box>
                   <Box
                     sx={{
