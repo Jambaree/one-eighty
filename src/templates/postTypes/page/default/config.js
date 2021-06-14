@@ -15,6 +15,7 @@ import herovideo from "../../../../components/heroVideo/config"
 import banner from "../../../../components/banner/config"
 import addresses from "../../../../components/addresses/config"
 import people from "../../../../components/people/config"
+import tabs from "../../../../components/tabs/config"
 
 const config = {
   id: "default",
@@ -51,6 +52,7 @@ const config = {
             banner,
             addresses,
             people,
+            tabs,
           }),
         },
       ],
