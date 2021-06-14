@@ -71,11 +71,11 @@ const Logos = (props) => {
             />
           )}
         </Box>
-        <Grid gap={5} columns={[1, 2, columns]}>
+        <Grid gap={"0 64px"} columns={[1, 2, columns]}>
           {cards &&
             cards.map((o, i) => {
               return (
-                <Box key={i}>
+                <Box key={i} sx={{ position: "relative" }}>
                   <Box
                     sx={{
                       mt: [80, 100, 100],
