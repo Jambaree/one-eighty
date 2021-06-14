@@ -143,22 +143,24 @@ const People = (props) => {
               )
             })}
         </Grid>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mt: 80,
-          }}
-        >
-          <Button
-            onClick={() => {
-              setVisible(visible + initialvalue)
+        {cards.length > visible && cards.length > initialvalue && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              mt: 80,
             }}
           >
-            See More
-          </Button>
-        </Box>
+            <Button
+              onClick={() => {
+                setVisible(visible + initialvalue)
+              }}
+            >
+              See More
+            </Button>
+          </Box>
+        )}
       </Edges>
     </Box>
   )
