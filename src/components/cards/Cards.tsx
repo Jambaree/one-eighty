@@ -1,6 +1,6 @@
 import React from "react"
-import { Box, Grid, Heading, Text, Link, jsx } from "theme-ui"
-// import { Link } from "gatsby"
+import { Box, Grid, Heading, Text, Link } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -46,7 +46,7 @@ const Cards = (props) => {
         >
           {headline && (
             <Heading
-              children={headline}
+              children={Parser(headline)}
               variant="styles.h2"
               sx={{
                 mb: [41, 24, 24],
@@ -57,7 +57,7 @@ const Cards = (props) => {
           )}
           {subheading && (
             <Text
-              children={subheading}
+              children={Parser(subheading)}
               variant="text.introduction"
               sx={{
                 zIndex: 1,
@@ -106,7 +106,7 @@ const Cards = (props) => {
                   >
                     {o.headline && (
                       <Heading
-                        children={o.headline}
+                        children={Parser(o.headline)}
                         variant="styles.h3"
                         sx={{
                           mb: 12,
@@ -115,13 +115,16 @@ const Cards = (props) => {
                       />
                     )}
                     {o.text && (
-                      <Text children={o.text} variant="text.introduction" />
+                      <Text
+                        children={Parser(o.text)}
+                        variant="text.introduction"
+                      />
                     )}
                     {<br />}
                     {o.link && (
                       <Link
                         href={o.link.url}
-                        children={o.link.title}
+                        children={Parser(o.link.title)}
                         variant="links.hyperlink"
                         sx={{ textDecoration: "none" }}
                       />
