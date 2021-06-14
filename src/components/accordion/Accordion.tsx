@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Box, Heading, IconButton, Flex, Text, Link } from "theme-ui"
 import { ChevronUp } from "mdi-material-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -50,7 +51,7 @@ const Accordion = (props) => {
                     >
                       <Heading
                         variant="styles.accheading"
-                        children={o.mainheading}
+                        children={Parser(o.mainheading)}
                       />
                       <IconButton
                         sx={{
@@ -93,14 +94,16 @@ const Accordion = (props) => {
                               pb: 55,
                             }}
                           >
-                            <Heading
-                              children={o.addressheading}
-                              variant="styles.addheading"
-                              sx={{ mb: "10px" }}
-                            />
+                            {o.addressheading && (
+                              <Heading
+                                children={Parser(o.addressheading)}
+                                variant="styles.addheading"
+                                sx={{ mb: "10px" }}
+                              />
+                            )}
                             {o.addresslineone && (
                               <Text
-                                children={o.addresslineone}
+                                children={Parser(o.addresslineone)}
                                 variant="text.paragraph"
                                 sx={{
                                   display: "block",
@@ -111,7 +114,7 @@ const Accordion = (props) => {
                             )}
                             {o.addresslinetwo && (
                               <Text
-                                children={o.addresslinetwo}
+                                children={Parser(o.addresslinetwo)}
                                 variant="text.paragraph"
                                 sx={{
                                   display: "block",
@@ -126,7 +129,7 @@ const Accordion = (props) => {
                                   variant="links.hyperlink"
                                   href={`tel:${o.phoneone}`}
                                 >
-                                  {o.phoneone}
+                                  {Parser(o.phoneone)}
                                 </Link>
                               </Box>
                             )}
@@ -136,7 +139,7 @@ const Accordion = (props) => {
                                   variant="links.hyperlink"
                                   href={`tel:${o.phonetwo}`}
                                 >
-                                  {o.phonetwo}
+                                  {Parser(o.phonetwo)}
                                 </Link>
                               </Box>
                             )}
@@ -146,7 +149,7 @@ const Accordion = (props) => {
                                   variant="links.hyperlink"
                                   href={`mailto:${o.email}`}
                                 >
-                                  {o.email}
+                                  {Parser(o.email)}
                                 </Link>
                               </Box>
                             )}
