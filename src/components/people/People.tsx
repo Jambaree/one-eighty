@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { Box, Grid, Heading, Text, Link } from "theme-ui"
+import { Box, Grid, Heading, Text } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Button from "../Button"
-import theme from "../../theme"
 
 const People = (props) => {
   const {
@@ -36,7 +36,7 @@ const People = (props) => {
         >
           {headline && (
             <Heading
-              children={headline}
+              children={Parser(headline)}
               variant="styles.h1"
               sx={{
                 m: "0 auto",
@@ -49,7 +49,7 @@ const People = (props) => {
           )}
           {subheading && (
             <Text
-              children={subheading}
+              children={Parser(subheading)}
               variant="text.introduction"
               sx={{
                 fontSize: "18px",
@@ -115,7 +115,7 @@ const People = (props) => {
                   >
                     {o.name && (
                       <Heading
-                        children={o.name}
+                        children={Parser(o.name)}
                         variant="styles.h3"
                         sx={{
                           fontSize: "4",
@@ -127,7 +127,7 @@ const People = (props) => {
                     )}
                     {o.position && (
                       <Heading
-                        children={o.position}
+                        children={Parser(o.position)}
                         variant="text.introduction"
                         sx={{
                           mb: 12,

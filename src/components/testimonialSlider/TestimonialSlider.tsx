@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Heading, Text, IconButton } from "theme-ui"
 import Slider from "react-slick"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -86,7 +87,7 @@ const TestimonialSlider = (props) => {
             <Box>
               {headline ? (
                 <Heading
-                  children={headline}
+                  children={Parser(headline)}
                   sx={{
                     textAlign: "left",
                     mb: 24,
@@ -114,7 +115,7 @@ const TestimonialSlider = (props) => {
 
               {subheading && (
                 <Text
-                  children={subheading}
+                  children={Parser(subheading)}
                   variant="text.paragraph"
                   sx={{
                     textAlign: "left",
@@ -140,7 +141,7 @@ const TestimonialSlider = (props) => {
                       >
                         {o.quote && (
                           <Text
-                            children={o.quote}
+                            children={Parser(o.quote)}
                             variant="styles.h3"
                             sx={{
                               display: "block",
@@ -153,7 +154,7 @@ const TestimonialSlider = (props) => {
                         )}
                         {o.name && (
                           <Text
-                            children={o.name}
+                            children={Parser(o.name)}
                             variant="text.heading"
                             sx={{
                               display: "block",
@@ -174,7 +175,7 @@ const TestimonialSlider = (props) => {
                         )}
                         {o.position && (
                           <Text
-                            children={o.position}
+                            children={Parser(o.position)}
                             variant="text.introduction"
                             sx={{ pb: 100 }}
                           />

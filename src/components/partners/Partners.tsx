@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -26,7 +27,7 @@ const Partners = (props) => {
         >
           {headline && (
             <Heading
-              children={headline}
+              children={Parser(headline)}
               variant="styles.h3"
               sx={{
                 m: "0 auto",
@@ -37,7 +38,7 @@ const Partners = (props) => {
           )}
           {subheading && (
             <Text
-              children={subheading}
+              children={Parser(subheading)}
               variant="text.introduction"
               sx={{
                 fontSize: "18px",
@@ -94,7 +95,7 @@ const Partners = (props) => {
                   >
                     {o.headline && (
                       <Heading
-                        children={o.headline}
+                        children={Parser(o.headline)}
                         variant="styles.h3"
                         sx={{
                           mb: 12,
@@ -106,7 +107,10 @@ const Partners = (props) => {
                       />
                     )}
                     {o.link && (
-                      <Link children={o.link.title} variant="links.hyperlink" />
+                      <Link
+                        children={Parser(o.link.title)}
+                        variant="links.hyperlink"
+                      />
                     )}
                   </Box>
                 </Box>
@@ -122,7 +126,7 @@ const Partners = (props) => {
               mt: 80,
             }}
           >
-            <Button to={mainbutton.url}>{mainbutton.title}</Button>
+            <Button to={mainbutton.url}>{Parser(mainbutton.title)}</Button>
           </Box>
         )}
       </Edges>

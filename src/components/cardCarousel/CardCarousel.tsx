@@ -2,6 +2,7 @@ import React from "react"
 import { Box, Heading, Text } from "theme-ui"
 import Slider from "react-slick"
 import { GatsbyImage } from "jam-cms"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -116,7 +117,7 @@ const CardCarousel = (props) => {
               >
                 {headline && (
                   <Heading
-                    children={headline}
+                    children={Parser(headline)}
                     variant="styles.h1"
                     sx={{
                       fontSize: "12",
@@ -128,7 +129,7 @@ const CardCarousel = (props) => {
 
                 {subheading && (
                   <Text
-                    children={subheading}
+                    children={Parser(subheading)}
                     variant="text.introduction"
                     sx={{
                       pt: "8px",
@@ -163,7 +164,7 @@ const CardCarousel = (props) => {
                         )}
                         {o.heading && (
                           <Heading
-                            children={o.heading}
+                            children={Parser(o.heading)}
                             variant="styles.h5"
                             sx={{
                               pt: 34,
@@ -175,7 +176,7 @@ const CardCarousel = (props) => {
                         )}
                         {o.text && (
                           <Text
-                            children={o.text}
+                            children={Parser(o.text)}
                             variant="text.introduction"
                             sx={{
                               lineHeight: "25px",

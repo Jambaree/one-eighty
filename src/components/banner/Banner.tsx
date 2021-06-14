@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Heading, Text } from "theme-ui"
 import { Link } from "gatsby"
+import Parser from "html-react-parser"
 
 // import app components
 import theme from "../../theme"
@@ -33,7 +34,7 @@ const Banner = (props) => {
             <Heading
               as="h1"
               variant="styles.h1"
-              children={headline}
+              children={Parser(headline)}
               sx={{
                 mb: 32,
                 fontSize: "65px",
@@ -46,7 +47,7 @@ const Banner = (props) => {
             <Text
               as="p"
               variant="introduction"
-              children={text}
+              children={Parser(text)}
               sx={{
                 fontSize: "18px",
                 lineHeight: ["25px", "30px", "30px"],
@@ -65,7 +66,7 @@ const Banner = (props) => {
                   color: theme.colors.coral,
                 }}
               >
-                {link.title} →
+                {Parser(link.title)} →
               </Link>
             </Box>
           )}

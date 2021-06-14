@@ -1,5 +1,6 @@
 import React from "react"
 import { Heading, Box, Divider } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -57,7 +58,7 @@ const Introduction = (props) => {
                 alignItems: ["left", "center", "center"],
               }}
             >
-              {headline}
+              {Parser(headline)}
             </Heading>
           )}
           <Divider
@@ -76,7 +77,7 @@ const Introduction = (props) => {
               pl: [0, 20, 60],
             }}
           >
-            {text && <Textarea content={text} />}
+            {text && <Textarea content={Parser(text)} />}
           </Box>
         </Box>
       </Edges>

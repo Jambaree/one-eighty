@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Box, Grid, Flex, Heading } from "theme-ui"
+import { Box, Flex, Heading } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -38,7 +39,7 @@ const Tabs = (props) => {
                       >
                         <Heading
                           variant="text.introduction"
-                          children={o.heading}
+                          children={Parser(o.heading)}
                           sx={{
                             cursor: "pointer",
                             width: "fit-content",
@@ -65,7 +66,7 @@ const Tabs = (props) => {
             >
               <Heading
                 as="h3"
-                children={tabs[activeIndex].heading}
+                children={Parser(tabs[activeIndex].heading)}
                 variant="styles.h3"
                 sx={{
                   fontSize: "22px",
@@ -75,7 +76,7 @@ const Tabs = (props) => {
                   mt: [40, "-5px", "-5px"],
                 }}
               />
-              <Textarea content={tabs[activeIndex].text} />
+              <Textarea content={Parser(tabs[activeIndex].text)} />
             </Box>
           )}
         </Flex>
