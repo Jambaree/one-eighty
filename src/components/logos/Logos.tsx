@@ -6,6 +6,7 @@ import { ChevronRight } from "mdi-material-ui"
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
+import theme from "../../theme"
 
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
@@ -115,7 +116,7 @@ const Logos = (props) => {
                           cursor: "pointer",
                           height: "30px",
                           borderRadius: "50%",
-                          bg: "coral",
+                          // bg: "coral",
                           transition: "box-shadow 0.2s",
                           "&:hover": {
                             boxShadow: "0px 5px 10px #00000029",
@@ -133,9 +134,11 @@ const Logos = (props) => {
                           style={{
                             height: "30px",
                             width: "30px",
+                            border: "1px solid",
+                            borderColor: theme.colors.black25,
                             borderRadius: "50%",
-                            backgroundColor: "transparent",
-                            fill: "white",
+                            backgroundColor: "white",
+                            fill: "coral",
                           }}
                         />
                       </Box>
