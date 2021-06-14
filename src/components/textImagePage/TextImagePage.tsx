@@ -1,10 +1,9 @@
 import React from "react"
-import { Box, Flex, Heading, Text } from "theme-ui"
+import { Box, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
 
 // import app components
 import BackgroundImage from "../BackgroundImage"
-import Edges from "../Edges"
 import Button from "../Button"
 
 const TextImagePage = (props) => {
@@ -36,7 +35,7 @@ const TextImagePage = (props) => {
       >
         {mainheadline && (
           <Heading
-            children={mainheadline}
+            children={Parser(mainheadline)}
             sx={{
               pt: 100,
               pb: [28, 36, 36],
@@ -54,7 +53,7 @@ const TextImagePage = (props) => {
           <Text
             as="p"
             variant="text.introduction"
-            children={subheading}
+            children={Parser(subheading)}
             sx={{
               color: "almondLight",
               pr: [18, "auto", 0],
@@ -124,7 +123,7 @@ const TextImagePage = (props) => {
                     >
                       {o.headline && (
                         <Heading
-                          children={o.headline}
+                          children={Parser(o.headline)}
                           variant="styles.h3"
                           sx={{
                             pb: "8px",
@@ -150,7 +149,7 @@ const TextImagePage = (props) => {
                       )}
                       {o.link?.url && (
                         <Button variant="primary" to={o.link.url}>
-                          {o.link.title}
+                          {Parser(o.link.title)}
                         </Button>
                       )}
                     </Box>
@@ -162,7 +161,7 @@ const TextImagePage = (props) => {
         {mainlink?.url && (
           <Box sx={{ mt: ["unset", 114, 114], mb: [100, 178, 178] }}>
             <Button variant="primary" to={mainlink.url}>
-              {mainlink.title}
+              {Parser(mainlink.title)}
             </Button>
           </Box>
         )}
