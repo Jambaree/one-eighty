@@ -378,8 +378,9 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_People {
                   fieldGroupName
-                  columns
                   backgroundcolor
+                  columns
+                  initialvalue
                   headline
                   subheading
                   cards {
@@ -391,9 +392,8 @@ export const CollectionQuery = graphql`
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            backgroundColor: ""
-                            placeholder: DOMINANT_COLOR
                             layout: CONSTRAINED
+                            placeholder: NONE
                             width: 140
                           )
                         }

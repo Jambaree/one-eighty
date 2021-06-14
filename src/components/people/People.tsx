@@ -86,9 +86,9 @@ const People = (props) => {
                       ) : (
                         <BackgroundImage
                           image={o.avatar}
-                          backgroundSize="contain"
                           style={{
                             borderRadius: "50%",
+                            height: 140,
                           }}
                         />
                       )
