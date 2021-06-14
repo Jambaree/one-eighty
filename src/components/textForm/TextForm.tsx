@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Heading, Text } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Form from "../../components/Form"
@@ -62,7 +63,7 @@ const TextForm = (props) => {
           >
             {headline && (
               <Heading
-                children={headline}
+                children={Parser(headline)}
                 variant="styles.h2"
                 sx={{ pt: 65, pb: 36, zIndex: 1, maxWidth: "540px" }}
               />
@@ -79,7 +80,7 @@ const TextForm = (props) => {
             )}
             {disclaimer && (
               <Text
-                children={disclaimer}
+                children={Parser(disclaimer)}
                 variant="text.paragraph"
                 sx={{
                   fontSize: "10px",
