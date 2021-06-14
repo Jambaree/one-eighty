@@ -374,6 +374,39 @@ export const CollectionQuery = graphql`
                     contactinfo
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_People {
+                  fieldGroupName
+                  columns
+                  backgroundcolor
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    name
+                    position
+                    avatar {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            backgroundColor: ""
+                            placeholder: DOMINANT_COLOR
+                            layout: CONSTRAINED
+                            width: 140
+                          )
+                        }
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tabs {
+                  fieldGroupName
+                  tabs {
+                    fieldGroupName
+                    heading
+                    text
+                  }
+                }
               }
             }
             fieldGroupName
