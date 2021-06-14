@@ -113,6 +113,7 @@ const Logos = (props) => {
                     {o.modal && (
                       <Box
                         sx={{
+                          zIndex: modalState ? null : 1,
                           position: "absolute",
                           bottom: "-48px",
                           cursor: "pointer",
