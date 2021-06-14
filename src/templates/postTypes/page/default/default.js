@@ -399,6 +399,12 @@ export const CollectionQuery = graphql`
                         }
                       }
                     }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tabs {
+                  fieldGroupName
+                  tabs {
+                    fieldGroupName
+                    heading
+                    text
                   }
                 }
               }
