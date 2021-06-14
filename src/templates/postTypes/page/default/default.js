@@ -19,6 +19,7 @@ import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
 import addresses from "../../../../components/addresses/Addresses"
+import people from "../../../../components/people/People"
 import tabs from "../../../../components/tabs/Tabs"
 
 const blocks = {
@@ -37,6 +38,7 @@ const blocks = {
   herovideo,
   banner,
   addresses,
+  people,
   tabs,
 }
 
@@ -372,6 +374,31 @@ export const CollectionQuery = graphql`
                   address {
                     fieldGroupName
                     contactinfo
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_People {
+                  fieldGroupName
+                  columns
+                  backgroundcolor
+                  headline
+                  subheading
+                  cards {
+                    fieldGroupName
+                    name
+                    position
+                    avatar {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            backgroundColor: ""
+                            placeholder: DOMINANT_COLOR
+                            layout: CONSTRAINED
+                            width: 140
+                          )
+                        }
+                      }
+                    }
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Tabs {
