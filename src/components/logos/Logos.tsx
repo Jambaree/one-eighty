@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
 import { ChevronRight } from "mdi-material-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -50,7 +51,7 @@ const Logos = (props) => {
         >
           {headline && (
             <Heading
-              children={headline}
+              children={Parser(headline)}
               variant="styles.h2"
               sx={{
                 m: "0 auto 36px auto",
@@ -60,7 +61,7 @@ const Logos = (props) => {
           )}
           {subheading && (
             <Text
-              children={subheading}
+              children={Parser(subheading)}
               variant="text.introduction"
               sx={{
                 m: "0 auto",
@@ -105,7 +106,10 @@ const Logos = (props) => {
                     }}
                   >
                     {o.text && (
-                      <Text children={o.text} variant="text.paragraph" />
+                      <Text
+                        children={Parser(o.text)}
+                        variant="text.paragraph"
+                      />
                     )}
                   </Box>
                   <Box sx={{ width: 30, m: "0 auto" }}>
@@ -148,7 +152,7 @@ const Logos = (props) => {
             <Modal
               modalState={modalState}
               setModal={setModal}
-              text={modalContent.text}
+              text={Parser(modalContent.text)}
               image={modalContent.image}
               link={modalContent.link}
             />
