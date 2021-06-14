@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
 
 // import app components
@@ -9,13 +9,17 @@ import theme from "../../theme"
 
 const People = (props) => {
   const {
-    displayamount,
+    initialvalue,
     columns,
     backgroundcolor,
     headline,
     subheading,
     cards,
   } = props
+
+  const [visible, setVisible] = useState(initialvalue)
+
+  let visibleCards = cards.slice(0, visible)
 
   return (
     <Box sx={{ bg: backgroundcolor, pt: 100, pb: 164 }}>
@@ -56,8 +60,8 @@ const People = (props) => {
           )}
         </Box>
         <Grid gap={["90px", 4, 4]} columns={[1, 2, columns]}>
-          {cards &&
-            cards.map((o, i) => {
+          {visibleCards &&
+            visibleCards.map((o, i) => {
               return (
                 <Box
                   key={i}
@@ -147,7 +151,13 @@ const People = (props) => {
             mt: 80,
           }}
         >
-          <Button to="#">See More</Button>
+          <Button
+            onClick={() => {
+              setVisible(visible + initialvalue)
+            }}
+          >
+            See More
+          </Button>
         </Box>
       </Edges>
     </Box>

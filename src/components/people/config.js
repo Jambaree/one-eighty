@@ -3,7 +3,7 @@ const config = {
   label: "[WIP] People",
   fields: [
     {
-      id: "displayamount",
+      id: "initialvalue",
       type: "number",
       label: "Show Initially",
       min: 1, // optional
