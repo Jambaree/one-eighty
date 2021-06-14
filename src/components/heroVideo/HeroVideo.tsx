@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Heading, Text } from "theme-ui"
 import Embed from "react-embed"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -51,7 +52,7 @@ const Video = (props) => {
                     videoalignment === "first" ? "-1.15px" : "-1.63px",
                 }}
               >
-                {headline}
+                {Parser(headline)}
               </Heading>
             )}
             {subheading && (
@@ -65,7 +66,7 @@ const Video = (props) => {
                   pr: [35, 0, 0],
                 }}
               >
-                {subheading}
+                {Parser(subheading)}
               </Text>
             )}
           </Box>
