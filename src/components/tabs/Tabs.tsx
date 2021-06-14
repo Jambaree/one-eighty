@@ -60,7 +60,6 @@ const Tabs = (props) => {
               variant="text.introduction"
               sx={{
                 width: ["100%", "100%", "60%"],
-                mt: -24,
               }}
             >
               <Heading
@@ -72,7 +71,7 @@ const Tabs = (props) => {
                   letterSpacing: "-0.33px",
                   lineHeight: "32px",
                   mb: 24,
-                  mt: [40, 0, 0],
+                  mt: [40, "-5px", "-5px"],
                 }}
               />
               <Textarea content={tabs[activeIndex].text} />
