@@ -34,8 +34,8 @@ const Addresses = (props) => {
                           : columns === 2
                           ? "50%"
                           : columns === 3
-                          ? "30%"
-                          : "24%",
+                          ? "33.334%"
+                          : "25%",
                     },
                     pb: 55,
                     display: "flex",
