@@ -19,6 +19,22 @@ const config = {
       rows: 2,
     },
     {
+      id: "divider",
+      type: "select",
+      label: "Divider",
+      instructions: "Display a dividing line?", // optional
+      options: [
+        {
+          name: "True",
+          value: true,
+        },
+        {
+          name: "False",
+          value: false,
+        },
+      ],
+    },
+    {
       id: "cards",
       type: "repeater",
       label: "Cards",

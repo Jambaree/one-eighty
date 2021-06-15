@@ -11,9 +11,7 @@ import Textarea from "../Textarea"
 import theme from "../../theme"
 
 const Logos = (props) => {
-  const { columns, headline, subheading, cards } = props
-
-  console.log(props)
+  const { columns, headline, subheading, divider, cards } = props
 
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
@@ -41,11 +39,12 @@ const Logos = (props) => {
             justifyContent: "center",
             textAlign: "center",
             m: [
-              "108px auto 36px auto",
-              "132px auto 36px auto",
-              "162px auto 36px auto",
+              "100px auto 36px auto",
+              "110px auto 36px auto",
+              "110px auto 36px auto",
             ],
             "&:after": {
+              display: divider ? "block" : "none",
               content: "''",
               position: "relative",
               mt: [52, 94, 94],
@@ -91,7 +90,7 @@ const Logos = (props) => {
                       mt: [80, 100, 100],
                     }}
                   >
-                    {o.logo && (
+                    {o.logo && o.imagetype === "logo" ? (
                       <BackgroundImage
                         image={o.logo}
                         style={{
@@ -102,6 +101,17 @@ const Logos = (props) => {
                           margin: "0 auto 16px auto",
                         }}
                         backgroundSize="contain"
+                      />
+                    ) : (
+                      <BackgroundImage
+                        image={o.logo}
+                        style={{
+                          borderRadius: "50%",
+                          height: 208,
+                          position: "relative",
+                          width: 208,
+                          margin: "0 auto 16px auto",
+                        }}
                       />
                     )}
                   </Box>
