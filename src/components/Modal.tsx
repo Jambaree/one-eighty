@@ -27,10 +27,10 @@ const Modal = (props) => {
           transform: "translate(-50%, -50%)",
           borderRadius: 6,
           display: "flex",
-          zIndex: 5,
-          width: [320, 500, 700],
+          width: "auto",
           maxWidth: "100%",
           padding: 0,
+          maxHeight: "70vh",
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
@@ -46,7 +46,14 @@ const Modal = (props) => {
           p: ["24px 0 24px 24px", "24px 0 24px 24px", "48px 0 48px 48px"],
         }}
       >
-        <Box sx={{ width: [320, 450, 500], maxWidth: "100%" }}>
+        <Box
+          sx={{
+            width: [320, 450, 500],
+            maxWidth: "100%",
+            mt: [0, 30, 30],
+            overflow: "scroll",
+          }}
+        >
           {props.headline && (
             <Heading children={props.modal.headline} sx={{ mb: 24 }} />
           )}
@@ -54,10 +61,11 @@ const Modal = (props) => {
             <Box
               variant="text.introduction"
               sx={{
+                mt: [0, 0, 30],
                 mb: 30,
                 letterSpacing: "-.23px",
                 lineHeight: "25px",
-                width: ["100%", "100%", "90%"],
+                // width: ["100%", "100%", "70%"],
               }}
             >
               <Textarea content={props.text} />
@@ -71,7 +79,7 @@ const Modal = (props) => {
         </Box>
         <Box
           sx={{
-            width: 312,
+            width: [160, 220, 312],
             maxWidth: "100%",
             pb: [28, 28, 0],
           }}
