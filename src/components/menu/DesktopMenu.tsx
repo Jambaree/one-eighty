@@ -58,7 +58,7 @@ const DesktopMenu = (props: Props) => {
       }}
     >
       <Edges size="lg">
-        <Flex sx={{ justifyContent: "space-between" }}>
+        <Flex sx={{ position: "relative", justifyContent: "space-between" }}>
           <Box
             pr={2}
             style={{ width: "160px", flexShrink: 0 }}

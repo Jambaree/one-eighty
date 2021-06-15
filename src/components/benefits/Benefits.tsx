@@ -52,16 +52,27 @@ const Benefits = (props) => {
                     sx={{
                       position: "relative",
                       height: 186,
+                      svg: {
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                        filter: "drop-shadow(0px 5px 10px #00000029)",
+                      },
                     }}
                   >
                     {o.icon && (
-                      <BackgroundImage
-                        image={o.icon}
-                        backgroundSize="contain"
-                        style={{
-                          borderRadius: 6,
-                        }}
-                      />
+                      <>
+                        {o.icon?.svg ? (
+                          Parser(o.icon.svg)
+                        ) : (
+                          <BackgroundImage
+                            image={o.icon}
+                            backgroundSize="contain"
+                            style={{
+                              borderRadius: 6,
+                            }}
+                          />
+                        )}
+                      </>
                     )}
                   </Box>
                   <Box

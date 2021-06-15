@@ -67,7 +67,7 @@ const Cards = (props) => {
           )}
         </Box>
         <Grid
-          gap={5}
+          gap={6}
           columns={[1, 2, columns]}
           sx={{
             px: [16, 30, 120],
@@ -108,6 +108,7 @@ const Cards = (props) => {
                       <Heading
                         children={Parser(o.headline)}
                         variant="styles.h3"
+                        as="h3"
                         sx={{
                           mb: 12,
                           mt: 36,

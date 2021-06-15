@@ -1,7 +1,7 @@
 const themeUi = {
   headerHeight: 94,
   breakpoints: ["40em", "52em", "64em"],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 64, 100, 256, 512],
   fonts: {
     body: "Poppins, Verdana, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
     heading:
@@ -16,7 +16,7 @@ const themeUi = {
     bold: 700,
   },
   lineHeights: {
-    body: 1.5,
+    body: 1.8,
     heading: 1.125,
   },
   colors: {
@@ -62,7 +62,7 @@ const themeUi = {
     },
     introduction: {
       fontFamily: "body",
-      fontSize: 3,
+      fontSize: 4,
       fontWeight: "light",
       letterSpacing: "-0.27px",
       color: "black75",
