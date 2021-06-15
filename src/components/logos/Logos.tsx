@@ -11,6 +11,9 @@ import theme from "../../theme"
 
 const Logos = (props) => {
   const { columns, headline, subheading, cards } = props
+
+  console.log(props)
+
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
     text: "",
@@ -157,7 +160,7 @@ const Logos = (props) => {
             <Modal
               modalState={modalState}
               setModal={setModal}
-              text={Parser(modalContent.text)}
+              text={modalContent.text}
               image={modalContent.image}
               link={modalContent.link}
             />
