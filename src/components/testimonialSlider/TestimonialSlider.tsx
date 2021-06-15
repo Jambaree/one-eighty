@@ -26,7 +26,7 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         bg: backgroundcolor,
-        pb: 144,
+        pb: 160,
         position: "relative",
       }}
     >
@@ -63,7 +63,7 @@ const TestimonialSlider = (props) => {
               display: "flex",
               justifyContent: "flex-start",
               flexDirection: ["column", "column", "row"],
-              pt: 144,
+              pt: 100,
             }}
           >
             <IconButton
