@@ -27,7 +27,8 @@ const List = (props) => {
                   flexDirection: ["column", "row", "row"],
                   justifyContent: ["center", "flex-start", "flex-start"],
                   alignItems: "center",
-                  mb: 100,
+                  px: [0, "4%", "15%"],
+                  mb: 120,
                 }}
               >
                 <Box
@@ -45,7 +46,10 @@ const List = (props) => {
                 </Box>
                 <Box
                   variant="text.introduction"
-                  sx={{ lineHeight: "25px", letterSpacing: "-0.23px" }}
+                  sx={{
+                    lineHeight: "25px",
+                    letterSpacing: "-0.23px",
+                  }}
                 >
                   {o.text && <Textarea content={o.text} />}
                 </Box>
