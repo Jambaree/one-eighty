@@ -38,7 +38,7 @@ const Addresses = (props) => {
                           : "25%",
                     },
                     pb: 55,
-                    pr: 24,
+                    pr: 30,
                     display: "flex",
                     justifyContent: "center",
                   }}
