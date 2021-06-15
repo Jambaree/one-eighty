@@ -7,6 +7,7 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
+import Textarea from "../Textarea"
 import theme from "../../theme"
 
 const Logos = (props) => {
@@ -117,10 +118,9 @@ const Logos = (props) => {
                     }}
                   >
                     {o.text && (
-                      <Text
-                        children={Parser(o.text)}
-                        variant="text.paragraph"
-                      />
+                      <Box variant="text.paragraph">
+                        <Textarea content={o.text} />
+                      </Box>
                     )}
                   </Box>
                   <Box sx={{ width: 30, m: "0 auto" }}>
