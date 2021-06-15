@@ -195,6 +195,7 @@ export const CollectionQuery = graphql`
                     headline
                     text
                     icon {
+                      svg
                       altText
                       localFile {
                         childImageSharp {
@@ -213,6 +214,7 @@ export const CollectionQuery = graphql`
                     fieldGroupName
                     text
                     logo {
+                      svg
                       altText
                       localFile {
                         childImageSharp {
