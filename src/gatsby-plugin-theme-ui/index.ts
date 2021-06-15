@@ -226,20 +226,24 @@ const themeUi = {
     },
     h1: {
       variant: "text.heading",
-      fontSize: 11,
+      fontSize: 12,
       fontWeight: "heading",
       letterSpacing: "-1.63px",
+      lineHeight: "65px",
       "@media (max-width: 767px)": {
         fontSize: 10,
         letterSpacing: "-0.9px",
+        lineHeight: "36px",
       },
     },
     h2: {
       variant: "text.heading",
       fontSize: 11,
       letterSpacing: "-1.15px",
+      lineHeight: "54px",
       "@media (max-width: 767px)": {
         fontSize: 8,
+        lineHeight: "30px",
       },
     },
     h3: {
@@ -247,6 +251,9 @@ const themeUi = {
       fontSize: 9,
       letterSpacing: "-.64px",
       lineHeight: "46px",
+      "@media (max-width: 767px)": {
+        fontSize: 5,
+      },
     },
     p: {
       fontSize: 2,
