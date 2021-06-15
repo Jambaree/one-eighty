@@ -70,7 +70,7 @@ const CardCarousel = (props) => {
             width: 38,
             height: 38,
             left: -60,
-            top: "97.5px",
+            top: "120px",
             transform: "translateY(-50%)",
             "@media (max-width: 1200px)": {
               transform: "translateY(350px)",
@@ -88,7 +88,7 @@ const CardCarousel = (props) => {
             width: 38,
             height: 38,
             right: -60,
-            top: "97.5px",
+            top: "120px",
             transform: "translateY(-50%)",
             "@media (max-width: 1200px)": {
               transform: "translateY(350px)",
@@ -155,6 +155,8 @@ const CardCarousel = (props) => {
                           m: "0 auto",
                           img: {
                             borderRadius: "6px",
+                            objectFit: "contain",
+                            height: 240,
                           },
                         }}
                       >
