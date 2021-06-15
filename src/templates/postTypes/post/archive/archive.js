@@ -16,8 +16,7 @@ import produce from "immer"
 
 // import app components
 import Layout from "../../../../components/Layout"
-import Hexagon from "../../../../components/Hexagon"
-import theme from "../../../../theme"
+import TopBanner from "../../../../components/topBanner/TopBanner"
 
 const Template = (props) => {
   const {
@@ -259,52 +258,8 @@ const Template = (props) => {
 
   return (
     <Layout {...props} seo={seo}>
-      <Hexagon
-        background={theme.colors.plum}
-        style={{
-          transform: "rotate(30deg)",
-          position: "absolute",
-          left: "-50px",
-          top: "18px",
-        }}
-      />
-      <Box
-        sx={{
-          background: (theme) => theme.colors.plumDark,
-          height: 353,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: ["flex-start", "center", "center"],
-          mt: "-24px",
-        }}
-      >
-        {headline && (
-          <Heading
-            variant="styles.h1"
-            sx={{
-              fontSize: "65px",
-              color: "almondLight",
-              mb: 36,
-              pl: ["18px", "18px", "unset"],
-            }}
-          >
-            {headline}
-          </Heading>
-        )}
-        {text && (
-          <Text
-            variant="text.introduction"
-            sx={{
-              color: "almondLight",
-              fontSize: "18px",
-              px: ["18px", "24px", "12px"],
-            }}
-          >
-            {text}
-          </Text>
-        )}
-      </Box>
+      <TopBanner headline={headline} text={text} />
+
       <Grid
         columns={[1, 1, "4fr 8fr"]}
         gap={"45px"}
@@ -438,7 +393,7 @@ const Template = (props) => {
                   )}
 
                   <Link to={o.uri} aria-label="Read article" title={o.title}>
-                    <Box variant="links.hyperlink">{o.title} →</Box>
+                    <Box variant="links.hyperlink">Read more →</Box>
                   </Link>
                 </Box>
               </Grid>

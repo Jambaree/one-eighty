@@ -18,6 +18,7 @@ const config = {
           id: "text",
           label: "Text",
           type: "text",
+          rows: 3,
         },
       ],
     },
