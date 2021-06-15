@@ -108,6 +108,7 @@ const Cards = (props) => {
                       <Heading
                         children={Parser(o.headline)}
                         variant="styles.h3"
+                        as="h3"
                         sx={{
                           mb: 12,
                           mt: 36,
