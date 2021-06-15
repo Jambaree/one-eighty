@@ -64,6 +64,7 @@ const Logos = (props) => {
               sx={{
                 m: "0 auto 36px auto",
                 width: ["80%", "100%", "100%"],
+                letterSpacing: "-0.42px",
               }}
             />
           )}
