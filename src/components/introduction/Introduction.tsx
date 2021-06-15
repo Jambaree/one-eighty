@@ -77,7 +77,7 @@ const Introduction = (props) => {
               pl: [0, 20, 60],
             }}
           >
-            {text && <Textarea content={Parser(text)} />}
+            {text && <Textarea content={text} />}
           </Box>
         </Box>
       </Edges>
