@@ -72,19 +72,20 @@ const DesktopMenu = (props: Props) => {
               },
             }}
           >
-            {items.map((item: MenuItem, index: number) => {
-              return (
-                <MenuButton
-                  key={item.key}
-                  item={item}
-                  active={index === activeMenuIndex}
-                  onOpen={() =>
-                    handleOpen(index, !!(item?.children?.length > 0))
-                  }
-                  onClose={handleClose}
-                />
-              )
-            })}
+            {items &&
+              items.map((item: MenuItem, index: number) => {
+                return (
+                  <MenuButton
+                    key={item.key}
+                    item={item}
+                    active={index === activeMenuIndex}
+                    onOpen={() =>
+                      handleOpen(index, !!(item?.children?.length > 0))
+                    }
+                    onClose={handleClose}
+                  />
+                )
+              })}
           </Flex>
         </Flex>
       </Edges>
