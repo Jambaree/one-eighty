@@ -23,6 +23,7 @@ const config = {
       type: "select",
       label: "Divider",
       instructions: "Display a dividing line?", // optional
+      defaultValue: "False",
       options: [
         {
           name: "True",
@@ -49,6 +50,7 @@ const config = {
           type: "select",
           label: "Image Type",
           instructions: "Is this image a portrait or a logo?", // optional
+          defaultValue: "logo",
           options: [
             {
               name: "Portrait",
