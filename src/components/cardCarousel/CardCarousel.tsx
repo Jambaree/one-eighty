@@ -67,10 +67,10 @@ const CardCarousel = (props) => {
             content: "'‹'",
           },
           ".slick-prev": {
-            width: 42,
-            height: 42,
+            width: 38,
+            height: 38,
             left: -60,
-            transform: "translateY(-127px)",
+            transform: "translateY(-123px)",
             "@media (max-width: 1200px)": {
               transform: "translateY(250px)",
               left: "45%",
@@ -83,10 +83,10 @@ const CardCarousel = (props) => {
             },
           },
           ".slick-next": {
-            width: 42,
-            height: 42,
+            width: 38,
+            height: 38,
             right: -60,
-            transform: "translateY(-127px)",
+            transform: "translateY(-123px)",
             "@media (max-width: 1200px)": {
               transform: "translateY(250px)",
               right: "45%",
