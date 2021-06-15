@@ -89,28 +89,17 @@ const Logos = (props) => {
                       mt: [80, 100, 100],
                     }}
                   >
-                    {o.logo && o.imagetype === "logo" ? (
+                    {o.logo && (
                       <BackgroundImage
                         image={o.logo}
                         style={{
-                          borderRadius: 6,
-                          height: 90,
+                          borderRadius: o.imagetype === "logo" ? 6 : "50%",
+                          height: o.imagetype === "logo" ? 90 : 208,
                           position: "relative",
-                          width: 244,
+                          width: o.imagetype === "logo" ? 244 : 208,
                           margin: "0 auto 16px auto",
                         }}
-                        backgroundSize="contain"
-                      />
-                    ) : (
-                      <BackgroundImage
-                        image={o.logo}
-                        style={{
-                          borderRadius: "50%",
-                          height: 208,
-                          position: "relative",
-                          width: 208,
-                          margin: "0 auto 16px auto",
-                        }}
+                        backgroundSize={o.imagetype === "logo" && "contain"}
                       />
                     )}
                   </Box>
