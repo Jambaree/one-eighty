@@ -7,12 +7,11 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
+import Textarea from "../Textarea"
 import theme from "../../theme"
 
 const Logos = (props) => {
-  const { columns, headline, subheading, cards } = props
-
-  console.log(props)
+  const { columns, headline, subheading, divider, cards } = props
 
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
@@ -39,12 +38,11 @@ const Logos = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-            m: [
-              "108px auto 36px auto",
-              "132px auto 36px auto",
-              "162px auto 36px auto",
-            ],
+            mt: [100, 110, 110],
+            mx: "auto",
+            mb: subheading === "" ? 0 : 36,
             "&:after": {
+              display: divider ? "block" : "none",
               content: "''",
               position: "relative",
               mt: [52, 94, 94],
@@ -62,7 +60,8 @@ const Logos = (props) => {
               children={Parser(headline)}
               variant="styles.h2"
               sx={{
-                m: "0 auto 36px auto",
+                m: "0 auto",
+                mb: subheading === "" ? 0 : 36,
                 width: "100%",
                 letterSpacing: "-0.42px",
               }}
@@ -90,7 +89,7 @@ const Logos = (props) => {
                       mt: [80, 100, 100],
                     }}
                   >
-                    {o.logo && (
+                    {o.logo && o.imagetype === "logo" ? (
                       <BackgroundImage
                         image={o.logo}
                         style={{
@@ -101,6 +100,17 @@ const Logos = (props) => {
                           margin: "0 auto 16px auto",
                         }}
                         backgroundSize="contain"
+                      />
+                    ) : (
+                      <BackgroundImage
+                        image={o.logo}
+                        style={{
+                          borderRadius: "50%",
+                          height: 208,
+                          position: "relative",
+                          width: 208,
+                          margin: "0 auto 16px auto",
+                        }}
                       />
                     )}
                   </Box>
@@ -117,10 +127,9 @@ const Logos = (props) => {
                     }}
                   >
                     {o.text && (
-                      <Text
-                        children={Parser(o.text)}
-                        variant="text.paragraph"
-                      />
+                      <Box variant="text.paragraph">
+                        <Textarea content={o.text} />
+                      </Box>
                     )}
                   </Box>
                   <Box sx={{ width: 30, m: "0 auto" }}>
