@@ -16,7 +16,7 @@ const themeUi = {
     bold: 700,
   },
   lineHeights: {
-    body: 1.5,
+    body: 1.8,
     heading: 1.125,
   },
   colors: {
@@ -62,7 +62,7 @@ const themeUi = {
     },
     introduction: {
       fontFamily: "body",
-      fontSize: 3,
+      fontSize: 4,
       fontWeight: "light",
       letterSpacing: "-0.27px",
       color: "black75",
