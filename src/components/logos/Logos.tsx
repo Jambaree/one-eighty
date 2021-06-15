@@ -63,7 +63,7 @@ const Logos = (props) => {
               variant="styles.h2"
               sx={{
                 m: "0 auto 36px auto",
-                width: ["80%", "100%", "100%"],
+                width: "100%",
                 letterSpacing: "-0.42px",
               }}
             />
