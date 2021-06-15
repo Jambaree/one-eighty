@@ -70,15 +70,17 @@ const CardCarousel = (props) => {
             width: 38,
             height: 38,
             left: -60,
-            transform: "translateY(-123px)",
+            top: "97.5px",
+            transform: "translateY(-50%)",
             "@media (max-width: 1200px)": {
-              transform: "translateY(250px)",
+              transform: "translateY(350px)",
               left: "45%",
             },
             "@media (max-width: 1000px)": {
               left: "42%",
             },
             "@media (max-width: 660px)": {
+              transform: "translateY(360px)",
               left: "36%",
             },
           },
@@ -86,15 +88,17 @@ const CardCarousel = (props) => {
             width: 38,
             height: 38,
             right: -60,
-            transform: "translateY(-123px)",
+            top: "97.5px",
+            transform: "translateY(-50%)",
             "@media (max-width: 1200px)": {
-              transform: "translateY(250px)",
+              transform: "translateY(350px)",
               right: "45%",
             },
             "@media (max-width: 1000px)": {
               right: "42%",
             },
             "@media (max-width: 660px)": {
+              transform: "translateY(360px)",
               right: "36%",
             },
           },
