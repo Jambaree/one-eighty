@@ -1,6 +1,7 @@
 import React from "react"
 import ReactModal from "react-modal"
 import { Heading, Box, Close, Link } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import BackgroundImage from "./BackgroundImage"
@@ -56,7 +57,7 @@ const Modal = (props) => {
           }}
         >
           {props.headline && (
-            <Heading children={props.modal.headline} sx={{ mb: 24 }} />
+            <Heading children={Parser(props.modal.headline)} sx={{ mb: 24 }} />
           )}
           {props.text && (
             <Box
@@ -69,12 +70,12 @@ const Modal = (props) => {
                 // width: ["100%", "100%", "70%"],
               }}
             >
-              <Textarea content={props.text} />
+              <Textarea content={Parser(props.text)} />
             </Box>
           )}
           {props.link?.url && (
             <Link href={props.link.url} variant="links.hyperlink">
-              {props.link.title} →
+              {Parser(props.link.title)} →
             </Link>
           )}
         </Box>
