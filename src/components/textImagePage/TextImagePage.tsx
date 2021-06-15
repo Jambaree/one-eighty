@@ -99,13 +99,24 @@ const TextImagePage = (props) => {
                       width: ["100%", "100%", "50%"],
                       mb: [28, 0, 0],
                       mt: [48, 0, 0],
+                      svg: {
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                        filter: "drop-shadow(0px 5px 10px #00000029)",
+                      },
                     }}
                   >
                     {o.image && (
-                      <BackgroundImage
-                        image={o.image}
-                        backgroundSize="contain"
-                      />
+                      <>
+                        {o.image?.svg ? (
+                          Parser(o.image.svg)
+                        ) : (
+                          <BackgroundImage
+                            image={o.image}
+                            backgroundSize="contain"
+                          />
+                        )}
+                      </>
                     )}
                   </Box>
                   <Box sx={{ width: "100%" }}>

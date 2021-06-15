@@ -324,6 +324,7 @@ export const CollectionQuery = graphql`
                       url
                     }
                     image {
+                      svg
                       altText
                       localFile {
                         childImageSharp {
