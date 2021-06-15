@@ -39,12 +39,16 @@ const Logos = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-            m: "162px auto 36px auto",
+            m: [
+              "108px auto 36px auto",
+              "132px auto 36px auto",
+              "162px auto 36px auto",
+            ],
             "&:after": {
               content: "''",
               position: "relative",
-              mt: [80, 90, 90],
-              mb: ["-80px", "-80px", "-82px"],
+              mt: [52, 94, 94],
+              mb: ["-30px"],
               left: "50%",
               transform: "translateX(-50%)",
               height: 4,
@@ -59,7 +63,8 @@ const Logos = (props) => {
               variant="styles.h2"
               sx={{
                 m: "0 auto 36px auto",
-                width: ["80%", "100%", "100%"],
+                width: "100%",
+                letterSpacing: "-0.42px",
               }}
             />
           )}
@@ -90,8 +95,10 @@ const Logos = (props) => {
                         image={o.logo}
                         style={{
                           borderRadius: 6,
-                          height: 186,
+                          height: 90,
                           position: "relative",
+                          width: 244,
+                          margin: "0 auto 16px auto",
                         }}
                         backgroundSize="contain"
                       />
@@ -122,7 +129,7 @@ const Logos = (props) => {
                         sx={{
                           zIndex: modalState ? null : 1,
                           position: "absolute",
-                          bottom: "-48px",
+                          bottom: "-40px",
                           cursor: "pointer",
                           height: "30px",
                           borderRadius: "50%",
