@@ -56,7 +56,7 @@ const Banner = (props) => {
             />
           )}
 
-          {link && (
+          {link?.url && (
             <Box variant="links.hyperlink">
               <Link
                 to={link.url}
