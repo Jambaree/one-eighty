@@ -10,7 +10,15 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const Hero = (props) => {
-  const { headline, link, image, mobileimage, text, linktype } = props
+  const {
+    headline,
+    headlinestyle = "h2",
+    link,
+    image,
+    mobileimage,
+    text,
+    linktype,
+  } = props
 
   return (
     <Box
@@ -59,7 +67,8 @@ const Hero = (props) => {
         >
           {headline && (
             <Heading
-              variant="styles.h1"
+              variant={`styles.${headlinestyle}`}
+              as={headlinestyle}
               sx={{ mb: "4" }}
               children={Parser(headline)}
             />

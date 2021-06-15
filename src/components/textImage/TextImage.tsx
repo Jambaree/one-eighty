@@ -8,7 +8,15 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const TextImage = (props) => {
-  const { backgroundcolor, image, alignment, headline, text, link } = props
+  const {
+    backgroundcolor,
+    image,
+    alignment,
+    headline,
+    headlinestyle = "h2",
+    text,
+    link,
+  } = props
 
   return (
     <>
@@ -59,7 +67,8 @@ const TextImage = (props) => {
             {headline && (
               <Heading
                 children={Parser(headline)}
-                variant="styles.h2"
+                variant={`styles.${headlinestyle}`}
+                as={headlinestyle}
                 sx={{ pb: 36 }}
               />
             )}

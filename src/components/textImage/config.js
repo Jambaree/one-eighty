@@ -46,6 +46,26 @@ const config = {
       label: "Headline",
     },
     {
+      id: "headlinestyle",
+      type: "select",
+      label: "Headline Style",
+      defaultValue: "h2",
+      options: [
+        {
+          name: "H1",
+          value: "h1",
+        },
+        {
+          name: "H2",
+          value: "h2",
+        },
+        {
+          name: "H3",
+          value: "h3",
+        },
+      ],
+    },
+    {
       id: "text",
       type: "wysiwyg",
       label: "Text",

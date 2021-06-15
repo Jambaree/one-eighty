@@ -10,7 +10,7 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
 const CardCarousel = (props) => {
-  const { headline, subheading, cards } = props
+  const { headline, headlinestyle = "h2", subheading, cards } = props
 
   const settings = {
     arrows: true,
@@ -122,9 +122,9 @@ const CardCarousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant="styles.h1"
+                    variant={`styles.${headlinestyle}`}
+                    as={headlinestyle}
                     sx={{
-                      fontSize: "12",
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
                     }}

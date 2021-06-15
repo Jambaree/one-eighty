@@ -7,7 +7,13 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 
 const Video = (props) => {
-  const { headline, subheading, videoalignment, videolink } = props
+  const {
+    headline,
+    headlinestyle = "h2",
+    subheading,
+    videoalignment,
+    videolink,
+  } = props
 
   return (
     <Box
@@ -35,7 +41,8 @@ const Video = (props) => {
           >
             {headline && (
               <Heading
-                variant="styles.h1"
+                variant={`styles.${headlinestyle}`}
+                as={headlinestyle}
                 sx={{
                   m:
                     videoalignment === "first"
