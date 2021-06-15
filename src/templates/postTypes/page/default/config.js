@@ -16,6 +16,7 @@ import banner from "../../../../components/banner/config"
 import addresses from "../../../../components/addresses/config"
 import people from "../../../../components/people/config"
 import tabs from "../../../../components/tabs/config"
+import list from "../../../../components/list/config"
 
 const config = {
   id: "default",
@@ -53,6 +54,7 @@ const config = {
             addresses,
             people,
             tabs,
+            list,
           }),
         },
       ],

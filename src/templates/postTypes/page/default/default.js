@@ -21,6 +21,7 @@ import banner from "../../../../components/banner/Banner"
 import addresses from "../../../../components/addresses/Addresses"
 import people from "../../../../components/people/People"
 import tabs from "../../../../components/tabs/Tabs"
+import list from "../../../../components/list/List"
 
 const blocks = {
   textimage,
@@ -40,6 +41,7 @@ const blocks = {
   addresses,
   people,
   tabs,
+  list,
 }
 
 const Template = (props) => {
