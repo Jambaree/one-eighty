@@ -28,7 +28,7 @@ const Modal = (props) => {
           borderRadius: 6,
           display: "flex",
           width: "auto",
-          maxWidth: "100%",
+          maxWidth: "90%",
           padding: 0,
           maxHeight: "70vh",
         },
@@ -51,6 +51,7 @@ const Modal = (props) => {
             width: [320, 450, 500],
             maxWidth: "100%",
             mt: [0, 30, 30],
+            mr: [0, 0, 30],
             overflow: "scroll",
           }}
         >
