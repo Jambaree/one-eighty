@@ -58,7 +58,7 @@ const CardCarousel = (props) => {
             border: "1px solid",
             borderColor: "black25",
             borderRadius: "50%",
-            p: "8px 16px 10px",
+            p: "4px 13px 6px",
           },
           ".slick-next:before": {
             content: "'›'",
