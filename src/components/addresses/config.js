@@ -8,6 +8,7 @@ const config = {
       label: "Columns",
       min: 1, // optional
       max: 4, // optional
+      defaultValue: 3, // optional
     },
     {
       id: "backgroundcolor",
