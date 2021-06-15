@@ -67,7 +67,7 @@ const Cards = (props) => {
           )}
         </Box>
         <Grid
-          gap={5}
+          gap={6}
           columns={[1, 2, columns]}
           sx={{
             px: [16, 30, 120],
