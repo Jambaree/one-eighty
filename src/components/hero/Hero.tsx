@@ -81,10 +81,10 @@ const Hero = (props) => {
             />
           )}
           {link && linktype === "button" ? (
-            <Button to={link.url} children={Parser(link.title)} />
+            <Button to={link?.url} children={Parser(link?.title || "")} />
           ) : (
-            <Link to={link.url}>
-              <Box variant="links.hyperlink">{Parser(link.title)}</Box>
+            <Link to={link?.url}>
+              <Box variant="links.hyperlink">{Parser(link?.title || "")}</Box>
             </Link>
           )}
         </Box>
