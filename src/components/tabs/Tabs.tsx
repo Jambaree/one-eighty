@@ -76,7 +76,7 @@ const Tabs = (props) => {
                   mt: [40, "-5px", "-5px"],
                 }}
               />
-              <Textarea content={Parser(tabs[activeIndex].text)} />
+              <Textarea content={tabs[activeIndex].text} />
             </Box>
           )}
         </Flex>
