@@ -38,11 +38,9 @@ const Logos = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-            m: [
-              "100px auto 36px auto",
-              "110px auto 36px auto",
-              "110px auto 36px auto",
-            ],
+            mt: [100, 110, 110],
+            mx: "auto",
+            mb: subheading === "" ? 0 : 36,
             "&:after": {
               display: divider ? "block" : "none",
               content: "''",
@@ -62,7 +60,8 @@ const Logos = (props) => {
               children={Parser(headline)}
               variant="styles.h2"
               sx={{
-                m: "0 auto 36px auto",
+                m: "0 auto",
+                mb: subheading === "" ? 0 : 36,
                 width: "100%",
                 letterSpacing: "-0.42px",
               }}
