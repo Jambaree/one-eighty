@@ -48,7 +48,7 @@ const TestimonialSlider = (props) => {
           m: "0 auto",
 
           ".slick-dots": {
-            bottom: "-80px",
+            bottom: "-60px",
 
             li: {
               m: "0 4px",
