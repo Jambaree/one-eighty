@@ -335,13 +335,14 @@ const Template = (props) => {
                       height: 16,
                     }}
                   >
-                    <Checkbox
+                    <input type="checkbox" name={o.name} />
+                    {/* <Checkbox
                       id={1}
                       value={o.databaseId}
                       defaultChecked={category.includes(o.databaseId)}
                       onChange={handleChangeCategory}
                       variant="forms.checkbox"
-                    />
+                    /> */}
                     {o.name}
                   </Label>
                 )
