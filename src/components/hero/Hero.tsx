@@ -80,7 +80,7 @@ const Hero = (props) => {
               sx={{ mb: "4" }}
             />
           )}
-          {link && linktype === "button" ? (
+          {link?.url && linktype === "button" ? (
             <Button to={link?.url} children={Parser(link?.title || "")} />
           ) : (
             <Link to={link?.url}>
