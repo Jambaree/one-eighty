@@ -264,7 +264,7 @@ const themeUi = {
       letterSpacing: "-0.64px",
       lineHeight: "46px",
       "@media (max-width: 767px)": {
-        fontSize: 5,
+        fontSize: 6,
         lineHeight: "22px",
       },
     },
