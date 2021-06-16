@@ -70,7 +70,7 @@ const Modal = (props) => {
                 // width: ["100%", "100%", "70%"],
               }}
             >
-              <Textarea content={Parser(props.text)} />
+              <Textarea content={props.text} />
             </Box>
           )}
           {props.link?.url && (
