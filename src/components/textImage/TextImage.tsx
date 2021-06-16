@@ -68,7 +68,7 @@ const TextImage = (props) => {
             {text && (
               <Text
                 children={Parser(text)}
-                variant="text.paragraph"
+                variant="text.introduction"
                 sx={{
                   paddingBottom: 36,
                 }}

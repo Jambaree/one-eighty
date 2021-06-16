@@ -124,7 +124,7 @@ const Cards = (props) => {
                       />
                     )}
                     {<br />}
-                    {o.link && (
+                    {o.link?.url && (
                       <Link
                         href={o.link.url}
                         children={Parser(o.link.title)}
