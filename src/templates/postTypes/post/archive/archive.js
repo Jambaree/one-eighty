@@ -17,6 +17,7 @@ import produce from "immer"
 // import app components
 import Layout from "../../../../components/Layout"
 import TopBanner from "../../../../components/topBanner/TopBanner"
+import theme from "../../../../theme"
 
 const Template = (props) => {
   const {
@@ -343,12 +344,13 @@ const Template = (props) => {
                       defaultChecked={category.includes(o.databaseId)}
                       onChange={handleChangeCategory}
                       style={{
-                        width: "23px",
-                        height: "23px",
+                        width: "16px",
+                        height: "16px",
                         backgroundColor: "white",
                         border: "1px solid",
-                        borderColor: "black25",
-                        color: "coral",
+                        borderColor: theme.colors.black25,
+                        borderRadius: "3px",
+                        marginRight: "10px",
 
                         "&:hover": {
                           borderColor: "coral",
