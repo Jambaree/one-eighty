@@ -42,7 +42,9 @@ const TextImage = (props) => {
               width: ["100%", "100%", "calc(50% - 25px)"],
             }}
           >
-            {image && imageData && <GatsbyImage image={imageData} alt="" />}
+            {image && imageData && (
+              <GatsbyImage image={imageData} alt={image?.altText || ""} />
+            )}
           </Box>
 
           <Box
