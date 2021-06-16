@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Heading, Text, Box, Themed } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
@@ -61,7 +62,18 @@ const Hero = (props) => {
             <Heading variant="styles.h1" sx={{ mb: "4" }} children={headline} />
           )}
           {text && (
-            <Text variant="introduction" children={text} sx={{ mb: "4" }} />
+            <Text
+              variant="introduction"
+              children={Parser(text)}
+              sx={{ mb: "4" }}
+            />
+          )}
+          {link?.url && linktype === "button" ? (
+            <Button to={link?.url} children={Parser(link?.title || "")} />
+          ) : (
+            <Link to={link?.url}>
+              <Box variant="links.hyperlink">{Parser(link?.title || "")}</Box>
+            </Link>
           )}
           {link && <Button to={link.url} children={link.title} />}
         </Box>
