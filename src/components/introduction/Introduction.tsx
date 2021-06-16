@@ -18,7 +18,6 @@ const Introduction = (props) => {
         aspectRatio: "33%/66%",
         backgroundColor: backgroundcolor,
         backgroundSize: "cover",
-        height: [448, 380, 380],
         display: "flex",
         alignItems: "center",
       }}
@@ -32,13 +31,13 @@ const Introduction = (props) => {
         }}
       />
 
-      <Edges size="md">
+      <Edges size="lg">
         <Box
           sx={{
+            my: "100px",
             display: "flex",
             flexDirection: ["column", "row"],
             alignItems: ["flex-start", "center", "center"],
-            height: ["unset", 100, 100],
           }}
         >
           {headline && (
