@@ -414,6 +414,21 @@ export const CollectionQuery = graphql`
                     text
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_List {
+                  fieldGroupName
+                  list {
+                    fieldGroupName
+                    text
+                    image {
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(layout: CONSTRAINED, width: 160)
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
             fieldGroupName
