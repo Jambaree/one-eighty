@@ -31,7 +31,7 @@ const Modal = (props) => {
           width: "auto",
           maxWidth: "90%",
           padding: 0,
-          maxHeight: "70vh",
+          maxHeight: "70%",
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
@@ -51,8 +51,8 @@ const Modal = (props) => {
           sx={{
             width: [320, 450, 500],
             maxWidth: "100%",
-            mt: [0, 30, 30],
             mr: [0, 0, 30],
+            height: "100%",
             overflow: "scroll",
           }}
         >
@@ -63,11 +63,9 @@ const Modal = (props) => {
             <Box
               variant="text.introduction"
               sx={{
-                mt: [0, 0, 30],
                 mb: 30,
                 letterSpacing: "-.23px",
                 lineHeight: "25px",
-                // width: ["100%", "100%", "70%"],
               }}
             >
               <Textarea content={props.text} />
