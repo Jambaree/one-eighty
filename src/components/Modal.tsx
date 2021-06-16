@@ -49,9 +49,9 @@ const Modal = (props) => {
       >
         <Box
           sx={{
-            width: [320, 450, 500],
+            width: [320, 450, 512],
             maxWidth: "100%",
-            mr: [0, 0, 30],
+            mr: [0, 0, 66],
             height: "100%",
             overflow: "scroll",
           }}
