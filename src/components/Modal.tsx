@@ -20,7 +20,7 @@ const Modal = (props) => {
       onRequestClose={handleClose}
       style={{
         content: {
-          top: "50%",
+          top: "calc(50% + 94px)",
           left: "50%",
           right: "auto",
           bottom: "auto",
