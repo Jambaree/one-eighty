@@ -20,6 +20,19 @@ const TestimonialSlider = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: true,
+    customPaging: () => (
+      <div
+        className="current"
+        style={{
+          width: "8px",
+          height: "8px",
+          color: "#848484",
+          border: "0.3px solid",
+          backgroundColor: "white",
+          borderRadius: "100%",
+        }}
+      />
+    ),
   }
 
   return (
@@ -33,30 +46,32 @@ const TestimonialSlider = (props) => {
       <Box
         sx={{
           m: "0 auto",
+
           ".slick-dots": {
-            position: "relative",
-            mx: "auto",
-            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+
+            li: {
+              m: "0 4px",
+              width: "8px",
+              height: "8px",
+
+              div: {
+                ":hover": {
+                  backgroundColor: "#FF7B59!important",
+                  color: "#FF7B59!important",
+                },
+              },
+            },
+
+            ".slick-active .current": {
+              color: "#E86140!important",
+              bg: "#E86140!important",
+            },
 
             "@media(max-width:1024px)": {
               textAlign: "left",
             },
-          },
-          ".slick-dots li": {
-            m: 0,
-            width: 12,
-
-            button: {
-              ":before": {
-                fontSize: 30,
-                color: "white",
-                opacity: "1",
-              },
-            },
-          },
-          ".slick-dots .slick-active button:before": {
-            color: "coral",
-            opacity: "unset",
           },
         }}
       >
