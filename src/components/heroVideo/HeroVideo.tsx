@@ -77,23 +77,36 @@ const Video = (props) => {
               </Text>
             )}
           </Box>
-          {videolink && typeof window !== "undefined" && (
-            <Box
-              sx={{
-                order: videoalignment == "first" ? 1 : 2,
-                maxWidth: 890,
-                width: ["100%", "100%", "80%"],
-                objectFit: "contain",
-                borderRadius: "8px",
-                iframe: {
-                  height: ["auto", 385, 476],
-                  borderRadius: "8px",
-                },
-              }}
-            >
-              <Embed url={videolink} />
-            </Box>
-          )}
+          <Box
+            sx={{
+              maxWidth: 890,
+              width: "100%",
+              order: videoalignment == "first" ? 1 : 2,
+            }}
+          >
+            {videolink && typeof window !== "undefined" && (
+              <Box
+                sx={{
+                  width: "100%",
+                  position: "relative",
+                  height: 0,
+                  overflow: "hidden",
+                  maxWidth: "100%",
+                  paddingBottom: "56.25%",
+                  iframe: {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "8px",
+                  },
+                }}
+              >
+                <Embed url={videolink} />
+              </Box>
+            )}
+          </Box>
         </Box>
       </Edges>
     </Box>
