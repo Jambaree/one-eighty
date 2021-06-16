@@ -12,7 +12,7 @@ import Button from "../Button"
 const Hero = (props) => {
   const {
     headline,
-    headlinestyle = "h2",
+    headlinestyle = "h1",
     link,
     image,
     mobileimage,
@@ -26,7 +26,7 @@ const Hero = (props) => {
         position: "relative",
         height: "auto",
         mt: [60, 24, 24],
-        mb: [98, 0, 160],
+        mb: [100, 100, 160],
       }}
     >
       <Edges size="lg">
