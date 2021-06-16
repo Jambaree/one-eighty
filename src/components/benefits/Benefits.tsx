@@ -12,7 +12,7 @@ const Benefits = (props) => {
 
   return (
     <Box sx={{ bg: "white", mt: 104, mb: 154 }}>
-      <Edges size="md">
+      <Edges size="lg">
         <Box
           sx={{
             display: "flex",
