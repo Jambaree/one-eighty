@@ -1,15 +1,6 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import {
-  Grid,
-  Box,
-  Heading,
-  Text,
-  Checkbox,
-  Label,
-  Input,
-  IconButton,
-} from "theme-ui"
+import { Grid, Box, Heading, Text, Label, Input, IconButton } from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -336,14 +327,11 @@ const Template = (props) => {
                       height: 16,
                     }}
                   >
-                    <input
-                      type="checkbox"
-                      id={1}
+                    <Box
+                      onChange={handleChangeCategory}
                       name={o.name}
                       value={o.databaseId}
-                      defaultChecked={category.includes(o.databaseId)}
-                      onChange={handleChangeCategory}
-                      style={{
+                      sx={{
                         width: "16px",
                         height: "16px",
                         backgroundColor: "white",
@@ -351,12 +339,22 @@ const Template = (props) => {
                         borderColor: theme.colors.black25,
                         borderRadius: "3px",
                         marginRight: "10px",
-
                         "&:hover": {
                           borderColor: "coral",
                         },
                       }}
-                    />
+                    >
+                      <input
+                        type="checkbox"
+                        id={1}
+                        name={o.name}
+                        value={o.databaseId}
+                        defaultChecked={category.includes(o.databaseId)}
+                        style={{
+                          display: "none",
+                        }}
+                      />
+                    </Box>
                     {o.name}
                   </Label>
                 )
