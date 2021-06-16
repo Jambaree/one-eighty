@@ -7,7 +7,7 @@ import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 
 const Cards = (props) => {
-  const { columns, headline, subheading, cards } = props
+  const { columns, headline, headlinestyle = "h2", subheading, cards } = props
 
   return (
     <Box
@@ -47,7 +47,8 @@ const Cards = (props) => {
           {headline && (
             <Heading
               children={Parser(headline)}
-              variant="styles.h2"
+              variant={`styles.${headlinestyle}`}
+              as={headlinestyle}
               sx={{
                 mb: [41, 24, 24],
                 width: ["50%", "100%", "100%"],

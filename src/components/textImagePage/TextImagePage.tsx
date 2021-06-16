@@ -5,32 +5,29 @@ import Parser from "html-react-parser"
 // import app components
 import BackgroundImage from "../BackgroundImage"
 import Button from "../Button"
+import theme from "../../theme"
 
 const TextImagePage = (props) => {
   const { mainheadline, subheading, textimage, mainlink } = props
 
   return (
-    <Box sx={{ bg: "charcoalLight" }}>
-      <Box
-        sx={{
-          position: "relative",
-          height: [900, 1200, 1350],
-          zIndex: 0,
-          bg: "charcoal",
-          clipPath: [
-            "polygon(0 0, 100% 0, 100% 100%, 0 88%)",
-            "polygon(0 0, 100% 0, 100% 100%, 0 70%)",
-            "polygon(0 0, 100% 0, 100% 100%, 0 50%)",
-          ],
-        }}
-      />
+    <Box
+      sx={{
+        position: "relative",
+        zIndex: 1,
+        background: [
+          `linear-gradient(28deg, ${theme.colors.charcoalLight} 0 68%, ${theme.colors.charcoal} 50% 100%)`,
+          `linear-gradient(28deg, ${theme.colors.charcoalLight} 0 52%, ${theme.colors.charcoal} 50% 100%)`,
+          `linear-gradient(28deg, ${theme.colors.charcoalLight} 0 52%, ${theme.colors.charcoal} 50% 100%)`,
+        ],
+      }}
+    >
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           zIndex: 2,
-          mt: [-900, -1200, -1300],
         }}
       >
         {mainheadline && (

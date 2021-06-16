@@ -8,7 +8,7 @@ import theme from "../../theme"
 import Edges from "../Edges"
 
 const Banner = (props) => {
-  const { backgroundimage, headline, text, link } = props
+  const { backgroundimage, headline, headlinestyle = "h2", text, link } = props
 
   return (
     <Box
@@ -32,12 +32,11 @@ const Banner = (props) => {
         >
           {headline && (
             <Heading
-              as="h1"
-              variant="styles.h1"
+              variant={`styles.${headlinestyle}`}
+              as={headlinestyle}
               children={Parser(headline)}
               sx={{
                 mb: 32,
-                fontSize: "65px",
                 lineHeight: ["36px", "65px", "65px"],
               }}
             />
@@ -56,7 +55,7 @@ const Banner = (props) => {
             />
           )}
 
-          {link && (
+          {link?.url && (
             <Box variant="links.hyperlink">
               <Link
                 to={link.url}

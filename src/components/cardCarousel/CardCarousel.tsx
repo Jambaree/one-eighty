@@ -10,7 +10,7 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
 const CardCarousel = (props) => {
-  const { headline, subheading, cards } = props
+  const { headline, headlinestyle = "h2", subheading, cards } = props
 
   const settings = {
     arrows: true,
@@ -70,7 +70,7 @@ const CardCarousel = (props) => {
             width: 38,
             height: 38,
             left: -60,
-            top: "97.5px",
+            top: "120px",
             transform: "translateY(-50%)",
             "@media (max-width: 1200px)": {
               transform: "translateY(350px)",
@@ -88,7 +88,7 @@ const CardCarousel = (props) => {
             width: 38,
             height: 38,
             right: -60,
-            top: "97.5px",
+            top: "120px",
             transform: "translateY(-50%)",
             "@media (max-width: 1200px)": {
               transform: "translateY(350px)",
@@ -122,9 +122,9 @@ const CardCarousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant="styles.h1"
+                    variant={`styles.${headlinestyle}`}
+                    as={headlinestyle}
                     sx={{
-                      fontSize: "12",
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
                     }}
@@ -155,6 +155,8 @@ const CardCarousel = (props) => {
                           m: "0 auto",
                           img: {
                             borderRadius: "6px",
+                            objectFit: "contain",
+                            height: 240,
                           },
                         }}
                       >
