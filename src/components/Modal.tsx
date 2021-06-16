@@ -31,7 +31,7 @@ const Modal = (props) => {
           width: "auto",
           maxWidth: "90%",
           padding: 0,
-          maxHeight: "70%",
+          maxHeight: "90%",
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
