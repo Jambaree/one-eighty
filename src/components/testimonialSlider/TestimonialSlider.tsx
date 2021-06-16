@@ -48,8 +48,7 @@ const TestimonialSlider = (props) => {
           m: "0 auto",
 
           ".slick-dots": {
-            display: "flex",
-            justifyContent: "center",
+            bottom: "-80px",
 
             li: {
               m: "0 4px",
