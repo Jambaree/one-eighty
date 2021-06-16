@@ -13,26 +13,27 @@ const Cards = (props) => {
     <Box
       sx={{
         bg: "almondLight",
-        py: [90, 164, 164],
+        py: [100, 164, 164],
+        position: "relative",
         overflow: "hidden",
       }}
     >
-      <Edges size="md" sx={{ position: "relative" }}>
-        <Box
-          sx={{
-            height: 168,
-            width: 168,
-            bg: "flax",
-            borderRadius: "50%",
+      <Box
+        sx={{
+          height: 168,
+          width: 168,
+          bg: "flax",
+          borderRadius: "50%",
 
-            display: ["none", "block", "block"],
-            overflow: "hidden",
-            marginTop: [null, "-12%", "-7%"],
-            position: "absolute",
-            right: "-4%",
-            zIndex: 0,
-          }}
-        />
+          display: ["none", "block", "block"],
+          overflow: "hidden",
+          marginTop: [null, "-12%", "-7%"],
+          position: "absolute",
+          right: "-4%",
+          zIndex: 0,
+        }}
+      />
+      <Edges size="lg">
         <Box
           sx={{
             display: "flex",
@@ -41,7 +42,7 @@ const Cards = (props) => {
             textAlign: ["left", "center", "center"],
             m: ["unset", "0 auto", "0 auto"],
             mb: 36,
-            px: [16, 30, 120],
+            px: [0, 30, 120],
           }}
         >
           {headline && (
@@ -62,7 +63,7 @@ const Cards = (props) => {
               variant="text.introduction"
               sx={{
                 zIndex: 1,
-                m: ["0 36px 0 0", "0 36px 36px 36px", "0 36px 36px 36px"],
+                m: ["0 36px 100px 0", "0 36px 100px 36px", "0 36px 100px 36px"],
               }}
             />
           )}
@@ -71,7 +72,7 @@ const Cards = (props) => {
           gap={6}
           columns={[1, 2, columns]}
           sx={{
-            px: [16, 30, 120],
+            px: [0, 30],
           }}
         >
           {cards &&
@@ -81,8 +82,8 @@ const Cards = (props) => {
                   <Box
                     sx={{
                       position: "relative",
-                      height: [180, 180, 300],
                       width: "100%",
+                      paddingBottom: "62.5%",
                     }}
                   >
                     {o.image && (
