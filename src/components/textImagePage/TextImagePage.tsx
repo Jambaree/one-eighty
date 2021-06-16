@@ -131,6 +131,7 @@ const TextImagePage = (props) => {
                     >
                       {o.headline && (
                         <Heading
+                          as="h3"
                           children={Parser(o.headline)}
                           variant="styles.h3"
                           sx={{
@@ -146,7 +147,7 @@ const TextImagePage = (props) => {
                       {o.text && (
                         <Text
                           children={Parser(o.text)}
-                          variant="text.introduction"
+                          variant="text.paragraph"
                           sx={{
                             color: "almondLight",
                             letterSpacing: "-0.23px",

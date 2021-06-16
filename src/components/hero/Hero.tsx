@@ -12,7 +12,7 @@ import Button from "../Button"
 const Hero = (props) => {
   const {
     headline,
-    headlinestyle = "h2",
+    headlinestyle = "h1",
     link,
     image,
     mobileimage,
