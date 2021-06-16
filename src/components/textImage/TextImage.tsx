@@ -20,7 +20,7 @@ const TextImage = (props) => {
     link,
   } = props
 
-  const imageData = getImage(image.localFile)
+  const imageData = image?.localFile && getImage(image.localFile)
 
   return (
     <>
