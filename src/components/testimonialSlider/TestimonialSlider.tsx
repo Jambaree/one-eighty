@@ -48,8 +48,6 @@ const TestimonialSlider = (props) => {
           m: "0 auto",
 
           ".slick-dots": {
-            bottom: "-60px",
-
             li: {
               m: "0 4px",
               width: "8px",
@@ -193,7 +191,6 @@ const TestimonialSlider = (props) => {
                           <Text
                             children={Parser(o.position)}
                             variant="text.introduction"
-                            sx={{ pb: 100 }}
                           />
                         )}
                       </Box>
