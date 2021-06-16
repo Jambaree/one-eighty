@@ -19,7 +19,7 @@ const Video = (props) => {
     <Box
       sx={{
         paddingBottom: videoalignment == "first" ? 150 : 160,
-        paddingTop: 100,
+        paddingTop: [50, 100],
         bg: "almondLight",
       }}
     >
