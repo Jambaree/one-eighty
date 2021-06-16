@@ -9,6 +9,7 @@ const themeUi = {
   },
   fontSizes: [11, 12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
   fontWeights: {
+    extralight: 200,
     light: 300,
     medium: 400,
     body: 400,
@@ -63,7 +64,7 @@ const themeUi = {
     introduction: {
       fontFamily: "body",
       fontSize: 4,
-      fontWeight: "light",
+      fontWeight: "extralight",
       letterSpacing: "-0.27px",
       color: "black75",
       "@media (max-width: 767px)": {
@@ -248,7 +249,7 @@ const themeUi = {
     },
     h3: {
       variant: "text.heading",
-      fontSize: 9,
+      fontSize: 10,
       letterSpacing: "-.64px",
       lineHeight: "46px",
       "@media (max-width: 767px)": {

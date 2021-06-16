@@ -1,6 +1,6 @@
 const config = {
   id: "addresses",
-  label: "[WIP] Addresses",
+  label: "Addresses",
   fields: [
     {
       id: "columns",

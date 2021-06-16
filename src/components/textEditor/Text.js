@@ -1,14 +1,10 @@
-import React from 'react';
-import { RichText } from 'jam-cms';
+import React from "react"
+import Textarea from "../Textarea"
 
 const Text = (props) => {
-  const { text } = props;
+  const { text } = props
 
-  return (
-    <div className="prose">
-      <RichText>{text}</RichText>
-    </div>
-  );
-};
+  return <Textarea content={text} />
+}
 
-export default Text;
+export default Text

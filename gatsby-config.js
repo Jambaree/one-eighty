@@ -36,7 +36,7 @@ const gatsbyConfig = {
           google: [
             {
               family: "Poppins",
-              variants: ["100", "300", "400", "500", "700"],
+              variants: ["100", "200", "300", "400", "500", "700"],
             },
           ],
         },
