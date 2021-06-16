@@ -19,7 +19,7 @@ const Video = (props) => {
     <Box
       sx={{
         paddingBottom: videoalignment == "first" ? 150 : 160,
-        paddingTop: 100,
+        paddingTop: [50, 100],
         bg: "almondLight",
       }}
     >
@@ -77,23 +77,38 @@ const Video = (props) => {
               </Text>
             )}
           </Box>
-          {videolink && typeof window !== "undefined" && (
-            <Box
-              sx={{
-                order: videoalignment == "first" ? 1 : 2,
-                maxWidth: 890,
-                width: ["100%", "100%", "80%"],
-                objectFit: "contain",
-                borderRadius: "8px",
-                iframe: {
-                  height: ["auto", 385, 476],
-                  borderRadius: "8px",
-                },
-              }}
-            >
-              <Embed url={videolink} />
-            </Box>
-          )}
+          <Box
+            sx={{
+              maxWidth: 890,
+              width: "100%",
+              order: videoalignment == "first" ? 1 : 2,
+            }}
+          >
+            {videolink && typeof window !== "undefined" && (
+              <Box
+                sx={{
+                  width: "100%",
+                  position: "relative",
+                  height: 0,
+                  maxWidth: "100%",
+                  paddingBottom: "56.25%",
+                  iframe: {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "8px",
+                  },
+                }}
+              >
+                <Embed url={videolink} />
+                <TurquoiseBlock />
+                <FlaxBlock />
+                <PlumBlock />
+              </Box>
+            )}
+          </Box>
         </Box>
       </Edges>
     </Box>
@@ -101,3 +116,69 @@ const Video = (props) => {
 }
 
 export default Video
+
+const TurquoiseBlock = () => {
+  return (
+    <Box
+      sx={{
+        display: "none",
+        "@media screen and (min-width: 1200px)": {
+          display: "block",
+        },
+        position: "absolute",
+        top: "0",
+        right: "calc(100% + 20px)",
+        width: "110px",
+        height: "110px",
+        bg: "turquoise",
+        borderRadius: "8px",
+      }}
+    />
+  )
+}
+
+const FlaxBlock = () => {
+  return (
+    <Box
+      sx={{
+        width: "24px",
+        height: "24px",
+        borderRadius: "3px",
+        "@media screen and (min-width: 1200px)": {
+          width: "65px",
+          height: "65px",
+          borderRadius: "8px",
+        },
+        position: "absolute",
+        bottom: "calc(100% + 20px)",
+        left: 0,
+        bg: "flax",
+      }}
+    />
+  )
+}
+
+const PlumBlock = () => {
+  return (
+    <Box
+      sx={{
+        top: "calc(100% + 20px)",
+        right: 0,
+        width: "41px",
+        height: "41px",
+        borderRadius: "3px",
+        "@media screen and (min-width: 1200px)": {
+          width: "110px",
+          height: "110px",
+          borderRadius: "8px",
+          bottom: 0,
+          left: "calc(100% + 20px)",
+          top: "unset",
+          right: "unset",
+        },
+        position: "absolute",
+        bg: "plum",
+      }}
+    />
+  )
+}
