@@ -14,25 +14,26 @@ const Cards = (props) => {
       sx={{
         bg: "almondLight",
         py: [100, 164, 164],
+        position: "relative",
         overflow: "hidden",
       }}
     >
-      <Edges size="lg">
-        <Box
-          sx={{
-            height: 168,
-            width: 168,
-            bg: "flax",
-            borderRadius: "50%",
+      <Box
+        sx={{
+          height: 168,
+          width: 168,
+          bg: "flax",
+          borderRadius: "50%",
 
-            display: ["none", "block", "block"],
-            overflow: "hidden",
-            marginTop: [null, "-12%", "-7%"],
-            position: "absolute",
-            right: "-4%",
-            zIndex: 0,
-          }}
-        />
+          display: ["none", "block", "block"],
+          overflow: "hidden",
+          marginTop: [null, "-12%", "-7%"],
+          position: "absolute",
+          right: "-4%",
+          zIndex: 0,
+        }}
+      />
+      <Edges size="lg">
         <Box
           sx={{
             display: "flex",
