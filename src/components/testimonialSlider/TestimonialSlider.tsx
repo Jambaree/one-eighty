@@ -161,7 +161,7 @@ const TestimonialSlider = (props) => {
                             variant="styles.h3"
                             sx={{
                               display: "block",
-                              mb: 60,
+                              mb: o.name && 60,
                               fontSize: ["26px", "32px", "32px"],
                               lineHeight: ["39px", "46px", "46px"],
                               pr: [0, 85, 105],
@@ -175,7 +175,8 @@ const TestimonialSlider = (props) => {
                             variant="styles.h3"
                             sx={{
                               display: "block",
-                              mb: "8px",
+                              mb: o.position && "8px",
+
                               "&:before": {
                                 content: "''",
                                 position: "absolute",
