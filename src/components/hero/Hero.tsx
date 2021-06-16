@@ -80,6 +80,7 @@ const Hero = (props) => {
               sx={{ mb: "4" }}
             />
           )}
+          {/* trigger */}
           {link?.url && linktype === "button" ? (
             <Button to={link?.url} children={Parser(link?.title || "")} />
           ) : (
