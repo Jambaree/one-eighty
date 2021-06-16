@@ -1,13 +1,15 @@
 const themeUi = {
   headerHeight: 94,
   breakpoints: ["40em", "52em", "64em"],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 64, 100, 256, 512],
   fonts: {
-    body: "Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
-    heading: "Poppins",
+    body: "Poppins, Verdana, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
+    heading:
+      "Poppins, Verdana, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
   },
-  fontSizes: [12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
+  fontSizes: [11, 12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
   fontWeights: {
+    extralight: 200,
     light: 300,
     medium: 400,
     body: 400,
@@ -15,7 +17,7 @@ const themeUi = {
     bold: 700,
   },
   lineHeights: {
-    body: 1.5,
+    body: 1.8,
     heading: 1.125,
   },
   colors: {
@@ -61,10 +63,14 @@ const themeUi = {
     },
     introduction: {
       fontFamily: "body",
-      fontSize: 3,
-      fontWeight: "light",
+      fontSize: 4,
+      fontWeight: "extralight",
       letterSpacing: "-0.27px",
       color: "black75",
+      "@media (max-width: 767px)": {
+        letterSpacing: "-0.24px",
+        fontSize: "16px",
+      },
     },
     paragraph: {
       fontFamily: "body",
@@ -74,24 +80,53 @@ const themeUi = {
       color: "black75",
     },
     footerHeading1: {
-      fontSize: 2,
+      fontFamily: "body",
+      fontSize: 3,
       color: "white",
       fontWeight: "medium",
       letterSpacing: "-0.15px",
     },
     footerHeading2: {
-      fontSize: 0,
+      fontFamily: "body",
+      fontSize: 1,
       letterSpacing: "-0.12px",
       color: "black50",
+    },
+    desktopSubMenuItem: {
+      fontSize: 7,
+      fontFamily: "body",
+      fontWeight: "light",
+      letterSpacing: "-0.9px",
+      color: "almond",
+      "&:hover": {
+        color: "coral",
+      },
+    },
+    mobileMenuItem: {
+      fontFamily: "body",
+      fontSize: 2,
+      fontWeight: "medium",
+    },
+    mobileSubMenuItem: {
+      fontFamily: "body",
+      fontSize: 2,
+      fontWeight: "light",
     },
   },
   buttons: {
     primary: {
+      fontFamily: "body",
+      fontSize: 4,
+      letterSpacing: "-0.18px",
       color: "white",
       bg: "coral",
       borderRadius: 6,
+      width: 240,
+      height: 48,
+      transition: "box-shadow 0.2s",
       "&:hover": {
         bg: "coral",
+        boxShadow: "0px 10px 20px #00000029",
       },
       "&:focus": {
         bg: "coralLight",
@@ -100,21 +135,71 @@ const themeUi = {
         bg: "black25",
       },
     },
-    // secondary: {
-    //   color: "background",
-    //   bg: "secondary",
-    // },
+    navButton: {
+      bg: "transparent",
+      color: "#1C1C1C",
+      fontSize: 3,
+      fontFamily: "body",
+      lineHeight: "body",
+    },
     icon: {
       color: "coral",
+    },
+    entryfield: {
+      field: {
+        fontSize: 3,
+        lineHeight: "25px",
+        width: 304,
+        height: 37,
+        border: "1px solid",
+        borderColor: "black25",
+        bg: "white",
+        borderRadius: "6px",
+        p: "10px 15px",
+        fontFamily: "body",
+        fontWeight: 300,
+        outline: "none",
+
+        "&:placeholder": {
+          color: "black50",
+          letterSpacing: "-0.23px",
+          fontSize: "15px",
+          lineHeight: "25px",
+        },
+        "&:hover": {
+          borderColor: "black50",
+        },
+        ":focus": {
+          borderColor: "coralLight",
+        },
+        "&:disabled": {
+          border: "black25",
+          color: "black10",
+        },
+      },
+    },
+  },
+  forms: {
+    checkbox: {
+      width: "23px",
+      height: "23px",
+      backgroundColor: "white",
+      border: "1px solid",
+      borderColor: "black25",
+      color: "coral",
+
+      "&:hover": {
+        borderColor: "coral",
+      },
     },
   },
   links: {
     hyperlink: {
       color: "coral",
-      fontSize: 2,
+      fontSize: 3,
       fontFamily: "body",
       "@media (max-width: 767px)": {
-        fontSize: 1,
+        fontSize: 2,
       },
       "&:hover": {
         color: "coralDark",
@@ -127,7 +212,8 @@ const themeUi = {
       },
     },
     clickListMenu: {
-      fontSize: 9,
+      fontFamily: "body",
+      fontSize: 10,
       fontWeight: "light",
       letterSpacing: "-0.9px",
       color: "almond",
@@ -141,34 +227,36 @@ const themeUi = {
     },
     h1: {
       variant: "text.heading",
-      fontSize: 11,
+      fontSize: 12,
       fontWeight: "heading",
       letterSpacing: "-1.63px",
       "@media (max-width: 767px)": {
-        fontSize: 9,
+        fontSize: 10,
+        letterSpacing: "-0.9px",
       },
     },
     h2: {
       variant: "text.heading",
-      fontSize: 10,
+      fontSize: 11,
       letterSpacing: "-1.15px",
       "@media (max-width: 767px)": {
-        fontSize: 7,
+        fontSize: 8,
       },
     },
     h3: {
       variant: "text.heading",
-      fontSize: 8,
+      fontSize: 10,
       letterSpacing: "-.64px",
+      lineHeight: "46px",
     },
     p: {
-      fontSize: 1,
+      fontSize: 2,
       color: "black75",
       fontWeight: 300,
     },
     h4: {
       variant: "text.heading",
-      fontSize: 6,
+      fontSize: 7,
     },
     h5: {
       variant: "text.heading",
@@ -178,7 +266,31 @@ const themeUi = {
     },
     h6: {
       variant: "text.heading",
-      fontSize: 3,
+      fontSize: 4,
+    },
+    accheading: {
+      variant: "text.heading",
+      fontSize: 6,
+      letterSpacing: "-0.33px",
+      lineHeight: "32px",
+      color: "charcoal",
+      "@media (max-width: 767px)": {
+        fontSize: 5,
+        letterSpacing: "-0.4px",
+        lineHeight: "22px",
+      },
+    },
+    addheading: {
+      variant: "text.heading",
+      fontSize: 4,
+      letterSpacing: "-0.18px",
+      color: "charcoal",
+      lineHeight: "26px",
+      "@media (max-width: 767px)": {
+        fontSize: "16px",
+        letterSpacing: "-0.16px",
+        lineHeight: "26px",
+      },
     },
     pre: {
       fontFamily: "monospace",

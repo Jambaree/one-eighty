@@ -34,7 +34,7 @@ const Layout = (props) => {
       </Container>
       <LightBox />
       <LoginDialog />
-      <Modal />
+      <Modal {...props} />
     </>
   )
 }

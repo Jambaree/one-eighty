@@ -1,25 +1,34 @@
 import React from "react"
 import { Box, Heading, Text } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
-// import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
 import Edges from "../Edges"
 import Button from "../Button"
 
 const TextImage = (props) => {
-  const { image, alignment, headline, text, link } = props
+  const {
+    backgroundcolor,
+    image,
+    alignment,
+    headline,
+    headlinestyle = "h2",
+    text,
+    link,
+  } = props
 
   return (
     <>
       <Box
         sx={{
+          backgroundColor: backgroundcolor,
           position: "relative",
           display: "flex",
           flexWrap: "wrap-reverse",
           alignItems: "center",
           minHeight: [null, null, 600],
-          mb: [36, 36, 0],
+          my: [48, 48, 0],
           textAlign: "left",
           "p:last-child": {
             mb: [16, 18, 24],
@@ -36,12 +45,10 @@ const TextImage = (props) => {
             order: 1,
             top: [null, null, 0],
             bottom: [null, null, 0],
-            m: 24,
+            m: [24, 24, "52px 24px"],
           }}
         >
-          {image && (
-            <BackgroundImage image={image} sx={{}} backgroundSize="contain" />
-          )}
+          {image && <BackgroundImage image={image} backgroundSize="contain" />}
         </Box>
         <Edges size="md">
           <Box
@@ -59,23 +66,24 @@ const TextImage = (props) => {
           >
             {headline && (
               <Heading
-                children={headline}
-                variant="styles.h2"
+                children={Parser(headline)}
+                variant={`styles.${headlinestyle}`}
+                as={headlinestyle}
                 sx={{ pb: 36 }}
               />
             )}
             {text && (
               <Text
-                children={text}
+                children={Parser(text)}
+                variant="text.paragraph"
                 sx={{
                   paddingBottom: 36,
                 }}
-                variant="text.introduction"
               />
             )}
             {link?.url && (
               <Button variant="primary" to={link.url}>
-                {link.title}
+                {Parser(link.title)}
               </Button>
             )}
           </Box>

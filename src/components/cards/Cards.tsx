@@ -1,32 +1,36 @@
 import React from "react"
-import { Box, Grid, Heading, Text, Link, jsx } from "theme-ui"
-// import { Link } from "gatsby"
+import { Box, Grid, Heading, Text, Link } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 
 const Cards = (props) => {
-  const { columns, headline, subheading, cards } = props
+  const { columns, headline, headlinestyle = "h2", subheading, cards } = props
 
   return (
-    <Box sx={{ bg: "almondLight", py: [90, 164, 164] }}>
-      <Edges size="md">
+    <Box
+      sx={{
+        bg: "almondLight",
+        py: [90, 164, 164],
+        overflow: "hidden",
+      }}
+    >
+      <Edges size="md" sx={{ position: "relative" }}>
         <Box
           sx={{
-            display: ["none", "block", "block"],
-            position: "absolute",
             height: 168,
             width: 168,
             bg: "flax",
             borderRadius: "50%",
+
+            display: ["none", "block", "block"],
+            overflow: "hidden",
+            marginTop: [null, "-12%", "-7%"],
+            position: "absolute",
+            right: "-4%",
             zIndex: 0,
-            mr: 0,
-            transform: [
-              "unset",
-              "translate(198%, -48%)",
-              "translate(296%, -48%)",
-            ],
           }}
         />
         <Box
@@ -35,31 +39,41 @@ const Cards = (props) => {
             flexDirection: "column",
             justifyContent: ["flex-start", "center", "center"],
             textAlign: ["left", "center", "center"],
-            width: [283, 600, 730],
             m: ["unset", "0 auto", "0 auto"],
             mb: 36,
+            px: [16, 30, 120],
           }}
         >
           {headline && (
             <Heading
-              children={headline}
-              variant="styles.h2"
+              children={Parser(headline)}
+              variant={`styles.${headlinestyle}`}
+              as={headlinestyle}
               sx={{
                 mb: [41, 24, 24],
-                width: ["65%", "100%", "100%"],
+                width: ["50%", "100%", "100%"],
                 zIndex: 1,
               }}
             />
           )}
           {subheading && (
             <Text
-              children={subheading}
+              children={Parser(subheading)}
               variant="text.introduction"
-              sx={{ mb: [36, 36, 60], zIndex: 1 }}
+              sx={{
+                zIndex: 1,
+                m: ["0 36px 0 0", "0 36px 36px 36px", "0 36px 36px 36px"],
+              }}
             />
           )}
         </Box>
-        <Grid gap={5} columns={[1, 2, columns]}>
+        <Grid
+          gap={6}
+          columns={[1, 2, columns]}
+          sx={{
+            px: [16, 30, 120],
+          }}
+        >
           {cards &&
             cards.map((o, i) => {
               return (
@@ -68,7 +82,7 @@ const Cards = (props) => {
                     sx={{
                       position: "relative",
                       height: [180, 180, 300],
-                      width: ["100%", 290, 480],
+                      width: "100%",
                     }}
                   >
                     {o.image && (
@@ -86,13 +100,16 @@ const Cards = (props) => {
                       flexDirection: "column",
                       justifyContent: ["flex-start", "center", "center"],
                       textAlign: ["left", "center", "center"],
-                      width: [287, 287, 480],
+                      maxWidth: "100%",
+                      m: ["unset", "0 auto", "0 auto"],
+                      pr: [30, "unset", "unset"],
                     }}
                   >
                     {o.headline && (
                       <Heading
-                        children={o.headline}
+                        children={Parser(o.headline)}
                         variant="styles.h3"
+                        as="h3"
                         sx={{
                           mb: 12,
                           mt: 36,
@@ -100,13 +117,16 @@ const Cards = (props) => {
                       />
                     )}
                     {o.text && (
-                      <Text children={o.text} variant="text.introduction" />
+                      <Text
+                        children={Parser(o.text)}
+                        variant="text.introduction"
+                      />
                     )}
                     {<br />}
                     {o.link && (
                       <Link
                         href={o.link.url}
-                        children={o.link.title}
+                        children={Parser(o.link.title)}
                         variant="links.hyperlink"
                         sx={{ textDecoration: "none" }}
                       />

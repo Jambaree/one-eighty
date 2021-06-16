@@ -58,15 +58,18 @@ const Textarea = (props) => {
     contentString = updateLinksInHTML(contentString)
 
     const parse = (string) => {
-      return Parser(string, {
-        replace: (domNode) => {
-          if (domNode.type === "tag" && components[domNode.name]) {
-            return React.cloneElement(components[domNode.name], {
-              children: domNode.children.map((o) => parse(o.data)),
-            })
-          }
-        },
-      })
+      return (
+        typeof string === "string" &&
+        Parser(string, {
+          replace: (domNode) => {
+            if (domNode.type === "tag" && components[domNode.name]) {
+              return React.cloneElement(components[domNode.name], {
+                children: domNode.children.map((o) => parse(o.data)),
+              })
+            }
+          },
+        })
+      )
     }
 
     return <Container {...rest}>{parse(contentString)}</Container>
@@ -117,7 +120,7 @@ const Container = styled.div`
     text-decoration: underline;
     font-style: italic;
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.coral};
   }
 
   figcaption {

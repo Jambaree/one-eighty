@@ -9,7 +9,7 @@ import SearchIcon from "../icons/search.svg"
 import { CONTENT_NODES_QUERY } from "../apollo/query"
 import { formatLink } from "../utils"
 
-const Searchbar = () => {
+const Searchbar = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   const [value, setValue] = useState("")
 
@@ -25,6 +25,7 @@ const Searchbar = () => {
   useEffect(() => {
     if (value === "") {
       setIsOpen(false)
+      props.setSearch("")
     }
   }, [value])
 
@@ -38,6 +39,7 @@ const Searchbar = () => {
       })
 
     setIsOpen(true)
+    props.setSearch(value)
   }
 
   return (
@@ -45,11 +47,30 @@ const Searchbar = () => {
       <SearchBar>
         <Form onSubmit={onSubmit}>
           <Input
-            placeholder="Search"
+            placeholder="Search what's new..."
             value={value}
             onChange={({ target }) => setValue(target.value)}
             onKeyDown={(e) => e.key === "Escape" && setIsOpen(false)}
-            style={{ paddingRight: 40 }}
+            sx={{
+              paddingRight: 40,
+              backgroundColor: "white",
+              outline: "none",
+              border: "1px solid #DBDBDB",
+              "&:hover": {
+                borderColor: "black50",
+              },
+              "&:disabled": {
+                borderColor: "black25",
+                color: "black10",
+              },
+              "&:focus": {
+                border: "1px solid #FF7B59",
+              },
+              "&:focus-visible": {
+                border: "1px solid #FF7B59",
+              },
+            }}
+            variant="text.paragraph"
           />
           {loading ? (
             <StyledSpinner size={20} />
@@ -85,8 +106,9 @@ const Searchbar = () => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
+  margin-bottom: 60px;
 `
 
 const SearchBar = styled.div`
@@ -137,9 +159,13 @@ const ToggleButton = styled.button`
   font: inherit;
   line-height: normal;
   margin-left: 15px;
-  color: grey;
+  color: "coral";
   cursor: pointer;
   outline: none;
+
+  svg path {
+    fill: #e86140;
+  }
 
   &:hover {
     color: black;
@@ -150,6 +176,7 @@ const Form = styled.form`
   position: relative;
   display: flex;
   align-items: center;
+  width: 350px;
 `
 
 const StyledSpinner = styled(Spinner)`

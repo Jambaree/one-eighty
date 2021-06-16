@@ -1,29 +1,37 @@
 import React from "react"
 import { Heading, Box, Divider } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
 import Textarea from "../Textarea"
+import Hexagon from "../Hexagon"
 
 const Introduction = (props) => {
-  const { backgroundcolor, background, headline, text } = props
+  const { backgroundcolor, headline, text } = props
 
   return (
     <Box
       sx={{
+        position: "relative",
+        overflow: "hidden",
         aspectRatio: "33%/66%",
-        backgroundImage: [
-          "unset",
-          `url(${background?.url})`,
-          `url(${background?.url})`,
-        ],
-        backgroundColor: [backgroundcolor, "unset", "unset"],
+        backgroundColor: backgroundcolor,
         backgroundSize: "cover",
         height: [448, 380, 380],
         display: "flex",
         alignItems: "center",
       }}
     >
+      <Hexagon
+        style={{
+          position: "absolute",
+          left: -50,
+          top: -70,
+          transform: "rotate(30deg)",
+        }}
+      />
+
       <Edges size="md">
         <Box
           sx={{
@@ -37,7 +45,7 @@ const Introduction = (props) => {
             <Heading
               sx={{
                 width: ["unset", 300, 450],
-                pr: ["unset", 20, 80],
+                pr: ["unset", 20, 60],
                 mb: [36, 0, 0],
                 variant: "styles.h2",
                 borderRight: [
@@ -50,7 +58,7 @@ const Introduction = (props) => {
                 alignItems: ["left", "center", "center"],
               }}
             >
-              {headline}
+              {Parser(headline)}
             </Heading>
           )}
           <Divider
@@ -66,7 +74,7 @@ const Introduction = (props) => {
             variant="text.introduction"
             sx={{
               width: ["100%", 400, "unset"],
-              pl: [0, 20, 80],
+              pl: [0, 20, 60],
             }}
           >
             {text && <Textarea content={text} />}

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import styled from "@emotion/styled"
-import { Heading, Text, Box, Themed } from "theme-ui"
+import { Heading, Text, Box } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
+import { Link } from "gatsby"
 import Parser from "html-react-parser"
 
 // import app components
@@ -10,13 +10,20 @@ import Edges from "../Edges"
 import Button from "../Button"
 
 const Hero = (props) => {
-  const { headline, link, image, mobileimage, text } = props
+  const {
+    headline,
+    headlinestyle = "h2",
+    link,
+    image,
+    mobileimage,
+    text,
+    linktype,
+  } = props
 
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: "calc(100vh - 94px)",
         height: "auto",
         mt: [60, 24, 24],
         mb: [98, 0, 160],
@@ -59,7 +66,12 @@ const Hero = (props) => {
           }}
         >
           {headline && (
-            <Heading variant="styles.h1" sx={{ mb: "4" }} children={headline} />
+            <Heading
+              variant={`styles.${headlinestyle}`}
+              as={headlinestyle}
+              sx={{ mb: "4" }}
+              children={Parser(headline)}
+            />
           )}
           {text && (
             <Text
@@ -75,7 +87,6 @@ const Hero = (props) => {
               <Box variant="links.hyperlink">{Parser(link?.title || "")}</Box>
             </Link>
           )}
-          {link && <Button to={link.url} children={link.title} />}
         </Box>
       </Edges>
     </Box>

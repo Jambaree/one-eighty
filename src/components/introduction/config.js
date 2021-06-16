@@ -8,20 +8,27 @@ const config = {
       label: "Headline",
     },
     {
-      id: "background",
-      type: "image",
-      label: "Background",
-    },
-    {
       id: "backgroundcolor",
-      type: "color_picker",
+      type: "select",
       label: "Background Color",
-      defaultValue: "white",
+      defaultValue: "White",
+      instructions: "Choose a background color", // optional
+      options: [
+        {
+          name: "White",
+          value: "#FFF",
+        },
+        {
+          name: "Light Turquoise",
+          value: "#A8E6E4",
+        },
+      ],
     },
     {
       id: "text",
       type: "text",
       label: "Text",
+      rows: 4,
     },
   ],
 }

@@ -16,7 +16,7 @@ import { StoreProvider } from "../store"
 import client from "../apollo"
 
 const Layout = (props) => {
-  const { pageContext } = props
+  const { uri, data } = props
 
   return (
     <ApolloProvider client={client}>
@@ -26,7 +26,11 @@ const Layout = (props) => {
           <meta name="description" />
         </Helmet>
 
-        <Seo {...pageContext} />
+        <Seo
+          siteTitle={"SnapAV"}
+          href={uri}
+          seo={data?.wpPage?.seo || data?.wpPost?.seo}
+        />
 
         <PageWrapper {...props}>{props?.children}</PageWrapper>
       </StoreProvider>

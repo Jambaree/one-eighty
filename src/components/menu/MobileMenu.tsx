@@ -3,11 +3,11 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/css"
 import { Link } from "gatsby"
 import Parser from "html-react-parser"
+import { Text, Flex } from "theme-ui"
 
 // import app components
 import ChevronDown from "../../icons/chevron-down.svg"
 import { useStore } from "../../store"
-import useMenuItems from "./useMenuItems"
 import { formatLink } from "../../utils"
 import theme from "../../theme"
 
@@ -16,6 +16,8 @@ interface Props {
 }
 
 const MobileMenu: React.FC<Props> = (props: Props) => {
+  const { items } = props
+
   const [
     {
       appState: { menu },
@@ -23,13 +25,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
     dispatch,
   ] = useStore()
 
-  const { items } = props
+  const itemIds = items ? items.map(({ key }) => key) : [] // set all items open by default
 
-  console.log({ items })
+  const [activeItems, setActiveItems] = useState([...itemIds])
 
-  const [activeItems, setActiveItems] = useState([])
-
-  const handleArrowClick = (id) => {
+  const handleArrowClick = (id: any) => {
     let newItems = [...activeItems]
 
     if (activeItems.includes(id)) {
@@ -54,23 +54,28 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                   <>
                     {url === "#" ? (
                       <MenuLinkContainer onClick={() => handleArrowClick(id)}>
-                        {title && Parser(title)}
-                        <ChevronContainer>
-                          <ChevronDown />
-                        </ChevronContainer>
+                        <Text variant="mobileMenuItem" color="inherit">
+                          {title && Parser(title)}
+                        </Text>
+
+                        <Chevron active={activeItems.includes(id)} />
                       </MenuLinkContainer>
                     ) : (
                       <MenuLinkContainer>
                         <MenuLink
                           to={formatLink(url)}
-                          activeStyle={{ color: theme.colors.primary }}
+                          activeStyle={{ color: theme.colors.coral }}
                           onClick={handleCloseMenu}
                         >
-                          {Parser(title)}
+                          <Text variant="mobileMenuItem" color="inherit">
+                            {title && Parser(title)}
+                          </Text>
                         </MenuLink>
-                        <ChevronContainer onClick={() => handleArrowClick(id)}>
-                          <ChevronDown />
-                        </ChevronContainer>
+
+                        <Chevron
+                          active={activeItems.includes(id)}
+                          onClick={() => handleArrowClick(id)}
+                        />
                       </MenuLinkContainer>
                     )}
 
@@ -85,8 +90,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                             to={formatLink(o.url)}
                             activeClassName="active"
                             onClick={handleCloseMenu}
+                            activeStyle={{ color: theme.colors.coral }}
                           >
-                            {o?.title && Parser(o.title)}
+                            <Text variant="mobileSubMenuItem" color="inherit">
+                              {o?.title && Parser(o.title)}
+                            </Text>
                           </SubMenuLink>
                         )
                       })}
@@ -96,9 +104,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                   <MenuLink
                     to={formatLink(url)}
                     onClick={handleCloseMenu}
-                    activeStyle={{ color: "red" }}
+                    activeStyle={{ color: theme.colors.coral }}
                   >
-                    {title && Parser(title)}
+                    <Text color="inherit" variant="mobileMenuItem">
+                      {title && Parser(title)}
+                    </Text>
                   </MenuLink>
                 )}
               </MenuItem>
@@ -114,8 +124,31 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
   )
 }
 
+const Chevron = (props) => {
+  const { active, onClick } = props
+
+  return (
+    <Flex
+      onClick={onClick}
+      sx={{
+        alignItems: "center",
+        padding: "0 12px",
+        cursor: "pointer",
+
+        ".chevron-icon": {
+          color: "#fff",
+          transition: "transform 150ms ease-in-out",
+          transform: active ? "rotate(-180deg)" : "rotate(0)",
+        },
+      }}
+    >
+      <ChevronDown className="chevron-icon" />
+    </Flex>
+  )
+}
+
 const Menu = styled.div`
-  ${(props) =>
+  ${(props: any) =>
     props.menuState
       ? `
           transform: translateX(0);
@@ -127,22 +160,21 @@ const Menu = styled.div`
         `};
 
   position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
+  top: 94px;
+  width: calc(100% - 70px);
   right: 0;
-  max-width: 250px;
-  z-index: 100;
+  z-index: -2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  background: #fff;
-  padding-top: 100px;
-  padding-bottom: 40px;
+  background: var(--theme-ui-colors-charcoalDark);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  max-height: calc(100vh - 94px);
   overflow-y: auto;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `
@@ -151,38 +183,52 @@ const ChevronContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 0 12px;
+  cursor: pointer;
 `
 
 const item = css`
   position: relative;
-  color: ${theme.colors.primary};
+  color: #fff;
   text-decoration: none;
   width: 100%;
 `
 
 const MenuLinkContainer = styled.div`
-  ${item}
   display: flex;
-  justify-content: space-between;
+  cursor: pointer;
+  ${item};
+  color: #fff;
+  margin-bottom: 10px;
 `
 
 const MenuItem = styled.div`
-  padding: 10px 10px 10px 20px;
-  ${item}
+  padding: 0 30px;
+  margin-bottom: 40px;
+  ${item};
+  color: #fff;
 `
 
 const MenuLink = styled(Link)`
-  ${item}
+  ${item};
+  color: #fff;
+  &:hover {
+    color: ${theme.colors.coral};
+  }
 `
 
 const SubMenu = styled.div`
-  display: ${(props) => (props.active ? "block" : "none")};
+  display: ${(props: any) => (props.active ? "block" : "none")};
 `
 
 const SubMenuLink = styled(Link)`
   display: block;
-  padding: 4px 0;
-  color: ${theme.colors.secondary};
+  padding: 12px;
+
+  color: ${theme.colors.almond};
+
+  &:hover {
+    color: ${theme.colors.coral};
+  }
 `
 
 const Gradient = styled.div`
@@ -190,11 +236,11 @@ const Gradient = styled.div`
   height: 100%;
   width: 100%;
   left: 0;
-  top: 0;
-  z-index: 90;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: ${(props) => (!!props.menuState ? 1 : 0)};
-  pointer-events: ${(props) => (!!props.menuState ? "all" : "none")};
+  top: 94px;
+  z-index: -3;
+  /* background: rgba(0, 0, 0, 0.5); */
+  opacity: ${(props: any) => (!!props.menuState ? 1 : 0)};
+  pointer-events: ${(props: any) => (!!props.menuState ? "all" : "none")};
   transition: ease all 0.2s;
 `
 

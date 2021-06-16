@@ -36,7 +36,7 @@ const gatsbyConfig = {
           google: [
             {
               family: "Poppins",
-              variants: ["100", "300", "400", "500", "700"],
+              variants: ["100", "200", "300", "400", "500", "700"],
             },
           ],
         },
@@ -81,16 +81,16 @@ const gatsbyConfig = {
       },
     },
     "gatsby-plugin-catch-links",
-    // {
-    //   resolve: "gatsby-source-gravityforms",
-    //   options: {
-    //     baseUrl: process.env.GATSBY_WP,
-    //     api: {
-    //       key: process.env.GATSBY_GF_KEY,
-    //       secret: process.env.GATSBY_GF_SECRET,
-    //     },
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-gravityforms",
+      options: {
+        baseUrl: process.env.GATSBY_WP,
+        api: {
+          key: process.env.GATSBY_GF_KEY,
+          secret: process.env.GATSBY_GF_SECRET,
+        },
+      },
+    },
     // {
     //   resolve: "gatsby-plugin-sitemap",
     //   options: {

@@ -24,20 +24,52 @@ const config = {
       ],
     },
     {
+      id: "backgroundcolor",
+      type: "select",
+      label: "Background Color",
+      defaultValue: "White",
+      instructions: "Choose a background color", // optional
+      options: [
+        {
+          name: "White",
+          value: "#FFF",
+        },
+        {
+          name: "Light Almond",
+          value: "#F5F4F1",
+        },
+      ],
+    },
+    {
       id: "headline",
       type: "text",
       label: "Headline",
     },
     {
+      id: "headlinestyle",
+      type: "select",
+      label: "Headline Style",
+      defaultValue: "h2",
+      options: [
+        {
+          name: "H1",
+          value: "h1",
+        },
+        {
+          name: "H2",
+          value: "h2",
+        },
+        {
+          name: "H3",
+          value: "h3",
+        },
+      ],
+    },
+    {
       id: "text",
-      type: "text",
+      type: "wysiwyg",
       label: "Text",
     },
-    // {
-    //   id: "wysiwygtext",
-    //   type: "wysiwyg",
-    //   label: "Text",
-    // },
     {
       id: "link",
       type: "link",
