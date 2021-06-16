@@ -145,7 +145,6 @@ export const CollectionQuery = graphql`
                           layout: FIXED
                           width: 500
                           placeholder: BLURRED
-                          quality: 95
                         )
                       }
                     }
