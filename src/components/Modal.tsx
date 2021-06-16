@@ -1,6 +1,7 @@
 import React from "react"
 import ReactModal from "react-modal"
 import { Heading, Box, Close, Link } from "theme-ui"
+import Parser from "html-react-parser"
 
 // import app components
 import BackgroundImage from "./BackgroundImage"
@@ -19,7 +20,7 @@ const Modal = (props) => {
       onRequestClose={handleClose}
       style={{
         content: {
-          top: "50%",
+          top: "calc(50% + 94px)",
           left: "50%",
           right: "auto",
           bottom: "auto",
@@ -27,10 +28,10 @@ const Modal = (props) => {
           transform: "translate(-50%, -50%)",
           borderRadius: 6,
           display: "flex",
-          zIndex: 5,
-          width: [320, 500, 700],
-          maxWidth: "100%",
+          width: "auto",
+          maxWidth: "90%",
           padding: 0,
+          maxHeight: "90%",
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
@@ -46,9 +47,17 @@ const Modal = (props) => {
           p: ["24px 0 24px 24px", "24px 0 24px 24px", "48px 0 48px 48px"],
         }}
       >
-        <Box sx={{ width: [320, 450, 500], maxWidth: "100%" }}>
+        <Box
+          sx={{
+            width: [320, 450, 512],
+            maxWidth: "100%",
+            mr: [0, 0, 66],
+            height: "100%",
+            overflow: "scroll",
+          }}
+        >
           {props.headline && (
-            <Heading children={props.modal.headline} sx={{ mb: 24 }} />
+            <Heading children={Parser(props.modal.headline)} sx={{ mb: 24 }} />
           )}
           {props.text && (
             <Box
@@ -57,7 +66,6 @@ const Modal = (props) => {
                 mb: 30,
                 letterSpacing: "-.23px",
                 lineHeight: "25px",
-                width: ["100%", "100%", "90%"],
               }}
             >
               <Textarea content={props.text} />
@@ -65,13 +73,13 @@ const Modal = (props) => {
           )}
           {props.link?.url && (
             <Link href={props.link.url} variant="links.hyperlink">
-              {props.link.title} →
+              {Parser(props.link.title)} →
             </Link>
           )}
         </Box>
         <Box
           sx={{
-            width: 312,
+            width: [160, 220, 312],
             maxWidth: "100%",
             pb: [28, 28, 0],
           }}
