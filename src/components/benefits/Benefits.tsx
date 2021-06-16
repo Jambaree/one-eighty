@@ -49,6 +49,7 @@ const Benefits = (props) => {
               return (
                 <Box key={i}>
                   <Box
+                    mb="25px"
                     sx={{
                       position: "relative",
                       height: 186,
