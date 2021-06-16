@@ -45,11 +45,14 @@ const TestimonialSlider = (props) => {
           ".slick-dots li": {
             m: 0,
             width: 12,
-          },
-          ".slick-dots li button:before": {
-            fontSize: 30,
-            color: "white",
-            opacity: "0.6",
+
+            button: {
+              ":before": {
+                fontSize: 30,
+                color: "white",
+                opacity: "1",
+              },
+            },
           },
           ".slick-dots .slick-active button:before": {
             color: "coral",
