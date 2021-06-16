@@ -2,8 +2,10 @@ import React from "react"
 import { Box, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 // import app components
-import BackgroundImage from "../BackgroundImage"
+// import BackgroundImage from "../BackgroundImage"
 import Edges from "../Edges"
 import Button from "../Button"
 
@@ -18,43 +20,35 @@ const TextImage = (props) => {
     link,
   } = props
 
+  const imageData = image?.localFile && getImage(image.localFile)
+
   return (
     <>
-      <Box
-        sx={{
-          backgroundColor: backgroundcolor,
-          position: "relative",
-          display: "flex",
-          flexWrap: "wrap-reverse",
-          alignItems: "center",
-          minHeight: [null, null, 600],
-          my: [48, 48, 0],
-          textAlign: "left",
-          "p:last-child": {
-            mb: [16, 18, 24],
-          },
-        }}
-      >
+      <Edges size="lg">
         <Box
           sx={{
-            left: alignment === "left" ? 0 : "unset",
-            right: alignment === "right" ? 0 : "unset",
-            position: ["relative", null, "absolute"],
-            height: [434, 500, "auto"],
-            width: ["100%", "100%", "calc(50% - 25px)"],
-            order: 1,
-            top: [null, null, 0],
-            bottom: [null, null, 0],
-            m: [24, 24, "52px 24px"],
+            backgroundColor: backgroundcolor,
+            position: "relative",
+            display: "flex",
+            flexDirection: alignment === "left" ? "row" : "row-reverse",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+            my: 50,
           }}
         >
-          {image && <BackgroundImage image={image} backgroundSize="contain" />}
-        </Box>
-        <Edges size="md">
           <Box
             sx={{
-              ml: alignment === "left" ? "auto" : "unset",
-              mr: alignment === "right" ? "auto" : "unset",
+              width: ["100%", "100%", "calc(50% - 25px)"],
+            }}
+          >
+            {image && imageData && (
+              <GatsbyImage image={imageData} alt={image?.altText || ""} />
+            )}
+          </Box>
+
+          <Box
+            sx={{
               width: ["100%", null, "calc(50% - 25px)"],
               height: "100%",
               my: "auto",
@@ -72,6 +66,7 @@ const TextImage = (props) => {
                 sx={{ pb: 36 }}
               />
             )}
+
             {text && (
               <Text
                 children={Parser(text)}
@@ -81,14 +76,15 @@ const TextImage = (props) => {
                 }}
               />
             )}
+
             {link?.url && (
-              <Button variant="primary" to={link.url}>
-                {Parser(link.title)}
+              <Button variant="primary" to={link.url} mb={50}>
+                {link.title && Parser(link.title)}
               </Button>
             )}
           </Box>
-        </Edges>
-      </Box>
+        </Box>
+      </Edges>
     </>
   )
 }
