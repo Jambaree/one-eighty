@@ -90,7 +90,6 @@ const Video = (props) => {
                   width: "100%",
                   position: "relative",
                   height: 0,
-                  overflow: "hidden",
                   maxWidth: "100%",
                   paddingBottom: "56.25%",
                   iframe: {
@@ -104,6 +103,9 @@ const Video = (props) => {
                 }}
               >
                 <Embed url={videolink} />
+                <TurquoiseBlock />
+                <FlaxBlock />
+                <PlumBlock />
               </Box>
             )}
           </Box>
@@ -114,3 +116,69 @@ const Video = (props) => {
 }
 
 export default Video
+
+const TurquoiseBlock = () => {
+  return (
+    <Box
+      sx={{
+        display: "none",
+        "@media screen and (min-width: 1200px)": {
+          display: "block",
+        },
+        position: "absolute",
+        top: "0",
+        right: "calc(100% + 20px)",
+        width: "110px",
+        height: "110px",
+        bg: "turquoise",
+        borderRadius: "8px",
+      }}
+    />
+  )
+}
+
+const FlaxBlock = () => {
+  return (
+    <Box
+      sx={{
+        width: "24px",
+        height: "24px",
+        borderRadius: "3px",
+        "@media screen and (min-width: 1200px)": {
+          width: "65px",
+          height: "65px",
+          borderRadius: "8px",
+        },
+        position: "absolute",
+        bottom: "calc(100% + 20px)",
+        left: 0,
+        bg: "flax",
+      }}
+    />
+  )
+}
+
+const PlumBlock = () => {
+  return (
+    <Box
+      sx={{
+        top: "calc(100% + 20px)",
+        right: 0,
+        width: "41px",
+        height: "41px",
+        borderRadius: "3px",
+        "@media screen and (min-width: 1200px)": {
+          width: "110px",
+          height: "110px",
+          borderRadius: "8px",
+          bottom: 0,
+          left: "calc(100% + 20px)",
+          top: "unset",
+          right: "unset",
+        },
+        position: "absolute",
+        bg: "plum",
+      }}
+    />
+  )
+}
