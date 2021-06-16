@@ -7,7 +7,7 @@ const themeUi = {
     heading:
       "Poppins, Verdana, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
   },
-  fontSizes: [11, 12, 14, 15, 18, 20, 22, 24, 28, 32, 36, 46, 65],
+  fontSizes: [11, 12, 14, 15, 16, 18, 20, 22, 24, 28, 32, 36, 46, 65],
   fontWeights: {
     extralight: 200,
     light: 300,
@@ -57,27 +57,33 @@ const themeUi = {
   text: {
     heading: {
       fontFamily: "heading",
-      lineHeight: "heading",
       fontWeight: "heading",
       color: "charcoal",
     },
     introduction: {
       fontFamily: "body",
-      fontSize: 4,
-      fontWeight: "extralight",
+      fontSize: 5,
+      lineHeight: "30px",
+      fontWeight: "light",
       letterSpacing: "-0.27px",
       color: "black75",
       "@media (max-width: 767px)": {
+        lineHeight: "25px",
         letterSpacing: "-0.24px",
-        fontSize: "16px",
+        fontSize: 4,
       },
     },
     paragraph: {
       fontFamily: "body",
-      fontSize: 2,
+      fontSize: 3,
       fontWeight: "light",
       letterSpacing: "-0.23px",
       color: "black75",
+      lineHeight: "30px",
+      "@media (max-width: 767px)": {
+        lineHeight: "24px",
+        fontSize: 2,
+      },
     },
     footerHeading1: {
       fontFamily: "body",
@@ -116,8 +122,9 @@ const themeUi = {
   buttons: {
     primary: {
       fontFamily: "body",
-      fontSize: 4,
+      fontSize: 5,
       letterSpacing: "-0.18px",
+      lineHeight: "26px",
       color: "white",
       bg: "coral",
       borderRadius: 6,
@@ -198,8 +205,12 @@ const themeUi = {
       color: "coral",
       fontSize: 3,
       fontFamily: "body",
+      lineHeight: "30px",
+      letterSpacing: "-0.23px",
+      fontWeight: "medium",
       "@media (max-width: 767px)": {
         fontSize: 2,
+        lineHeight: "24px",
       },
       "&:hover": {
         color: "coralDark",
@@ -227,54 +238,54 @@ const themeUi = {
     },
     h1: {
       variant: "text.heading",
-      fontSize: 12,
+      fontSize: 13,
       fontWeight: "heading",
       letterSpacing: "-1.63px",
       lineHeight: "65px",
       "@media (max-width: 767px)": {
-        fontSize: 10,
+        fontSize: 11,
         letterSpacing: "-0.9px",
         lineHeight: "36px",
       },
     },
     h2: {
       variant: "text.heading",
-      fontSize: 11,
+      fontSize: 12,
       letterSpacing: "-1.15px",
       lineHeight: "54px",
       "@media (max-width: 767px)": {
-        fontSize: 8,
+        fontSize: 9,
         lineHeight: "30px",
       },
     },
     h3: {
       variant: "text.heading",
       fontSize: 10,
-      letterSpacing: "-.64px",
+      letterSpacing: "-0.64px",
       lineHeight: "46px",
       "@media (max-width: 767px)": {
         fontSize: 5,
+        lineHeight: "22px",
       },
-    },
-    p: {
-      fontSize: 2,
-      color: "black75",
-      fontWeight: 300,
     },
     h4: {
       variant: "text.heading",
       fontSize: 7,
+      letterSpacing: "-0.33px",
+      lineHeight: "32px",
+      "@media (max-width: 767px)": {
+        fontSize: 4,
+        lineHeight: "26px",
+      },
     },
     h5: {
       variant: "text.heading",
-      fontSize: 4,
-      letterSpacing: "-0.64px",
-      lineHeight: "32px",
+      fontSize: 5,
+      letterSpacing: "-0.18px",
+      lineHeight: "26px",
+      "@media (max-width: 767px)": {},
     },
-    h6: {
-      variant: "text.heading",
-      fontSize: 4,
-    },
+    h6: {},
     accheading: {
       variant: "text.heading",
       fontSize: 6,
@@ -298,6 +309,11 @@ const themeUi = {
         letterSpacing: "-0.16px",
         lineHeight: "26px",
       },
+    },
+    p: {
+      fontSize: 2,
+      color: "black75",
+      fontWeight: 300,
     },
     pre: {
       fontFamily: "monospace",
