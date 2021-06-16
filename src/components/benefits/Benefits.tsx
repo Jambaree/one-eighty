@@ -91,7 +91,8 @@ const Benefits = (props) => {
                         children={Parser(o.headline)}
                         variant="styles.h4"
                         sx={{
-                          width: ["100%"],
+                          mb: "8px",
+                          width: "100%",
                         }}
                       />
                     )}
@@ -99,6 +100,7 @@ const Benefits = (props) => {
                       <Text
                         children={Parser(o.text)}
                         variant="text.paragraph"
+                        as="p"
                       />
                     )}
                   </Box>

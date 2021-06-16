@@ -79,7 +79,7 @@ const themeUi = {
       fontWeight: "light",
       letterSpacing: "-0.23px",
       color: "black75",
-      lineHeight: "30px",
+      lineHeight: "25px",
       "@media (max-width: 767px)": {
         lineHeight: "24px",
         fontSize: 2,
