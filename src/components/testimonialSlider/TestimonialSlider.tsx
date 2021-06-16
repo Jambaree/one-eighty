@@ -87,6 +87,8 @@ const TestimonialSlider = (props) => {
             <Box>
               {headline ? (
                 <Heading
+                  as="h3"
+                  variant="styles.h3"
                   children={Parser(headline)}
                   sx={{
                     textAlign: "left",
@@ -94,8 +96,6 @@ const TestimonialSlider = (props) => {
                     mr: [100, 50, 0],
                     mt: [0, 0, 60],
                     pl: [0, 0, 40],
-                    fontSize: "5",
-                    letterSpacing: "-0.33px",
                   }}
                 />
               ) : (
@@ -154,13 +154,12 @@ const TestimonialSlider = (props) => {
                         )}
                         {o.name && (
                           <Text
+                            as="h3"
                             children={Parser(o.name)}
-                            variant="text.heading"
+                            variant="styles.h3"
                             sx={{
                               display: "block",
                               mb: "8px",
-                              fontSize: "5",
-                              letterSpacing: "-0.33px",
                               "&:before": {
                                 content: "''",
                                 position: "absolute",

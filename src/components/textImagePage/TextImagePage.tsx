@@ -131,6 +131,7 @@ const TextImagePage = (props) => {
                     >
                       {o.headline && (
                         <Heading
+                          as="h3"
                           children={Parser(o.headline)}
                           variant="styles.h3"
                           sx={{
