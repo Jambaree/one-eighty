@@ -1,15 +1,6 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import {
-  Grid,
-  Box,
-  Heading,
-  Text,
-  Checkbox,
-  Label,
-  Input,
-  IconButton,
-} from "theme-ui"
+import { Grid, Box, Heading, Text, Label, Input, IconButton } from "theme-ui"
 import { ChevronLeft, ChevronRight, Magnify } from "mdi-material-ui"
 import moment from "moment"
 import produce from "immer"
@@ -17,6 +8,7 @@ import produce from "immer"
 // import app components
 import Layout from "../../../../components/Layout"
 import TopBanner from "../../../../components/topBanner/TopBanner"
+import theme from "../../../../theme"
 
 const Template = (props) => {
   const {
@@ -335,13 +327,51 @@ const Template = (props) => {
                       height: 16,
                     }}
                   >
-                    <Checkbox
-                      id={1}
-                      value={o.databaseId}
-                      defaultChecked={category.includes(o.databaseId)}
+                    <Box
                       onChange={handleChangeCategory}
-                      variant="forms.checkbox"
-                    />
+                      name={o.name}
+                      value={o.databaseId}
+                      sx={{
+                        cursor: "pointer",
+                        width: "16px",
+                        height: "16px",
+                        bg: "white",
+                        border: "1px solid",
+                        borderColor: category.includes(o.databaseId)
+                          ? theme.colors.coral
+                          : theme.colors.black25,
+                        borderRadius: "3px",
+                        marginRight: "10px",
+
+                        "&:hover": {
+                          borderColor: theme.colors.coral,
+                        },
+
+                        "&:after": {
+                          content: "''",
+                          display: category.includes(o.databaseId)
+                            ? "block"
+                            : "none",
+                          position: "relative",
+                          margin: "1.7px auto",
+                          width: "10px",
+                          borderRadius: "1px",
+                          height: "10px",
+                          background: theme.colors.coral,
+                        },
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        id={1}
+                        name={o.name}
+                        value={o.databaseId}
+                        defaultChecked={category.includes(o.databaseId)}
+                        style={{
+                          display: "none",
+                        }}
+                      />
+                    </Box>
                     {o.name}
                   </Label>
                 )
