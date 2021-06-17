@@ -77,7 +77,7 @@ const Hero = (props) => {
             <Text
               variant="introduction"
               children={Parser(text)}
-              sx={{ mb: "4" }}
+              sx={{ mb: "4", lineHeight: 1.8 }}
             />
           )}
           {link?.url ? (
