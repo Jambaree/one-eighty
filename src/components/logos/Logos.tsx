@@ -10,6 +10,9 @@ import Modal from "../Modal"
 import Textarea from "../Textarea"
 import theme from "../../theme"
 
+import CutPlumHexagon from "../../icons/Cut_Hexagon_Plum.svg"
+import HexagonGroupFlaxTurquoise from "../../icons/Hexagon_Group_Flax_Turquoise.svg"
+
 const Logos = (props) => {
   const { columns, headline, subheading, divider, cards } = props
 
@@ -30,10 +33,19 @@ const Logos = (props) => {
   }
 
   return (
-    <Box sx={{ bg: "white", mt: 104, mb: 154, position: "relative" }}>
+    <Box
+      sx={{
+        bg: "white",
+        pt: 100,
+        mb: 160,
+        position: "relative",
+      }}
+    >
+      <PlumGraphic />
       <Edges size="md">
         <Box
           sx={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -55,6 +67,7 @@ const Logos = (props) => {
             },
           }}
         >
+          <HexagonsGraphic />
           {headline && (
             <Heading
               children={Parser(headline)}
@@ -177,3 +190,55 @@ const Logos = (props) => {
 }
 
 export default Logos
+
+const PlumGraphic = () => {
+  return (
+    <Edges
+      size="lg"
+      style={{
+        height: 0,
+        position: "relative",
+        top: "-100px",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          width: 185,
+          height: 106,
+
+          "@media screen and (min-width: 800px)": {
+            position: "absolute",
+            zIndex: 1,
+            top: 0,
+            left: 0,
+          },
+        }}
+      >
+        <CutPlumHexagon />
+      </Box>
+    </Edges>
+  )
+}
+
+const HexagonsGraphic = () => {
+  return (
+    <Box
+      sx={{
+        display: "none",
+        "@media screen and (min-width: 1345px)": {
+          display: "block",
+        },
+        width: 140,
+        height: 215,
+        position: "absolute",
+        zIndex: 3,
+        top: 0,
+        left: "calc(100% + 5px)",
+      }}
+    >
+      <HexagonGroupFlaxTurquoise />
+    </Box>
+  )
+}
