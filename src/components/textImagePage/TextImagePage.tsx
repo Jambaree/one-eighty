@@ -55,7 +55,7 @@ const TextImagePage = (props) => {
               color: "almondLight",
               pr: [18, "auto", 0],
               pl: [35, "auto", 0],
-              pb: [64, 0, 50],
+              pb: [64, 50, 50],
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
