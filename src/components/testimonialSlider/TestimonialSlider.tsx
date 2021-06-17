@@ -39,7 +39,7 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         bg: backgroundcolor,
-        pb: 160,
+        pb: [100, 182, 182],
         position: "relative",
       }}
     >
@@ -149,7 +149,7 @@ const TestimonialSlider = (props) => {
                         key={i}
                         sx={{
                           pl: [0, 0, 40],
-                          mb: o.name && o.position && 100,
+                          mb: o.name && o.position && [60, 100, 100],
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "flex-start",
