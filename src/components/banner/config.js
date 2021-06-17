@@ -1,3 +1,5 @@
+import theme from "../../gatsby-plugin-theme-ui"
+
 const config = {
   id: "banner",
   label: "Banner",
@@ -6,6 +8,12 @@ const config = {
       id: "backgroundimage",
       type: "image",
       label: "Background Image",
+    },
+    {
+      id: "backgroundColor",
+      type: "color_picker",
+      label: "Background Color",
+      defaultValue: theme.colors.almondLight,
     },
     {
       id: "headline",

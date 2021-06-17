@@ -7,17 +7,30 @@ import Parser from "html-react-parser"
 import theme from "../../theme"
 import Edges from "../Edges"
 
+import CutSquareCoralGraphic from "../../icons/Cut_Square_Coral.svg"
+
 const Banner = (props) => {
-  const { backgroundimage, headline, headlinestyle = "h2", text, link } = props
+  const {
+    backgroundimage,
+    backgroundColor,
+    headline,
+    headlinestyle = "h2",
+    text,
+    link,
+  } = props
 
   return (
     <Box
       sx={{
+        position: "relative",
+        backgroundColor: backgroundColor,
         background:
           backgroundimage && `url(${backgroundimage.url}) no-repeat center`,
         backgroundSize: "cover",
       }}
     >
+      <CoralGraphic />
+
       <Edges size="md">
         <Box
           sx={{
@@ -27,7 +40,7 @@ const Banner = (props) => {
             alignItems: "center",
             textAlign: "center",
             px: [0, 0, 45],
-            py: [96, 120, 157],
+            py: [120, 120, 157],
           }}
         >
           {headline && (
@@ -76,3 +89,25 @@ const Banner = (props) => {
 }
 
 export default Banner
+
+const CoralGraphic = () => {
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: "calc(50% - 70px)",
+        width: 140,
+        height: 70,
+
+        "@media screen and (min-width: 640px)": {
+          left: "calc(50% - 100px)",
+          width: 200,
+          height: 100,
+        },
+      }}
+    >
+      <CutSquareCoralGraphic />
+    </Box>
+  )
+}
