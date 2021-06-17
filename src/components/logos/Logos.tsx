@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Box, Grid, Heading, Text } from "theme-ui"
-import { ChevronRight } from "mdi-material-ui"
 import Parser from "html-react-parser"
 
 // import app components
@@ -8,7 +7,6 @@ import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
 import Textarea from "../Textarea"
-import theme from "../../theme"
 
 import CutPlumHexagon from "../../icons/Cut_Hexagon_Plum.svg"
 import HexagonGroupFlaxTurquoise from "../../icons/Hexagon_Group_Flax_Turquoise.svg"
