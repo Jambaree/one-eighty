@@ -55,6 +55,7 @@ const TextImagePage = (props) => {
               color: "almondLight",
               pr: [18, "auto", 0],
               pl: [35, "auto", 0],
+              pb: 64,
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
@@ -79,7 +80,6 @@ const TextImagePage = (props) => {
                 <Box
                   key={i}
                   sx={{
-                    mt: ["unset", 48, 60],
                     minHeight: 278,
                     display: "flex",
                     flexDirection: ["column", "row", "row"],
@@ -95,7 +95,7 @@ const TextImagePage = (props) => {
                       height: 278,
                       width: ["100%", "100%", "50%"],
                       mb: [28, 0, 0],
-                      mt: [48, 0, 0],
+                      mt: 36,
                       svg: {
                         maxHeight: "100%",
                         maxWidth: "100%",
@@ -168,7 +168,7 @@ const TextImagePage = (props) => {
             })}
         </Box>
         {mainlink?.url && (
-          <Box sx={{ mt: ["unset", 114, 114], mb: [100, 178, 178] }}>
+          <Box sx={{ mt: [75, 114, 114], mb: [100, 178, 178] }}>
             <Button variant="primary" to={mainlink.url}>
               {Parser(mainlink.title)}
             </Button>
