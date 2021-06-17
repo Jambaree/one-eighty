@@ -153,7 +153,6 @@ const Container = styled.div`
     }
     .checkboxes {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       grid-gap: 12px 2px;
 
       .checkbox-inline span {
@@ -161,6 +160,9 @@ const Container = styled.div`
         font-family: ${theme.fonts.body};
         font-weight: ${theme.fontWeights.light};
         font-size: ${theme.fontSizes[2]}px;
+
+        display: flex;
+        align-items: center;
       }
     }
   }
