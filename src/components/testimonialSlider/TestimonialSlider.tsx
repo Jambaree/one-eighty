@@ -20,6 +20,19 @@ const TestimonialSlider = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: true,
+    customPaging: () => (
+      <div
+        className="current"
+        style={{
+          width: "8px",
+          height: "8px",
+          color: "#848484",
+          border: "0.3px solid",
+          backgroundColor: "white",
+          borderRadius: "100%",
+        }}
+      />
+    ),
   }
 
   return (
@@ -33,27 +46,29 @@ const TestimonialSlider = (props) => {
       <Box
         sx={{
           m: "0 auto",
+
           ".slick-dots": {
-            position: "relative",
-            mx: "auto",
-            textAlign: "center",
+            li: {
+              m: "0 4px",
+              width: "8px",
+              height: "8px",
+
+              div: {
+                ":hover": {
+                  backgroundColor: "#FF7B59!important",
+                  color: "#FF7B59!important",
+                },
+              },
+            },
+
+            ".slick-active .current": {
+              color: "#E86140!important",
+              bg: "#E86140!important",
+            },
 
             "@media(max-width:1024px)": {
               textAlign: "left",
             },
-          },
-          ".slick-dots li": {
-            m: 0,
-            width: 12,
-          },
-          ".slick-dots li button:before": {
-            fontSize: 30,
-            color: "white",
-            opacity: "0.6",
-          },
-          ".slick-dots .slick-active button:before": {
-            color: "coral",
-            opacity: "unset",
           },
         }}
       >
@@ -134,6 +149,7 @@ const TestimonialSlider = (props) => {
                         key={i}
                         sx={{
                           pl: [0, 0, 40],
+                          mb: o.name && o.position && 100,
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "flex-start",
@@ -145,7 +161,7 @@ const TestimonialSlider = (props) => {
                             variant="styles.h3"
                             sx={{
                               display: "block",
-                              mb: 60,
+                              mb: o.name && 60,
                               fontSize: ["26px", "32px", "32px"],
                               lineHeight: ["39px", "46px", "46px"],
                               pr: [0, 85, 105],
@@ -159,7 +175,8 @@ const TestimonialSlider = (props) => {
                             variant="styles.h3"
                             sx={{
                               display: "block",
-                              mb: "8px",
+                              mb: o.position && "8px",
+
                               "&:before": {
                                 content: "''",
                                 position: "absolute",
@@ -176,7 +193,6 @@ const TestimonialSlider = (props) => {
                           <Text
                             children={Parser(o.position)}
                             variant="text.introduction"
-                            sx={{ pb: 100 }}
                           />
                         )}
                       </Box>

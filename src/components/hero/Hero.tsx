@@ -80,13 +80,17 @@ const Hero = (props) => {
               sx={{ mb: "4" }}
             />
           )}
-          {link?.url && linktype === "button" ? (
-            <Button to={link?.url} children={Parser(link?.title || "")} />
-          ) : (
-            <Link to={link?.url}>
-              <Box variant="links.hyperlink">{Parser(link?.title || "")}</Box>
-            </Link>
-          )}
+          {link?.url ? (
+            linktype === "button" ? (
+              <Button to={link?.url} children={Parser(link?.title || "")} />
+            ) : (
+              <Link to={link?.url}>
+                <Box variant="links.hyperlink">
+                  {Parser(link?.title || "")} →
+                </Box>
+              </Link>
+            )
+          ) : null}
         </Box>
       </Edges>
     </Box>
