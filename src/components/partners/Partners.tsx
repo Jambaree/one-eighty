@@ -16,6 +16,7 @@ const Partners = (props) => {
       <Edges size="md">
         <Box
           sx={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -25,6 +26,10 @@ const Partners = (props) => {
             mb: 36,
           }}
         >
+          <FlaxBlock />
+
+          <TurquoiseBlock />
+
           {headline && (
             <Heading
               children={Parser(headline)}
@@ -135,3 +140,43 @@ const Partners = (props) => {
 }
 
 export default Partners
+
+const TurquoiseBlock = () => {
+  return (
+    <Box
+      sx={{
+        display: "none",
+        "@media screen and (min-width: 1035px)": {
+          display: "block",
+        },
+        position: "absolute",
+        top: "calc(50% - 39px)",
+        right: "calc(100% + 46px + 6px)",
+        width: "78px",
+        height: "78px",
+        bg: "turquoise",
+        borderRadius: "8px",
+      }}
+    />
+  )
+}
+
+const FlaxBlock = () => {
+  return (
+    <Box
+      sx={{
+        display: "none",
+        "@media screen and (min-width: 1035px)": {
+          display: "block",
+          width: "46px",
+          height: "46px",
+          borderRadius: "8px",
+        },
+        position: "absolute",
+        top: "calc(50% - 46px - 39px - 6px)",
+        right: "calc(100%)",
+        bg: "flax",
+      }}
+    />
+  )
+}
