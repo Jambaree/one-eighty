@@ -5,9 +5,9 @@ require("dotenv").config({
 })
 
 const gatsbyConfig = {
-  // flags: {
-  //   DEV_SSR: true,
-  // },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-theme-ui`,
