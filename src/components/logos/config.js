@@ -91,6 +91,17 @@ const config = {
         },
       ],
     },
+    {
+      id: "graphicOptions",
+      type: "checkbox",
+      label: "Graphic Options",
+      options: [
+        {
+          name: "Show bottom graphic",
+          value: "showBottomGraphic",
+        },
+      ],
+    },
   ],
 }
 

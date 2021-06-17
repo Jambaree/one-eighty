@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Box, Grid, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
 import Edges from "../Edges"
@@ -8,11 +9,17 @@ import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
 import Textarea from "../Textarea"
 
-import CutPlumHexagon from "../../icons/Cut_Hexagon_Plum.svg"
+import CutHexagonPlum from "../../icons/Cut_Hexagon_Plum.svg"
 import HexagonGroupFlaxTurquoise from "../../icons/Hexagon_Group_Flax_Turquoise.svg"
+import CutHexagonFlax from "../../icons/Cut_Hexagon_Flax.svg"
 
 const Logos = (props) => {
-  const { columns, headline, subheading, divider, cards } = props
+  const { columns, headline, subheading, divider, cards, graphicOptions } =
+    props
+
+  const showBottomGraphic =
+    graphicOptions &&
+    graphicOptions.find((option) => option === `showBottomGraphic`)
 
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
@@ -35,14 +42,16 @@ const Logos = (props) => {
       sx={{
         bg: "white",
         pt: 100,
-        mb: 160,
+        pb: showBottomGraphic ? 260 : 160,
         position: "relative",
       }}
     >
       <PlumGraphic />
-      <Edges size="md">
+
+      <Edges size="lg">
         <Box
           sx={{
+            maxWidth: 1024,
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -66,6 +75,7 @@ const Logos = (props) => {
           }}
         >
           <HexagonsGraphic />
+
           {headline && (
             <Heading
               children={Parser(headline)}
@@ -78,6 +88,7 @@ const Logos = (props) => {
               }}
             />
           )}
+
           {subheading && (
             <Text
               children={Parser(subheading)}
@@ -90,9 +101,12 @@ const Logos = (props) => {
             />
           )}
         </Box>
-        <Grid gap={"0 64px"} columns={[1, 2, columns]}>
+
+        <Grid gap={"0 64px"} columns={[1, 2, columns]} px={30}>
           {cards &&
             cards.map((o, i) => {
+              const image = o?.logo?.localFile && getImage(o.logo.localFile)
+
               return (
                 <Box key={i} sx={{ position: "relative" }}>
                   <Box
@@ -101,19 +115,29 @@ const Logos = (props) => {
                     }}
                   >
                     {o.logo && (
-                      <BackgroundImage
-                        image={o.logo}
-                        style={{
-                          borderRadius: o.imagetype === "logo" ? 6 : "50%",
-                          height: o.imagetype === "logo" ? 90 : 208,
-                          position: "relative",
-                          width: o.imagetype === "logo" ? 244 : 208,
-                          margin: "0 auto 16px auto",
-                        }}
-                        backgroundSize={o.imagetype === "logo" && "contain"}
-                      />
+                      <>
+                        {o.imagetype === "logo" ? (
+                          <GatsbyImage
+                            image={image}
+                            alt={o?.logo?.altText || ""}
+                          />
+                        ) : (
+                          <BackgroundImage
+                            image={o.logo}
+                            style={{
+                              borderRadius: o.imagetype === "logo" ? 6 : "50%",
+                              height: o.imagetype === "logo" ? 90 : 208,
+                              position: "relative",
+                              width: o.imagetype === "logo" ? 244 : 208,
+                              margin: "0 auto 16px auto",
+                            }}
+                            backgroundSize={o.imagetype === "logo" && "contain"}
+                          />
+                        )}
+                      </>
                     )}
                   </Box>
+
                   <Box
                     sx={{
                       display: "flex",
@@ -132,6 +156,7 @@ const Logos = (props) => {
                       </Box>
                     )}
                   </Box>
+
                   <Box sx={{ width: 30, m: "0 auto" }}>
                     {o.modal && (
                       <Box
@@ -188,6 +213,7 @@ const Logos = (props) => {
                 </Box>
               )
             })}
+
           {modalState && (
             <Modal
               modalState={modalState}
@@ -198,6 +224,8 @@ const Logos = (props) => {
             />
           )}
         </Grid>
+
+        {showBottomGraphic && <BottomHexagonGraphic />}
       </Edges>
     </Box>
   )
@@ -230,7 +258,7 @@ const PlumGraphic = () => {
           },
         }}
       >
-        <CutPlumHexagon />
+        <CutHexagonPlum />
       </Box>
     </Edges>
   )
@@ -247,12 +275,28 @@ const HexagonsGraphic = () => {
         width: 140,
         height: 215,
         position: "absolute",
-        zIndex: 3,
+        zIndex: 1,
         top: 0,
         left: "calc(100% + 5px)",
       }}
     >
       <HexagonGroupFlaxTurquoise />
+    </Box>
+  )
+}
+
+const BottomHexagonGraphic = () => {
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        bottom: 0,
+        left: "calc(50% - (185px / 2))",
+        width: 185,
+        height: 106,
+      }}
+    >
+      <CutHexagonFlax />
     </Box>
   )
 }

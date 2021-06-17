@@ -35,6 +35,7 @@ const Modal = (props) => {
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
+          zIndex: 3,
         },
       }}
     >
@@ -53,7 +54,7 @@ const Modal = (props) => {
             maxWidth: "100%",
             mr: [0, 0, 66],
             height: "100%",
-            overflow: "scroll",
+            overflow: "auto",
           }}
         >
           {props.headline && (
