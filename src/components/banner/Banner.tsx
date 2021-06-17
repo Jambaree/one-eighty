@@ -43,7 +43,8 @@ const Banner = (props) => {
             alignItems: "center",
             textAlign: "center",
             px: [0, 0, 45],
-            py: [120, 120, 157],
+            pt: [120, 120, 157],
+            pb: showGraphics ? 50 : [120, 120, 157],
           }}
         >
           {headline && (
