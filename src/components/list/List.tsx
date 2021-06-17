@@ -36,6 +36,7 @@ const List = (props) => {
                     position: "relative",
                     height: 100,
                     width: 160,
+                    maxWidth: ["100%", "25%", "25%"],
                     mr: [0, 16, 16],
                     mb: [36, 0, 0],
                   }}
@@ -49,6 +50,7 @@ const List = (props) => {
                   sx={{
                     lineHeight: "25px",
                     letterSpacing: "-0.23px",
+                    width: ["100%", "75%", "75%"],
                   }}
                 >
                   {o.text && <Textarea content={o.text} />}
