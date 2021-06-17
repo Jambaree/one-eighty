@@ -7,6 +7,7 @@ import produce from "immer"
 
 // import app components
 import Layout from "../../../../components/Layout"
+import Edges from "../../../../components/Edges"
 import TopBanner from "../../../../components/topBanner/TopBanner"
 import theme from "../../../../theme"
 
@@ -141,7 +142,7 @@ const Template = (props) => {
               backgroundColor: "#FFF",
               borderRadius: 6,
               padding: "10px 10px 10px 15px",
-              m: ["12px auto", "45px auto 100px auto", "64px 0 0 20px"],
+              m: "0 auto",
             }}
           >
             {page < 2 ? (
@@ -251,204 +252,214 @@ const Template = (props) => {
   return (
     <Layout {...props} seo={seo}>
       <TopBanner headline={headline} text={text} />
-
-      <Grid
-        columns={[1, 1, "4fr 8fr"]}
-        gap={"45px"}
-        sx={{
-          p: ["52px 32px 100px 32px", "52px 32px 0px 32px", "118px 138px"],
-          backgroundColor: "almondLight",
-        }}
-      >
-        <Box
-          sx={{
-            maxWidth: ["100%", "80%", "100%"],
-            minWidth: 200,
-          }}
-        >
-          <Text
+      <Box sx={{ backgroundColor: "almondLight" }}>
+        <Edges size="lg">
+          <Grid
+            columns={[1, 1, "4fr 8fr"]}
+            gap={"45px"}
             sx={{
-              fontFamily: "fonts.heading",
-              fontSize: 0,
-              textTransform: "uppercase",
-              letterSpacing: "1.1px",
-              pl: "10px",
-              pb: "5px",
+              pt: [52, 52, 118],
+              pb: 160,
             }}
           >
-            Search
-          </Text>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              width: "100%",
-              height: 47,
-            }}
-          >
-            <Input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search what’s new…"
-              variant="buttons.entryfield.field"
-              sx={{ width: "100%", height: "auto", maxWidth: 500 }}
-            />
-            <IconButton
-              sx={{ ml: "-34px", fill: "coral", height: 18, maxWidth: 18 }}
+            <Box
+              sx={{
+                maxWidth: ["100%", "80%", "100%"],
+                minWidth: 200,
+              }}
             >
-              <Magnify />
-            </IconButton>
-          </Box>
-
-          <Text
-            as="p"
-            sx={{
-              fontFamily: "heading",
-              fontSize: 0,
-              textTransform: "uppercase",
-              letterSpacing: "1.1px",
-              mt: 60,
-            }}
-          >
-            Type
-          </Text>
-          <Box>
-            {categories &&
-              categories.map((o) => {
-                return (
-                  <Label
-                    key={o.databaseId}
-                    variant="text.paragraph"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      my: "20px",
-                      fontSize: "15px",
-                      height: 16,
-                    }}
-                  >
-                    <Box
-                      onChange={handleChangeCategory}
-                      name={o.name}
-                      value={o.databaseId}
-                      sx={{
-                        cursor: "pointer",
-                        width: "16px",
-                        height: "16px",
-                        bg: "white",
-                        border: "1px solid",
-                        borderColor: category.includes(o.databaseId)
-                          ? theme.colors.coral
-                          : theme.colors.black25,
-                        borderRadius: "3px",
-                        marginRight: "10px",
-
-                        "&:hover": {
-                          borderColor: theme.colors.coral,
-                        },
-
-                        "&:after": {
-                          content: "''",
-                          display: category.includes(o.databaseId)
-                            ? "block"
-                            : "none",
-                          position: "relative",
-                          margin: "1.7px auto",
-                          width: "10px",
-                          borderRadius: "1px",
-                          height: "10px",
-                          background: theme.colors.coral,
-                        },
-                      }}
-                    >
-                      <input
-                        type="checkbox"
-                        id={1}
-                        name={o.name}
-                        value={o.databaseId}
-                        defaultChecked={category.includes(o.databaseId)}
-                        style={{
-                          display: "none",
-                        }}
-                      />
-                    </Box>
-                    {o.name}
-                  </Label>
-                )
-              })}
-          </Box>
-        </Box>
-        <Box>
-          {activePosts.length > 0 ? (
-            activePosts.map((o) => (
-              <Grid
-                key={o.id}
-                columns={["2fr 6fr", null, "2fr 10fr"]}
-                gap={["28px", 3, 3]}
-                sx={{
-                  pb: 100,
-                  m: ["0 auto", "unset", "unset"],
-                }}
-              >
-                <Box>
-                  <Text
-                    sx={{
-                      fontFamily: "fonts.body",
-                      textTransform: "uppercase",
-                      color: "plumLight",
-                      letterSpacing: "1.1px",
-                      fontSize: "11px",
-                    }}
-                  >
-                    {moment(o.date).format("DD MMM")}
-                  </Text>
-                </Box>
-                <Box>
-                  <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
-                    {o.title}
-                  </Heading>
-
-                  {o.acf?.excerpt?.text && (
-                    <Text
-                      variant="text.introduction"
-                      sx={{
-                        display: "block",
-                        letterSpacing: "-0.23px",
-                        lineHeight: "25px",
-                        mb: "11px",
-                      }}
-                    >
-                      {o.acf.excerpt.text}
-                    </Text>
-                  )}
-
-                  <Link to={o.uri} aria-label="Read article" title={o.title}>
-                    <Box variant="links.hyperlink">Read more →</Box>
-                  </Link>
-                </Box>
-              </Grid>
-            ))
-          ) : (
-            <>
-              <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
-                No Results
-              </Heading>
               <Text
-                variant="text.introduction"
                 sx={{
-                  display: "block",
-                  letterSpacing: "-0.23px",
-                  lineHeight: "25px",
-                  mb: "11px",
+                  fontFamily: "fonts.heading",
+                  fontSize: 0,
+                  textTransform: "uppercase",
+                  letterSpacing: "1.1px",
+                  pl: "10px",
+                  pb: "5px",
                 }}
               >
-                Please try a different query
+                Search
               </Text>
-            </>
-          )}
-          {!search && category.length === 0 && renderPagination()}
-        </Box>
-      </Grid>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  height: 47,
+                }}
+              >
+                <Input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search what’s new…"
+                  variant="buttons.entryfield.field"
+                  sx={{ width: "100%", height: "auto", maxWidth: 500 }}
+                />
+                <IconButton
+                  sx={{ ml: "-34px", fill: "coral", height: 18, maxWidth: 18 }}
+                >
+                  <Magnify />
+                </IconButton>
+              </Box>
+
+              <Text
+                as="p"
+                sx={{
+                  fontFamily: "heading",
+                  fontSize: 0,
+                  textTransform: "uppercase",
+                  letterSpacing: "1.1px",
+                  mt: 60,
+                }}
+              >
+                Type
+              </Text>
+              <Box>
+                {categories &&
+                  categories.map((o) => {
+                    return (
+                      <Label
+                        key={o.databaseId}
+                        variant="text.paragraph"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          my: "20px",
+                          fontSize: "15px",
+                          height: 16,
+                        }}
+                      >
+                        <Box
+                          onChange={handleChangeCategory}
+                          name={o.name}
+                          value={o.databaseId}
+                          sx={{
+                            cursor: "pointer",
+                            width: "16px",
+                            height: "16px",
+                            bg: "white",
+                            border: "1px solid",
+                            borderColor: category.includes(o.databaseId)
+                              ? theme.colors.coral
+                              : theme.colors.black25,
+                            borderRadius: "3px",
+                            marginRight: "10px",
+
+                            "&:hover": {
+                              borderColor: theme.colors.coral,
+                            },
+
+                            "&:after": {
+                              content: "''",
+                              display: category.includes(o.databaseId)
+                                ? "block"
+                                : "none",
+                              position: "relative",
+                              margin: "1.7px auto",
+                              width: "10px",
+                              borderRadius: "1px",
+                              height: "10px",
+                              background: theme.colors.coral,
+                            },
+                          }}
+                        >
+                          <input
+                            type="checkbox"
+                            id={1}
+                            name={o.name}
+                            value={o.databaseId}
+                            defaultChecked={category.includes(o.databaseId)}
+                            style={{
+                              display: "none",
+                            }}
+                          />
+                        </Box>
+                        {o.name}
+                      </Label>
+                    )
+                  })}
+              </Box>
+            </Box>
+            <Box>
+              {activePosts.length > 0 ? (
+                activePosts.map((o) => (
+                  <Grid
+                    key={o.id}
+                    columns={["2fr 6fr", null, "2fr 10fr"]}
+                    gap={["28px", 3, 3]}
+                    sx={{
+                      pb: 100,
+                      m: ["0 auto", "unset", "unset"],
+                    }}
+                  >
+                    <Box>
+                      <Text
+                        sx={{
+                          fontFamily: "fonts.body",
+                          textTransform: "uppercase",
+                          color: "plumLight",
+                          letterSpacing: "1.1px",
+                          fontSize: "11px",
+                        }}
+                      >
+                        {moment(o.date).format("DD MMM")}
+                      </Text>
+                    </Box>
+                    <Box>
+                      <Heading
+                        variant="styles.h5"
+                        sx={{ fontSize: "6", mb: 18 }}
+                      >
+                        {o.title}
+                      </Heading>
+
+                      {o.acf?.excerpt?.text && (
+                        <Text
+                          variant="text.introduction"
+                          sx={{
+                            display: "block",
+                            letterSpacing: "-0.23px",
+                            lineHeight: "25px",
+                            mb: "11px",
+                          }}
+                        >
+                          {o.acf.excerpt.text}
+                        </Text>
+                      )}
+
+                      <Link
+                        to={o.uri}
+                        aria-label="Read article"
+                        title={o.title}
+                      >
+                        <Box variant="links.hyperlink">Read more →</Box>
+                      </Link>
+                    </Box>
+                  </Grid>
+                ))
+              ) : (
+                <>
+                  <Heading variant="styles.h5" sx={{ fontSize: "6", mb: 18 }}>
+                    No Results
+                  </Heading>
+                  <Text
+                    variant="text.introduction"
+                    sx={{
+                      display: "block",
+                      letterSpacing: "-0.23px",
+                      lineHeight: "25px",
+                      mb: "11px",
+                    }}
+                  >
+                    Please try a different query
+                  </Text>
+                </>
+              )}
+              {!search && category.length === 0 && renderPagination()}
+            </Box>
+          </Grid>
+        </Edges>
+      </Box>
     </Layout>
   )
 }
