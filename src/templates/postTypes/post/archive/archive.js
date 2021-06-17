@@ -334,9 +334,13 @@ const Template = (props) => {
                       sx={{
                         width: "16px",
                         height: "16px",
-                        backgroundColor: "white",
+                        backgroundColor: category.includes(o.databaseId)
+                          ? "coral"
+                          : "white",
                         border: "1px solid",
-                        borderColor: theme.colors.black25,
+                        borderColor: category.includes(o.databaseId)
+                          ? "coral"
+                          : theme.colors.black25,
                         borderRadius: "3px",
                         marginRight: "10px",
                         "&:hover": {
