@@ -24,7 +24,7 @@ const TestimonialSlider = (props) => {
       <div
         className="clickableArea"
         style={{
-          padding: "10px",
+          padding: "6px",
         }}
       >
         <div
