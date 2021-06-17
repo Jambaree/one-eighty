@@ -54,11 +54,6 @@ const CardCarousel = (props) => {
         sx={{
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
-            backgroundColor: "white",
-            border: "1px solid",
-            borderColor: "black25",
-            borderRadius: "50%",
-            p: "4px 13px 6px",
           },
           ".slick-next:before": {
             content: "'›'",
@@ -66,40 +61,64 @@ const CardCarousel = (props) => {
           ".slick-prev:before": {
             content: "'‹'",
           },
-          ".slick-prev": {
+          ".slick-prev, .slick-next": {
             width: 38,
             height: 38,
-            left: -60,
             top: "120px",
             transform: "translateY(-50%)",
+            backgroundColor: "white",
+            border: "1px solid",
+            borderColor: "black25",
+            borderRadius: "100%",
 
             "@media (max-width: 1200px)": {
-              transform: "translateY(350px)",
+              transform: "translateY(385px)",
+            },
+            "@media (max-width: 1000px)": {
+              transform: "translateY(420px)",
+            },
+            "@media (max-width: 860px)": {
+              transform: "translateY(440px)",
+            },
+            "@media (max-width: 800px)": {
+              transform: "translateY(380px)",
+            },
+            "@media (max-width: 660px)": {
+              transform: "translateY(400px)",
+            },
+            "@media (max-width: 610px)": {
+              transform: "translateY(450px)",
+            },
+            "@media (max-width: 478px)": {
+              transform: "translateY(360px)",
+            },
+            "@media (max-width: 430px)": {
+              transform: "translateY(380px)",
+            },
+          },
+          ".slick-prev": {
+            left: -60,
+
+            "@media (max-width: 1200px)": {
               left: "45%",
             },
             "@media (max-width: 1000px)": {
               left: "42%",
             },
             "@media (max-width: 660px)": {
-              transform: "translateY(360px)",
               left: "36%",
             },
           },
           ".slick-next": {
-            width: 38,
-            height: 38,
             right: -60,
-            top: "120px",
-            transform: "translateY(-50%)",
+
             "@media (max-width: 1200px)": {
-              transform: "translateY(350px)",
               right: "45%",
             },
             "@media (max-width: 1000px)": {
               right: "42%",
             },
             "@media (max-width: 660px)": {
-              transform: "translateY(360px)",
               right: "36%",
             },
           },
