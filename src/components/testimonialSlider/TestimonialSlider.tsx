@@ -22,16 +22,23 @@ const TestimonialSlider = (props) => {
     pauseOnHover: true,
     customPaging: () => (
       <div
-        className="current"
+        className="clickableArea"
         style={{
-          width: "8px",
-          height: "8px",
-          color: "#848484",
-          border: "0.3px solid",
-          backgroundColor: "white",
-          borderRadius: "100%",
+          padding: "10px",
         }}
-      />
+      >
+        <div
+          className="current"
+          style={{
+            width: "8px",
+            height: "8px",
+            color: "#848484",
+            border: "0.3px solid",
+            backgroundColor: "white",
+            borderRadius: "100%",
+          }}
+        />
+      </div>
     ),
   }
 
@@ -49,11 +56,11 @@ const TestimonialSlider = (props) => {
 
           ".slick-dots": {
             li: {
-              m: "0 4px",
+              m: "0 5px",
               width: "8px",
               height: "8px",
 
-              div: {
+              ".current": {
                 ":hover": {
                   backgroundColor: "#FF7B59!important",
                   color: "#FF7B59!important",
