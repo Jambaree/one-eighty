@@ -102,6 +102,7 @@ const Benefits = (props) => {
                         children={Parser(o.text)}
                         variant="text.paragraph"
                         as="p"
+                        sx={{ lineHeight: 1.7, fontWeight: 200 }}
                       />
                     )}
                   </Box>
