@@ -14,12 +14,7 @@ import HexagonGroupFlaxTurquoise from "../../icons/Hexagon_Group_Flax_Turquoise.
 import CutHexagonFlax from "../../icons/Cut_Hexagon_Flax.svg"
 
 const Logos = (props) => {
-  const { columns, headline, subheading, divider, cards, graphicOptions } =
-    props
-
-  const showBottomGraphic =
-    graphicOptions &&
-    graphicOptions.find((option) => option === `showBottomGraphic`)
+  const { columns, headline, subheading, divider, cards } = props
 
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
@@ -42,7 +37,8 @@ const Logos = (props) => {
       sx={{
         bg: "white",
         pt: 100,
-        pb: showBottomGraphic ? 260 : 160,
+        pb: 260,
+        // pb: showBottomGraphic ? 260 : 160,
         position: "relative",
       }}
     >
@@ -225,7 +221,7 @@ const Logos = (props) => {
           )}
         </Grid>
 
-        {showBottomGraphic && <BottomHexagonGraphic />}
+        <BottomHexagonGraphic />
       </Edges>
     </Box>
   )
