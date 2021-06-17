@@ -19,9 +19,9 @@ const Logos = (props) => {
   const { columns, headline, subheading, divider, cards, graphicOptions } =
     props
 
-  const showBottomGraphic = graphicOptions.find(
-    (option) => option === `showBottomGraphic`
-  )
+  const showBottomGraphic =
+    graphicOptions &&
+    graphicOptions.find((option) => option === `showBottomGraphic`)
 
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
