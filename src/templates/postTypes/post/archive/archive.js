@@ -332,19 +332,32 @@ const Template = (props) => {
                       name={o.name}
                       value={o.databaseId}
                       sx={{
+                        cursor: "pointer",
                         width: "16px",
                         height: "16px",
-                        backgroundColor: category.includes(o.databaseId)
-                          ? "coral"
-                          : "white",
+                        bg: "white",
                         border: "1px solid",
                         borderColor: category.includes(o.databaseId)
-                          ? "coral"
+                          ? theme.colors.coral
                           : theme.colors.black25,
                         borderRadius: "3px",
                         marginRight: "10px",
+
                         "&:hover": {
-                          borderColor: "coral",
+                          borderColor: theme.colors.coral,
+                        },
+
+                        "&:after": {
+                          content: "''",
+                          display: category.includes(o.databaseId)
+                            ? "block"
+                            : "none",
+                          position: "relative",
+                          margin: "1.7px auto",
+                          width: "10px",
+                          borderRadius: "1px",
+                          height: "10px",
+                          background: theme.colors.coral,
                         },
                       }}
                     >
