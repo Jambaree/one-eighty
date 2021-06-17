@@ -4,10 +4,11 @@ import { Container } from "theme-ui"
 interface Props {
   size?: "sm" | "md" | "lg"
   children?: any
+  [x: string]: any
 }
 
 const Edges = (props: Props) => {
-  const { size } = props
+  const { size, ...rest } = props
 
   return (
     <Container
@@ -19,10 +20,8 @@ const Edges = (props: Props) => {
           (size === "md" && "1024px") ||
           (size === "lg" && "1280px"),
       }}
-      {...props}
-    >
-      {props.children}
-    </Container>
+      {...rest}
+    />
   )
 }
 

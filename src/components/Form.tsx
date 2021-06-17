@@ -152,15 +152,52 @@ const Container = styled.div`
       padding-left: 15px;
     }
     .checkboxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 12px 2px;
+      .checkbox-inline {
+        margin-bottom: 20px;
+      }
 
       .checkbox-inline span {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
         text-transform: capitalize;
         font-family: ${theme.fonts.body};
         font-weight: ${theme.fontWeights.light};
         font-size: ${theme.fontSizes[2]}px;
+        input[type="checkbox"] {
+          -webkit-appearance: none;
+          background-color: white;
+          border: 1px solid #dbdbdb;
+          width: 16px;
+          height: 16px;
+          border-radius: 3px;
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            border: 1px solid var(--theme-ui-colors-coral);
+          }
+
+          &:checked {
+            border: 1px solid var(--theme-ui-colors-coral);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+              inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+              inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+            color: #99a1a7;
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 1.7px;
+              left: 1.5px;
+              width: 10px;
+              border-radius: 1px;
+              height: 10px;
+              background: var(--theme-ui-colors-coral);
+            }
+          }
+        }
       }
     }
   }
