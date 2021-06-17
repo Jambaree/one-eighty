@@ -260,7 +260,7 @@ const HexagonsGraphic = () => {
         width: 140,
         height: 215,
         position: "absolute",
-        zIndex: 3,
+        zIndex: 1,
         top: 0,
         left: "calc(100% + 5px)",
       }}

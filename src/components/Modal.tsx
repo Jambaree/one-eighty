@@ -35,6 +35,7 @@ const Modal = (props) => {
         },
         overlay: {
           background: "rgba(0, 0, 0, 0.75)",
+          zIndex: 3,
         },
       }}
     >
