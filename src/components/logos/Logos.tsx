@@ -53,6 +53,7 @@ const Logos = (props) => {
       <Edges size="lg">
         <Box
           sx={{
+            maxWidth: 1024,
             position: "relative",
             display: "flex",
             flexDirection: "column",
