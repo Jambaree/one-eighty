@@ -11,25 +11,28 @@ import CutSquareCoralGraphic from "../../icons/Cut_Square_Coral.svg"
 
 const Banner = (props) => {
   const {
+    variant,
     backgroundimage,
-    backgroundColor,
+    backgroundcolor,
     headline,
     headlinestyle = "h2",
     text,
     link,
   } = props
 
+  const showGraphics = variant === "graphics"
+
   return (
     <Box
       sx={{
         position: "relative",
-        backgroundColor: backgroundColor,
+        backgroundColor: backgroundcolor,
         background:
           backgroundimage && `url(${backgroundimage.url}) no-repeat center`,
         backgroundSize: "cover",
       }}
     >
-      <CoralGraphic />
+      {showGraphics && <CoralGraphic />}
 
       <Edges size="md">
         <Box
@@ -82,6 +85,8 @@ const Banner = (props) => {
               </Link>
             </Box>
           )}
+
+          {showGraphics && <BoxesGraphic />}
         </Box>
       </Edges>
     </Box>
@@ -111,3 +116,62 @@ const CoralGraphic = () => {
     </Box>
   )
 }
+
+const BoxesGraphic = () => (
+  <Box
+    sx={{
+      position: "relative",
+      py: 50,
+      width: 175,
+      height: 107,
+    }}
+  >
+    <Box
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        bg: "charcoalLight",
+        width: 56,
+        height: 56,
+        borderRadius: "8px",
+      }}
+    />
+
+    <Box
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: "calc(56px + 12px)",
+        bg: "turquoise",
+        width: 39,
+        height: 39,
+        borderRadius: "8px",
+      }}
+    />
+
+    <Box
+      sx={{
+        position: "absolute",
+        bottom: 0,
+        left: "calc(56px + 12px)",
+        bg: "flax",
+        width: 56,
+        height: 56,
+        borderRadius: "8px",
+      }}
+    />
+
+    <Box
+      sx={{
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        bg: "plumLight",
+        width: 39,
+        height: 39,
+        borderRadius: "8px",
+      }}
+    />
+  </Box>
+)

@@ -5,12 +5,28 @@ const config = {
   label: "Banner",
   fields: [
     {
+      id: "variant",
+      type: "select",
+      label: "Banner Variant",
+      defaultValue: "default",
+      options: [
+        {
+          name: "Default",
+          value: "default",
+        },
+        {
+          name: "Graphics",
+          value: "graphics",
+        },
+      ],
+    },
+    {
       id: "backgroundimage",
       type: "image",
       label: "Background Image",
     },
     {
-      id: "backgroundColor",
+      id: "backgroundcolor",
       type: "color_picker",
       label: "Background Color",
       defaultValue: theme.colors.almondLight,

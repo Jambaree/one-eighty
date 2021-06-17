@@ -368,6 +368,8 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   headline
                   text
+                  variant
+                  backgroundcolor
                   backgroundimage {
                     altText
                     localFile {
