@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Grid, Heading, Text, Link } from "theme-ui"
 import Parser from "html-react-parser"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
 import Edges from "../Edges"
@@ -57,6 +58,7 @@ const Partners = (props) => {
         <Grid gap={["90px", 4, 4]} columns={[1, 2, columns]}>
           {cards &&
             cards.map((o, i) => {
+              const image = o?.icon?.localFile && getImage(o.icon.localFile)
               return (
                 <Box
                   key={i}
@@ -70,7 +72,7 @@ const Partners = (props) => {
                   <Box
                     sx={{
                       position: "relative",
-                      width: "204px",
+                      maxWidth: "204px",
                       height: "74px",
                       mb: 25,
                     }}
@@ -79,9 +81,9 @@ const Partners = (props) => {
                       (o.icon?.svg ? (
                         Parser(o.icon.svg)
                       ) : (
-                        <BackgroundImage
-                          image={o.icon}
-                          backgroundSize="contain"
+                        <GatsbyImage
+                          image={image}
+                          alt={o.icon?.altText || ""}
                           style={{
                             borderRadius: 6,
                           }}
