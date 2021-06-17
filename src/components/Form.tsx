@@ -153,7 +153,8 @@ const Container = styled.div`
     }
     .checkboxes {
       display: grid;
-      grid-gap: 12px 2px;
+      grid-gap: 20px 2px;
+      margin-top: 20px;
 
       .checkbox-inline span {
         text-transform: capitalize;
@@ -163,6 +164,8 @@ const Container = styled.div`
 
         display: flex;
         align-items: center;
+        font-size: 15px;
+        height: 16px;
       }
     }
   }
