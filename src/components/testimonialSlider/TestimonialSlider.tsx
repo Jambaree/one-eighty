@@ -39,7 +39,7 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         bg: backgroundcolor,
-        pb: [100, 160, 160],
+        pb: [100, 182, 182],
         position: "relative",
       }}
     >
