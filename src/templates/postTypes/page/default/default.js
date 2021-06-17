@@ -217,6 +217,7 @@ export const CollectionQuery = graphql`
                   headline
                   subheading
                   cards {
+                    imagetype
                     fieldGroupName
                     text
                     logo {

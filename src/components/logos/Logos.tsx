@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { Box, Grid, Heading, Text, Link } from "theme-ui"
-import { ChevronRight } from "mdi-material-ui"
+import { Box, Grid, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -9,19 +8,13 @@ import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
 import Textarea from "../Textarea"
-import theme from "../../theme"
 
 import CutHexagonPlum from "../../icons/Cut_Hexagon_Plum.svg"
 import HexagonGroupFlaxTurquoise from "../../icons/Hexagon_Group_Flax_Turquoise.svg"
 import CutHexagonFlax from "../../icons/Cut_Hexagon_Flax.svg"
 
 const Logos = (props) => {
-  const { columns, headline, subheading, divider, cards, graphicOptions } =
-    props
-
-  const showBottomGraphic =
-    graphicOptions &&
-    graphicOptions.find((option) => option === `showBottomGraphic`)
+  const { columns, headline, subheading, divider, cards } = props
 
   const [modalState, setModal] = useState(false)
   const [modalContent, setContent] = useState({
@@ -44,7 +37,8 @@ const Logos = (props) => {
       sx={{
         bg: "white",
         pt: 100,
-        pb: showBottomGraphic ? 260 : 160,
+        pb: 260,
+        // pb: showBottomGraphic ? 260 : 160,
         position: "relative",
       }}
     >
@@ -182,15 +176,31 @@ const Logos = (props) => {
                         }}
                         onClick={() => handleClick(o, i)}
                       >
-                        <ChevronRight
-                          style={{
+                        <Box
+                          sx={{
+                            color: "coral",
+                            backgroundColor: "white",
+                            border: "1px solid",
+                            borderColor: "black25",
+                            borderRadius: "100%",
+                            padding: "4px 13px 6px",
                             height: "30px",
                             width: "30px",
-                            border: "1px solid",
-                            borderColor: theme.colors.black25,
-                            borderRadius: "50%",
-                            backgroundColor: "white",
-                            fill: "coral",
+
+                            "&:focus": {
+                              borderColor: "coralLight",
+                            },
+
+                            "&:focus-visible": {
+                              outline: "none",
+                            },
+
+                            "&:before": {
+                              content: "'›'",
+                              position: "absolute",
+                              top: "4px",
+                              left: "12px",
+                            },
                           }}
                         />
                       </Box>
@@ -211,7 +221,7 @@ const Logos = (props) => {
           )}
         </Grid>
 
-        {showBottomGraphic && <BottomHexagonGraphic />}
+        <BottomHexagonGraphic />
       </Edges>
     </Box>
   )
