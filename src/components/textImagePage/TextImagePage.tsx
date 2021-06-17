@@ -55,7 +55,7 @@ const TextImagePage = (props) => {
               color: "almondLight",
               pr: [18, "auto", 0],
               pl: [35, "auto", 0],
-              pb: 64,
+              pb: [64, 0, 50],
               fontSize: "18px",
               lineHeight: "30px",
               fontWeight: 400,
@@ -85,6 +85,7 @@ const TextImagePage = (props) => {
                     flexDirection: ["column", "row", "row"],
                     justifyContent: "center",
                     alignItems: "center",
+                    mt: [0, 50, 50],
                   }}
                 >
                   <Box
@@ -95,7 +96,7 @@ const TextImagePage = (props) => {
                       height: 278,
                       width: ["100%", "100%", "50%"],
                       mb: [28, 0, 0],
-                      mt: 36,
+                      mt: [36, 0, 0],
                       svg: {
                         maxHeight: "100%",
                         maxWidth: "100%",
