@@ -13,7 +13,7 @@ const List = (props) => {
     <Box
       sx={{
         bg: "almondLight",
-        py: [90, 118, 118],
+        pb: [80, 115, 120],
       }}
     >
       <Edges size="md">
@@ -28,7 +28,7 @@ const List = (props) => {
                   justifyContent: ["center", "flex-start", "flex-start"],
                   alignItems: "center",
                   px: [0, "4%", "15%"],
-                  mb: 120,
+                  pt: [80, 120, 120],
                 }}
               >
                 <Box
@@ -38,7 +38,7 @@ const List = (props) => {
                     width: 160,
                     maxWidth: ["100%", "25%", "25%"],
                     mr: [0, 16, 16],
-                    mb: [36, 0, 0],
+                    mb: [24, 0, 0],
                   }}
                 >
                   {o.image && (
