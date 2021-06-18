@@ -37,7 +37,7 @@ const TextImage = (props) => {
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
-            py: 50,
+            py: 100,
           }}
         >
           <Box
