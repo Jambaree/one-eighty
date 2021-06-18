@@ -35,7 +35,7 @@ const Introduction = (props) => {
           background={theme.colors.turquoise}
           style={{
             position: "absolute",
-            zIndex: 10,
+            zIndex: 1,
             left: -50,
             top: -80,
             transform: "rotate(30deg)",
