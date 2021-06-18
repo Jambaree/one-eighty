@@ -19,7 +19,12 @@ const Template = (props) => {
 
   return (
     <Layout {...props} seo={seo}>
-      <TopBanner headline={title} />
+      <TopBanner
+        headline={"Press Room"}
+        text={
+          "Stay in the know with Snap One press releases, news clippings, white papers, case studies, and more."
+        }
+      />
 
       <Box sx={{ bg: "almondLight" }}>
         <Edges size="sm">

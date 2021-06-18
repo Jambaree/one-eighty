@@ -43,6 +43,8 @@ const TextImage = (props) => {
           <Box
             sx={{
               width: ["100%", "100%", "calc(50% - 25px)"],
+              borderRadius: 8,
+              overflow: "hidden",
             }}
           >
             {image && imageData && (

@@ -84,6 +84,7 @@ const Benefits = (props) => {
                       textAlign: "center",
                       alignItems: "center",
                       mx: [40, 20, "unset"],
+                      padding: "0 20px",
                     }}
                   >
                     {o.headline && (
