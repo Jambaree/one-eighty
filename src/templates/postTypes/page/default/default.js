@@ -378,6 +378,7 @@ export const CollectionQuery = graphql`
                   backgroundcolor
                   backgroundimage {
                     altText
+                    sourceUrl
                     localFile {
                       childImageSharp {
                         gatsbyImageData(width: 1920, layout: FULL_WIDTH)

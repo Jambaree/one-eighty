@@ -28,7 +28,8 @@ const Banner = (props) => {
         position: "relative",
         backgroundColor: backgroundcolor,
         background:
-          backgroundimage && `url(${backgroundimage.url}) no-repeat center`,
+          backgroundimage &&
+          `url(${backgroundimage.sourceUrl}) no-repeat center`,
         backgroundSize: "cover",
       }}
     >
