@@ -3,9 +3,31 @@ const config = {
   label: "Banner",
   fields: [
     {
+      id: "variant",
+      type: "select",
+      label: "Banner Variant",
+      defaultValue: "default",
+      options: [
+        {
+          name: "Default",
+          value: "default",
+        },
+        {
+          name: "Graphics",
+          value: "graphics",
+        },
+      ],
+    },
+    {
       id: "backgroundimage",
       type: "image",
       label: "Background Image",
+    },
+    {
+      id: "backgroundcolor",
+      type: "color_picker",
+      label: "Background Color",
+      defaultValue: "#F5F4F1",
     },
     {
       id: "headline",
