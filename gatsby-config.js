@@ -25,7 +25,7 @@ const gatsbyConfig = {
         apiKey: process.env.GATSBY_JAM_CMS_API_KEY,
         fields: path.join(__dirname, "src/fields"),
         settings: {
-          postsPerPage: 2,
+          postsPerPage: 12,
         },
       },
     },
