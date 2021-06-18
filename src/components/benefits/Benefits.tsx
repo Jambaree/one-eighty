@@ -53,6 +53,7 @@ const Benefits = (props) => {
                     sx={{
                       position: "relative",
                       height: 186,
+                      textAlign: "center",
                       svg: {
                         maxHeight: "100%",
                         maxWidth: "100%",
