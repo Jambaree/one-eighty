@@ -69,7 +69,7 @@ const Cards = (props) => {
           )}
         </Box>
         <Grid
-          gap={6}
+          gap={[4, 4, 6]}
           columns={[1, 2, columns]}
           sx={{
             px: [0, 30],
@@ -83,7 +83,7 @@ const Cards = (props) => {
                     sx={{
                       position: "relative",
                       width: "100%",
-                      paddingBottom: "62.5%",
+                      height: [220, 220, 300],
                     }}
                   >
                     {o.image && (

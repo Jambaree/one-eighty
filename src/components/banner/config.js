@@ -25,9 +25,20 @@ const config = {
     },
     {
       id: "backgroundcolor",
-      type: "color_picker",
+      type: "select",
       label: "Background Color",
-      defaultValue: "#F5F4F1",
+      defaultValue: "White",
+      instructions: "Choose a background color", // optional
+      options: [
+        {
+          name: "White",
+          value: "#FFF",
+        },
+        {
+          name: "Light Almond",
+          value: "#F5F4F1",
+        },
+      ],
     },
     {
       id: "headline",
