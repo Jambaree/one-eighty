@@ -108,7 +108,11 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(width: 1920, placeholder: BLURRED)
+                        gatsbyImageData(
+                          width: 1920
+                          placeholder: BLURRED
+                          quality: 100
+                        )
                       }
                     }
                   }
@@ -116,7 +120,11 @@ export const CollectionQuery = graphql`
                     altText
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(width: 375, placeholder: BLURRED)
+                        gatsbyImageData(
+                          width: 375
+                          placeholder: BLURRED
+                          quality: 100
+                        )
                       }
                     }
                   }
@@ -147,6 +155,7 @@ export const CollectionQuery = graphql`
                           layout: FIXED
                           width: 500
                           placeholder: BLURRED
+                          quality: 100
                         )
                       }
                     }
@@ -171,7 +180,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 550, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 550
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -208,7 +221,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 200, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 200
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -228,7 +245,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 244, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 244
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -244,7 +265,11 @@ export const CollectionQuery = graphql`
                         altText
                         localFile {
                           childImageSharp {
-                            gatsbyImageData(width: 244, placeholder: BLURRED)
+                            gatsbyImageData(
+                              width: 244
+                              placeholder: BLURRED
+                              quality: 100
+                            )
                           }
                         }
                       }
@@ -282,7 +307,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 350
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -301,7 +330,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 350
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -309,7 +342,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 350, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 350
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -339,7 +376,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(width: 250, placeholder: BLURRED)
+                          gatsbyImageData(
+                            width: 250
+                            placeholder: BLURRED
+                            quality: 100
+                          )
                         }
                       }
                     }
@@ -381,7 +422,11 @@ export const CollectionQuery = graphql`
                     sourceUrl
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(width: 1920, layout: FULL_WIDTH)
+                        gatsbyImageData(
+                          width: 1920
+                          layout: FULL_WIDTH
+                          quality: 100
+                        )
                       }
                     }
                   }
@@ -414,6 +459,7 @@ export const CollectionQuery = graphql`
                             layout: CONSTRAINED
                             placeholder: NONE
                             width: 140
+                            quality: 100
                           )
                         }
                       }
@@ -437,7 +483,11 @@ export const CollectionQuery = graphql`
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(layout: CONSTRAINED, width: 160)
+                          gatsbyImageData(
+                            layout: CONSTRAINED
+                            width: 160
+                            quality: 100
+                          )
                         }
                       }
                     }
