@@ -96,6 +96,7 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Hero {
                   fieldGroupName
                   headline
+                  headlinestyle
                   text
                   linktype
                   link {
@@ -131,6 +132,7 @@ export const CollectionQuery = graphql`
                   backgroundcolor
                   alignment
                   headline
+                  headlinestyle
                   text
                   link {
                     target
@@ -154,6 +156,7 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   columns
                   headline
+                  headlinestyle
                   subheading
                   cards {
                     fieldGroupName
@@ -288,6 +291,7 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
                   fieldGroupName
                   headline
+                  headlinestyle
                   subheading
                   cards {
                     fieldGroupName
@@ -360,6 +364,7 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Herovideo {
                   fieldGroupName
                   headline
+                  headlinestyle
                   subheading
                   videoalignment
                   videolink
@@ -367,6 +372,7 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Banner {
                   fieldGroupName
                   headline
+                  headlinestyle
                   text
                   variant
                   backgroundcolor
