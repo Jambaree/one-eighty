@@ -1,7 +1,7 @@
 import React from "react"
 import Parser from "html-react-parser"
 import styled from "@emotion/styled"
-import { Themed } from "theme-ui"
+import { Themed, Text } from "theme-ui"
 
 const components = {
   h1: <Themed.h1 />,
@@ -72,7 +72,13 @@ const Textarea = (props) => {
       )
     }
 
-    return <Container {...rest}>{parse(contentString)}</Container>
+    return (
+      <Container {...rest}>
+        <Text variant="text.paragraph" as="div">
+          {parse(contentString)}
+        </Text>
+      </Container>
+    )
   } else {
     return null
   }
