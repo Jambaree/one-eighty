@@ -57,9 +57,13 @@ const CardCarousel = (props) => {
           },
           ".slick-next:before": {
             content: "'›'",
+            m: "0 auto",
+            textAlign: "center",
           },
           ".slick-prev:before": {
             content: "'‹'",
+            m: "0 auto",
+            textAlign: "center",
           },
           ".slick-prev, .slick-next": {
             width: 38,
