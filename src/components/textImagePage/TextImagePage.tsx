@@ -153,7 +153,8 @@ const TextImagePage = (props) => {
                             color: "almondLight",
                             letterSpacing: "-0.23px",
                             lineHeight: "25px",
-                            px: [18, 24, 0],
+                            pl: [18, 24, 0],
+                            pr: [25, 52, 80],
                           }}
                         />
                       )}
