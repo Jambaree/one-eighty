@@ -1,6 +1,6 @@
 const config = {
   id: "list",
-  label: "[WIP] List",
+  label: "List",
   fields: [
     {
       id: "list",
