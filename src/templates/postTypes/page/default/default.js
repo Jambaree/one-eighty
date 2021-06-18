@@ -22,6 +22,7 @@ import addresses from "../../../../components/addresses/Addresses"
 import people from "../../../../components/people/People"
 import tabs from "../../../../components/tabs/Tabs"
 import list from "../../../../components/list/List"
+import topbanner from "../../../../components/topBanner/TopBanner"
 
 const blocks = {
   textimage,
@@ -42,6 +43,7 @@ const blocks = {
   people,
   tabs,
   list,
+  topbanner,
 }
 
 const Template = (props) => {
@@ -229,6 +231,12 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Topbanner {
+                  fieldGroupName
+                  headline
+                  text
+                  color
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
                   fieldGroupName

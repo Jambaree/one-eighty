@@ -7,7 +7,17 @@ import Hexagon from "../Hexagon"
 import theme from "../../theme"
 
 const TopBanner = (props) => {
-  const { headline, text, color1 = "plum", color2 = "plumDark" } = props
+  const { headline, text, color = "plum" } = props
+
+  const colors = {
+    plum: ["plum", "plumDark", "almondLight"],
+    flax: ["flax", "flaxLight", "charcoal"],
+    turquoise: ["turquoise", "turquoiseLight", "charcoal"],
+  }
+
+  const color1 = colors[color][0]
+  const color2 = colors[color][1]
+  const color3 = colors[color][2]
 
   return (
     <Box>
@@ -36,7 +46,7 @@ const TopBanner = (props) => {
             variant="styles.h1"
             sx={{
               fontSize: "65px",
-              color: "almondLight",
+              color: color3,
               mb: 36,
               pl: ["18px", "18px", "unset"],
             }}
@@ -48,7 +58,7 @@ const TopBanner = (props) => {
           <Text
             variant="text.introduction"
             sx={{
-              color: "almondLight",
+              color: color3,
               fontSize: "18px",
               px: ["18px", "24px", "12px"],
             }}

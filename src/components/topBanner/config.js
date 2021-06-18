@@ -17,7 +17,7 @@ const config = {
       id: "color",
       type: "select",
       label: "Color",
-      defaultValue: "plumDark",
+      defaultValue: "plum",
       options: [
         {
           name: "Plum",
