@@ -23,18 +23,21 @@ const TextImage = (props) => {
   const imageData = image?.localFile && getImage(image.localFile)
 
   return (
-    <>
+    <Box
+      sx={{
+        backgroundColor: backgroundcolor,
+      }}
+    >
       <Edges size="lg">
         <Box
           sx={{
-            backgroundColor: backgroundcolor,
             position: "relative",
             display: "flex",
             flexDirection: alignment === "left" ? "row" : "row-reverse",
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
-            my: 50,
+            py: 50,
           }}
         >
           <Box
@@ -85,7 +88,7 @@ const TextImage = (props) => {
           </Box>
         </Box>
       </Edges>
-    </>
+    </Box>
   )
 }
 
