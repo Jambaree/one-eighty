@@ -68,7 +68,7 @@ const Banner = (props) => {
               sx={{
                 fontSize: "18px",
                 lineHeight: ["25px", "30px", "30px"],
-                mb: 50,
+                mb: [0, 50, 50],
               }}
             />
           )}
