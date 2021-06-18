@@ -43,7 +43,6 @@ const TextImage = (props) => {
           <Box
             sx={{
               width: ["100%", "100%", "calc(50% - 25px)"],
-              maxHeight: [384, 603, 603],
             }}
           >
             {image && imageData && (
