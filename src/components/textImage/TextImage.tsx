@@ -46,7 +46,11 @@ const TextImage = (props) => {
             }}
           >
             {image && imageData && (
-              <GatsbyImage image={imageData} alt={image?.altText || ""} />
+              <GatsbyImage
+                image={imageData}
+                alt={image?.altText || ""}
+                style={{ maxWidth: "100%" }}
+              />
             )}
           </Box>
 
