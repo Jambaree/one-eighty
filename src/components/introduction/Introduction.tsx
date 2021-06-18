@@ -6,6 +6,7 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 import Textarea from "../Textarea"
 import Hexagon from "../Hexagon"
+import theme from "../../theme"
 
 const Introduction = (props) => {
   const { backgroundcolor, headline, text } = props
@@ -22,14 +23,25 @@ const Introduction = (props) => {
         alignItems: "center",
       }}
     >
-      <Hexagon
-        style={{
-          position: "absolute",
-          left: -50,
-          top: -70,
-          transform: "rotate(30deg)",
+      <Box
+        sx={{
+          display: "none",
+          "@media screen and (min-width: 1200px)": {
+            display: "block",
+          },
         }}
-      />
+      >
+        <Hexagon
+          background={theme.colors.turquoise}
+          style={{
+            position: "absolute",
+            zIndex: 10,
+            left: -50,
+            top: -80,
+            transform: "rotate(30deg)",
+          }}
+        />
+      </Box>
 
       <Edges size="lg">
         <Box
