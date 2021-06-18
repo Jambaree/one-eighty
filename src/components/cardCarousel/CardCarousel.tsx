@@ -184,7 +184,7 @@ const CardCarousel = (props) => {
                         {o.text && (
                           <Text
                             children={Parser(o.text)}
-                            variant="text.introduction"
+                            variant="text.paragraph"
                             sx={{
                               lineHeight: "25px",
                             }}
