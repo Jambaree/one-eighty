@@ -54,16 +54,16 @@ const CardCarousel = (props) => {
         sx={{
           ".slick-next:before, .slick-prev:before": {
             color: "coral",
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
           },
           ".slick-next:before": {
             content: "'›'",
-            m: "0 auto",
-            textAlign: "center",
           },
           ".slick-prev:before": {
             content: "'‹'",
-            m: "0 auto",
-            textAlign: "center",
           },
           ".slick-prev, .slick-next": {
             width: 38,
