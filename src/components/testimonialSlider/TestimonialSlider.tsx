@@ -109,8 +109,8 @@ const TestimonialSlider = (props) => {
             <Box>
               {headline ? (
                 <Heading
-                  as="h3"
-                  variant="styles.h3"
+                  as="h4"
+                  variant="styles.h4"
                   children={Parser(headline)}
                   sx={{
                     textAlign: "left",
