@@ -177,9 +177,9 @@ const TestimonialSlider = (props) => {
                         )}
                         {o.name && (
                           <Text
-                            as="h3"
+                            as="h4"
                             children={Parser(o.name)}
-                            variant="styles.h3"
+                            variant="styles.h4"
                             sx={{
                               display: "block",
                               mb: o.position && "8px",
