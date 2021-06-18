@@ -49,7 +49,7 @@ const TextImage = (props) => {
               <GatsbyImage
                 image={imageData}
                 alt={image?.altText || ""}
-                style={{ maxWidth: "100%" }}
+                style={{ maxWidth: "100%", objectFit: "contain" }}
               />
             )}
           </Box>
