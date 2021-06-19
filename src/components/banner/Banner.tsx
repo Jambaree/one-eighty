@@ -126,6 +126,7 @@ const BoxesGraphic = () => (
       py: 50,
       width: 175,
       height: 107,
+      mt: [40, 40, 10],
     }}
   >
     <Box
