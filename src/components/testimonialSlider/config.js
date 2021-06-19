@@ -27,6 +27,22 @@ const config = {
       ],
     },
     {
+      id: "accentcolor",
+      type: "select",
+      label: "Accent Color",
+      defaultValue: "Charcoal",
+      options: [
+        {
+          name: "Charcoal",
+          value: "#2D4052",
+        },
+        {
+          name: "Coral",
+          value: "#E86140",
+        },
+      ],
+    },
+    {
       id: "headline",
       type: "text",
       label: "Headline",

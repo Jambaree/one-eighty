@@ -194,6 +194,7 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
                   fieldGroupName
                   backgroundcolor
+                  accentcolor
                   headline
                   subheading
                   slide {

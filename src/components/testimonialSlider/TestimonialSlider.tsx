@@ -9,7 +9,13 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
 const TestimonialSlider = (props) => {
-  const { backgroundcolor, headline, subheading, slide } = props
+  const {
+    backgroundcolor,
+    accentcolor = "#2D4052",
+    headline,
+    subheading,
+    slide,
+  } = props
 
   const settings = {
     arrows: false,
@@ -102,7 +108,7 @@ const TestimonialSlider = (props) => {
               >
                 <path
                   d="M129.7835,258.7878H0V129.7834Q0,14.7775,129.7835,0V64.5011q-62.95,2.3347-64.5011,65.2823h64.5011Zm170.2165,0H170.2166V129.7834Q170.2166,14.7775,300,0V64.5011q-62.95,2.3347-64.5011,65.2823H300Z"
-                  fill="#2d4052"
+                  fill={accentcolor}
                 />
               </svg>
             </IconButton>
