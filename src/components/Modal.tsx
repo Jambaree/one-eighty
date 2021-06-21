@@ -80,7 +80,7 @@ const Modal = (props) => {
         </Box>
         <Box
           sx={{
-            width: [160, 220, 312],
+            width: [160, 220, 244],
             maxWidth: "100%",
             pb: [28, 28, 0],
           }}
@@ -91,6 +91,7 @@ const Modal = (props) => {
               style={{
                 position: "relative",
                 textAlign: "right",
+                borderRadius: "8px",
               }}
               backgroundSize="contain"
             />
