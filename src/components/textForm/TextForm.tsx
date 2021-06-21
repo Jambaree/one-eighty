@@ -65,11 +65,12 @@ const TextForm = (props) => {
               <Heading
                 children={Parser(headline)}
                 variant="styles.h2"
-                sx={{ pt: 65, pb: 36, zIndex: 1, maxWidth: "540px" }}
+                sx={{ pt: 65, pb: 24, zIndex: 1, maxWidth: "540px" }}
               />
             )}
             {text && (
               <Text
+                as="p"
                 children={text}
                 sx={{
                   paddingBottom: 70,
@@ -80,6 +81,7 @@ const TextForm = (props) => {
             )}
             {disclaimer && (
               <Text
+                as="p"
                 children={Parser(disclaimer)}
                 variant="text.paragraph"
                 sx={{
@@ -87,6 +89,7 @@ const TextForm = (props) => {
                   letterSpacing: "-0.1px",
                   color: "black50",
                   maxWidth: "540px",
+                  lineHeight: "18px",
                 }}
               />
             )}
@@ -96,7 +99,7 @@ const TextForm = (props) => {
           sx={{
             order: alignment === "left" ? 2 : 1,
             height: "auto",
-            width: ["100%", "100%", "50%"],
+            width: ["100%", "100%", "45%"],
             top: [null, null, 0],
             bottom: [null, null, 0],
             bg: formbackground,
