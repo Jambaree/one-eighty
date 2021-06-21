@@ -290,6 +290,7 @@ export const CollectionQuery = graphql`
                   formbackground
                   formid
                   copy
+                  disclaimer
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
                   fieldGroupName

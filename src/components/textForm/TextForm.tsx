@@ -7,7 +7,7 @@ import Form from "../../components/Form"
 import Textarea from "../../components/Textarea"
 
 const TextForm = (props) => {
-  const { formbackground, alignment, copy } = props
+  const { formbackground, alignment, copy, disclaimer } = props
 
   return (
     <>
@@ -63,6 +63,20 @@ const TextForm = (props) => {
             }}
           >
             {copy && <Textarea content={copy} />}
+            {disclaimer && (
+              <Text
+                as="p"
+                children={Parser(disclaimer)}
+                variant="text.paragraph"
+                sx={{
+                  fontSize: "10px",
+                  letterSpacing: "-0.1px",
+                  color: "black50",
+                  maxWidth: "540px",
+                  lineHeight: "18px",
+                }}
+              />
+            )} */}
           </Box>
         </Box>
         <Box

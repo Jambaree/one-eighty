@@ -24,6 +24,11 @@ const config = {
       label: "Content",
     },
     {
+      id: "disclaimer",
+      type: "text",
+      label: "Disclaimer",
+    },
+    {
       id: "formbackground",
       type: "select",
       label: "Form Background",
