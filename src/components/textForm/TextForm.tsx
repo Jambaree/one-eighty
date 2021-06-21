@@ -69,6 +69,7 @@ const TextForm = (props) => {
                 children={Parser(disclaimer)}
                 variant="text.paragraph"
                 sx={{
+                  pt: 70,
                   fontSize: "10px",
                   letterSpacing: "-0.1px",
                   color: "black50",
@@ -76,7 +77,7 @@ const TextForm = (props) => {
                   lineHeight: "18px",
                 }}
               />
-            )} */}
+            )}
           </Box>
         </Box>
         <Box
