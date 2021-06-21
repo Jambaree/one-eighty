@@ -9,7 +9,7 @@ const config = {
           databaseId
         }
       }
-      allWpPost: posts {
+      allWpPost: posts(first: 999) {
         nodes {
           id
           title
