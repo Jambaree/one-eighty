@@ -86,6 +86,11 @@ const Introduction = (props) => {
             sx={{
               width: ["100%", 400, "unset"],
               pl: [0, 20, 60],
+              div: {
+                fontSize: [16, 18, 18],
+                lineHeight: ["25px", "30px", "30px"],
+                letterSpacing: ["-0.24px", "-0.27px", "-0.27px"],
+              },
             }}
           >
             {text && <Textarea content={text} />}
