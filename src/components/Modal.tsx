@@ -83,6 +83,7 @@ const Modal = (props) => {
             width: [160, 220, 312],
             maxWidth: "100%",
             pb: [28, 28, 0],
+            borderRadius: "8px",
           }}
         >
           {props.image && (
