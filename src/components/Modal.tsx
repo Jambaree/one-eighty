@@ -91,6 +91,7 @@ const Modal = (props) => {
               style={{
                 position: "relative",
                 textAlign: "right",
+                borderRadius: "8px",
               }}
               backgroundSize="contain"
             />
