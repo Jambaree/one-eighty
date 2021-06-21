@@ -48,7 +48,6 @@ const Video = (props) => {
                     videoalignment === "first"
                       ? ["12px 0", "24px 0", "62px 0 22px 0"]
                       : ["12px 0", "24px 0", "24px 0"],
-                  fontSize: videoalignment === "first" ? "46px" : 12,
                   pr: [100, 0, 0],
                   pb: 25,
                   lineHeight:
