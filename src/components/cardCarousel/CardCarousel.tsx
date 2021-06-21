@@ -53,6 +53,7 @@ const CardCarousel = (props) => {
       <Box
         sx={{
           ".slick-next:before, .slick-prev:before": {
+            fontSize: 30,
             color: "coral",
             position: "absolute",
             left: "50%",
