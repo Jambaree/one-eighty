@@ -9,7 +9,7 @@ import Edges from "../Edges"
 const Video = (props) => {
   const {
     headline,
-    headlinestyle = "h2",
+    headlinestyle = "h1",
     subheading,
     videoalignment,
     videolink,
@@ -48,15 +48,8 @@ const Video = (props) => {
                     videoalignment === "first"
                       ? ["12px 0", "24px 0", "62px 0 22px 0"]
                       : ["12px 0", "24px 0", "24px 0"],
-                  fontSize: videoalignment === "first" ? "46px" : 12,
                   pr: [100, 0, 0],
                   pb: 25,
-                  lineHeight:
-                    videoalignment === "first"
-                      ? ["36px", "54px", "54px"]
-                      : ["36px", "65px", "65px"],
-                  letterSpacing:
-                    videoalignment === "first" ? "-1.15px" : "-1.63px",
                 }}
               >
                 {Parser(headline)}
