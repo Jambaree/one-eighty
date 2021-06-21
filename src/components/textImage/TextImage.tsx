@@ -43,7 +43,6 @@ const TextImage = (props) => {
           <Box
             sx={{
               width: ["100%", "100%", "calc(50% - 25px)"],
-              borderRadius: 8,
               overflow: "hidden",
             }}
           >
@@ -51,7 +50,11 @@ const TextImage = (props) => {
               <GatsbyImage
                 image={imageData}
                 alt={image?.altText || ""}
-                style={{ maxWidth: "100%", objectFit: "contain" }}
+                style={{
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                  borderRadius: "8px",
+                }}
               />
             )}
           </Box>
