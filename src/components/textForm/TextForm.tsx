@@ -27,7 +27,7 @@ const TextForm = (props) => {
             ml: alignment === "left" ? "auto" : "unset",
             mr: alignment === "right" ? "auto" : "unset",
             order: alignment === "left" ? 1 : 2,
-            width: ["100%", null, "calc(50% - 140px)"],
+            width: ["100%", null, "calc(55% - 140px)"],
             height: "100%",
             my: [93, 93, "auto"],
             display: "flex",

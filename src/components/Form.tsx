@@ -263,8 +263,8 @@ const Container = styled.div`
     font-weight: ${theme.fontWeights.light};
     letter-spacing: -0.23px;
     position: relative;
-    width: 100%;
-    max-width: 350px;
+    width: 350px;
+    max-width: 100%;
     margin: 0 auto;
     appearance: none;
     border-radius: 6px;
