@@ -50,12 +50,6 @@ const Video = (props) => {
                       : ["12px 0", "24px 0", "24px 0"],
                   pr: [100, 0, 0],
                   pb: 25,
-                  lineHeight:
-                    videoalignment === "first"
-                      ? ["36px", "54px", "54px"]
-                      : ["36px", "65px", "65px"],
-                  letterSpacing:
-                    videoalignment === "first" ? "-1.15px" : "-1.63px",
                 }}
               >
                 {Parser(headline)}
