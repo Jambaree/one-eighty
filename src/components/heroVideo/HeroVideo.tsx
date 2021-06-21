@@ -9,7 +9,7 @@ import Edges from "../Edges"
 const Video = (props) => {
   const {
     headline,
-    headlinestyle = "h2",
+    headlinestyle = "h1",
     subheading,
     videoalignment,
     videolink,
