@@ -289,9 +289,7 @@ export const CollectionQuery = graphql`
                   alignment
                   formbackground
                   formid
-                  headline
-                  text
-                  disclaimer
+                  copy
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
                   fieldGroupName

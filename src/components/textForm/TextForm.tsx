@@ -4,9 +4,10 @@ import Parser from "html-react-parser"
 
 // import app components
 import Form from "../../components/Form"
+import Textarea from "../../components/Textarea"
 
 const TextForm = (props) => {
-  const { formbackground, alignment, headline, text, disclaimer } = props
+  const { formbackground, alignment, copy } = props
 
   return (
     <>
@@ -61,38 +62,7 @@ const TextForm = (props) => {
               margin: "0 auto",
             }}
           >
-            {headline && (
-              <Heading
-                children={Parser(headline)}
-                variant="styles.h2"
-                sx={{ pt: 65, pb: 24, zIndex: 1, maxWidth: "540px" }}
-              />
-            )}
-            {text && (
-              <Text
-                as="p"
-                children={text}
-                sx={{
-                  paddingBottom: 70,
-                  maxWidth: "540px",
-                }}
-                variant="text.introduction"
-              />
-            )}
-            {disclaimer && (
-              <Text
-                as="p"
-                children={Parser(disclaimer)}
-                variant="text.paragraph"
-                sx={{
-                  fontSize: "10px",
-                  letterSpacing: "-0.1px",
-                  color: "black50",
-                  maxWidth: "540px",
-                  lineHeight: "18px",
-                }}
-              />
-            )}
+            {copy && <Textarea content={copy} />}
           </Box>
         </Box>
         <Box
