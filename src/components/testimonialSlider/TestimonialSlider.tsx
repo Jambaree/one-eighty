@@ -96,23 +96,25 @@ const TestimonialSlider = (props) => {
           >
             <IconButton
               sx={{
-                width: 132,
-                minWidth: 132,
-                height: 114,
                 mb: [50, 50, "unset"],
+                svg: {
+                  height: 114,
+                  width: 132,
+                  minWidth: 132,
+                  path: {
+                    fill: accentcolor,
+                  },
+                },
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 258.7878"
               >
-                <path
-                  d="M129.7835,258.7878H0V129.7834Q0,14.7775,129.7835,0V64.5011q-62.95,2.3347-64.5011,65.2823h64.5011Zm170.2165,0H170.2166V129.7834Q170.2166,14.7775,300,0V64.5011q-62.95,2.3347-64.5011,65.2823H300Z"
-                  fill={accentcolor}
-                />
+                <path d="M129.7835,258.7878H0V129.7834Q0,14.7775,129.7835,0V64.5011q-62.95,2.3347-64.5011,65.2823h64.5011Zm170.2165,0H170.2166V129.7834Q170.2166,14.7775,300,0V64.5011q-62.95,2.3347-64.5011,65.2823H300Z" />
               </svg>
             </IconButton>
-            <Box>
+            <Box sx={{ ml: 60, my: -46 }}>
               {headline ? (
                 <Heading
                   as="h4"
