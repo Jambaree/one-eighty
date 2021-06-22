@@ -39,6 +39,7 @@ const TopBanner = (props) => {
           justifyContent: "center",
           alignItems: ["flex-start", "center", "center"],
           mt: "-24px",
+          px: [0, "24%", "24%"],
         }}
       >
         {headline && (
