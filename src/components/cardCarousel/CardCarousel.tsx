@@ -41,6 +41,64 @@ const CardCarousel = (props) => {
         },
       },
     ],
+    nextArrow: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 30 30"
+      >
+        <g transform="translate(-7.455 39) rotate(-90)">
+          <circle
+            cx="15"
+            cy="15"
+            r="15"
+            transform="translate(9 7.455)"
+            fill="#fff"
+          />
+          <path
+            d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
+            transform="translate(9 7.455)"
+            fill="#dbdbdb"
+          />
+          <path
+            d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
+            transform="translate(18.5 20.25)"
+            fill="#e4613f"
+          />
+        </g>
+      </svg>
+    ),
+    prevArrow: (
+      <Box sx={{ transform: "rotate(180deg)" }}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+        >
+          <g transform="translate(-7.455 39) rotate(-90)">
+            <circle
+              cx="15"
+              cy="15"
+              r="15"
+              transform="translate(9 7.455)"
+              fill="#fff"
+            />
+            <path
+              d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
+              transform="translate(9 7.455)"
+              fill="#dbdbdb"
+            />
+            <path
+              d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
+              transform="translate(18.5 20.25)"
+              fill="#e4613f"
+            />
+          </g>
+        </svg>
+      </Box>
+    ),
   }
 
   return (
@@ -53,29 +111,13 @@ const CardCarousel = (props) => {
       <Box
         sx={{
           ".slick-next:before, .slick-prev:before": {
-            fontSize: 25,
-            color: "coral",
             position: "absolute",
-            top: "44%",
             transform: "translate(-50%, -50%)",
-          },
-          ".slick-next:before": {
-            content: "'›'",
-            left: "52%",
-          },
-          ".slick-prev:before": {
-            content: "'‹'",
-            left: "48%",
           },
           ".slick-prev, .slick-next": {
             width: 30,
             height: 30,
             top: "120px",
-            transform: "translateY(-50%)",
-            backgroundColor: "white",
-            border: "1px solid",
-            borderColor: "black25",
-            borderRadius: "100%",
 
             "@media (max-width: 1200px)": {
               transform: "translateY(385px)",
@@ -106,15 +148,34 @@ const CardCarousel = (props) => {
             left: -60,
 
             "@media (max-width: 1200px)": {
+              transform: "translateY(385px) rotate(180deg)",
               left: "45%",
             },
             "@media (max-width: 1000px)": {
+              transform: "translateY(420px) rotate(180deg)",
               left: "42%",
             },
+            "@media (max-width: 860px)": {
+              transform: "translateY(440px) rotate(180deg)",
+            },
+            "@media (max-width: 800px)": {
+              transform: "translateY(380px) rotate(180deg)",
+            },
             "@media (max-width: 660px)": {
+              transform: "translateY(400px) rotate(180deg)",
               left: "36%",
             },
+            "@media (max-width: 610px)": {
+              transform: "translateY(450px) rotate(180deg)",
+            },
+            "@media (max-width: 478px)": {
+              transform: "translateY(360px) rotate(180deg)",
+            },
+            "@media (max-width: 430px)": {
+              transform: "translateY(380px) rotate(180deg)",
+            },
           },
+
           ".slick-next": {
             right: -60,
 
