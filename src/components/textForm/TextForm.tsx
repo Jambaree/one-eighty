@@ -58,8 +58,11 @@ const TextForm = (props) => {
               flexDirection: "column",
               pl: [24, 24, alignment === "left" ? "5%" : "24px"],
               pr: [24, 24, alignment === "right" ? "5%" : "24px"],
-              pt: [42, 42, "unset"],
+              pt: [100, 75, "unset"],
               margin: "0 auto",
+              width: ["100%", "100%", "90%"],
+              maxWidth: [null, 700, 700],
+              zIndex: 1,
             }}
           >
             {copy && <Textarea content={copy} />}
