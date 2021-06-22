@@ -198,9 +198,10 @@ const Logos = (props) => {
                             "&:before": {
                               content: "'›'",
                               position: "absolute",
-                              top: "50%",
-                              left: "50%",
+                              top: "44%",
+                              left: "52%",
                               transform: "translate(-50%, -50%)",
+                              fontSize: 25,
                             },
                           }}
                         />
