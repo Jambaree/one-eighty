@@ -238,6 +238,7 @@ export const CollectionQuery = graphql`
                   headline
                   text
                   color
+                  bannerbackground
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
                   fieldGroupName
@@ -424,6 +425,7 @@ export const CollectionQuery = graphql`
                   text
                   variant
                   backgroundcolor
+                  textcolor
                   backgroundimage {
                     altText
                     sourceUrl
