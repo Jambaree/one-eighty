@@ -58,6 +58,8 @@ const Hero = (props) => {
               sx={{
                 display: ["block", "none", "none"],
                 objectFit: "contain",
+                maxWidth: "100%",
+                height: "auto",
               }}
             />
           )}
