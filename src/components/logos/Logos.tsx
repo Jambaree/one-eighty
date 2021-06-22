@@ -163,6 +163,7 @@ const Logos = (props) => {
                           cursor: "pointer",
                           height: "30px",
                           transition: "box-shadow 0.2s",
+                          borderRadius: "100%",
                           "&:hover": {
                             boxShadow: "0px 5px 10px #00000029",
                           },
