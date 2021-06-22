@@ -7,7 +7,7 @@ import Hexagon from "../Hexagon"
 import theme from "../../theme"
 
 const TopBanner = (props) => {
-  const { headline, text, color = "plum", solidbackground } = props
+  const { headline, text, color = "plum", bannerbackground } = props
 
   const colors = {
     plum: ["plum", "plumDark", "almondLight"],
@@ -24,7 +24,7 @@ const TopBanner = (props) => {
       <Hexagon
         background={theme.colors[color1]}
         style={{
-          display: solidbackground ? "none" : "block",
+          display: bannerbackground ? "none" : "block",
           transform: "rotate(30deg)",
           position: "absolute",
           left: "-50px",

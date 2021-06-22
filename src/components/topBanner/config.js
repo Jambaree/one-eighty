@@ -34,17 +34,17 @@ const config = {
       ],
     },
     {
-      id: "solidbackground",
+      id: "bannerbackground",
       type: "select",
-      label: "Solid Color",
-      defaultValue: false,
+      label: "Shapes or Solid",
+      instructions: "Choose solid background or include shapes",
       options: [
         {
-          name: "True",
+          name: "Solid",
           value: true,
         },
         {
-          name: "False",
+          name: "Shapes",
           value: false,
         },
       ],
