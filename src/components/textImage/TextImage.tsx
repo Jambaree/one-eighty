@@ -54,6 +54,7 @@ const TextImage = (props) => {
                   maxWidth: "100%",
                   objectFit: "contain",
                   borderRadius: "8px",
+                  transform: "translateZ(0)",
                 }}
               />
             )}
