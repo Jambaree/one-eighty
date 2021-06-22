@@ -61,11 +61,11 @@ const CardCarousel = (props) => {
           },
           ".slick-next:before": {
             content: "'›'",
-            left: "53%",
+            left: "52%",
           },
           ".slick-prev:before": {
             content: "'‹'",
-            left: "47%",
+            left: "48%",
           },
           ".slick-prev, .slick-next": {
             width: 30,
