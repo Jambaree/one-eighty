@@ -85,6 +85,7 @@ const TextForm = (props) => {
             order: alignment === "left" ? 2 : 1,
             height: "auto",
             width: ["100%", "100%", "45%"],
+            maxWidth: 700,
             top: [null, null, 0],
             bottom: [null, null, 0],
             bg: formbackground,
