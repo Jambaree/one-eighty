@@ -56,7 +56,7 @@ const gatsbyConfig = {
         url: `${process.env.GATSBY_WP}/graphql`,
         verbose: true,
         schema: {
-          queryDepth: 6,
+          queryDepth: 8,
           typePrefix: `Wp`,
         },
         develop: {
