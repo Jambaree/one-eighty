@@ -50,6 +50,10 @@ const config = {
           name: "White",
           value: "#FFF",
         },
+        {
+          name: "Charcoal",
+          value: "#2D4052",
+        },
       ],
     },
     {
