@@ -18,7 +18,7 @@ const Template = (props) => {
         seo,
         template: {
           acf: {
-            content: { headline, text },
+            content: { headline, text, bannerbackground },
           },
         },
       },
@@ -251,7 +251,11 @@ const Template = (props) => {
 
   return (
     <Layout {...props} seo={seo}>
-      <TopBanner headline={headline} text={text} />
+      <TopBanner
+        headline={headline}
+        text={text}
+        solidbackground={bannerbackground}
+      />
       <Box sx={{ backgroundColor: "almondLight" }}>
         <Edges size="lg">
           <Grid

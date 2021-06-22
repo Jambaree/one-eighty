@@ -16,7 +16,7 @@ const config = {
     {
       id: "color",
       type: "select",
-      label: "Color",
+      label: "Shape & Color",
       defaultValue: "plum",
       options: [
         {
@@ -30,6 +30,22 @@ const config = {
         {
           name: "Turquoise",
           value: "turquoise",
+        },
+      ],
+    },
+    {
+      id: "bannerbackground",
+      type: "select",
+      label: "Shapes or Solid",
+      instructions: "Choose solid background or include shapes",
+      options: [
+        {
+          name: "Solid",
+          value: true,
+        },
+        {
+          name: "Shapes",
+          value: false,
         },
       ],
     },
