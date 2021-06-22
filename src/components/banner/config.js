@@ -41,6 +41,18 @@ const config = {
       ],
     },
     {
+      id: "textcolor",
+      type: "select",
+      label: "Text Color",
+      instructions: "Choose a text color", // optional
+      options: [
+        {
+          name: "White",
+          value: "#FFF",
+        },
+      ],
+    },
+    {
       id: "headline",
       type: "text",
       label: "Headline",

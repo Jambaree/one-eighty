@@ -14,6 +14,7 @@ const Banner = (props) => {
     variant,
     backgroundimage,
     backgroundcolor,
+    textcolor = "charcoal",
     headline,
     headlinestyle = "h2",
     text,
@@ -56,6 +57,7 @@ const Banner = (props) => {
               sx={{
                 mb: 32,
                 lineHeight: ["36px", "65px", "65px"],
+                color: textcolor,
               }}
             />
           )}
@@ -69,6 +71,7 @@ const Banner = (props) => {
                 fontSize: "18px",
                 lineHeight: ["25px", "30px", "30px"],
                 mb: [0, 50, 50],
+                color: textcolor,
               }}
             />
           )}
