@@ -64,6 +64,21 @@ const config = {
           label: "Text",
           defaultValue: "",
         },
+        {
+          id: "bannerbackground",
+          type: "select",
+          label: "Shapes or Solid",
+          options: [
+            {
+              name: "Solid",
+              value: true,
+            },
+            {
+              name: "Shapes",
+              value: false,
+            },
+          ],
+        },
       ],
     },
     {
