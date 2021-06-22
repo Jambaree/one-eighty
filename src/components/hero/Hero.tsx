@@ -55,7 +55,7 @@ const Hero = (props) => {
         <Box
           sx={{
             zIndex: 4,
-            maxWidth: 600,
+            maxWidth: 680,
             textAlign: ["left", "center", "center"],
             display: "flex",
             alignItems: ["flex-start", "center", "center"],
