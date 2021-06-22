@@ -1,11 +1,11 @@
 import React from "react"
-import { Box, Grid, Heading, Text, Link } from "theme-ui"
+import { Box, Grid, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 // import app components
 import Edges from "../Edges"
-import BackgroundImage from "../BackgroundImage"
 import Button from "../Button"
 
 const Partners = (props) => {
@@ -113,11 +113,23 @@ const Partners = (props) => {
                         }}
                       />
                     )}
-                    {o.link && (
-                      <Link
-                        children={Parser(o.link.title)}
-                        variant="links.hyperlink"
-                      />
+
+                    {o.link?.url && (
+                      <Box variant="links.hyperlink">
+                        {o.link.url.includes("http") ? (
+                          <a
+                            href={o.link.url}
+                            children={Parser(o.link.title || "")}
+                            target="_blank"
+                            rel="noreferrer"
+                          />
+                        ) : (
+                          <Link
+                            to={o.link.url}
+                            children={Parser(o.link.title || "")}
+                          />
+                        )}
+                      </Box>
                     )}
                   </Box>
                 </Box>
@@ -133,7 +145,9 @@ const Partners = (props) => {
               mt: 80,
             }}
           >
-            <Button to={mainbutton.url}>{Parser(mainbutton.title)}</Button>
+            <Button to={mainbutton.url}>
+              {Parser(mainbutton.title || "")}
+            </Button>
           </Box>
         )}
       </Edges>

@@ -1,7 +1,8 @@
 import React from "react"
 import ReactModal from "react-modal"
-import { Heading, Box, Close, Link } from "theme-ui"
+import { Heading, Box, Close } from "theme-ui"
 import Parser from "html-react-parser"
+import { Link } from "gatsby"
 
 // import app components
 import BackgroundImage from "./BackgroundImage"
@@ -72,10 +73,23 @@ const Modal = (props) => {
               <Textarea content={props.text} />
             </Box>
           )}
+
           {props.link?.url && (
-            <Link href={props.link.url} variant="links.hyperlink">
-              {Parser(props.link.title)} →
-            </Link>
+            <Box variant="links.hyperlink">
+              {props.link.url.includes("http") ? (
+                <a
+                  href={props.link.url}
+                  children={`${Parser(props.link.title || "")} →`}
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              ) : (
+                <Link
+                  to={props.link.url}
+                  children={`${Parser(props.link.title || "")} →`}
+                />
+              )}
+            </Box>
           )}
         </Box>
         <Box

@@ -1,10 +1,12 @@
 import React from "react"
-import { Box, Grid, Heading, Text, Link } from "theme-ui"
+import { Box, Grid, Heading, Text } from "theme-ui"
 import Parser from "html-react-parser"
+import { Link } from "gatsby"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
+import theme from "../../theme"
 
 const Cards = (props) => {
   const { columns, headline, headlinestyle = "h2", subheading, cards } = props
@@ -125,12 +127,28 @@ const Cards = (props) => {
                     )}
                     {<br />}
                     {o.link?.url && (
-                      <Link
-                        href={o.link.url}
-                        children={Parser(o.link.title)}
-                        variant="links.hyperlink"
-                        sx={{ textDecoration: "none" }}
-                      />
+                      <Box
+                        sx={{
+                          a: {
+                            textDecoration: "none",
+                            ...theme.links.hyperlink,
+                          },
+                        }}
+                      >
+                        {o.link.url.includes("http") ? (
+                          <a
+                            href={o.link.url}
+                            children={Parser(o.link.title || "")}
+                            target="_blank"
+                            rel="noreferrer"
+                          />
+                        ) : (
+                          <Link
+                            to={o.link.url}
+                            children={Parser(o.link.title || "")}
+                          />
+                        )}
+                      </Box>
                     )}
                   </Box>
                 </Box>

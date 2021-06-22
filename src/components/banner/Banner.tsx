@@ -77,17 +77,29 @@ const Banner = (props) => {
           )}
 
           {link?.url && (
-            <Box variant="links.hyperlink">
-              <Link
-                to={link.url}
-                style={{
+            <Box
+              variant="links.hyperlink"
+              sx={{
+                a: {
                   letterSpacing: "-0.23px",
                   lineHeight: "25px",
                   color: theme.colors.coral,
-                }}
-              >
-                {Parser(link.title)} →
-              </Link>
+                },
+              }}
+            >
+              {link.url.includes("http") ? (
+                <a
+                  href={link.url}
+                  children={`${Parser(link.title || "")} →`}
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              ) : (
+                <Link
+                  to={link.url}
+                  children={`${Parser(link.title || "")} →`}
+                />
+              )}
             </Box>
           )}
 

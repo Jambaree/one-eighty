@@ -1,12 +1,10 @@
-import parsePath from "parse-path"
-
 const normalizePath = (path) => {
-  if (path.endsWith(`/`)) {
-    path = path.slice(0, -1)
+  if (!path) {
+    return ""
   }
 
-  if (!path.startsWith(`/`)) {
-    path = `/${path}`
+  if (path.endsWith(`/`)) {
+    path = path.slice(0, -1)
   }
 
   path = decodeURI(path)
@@ -17,11 +15,6 @@ const normalizePath = (path) => {
   // Replace Frontend URL
   path = path.replace(`${process.env.GATSBY_FRONTEND}/`, "/")
 
-  // Remove trailing slash
-  if (path.substr(-1) === "/" && path.length > 1) {
-    path = path.substr(0, path.length - 1)
-  }
-
   return path
 }
 
@@ -31,9 +24,9 @@ const normalizePath = (path) => {
  * https://stackoverflow.com/questions/736513/how-do-i-parse-a-url-into-hostname-and-path-in-javascript
  */
 const formatLink = (url) => {
-  const parsedUrl = parsePath(url)
+  const parsedUrl = normalizePath(url)
 
-  return normalizePath(parsedUrl.pathname)
+  return parsedUrl
 }
 
 export default formatLink
