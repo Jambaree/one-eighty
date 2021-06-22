@@ -56,7 +56,7 @@ const Hero = (props) => {
               image={mobileimage}
               alt={mobileimage.altText}
               sx={{
-                display: ["inline-block", "none", "none"],
+                display: ["block", "none", "none"],
                 objectFit: "contain",
               }}
             />
