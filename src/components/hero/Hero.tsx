@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Heading, Text, Box } from "theme-ui"
+import { Heading, Text, Box, Link as ThemeLink } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
+import { Link as GatsbyLink, navigate } from "gatsby"
 import Parser from "html-react-parser"
 
 // import app components
@@ -18,6 +19,16 @@ const Hero = (props) => {
     text,
     linktype,
   } = props
+
+  const isUrlExternal = (link) => {
+    if (!link || link === null || link === undefined) {
+      return undefined
+    } else if (link.includes("http")) {
+      return true
+    } else {
+      return false
+    }
+  }
 
   return (
     <Box
@@ -80,14 +91,28 @@ const Hero = (props) => {
             />
           )}
           {link?.url ? (
-            linktype === "button" ? (
-              <Button to={link?.url} children={Parser(link?.title || "")} />
+            isUrlExternal ? (
+              linktype === "button" ? (
+                <Button
+                  href={link?.url}
+                  children={Parser(link?.title || "")}
+                  onClick={() => navigate(link.url)}
+                />
+              ) : (
+                <ThemeLink href={link?.url}>
+                  <Box variant="links.hyperlink">
+                    {Parser(link?.title || "")} →
+                  </Box>
+                </ThemeLink>
+              )
+            ) : linktype === "button" ? (
+              <Button href={link?.url} children={Parser(link?.title || "")} />
             ) : (
-              <a href={link?.url} rel="noopener noreferrer">
+              <GatsbyLink to={link?.url}>
                 <Box variant="links.hyperlink">
                   {Parser(link?.title || "")} →
                 </Box>
-              </a>
+              </GatsbyLink>
             )
           ) : null}
         </Box>
