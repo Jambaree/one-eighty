@@ -4,9 +4,10 @@ import Parser from "html-react-parser"
 
 // import app components
 import Form from "../../components/Form"
+import Textarea from "../../components/Textarea"
 
 const TextForm = (props) => {
-  const { formbackground, alignment, headline, text, disclaimer } = props
+  const { formbackground, alignment, copy, disclaimer } = props
 
   return (
     <>
@@ -27,7 +28,7 @@ const TextForm = (props) => {
             ml: alignment === "left" ? "auto" : "unset",
             mr: alignment === "right" ? "auto" : "unset",
             order: alignment === "left" ? 1 : 2,
-            width: ["100%", null, "calc(50% - 140px)"],
+            width: ["100%", null, "calc(55% - 140px)"],
             height: "100%",
             my: [93, 93, "auto"],
             display: "flex",
@@ -61,32 +62,19 @@ const TextForm = (props) => {
               margin: "0 auto",
             }}
           >
-            {headline && (
-              <Heading
-                children={Parser(headline)}
-                variant="styles.h2"
-                sx={{ pt: 65, pb: 36, zIndex: 1, maxWidth: "540px" }}
-              />
-            )}
-            {text && (
-              <Text
-                children={text}
-                sx={{
-                  paddingBottom: 70,
-                  maxWidth: "540px",
-                }}
-                variant="text.introduction"
-              />
-            )}
+            {copy && <Textarea content={copy} />}
             {disclaimer && (
               <Text
+                as="p"
                 children={Parser(disclaimer)}
                 variant="text.paragraph"
                 sx={{
+                  pt: 70,
                   fontSize: "10px",
                   letterSpacing: "-0.1px",
                   color: "black50",
                   maxWidth: "540px",
+                  lineHeight: "18px",
                 }}
               />
             )}
@@ -96,7 +84,7 @@ const TextForm = (props) => {
           sx={{
             order: alignment === "left" ? 2 : 1,
             height: "auto",
-            width: ["100%", "100%", "50%"],
+            width: ["100%", "100%", "45%"],
             top: [null, null, 0],
             bottom: [null, null, 0],
             bg: formbackground,

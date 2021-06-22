@@ -19,21 +19,14 @@ const config = {
       ],
     },
     {
-      id: "headline",
-      type: "text",
-      label: "Headline",
-    },
-    {
-      id: "text",
-      type: "text",
-      label: "Text",
-      rows: 4,
+      id: "copy",
+      type: "wysiwyg",
+      label: "Content",
     },
     {
       id: "disclaimer",
       type: "text",
       label: "Disclaimer",
-      rows: 2,
     },
     {
       id: "formbackground",

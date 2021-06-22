@@ -263,15 +263,15 @@ const Container = styled.div`
     font-weight: ${theme.fontWeights.light};
     letter-spacing: -0.23px;
     position: relative;
-    width: 100%;
-    max-width: 350px;
+    width: 350px;
+    max-width: 100%;
     margin: 0 auto;
     appearance: none;
     border-radius: 6px;
     outline: none;
     line-height: 25px;
     padding: 13px 15px;
-    height: 47;
+    height: 47px;
     border: 1px solid #63a19e;
 
     &:hover {
@@ -307,7 +307,7 @@ const Container = styled.div`
       content: "";
       position: absolute;
       right: 10px;
-      bottom: 21px;
+      bottom: 17px;
       width: 30px;
       height: 30px;
       border: 1px solid ${theme.colors.black25};
@@ -319,7 +319,7 @@ const Container = styled.div`
       content: " ";
       position: absolute;
       right: 18px;
-      bottom: 30px;
+      bottom: 25px;
       transform: rotate(-45deg) translateY(-50%);
       width: 8px;
       height: 8px;
