@@ -162,7 +162,6 @@ const Logos = (props) => {
                           bottom: "-40px",
                           cursor: "pointer",
                           height: "30px",
-                          borderRadius: "50%",
                           transition: "box-shadow 0.2s",
                           "&:hover": {
                             boxShadow: "0px 5px 10px #00000029",
@@ -176,35 +175,32 @@ const Logos = (props) => {
                         }}
                         onClick={() => handleClick(o, i)}
                       >
-                        <Box
-                          sx={{
-                            color: "coral",
-                            backgroundColor: "white",
-                            border: "1px solid",
-                            borderColor: "black25",
-                            borderRadius: "100%",
-                            padding: "4px 13px 6px",
-                            height: "30px",
-                            width: "30px",
-
-                            "&:focus": {
-                              borderColor: "coralLight",
-                            },
-
-                            "&:focus-visible": {
-                              outline: "none",
-                            },
-
-                            "&:before": {
-                              content: "'›'",
-                              position: "absolute",
-                              top: "44%",
-                              left: "52%",
-                              transform: "translate(-50%, -50%)",
-                              fontSize: 25,
-                            },
-                          }}
-                        />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                        >
+                          <g transform="translate(-7.455 39) rotate(-90)">
+                            <circle
+                              cx="15"
+                              cy="15"
+                              r="15"
+                              transform="translate(9 7.455)"
+                              fill="#fff"
+                            />
+                            <path
+                              d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
+                              transform="translate(9 7.455)"
+                              fill="#dbdbdb"
+                            />
+                            <path
+                              d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
+                              transform="translate(18.5 20.25)"
+                              fill="#e4613f"
+                            />
+                          </g>
+                        </svg>
                       </Box>
                     )}
                   </Box>
