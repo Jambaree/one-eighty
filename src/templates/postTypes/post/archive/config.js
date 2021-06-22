@@ -68,6 +68,7 @@ const config = {
           id: "bannerbackground",
           type: "select",
           label: "Shapes or Solid",
+          instructions: "Choose solid background or include shapes",
           options: [
             {
               name: "Solid",
