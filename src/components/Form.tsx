@@ -35,7 +35,7 @@ const Form = (props) => {
               children={buttonText || form?.button?.text || "Submit"}
               aria-label="Submit Form"
               type="submit"
-              style={{ width: "90%", maxWidth: "350px" }}
+              style={{ width: "90%", maxWidth: "420px" }}
             />
           }
         />
@@ -141,7 +141,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 350px;
+    max-width: 420px;
     margin: 0 auto;
     .field .control-label {
       margin-bottom: 5px;
@@ -221,7 +221,7 @@ const Container = styled.div`
 
     &.fullwidth {
       width: 100%;
-      max-width: 350px;
+      max-width: 420px;
     }
   }
 
@@ -263,7 +263,7 @@ const Container = styled.div`
     font-weight: ${theme.fontWeights.light};
     letter-spacing: -0.23px;
     position: relative;
-    width: 350px;
+    width: 420px;
     max-width: 100%;
     margin: 0 auto;
     appearance: none;
