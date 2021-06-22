@@ -48,6 +48,9 @@ const Hero = (props) => {
               sx={{
                 display: ["block", "none", "none"],
                 objectFit: "contain",
+                img: {
+                  objectFit: "contain!important",
+                },
               }}
             />
           )}
