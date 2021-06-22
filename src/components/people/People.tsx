@@ -40,7 +40,7 @@ const People = (props) => {
               variant="styles.h1"
               sx={{
                 m: "0 auto",
-                mb: 78,
+                mb: [30],
                 width: ["80%", "100%", "100%"],
                 lineHeight: "54px",
                 letterSpacing: "-1.15px",
@@ -55,6 +55,7 @@ const People = (props) => {
                 fontSize: "18px",
                 lineHeight: "30px",
                 p: "0 18px",
+                mb: 50,
               }}
             />
           )}
