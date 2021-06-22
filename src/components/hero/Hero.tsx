@@ -2,7 +2,6 @@
 import { jsx } from "theme-ui"
 import { Heading, Text, Box } from "theme-ui"
 import { GatsbyImage } from "jam-cms"
-import { Link } from "gatsby"
 import Parser from "html-react-parser"
 
 // import app components
@@ -84,11 +83,11 @@ const Hero = (props) => {
             linktype === "button" ? (
               <Button to={link?.url} children={Parser(link?.title || "")} />
             ) : (
-              <Link to={link?.url}>
+              <a href={link?.url} rel="noopener noreferrer">
                 <Box variant="links.hyperlink">
                   {Parser(link?.title || "")} →
                 </Box>
-              </Link>
+              </a>
             )
           ) : null}
         </Box>
