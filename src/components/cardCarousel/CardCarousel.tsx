@@ -148,15 +148,34 @@ const CardCarousel = (props) => {
             left: -60,
 
             "@media (max-width: 1200px)": {
+              transform: "translateY(385px) rotate(180deg)",
               left: "45%",
             },
             "@media (max-width: 1000px)": {
+              transform: "translateY(420px) rotate(180deg)",
               left: "42%",
             },
+            "@media (max-width: 860px)": {
+              transform: "translateY(440px) rotate(180deg)",
+            },
+            "@media (max-width: 800px)": {
+              transform: "translateY(380px) rotate(180deg)",
+            },
             "@media (max-width: 660px)": {
+              transform: "translateY(400px) rotate(180deg)",
               left: "36%",
             },
+            "@media (max-width: 610px)": {
+              transform: "translateY(450px) rotate(180deg)",
+            },
+            "@media (max-width: 478px)": {
+              transform: "translateY(360px) rotate(180deg)",
+            },
+            "@media (max-width: 430px)": {
+              transform: "translateY(380px) rotate(180deg)",
+            },
           },
+
           ".slick-next": {
             right: -60,
 
