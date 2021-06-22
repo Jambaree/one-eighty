@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 // import app components
 import BackgroundImage from "./BackgroundImage"
 import Textarea from "./Textarea"
+import theme from "../theme"
 
 ReactModal.setAppElement("#___gatsby")
 
@@ -75,7 +76,13 @@ const Modal = (props) => {
           )}
 
           {props.link?.url && (
-            <Box variant="links.hyperlink">
+            <Box
+              sx={{
+                a: {
+                  ...theme.links.hyperlink,
+                },
+              }}
+            >
               {props.link.url.includes("http") ? (
                 <a
                   href={props.link.url}
