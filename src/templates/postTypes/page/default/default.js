@@ -99,6 +99,7 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   headline
                   headlinestyle
+                  imagealignment
                   text
                   linktype
                   link {

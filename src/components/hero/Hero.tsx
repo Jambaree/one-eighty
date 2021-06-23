@@ -13,6 +13,7 @@ const Hero = (props) => {
   const {
     headline,
     headlinestyle = "h1",
+    imagealignment = 'first',
     link,
     image,
     mobileimage,
@@ -30,7 +31,7 @@ const Hero = (props) => {
       }}
     >
       <Edges size="lg">
-        <Box sx={{ left: 0, zIndex: 2 }}>
+        <Box sx={{ left: 0, zIndex: 2, display: 'flex', justifyContent: 'center' }}>
           {image && (
             <GatsbyImage
               image={image}

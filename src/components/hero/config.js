@@ -38,6 +38,22 @@ const config = {
       ],
     },
     {
+      id: "imagealignment",
+      type: "select",
+      label: "Image Placement",
+      defaultValue: "second",
+      options: [
+        {
+          name: "First",
+          value: "first",
+        },
+        {
+          name: "Second",
+          value: "second",
+        },
+      ],
+    },
+    {
       id: "text",
       type: "text",
       label: "Text",
