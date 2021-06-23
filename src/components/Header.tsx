@@ -1,8 +1,7 @@
 import React, { useEffect } from "react"
 import HamburgerMenu from "react-hamburger-menu"
 import { Container, Box, Flex } from "theme-ui"
-
-import Link from "./Link"
+import { Link } from "gatsby"
 
 // import app components
 import Edges from "./Edges"
@@ -15,7 +14,6 @@ import Logo from "../icons/logo.svg"
 
 const Header = (props) => {
   const {
-    jamCMS,
     path,
     pageContext: {
       themeOptions: {
@@ -27,7 +25,6 @@ const Header = (props) => {
   const [
     {
       appState: { menu: menuActive },
-      userState: { isLoggedIn, user },
     },
     dispatch,
   ] = useStore()
@@ -49,7 +46,6 @@ const Header = (props) => {
         display: "flex",
         alignItems: "center",
         borderBottom: "1px solid #D3D3D3",
-        paddingLeft: jamCMS?.sidebar ? jamCMS?.sidebarWidth : 0,
       }}
     >
       <Edges size="lg">
