@@ -113,6 +113,7 @@ const CardCarousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             position: "absolute",
             transform: "translate(-50%, -50%)",
+            display: 'none'
           },
           ".slick-prev, .slick-next": {
             width: 30,
