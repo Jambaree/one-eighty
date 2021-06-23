@@ -164,6 +164,10 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                  giffile {
+                    altText
+                    sourceUrl
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
                   fieldGroupName
