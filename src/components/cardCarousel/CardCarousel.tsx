@@ -16,8 +16,8 @@ const CardCarousel = (props) => {
     arrows: true,
     dots: false,
     infinite: true,
-    autoplaySpeed: 8000,
-    autoplay: false,
+    autoplaySpeed: 4000,
+    autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     pauseOnHover: false,
@@ -216,8 +216,7 @@ const CardCarousel = (props) => {
                             }}
                           />
                         )}
-                        {o.text                
-                         && (
+                        {o.text && (
                           <Text
                             children={Parser(o.text)}
                             variant="text.paragraph"
