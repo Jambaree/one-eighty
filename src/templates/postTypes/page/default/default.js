@@ -144,6 +144,9 @@ export const CollectionQuery = graphql`
                   headline
                   headlinestyle
                   text
+                  bullet {
+                    text
+                  }
                   link {
                     target
                     title

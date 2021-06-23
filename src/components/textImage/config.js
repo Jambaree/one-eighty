@@ -71,6 +71,18 @@ const config = {
       label: "Text",
     },
     {
+      id: 'bullet',
+      type: 'repeater',
+      label: 'Bullets',
+      items: [
+        {
+          id: 'text',
+          type: 'text',
+          label: 'Add Bullet Point Text',
+        },
+      ]
+    },
+    {
       id: "link",
       type: "link",
       label: "Link",
