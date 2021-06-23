@@ -70,7 +70,7 @@ const CardCarousel = (props) => {
       </svg>
     ),
     prevArrow: (
-      <Box sx={{ transform: "rotate(180deg)" }}>
+      <Box>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -111,82 +111,31 @@ const CardCarousel = (props) => {
       <Box
         sx={{
           ".slick-next:before, .slick-prev:before": {
-            position: "absolute",
-            transform: "translate(-50%, -50%)",
+            content: "none",
           },
           ".slick-prev, .slick-next": {
             width: 30,
             height: 30,
-            top: "120px",
-
-            "@media (max-width: 1200px)": {
-              transform: "translateY(385px)",
-            },
-            "@media (max-width: 1000px)": {
-              transform: "translateY(420px)",
-            },
-            "@media (max-width: 860px)": {
-              transform: "translateY(440px)",
-            },
-            "@media (max-width: 800px)": {
-              transform: "translateY(380px)",
-            },
-            "@media (max-width: 660px)": {
-              transform: "translateY(400px)",
-            },
-            "@media (max-width: 610px)": {
-              transform: "translateY(450px)",
-            },
-            "@media (max-width: 478px)": {
-              transform: "translateY(360px)",
-            },
-            "@media (max-width: 430px)": {
-              transform: "translateY(380px)",
+            bottom: -80,
+            top: "unset",
+            "@media (min-width: 1200px)": {
+              bottom: "unset",
+              top: 120,
             },
           },
           ".slick-prev": {
-            left: -60,
-
-            "@media (max-width: 1200px)": {
-              transform: "translateY(385px) rotate(180deg)",
-              left: "45%",
-            },
-            "@media (max-width: 1000px)": {
-              transform: "translateY(420px) rotate(180deg)",
-              left: "42%",
-            },
-            "@media (max-width: 860px)": {
-              transform: "translateY(440px) rotate(180deg)",
-            },
-            "@media (max-width: 800px)": {
-              transform: "translateY(380px) rotate(180deg)",
-            },
-            "@media (max-width: 660px)": {
-              transform: "translateY(400px) rotate(180deg)",
-              left: "36%",
-            },
-            "@media (max-width: 610px)": {
-              transform: "translateY(450px) rotate(180deg)",
-            },
-            "@media (max-width: 478px)": {
-              transform: "translateY(360px) rotate(180deg)",
-            },
-            "@media (max-width: 430px)": {
-              transform: "translateY(380px) rotate(180deg)",
+            left: "calc(50% - 40px)",
+            transform: "translateY(-50%) rotate(180deg)",
+            "@media (min-width: 1200px)": {
+              left: -60,
             },
           },
 
           ".slick-next": {
-            right: -60,
-
-            "@media (max-width: 1200px)": {
-              right: "45%",
-            },
-            "@media (max-width: 1000px)": {
-              right: "42%",
-            },
-            "@media (max-width: 660px)": {
-              right: "36%",
+            right: "calc(50% - 40px)",
+            transform: "translateY(-50%)",
+            "@media (min-width: 1200px)": {
+              right: -60,
             },
           },
         }}
@@ -267,15 +216,17 @@ const CardCarousel = (props) => {
                             }}
                           />
                         )}
-                        {o.text && (
+                        {o.text}
+                        {/*                         
+                         && (
                           <Text
                             children={Parser(o.text)}
-                            variant="text.paragraph"
-                            sx={{
-                              lineHeight: "25px",
-                            }}
+                            // variant="text.paragraph"
+                            // sx={{
+                            //   lineHeight: "25px",
+                            // }}
                           />
-                        )}
+                        )} */}
                       </Box>
                     )
                   })}
