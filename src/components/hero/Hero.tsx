@@ -38,6 +38,7 @@ const Hero = (props) => {
               sx={{
                 display: ["none", "block", "block"],
                 objectFit: "contain",
+                width: '90%'
               }}
             />
           )}
