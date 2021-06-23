@@ -462,6 +462,7 @@ export const CollectionQuery = graphql`
                   columns
                   initialvalue
                   headline
+                  headlinestyle
                   subheading
                   cards {
                     fieldGroupName

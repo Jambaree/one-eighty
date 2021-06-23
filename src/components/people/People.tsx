@@ -13,6 +13,7 @@ const People = (props) => {
     columns,
     backgroundcolor,
     headline,
+    headlinestyle,
     subheading,
     cards,
   } = props
@@ -37,7 +38,7 @@ const People = (props) => {
           {headline && (
             <Heading
               children={Parser(headline)}
-              variant="styles.h1"
+              variant={`styles.${headlinestyle}`}
               sx={{
                 m: "0 auto",
                 mb: [30],
