@@ -73,11 +73,6 @@ const TextForm = (props) => {
                 variant="text.paragraph"
                 sx={{
                   pt: 70,
-                  fontSize: "10px",
-                  letterSpacing: "-0.1px",
-                  color: "black50",
-                  maxWidth: "540px",
-                  lineHeight: "18px",
                 }}
               />
             )}
