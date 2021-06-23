@@ -104,7 +104,7 @@ const Logos = (props) => {
               const image = o?.logo?.localFile && getImage(o.logo.localFile)
 
               return (
-                <Box key={i} sx={{ position: "relative" }}>
+                <Box key={i} sx={{ position: "relative", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <Box
                     sx={{
                       mt: [80, 100, 100],
