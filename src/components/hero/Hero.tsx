@@ -32,7 +32,7 @@ const Hero = (props) => {
       <Edges size="lg">
         <Box sx={{
           display: 'flex',
-          flexDirection: 'column',
+          justifyContent: 'center'
         }} >
           {image && (
             <GatsbyImage
