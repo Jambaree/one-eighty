@@ -5,7 +5,6 @@ import Parser from "html-react-parser"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
-// import BackgroundImage from "../BackgroundImage"
 import Edges from "../Edges"
 import Button from "../Button"
 
@@ -13,6 +12,7 @@ const TextImage = (props) => {
   const {
     backgroundcolor,
     image,
+    giffile,
     alignment,
     headline,
     headlinestyle = "h2",
@@ -47,7 +47,7 @@ const TextImage = (props) => {
               overflow: "hidden",
             }}
           >
-            {image && imageData && (
+            {image ? (imageData && (
               <GatsbyImage
                 image={imageData}
                 alt={image?.altText || ""}
@@ -58,7 +58,7 @@ const TextImage = (props) => {
                   transform: "translateZ(0)",
                 }}
               />
-            )}
+            )) : giffile && <Box sx={{ maxWidth: '100%' }}><img src={giffile.sourceUrl} style={{borderRadius: '8px'}} /></Box> }
           </Box>
 
           <Box

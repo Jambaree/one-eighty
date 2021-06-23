@@ -8,6 +8,12 @@ const config = {
       label: "Edit Image",
     },
     {
+      id: 'giffile',
+      type: 'file',
+      label: 'GIF',
+      instructions: 'Upload a GIF here', // optional
+    },
+    {
       id: "alignment",
       type: "select",
       label: "Image Alignment",
