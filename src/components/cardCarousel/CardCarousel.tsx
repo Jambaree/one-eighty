@@ -216,17 +216,16 @@ const CardCarousel = (props) => {
                             }}
                           />
                         )}
-                        {o.text}
-                        {/*                         
+                        {o.text                
                          && (
                           <Text
                             children={Parser(o.text)}
-                            // variant="text.paragraph"
-                            // sx={{
-                            //   lineHeight: "25px",
-                            // }}
+                            variant="text.paragraph"
+                            sx={{
+                              lineHeight: "25px",
+                            }}
                           />
-                        )} */}
+                        )}
                       </Box>
                     )
                   })}
