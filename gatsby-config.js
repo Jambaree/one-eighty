@@ -6,7 +6,7 @@ require("dotenv").config({
 
 const gatsbyConfig = {
   flags: {
-    DEV_SSR: true,
+    DEV_SSR: false,
   },
   plugins: [
     {
