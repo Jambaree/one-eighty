@@ -95,7 +95,7 @@ const TextImage = (props) => {
             bullet.map((o, i) => {
             return( 
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb:'25px'}}>
-                  <IconButton sx={{ mr: '10px', svg: { width: '16px', }}}>
+                  <IconButton sx={{ mr: '10px', transform: 'translateY(-4px)', svg: { width: '16px', }}}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.0783 145.0235">
                       <polygon points="10.843 134.181 10.843 10.944 98.218 10.944 103.639 0.101 0 0.101 0 145.024 31.19 145.024 25.775 134.181 10.843 134.181" fill="#dedbd8"/>
                       <polygon points="134.079 134.181 97.093 134.181 91.67 145.024 144.922 145.024 144.922 38.55 134.079 60.229 134.079 134.181" fill="#dedbd8"/>
