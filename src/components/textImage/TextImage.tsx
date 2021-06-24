@@ -109,21 +109,6 @@ const TextImage = (props) => {
                       fontSize: 4,
                     },
                   },
-
-                  a: {
-                    color: "coral",
-                    fontStyle: "normal",
-
-                    "&:hover": {
-                      color: "coralDark",
-                    },
-                    "&:focus": {
-                      color: "coralLight",
-                    },
-                    "&:disabled": {
-                      color: "black25",
-                    },
-                  },
                 }}
               >
                 <Textarea content={text} />

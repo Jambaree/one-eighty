@@ -124,9 +124,17 @@ const Container = styled.div`
 
   a {
     text-decoration: underline;
-    font-style: italic;
-    font-weight: 500;
     color: ${({ theme }) => theme.colors.coral};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.coralDark};
+    }
+    &:focus {
+      color: ${({ theme }) => theme.colors.coralLight};
+    }
+    &:disabled {
+      color: ${({ theme }) => theme.colors.black25};
+    }
   }
 
   figcaption {
