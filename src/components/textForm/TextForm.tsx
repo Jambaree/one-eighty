@@ -65,7 +65,25 @@ const TextForm = (props) => {
               zIndex: 1,
             }}
           >
-            {copy && <Textarea content={copy} />}
+            <Box
+              sx={{
+                p: {
+                  fontFamily: "body",
+                  fontSize: 5,
+                  lineHeight: "30px",
+                  fontWeight: "light",
+                  letterSpacing: "-0.27px",
+                  color: "black75",
+                  "@media (max-width: 767px)": {
+                    lineHeight: "25px",
+                    letterSpacing: "-0.24px",
+                    fontSize: 4,
+                  },
+                },
+              }}
+            >
+              {copy && <Textarea content={copy} />}
+            </Box>
             {disclaimer && (
               <Text
                 as="p"
@@ -76,6 +94,10 @@ const TextForm = (props) => {
                   fontSize: "10px",
                   letterSpacing: "-0.1px",
                   lineHeight: "18px",
+                  "@media (max-width: 767px)": {
+                    lineHeight: "18px",
+                    fontSize: "10px",
+                  },
                 }}
               />
             )}
