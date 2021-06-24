@@ -67,7 +67,7 @@ const TextForm = (props) => {
           >
             <Box
               sx={{
-                p: {
+                "p, a": {
                   fontFamily: "body",
                   fontSize: 5,
                   lineHeight: "30px",
@@ -83,18 +83,8 @@ const TextForm = (props) => {
 
                 a: {
                   color: "coral",
-                  fontSize: 3,
-                  fontFamily: "body",
-                  lineHeight: "30px",
-                  letterSpacing: "-0.23px",
-                  fontWeight: "medium",
-                  textDecoration: "none",
                   fontStyle: "normal",
 
-                  "@media (max-width: 767px)": {
-                    fontSize: 2,
-                    lineHeight: "24px",
-                  },
                   "&:hover": {
                     color: "coralDark",
                   },
