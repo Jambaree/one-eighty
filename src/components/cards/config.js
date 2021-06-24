@@ -66,6 +66,11 @@ const config = {
         },
       ],
     },
+    {
+      id: "mainbutton",
+      type: "link",
+      label: "Main Button Link",
+    },
   ],
 }
 

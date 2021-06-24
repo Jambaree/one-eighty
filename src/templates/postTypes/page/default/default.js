@@ -175,6 +175,11 @@ export const CollectionQuery = graphql`
                   headline
                   headlinestyle
                   subheading
+                  mainbutton {
+                    target
+                    title
+                    url
+                  }
                   cards {
                     fieldGroupName
                     headline
