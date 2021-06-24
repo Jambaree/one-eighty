@@ -30,7 +30,10 @@ const Hero = (props) => {
       }}
     >
       <Edges size="lg">
-        <Box sx={{ left: 0, zIndex: 2 }}>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center'
+        }} >
           {image && (
             <GatsbyImage
               image={image}
@@ -38,6 +41,7 @@ const Hero = (props) => {
               sx={{
                 display: ["none", "block", "block"],
                 objectFit: "contain",
+                width: '90%',
               }}
             />
           )}
