@@ -46,9 +46,9 @@ const Video = (props) => {
                 sx={{
                   m:
                     videoalignment === "first"
-                      ? ["12px 0", "24px 0", "62px 0 22px 0"]
+                      ? ["80px 0 12px 0", "80px 0 24px 0", "62px 0 22px 0"]
                       : ["12px 0", "24px 0", "24px 0"],
-                  pr: [100, 0, 0],
+                  pr: [24, 0, 0],
                   pb: 25,
                 }}
               >
@@ -60,10 +60,10 @@ const Video = (props) => {
                 as="p"
                 variant="text.introduction"
                 sx={{
-                  fontSize: "18px",
-                  lineHeight: "30px",
+                  // fontSize: "18px",
+                  // lineHeight: "30px",
                   mb: videoalignment === "first" ? 0 : 90,
-                  pr: [35, 0, 0],
+                  pr: [24, 0, 0],
                 }}
               >
                 {Parser(subheading)}
