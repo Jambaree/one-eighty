@@ -9,7 +9,14 @@ import BackgroundImage from "../BackgroundImage"
 import theme from "../../theme"
 
 const Cards = (props) => {
-  const { columns, headline, headlinestyle = "h2", subheading, cards } = props
+  const {
+    columns,
+    headline,
+    headlinestyle = "h2",
+    subheading,
+    cards,
+    mainbutton,
+  } = props
 
   return (
     <Box
