@@ -60,8 +60,6 @@ const Video = (props) => {
                 as="p"
                 variant="text.introduction"
                 sx={{
-                  // fontSize: "18px",
-                  // lineHeight: "30px",
                   mb: videoalignment === "first" ? 0 : 90,
                   pr: [24, 0, 0],
                 }}
