@@ -80,6 +80,31 @@ const TextForm = (props) => {
                     fontSize: 4,
                   },
                 },
+
+                a: {
+                  color: "coral",
+                  fontSize: 3,
+                  fontFamily: "body",
+                  lineHeight: "30px",
+                  letterSpacing: "-0.23px",
+                  fontWeight: "medium",
+                  textDecoration: "none",
+                  fontStyle: "normal",
+
+                  "@media (max-width: 767px)": {
+                    fontSize: 2,
+                    lineHeight: "24px",
+                  },
+                  "&:hover": {
+                    color: "coralDark",
+                  },
+                  "&:focus": {
+                    color: "coralLight",
+                  },
+                  "&:disabled": {
+                    color: "black25",
+                  },
+                },
               }}
             >
               {copy && <Textarea content={copy} />}
