@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { IconButton, Box, Flex, Text, Button, Container } from "theme-ui"
 import { motion, AnimatePresence } from "framer-motion"
-
+import Parser from "html-react-parser"
 import { Close } from "mdi-material-ui"
 
 import Edges from "../Edges"
@@ -158,7 +158,7 @@ const MenuButton = (props: MenuButtonProps) => {
           },
         }}
       >
-        {title}
+        {Parser(title || "")}
 
         {children?.length > 0 && <ChevronDown />}
       </Button>
@@ -246,7 +246,7 @@ const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
               activeStyle={{ color: theme.colors.coral }}
             >
               <Text variant="desktopSubMenuItem" color="inherit">
-                {item.title}
+                {Parser(item.title || "")}
               </Text>
             </Link>
           ))}
