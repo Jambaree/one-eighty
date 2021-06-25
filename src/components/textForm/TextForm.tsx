@@ -67,7 +67,7 @@ const TextForm = (props) => {
           >
             <Box
               sx={{
-                p: {
+                "p, a": {
                   fontFamily: "body",
                   fontSize: 5,
                   lineHeight: "30px",
