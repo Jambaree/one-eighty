@@ -124,7 +124,7 @@ const Container = styled.div`
 
   a {
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.coral};
+    color: ${({ theme }) => theme.colors.coral}!important;
 
     &:hover {
       color: ${({ theme }) => theme.colors.coralDark};
