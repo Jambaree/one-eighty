@@ -8,12 +8,6 @@ const config = {
       label: "Edit Image",
     },
     {
-      id: 'giffile',
-      type: 'file',
-      label: 'GIF',
-      instructions: 'Upload a GIF here', // optional
-    },
-    {
       id: "alignment",
       type: "select",
       label: "Image Alignment",
@@ -52,46 +46,9 @@ const config = {
       label: "Headline",
     },
     {
-      id: "headlinestyle",
-      type: "select",
-      label: "Headline Style",
-      defaultValue: "h2",
-      options: [
-        {
-          name: "H1",
-          value: "h1",
-        },
-        {
-          name: "H2",
-          value: "h2",
-        },
-        {
-          name: "H3",
-          value: "h3",
-        },
-      ],
-    },
-    {
       id: "text",
       type: "wysiwyg",
       label: "Text",
-    },
-    {
-      id: 'bullet',
-      type: 'repeater',
-      label: 'Bullets',
-      items: [
-        {
-          id: 'text',
-          type: 'text',
-          label: 'Add Bullet Point Text',
-        },
-      ]
-    },
-    {
-      id: "link",
-      type: "link",
-      label: "Link",
     },
   ],
 }
