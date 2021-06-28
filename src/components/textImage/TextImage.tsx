@@ -36,7 +36,7 @@ const TextImage = (props) => {
         >
           <Box
             sx={{
-              width: ["100%", "100%", "50%"],
+              width: ["100%", "100%", "45%"],
               overflow: "hidden",
               height: 480,
             }}
@@ -56,12 +56,12 @@ const TextImage = (props) => {
 
           <Box
             sx={{
-              width: ["100%", null, "50%"],
+              width: ["100%", null, "55%"],
               height: "100%",
               mt: "auto",
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-start",
+              alignItems: "center",
               pt: 36,
             }}
           >
@@ -70,7 +70,7 @@ const TextImage = (props) => {
                 children={Parser(headline)}
                 variant='styles.h1'
                 as='h1'
-                sx={{ pb: 83, color: 'white' }}
+                sx={{ width: '70%', pb: 83, color: 'white' }}
               />
             )}
           </Box>
