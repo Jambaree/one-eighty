@@ -8375,17 +8375,17 @@ gatsby-source-gravityforms@^1.0.17:
     nanoid "^3.1.20"
     oauth-signature "^1.5.0"
 
-gatsby-source-jam-cms@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-jam-cms/-/gatsby-source-jam-cms-1.8.0.tgz#42ab5fd31481c6735e6ec8e825ae50ec7c834324"
-  integrity sha512-L5kkMEIrQVm7hiYN3LrexluCf+5t9iqPLgwppMlDPExiar9YHA+nass63gi64k4fWpVBPBFJp+C0uv2JTrJl8A==
+gatsby-source-jam-cms@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-jam-cms/-/gatsby-source-jam-cms-1.8.2.tgz#4199bb1eba1d6b64531619144b8c67d7607e99a0"
+  integrity sha512-R7Jnxg1koBVpEaRpvj5ebcrOaHLWSDhpYON4SeQcl1Sb0zydEFQEqPK16lx7ZbWLH1nyHnyCfeHy/P0DGEwYFA==
   dependencies:
     "@babel/register" "^7.13.16"
     axios "^0.21.1"
     babel-preset-gatsby "^1.5.0"
     cross-env "7.0.3"
     gatsby "3.4.0"
-    jam-cms "1.8.0"
+    jam-cms "1.8.2"
     react-helmet "^6.1.0"
     styled-components "^5.2.3"
 
@@ -10603,10 +10603,10 @@ iterall@^1.2.1, iterall@^1.3.0:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.3.0.tgz#afcb08492e2915cbd8a0884eb93a8c94d0d72fea"
   integrity sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==
 
-jam-cms@1.8.0, jam-cms@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/jam-cms/-/jam-cms-1.8.0.tgz#9e91cb53218787ee23e0b162f36b7ba45cccefe1"
-  integrity sha512-HnHba7Sf7SPxxVAUPIJwO5KFpITnEQlCoWo8zwB/ma3v1hEZiyh/MJcOPRTBgzpCR9cReUcrmoiUnqV85XeAAw==
+jam-cms@1.8.2, jam-cms@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/jam-cms/-/jam-cms-1.8.2.tgz#b34e9dbe510cbe4110f640d8518eae6663abafa8"
+  integrity sha512-f9ImGN6Xuswzig/uFJE9B2z6ZEQ6uH12m+yk4wYqEFJvn/HWRMbiRWVU+0X3tXTv85CKxbdCcGg2Jd345oeVYw==
   dependencies:
     "@ant-design/icons" "^4.6.2"
     "@babel/polyfill" "^7.12.1"
@@ -10620,7 +10620,7 @@ jam-cms@1.8.0, jam-cms@^1.8.0:
     html-react-parser "^1.2.6"
     html-to-draftjs "^1.5.0"
     immer "^9.0.2"
-    jodit-react "^1.0.88"
+    jodit-react "^1.1.1"
     lodash "^4.17.21"
     minireset.css "^0.0.7"
     prop-types "^15.7.2"
@@ -10710,17 +10710,17 @@ jimp@^0.9.3:
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
-jodit-react@^1.0.88:
-  version "1.0.88"
-  resolved "https://registry.yarnpkg.com/jodit-react/-/jodit-react-1.0.88.tgz#570e39a0d77f9a3830e95a235cdc48785b809c0b"
-  integrity sha512-MUuQJ9a8NcmtTeNMz0Rf4aqvwW9XoVc/PNRSvf1GQA/ik9waxaGvQvNR6P6/BQglGamOg+pNm1+dfaW2ohZIpw==
+jodit-react@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/jodit-react/-/jodit-react-1.1.1.tgz#62cf86641cc1ddd9c0e3eedb06d436d2ef8954bd"
+  integrity sha512-Lr4THBOL/07oTJVXglMHY1xfiVys7PBGQl9eeVAcr6Ivaq2mGRfVPT1CaBsTBJUPJ2cTjXjzqU2B40d1VzSIlA==
   dependencies:
-    jodit "^3.6.1"
+    jodit "^3.7.1"
 
-jodit@^3.6.1:
-  version "3.6.18"
-  resolved "https://registry.yarnpkg.com/jodit/-/jodit-3.6.18.tgz#17fc573c849578456e20974cfe032cca2fbf99c4"
-  integrity sha512-DGjH9bcQyFtfQz724C0jC/R+5AOd5kiRvO9K9io5a8bUWE8dERGLmdJAgQ41Gj1dUB0Umtbno7G2Yg4uEKFaqg==
+jodit@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/jodit/-/jodit-3.7.1.tgz#a1a069fdcc306d8223d983d79ff00484dd88d0ae"
+  integrity sha512-C1DMa+ar47GJhubukhs6Q1VD6nvDK3JpSNszDnE3iVrkDk7mtu8N4bosos1Brhu4qaYMySlAOun8zz4KTePB1A==
   dependencies:
     autobind-decorator "^2.4.0"
 
