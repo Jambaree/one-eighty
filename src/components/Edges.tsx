@@ -17,7 +17,7 @@ const Edges = (props: Props) => {
         width: "90%",
         maxWidth:
           (size === "sm" && "600px") ||
-          (size === "md" && "1024px") ||
+          (size === "md" && "1100px") ||
           (size === "lg" && "1280px"),
       }}
       {...rest}
