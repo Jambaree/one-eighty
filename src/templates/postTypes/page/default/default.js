@@ -127,7 +127,6 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   fieldGroupName
-                  backgroundcolor
                   alignment
                   headline
                   headlinestyle

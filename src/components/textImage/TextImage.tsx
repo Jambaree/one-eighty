@@ -11,7 +11,6 @@ import Textarea from "../Textarea"
 
 const TextImage = (props) => {
   const {
-    backgroundcolor,
     image,
     alignment,
     headline,
@@ -23,7 +22,7 @@ const TextImage = (props) => {
   return (
     <Box
       sx={{
-        backgroundColor: backgroundcolor,
+        backgroundColor: 'blue180',
       }}
     >
       <Edges size="lg">
