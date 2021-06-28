@@ -8,20 +8,14 @@ import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
 import cards from "../../../../components/cards/Cards"
-import textform from "../../../../components/textForm/TextForm"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
-import benefits from "../../../../components/benefits/Benefits"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
 import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
-import locations from "../../../../components/accordion/Accordion"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
 import addresses from "../../../../components/addresses/Addresses"
-import people from "../../../../components/people/People"
-import tabs from "../../../../components/tabs/Tabs"
-import list from "../../../../components/list/List"
 import topbanner from "../../../../components/topBanner/TopBanner"
 
 const blocks = {
@@ -29,20 +23,14 @@ const blocks = {
   hero,
   introduction,
   cards,
-  textform,
   testimonialslider,
-  benefits,
   logos,
   partners,
   cardcarousel,
-  locations,
   textimagepage,
   herovideo,
   banner,
   addresses,
-  people,
-  tabs,
-  list,
   topbanner,
 }
 
@@ -216,35 +204,6 @@ export const CollectionQuery = graphql`
                     quote
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Benefits {
-                  fieldGroupName
-                  columns
-                  headline
-                  subheading
-                  link {
-                    target
-                    title
-                    url
-                  }
-                  cards {
-                    fieldGroupName
-                    headline
-                    text
-                    icon {
-                      svg
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 200
-                            placeholder: BLURRED
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
-                  }
-                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Topbanner {
                   fieldGroupName
                   headline
@@ -297,14 +256,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Textform {
-                  fieldGroupName
-                  alignment
-                  formbackground
-                  formid
-                  copy
-                  disclaimer
-                }
+                
                 ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
                   fieldGroupName
                   backgroundcolor
@@ -406,22 +358,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Locations {
-                  fieldGroupName
-                  location {
-                    fieldGroupName
-                    mainheading
-                    address {
-                      fieldGroupName
-                      addressheading
-                      addresslineone
-                      addresslinetwo
-                      phoneone
-                      phonetwo
-                      email
-                    }
-                  }
-                }
+                
                 ... on WpDefaultTemplate_Acf_Content_Flex_Herovideo {
                   fieldGroupName
                   headline
@@ -461,60 +398,7 @@ export const CollectionQuery = graphql`
                     contactinfo
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_People {
-                  fieldGroupName
-                  backgroundcolor
-                  columns
-                  initialvalue
-                  headline
-                  headlinestyle
-                  subheading
-                  cards {
-                    fieldGroupName
-                    name
-                    position
-                    avatar {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            placeholder: NONE
-                            width: 140
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
-                  }
-                }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Tabs {
-                  fieldGroupName
-                  tabs {
-                    fieldGroupName
-                    heading
-                    text
-                  }
-                }
-                ... on WpDefaultTemplate_Acf_Content_Flex_List {
-                  fieldGroupName
-                  list {
-                    fieldGroupName
-                    text
-                    image {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            layout: CONSTRAINED
-                            width: 160
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
-                  }
-                }
+                
               }
             }
             fieldGroupName
