@@ -28,11 +28,6 @@ const config = {
       type: "text",
       label: "Headline",
     },
-    {
-      id: "text",
-      type: "wysiwyg",
-      label: "Text",
-    },
   ],
 }
 

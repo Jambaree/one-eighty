@@ -14,7 +14,6 @@ const TextImage = (props) => {
     image,
     alignment,
     headline,
-    text,
   } = props
 
   const imageData = image?.localFile && getImage(image.localFile)
@@ -57,7 +56,7 @@ const TextImage = (props) => {
 
           <Box
             sx={{
-              width: ["100%", null, "calc(50% - 25px)"],
+              width: ["100%", null, "50%"],
               height: "100%",
               mt: "auto",
               display: "flex",
@@ -71,22 +70,8 @@ const TextImage = (props) => {
                 children={Parser(headline)}
                 variant='styles.h1'
                 as='h1'
-                sx={{ pb: 36, color: 'white' }}
+                sx={{ pb: 83, color: 'white' }}
               />
-            )}
-
-            {text && (
-              <Box
-                sx={{
-                  pb: 36,
-
-                  "p, a": {
-                    color: "white",
-                  },
-                }}
-              >
-                <Textarea content={text} />
-              </Box>
             )}
           </Box>
         </Box>

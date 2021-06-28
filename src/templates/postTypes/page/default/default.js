@@ -129,7 +129,6 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   alignment
                   headline
-                  text
                   image {
                     altText
                     localFile {
