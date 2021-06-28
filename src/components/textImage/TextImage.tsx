@@ -25,8 +25,7 @@ const TextImage = (props) => {
         backgroundColor: 'blue180',
       }}
     >
-      <Edges size="lg">
-        <Box
+      <Box
           sx={{
             position: "relative",
             display: "flex",
@@ -34,13 +33,13 @@ const TextImage = (props) => {
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
-            py: 100,
           }}
         >
           <Box
             sx={{
-              width: ["100%", "100%", "calc(50% - 25px)"],
+              width: ["100%", "100%", "50%"],
               overflow: "hidden",
+              height: 480,
             }}
           >
             {image
@@ -51,8 +50,6 @@ const TextImage = (props) => {
                     style={{
                       maxWidth: "100%",
                       objectFit: "contain",
-                      borderRadius: "8px",
-                      transform: "translateZ(0)",
                     }}
                   />
                 )}
@@ -62,7 +59,7 @@ const TextImage = (props) => {
             sx={{
               width: ["100%", null, "calc(50% - 25px)"],
               height: "100%",
-              my: "auto",
+              mt: "auto",
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -74,7 +71,7 @@ const TextImage = (props) => {
                 children={Parser(headline)}
                 variant='styles.h1'
                 as='h1'
-                sx={{ pb: 36 }}
+                sx={{ pb: 36, color: 'white' }}
               />
             )}
 
@@ -84,17 +81,7 @@ const TextImage = (props) => {
                   pb: 36,
 
                   "p, a": {
-                    fontFamily: "body",
-                    fontSize: 5,
-                    lineHeight: "30px",
-                    fontWeight: "light",
-                    letterSpacing: "-0.27px",
-                    color: "black75",
-                    "@media (max-width: 767px)": {
-                      lineHeight: "25px",
-                      letterSpacing: "-0.24px",
-                      fontSize: 4,
-                    },
+                    color: "white",
                   },
                 }}
               >
@@ -103,7 +90,6 @@ const TextImage = (props) => {
             )}
           </Box>
         </Box>
-      </Edges>
     </Box>
   )
 }
