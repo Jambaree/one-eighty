@@ -33,6 +33,15 @@ const themeUi = {
       letterSpacing: "0.01em",
       color: "black",
     },
+    paragraph: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: "16px",
+      lineHeight: "24px",
+      letterSpacing: "0.01em",
+      color: "textGray",
+      fontStyle: "normal",
+    },
     textComponent: {
       fontFamily: "body",
       fontWeight: "normal",
