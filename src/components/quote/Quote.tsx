@@ -31,9 +31,10 @@ const Quote = (props) => {
           }}
         />
         <Box
+          className="quoteText"
           sx={{
             maxWidth: "708px",
-            "h1, h2, h3, h4, p": {
+            "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             },
           }}
