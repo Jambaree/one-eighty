@@ -88,13 +88,11 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Hero {
                   fieldGroupName
                   headline
-                  headlinestyle
-                  text
-                  linktype
-                  link {
-                    target
-                    title
-                    url
+                  filevideo {
+                    altText
+                    localFile {
+                      publicURL
+                    }
                   }
                   image {
                     altText
@@ -102,18 +100,6 @@ export const CollectionQuery = graphql`
                       childImageSharp {
                         gatsbyImageData(
                           width: 1920
-                          placeholder: BLURRED
-                          quality: 100
-                        )
-                      }
-                    }
-                  }
-                  mobileimage {
-                    altText
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(
-                          width: 375
                           placeholder: BLURRED
                           quality: 100
                         )
