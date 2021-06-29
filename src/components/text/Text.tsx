@@ -9,11 +9,11 @@ const Text = (props) => {
   const { text } = props
 
   return (
-    <Edges size="md">
+    <Edges size="cmd">
       <Box
         variant="text.textComponent"
         py={[4, 5, 6]}
-        pr={[0, "50px", "200px"]}
+        pr={[0, "100px", "300px"]}
       >
         <Textarea content={text} />
       </Box>
