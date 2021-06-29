@@ -15,7 +15,8 @@ const TextImage = (props) => {
     <Box sx={{ bg: "blue180" }}>
       <Box
         sx={{
-          height: ["fit-content", "fit-content", 480],
+          height: ["auto", "auto", 480],
+          maxHeight: 800,
           position: "relative",
           display: "flex",
           flexDirection: [
@@ -32,7 +33,7 @@ const TextImage = (props) => {
           sx={{
             width: ["100%", "100%", "60%"],
             overflow: "hidden",
-            height: "auto",
+            height: [480, "auto", "auto"],
             maxHeight: 480,
             zIndex: 1,
             clipPath:
@@ -72,7 +73,6 @@ const TextImage = (props) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-end",
-            pt: 36,
             backgroundColor: "blue180",
             zIndex: 2,
             clipPath:
