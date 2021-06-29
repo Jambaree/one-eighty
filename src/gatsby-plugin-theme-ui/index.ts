@@ -65,10 +65,10 @@ const themeUi = {
       textTransform: "uppercase",
     },
     heroHeading: {
-      fontFamily: "body",
       variant: "text.heading",
+      fontWeight: "normal",
       fontSize: ["30px", "32px", "36px"],
-      letterSpacing: "1%",
+      letterSpacing: "0.01em",
       lineHeight: "40px",
     },
     body: {
