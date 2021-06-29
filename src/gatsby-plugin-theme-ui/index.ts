@@ -35,7 +35,7 @@ const themeUi = {
     },
     textComponent: {
       fontWeight: "normal",
-      fontSize: 2,
+      fontSize: "16px",
       lineHeight: "24px",
       letterSpacing: "1%",
       color: "textGray",
