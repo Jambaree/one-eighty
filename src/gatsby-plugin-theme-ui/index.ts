@@ -34,11 +34,13 @@ const themeUi = {
       color: "black",
     },
     textComponent: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: "16px",
       lineHeight: "24px",
-      letterSpacing: "1%",
+      letterSpacing: "0.01em",
       color: "textGray",
+      fontStyle: "normal",
     },
     primaryNav: {
       fontWeight: "normal",
