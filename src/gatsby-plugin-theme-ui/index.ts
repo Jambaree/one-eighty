@@ -62,9 +62,10 @@ const themeUi = {
       textTransform: "uppercase",
     },
     heroHeading: {
-      variant: "text.heading",
+      fontWeight: 400,
       fontSize: ["30px", "32px", "36px"],
-      letterSpacing: "1%",
+      fontStyle: "normal",
+      letterSpacing: "0.01em",
       lineHeight: "40px",
     },
     body: {
