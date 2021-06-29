@@ -17,6 +17,7 @@ import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
 import addresses from "../../../../components/addresses/Addresses"
 import topbanner from "../../../../components/topBanner/TopBanner"
+import quote from "../../../../components/quote/Quote"
 
 const blocks = {
   textimage,
@@ -32,6 +33,7 @@ const blocks = {
   banner,
   addresses,
   topbanner,
+  quote,
 }
 
 const Template = (props) => {
@@ -123,6 +125,10 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   backgroundcolor
                   headline
+                  text
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Quote {
+                  fieldGroupName
                   text
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
@@ -256,7 +262,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                
+
                 ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
                   fieldGroupName
                   backgroundcolor
@@ -358,7 +364,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                
+
                 ... on WpDefaultTemplate_Acf_Content_Flex_Herovideo {
                   fieldGroupName
                   headline
@@ -398,7 +404,6 @@ export const CollectionQuery = graphql`
                     contactinfo
                   }
                 }
-                
               }
             }
             fieldGroupName
