@@ -92,6 +92,12 @@ const themeUi = {
       fontWeight: "medium",
       letterSpacing: "-0.15px",
     },
+    heroHeading: {
+      variant: "text.heading",
+      fontSize: [9, 10],
+      letterSpacing: "-0.64px",
+      lineHeight: "46px",
+    },
     footerHeading2: {
       fontFamily: "body",
       fontSize: 1,

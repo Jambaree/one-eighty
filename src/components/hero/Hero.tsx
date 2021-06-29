@@ -18,7 +18,7 @@ const Hero = (props) => {
           {headline && (
             <Heading
               as="h1"
-              variant="styles.h3"
+              variant="text.heroHeading"
               children={headline}
               sx={{
                 fontWeight: 400,
