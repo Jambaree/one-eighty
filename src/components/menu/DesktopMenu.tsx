@@ -8,7 +8,6 @@ import Edges from "../Edges"
 import Link from "../Link"
 
 // import ChevronDown from "../../icons/chevron-down.svg"
-
 import theme from "../../theme"
 
 interface MenuItem {
@@ -65,7 +64,7 @@ const DesktopMenu = (props: Props) => {
         >
           <Box
             pr={2}
-            style={{ width: "136px", flexShrink: 0 }}
+            style={{ width: "136px", flexShrink: 0, marginRight: 26 }}
             // logo placeholder
           ></Box>
           <Flex
@@ -142,6 +141,10 @@ const MenuButton = (props: MenuButtonProps) => {
           position: "relative",
           flexDirection: "row",
           alignItems: "center",
+          m: "unset",
+          mr: 26,
+          p: "unset",
+
           "&:hover": {
             "&:before": {
               opacity: 1,
