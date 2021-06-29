@@ -1,5 +1,5 @@
 const themeUi = {
-  headerHeight: 60,
+  headerHeight: "60px",
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 100, 256, 512],
   fonts: {
@@ -33,14 +33,17 @@ const themeUi = {
       letterSpacing: "0.01em",
       color: "black",
     },
-    textComponent: {
+    paragraph: {
+      fontFamily: "body",
       fontWeight: "normal",
-      fontSize: 2,
+      fontSize: "16px",
       lineHeight: "24px",
-      letterSpacing: "1%",
+      letterSpacing: "0.01em",
       color: "textGray",
+      fontStyle: "normal",
     },
     primaryNav: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: 1,
       lineHeight: "16px",
@@ -48,6 +51,7 @@ const themeUi = {
       textTransform: "uppercase",
     },
     footerNav: {
+      fontFamily: "body",
       fontWeight: "bold",
       fontSize: 0,
       lineHeight: "13px",
@@ -55,6 +59,7 @@ const themeUi = {
       textTransform: "uppercase",
     },
     jobTitle: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: 2,
       lineHeight: "18px",
@@ -62,13 +67,14 @@ const themeUi = {
       textTransform: "uppercase",
     },
     heroHeading: {
-      fontWeight: 400,
-      fontSize: ["30px", "32px", "36px"],
-      fontStyle: "normal",
+      variant: "text.heading",
+      fontWeight: "normal",
+      fontSize: ["30px", 7, 8],
       letterSpacing: "0.01em",
       lineHeight: "40px",
     },
     body: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: 2,
       lineHeight: "24px",

@@ -2,6 +2,7 @@ import React from "react"
 import { Container, Box } from "theme-ui"
 
 // import app components
+import theme from "../theme"
 import Header from "./Header"
 import Footer from "./Footer"
 import LightBox from "./lightBox"
@@ -15,7 +16,7 @@ const Layout = (props) => {
   return (
     <>
       <Container
-        pt={"94px"}
+        pt={theme.headerHeight}
         sx={{
           justifyContent: "center",
         }}
@@ -25,7 +26,7 @@ const Layout = (props) => {
           as="main"
           {...props}
           sx={{
-            minHeight: `calc(100vh - 94px)`,
+            minHeight: `calc(100vh - ${theme.headerHeight})`,
           }}
         >
           {props?.children}

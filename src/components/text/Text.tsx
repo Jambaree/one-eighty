@@ -10,11 +10,7 @@ const Text = (props) => {
 
   return (
     <Edges size="cmd">
-      <Box
-        variant="text.textComponent"
-        py={[4, 5, 6]}
-        pr={[0, "100px", "300px"]}
-      >
+      <Box py={[4, 5, 6]} pr={[0, "100px", "300px"]}>
         <Textarea content={text} />
       </Box>
     </Edges>
