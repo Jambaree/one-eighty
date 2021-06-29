@@ -21,7 +21,6 @@ const Hero = (props) => {
               variant="text.heroHeading"
               children={headline}
               sx={{
-                fontWeight: 400,
                 width: "100%",
                 textAlign: "start",
                 marginBottom: 20,
