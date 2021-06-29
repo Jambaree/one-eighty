@@ -1,13 +1,10 @@
 import React from "react"
-import { Box, Heading, Text, IconButton } from "theme-ui"
+import { Box, Heading } from "theme-ui"
 import Parser from "html-react-parser"
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
-import Edges from "../Edges"
-import Button from "../Button"
-import Textarea from "../Textarea"
 
 const TextImage = (props) => {
   const { image, alignment = "right", headline } = props
