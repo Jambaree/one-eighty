@@ -35,8 +35,8 @@ const gatsbyConfig = {
         fonts: {
           google: [
             {
-              family: "Poppins",
-              variants: ["100", "200", "300", "400", "500", "700"],
+              family: "Barlow Semi Condensed",
+              variants: ['200', "300", "400", "500", "700"],
             },
           ],
         },
