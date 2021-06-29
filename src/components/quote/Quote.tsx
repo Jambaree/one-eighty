@@ -10,12 +10,36 @@ const Quote = (props) => {
   const { text, backgroundcolor } = props
 
   return (
-    <Container sx={{ my: "50px", bg: backgroundcolor, minHeight: "134px" }}>
+    <Container
+      sx={{
+        position: "relative",
+        my: "50px",
+        py: "50px",
+        bg: backgroundcolor,
+      }}
+    >
       <Box
         sx={{
-          minHeight: "134px",
-          borderRight: (theme) => `4px solid ${theme.colors.red}`,
-          borderLeft: (theme) => `4px solid ${theme.colors.red}`,
+          "&:before": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: "0",
+            left: 0,
+            width: "4px",
+            height: "100%",
+            bg: "red",
+          },
+          "&:after": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: "0",
+            right: 0,
+            width: "4px",
+            height: "100%",
+            bg: "red",
+          },
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
