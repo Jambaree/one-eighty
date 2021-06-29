@@ -66,7 +66,7 @@ const Header = (props) => {
             }}
           >
             <Link to="/">
-              <Logo style={{ height: "auto", width: "160px" }} />
+              <Logo style={{ height: "auto", width: "136px" }} />
             </Link>
           </Box>
 

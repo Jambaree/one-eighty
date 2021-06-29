@@ -34,6 +34,7 @@ const themeUi = {
       color: "black",
     },
     primaryNav: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: 1,
       lineHeight: "16px",
@@ -41,6 +42,7 @@ const themeUi = {
       textTransform: "uppercase",
     },
     footerNav: {
+      fontFamily: "body",
       fontWeight: "bold",
       fontSize: 0,
       lineHeight: "13px",
@@ -48,6 +50,7 @@ const themeUi = {
       textTransform: "uppercase",
     },
     jobTitle: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: 2,
       lineHeight: "18px",
@@ -55,12 +58,14 @@ const themeUi = {
       textTransform: "uppercase",
     },
     heroHeading: {
+      fontFamily: "body",
       variant: "text.heading",
       fontSize: ["30px", "32px", "36px"],
       letterSpacing: "-0.64px",
       lineHeight: "46px",
     },
     body: {
+      fontFamily: "body",
       fontWeight: "normal",
       fontSize: 2,
       lineHeight: "24px",

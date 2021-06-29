@@ -61,12 +61,11 @@ const DesktopMenu = (props: Props) => {
         <Flex
           sx={{
             position: "relative",
-            // justifyContent: "space-between"
           }}
         >
           <Box
             pr={2}
-            style={{ width: "160px", flexShrink: 0 }}
+            style={{ width: "136px", flexShrink: 0 }}
             // logo placeholder
           ></Box>
           <Flex
@@ -133,7 +132,7 @@ const MenuButton = (props: MenuButtonProps) => {
       <Button
         {...linkProps}
         ml="48px"
-        variant="navButton"
+        variant="text.primaryNav"
         onClick={onOpen}
         sx={{
           color: theme.colors.black,
