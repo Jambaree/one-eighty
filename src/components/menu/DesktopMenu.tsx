@@ -245,12 +245,9 @@ const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
               style={{
                 display: "inline-block",
                 marginBottom: "40px",
-                color: theme.colors.black25,
-                "&:hover": {
-                  // color: theme.colors.coral,
-                },
+                color: theme.colors.textGray,
+                "&:hover": {},
               }}
-              // activeStyle={{ color: theme.colors.coral }}
             >
               <Text variant="desktopSubMenuItem" color="inherit">
                 {Parser(item.title || "")}
