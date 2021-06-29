@@ -35,11 +35,18 @@ const TextImage = (props) => {
             width: ["100%", "100%", "51%"],
             overflow: "hidden",
             height: 480,
-            clipPath: [
-              "unset",
-              "unset",
-              "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%, 0% 92%, 11% 92%, 25% 92%, 25% 96%, 12% 96%, 12% 75%, 0% 75%)",
-            ],
+            clipPath:
+              alignment === "right"
+                ? [
+                    "unset",
+                    "unset",
+                    "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%, 0% 92%, 11% 92%, 25% 92%, 25% 96%, 12% 96%, 12% 75%, 0% 75%)",
+                  ]
+                : [
+                    "unset",
+                    "unset",
+                    "polygon(0 0%, 100% 0%, 100% 92%, 75% 92%, 75% 96%, 88% 96%, 88% 92%, 100% 92%, 100% 100%, 0% 100%)",
+                  ],
           }}
         >
           {image && imageData && (
@@ -57,7 +64,8 @@ const TextImage = (props) => {
         <Box
           sx={{
             position: ["unset", "unset", "absolute"],
-            left: ["unset", "unset", 0],
+            left: alignment === "right" ? ["unset", "unset", 0] : "unset",
+            right: alignment === "left" ? ["unset", "unset", 0] : "unset",
             width: ["100%", null, "55%"],
             height: 480,
             display: "flex",
@@ -66,11 +74,18 @@ const TextImage = (props) => {
             justifyContent: "flex-end",
             pt: 36,
             backgroundColor: "blue180",
-            clipPath: [
-              "unset",
-              "unset",
-              "polygon(0 0%, 100% 0%, 100% 92%, 85% 92%, 85% 96%, 100% 96%, 100% 100%, 0% 100%);",
-            ],
+            clipPath:
+              alignment === "right"
+                ? [
+                    "unset",
+                    "unset",
+                    "polygon(0 0%, 100% 0%, 100% 92%, 85% 92%, 85% 96%, 100% 96%, 100% 100%, 0% 100%);",
+                  ]
+                : [
+                    "unset",
+                    "unset",
+                    "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%, 0% 92%, 11% 92%, 12% 92%, 12% 96%, 0% 96%, 0% 75%, 0% 75%)",
+                  ],
           }}
         >
           {headline && (
