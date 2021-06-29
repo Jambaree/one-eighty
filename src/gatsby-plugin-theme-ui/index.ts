@@ -69,13 +69,6 @@ const themeUi = {
       letterSpacing: "0.01em",
       lineHeight: "40px",
     },
-    quoteText: {
-      fontSize: ["28px", "36px", "40px"],
-      fontWeight: "light",
-      letterSpacing: "1%",
-      lineHeight: "60px",
-      color: "blue180",
-    },
     body: {
       fontWeight: "normal",
       fontSize: 2,

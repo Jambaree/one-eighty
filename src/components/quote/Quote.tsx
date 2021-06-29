@@ -10,7 +10,7 @@ const Quote = (props) => {
   const { text, backgroundcolor } = props
 
   return (
-    <Container sx={{ bg: backgroundcolor, minHeight: "134px" }}>
+    <Container sx={{ my: "50px", bg: backgroundcolor, minHeight: "134px" }}>
       <Box
         sx={{
           minHeight: "134px",
@@ -20,7 +20,6 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
-          my: "50px",
         }}
       >
         <Divider
@@ -34,11 +33,7 @@ const Quote = (props) => {
         <Box
           sx={{
             maxWidth: "662px",
-            color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
-            h2: {
-              color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
-            },
-            h3: {
+            "h1, h2, h3, h4, p": {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             },
           }}
