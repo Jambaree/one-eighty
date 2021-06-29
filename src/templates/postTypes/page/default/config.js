@@ -12,6 +12,7 @@ import herovideo from "../../../../components/heroVideo/config"
 import banner from "../../../../components/banner/config"
 import addresses from "../../../../components/addresses/config"
 import topbanner from "../../../../components/topBanner/config"
+import text from "../../../../components/text/config"
 
 const config = {
   id: "default",
@@ -45,6 +46,7 @@ const config = {
             banner,
             addresses,
             topbanner,
+            text,
           }),
         },
       ],
