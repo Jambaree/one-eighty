@@ -6,8 +6,6 @@ import { Close } from "mdi-material-ui"
 
 import Edges from "../Edges"
 import Link from "../Link"
-
-// import ChevronDown from "../../icons/chevron-down.svg"
 import theme from "../../theme"
 
 interface MenuItem {
