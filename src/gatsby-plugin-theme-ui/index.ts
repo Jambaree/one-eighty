@@ -62,7 +62,7 @@ const themeUi = {
       lineHeight: "46px",
     },
     quoteText: {
-      fontSize: ["32px", "36px", "40px"],
+      fontSize: ["28px", "36px", "40px"],
       fontWeight: "light",
       letterSpacing: "1%",
       lineHeight: "60px",
