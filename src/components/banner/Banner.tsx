@@ -7,8 +7,6 @@ import Parser from "html-react-parser"
 import theme from "../../theme"
 import Edges from "../Edges"
 
-import CutSquareCoralGraphic from "../../icons/Cut_Square_Coral.svg"
-
 const Banner = (props) => {
   const {
     variant,
