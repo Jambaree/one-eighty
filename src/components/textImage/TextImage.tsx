@@ -10,12 +10,12 @@ import Button from "../Button"
 import Textarea from "../Textarea"
 
 const TextImage = (props) => {
-  const { image, alignment, headline } = props
+  const { image, alignment = "right", headline } = props
 
   const imageData = image?.localFile && getImage(image.localFile)
 
   return (
-    <Box sx={{ bg: "blue180", display: "flex", flexWrap: "wrap" }}>
+    <Box sx={{ bg: "blue180" }}>
       <Box
         sx={{
           height: ["fit-content", "fit-content", 480],
