@@ -61,6 +61,12 @@ const themeUi = {
       letterSpacing: "0.02em",
       textTransform: "uppercase",
     },
+    heroHeading: {
+      variant: "text.heading",
+      fontSize: ["30px", "32px", "36px"],
+      letterSpacing: "-0.64px",
+      lineHeight: "46px",
+    },
     body: {
       fontWeight: "normal",
       fontSize: 2,
