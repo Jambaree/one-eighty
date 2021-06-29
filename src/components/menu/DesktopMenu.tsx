@@ -7,7 +7,7 @@ import { Close } from "mdi-material-ui"
 import Edges from "../Edges"
 import Link from "../Link"
 
-import ChevronDown from "../../icons/chevron-down.svg"
+// import ChevronDown from "../../icons/chevron-down.svg"
 
 import theme from "../../theme"
 
@@ -51,14 +51,19 @@ const DesktopMenu = (props: Props) => {
       sx={{
         position: "absolute",
         width: "100%",
-        height: "100%",
+        height: theme.headerHeight,
         left: 0,
         top: 0,
         background: "white",
       }}
     >
       <Edges size="lg">
-        <Flex sx={{ position: "relative", justifyContent: "space-between" }}>
+        <Flex
+          sx={{
+            position: "relative",
+            // justifyContent: "space-between"
+          }}
+        >
           <Box
             pr={2}
             style={{ width: "160px", flexShrink: 0 }}
@@ -131,7 +136,8 @@ const MenuButton = (props: MenuButtonProps) => {
         variant="navButton"
         onClick={onOpen}
         sx={{
-          height: "94px",
+          color: theme.colors.black,
+          height: theme.headerHeight,
           cursor: "pointer",
           display: "flex",
           position: "relative",
@@ -154,13 +160,13 @@ const MenuButton = (props: MenuButtonProps) => {
             height: 9,
             width: 40,
             zIndex: 1,
-            backgroundColor: "coral",
+            // backgroundColor: "coral",
           },
         }}
       >
         {Parser(title || "")}
 
-        {children?.length > 0 && <ChevronDown />}
+        {/* {children?.length > 0 && <ChevronDown />} */}
       </Button>
 
       <AnimatePresence>
@@ -200,19 +206,19 @@ const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
           zIndex: -1,
           display: "flex",
           padding: "85px 85px 55px",
-          background: theme.colors.charcoalDark,
+          background: theme.colors.blue180,
           position: "absolute",
           flexDirection: "column",
           right: 0,
-          top: 94,
-          maxHeight: "calc(100vh - 94px)",
+          top: theme.headerHeight,
+          maxHeight: `calc(100vh - ${theme.headerHeight})`,
           width: "50%",
           overflow: "auto",
         }}
       >
         <IconButton
           onClick={onClose}
-          color="coral"
+          color="white"
           sx={{
             cursor: "pointer",
             position: "absolute",
@@ -240,10 +246,10 @@ const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
                 marginBottom: "40px",
                 color: theme.colors.black25,
                 "&:hover": {
-                  color: theme.colors.coral,
+                  // color: theme.colors.coral,
                 },
               }}
-              activeStyle={{ color: theme.colors.coral }}
+              // activeStyle={{ color: theme.colors.coral }}
             >
               <Text variant="desktopSubMenuItem" color="inherit">
                 {Parser(item.title || "")}

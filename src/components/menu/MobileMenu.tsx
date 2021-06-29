@@ -171,7 +171,7 @@ const Menu = styled.div`
   background: var(--theme-ui-colors-charcoalDark);
   padding-top: 32px;
   padding-bottom: 32px;
-  max-height: calc(100vh - 94px);
+  max-height: calc(100vh - var(--theme-ui-headerHeight));
   overflow-y: auto;
 
   @media (min-width: 1024px) {
