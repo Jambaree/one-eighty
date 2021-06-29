@@ -13,21 +13,21 @@ const Quote = (props) => {
     <Container sx={{ height: 150 }}>
       <Box
         sx={{
-          height: ["auto", 100],
+          height: ["auto", 134],
           borderRight: (theme) => `4px solid ${theme.colors.quoteRed}`,
           borderLeft: (theme) => `4px solid ${theme.colors.quoteRed}`,
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
-          my: "30px",
+          my: "50px",
         }}
       >
         <Divider
           color="quoteRed"
           sx={{
             width: ["20px", "40px", "77px"],
-            mx: ["10px", "30px"],
+            mx: ["10px", "25px"],
             textAlign: "end",
             height: "1px",
             transform: [null, "translateY(3px)"],
@@ -38,8 +38,8 @@ const Quote = (props) => {
           color="quoteRed"
           sx={{
             width: ["20px", "40px", "77px"],
-            mx: ["10px", "30px"],
-            "@media (min-width:1150px)": { mr: "189px" },
+            mx: ["10px", "25px"],
+            "@media (min-width:1150px)": { mr: "112px" },
             transform: [null, "translateY(3px)"],
           }}
         />
