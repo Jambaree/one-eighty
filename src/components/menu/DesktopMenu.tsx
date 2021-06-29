@@ -64,7 +64,11 @@ const DesktopMenu = (props: Props) => {
         >
           <Box
             pr={2}
-            style={{ width: "136px", flexShrink: 0, marginRight: 26 }}
+            style={{
+              width: "136px",
+              flexShrink: 0,
+              marginRight: 26,
+            }}
             // logo placeholder
           ></Box>
           <Flex

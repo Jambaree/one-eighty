@@ -212,7 +212,7 @@ const MenuLink = styled(Link)`
   ${item};
   color: #fff;
   &:hover {
-    color: ${theme.colors.coral};
+    color: ${theme.colors.termsPrivacy};
   }
 `
 
@@ -224,10 +224,10 @@ const SubMenuLink = styled(Link)`
   display: block;
   padding: 12px;
 
-  color: ${theme.colors.almond};
+  color: ${theme.colors.white};
 
   &:hover {
-    color: ${theme.colors.coral};
+    color: ${theme.colors.termsPrivacy};
   }
 `
 

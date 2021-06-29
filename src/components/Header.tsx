@@ -66,7 +66,9 @@ const Header = (props) => {
             }}
           >
             <Link to="/">
-              <Logo style={{ height: "auto", width: "136px" }} />
+              <Logo
+                style={{ height: "auto", width: "136px", marginBottom: "-4px" }}
+              />
             </Link>
           </Box>
 
@@ -82,7 +84,7 @@ const Header = (props) => {
             onClick={() => dispatch({ type: "TOGGLE_MENU" })}
           >
             <HamburgerMenu
-              color={menuActive ? "coral" : "#2D4052"}
+              color={menuActive ? theme.colors.blue180 : theme.colors.black}
               isOpen={menuActive}
               width={26}
               height={15}
