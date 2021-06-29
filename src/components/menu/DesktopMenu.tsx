@@ -164,13 +164,10 @@ const MenuButton = (props: MenuButtonProps) => {
             height: 9,
             width: 40,
             zIndex: 1,
-            // backgroundColor: "coral",
           },
         }}
       >
         {Parser(title || "")}
-
-        {/* {children?.length > 0 && <ChevronDown />} */}
       </Button>
 
       <AnimatePresence>
