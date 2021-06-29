@@ -56,6 +56,7 @@ const TextImage = (props) => {
               alt={image?.altText || ""}
               style={{
                 maxWidth: "100%",
+                width: "100%",
                 objectFit: "contain",
               }}
             />
