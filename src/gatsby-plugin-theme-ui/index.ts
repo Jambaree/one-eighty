@@ -64,8 +64,8 @@ const themeUi = {
     heroHeading: {
       variant: "text.heading",
       fontSize: ["30px", "32px", "36px"],
-      letterSpacing: "-0.64px",
-      lineHeight: "46px",
+      letterSpacing: "1%",
+      lineHeight: "40px",
     },
     body: {
       fontWeight: "normal",
