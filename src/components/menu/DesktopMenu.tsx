@@ -6,8 +6,6 @@ import { Close } from "mdi-material-ui"
 
 import Edges from "../Edges"
 import Link from "../Link"
-
-// import ChevronDown from "../../icons/chevron-down.svg"
 import theme from "../../theme"
 
 interface MenuItem {
@@ -166,13 +164,10 @@ const MenuButton = (props: MenuButtonProps) => {
             height: 9,
             width: 40,
             zIndex: 1,
-            // backgroundColor: "coral",
           },
         }}
       >
         {Parser(title || "")}
-
-        {/* {children?.length > 0 && <ChevronDown />} */}
       </Button>
 
       <AnimatePresence>
@@ -250,12 +245,9 @@ const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
               style={{
                 display: "inline-block",
                 marginBottom: "40px",
-                color: theme.colors.black25,
-                "&:hover": {
-                  // color: theme.colors.coral,
-                },
+                color: theme.colors.textGray,
+                "&:hover": {},
               }}
-              // activeStyle={{ color: theme.colors.coral }}
             >
               <Text variant="desktopSubMenuItem" color="inherit">
                 {Parser(item.title || "")}
