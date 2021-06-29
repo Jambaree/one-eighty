@@ -4,6 +4,7 @@ import { Container, Box, Flex } from "theme-ui"
 import { Link } from "gatsby"
 
 // import app components
+import theme from "../theme"
 import Edges from "./Edges"
 import DesktopMenu from "./menu/DesktopMenu"
 import MobileMenu from "./menu/MobileMenu"
@@ -37,7 +38,7 @@ const Header = (props) => {
     <Container
       sx={{
         background: "#fff",
-        height: 94,
+        height: theme.headerHeight,
         position: "fixed",
         left: 0,
         top: 0,
@@ -62,11 +63,12 @@ const Header = (props) => {
               zIndex: 2,
               textDecoration: "none",
               ".a": { fill: "charcoalDark" },
-              svg: { height: "60px" },
             }}
           >
             <Link to="/">
-              <Logo style={{ height: "auto", width: "160px" }} />
+              <Logo
+                style={{ height: "auto", width: "136px", marginBottom: "-4px" }}
+              />
             </Link>
           </Box>
 
@@ -82,7 +84,7 @@ const Header = (props) => {
             onClick={() => dispatch({ type: "TOGGLE_MENU" })}
           >
             <HamburgerMenu
-              color={menuActive ? "coral" : "#2D4052"}
+              color={menuActive ? theme.colors.blue180 : theme.colors.black}
               isOpen={menuActive}
               width={26}
               height={15}

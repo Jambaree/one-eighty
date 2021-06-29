@@ -9,10 +9,6 @@ import BackgroundImage from "../BackgroundImage"
 import Modal from "../Modal"
 import Textarea from "../Textarea"
 
-import CutHexagonPlum from "../../icons/Cut_Hexagon_Plum.svg"
-import HexagonGroupFlaxTurquoise from "../../icons/Hexagon_Group_Flax_Turquoise.svg"
-import CutHexagonFlax from "../../icons/Cut_Hexagon_Flax.svg"
-
 const Logos = (props) => {
   const { columns, headline, subheading, divider, cards } = props
 
@@ -104,7 +100,15 @@ const Logos = (props) => {
               const image = o?.logo?.localFile && getImage(o.logo.localFile)
 
               return (
-                <Box key={i} sx={{ position: "relative", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box
+                  key={i}
+                  sx={{
+                    position: "relative",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
                   <Box
                     sx={{
                       mt: [80, 100, 100],
