@@ -6,7 +6,7 @@ import Parser from "html-react-parser"
 import { Text, Flex } from "theme-ui"
 
 // import app components
-import ChevronDown from "../../icons/chevron-down.svg"
+// import ChevronDown from "../../icons/chevron-down.svg"
 import { useStore } from "../../store"
 import { formatLink } from "../../utils"
 import theme from "../../theme"
@@ -54,7 +54,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                   <>
                     {url === "#" ? (
                       <MenuLinkContainer onClick={() => handleArrowClick(id)}>
-                        <Text variant="mobileMenuItem" color="inherit">
+                        <Text variant="text.primaryNav" color="inherit">
                           {title && Parser(title)}
                         </Text>
 
@@ -64,10 +64,10 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                       <MenuLinkContainer>
                         <MenuLink
                           to={formatLink(url)}
-                          activeStyle={{ color: theme.colors.coral }}
+                          activeStyle={{}}
                           onClick={handleCloseMenu}
                         >
-                          <Text variant="mobileMenuItem" color="inherit">
+                          <Text variant="text.primaryNav" color="inherit">
                             {title && Parser(title)}
                           </Text>
                         </MenuLink>
@@ -90,9 +90,9 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                             to={formatLink(o.url)}
                             activeClassName="active"
                             onClick={handleCloseMenu}
-                            activeStyle={{ color: theme.colors.coral }}
+                            activeStyle={{}}
                           >
-                            <Text variant="mobileSubMenuItem" color="inherit">
+                            <Text variant="text.primaryNav" color="inherit">
                               {o?.title && Parser(o.title)}
                             </Text>
                           </SubMenuLink>
@@ -104,9 +104,9 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                   <MenuLink
                     to={formatLink(url)}
                     onClick={handleCloseMenu}
-                    activeStyle={{ color: theme.colors.coral }}
+                    activeStyle={{}}
                   >
-                    <Text color="inherit" variant="mobileMenuItem">
+                    <Text color="inherit" variant="text.primaryNav">
                       {title && Parser(title)}
                     </Text>
                   </MenuLink>
@@ -142,7 +142,7 @@ const Chevron = (props) => {
         },
       }}
     >
-      <ChevronDown className="chevron-icon" />
+      {/* <ChevronDown className="chevron-icon" /> */}
     </Flex>
   )
 }
@@ -160,15 +160,15 @@ const Menu = styled.div`
         `};
 
   position: fixed;
-  top: 94px;
-  width: calc(100% - 70px);
+  top: ${theme.headerHeight};
+  width: calc(50%);
   right: 0;
   z-index: -2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  background: var(--theme-ui-colors-charcoalDark);
+  background: var(--theme-ui-colors-blue180);
   padding-top: 32px;
   padding-bottom: 32px;
   max-height: calc(100vh - var(--theme-ui-headerHeight));
