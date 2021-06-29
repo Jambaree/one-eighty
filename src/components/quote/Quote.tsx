@@ -54,11 +54,12 @@ const Quote = (props) => {
             width: ["20px", "40px", "77px"],
             mx: ["10px", "25px"],
             transform: [null, "translateY(-3px)"],
+            display: ["none", "block"],
           }}
         />
         <Box
-          className="quoteText"
           sx={{
+            px: ["30px", 0],
             maxWidth: "708px",
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
@@ -72,8 +73,8 @@ const Quote = (props) => {
           sx={{
             width: ["20px", "40px", "77px"],
             mx: ["10px", "25px"],
+            display: ["none", "block"],
             transform: [null, "translateY(-3px)"],
-
             "@media (min-width:1150px)": { mr: "112px" },
           }}
         />
