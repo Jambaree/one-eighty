@@ -42,15 +42,6 @@ const themeUi = {
       color: "textGray",
       fontStyle: "normal",
     },
-    textComponent: {
-      fontFamily: "body",
-      fontWeight: "normal",
-      fontSize: "16px",
-      lineHeight: "24px",
-      letterSpacing: "0.01em",
-      color: "textGray",
-      fontStyle: "normal",
-    },
     primaryNav: {
       fontWeight: "normal",
       fontSize: 1,
