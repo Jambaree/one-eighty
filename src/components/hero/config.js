@@ -8,61 +8,16 @@ const config = {
       label: "Image",
     },
     {
-      id: "mobileimage",
-      type: "image",
-      label: "Mobile Image",
-    },
-    {
       id: "headline",
       type: "text",
       label: "Headline",
+      rows: 3,
     },
     {
-      id: "headlinestyle",
-      type: "select",
-      label: "Headline Style",
-      defaultValue: "h2",
-      options: [
-        {
-          name: "H1",
-          value: "h1",
-        },
-        {
-          name: "H2",
-          value: "h2",
-        },
-        {
-          name: "H3",
-          value: "h3",
-        },
-      ],
-    },
-    {
-      id: "text",
-      type: "text",
-      label: "Text",
-      rows: 6,
-    },
-    {
-      id: "link",
-      type: "link",
-      label: "Link",
-    },
-    {
-      id: "linktype",
-      type: "select",
-      label: "Link Type",
-      defaultValue: "button",
-      options: [
-        {
-          name: "Button",
-          value: "button",
-        },
-        {
-          name: "Hyperlink",
-          value: "hyperlink",
-        },
-      ],
+      id: "filevideo",
+      type: "file",
+      label: "Upload Video",
+      instructions: "upload the video file", // optional
     },
   ],
 }
