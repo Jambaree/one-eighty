@@ -17,6 +17,7 @@ import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
 import addresses from "../../../../components/addresses/Addresses"
 import topbanner from "../../../../components/topBanner/TopBanner"
+import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
 
 const blocks = {
@@ -33,6 +34,7 @@ const blocks = {
   banner,
   addresses,
   topbanner,
+  quote,
   text,
 }
 
@@ -111,6 +113,11 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   backgroundcolor
                   headline
+                  text
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Quote {
+                  fieldGroupName
+                  backgroundcolor
                   text
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Text {
