@@ -25,6 +25,7 @@ const themeUi = {
     blue180: "#1F3D60",
     white: "#FFFFFF",
     black: "#000000",
+    quoteRed: "#E0092D",
   },
   text: {
     heading: {
@@ -59,6 +60,13 @@ const themeUi = {
       fontSize: ["30px", "32px", "36px"],
       letterSpacing: "-0.64px",
       lineHeight: "46px",
+    },
+    quoteText: {
+      fontSize: ["32px", "36px", "40px"],
+      fontWeight: "light",
+      letterSpacing: "1%",
+      lineHeight: "60px",
+      color: "blue180",
     },
     body: {
       fontWeight: "normal",

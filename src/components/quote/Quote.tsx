@@ -12,17 +12,32 @@ const Quote = (props) => {
     <Container sx={{ height: 150 }}>
       <Box
         sx={{
-          height: 100,
-          borderRight: "2px solid red",
-          borderLeft: "2px solid red",
+          height: ["auto", 100],
+          borderRight: "4px solid #E0092D",
+          borderLeft: `4px solid #E0092D`,
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
+          flexWrap: "nowrap",
         }}
       >
-        <Divider color="red" sx={{ width: "100px", py: "30px" }} />
-        <Text children={text} sx={{ pr: [0, "50px", "100px"] }} />
-        <Divider color="red" sx={{ width: "100px", py: "30px" }} />
+        <Divider
+          color="quoteRed"
+          sx={{
+            width: ["20px", "40px", "77px"],
+            mx: ["10px", "30px"],
+            textAlign: "end",
+          }}
+        />
+        <Text children={text} variant="text.quoteText" />
+        <Divider
+          color="quoteRed"
+          sx={{
+            width: ["20px", "40px", "77px"],
+            mx: ["10px", "30px"],
+            "@media (min-width:1150px)": { mr: "189px" },
+          }}
+        />
       </Box>
     </Container>
   )
