@@ -6,7 +6,7 @@ import Edges from "./Edges"
 import Socials from "./Socials"
 
 import Logo from "../icons/logo.svg"
-import LogoVertical from "../icons/logo-vertical.svg"
+// import LogoVertical from "../icons/logo-vertical.svg"
 
 const Footer = (props) => {
   const {
@@ -190,7 +190,7 @@ const FooterLogo = () => (
       },
     }}
   >
-    <LogoVertical className="logo-vert" />
+    {/* <LogoVertical className="logo-vert" /> */}
 
     <Logo className="logo-hor" />
   </Box>

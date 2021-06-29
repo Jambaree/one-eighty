@@ -54,7 +54,7 @@ const DesktopMenu = (props: Props) => {
         height: "100%",
         left: 0,
         top: 0,
-        background: "#fff",
+        background: "white",
       }}
     >
       <Edges size="lg">
