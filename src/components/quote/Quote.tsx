@@ -33,6 +33,7 @@ const Quote = (props) => {
         />
         <Box
           sx={{
+            maxWidth: "662px",
             color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             h2: {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
