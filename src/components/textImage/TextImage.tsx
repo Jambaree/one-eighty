@@ -15,10 +15,10 @@ const TextImage = (props) => {
   const imageData = image?.localFile && getImage(image.localFile)
 
   return (
-    <Box sx={{ bg: "blue180" }}>
+    <Box sx={{ bg: "blue180", display: "flex", flexWrap: "wrap" }}>
       <Box
         sx={{
-          height: [800, 800, 480],
+          height: ["fit-content", "fit-content", 480],
           position: "relative",
           display: "flex",
           flexDirection: [
@@ -28,25 +28,28 @@ const TextImage = (props) => {
           ],
           alignItems: "center",
           justifyContent: "space-between",
+          overflow: "hidden",
         }}
       >
         <Box
           sx={{
-            width: ["100%", "100%", "51%"],
+            width: ["100%", "100%", "60%"],
             overflow: "hidden",
-            height: 480,
-            clipPath:
-              alignment === "right"
-                ? [
-                    "unset",
-                    "unset",
-                    "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%, 0% 92%, 11% 92%, 25% 92%, 25% 96%, 12% 96%, 12% 75%, 0% 75%)",
-                  ]
-                : [
-                    "unset",
-                    "unset",
-                    "polygon(0 0%, 100% 0%, 100% 92%, 75% 92%, 75% 96%, 88% 96%, 88% 92%, 100% 92%, 100% 100%, 0% 100%)",
-                  ],
+            height: "auto",
+            maxHeight: 480,
+            zIndex: 1,
+            // clipPath:
+            //   alignment === "right"
+            //     ? [
+            //         "unset",
+            //         "unset",
+            //         "polygon(0 0, 100% 0%, 100% 100%, 0% 100%, 0% 73%, 26% 73%, 26% 71%, 12% 71%, 12% 73%, 0% 100%, 0 71%, 0 0)",
+            //       ]
+            //     : [
+            //         "unset",
+            //         "unset",
+            //         "polygon(0 0%, 100% 0%, 100% 88%, 75% 88%, 75% 92%, 88% 92%, 88% 88%, 100% 88%, 100% 100%, 0% 100%)",
+            //       ],
           }}
         >
           {image && imageData && (
@@ -67,19 +70,20 @@ const TextImage = (props) => {
             left: alignment === "right" ? ["unset", "unset", 0] : "unset",
             right: alignment === "left" ? ["unset", "unset", 0] : "unset",
             width: ["100%", null, "55%"],
-            height: 480,
+            height: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-end",
             pt: 36,
             backgroundColor: "blue180",
+            zIndex: 2,
             clipPath:
               alignment === "right"
                 ? [
                     "unset",
                     "unset",
-                    "polygon(0 0%, 100% 0%, 100% 92%, 85% 92%, 85% 96%, 100% 96%, 100% 100%, 0% 100%);",
+                    "polygon(0 0%, 100% 0%, 100% 92%, 78% 92%, 78% 96%, 100% 96%, 100% 100%, 0% 100%)",
                   ]
                 : [
                     "unset",
@@ -93,7 +97,12 @@ const TextImage = (props) => {
               children={Parser(headline)}
               variant="styles.h1"
               as="h1"
-              sx={{ width: "70%", pb: 83, color: "white" }}
+              sx={{
+                width: "70%",
+                pb: 83,
+                pt: [70, 70, "unset"],
+                color: "white",
+              }}
             />
           )}
         </Box>
