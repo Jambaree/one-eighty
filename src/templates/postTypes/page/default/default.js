@@ -120,19 +120,8 @@ export const CollectionQuery = graphql`
 
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
                   fieldGroupName
-                  backgroundcolor
                   alignment
                   headline
-                  headlinestyle
-                  text
-                  bullet {
-                    text
-                  }
-                  link {
-                    target
-                    title
-                    url
-                  }
                   image {
                     altText
                     localFile {
@@ -144,10 +133,6 @@ export const CollectionQuery = graphql`
                         )
                       }
                     }
-                  }
-                  giffile {
-                    altText
-                    sourceUrl
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
