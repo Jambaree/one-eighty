@@ -2,7 +2,7 @@ import React from "react"
 import { Container } from "theme-ui"
 
 interface Props {
-  size?: "sm" | "md" | "lg"
+  size?: "sm" | "md" | "cmd" | "lg"
   children?: any
   [x: string]: any
 }
@@ -18,6 +18,7 @@ const Edges = (props: Props) => {
         maxWidth:
           (size === "sm" && "600px") ||
           (size === "md" && "1024px") ||
+          (size === "cmd" && "1150px") ||
           (size === "lg" && "1280px"),
       }}
       {...rest}
