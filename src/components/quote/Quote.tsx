@@ -7,15 +7,15 @@ import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Quote = (props) => {
-  const { text } = props
+  const { text, backgroundcolor } = props
 
   return (
-    <Container sx={{ height: 150 }}>
+    <Container sx={{ bg: backgroundcolor, minHeight: "134px" }}>
       <Box
         sx={{
-          height: ["auto", 134],
-          borderRight: (theme) => `4px solid ${theme.colors.quoteRed}`,
-          borderLeft: (theme) => `4px solid ${theme.colors.quoteRed}`,
+          minHeight: "134px",
+          borderRight: (theme) => `4px solid ${theme.colors.red}`,
+          borderLeft: (theme) => `4px solid ${theme.colors.red}`,
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
@@ -24,23 +24,34 @@ const Quote = (props) => {
         }}
       >
         <Divider
-          color="quoteRed"
+          color="red"
           sx={{
             width: ["20px", "40px", "77px"],
             mx: ["10px", "25px"],
-            textAlign: "end",
-            height: "1px",
-            transform: [null, "translateY(3px)"],
+            transform: [null, "translateY(-3px)"],
           }}
         />
-        <Text children={text} variant="text.quoteText" />
+        <Box
+          sx={{
+            color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
+            h2: {
+              color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
+            },
+            h3: {
+              color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
+            },
+          }}
+        >
+          <Textarea content={text} />
+        </Box>
         <Divider
-          color="quoteRed"
+          color="red"
           sx={{
             width: ["20px", "40px", "77px"],
             mx: ["10px", "25px"],
+            transform: [null, "translateY(-3px)"],
+
             "@media (min-width:1150px)": { mr: "112px" },
-            transform: [null, "translateY(3px)"],
           }}
         />
       </Box>

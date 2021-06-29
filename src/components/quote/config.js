@@ -4,9 +4,25 @@ const config = {
   fields: [
     {
       id: "text",
-      type: "text",
+      type: "wysiwyg",
       label: "Text",
-      rows: 2,
+    },
+    {
+      id: "backgroundcolor",
+      type: "select",
+      label: "Background Color",
+      defaultValue: "White",
+      instructions: "Choose a background color", // optional
+      options: [
+        {
+          name: "White",
+          value: "white",
+        },
+        {
+          name: "Dark Blue",
+          value: "blue180",
+        },
+      ],
     },
   ],
 }
