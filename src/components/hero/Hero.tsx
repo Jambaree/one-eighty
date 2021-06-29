@@ -13,7 +13,7 @@ const Hero = (props) => {
 
   return (
     <Container>
-      <Edges size="md">
+      <Edges size="cmd">
         <Content>
           {headline && (
             <Heading

@@ -34,6 +34,13 @@ const themeUi = {
       letterSpacing: "0.01em",
       color: "black",
     },
+    textComponent: {
+      fontWeight: "normal",
+      fontSize: 2,
+      lineHeight: "24px",
+      letterSpacing: "1%",
+      color: "textGray",
+    },
     primaryNav: {
       fontWeight: "normal",
       fontSize: 1,
@@ -58,8 +65,8 @@ const themeUi = {
     heroHeading: {
       variant: "text.heading",
       fontSize: ["30px", "32px", "36px"],
-      letterSpacing: "-0.64px",
-      lineHeight: "46px",
+      letterSpacing: "1%",
+      lineHeight: "40px",
     },
     quoteText: {
       fontSize: ["28px", "36px", "40px"],
@@ -109,31 +116,31 @@ const themeUi = {
     h1: {
       variant: "text.heading",
       fontWeight: "normal",
-      fontsize: 8,
+      fontSize: 8,
       lineHeight: "40px",
     },
     h2: {
       variant: "text.heading",
       fontWeight: "light",
-      fontsize: 9,
+      fontSize: 9,
       lineHeight: "60px",
     },
     h3: {
       variant: "text.heading",
       fontWeight: "light",
-      fontsize: 7,
+      fontSize: 7,
       lineHeight: "42px",
     },
     h4: {
       variant: "text.heading",
       fontWeight: "normal",
-      fontsize: 3,
+      fontSize: 3,
       lineHeight: "26px",
     },
     h4name: {
       variant: "text.heading",
       fontWeight: "normal",
-      fontsize: 6,
+      fontSize: 6,
       lineHeight: "22px",
     },
     h5: {},
