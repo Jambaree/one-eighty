@@ -36,8 +36,8 @@ const themeUi = {
     textComponent: {
       fontWeight: "normal",
       fontSize: 2,
-      lineHeight: "28px",
-      letterSpacing: "0.01em",
+      lineHeight: "24px",
+      letterSpacing: "1%",
       color: "textGray",
     },
     primaryNav: {
