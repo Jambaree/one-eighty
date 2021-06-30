@@ -25,7 +25,8 @@ const Banner = (props) => {
             bg: "white",
             height: 50,
             width: "100%",
-            clipPath: ["unset", "unset", "unset"],
+            clipPath:
+              "polygon(0 0, 60% 0, 60% 50%, 100% 50%, 100% 100%, 0 100%, 0 0)",
           }}
         />
         <Stacked style={{ marginTop: "-20px" }} />
