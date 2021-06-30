@@ -1,247 +1,110 @@
 import React from "react"
-import { Container, Box, Flex, Text, Link as ThemeLink } from "theme-ui"
+import { Container, Box, Flex, Grid, Text, Link as ThemeLink } from "theme-ui"
+import { Link } from "gatsby"
 
 // import app components
-import Edges from "./Edges"
-import Socials from "./Socials"
-
-import Logo from "../icons/logo.svg"
-// import LogoVertical from "../icons/logo-vertical.svg"
+import Logo from "../icons/footer-logo.svg"
 
 const Footer = (props) => {
   const {
     pageContext: {
       themeOptions: {
-        footer: {
-          emailaddress,
-          footermenu,
-          phonenumber,
-          copyright,
-          disclaimer,
-          instagram,
-          facebook,
-          youtube,
-          twitter,
-        },
+        footer: { footermenu, legalmenu },
       },
     },
   } = props
 
   return (
-    <Container bg="charcoalDark">
-      <Edges size="md">
-        <Flex
+    <Container bg="blue180" sx={{ minHeight: "233px" }}>
+      <Box
+        sx={{
+          minHeight: "233px",
+          display: ["flex", "grid"],
+          gridTemplateColumns: "1fr 1fr 1fr",
+          gridTemplateRows: "1fr",
+          flexDirection: "column",
+          py: "30px",
+        }}
+      >
+        <Box
           sx={{
-            flexWrap: "wrap",
-            flexDirection: "column",
-
-            paddingTop: "60px",
-            paddingBottom: "60px",
-
-            "@media (min-width: 800px)": {
-              flexDirection: "row",
-              paddingTop: "91px",
-              paddingBottom: "86px",
+            height: "100%",
+            gridColumnStart: 3,
+            gridColumnEnd: 4,
+            gridRowStart: 1,
+            gridRowEnd: 2,
+            display: "flex",
+            px: "30px",
+            position: "relative",
+            "&:before": {
+              content: "''",
+              position: "absolute",
+              display: ["none", "block"],
+              zIndex: 2,
+              top: "50%",
+              transform: "translateY(-50%)",
+              left: 0,
+              width: "1px",
+              height: "95%",
+              bg: "white",
+              opacity: 0.5,
             },
           }}
         >
-          <FooterLogo />
-
-          <Flex
-            sx={{
-              flexDirection: "column",
-
-              "@media (min-width: 800px)": {
-                justifyContent: "space-between",
-                flexDirection: "row",
-                width: "calc(100% - 150px - 120px)",
-              },
-            }}
-          >
-            <Box mr="24px">
-              <Flex
-                mb="24px"
-                sx={{
-                  flexWrap: "wrap",
-                  flexDirection: "column",
-                  "@media (min-width: 800px)": {
-                    flexDirection: "row",
-                  },
-                }}
-              >
-                {footermenu &&
-                  footermenu.map((o, i) => {
-                    return (
-                      <ThemeLink
-                        key={i}
-                        href={o.url}
-                        color="white"
-                        mr="24px"
-                        mb="21px"
-                        variant="hyperlink"
-                      >
-                        <Text
-                          sx={{
-                            fontFamily: "body",
-                            "&:hover": { color: "coral" },
-                          }}
-                        >
-                          {o.title}
-                        </Text>
-                      </ThemeLink>
-                    )
-                  })}
-              </Flex>
-
-              <LegalText copyright={copyright} disclaimer={disclaimer} />
-            </Box>
-
-            <Box
-              mb="55px"
-              sx={{
-                "@media (min-width: 800px)": {
-                  marginBottom: 0,
-                },
-              }}
-            >
-              {phonenumber && (
-                <Box mb="24px">
-                  <Text variant="footerHeading2" sx={{ display: "block" }}>
-                    Phone
-                  </Text>
-
-                  <ThemeLink
+          <Box sx={{ my: [null, "auto"], pb: ["20px", null] }}>
+            <Link to="/">
+              <Logo />
+            </Link>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            height: "100%",
+            gridColumnStart: 2,
+            gridColumnEnd: 3,
+            gridRowStart: 1,
+            gridRowEnd: 2,
+            display: "flex",
+            alignItems: ["flex-start", "flex-end"],
+            justifyContent: "center",
+            flexDirection: "column",
+            px: "30px",
+          }}
+        >
+          {footermenu &&
+            footermenu.map((o, i) => {
+              return (
+                <ThemeLink key={i} href={o.url} color="white">
+                  <Text
+                    variant="footerNav"
                     sx={{
-                      textDecoration: "none",
-                      color: "white",
-                      "&:hover": { color: "coral" },
+                      "&:hover": { color: "red" },
                     }}
-                    href={`tel:${phonenumber}`}
-                    variant="hyperlink"
                   >
-                    {phonenumber}
-                  </ThemeLink>
-                </Box>
-              )}
-
-              {emailaddress && (
-                <Box mb="24px">
-                  <Text variant="footerHeading2" sx={{ display: "block" }}>
-                    Email
+                    {o.title}
                   </Text>
-
-                  <ThemeLink
+                </ThemeLink>
+              )
+            })}
+          {legalmenu &&
+            legalmenu.map((o, i) => {
+              return (
+                <ThemeLink key={i} href={o.url} color="white">
+                  <Text
+                    variant="footerNav"
                     sx={{
-                      textDecoration: "none",
-                      color: "coral",
-                      "&:hover": { color: "coral" },
+                      color: "termsPrivacy",
+                      "&:hover": { color: "red" },
                     }}
-                    href={`mailto:${emailaddress}`}
-                    variant="hyperlink"
                   >
-                    {emailaddress}
-                  </ThemeLink>
-                </Box>
-              )}
-
-              <Socials socials={{ instagram, facebook, youtube, twitter }} />
-            </Box>
-
-            <LegalText copyright={copyright} disclaimer={disclaimer} mobile />
-          </Flex>
-        </Flex>
-      </Edges>
+                    {o.title}
+                  </Text>
+                </ThemeLink>
+              )
+            })}
+        </Box>
+      </Box>
     </Container>
-  )
-}
-
-const FooterLogo = () => (
-  <Box
-    mr="24px"
-    sx={{
-      "> svg": {
-        width: "100%",
-        height: "auto",
-      },
-      ".logo-vert": {
-        display: "none",
-      },
-      ".logo-hor": {
-        marginBottom: "60px",
-      },
-
-      width: "160px",
-
-      "@media (min-width: 800px)": {
-        marginRight: "60px",
-        width: "35px",
-
-        ".logo-vert": {
-          display: "block",
-        },
-
-        ".logo-hor": {
-          display: "none",
-        },
-      },
-
-      "@media (min-width: 1100px)": {
-        marginRight: "120px",
-      },
-    }}
-  >
-    {/* <LogoVertical className="logo-vert" /> */}
-
-    <Logo className="logo-hor" />
-  </Box>
-)
-
-interface LegalTextProps {
-  copyright?: string
-  disclaimer?: string
-  mobile?: boolean
-}
-
-const LegalText: React.FC<LegalTextProps> = (props: LegalTextProps) => {
-  const { copyright, disclaimer, mobile } = props
-
-  return (
-    <Box
-      aria-hidden={!!mobile}
-      sx={{
-        maxWidth: "520px",
-        display: mobile ? "block" : "none",
-        "@media (min-width: 800px)": {
-          display: mobile ? "none" : "block",
-        },
-      }}
-    >
-      {copyright && (
-        <Text
-          sx={{
-            fontFamily: "body",
-            display: "block",
-            color: "white",
-            fontSize: 0,
-          }}
-        >
-          {copyright}
-        </Text>
-      )}
-
-      {disclaimer && (
-        <Text
-          sx={{
-            fontFamily: "body",
-            display: "block",
-            color: "black50",
-            fontSize: 0,
-          }}
-        >
-          {disclaimer}
-        </Text>
-      )}
-    </Box>
   )
 }
 
