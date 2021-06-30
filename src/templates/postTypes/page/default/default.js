@@ -19,6 +19,7 @@ import addresses from "../../../../components/addresses/Addresses"
 import topbanner from "../../../../components/topBanner/TopBanner"
 import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
+import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
 
 const blocks = {
   textimage,
@@ -36,6 +37,7 @@ const blocks = {
   topbanner,
   quote,
   text,
+  quoteslider,
 }
 
 const Template = (props) => {
@@ -186,6 +188,24 @@ export const CollectionQuery = graphql`
                     fieldGroupName
                     name
                     position
+                    quote
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Quoteslider {
+                  fieldGroupName
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 1920
+                          placeholder: BLURRED
+                          quality: 100
+                        )
+                      }
+                    }
+                  }
+                  slide {
                     quote
                   }
                 }
