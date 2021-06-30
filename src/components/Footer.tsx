@@ -84,7 +84,7 @@ const Footer = (props) => {
                       "&:hover": { color: "red", cursor: "pointer" },
                     }}
                   >
-                    {Parser(o.title)}
+                    {Parser(o.title || "")}
                   </Text>
                 </Link>
               )
@@ -100,7 +100,7 @@ const Footer = (props) => {
                       "&:hover": { color: "red", cursor: "pointer" },
                     }}
                   >
-                    {Parser(o.title)}
+                    {Parser(o.title || "")}
                   </Text>
                 </Link>
               )
