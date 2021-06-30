@@ -354,12 +354,6 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Banner {
                   fieldGroupName
-                  headline
-                  headlinestyle
-                  text
-                  variant
-                  backgroundcolor
-                  textcolor
                   backgroundimage {
                     altText
                     sourceUrl
