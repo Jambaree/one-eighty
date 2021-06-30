@@ -8,16 +8,18 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
+import LeftArrow from "../../icons/arrow-left.svg"
+import RightArrow from "../../icons/arrow-right.svg"
 
 const Carousel = (props) => {
-  const { headline, subheading, cards } = props
+  const { headline, cards } = props
 
   const settings = {
     arrows: true,
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
@@ -41,64 +43,8 @@ const Carousel = (props) => {
         },
       },
     ],
-    // nextArrow: (
-    //   <svg
-    //     xmlns="http://www.w3.org/2000/svg"
-    //     width="30"
-    //     height="30"
-    //     viewBox="0 0 30 30"
-    //   >
-    //     <g transform="translate(-7.455 39) rotate(-90)">
-    //       <circle
-    //         cx="15"
-    //         cy="15"
-    //         r="15"
-    //         transform="translate(9 7.455)"
-    //         fill="#fff"
-    //       />
-    //       <path
-    //         d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
-    //         transform="translate(9 7.455)"
-    //         fill="#dbdbdb"
-    //       />
-    //       <path
-    //         d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
-    //         transform="translate(18.5 20.25)"
-    //         fill="#e4613f"
-    //       />
-    //     </g>
-    //   </svg>
-    // ),
-    // prevArrow: (
-    //   <Box>
-    //     <svg
-    //       xmlns="http://www.w3.org/2000/svg"
-    //       width="30"
-    //       height="30"
-    //       viewBox="0 0 30 30"
-    //     >
-    //       <g transform="translate(-7.455 39) rotate(-90)">
-    //         <circle
-    //           cx="15"
-    //           cy="15"
-    //           r="15"
-    //           transform="translate(9 7.455)"
-    //           fill="#fff"
-    //         />
-    //         <path
-    //           d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
-    //           transform="translate(9 7.455)"
-    //           fill="#dbdbdb"
-    //         />
-    //         <path
-    //           d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
-    //           transform="translate(18.5 20.25)"
-    //           fill="#e4613f"
-    //         />
-    //       </g>
-    //     </svg>
-    //   </Box>
-    // ),
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
   }
 
   return (
@@ -164,18 +110,6 @@ const Carousel = (props) => {
                     }}
                   />
                 )}
-
-                {/* {subheading && (
-                  <Text
-                    children={Parser(subheading)}
-                    variant="text.introduction"
-                    sx={{
-                      pt: "8px",
-                      fontSize: "18px",
-                      lineHeight: ["25px", "30px", "30px"],
-                    }}
-                  />
-                )} */}
               </Box>
               <Slider {...settings}>
                 {cards &&
@@ -184,45 +118,53 @@ const Carousel = (props) => {
                       <Box
                         key={i}
                         sx={{
+                          display: "flex!important",
                           maxWidth: "100%",
+                          width: 800,
                           px: 15,
                           m: "0 auto",
                           img: {
-                            borderRadius: "6px",
                             objectFit: "contain",
-                            height: 240,
+                            height: 480,
                           },
                         }}
                       >
-                        {o.image ? (
-                          <GatsbyImage image={o.image} alt={o.image?.altText} />
-                        ) : (
-                          <GatsbyImage
-                            image={o.defaultimage}
-                            alt={o.defaultimage?.altText}
-                          />
-                        )}
-                        {o.heading && (
-                          <Heading
-                            children={Parser(o.heading)}
-                            variant="styles.h5"
-                            sx={{
-                              pt: 34,
-                              fontSize: "22px",
-                              letterSpacing: "-0.33px",
-                              mb: 10,
-                            }}
-                          />
-                        )}
-                        {o.text && (
-                          <Text
-                            children={Parser(o.text)}
-                            variant="text.paragraph"
-                            sx={{
-                              lineHeight: "25px",
-                            }}
-                          />
-                        )}
+                        <Box sx={{ maxWidth: 360, mr: 88 }}>
+                          {o.image ? (
+                            <GatsbyImage
+                              image={o.image}
+                              alt={o.image?.altText}
+                            />
+                          ) : (
+                            <GatsbyImage
+                              image={o.defaultimage}
+                              alt={o.defaultimage?.altText}
+                            />
+                          )}
+                        </Box>
+                        <Box sx={{ maxWidth: 360 }}>
+                          {o.heading && (
+                            <Heading
+                              children={Parser(o.heading)}
+                              variant="styles.h5"
+                              sx={{
+                                pt: 34,
+                                fontSize: "22px",
+                                letterSpacing: "-0.33px",
+                                mb: 10,
+                              }}
+                            />
+                          )}
+                          {o.text && (
+                            <Text
+                              children={Parser(o.text)}
+                              variant="text.paragraph"
+                              sx={{
+                                lineHeight: "25px",
+                              }}
+                            />
+                          )}
+                        </Box>
                       </Box>
                     )
                   })}

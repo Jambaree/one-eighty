@@ -8,12 +8,6 @@ const config = {
       label: "Headline",
     },
     {
-      id: "subheading",
-      type: "text",
-      label: "Sub Heading",
-      rows: 3,
-    },
-    {
       id: "cards",
       type: "repeater",
       label: "Card",
