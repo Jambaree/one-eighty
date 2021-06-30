@@ -1,9 +1,12 @@
 import React from "react"
-import { Container, Box, Flex, Grid, Text, Link as ThemeLink } from "theme-ui"
-import { Link } from "gatsby"
+import { Container, Box, Flex, Grid, Text } from "theme-ui"
+import { Link as GatsbyLink } from "gatsby"
+import Parser from "html-react-parser"
 
 // import app components
 import Logo from "../icons/footer-logo.svg"
+import Link from "../components/Link"
+import { formatLink } from "../utils"
 
 const Footer = (props) => {
   const {
@@ -52,9 +55,9 @@ const Footer = (props) => {
           }}
         >
           <Box sx={{ my: [null, "auto"], pb: ["10px", null] }}>
-            <Link to="/">
+            <GatsbyLink to="/">
               <Logo />
-            </Link>
+            </GatsbyLink>
           </Box>
         </Box>
         <Box
@@ -74,32 +77,33 @@ const Footer = (props) => {
           {footermenu &&
             footermenu.map((o, i) => {
               return (
-                <ThemeLink key={i} href={o.url} color="white">
+                <Link key={i} activeStyle={{}} to={formatLink(o.url)}>
                   <Text
                     variant="footerNav"
                     sx={{
-                      "&:hover": { color: "red" },
+                      color: "white",
+                      "&:hover": { color: "red", cursor: "pointer" },
                     }}
                   >
-                    {o.title}
+                    {Parser(o.title)}
                   </Text>
-                </ThemeLink>
+                </Link>
               )
             })}
           {legalmenu &&
             legalmenu.map((o, i) => {
               return (
-                <ThemeLink key={i} href={o.url} color="white">
+                <Link key={i} activeStyle={{}} to={formatLink(o.url)}>
                   <Text
                     variant="footerNav"
                     sx={{
                       color: "termsPrivacy",
-                      "&:hover": { color: "red" },
+                      "&:hover": { color: "red", cursor: "pointer" },
                     }}
                   >
-                    {o.title}
+                    {Parser(o.title)}
                   </Text>
-                </ThemeLink>
+                </Link>
               )
             })}
         </Box>
