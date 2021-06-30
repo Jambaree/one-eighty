@@ -90,13 +90,16 @@ const Carousel = (props) => {
                   />
                 )}
               </Box>
-              <Box sx={{ width: "80%" }}>
+              <Box sx={{ width: "100%" }}>
                 <Slider
-                  slidesToShow={3}
+                  slidesToShow={4}
                   slidesToScroll={1}
                   dots={false}
-                  centerMode={true}
+                  centerMode={false}
                   focusOnSelect={true}
+                  arrows={true}
+                  prevArrow={""}
+                  nextArrow={<RightArrow />}
                   asNavFor={nav1}
                   ref={(slider2) => setNav2(slider2)}
                 >
@@ -144,7 +147,8 @@ const Carousel = (props) => {
                       )
                     })}
                 </Slider>
-
+              </Box>
+              <Box sx={{ width: "80%" }}>
                 <Slider
                   {...settings}
                   asNavFor={nav2}
