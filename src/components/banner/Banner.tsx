@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, IconButton } from "theme-ui"
+import { Box } from "theme-ui"
 
 // import app components
 import Stacked from "../../icons/one-eighty-stacked.svg"
@@ -27,7 +27,7 @@ const Banner = (props) => {
               "polygon(0 0, 60% 0, 60% 50%, 100% 50%, 100% 100%, 0 100%, 0 0)",
           }}
         />
-        <IconButton
+        <Box
           sx={{
             mt: ["-6px", "-16px", "-20px"],
             maxWidth: ["50%", "75%", "100%"],
@@ -40,7 +40,7 @@ const Banner = (props) => {
           }}
         >
           <Stacked />
-        </IconButton>
+        </Box>
       </Box>
     </Box>
   )
