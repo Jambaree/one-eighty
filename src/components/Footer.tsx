@@ -51,7 +51,7 @@ const Footer = (props) => {
             },
           }}
         >
-          <Box sx={{ my: [null, "auto"], pb: ["20px", null] }}>
+          <Box sx={{ my: [null, "auto"], pb: ["10px", null] }}>
             <Link to="/">
               <Logo />
             </Link>
