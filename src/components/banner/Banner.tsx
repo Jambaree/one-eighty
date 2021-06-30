@@ -31,8 +31,8 @@ const Banner = (props) => {
         />
         <IconButton
           sx={{
-            mt: ["-10px", "-15px", "-20px"],
-            maxWidth: "100%",
+            mt: ["-6px", "-16px", "-20px"],
+            maxWidth: ["50%", "75%", "100%"],
             width: "unset",
             height: "100%",
             p: "unset",
