@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // import app components
 
 const TextImage = (props) => {
-  const { image, alignment = "right", headline } = props
+  const { image, headline } = props
 
   const imageData = image?.localFile && getImage(image.localFile)
 
@@ -19,11 +19,7 @@ const TextImage = (props) => {
           maxHeight: 800,
           position: "relative",
           display: "flex",
-          flexDirection: [
-            alignment === "left" ? "column" : "column-reverse",
-            alignment === "left" ? "column" : "column-reverse",
-            alignment === "left" ? "row" : "row-reverse",
-          ],
+          flexDirection: ["column-reverse", "column-reverse", "row-reverse"],
           alignItems: "center",
           justifyContent: "space-between",
           overflow: "hidden",
@@ -31,23 +27,16 @@ const TextImage = (props) => {
       >
         <Box
           sx={{
-            width: ["100%", "100%", "60%"],
+            width: ["100%", "100%", "calc(40% + 90px)"],
             overflow: "hidden",
             height: [480, "auto", "auto"],
             maxHeight: 480,
             zIndex: 1,
-            clipPath:
-              alignment === "right"
-                ? [
-                    "unset",
-                    "unset",
-                    "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%, 0% 92%, 11% 92%, 46% 92%, 46% 96%, 25% 96%, 25% 75%, 0% 75%)",
-                  ]
-                : [
-                    "unset",
-                    "unset",
-                    "polygon(0 0%, 100% 0%, 100% 88%, 60% 88%, 60% 92%, 90% 92%, 75% 92%, 75% 70%, 100% 100%, 0% 100%)",
-                  ],
+            clipPath: [
+              "unset",
+              "unset",
+              "polygon(0 0, 100% 0%, 100% 100%, 0% 100%, 0% calc(100% - 24px), 180px calc(100% - 24px), 180px calc(100% - 48px), 90px calc(100% - 48px), 90px calc(100% - 24px), 0% calc(100% - 24px), 0 0)",
+            ],
           }}
         >
           {image && imageData && (
@@ -66,9 +55,9 @@ const TextImage = (props) => {
         <Box
           sx={{
             position: ["unset", "unset", "absolute"],
-            left: alignment === "right" ? ["unset", "unset", 0] : "unset",
-            right: alignment === "left" ? ["unset", "unset", 0] : "unset",
-            width: ["100%", null, "55%"],
+            left: ["unset", "unset", 0],
+            right: "unset",
+            width: ["100%", null, "60%"],
             height: "100%",
             display: "flex",
             flexDirection: "column",
@@ -76,18 +65,11 @@ const TextImage = (props) => {
             justifyContent: "flex-end",
             backgroundColor: "blue180",
             zIndex: 2,
-            clipPath:
-              alignment === "right"
-                ? [
-                    "unset",
-                    "unset",
-                    "polygon(0 0%, 100% 0%, 100% 92%, 78% 92%, 78% 96%, 100% 96%, 100% 100%, 0% 100%)",
-                  ]
-                : [
-                    "unset",
-                    "unset",
-                    "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%, 0% 88%, 15% 88%, 15% 92%, 12% 92%, 0% 92%)",
-                  ],
+            clipPath: [
+              "unset",
+              "unset",
+              "polygon(0 0%, 100% 0%, 100% calc(100% - 48px), calc(100% - 90px) calc(100% - 48px), calc(100% - 90px) calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0% 100%);",
+            ],
           }}
         >
           {headline && (
