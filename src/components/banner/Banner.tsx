@@ -1,9 +1,7 @@
 import React from "react"
 import { Box, IconButton } from "theme-ui"
-import Parser from "html-react-parser"
 
 // import app components
-import theme from "../../theme"
 import Stacked from "../../icons/one-eighty-stacked.svg"
 
 const Banner = (props) => {
