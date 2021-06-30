@@ -276,7 +276,6 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Carousel {
                   fieldGroupName
                   headline
-                  headlinestyle
                   subheading
                   cards {
                     fieldGroupName

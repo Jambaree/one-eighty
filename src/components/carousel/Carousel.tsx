@@ -10,15 +10,15 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
 const Carousel = (props) => {
-  const { headline, headlinestyle = "h2", subheading, cards } = props
+  const { headline, subheading, cards } = props
 
   const settings = {
     arrows: true,
     dots: false,
     infinite: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 8000,
     autoplay: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
     responsive: [
@@ -41,70 +41,69 @@ const Carousel = (props) => {
         },
       },
     ],
-    nextArrow: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        viewBox="0 0 30 30"
-      >
-        <g transform="translate(-7.455 39) rotate(-90)">
-          <circle
-            cx="15"
-            cy="15"
-            r="15"
-            transform="translate(9 7.455)"
-            fill="#fff"
-          />
-          <path
-            d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
-            transform="translate(9 7.455)"
-            fill="#dbdbdb"
-          />
-          <path
-            d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
-            transform="translate(18.5 20.25)"
-            fill="#e4613f"
-          />
-        </g>
-      </svg>
-    ),
-    prevArrow: (
-      <Box>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 30 30"
-        >
-          <g transform="translate(-7.455 39) rotate(-90)">
-            <circle
-              cx="15"
-              cy="15"
-              r="15"
-              transform="translate(9 7.455)"
-              fill="#fff"
-            />
-            <path
-              d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
-              transform="translate(9 7.455)"
-              fill="#dbdbdb"
-            />
-            <path
-              d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
-              transform="translate(18.5 20.25)"
-              fill="#e4613f"
-            />
-          </g>
-        </svg>
-      </Box>
-    ),
+    // nextArrow: (
+    //   <svg
+    //     xmlns="http://www.w3.org/2000/svg"
+    //     width="30"
+    //     height="30"
+    //     viewBox="0 0 30 30"
+    //   >
+    //     <g transform="translate(-7.455 39) rotate(-90)">
+    //       <circle
+    //         cx="15"
+    //         cy="15"
+    //         r="15"
+    //         transform="translate(9 7.455)"
+    //         fill="#fff"
+    //       />
+    //       <path
+    //         d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
+    //         transform="translate(9 7.455)"
+    //         fill="#dbdbdb"
+    //       />
+    //       <path
+    //         d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
+    //         transform="translate(18.5 20.25)"
+    //         fill="#e4613f"
+    //       />
+    //     </g>
+    //   </svg>
+    // ),
+    // prevArrow: (
+    //   <Box>
+    //     <svg
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       width="30"
+    //       height="30"
+    //       viewBox="0 0 30 30"
+    //     >
+    //       <g transform="translate(-7.455 39) rotate(-90)">
+    //         <circle
+    //           cx="15"
+    //           cy="15"
+    //           r="15"
+    //           transform="translate(9 7.455)"
+    //           fill="#fff"
+    //         />
+    //         <path
+    //           d="M15,1A14,14,0,0,0,5.1,24.9,14,14,0,1,0,24.9,5.1,13.908,13.908,0,0,0,15,1m0-1A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z"
+    //           transform="translate(9 7.455)"
+    //           fill="#dbdbdb"
+    //         />
+    //         <path
+    //           d="M8.674.268,5.117,3.825,1.561.268A.914.914,0,0,0,.268,1.561L4.476,5.768a.913.913,0,0,0,1.293,0L9.976,1.561a.913.913,0,0,0,0-1.292.933.933,0,0,0-1.3,0Z"
+    //           transform="translate(18.5 20.25)"
+    //           fill="#e4613f"
+    //         />
+    //       </g>
+    //     </svg>
+    //   </Box>
+    // ),
   }
 
   return (
     <Box
       sx={{
-        bg: "almondLight",
         position: "relative",
       }}
     >
@@ -113,31 +112,30 @@ const Carousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             content: "none",
           },
-          ".slick-prev, .slick-next": {
-            width: 30,
-            height: 30,
-            bottom: -80,
-            top: "unset",
-            "@media (min-width: 1200px)": {
-              bottom: "unset",
-              top: 120,
-            },
-          },
-          ".slick-prev": {
-            left: "calc(50% - 40px)",
-            transform: "translateY(-50%) rotate(180deg)",
-            "@media (min-width: 1200px)": {
-              left: -60,
-            },
-          },
-
-          ".slick-next": {
-            right: "calc(50% - 40px)",
-            transform: "translateY(-50%)",
-            "@media (min-width: 1200px)": {
-              right: -60,
-            },
-          },
+          // ".slick-prev, .slick-next": {
+          //   width: 30,
+          //   height: 30,
+          //   bottom: -80,
+          //   top: "unset",
+          //   "@media (min-width: 1200px)": {
+          //     bottom: "unset",
+          //     top: 120,
+          //   },
+          // },
+          // ".slick-prev": {
+          //   left: "calc(50% - 40px)",
+          //   transform: "translateY(-50%) rotate(180deg)",
+          //   "@media (min-width: 1200px)": {
+          //     left: -60,
+          //   },
+          // },
+          // ".slick-next": {
+          //   right: "calc(50% - 40px)",
+          //   transform: "translateY(-50%)",
+          //   "@media (min-width: 1200px)": {
+          //     right: -60,
+          //   },
+          // },
         }}
       >
         <Edges size="md">
@@ -158,8 +156,8 @@ const Carousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant={`styles.${headlinestyle}`}
-                    as={headlinestyle}
+                    variant={`styles.h2`}
+                    as="h2"
                     sx={{
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
@@ -167,7 +165,7 @@ const Carousel = (props) => {
                   />
                 )}
 
-                {subheading && (
+                {/* {subheading && (
                   <Text
                     children={Parser(subheading)}
                     variant="text.introduction"
@@ -177,7 +175,7 @@ const Carousel = (props) => {
                       lineHeight: ["25px", "30px", "30px"],
                     }}
                   />
-                )}
+                )} */}
               </Box>
               <Slider {...settings}>
                 {cards &&
