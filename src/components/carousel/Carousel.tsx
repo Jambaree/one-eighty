@@ -142,13 +142,19 @@ const Carousel = (props) => {
                                 sx={{}}
                               />
                             )}
+                            {o.subheading && (
+                              <Heading
+                                children={Parser(o.subheading)}
+                                variant="text.jobTitle"
+                              />
+                            )}
                           </Box>
                         </Box>
                       )
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: "80%" }}>
+              <Box sx={{ width: "80%", mt: 50 }}>
                 <Slider
                   {...settings}
                   asNavFor={nav2}
@@ -192,12 +198,10 @@ const Carousel = (props) => {
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
-                                variant="styles.h5"
+                                variant="styles.h4name"
                                 sx={{
                                   pt: 34,
-                                  fontSize: "22px",
-                                  letterSpacing: "-0.33px",
-                                  mb: 10,
+                                  // mb: 10,
                                 }}
                               />
                             )}
