@@ -18,10 +18,9 @@ const Footer = (props) => {
   } = props
 
   return (
-    <Container bg="blue180" sx={{ minHeight: "233px" }}>
+    <Container bg="blue180">
       <Box
         sx={{
-          minHeight: "233px",
           display: ["flex", "grid"],
           gridTemplateColumns: "1fr 1fr 1fr",
           gridTemplateRows: "1fr",
