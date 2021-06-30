@@ -23,7 +23,7 @@ const Footer = (props) => {
           gridTemplateColumns: "1fr 1fr 1fr",
           gridTemplateRows: "1fr",
           flexDirection: "column",
-          py: "30px",
+          py: "22px",
         }}
       >
         <Box
