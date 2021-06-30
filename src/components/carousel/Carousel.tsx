@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Heading, Text } from "theme-ui"
 import Slider from "react-slick"
 import { GatsbyImage } from "jam-cms"
@@ -13,6 +13,8 @@ import RightArrow from "../../icons/arrow-right.svg"
 
 const Carousel = (props) => {
   const { headline, cards } = props
+  const [nav1, setNav1] = useState()
+  const [nav2, setNav2] = useState()
 
   const settings = {
     arrows: true,
@@ -23,17 +25,18 @@ const Carousel = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
+    fade: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
       {
@@ -58,30 +61,6 @@ const Carousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             content: "none",
           },
-          // ".slick-prev, .slick-next": {
-          //   width: 30,
-          //   height: 30,
-          //   bottom: -80,
-          //   top: "unset",
-          //   "@media (min-width: 1200px)": {
-          //     bottom: "unset",
-          //     top: 120,
-          //   },
-          // },
-          // ".slick-prev": {
-          //   left: "calc(50% - 40px)",
-          //   transform: "translateY(-50%) rotate(180deg)",
-          //   "@media (min-width: 1200px)": {
-          //     left: -60,
-          //   },
-          // },
-          // ".slick-next": {
-          //   right: "calc(50% - 40px)",
-          //   transform: "translateY(-50%)",
-          //   "@media (min-width: 1200px)": {
-          //     right: -60,
-          //   },
-          // },
         }}
       >
         <Edges size="md">
@@ -112,7 +91,65 @@ const Carousel = (props) => {
                 )}
               </Box>
               <Box sx={{ width: "80%" }}>
-                <Slider {...settings}>
+                <Slider
+                  slidesToShow={3}
+                  slidesToScroll={1}
+                  dots={false}
+                  centerMode={true}
+                  focusOnSelect={true}
+                  asNavFor={nav1}
+                  ref={(slider2) => setNav2(slider2)}
+                >
+                  {cards &&
+                    cards.map((o, i) => {
+                      return (
+                        <Box
+                          key={i}
+                          sx={{
+                            width: "100%",
+                            px: 15,
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              maxWidth: 208,
+                              img: {
+                                objectFit: "contain",
+                                height: 172,
+                              },
+                            }}
+                          >
+                            {o.image ? (
+                              <GatsbyImage
+                                image={o.image}
+                                alt={o.image?.altText}
+                              />
+                            ) : (
+                              <GatsbyImage
+                                image={o.defaultimage}
+                                alt={o.defaultimage?.altText}
+                              />
+                            )}
+                          </Box>
+                          <Box sx={{ maxWidth: 360 }}>
+                            {o.heading && (
+                              <Heading
+                                children={Parser(o.heading)}
+                                // variant="styles.h5"
+                                sx={{}}
+                              />
+                            )}
+                          </Box>
+                        </Box>
+                      )
+                    })}
+                </Slider>
+
+                <Slider
+                  {...settings}
+                  asNavFor={nav2}
+                  ref={(slider1) => setNav1(slider1)}
+                >
                   {cards &&
                     cards.map((o, i) => {
                       return (
