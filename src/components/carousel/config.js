@@ -1,6 +1,6 @@
 const config = {
-  id: "cardcarousel",
-  label: "Card Carousel",
+  id: "carousel",
+  label: "Carousel",
   fields: [
     {
       id: "headline",

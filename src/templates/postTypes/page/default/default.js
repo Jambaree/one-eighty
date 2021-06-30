@@ -11,7 +11,7 @@ import cards from "../../../../components/cards/Cards"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
-import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
+import carousel from "../../../../components/carousel/Carousel"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
@@ -28,7 +28,7 @@ const blocks = {
   testimonialslider,
   logos,
   partners,
-  cardcarousel,
+  carousel,
   textimagepage,
   herovideo,
   banner,
@@ -273,7 +273,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Carousel {
                   fieldGroupName
                   headline
                   headlinestyle
