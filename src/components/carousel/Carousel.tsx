@@ -9,7 +9,7 @@ import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 
-const CardCarousel = (props) => {
+const Carousel = (props) => {
   const { headline, headlinestyle = "h2", subheading, cards } = props
 
   const settings = {
@@ -237,4 +237,4 @@ const CardCarousel = (props) => {
   )
 }
 
-export default CardCarousel
+export default Carousel
