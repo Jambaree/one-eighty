@@ -18,6 +18,11 @@ const config = {
           label: "Heading",
         },
         {
+          id: "subheading",
+          type: "text",
+          label: "Sub Heading",
+        },
+        {
           id: "text",
           type: "text",
           label: "Text",

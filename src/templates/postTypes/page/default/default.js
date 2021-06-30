@@ -279,6 +279,7 @@ export const CollectionQuery = graphql`
                   cards {
                     fieldGroupName
                     heading
+                    subheading
                     text
                     image {
                       altText
