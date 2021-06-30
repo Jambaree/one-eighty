@@ -111,64 +111,70 @@ const Carousel = (props) => {
                   />
                 )}
               </Box>
-              <Slider {...settings}>
-                {cards &&
-                  cards.map((o, i) => {
-                    return (
-                      <Box
-                        key={i}
-                        sx={{
-                          display: "flex!important",
-                          maxWidth: "100%",
-                          width: 800,
-                          px: 15,
-                          m: "0 auto",
-                          img: {
-                            objectFit: "contain",
-                            height: 480,
-                          },
-                        }}
-                      >
-                        <Box sx={{ maxWidth: 360, mr: 88 }}>
-                          {o.image ? (
-                            <GatsbyImage
-                              image={o.image}
-                              alt={o.image?.altText}
-                            />
-                          ) : (
-                            <GatsbyImage
-                              image={o.defaultimage}
-                              alt={o.defaultimage?.altText}
-                            />
-                          )}
+              <Box sx={{ width: "80%" }}>
+                <Slider {...settings}>
+                  {cards &&
+                    cards.map((o, i) => {
+                      return (
+                        <Box
+                          key={i}
+                          sx={{
+                            display: "flex!important",
+                            maxWidth: "100%",
+                            px: 15,
+                            m: "0 auto",
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              maxWidth: 360,
+                              mr: 88,
+                              img: {
+                                objectFit: "contain",
+                                height: 480,
+                              },
+                            }}
+                          >
+                            {o.image ? (
+                              <GatsbyImage
+                                image={o.image}
+                                alt={o.image?.altText}
+                              />
+                            ) : (
+                              <GatsbyImage
+                                image={o.defaultimage}
+                                alt={o.defaultimage?.altText}
+                              />
+                            )}
+                          </Box>
+                          <Box sx={{ maxWidth: 360 }}>
+                            {o.heading && (
+                              <Heading
+                                children={Parser(o.heading)}
+                                variant="styles.h5"
+                                sx={{
+                                  pt: 34,
+                                  fontSize: "22px",
+                                  letterSpacing: "-0.33px",
+                                  mb: 10,
+                                }}
+                              />
+                            )}
+                            {o.text && (
+                              <Text
+                                children={Parser(o.text)}
+                                variant="text.paragraph"
+                                sx={{
+                                  lineHeight: "25px",
+                                }}
+                              />
+                            )}
+                          </Box>
                         </Box>
-                        <Box sx={{ maxWidth: 360 }}>
-                          {o.heading && (
-                            <Heading
-                              children={Parser(o.heading)}
-                              variant="styles.h5"
-                              sx={{
-                                pt: 34,
-                                fontSize: "22px",
-                                letterSpacing: "-0.33px",
-                                mb: 10,
-                              }}
-                            />
-                          )}
-                          {o.text && (
-                            <Text
-                              children={Parser(o.text)}
-                              variant="text.paragraph"
-                              sx={{
-                                lineHeight: "25px",
-                              }}
-                            />
-                          )}
-                        </Box>
-                      </Box>
-                    )
-                  })}
-              </Slider>
+                      )
+                    })}
+                </Slider>
+              </Box>
             </Box>
           </Box>
         </Edges>
