@@ -1,193 +1,55 @@
 import React from "react"
-import { Box, Heading, Text } from "theme-ui"
-import { Link } from "gatsby"
-import Parser from "html-react-parser"
+import { Box } from "theme-ui"
 
 // import app components
-import theme from "../../theme"
-import Edges from "../Edges"
+import Stacked from "../../icons/one-eighty-stacked.svg"
+import BackgroundImage from "../BackgroundImage"
 
 const Banner = (props) => {
-  const {
-    variant,
-    backgroundimage,
-    backgroundcolor,
-    textcolor = "charcoal",
-    headline,
-    headlinestyle = "h2",
-    text,
-    link,
-  } = props
-
-  const showGraphics = variant === "graphics"
+  const { backgroundimage } = props
 
   return (
-    <Box
-      sx={{
-        position: "relative",
-        backgroundColor: backgroundcolor,
-        background:
-          backgroundimage &&
-          `url(${backgroundimage.sourceUrl}) no-repeat center`,
-        backgroundSize: "cover",
-      }}
-    >
-      {showGraphics && <CoralGraphic />}
-
-      <Edges size="md">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            px: [0, 0, 45],
-            pt: [120, 120, 157],
-            pb: showGraphics ? 50 : [120, 120, 157],
-          }}
-        >
-          {headline && (
-            <Heading
-              variant={`styles.${headlinestyle}`}
-              as={headlinestyle}
-              children={Parser(headline)}
-              sx={{
-                mb: 32,
-                lineHeight: ["36px", "65px", "65px"],
-                color: textcolor,
-              }}
-            />
-          )}
-
-          {text && (
-            <Text
-              as="p"
-              variant="introduction"
-              children={Parser(text)}
-              sx={{
-                fontSize: "18px",
-                lineHeight: ["25px", "30px", "30px"],
-                mb: [0, 50, 50],
-                color: textcolor,
-              }}
-            />
-          )}
-
-          {link?.url && (
-            <Box
-              variant="links.hyperlink"
-              sx={{
-                a: {
-                  letterSpacing: "-0.23px",
-                  lineHeight: "25px",
-                  color: theme.colors.coral,
-                },
-              }}
-            >
-              {link.url.includes("http") ? (
-                <a
-                  href={link.url}
-                  children={`${Parser(link.title || "")} →`}
-                  target="_blank"
-                  rel="noreferrer"
-                />
-              ) : (
-                <Link
-                  to={link.url}
-                  children={`${Parser(link.title || "")} →`}
-                />
-              )}
-            </Box>
-          )}
-
-          {showGraphics && <BoxesGraphic />}
-        </Box>
-      </Edges>
+    <Box sx={{ position: "relative", height: 300, width: "100%" }}>
+      {backgroundimage && (
+        <BackgroundImage
+          image={backgroundimage}
+          alt={backgroundimage.altText}
+        />
+      )}
+      <Box
+        sx={{
+          bg: "white",
+          height: 48,
+          width: "100%",
+          clipPath: [
+            "polygon(0 0, 60% 0, 60% calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
+            "polygon(0 0, 60% 0, 60% calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
+            "polygon(0 0, calc(100% - 480px) 0, calc(100% - 480px) calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
+          ],
+        }}
+      />
+      <Box
+        sx={{
+          display: "flex",
+          transform: [
+            "translateY(-100px)",
+            "translateY(-70px)",
+            "translateY(-28px)",
+          ],
+          width: "unset",
+          height: "100%",
+          p: "unset",
+          svg: {
+            height: "100%",
+            maxWidth: ["50%", "50%", "100%"],
+            zIndex: 1,
+          },
+        }}
+      >
+        <Stacked />
+      </Box>
     </Box>
   )
 }
 
 export default Banner
-
-const CoralGraphic = () => {
-  return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: "calc(50% - 70px)",
-        width: 140,
-        height: 70,
-
-        "@media screen and (min-width: 640px)": {
-          left: "calc(50% - 100px)",
-          width: 200,
-          height: 100,
-        },
-      }}
-    >
-      <CutSquareCoralGraphic />
-    </Box>
-  )
-}
-
-const BoxesGraphic = () => (
-  <Box
-    sx={{
-      position: "relative",
-      py: 50,
-      width: 175,
-      height: 107,
-      mt: [40, 40, 10],
-    }}
-  >
-    <Box
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bg: "charcoalLight",
-        width: 56,
-        height: 56,
-        borderRadius: "8px",
-      }}
-    />
-
-    <Box
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: "calc(56px + 12px)",
-        bg: "turquoise",
-        width: 39,
-        height: 39,
-        borderRadius: "8px",
-      }}
-    />
-
-    <Box
-      sx={{
-        position: "absolute",
-        bottom: 0,
-        left: "calc(56px + 12px)",
-        bg: "flax",
-        width: 56,
-        height: 56,
-        borderRadius: "8px",
-      }}
-    />
-
-    <Box
-      sx={{
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-        bg: "plumLight",
-        width: 39,
-        height: 39,
-        borderRadius: "8px",
-      }}
-    />
-  </Box>
-)
