@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "theme-ui"
+import { Box, IconButton } from "theme-ui"
 import Parser from "html-react-parser"
 
 // import app components
@@ -29,7 +29,20 @@ const Banner = (props) => {
               "polygon(0 0, 60% 0, 60% 50%, 100% 50%, 100% 100%, 0 100%, 0 0)",
           }}
         />
-        <Stacked style={{ marginTop: "-20px" }} />
+        <IconButton
+          sx={{
+            mt: ["-10px", "-15px", "-20px"],
+            maxWidth: "100%",
+            width: "unset",
+            height: "100%",
+            p: "unset",
+            svg: {
+              height: "100%",
+            },
+          }}
+        >
+          <Stacked />
+        </IconButton>
       </Box>
     </Box>
   )
