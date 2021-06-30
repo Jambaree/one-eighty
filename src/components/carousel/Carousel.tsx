@@ -138,14 +138,14 @@ const Carousel = (props) => {
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
-                                // variant="styles.h5"
-                                sx={{}}
+                                variant="styles.h6"
                               />
                             )}
                             {o.subheading && (
                               <Heading
                                 children={Parser(o.subheading)}
                                 variant="text.jobTitle"
+                                sx={{ color: "textLightGray" }}
                               />
                             )}
                           </Box>
@@ -202,6 +202,18 @@ const Carousel = (props) => {
                                 sx={{
                                   pt: 34,
                                   // mb: 10,
+                                  color: "blue180",
+                                }}
+                              />
+                            )}
+                            {o.subheading && (
+                              <Heading
+                                children={Parser(o.subheading)}
+                                variant="text.jobTitle"
+                                sx={{
+                                  // pt: 34,
+                                  // mb: 10,
+                                  color: "blue180",
                                 }}
                               />
                             )}
