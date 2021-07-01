@@ -18,6 +18,12 @@ const config = {
           label: "Quote",
           rows: 4,
         },
+        {
+          id: "title",
+          type: "text",
+          label: "Title",
+          rows: 1,
+        },
       ],
     },
   ],
