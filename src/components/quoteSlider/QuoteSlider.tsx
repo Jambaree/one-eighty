@@ -9,7 +9,6 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
-import zIndex from "@material-ui/core/styles/zIndex"
 
 const QuoteSlider = (props) => {
   const { image, slide } = props
@@ -36,7 +35,7 @@ const QuoteSlider = (props) => {
           variant="quoteSliderOptions"
           sx={{ width: "100%" }}
           className="current"
-          children={slide[i].title}
+          children={slide[i]?.title}
         />
       </Box>
     ),
@@ -83,31 +82,31 @@ const QuoteSlider = (props) => {
           position: "relative",
           display: "flex",
           justifyContent: "center",
-          my: ["50px", 0],
-          "&:before": {
-            content: "''",
-            position: "absolute",
-            zIndex: 2,
-            top: "50%",
-            transform: "translateY(-50%)",
-            left: 0,
-            borderTop: (theme) => `1px solid ${theme.colors.red}`,
-            width: ["20px", "40px", "77px"],
-            bg: "red",
-            display: ["none", "block"],
-          },
-          "&:after": {
-            content: "''",
-            position: "absolute",
-            zIndex: 2,
-            top: "50%",
-            transform: "translateY(-50%)",
-            right: 0,
-            borderTop: (theme) => `1px solid ${theme.colors.red}`,
-            width: ["20px", "40px", "77px"],
-            bg: "red",
-            display: ["none", "block"],
-          },
+          my: ["100px", 0],
+          // "&:before": {
+          //   content: "''",
+          //   position: "absolute",
+          //   zIndex: 2,
+          //   top: "50%",
+          //   transform: "translateY(-50%)",
+          //   left: 0,
+          //   borderTop: (theme) => `1px solid ${theme.colors.red}`,
+          //   width: ["20px", "40px", "77px"],
+          //   bg: "red",
+          //   display: ["none", "block"],
+          // },
+          // "&:after": {
+          //   content: "''",
+          //   position: "absolute",
+          //   zIndex: 2,
+          //   top: "50%",
+          //   transform: "translateY(-50%)",
+          //   right: 0,
+          //   borderTop: (theme) => `1px solid ${theme.colors.red}`,
+          //   width: ["20px", "40px", "77px"],
+          //   bg: "red",
+          //   display: ["none", "block"],
+          // },
           ".slick-slider": {
             position: "relative",
             height: "100%",
@@ -144,7 +143,6 @@ const QuoteSlider = (props) => {
               ".slick-active .current": {
                 textDecoration: "underline",
                 textUnderlineOffset: "0.5em",
-                color: "#231F20",
               },
             },
           },
@@ -164,11 +162,24 @@ const QuoteSlider = (props) => {
                       sx={{
                         display: "flex",
                         justifyContent: "flex-start",
-
+                        position: "relative",
                         flexWrap: "nowrap",
                         ".quote-text::before": {},
                       }}
                     >
+                      <Divider
+                        color="red"
+                        sx={{
+                          width: ["20px", "40px", "77px"],
+                          my: "auto",
+                          display: ["none", "block"],
+                          position: "absolute",
+                          zIndex: 2,
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          left: 0,
+                        }}
+                      />
                       {/* <Divider
                         color="red"
                         sx={{
@@ -190,6 +201,19 @@ const QuoteSlider = (props) => {
                       >
                         <Textarea content={o.quote} />
                       </Box>
+                      <Divider
+                        color="red"
+                        sx={{
+                          width: ["20px", "40px", "77px"],
+                          my: "auto",
+                          display: ["none", "block"],
+                          position: "absolute",
+                          zIndex: 2,
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          right: 0,
+                        }}
+                      />
                       {/* <Divider
                         color="red"
                         sx={{
