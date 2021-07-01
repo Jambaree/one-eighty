@@ -83,6 +83,28 @@ const QuoteSlider = (props) => {
           position: "relative",
           display: "flex",
           justifyContent: "center",
+          "&:before": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: "50%",
+            transform: "translateY(-50%)",
+            left: 0,
+            borderTop: "1px solid red",
+            width: ["20px", "40px", "77px"],
+            bg: "red",
+          },
+          "&:after": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: "50%",
+            transform: "translateY(-50%)",
+            right: 0,
+            borderTop: "1px solid red",
+            width: ["20px", "40px", "77px"],
+            bg: "red",
+          },
           ".slick-slider": {
             position: "relative",
             height: "100%",
@@ -93,7 +115,14 @@ const QuoteSlider = (props) => {
               textAlign: "center",
               position: "relative",
               my: "auto",
-              ".slick-track": {},
+              display: "flex",
+              flexDirection: "column",
+              ".slick-track": {
+                height: "100%",
+                my: "auto",
+                display: "flex",
+                alignItems: "center",
+              },
             },
             ".slick-dots": {
               width: "100%",
@@ -125,28 +154,31 @@ const QuoteSlider = (props) => {
           {slide &&
             slide.map((o, i) => {
               return (
-                <Box sx={{}}>
+                <Box sx={{ bg: "pink", height: "100%" }}>
                   {o.quote && (
                     <Box
                       sx={{
                         display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
+                        justifyContent: "flex-start",
+
                         flexWrap: "nowrap",
+                        ".quote-text::before": {},
                       }}
                     >
-                      <Divider
+                      {/* <Divider
                         color="red"
                         sx={{
                           width: ["20px", "40px", "77px"],
                           mr: "auto",
                           display: ["none", "block"],
                         }}
-                      />
+                      /> */}
                       <Box
+                        className="quote-text"
                         sx={{
                           textAlign: "left",
                           px: ["30px", "50px"],
+                          mx: ["20px", "40px", "77px"],
                           "div > *": {
                             color: "blue180",
                           },
@@ -154,14 +186,14 @@ const QuoteSlider = (props) => {
                       >
                         <Textarea content={o.quote} />
                       </Box>
-                      <Divider
+                      {/* <Divider
                         color="red"
                         sx={{
                           width: ["20px", "40px", "77px"],
                           ml: "auto",
                           display: ["none", "block"],
                         }}
-                      />
+                      /> */}
                     </Box>
                   )}
                 </Box>
