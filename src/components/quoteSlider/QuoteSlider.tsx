@@ -30,13 +30,11 @@ const QuoteSlider = (props) => {
           width: "100%",
           height: "100%",
           whiteSpace: "nowrap",
-          position: "absolute",
-          top: 0,
-          right: 0,
         }}
       >
         <Text
-          sx={{ fontSize: "16px" }}
+          variant="primaryNav"
+          sx={{ width: "100%" }}
           className="current"
           children={slide[i].title}
         />
@@ -74,29 +72,6 @@ const QuoteSlider = (props) => {
           height: "134px",
           bg: "red",
         },
-        ".slick-dots": {
-          position: "absolute",
-          bottom: 0,
-          right: 0,
-          li: {
-            mx: "30px",
-            ".current": {
-              ":hover": {
-                textDecoration: "underline",
-                textUnderlineOffset: "0.5em",
-              },
-            },
-          },
-
-          ".slick-active .current": {
-            textDecoration: "underline",
-            textUnderlineOffset: "0.5em",
-          },
-
-          "@media(max-width:1024px)": {
-            textAlign: "left",
-          },
-        },
       }}
     >
       <Box
@@ -107,9 +82,48 @@ const QuoteSlider = (props) => {
           gridRowEnd: 2,
           position: "relative",
           display: "flex",
-          ".slider-class": {
-            my: "auto",
-            ".slick-dots": {},
+          justifyContent: "center",
+          ".slick-slider": {
+            position: "relative",
+            height: "100%",
+            ".slick-list": {
+              textAlign: "center",
+              height: "100%",
+              position: "relative",
+              display: "flex",
+              ".slick-track": {
+                textAlign: "center",
+                position: "absolute",
+                zIndex: 2,
+                top: "50%",
+                transform: "translateY(-50%)",
+              },
+            },
+            ".slick-dots": {
+              width: "100%",
+              position: "absolute",
+              display: "flex !important",
+              justifyContent: "flex-end",
+              bottom: 0,
+              mr: "20px",
+              py: "15px",
+              px: ["20px", "50px"],
+              flexWrap: "nowrap",
+              li: {
+                px: "30px",
+                mr: "30px",
+                ".current": {
+                  ":hover": {
+                    textDecoration: "underline",
+                    textUnderlineOffset: "0.5em",
+                  },
+                },
+              },
+              ".slick-active .current": {
+                textDecoration: "underline",
+                textUnderlineOffset: "0.5em",
+              },
+            },
           },
           flexDirection: "column",
           background:
@@ -117,7 +131,7 @@ const QuoteSlider = (props) => {
           backdropFilter: "blur(25px)",
         }}
       >
-        <Slider className="slider-class" {...settings}>
+        <Slider {...settings}>
           {slide &&
             slide.map((o, i) => {
               return (
@@ -126,7 +140,7 @@ const QuoteSlider = (props) => {
                     <Box
                       sx={{
                         display: "flex",
-                        justifyContent: "flex-end",
+                        justifyContent: "center",
                         alignItems: "center",
                         flexWrap: "nowrap",
                       }}
@@ -136,7 +150,6 @@ const QuoteSlider = (props) => {
                         sx={{
                           width: ["20px", "40px", "77px"],
                           mr: "auto",
-                          transform: [null, "translateY(-3px)"],
                           display: ["none", "block"],
                         }}
                       />
@@ -155,7 +168,6 @@ const QuoteSlider = (props) => {
                           width: ["20px", "40px", "77px"],
                           ml: "auto",
                           display: ["none", "block"],
-                          transform: [null, "translateY(-3px)"],
                         }}
                       />
                     </Box>
