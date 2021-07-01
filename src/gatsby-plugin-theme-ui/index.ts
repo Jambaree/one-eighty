@@ -51,6 +51,14 @@ const themeUi = {
       letterSpacing: "0.04em",
       textTransform: "uppercase",
     },
+    quoteSliderOptions: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: ["10px", 1],
+      lineHeight: "16px",
+      letterSpacing: "0.04em",
+      textTransform: "uppercase",
+    },
     footerNav: {
       fontFamily: "body",
       fontWeight: "bold",

@@ -33,7 +33,7 @@ const QuoteSlider = (props) => {
         }}
       >
         <Text
-          variant="primaryNav"
+          variant="quoteSliderOptions"
           sx={{ width: "100%" }}
           className="current"
           children={slide[i].title}
@@ -48,7 +48,7 @@ const QuoteSlider = (props) => {
         position: "relative",
         minHeight: "500px",
         display: "grid",
-        gridTemplateColumns: [1, "40% 50% 10%"],
+        gridTemplateColumns: [1, "20% 70% 10%", "40% 50% 10%"],
         gridTemplateRows: "1fr",
         "&:before": {
           content: "''",
@@ -93,6 +93,7 @@ const QuoteSlider = (props) => {
             borderTop: "1px solid red",
             width: ["20px", "40px", "77px"],
             bg: "red",
+            display: ["none", "block"],
           },
           "&:after": {
             content: "''",
@@ -104,6 +105,7 @@ const QuoteSlider = (props) => {
             borderTop: "1px solid red",
             width: ["20px", "40px", "77px"],
             bg: "red",
+            display: ["none", "block"],
           },
           ".slick-slider": {
             position: "relative",
@@ -130,13 +132,13 @@ const QuoteSlider = (props) => {
               display: "flex !important",
               justifyContent: "flex-end",
               bottom: 0,
+              right: 0,
               mr: "20px",
               py: "15px",
-              px: ["20px", "50px"],
+              px: ["10px", "20px", "50px"],
               flexWrap: "nowrap",
               li: {
-                px: "30px",
-                mr: "30px",
+                px: ["20px", "30px"],
               },
               ".slick-active .current": {
                 textDecoration: "underline",
@@ -177,7 +179,7 @@ const QuoteSlider = (props) => {
                         className="quote-text"
                         sx={{
                           textAlign: "left",
-                          px: ["30px", "50px"],
+                          p: ["30px", "50px"],
                           mx: ["20px", "40px", "77px"],
                           "div > *": {
                             color: "blue180",
