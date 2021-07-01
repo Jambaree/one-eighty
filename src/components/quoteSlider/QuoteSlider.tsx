@@ -86,18 +86,14 @@ const QuoteSlider = (props) => {
           ".slick-slider": {
             position: "relative",
             height: "100%",
+            my: "auto",
+            display: "flex !important",
+
             ".slick-list": {
               textAlign: "center",
-              height: "100%",
               position: "relative",
-              display: "flex",
-              ".slick-track": {
-                textAlign: "center",
-                position: "absolute",
-                zIndex: 2,
-                top: "50%",
-                transform: "translateY(-50%)",
-              },
+              my: "auto",
+              ".slick-track": {},
             },
             ".slick-dots": {
               width: "100%",
