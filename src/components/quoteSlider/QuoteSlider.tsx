@@ -47,8 +47,14 @@ const QuoteSlider = (props) => {
         position: "relative",
         minHeight: "500px",
         display: "grid",
-        gridTemplateColumns: [1, "20% 70% 10%", "40% 50% 10%"],
+        gridTemplateColumns: [1, "20% 70% 10%", "20% 70% 10%"],
+        "@media (min-width: 1080px)": {
+          gridTemplateColumns: [1, "20% 70% 10%", "40% 50% 10%"],
+        },
         gridTemplateRows: "1fr",
+        background: "linear-gradient(44.5deg, #8E0000 -31.34%, #122D4C 68.46%)",
+        mixBlendMode: "color",
+        // transform: "matrix(-1, 0, 0, 1, 0, 0)",
         "&:before": {
           content: "''",
           position: "absolute",
@@ -83,6 +89,11 @@ const QuoteSlider = (props) => {
           display: "flex",
           justifyContent: "center",
           my: ["100px", 0],
+          flexDirection: "column",
+          background:
+            "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
+          backdropFilter: "blur(25px)",
+
           // "&:before": {
           //   content: "''",
           //   position: "absolute",
@@ -146,10 +157,6 @@ const QuoteSlider = (props) => {
               },
             },
           },
-          flexDirection: "column",
-          background:
-            "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
-          backdropFilter: "blur(25px)",
         }}
       >
         <Slider {...settings}>
@@ -239,7 +246,14 @@ const QuoteSlider = (props) => {
           zIndex: -2,
         }}
       >
-        {image && <BackgroundImage image={image} sx={{ zIndex: -3 }} />}
+        {image && (
+          <BackgroundImage
+            image={image}
+            sx={{
+              zIndex: -3,
+            }}
+          />
+        )}
       </Box>
     </Box>
   )
