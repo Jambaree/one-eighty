@@ -83,6 +83,7 @@ const QuoteSlider = (props) => {
           position: "relative",
           display: "flex",
           justifyContent: "center",
+          my: ["50px", 0],
           "&:before": {
             content: "''",
             position: "absolute",
@@ -90,7 +91,7 @@ const QuoteSlider = (props) => {
             top: "50%",
             transform: "translateY(-50%)",
             left: 0,
-            borderTop: "1px solid red",
+            borderTop: (theme) => `1px solid ${theme.colors.red}`,
             width: ["20px", "40px", "77px"],
             bg: "red",
             display: ["none", "block"],
@@ -102,7 +103,7 @@ const QuoteSlider = (props) => {
             top: "50%",
             transform: "translateY(-50%)",
             right: 0,
-            borderTop: "1px solid red",
+            borderTop: (theme) => `1px solid ${theme.colors.red}`,
             width: ["20px", "40px", "77px"],
             bg: "red",
             display: ["none", "block"],
@@ -143,6 +144,7 @@ const QuoteSlider = (props) => {
               ".slick-active .current": {
                 textDecoration: "underline",
                 textUnderlineOffset: "0.5em",
+                color: "#231F20",
               },
             },
           },
