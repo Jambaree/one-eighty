@@ -108,12 +108,6 @@ const QuoteSlider = (props) => {
               li: {
                 px: "30px",
                 mr: "30px",
-                ".current": {
-                  ":hover": {
-                    textDecoration: "underline",
-                    textUnderlineOffset: "0.5em",
-                  },
-                },
               },
               ".slick-active .current": {
                 textDecoration: "underline",
@@ -151,6 +145,8 @@ const QuoteSlider = (props) => {
                       />
                       <Box
                         sx={{
+                          textAlign: "left",
+                          px: ["30px", "50px"],
                           "div > *": {
                             color: "blue180",
                           },
