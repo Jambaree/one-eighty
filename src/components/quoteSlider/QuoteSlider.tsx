@@ -154,7 +154,7 @@ const QuoteSlider = (props) => {
           {slide &&
             slide.map((o, i) => {
               return (
-                <Box sx={{ bg: "pink", height: "100%" }}>
+                <Box sx={{ height: "100%" }}>
                   {o.quote && (
                     <Box
                       sx={{
