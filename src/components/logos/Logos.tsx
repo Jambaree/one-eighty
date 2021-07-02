@@ -10,23 +10,7 @@ import Modal from "../Modal"
 import Textarea from "../Textarea"
 
 const Logos = (props) => {
-  const { columns, headline, subheading, divider, cards } = props
-
-  const [modalState, setModal] = useState(false)
-  const [modalContent, setContent] = useState({
-    text: "",
-    image: "",
-    link: "",
-  })
-
-  const handleClick = (o, i) => {
-    setModal(true)
-    setContent({
-      text: o.modal.modaltext,
-      image: o.modal.modalimage,
-      link: o.modal.modallink,
-    })
-  }
+  const { columns, headline, cards } = props
 
   return (
     <Box
@@ -38,7 +22,7 @@ const Logos = (props) => {
         position: "relative",
       }}
     >
-      <PlumGraphic />
+      {/* <PlumGraphic /> */}
 
       <Edges size="lg">
         <Box
@@ -66,7 +50,7 @@ const Logos = (props) => {
             },
           }}
         >
-          <HexagonsGraphic />
+          {/* <HexagonsGraphic /> */}
 
           {headline && (
             <Heading
@@ -224,7 +208,7 @@ const Logos = (props) => {
           )}
         </Grid>
 
-        <BottomHexagonGraphic />
+        {/* <BottomHexagonGraphic /> */}
       </Edges>
     </Box>
   )
