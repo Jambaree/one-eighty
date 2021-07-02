@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Text, IconButton } from "theme-ui"
+import { Box, Heading, Text, Divider } from "theme-ui"
 import Slider from "react-slick"
 import Parser from "html-react-parser"
 
@@ -7,15 +7,11 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
+import Textarea from "../Textarea"
+import BackgroundImage from "../BackgroundImage"
 
 const TestimonialSlider = (props) => {
-  const {
-    backgroundcolor,
-    accentcolor = "#2D4052",
-    headline,
-    subheading,
-    slide,
-  } = props
+  const { image, slide } = props
 
   const settings = {
     arrows: false,
@@ -27,197 +23,199 @@ const TestimonialSlider = (props) => {
     slidesToScroll: 1,
     pauseOnHover: true,
     customPaging: () => (
-      <div
+      <Box
         className="clickableArea"
-        style={{
-          padding: "6px",
+        sx={{
+          width: "100%",
+          height: "100%",
+          whiteSpace: "nowrap",
         }}
       >
-        <div
+        <Box
           className="current"
-          style={{
+          sx={{
             width: "8px",
             height: "8px",
-            color: "#848484",
-            border: "0.3px solid",
-            backgroundColor: "white",
-            borderRadius: "100%",
+            color: "red",
+            backgroundColor: "darkBlue",
+            opacity: "0.3",
           }}
         />
-      </div>
+      </Box>
     ),
   }
 
   return (
     <Box
       sx={{
-        bg: backgroundcolor,
-        pb: [100, 182, 182],
         position: "relative",
+        minHeight: "500px",
+        display: "grid",
+        gridTemplateColumns: [1, "20% 75% 5%", "20% 75% 5%"],
+        "@media (min-width: 1080px)": {
+          gridTemplateColumns: [1, "20% 75% 5%", "32% 60% 8%"],
+        },
+        gridTemplateRows: "1fr",
+        "&:before": {
+          content: "''",
+          position: "absolute",
+          zIndex: 2,
+          top: "50%",
+          transform: "translateY(-50%)",
+          left: 0,
+          width: "4px",
+          height: "134px",
+          bg: "red",
+        },
+        "&:after": {
+          content: "''",
+          position: "absolute",
+          zIndex: 2,
+          top: "50%",
+          transform: "translateY(-50%)",
+          right: 0,
+          width: "4px",
+          height: "134px",
+          bg: "red",
+        },
       }}
     >
       <Box
         sx={{
-          m: "0 auto",
-
-          ".slick-dots": {
-            li: {
-              m: "0 5px",
-              width: "8px",
-              height: "8px",
-
-              ".current": {
-                ":hover": {
-                  backgroundColor: "#FF7B59!important",
-                  color: "#FF7B59!important",
-                },
+          gridColumnStart: 2,
+          gridColumnEnd: 3,
+          gridRowStart: 1,
+          gridRowEnd: 2,
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          my: ["100px", 0],
+          flexDirection: "column",
+          background:
+            "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
+          backdropFilter: "blur(25px)",
+          ".slick-slider": {
+            position: "relative",
+            height: "100%",
+            my: "auto",
+            display: "flex !important",
+            ".slick-list": {
+              textAlign: "center",
+              position: "relative",
+              my: "auto",
+              display: "flex",
+              flexDirection: "column",
+              ".slick-track": {
+                height: "100%",
+                my: "auto",
+                display: "flex",
+                alignItems: "center",
               },
             },
-
-            ".slick-active .current": {
-              color: "#E86140!important",
-              bg: "#E86140!important",
-            },
-
-            "@media(max-width:1024px)": {
-              textAlign: "left",
+            ".slick-dots": {
+              position: "absolute",
+              display: "flex !important",
+              justifyContent: "center",
+              bottom: 0,
+              // right: 0,
+              // left: 0,
+              // mr: "20px",
+              py: "23px",
+              // px: ["10px", "20px", "50px"],
+              flexWrap: "nowrap",
+              li: {
+                px: "10px",
+              },
+              ".slick-active .current": {
+                opacity: 1,
+              },
             },
           },
         }}
       >
-        <Edges size="md">
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "flex-start",
-              flexDirection: ["column", "column", "row"],
-              pt: 100,
-            }}
-          >
-            <IconButton
-              sx={{
-                mb: [88, 88, "unset"],
-                svg: {
-                  height: 114,
-                  width: 132,
-                  minWidth: 132,
-                  ml: [100, 100, 100],
-                  path: {
-                    fill: accentcolor,
-                  },
-                },
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 300 258.7878"
-              >
-                <path d="M129.7835,258.7878H0V129.7834Q0,14.7775,129.7835,0V64.5011q-62.95,2.3347-64.5011,65.2823h64.5011Zm170.2165,0H170.2166V129.7834Q170.2166,14.7775,300,0V64.5011q-62.95,2.3347-64.5011,65.2823H300Z" />
-              </svg>
-            </IconButton>
-            <Box sx={{ ml: [0, 0, 100], my: [0, 0, -46] }}>
-              {headline ? (
-                <Heading
-                  as="h4"
-                  variant="styles.h4"
-                  children={Parser(headline)}
-                  sx={{
-                    textAlign: "left",
-                    mb: 24,
-                    mr: [100, 50, 0],
-                    mt: [0, 0, 60],
-                    pl: [0, 0, 40],
-                  }}
-                />
-              ) : (
-                <Box
-                  sx={{
-                    height: [0, 0, 60],
-                    width: "300px",
-                    "@media (min-width: 600px)": {
-                      width: "400px",
-                    },
-                    "@media (min-width: 1100px)": {
-                      width: "892px",
-                    },
-                  }}
-                />
-              )}
-
-              {subheading && (
-                <Text
-                  children={Parser(subheading)}
-                  variant="text.paragraph"
-                  sx={{
-                    textAlign: "left",
-                    display: "block",
-                    mb: 64,
-                    mr: [0, 50, 200],
-                    pl: [0, 0, 40],
-                  }}
-                />
-              )}
-              <Slider {...settings}>
-                {slide &&
-                  slide.map((o, i) => {
-                    return (
-                      <Box
-                        key={i}
+        <Slider {...settings}>
+          {slide &&
+            slide.map((o, i) => {
+              return (
+                <Box sx={{ height: "100%" }}>
+                  {o.quote && (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        position: "relative",
+                        flexWrap: "nowrap",
+                      }}
+                    >
+                      <Divider
+                        color="red"
                         sx={{
-                          pl: [0, 0, 40],
-                          mb: o.name && o.position && [60, 100, 100],
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "flex-start",
+                          width: ["20px", "40px", "77px"],
+                          my: "auto",
+                          display: ["none", "block"],
+                          position: "absolute",
+                          zIndex: 2,
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          left: 0,
+                        }}
+                      />
+                      <Box
+                        className="quote-text"
+                        sx={{
+                          textAlign: "left",
+                          pr: ["30px", "50px", "13px"],
+                          pl: ["30px", "50px", "41px"],
+                          py: ["90px", "90px", "153px"],
+                          mx: ["20px", "40px", "77px"],
+                          "div > *": {
+                            color: "blue180",
+                          },
                         }}
                       >
-                        {o.quote && (
-                          <Text
-                            children={Parser(o.quote)}
-                            variant="styles.h3"
-                            sx={{
-                              display: "block",
-                              mb: o.name && 60,
-                              fontSize: ["26px", "32px", "32px"],
-                              lineHeight: ["39px", "46px", "46px"],
-                              pr: [0, 85, 105],
-                            }}
-                          />
-                        )}
-                        {o.name && (
-                          <Text
-                            as="h4"
-                            children={Parser(o.name)}
-                            variant="styles.h4"
-                            sx={{
-                              display: "block",
-                              mb: o.position && "8px",
-
-                              "&:before": {
-                                content: "''",
-                                position: "absolute",
-                                m: "-15px 0",
-                                height: 4,
-                                width: 38,
-                                zIndex: 1,
-                                backgroundColor: "charcoal",
-                              },
-                            }}
-                          />
-                        )}
-                        {o.position && (
-                          <Text
-                            children={Parser(o.position)}
-                            variant="text.introduction"
-                          />
-                        )}
+                        <Textarea content={o.quote} />
                       </Box>
-                    )
-                  })}
-              </Slider>
-            </Box>
-          </Box>
-        </Edges>
+                      <Divider
+                        color="red"
+                        sx={{
+                          width: ["20px", "40px", "77px"],
+                          my: "auto",
+                          display: ["none", "block"],
+                          position: "absolute",
+                          zIndex: 2,
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          right: 0,
+                        }}
+                      />
+                    </Box>
+                  )}
+                </Box>
+              )
+            })}
+        </Slider>
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -2,
+          "&:before": {
+            transform: "matrix(-1, 0, 0, 1, 0, 0)",
+          },
+        }}
+      >
+        {image && (
+          <BackgroundImage
+            image={image}
+            sx={{
+              zIndex: -3,
+            }}
+          />
+        )}
       </Box>
     </Box>
   )
