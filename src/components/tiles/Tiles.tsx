@@ -9,15 +9,8 @@ import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import theme from "../../theme"
 
-const Cards = (props) => {
-  const {
-    columns,
-    headline,
-    headlinestyle = "h2",
-    subheading,
-    cards,
-    mainbutton,
-  } = props
+const Tiles = (props) => {
+  const { headline, cards } = props
 
   return (
     <Box
@@ -182,4 +175,4 @@ const Cards = (props) => {
   )
 }
 
-export default Cards
+export default Tiles

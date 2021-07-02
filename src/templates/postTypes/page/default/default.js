@@ -7,7 +7,7 @@ import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
-import cards from "../../../../components/cards/Cards"
+import tiles from "../../../../components/tiles/Tiles"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
@@ -24,7 +24,7 @@ const blocks = {
   textimage,
   hero,
   introduction,
-  cards,
+  tiles,
   testimonialslider,
   logos,
   partners,
@@ -141,26 +141,12 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tiles {
                   fieldGroupName
-                  columns
                   headline
-                  headlinestyle
-                  subheading
-                  mainbutton {
-                    target
-                    title
-                    url
-                  }
                   cards {
                     fieldGroupName
-                    headline
                     text
-                    link {
-                      target
-                      title
-                      url
-                    }
                     image {
                       altText
                       localFile {

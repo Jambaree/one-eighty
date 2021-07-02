@@ -1,0 +1,31 @@
+const config = {
+  id: "tiles",
+  label: "Tiles",
+  fields: [
+    {
+      id: "headline",
+      type: "text",
+      label: "Headline",
+    },
+    {
+      id: "cards",
+      type: "repeater",
+      label: "Cards",
+      items: [
+        {
+          id: "image",
+          type: "image",
+          label: "Image",
+        },
+        {
+          id: "text",
+          type: "wysiwyg",
+          label: "Text",
+          rows: 4,
+        },
+      ],
+    },
+  ],
+}
+
+export default config
