@@ -63,35 +63,27 @@ const Tiles = (props) => {
                     key={i}
                     sx={{
                       bg: "white",
-                      p: [
-                        24,
-                        i === 0
-                          ? "28% 24px 24px 30%"
-                          : i === 1
-                          ? "28% 30% 24px 24px"
-                          : i === 2
-                          ? "24px 24px 0 30%"
-                          : "24px 30% 0 24px",
-                        i === 0
-                          ? "26% 24px 24px 40%"
-                          : i === 1
-                          ? "26% 40% 24px 24px"
-                          : i === 2
-                          ? "24px 24px 0 40%"
-                          : "24px 40% 0 24px",
-                      ],
+                      p: 24,
                       height: "100%",
                       display: "flex",
                       flexDirection: "column",
                       flexWrap: "nowrap",
-                      justifyContent: "flex-start",
-                      alignItems: ["flex-start", "center", "center"],
+                      justifyContent: [
+                        "flex-start",
+                        i > 1 ? "flex-start" : "flex-end",
+                        i > 1 ? "flex-start" : "flex-end",
+                      ],
+                      alignItems:
+                        i === 0 || i === 2
+                          ? ["flex-start", "flex-end", "flex-end"]
+                          : ["flex-start", "flex-start", "flex-start"],
                     }}
                   >
                     <Box
                       sx={{
                         position: "relative",
-                        width: "100%",
+                        maxWidth: 432,
+                        width: ["100%", "85%", "50%"],
                         img: {
                           objectFit: "contain",
                           height: 40,
@@ -107,6 +99,7 @@ const Tiles = (props) => {
                         display: "flex",
                         flexDirection: "column",
                         textAlign: "left",
+                        width: ["100%", "85%", "50%"],
                         maxWidth: 432,
                       }}
                     >
