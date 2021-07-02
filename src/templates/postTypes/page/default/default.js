@@ -190,6 +190,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                   slide {
+                    fieldGroupName
                     quote
                   }
                 }
