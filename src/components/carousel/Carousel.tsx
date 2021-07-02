@@ -124,6 +124,7 @@ const Carousel = (props) => {
                     sx={{
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
+                      pl: [0, "15px", "30px"],
                     }}
                   />
                 )}
