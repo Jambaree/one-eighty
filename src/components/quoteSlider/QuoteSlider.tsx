@@ -52,9 +52,6 @@ const QuoteSlider = (props) => {
           gridTemplateColumns: [1, "20% 70% 10%", "40% 50% 10%"],
         },
         gridTemplateRows: "1fr",
-        background: "linear-gradient(44.5deg, #8E0000 -31.34%, #122D4C 68.46%)",
-        mixBlendMode: "color",
-        // transform: "matrix(-1, 0, 0, 1, 0, 0)",
         "&:before": {
           content: "''",
           position: "absolute",
@@ -244,6 +241,24 @@ const QuoteSlider = (props) => {
           width: "100%",
           height: "100%",
           zIndex: -2,
+          "&:before": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background:
+              "linear-gradient(44.5deg, #8E0000 -31.34%, #122D4C 68.46%)",
+            mixBlendMode: "color",
+            transform: "matrix(-1, 0, 0, 1, 0, 0)",
+            // zIndex: 200,
+            // borderTop: (theme) => `1px solid ${theme.colors.red}`,
+            // width: ["20px", "40px", "77px"],
+            // bg: "red",
+            // display: ["none", "block"],
+          },
         }}
       >
         {image && (
