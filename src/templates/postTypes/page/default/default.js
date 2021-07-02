@@ -19,6 +19,7 @@ import addresses from "../../../../components/addresses/Addresses"
 import topbanner from "../../../../components/topBanner/TopBanner"
 import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
+import map from "../../../../components/map/Map"
 
 const blocks = {
   textimage,
@@ -36,6 +37,7 @@ const blocks = {
   topbanner,
   quote,
   text,
+  map,
 }
 
 const Template = (props) => {
