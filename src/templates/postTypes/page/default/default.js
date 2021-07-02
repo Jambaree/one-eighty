@@ -206,6 +206,7 @@ export const CollectionQuery = graphql`
                   }
                   slide {
                     quote
+                    title
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Topbanner {
