@@ -43,6 +43,7 @@ const Carousel = (props) => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          prevArrow: "",
         },
       },
     ],
@@ -130,7 +131,8 @@ const Carousel = (props) => {
               <Box
                 sx={{
                   width: "100%",
-                  pl: "15px",
+                  pl: [0, "15px", "15px"],
+                  pr: [24, 0, 0],
 
                   ".slick-arrow": {
                     transform: "translateY(-40px)",
@@ -158,7 +160,7 @@ const Carousel = (props) => {
                           key={i}
                           sx={{
                             maxWidth: 208,
-                            px: "5px",
+                            px: [0, "5px", "5px"],
                           }}
                         >
                           <Box
@@ -202,7 +204,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: ["95%", "80%", "80%"], mt: 50 }}>
+              <Box sx={{ width: ["95%", "90%", "80%"], mt: 50 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
@@ -224,6 +226,7 @@ const Carousel = (props) => {
                           <Box
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
+                              m: "0 auto",
                               img: {
                                 objectFit: "contain",
                                 height: 480,
