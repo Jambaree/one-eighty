@@ -12,8 +12,6 @@ const Tiles = (props) => {
   const { headline, cards } = props
   const [option, setOption] = useState("1")
 
-  console.log(option)
-
   const handleClick = (e) => {
     e.preventDefault()
     if (e.target.name !== option) {
@@ -30,21 +28,6 @@ const Tiles = (props) => {
         overflow: "hidden",
       }}
     >
-      <Box
-        sx={{
-          height: 168,
-          width: 168,
-          bg: "flax",
-          borderRadius: "50%",
-
-          display: ["none", "block", "block"],
-          overflow: "hidden",
-          marginTop: [null, "-12%", "-7%"],
-          position: "absolute",
-          right: "-4%",
-          zIndex: 0,
-        }}
-      />
       <Edges size="lg">
         <Box sx={{ textAlign: "center" }}>
           <Box
@@ -74,17 +57,29 @@ const Tiles = (props) => {
           {option === "1" ? (
             <Grid
               gap={"1px"}
-              columns={2}
+              columns={[1, 2, 2]}
               sx={{
                 height: 708,
-                mx: [0, 0, 30],
+                mx: [10, 20, 30],
                 bg: "#E3E3E3",
               }}
             >
               {cards &&
                 cards.map((o, i) => {
+                  console.log(o)
                   return (
-                    <Box key={i} sx={{ bg: "white", p: 24 }}>
+                    <Box
+                      key={i}
+                      sx={{
+                        bg: "white",
+                        p: 24,
+                        display: "flex",
+                        flexDirection: "column",
+                        flexWrap: "nowrap",
+                        justifyContent: "flex-end",
+                        alignItems: "center",
+                      }}
+                    >
                       <Box
                         sx={{
                           position: "relative",
