@@ -152,7 +152,7 @@ export const CollectionQuery = graphql`
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            width: 550
+                            width: 55
                             placeholder: BLURRED
                             quality: 100
                           )

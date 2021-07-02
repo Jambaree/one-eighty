@@ -37,7 +37,7 @@ const themeUi = {
     paragraph: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: "16px",
+      fontSize: 2,
       lineHeight: "24px",
       letterSpacing: "0.01em",
       color: "textGray",
@@ -101,11 +101,24 @@ const themeUi = {
   },
   forms: {},
   links: {
-    // hyperlink: {
-    //   "&:hover": {},
-    //   "&:focus": {},
-    //   "&:disabled": {},
-    // },
+    hyperlink: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: 2,
+      lineHeight: "24px",
+      letterSpacing: "0.01em",
+      textTransform: "uppercase",
+      textDecoration: "none",
+      color: "black",
+
+      "&:hover": {
+        textDecoration: "underline",
+      },
+      "&:focus": {
+        textDecoration: "underline",
+      },
+      "&:disabled": {},
+    },
   },
   styles: {
     root: {
