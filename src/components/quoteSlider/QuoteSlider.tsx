@@ -47,9 +47,9 @@ const QuoteSlider = (props) => {
         position: "relative",
         minHeight: "500px",
         display: "grid",
-        gridTemplateColumns: [1, "20% 70% 10%", "20% 70% 10%"],
+        gridTemplateColumns: [1, "20% 75% 5%", "20% 75% 5%"],
         "@media (min-width: 1080px)": {
-          gridTemplateColumns: [1, "20% 70% 10%", "40% 50% 10%"],
+          gridTemplateColumns: [1, "20% 75% 5%", "32% 60% 8%"],
         },
         gridTemplateRows: "1fr",
         "&:before": {
@@ -120,7 +120,6 @@ const QuoteSlider = (props) => {
             height: "100%",
             my: "auto",
             display: "flex !important",
-
             ".slick-list": {
               textAlign: "center",
               position: "relative",
@@ -135,7 +134,6 @@ const QuoteSlider = (props) => {
               },
             },
             ".slick-dots": {
-              width: "100%",
               position: "absolute",
               display: "flex !important",
               justifyContent: "flex-end",
@@ -168,7 +166,6 @@ const QuoteSlider = (props) => {
                         justifyContent: "flex-start",
                         position: "relative",
                         flexWrap: "nowrap",
-                        ".quote-text::before": {},
                       }}
                     >
                       <Divider
@@ -184,19 +181,14 @@ const QuoteSlider = (props) => {
                           left: 0,
                         }}
                       />
-                      {/* <Divider
-                        color="red"
-                        sx={{
-                          width: ["20px", "40px", "77px"],
-                          mr: "auto",
-                          display: ["none", "block"],
-                        }}
-                      /> */}
                       <Box
                         className="quote-text"
                         sx={{
                           textAlign: "left",
-                          p: ["30px", "50px"],
+                          pr: ["30px", "50px", "13px"],
+                          pl: ["30px", "50px", "41px"],
+                          pt: ["60px", "90px", "153px"],
+                          pb: ["80px", "60px", "137px"],
                           mx: ["20px", "40px", "77px"],
                           "div > *": {
                             color: "blue180",
@@ -218,14 +210,6 @@ const QuoteSlider = (props) => {
                           right: 0,
                         }}
                       />
-                      {/* <Divider
-                        color="red"
-                        sx={{
-                          width: ["20px", "40px", "77px"],
-                          ml: "auto",
-                          display: ["none", "block"],
-                        }}
-                      /> */}
                     </Box>
                   )}
                 </Box>
@@ -253,11 +237,6 @@ const QuoteSlider = (props) => {
               "linear-gradient(44.5deg, #8E0000 -31.34%, #122D4C 68.46%)",
             mixBlendMode: "color",
             transform: "matrix(-1, 0, 0, 1, 0, 0)",
-            // zIndex: 200,
-            // borderTop: (theme) => `1px solid ${theme.colors.red}`,
-            // width: ["20px", "40px", "77px"],
-            // bg: "red",
-            // display: ["none", "block"],
           },
         }}
       >
