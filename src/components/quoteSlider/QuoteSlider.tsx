@@ -90,31 +90,6 @@ const QuoteSlider = (props) => {
           background:
             "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
           backdropFilter: "blur(25px)",
-
-          // "&:before": {
-          //   content: "''",
-          //   position: "absolute",
-          //   zIndex: 2,
-          //   top: "50%",
-          //   transform: "translateY(-50%)",
-          //   left: 0,
-          //   borderTop: (theme) => `1px solid ${theme.colors.red}`,
-          //   width: ["20px", "40px", "77px"],
-          //   bg: "red",
-          //   display: ["none", "block"],
-          // },
-          // "&:after": {
-          //   content: "''",
-          //   position: "absolute",
-          //   zIndex: 2,
-          //   top: "50%",
-          //   transform: "translateY(-50%)",
-          //   right: 0,
-          //   borderTop: (theme) => `1px solid ${theme.colors.red}`,
-          //   width: ["20px", "40px", "77px"],
-          //   bg: "red",
-          //   display: ["none", "block"],
-          // },
           ".slick-slider": {
             position: "relative",
             height: "100%",
