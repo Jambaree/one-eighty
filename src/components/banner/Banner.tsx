@@ -9,7 +9,14 @@ const Banner = (props) => {
   const { backgroundimage } = props
 
   return (
-    <Box sx={{ position: "relative", height: 300, width: "100%" }}>
+    <Box
+      sx={{
+        position: "relative",
+        height: 300,
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
       {backgroundimage && (
         <BackgroundImage
           image={backgroundimage}
