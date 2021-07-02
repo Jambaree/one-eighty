@@ -102,6 +102,9 @@ const Carousel = (props) => {
                   ".slick-current img": {
                     filter: "none",
                   },
+                  ".slick-slide:not(.slick-active)": {
+                    opacity: 0.5,
+                  },
                 }}
               >
                 <Slider
