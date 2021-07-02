@@ -66,24 +66,19 @@ const Tiles = (props) => {
                       p: [
                         24,
                         i === 0
-                          ? "32% 24px 24px 30%"
+                          ? "28% 24px 24px 30%"
                           : i === 1
-                          ? "32% 30% 24px 24px"
+                          ? "28% 30% 24px 24px"
                           : i === 2
                           ? "24px 24px 0 30%"
                           : "24px 30% 0 24px",
                         i === 0
-                          ? "32% 24px 24px 30%"
+                          ? "26% 24px 24px 40%"
                           : i === 1
-                          ? "32% 30% 24px 24px"
+                          ? "26% 40% 24px 24px"
                           : i === 2
-                          ? "24px 24px 0 30%"
-                          : "24px 30% 0 24px",
-                      ],
-                      mb: [
-                        "unset",
-                        i === 0 ? "-15%" : i === 1 ? "-15%" : "unset",
-                        i === 0 ? "-15%" : i === 1 ? "-15%" : "unset",
+                          ? "24px 24px 0 40%"
+                          : "24px 40% 0 24px",
                       ],
                       height: "100%",
                       display: "flex",
@@ -112,7 +107,7 @@ const Tiles = (props) => {
                         display: "flex",
                         flexDirection: "column",
                         textAlign: "left",
-                        maxWidth: "100%",
+                        maxWidth: 432,
                       }}
                     >
                       {o.text && <Textarea content={o.text} />}
