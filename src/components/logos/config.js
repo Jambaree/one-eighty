@@ -12,7 +12,6 @@ const config = {
       type: "text",
       label: "Headline",
     },
-
     {
       id: "cards",
       type: "repeater",
@@ -23,11 +22,32 @@ const config = {
           type: "image",
           label: "Image",
         },
-
         {
           id: "text",
-          type: "wysiwyg",
-          label: "Text",
+          type: "text",
+          label: "Company Name",
+        },
+        {
+          id: "url",
+          type: "text",
+          label: "Link URL",
+        },
+      ],
+    },
+    {
+      id: "backgroundcolor",
+      type: "select",
+      label: "Background Color",
+      defaultValue: "White",
+      instructions: "Choose a background color", // optional
+      options: [
+        {
+          name: "White",
+          value: "white",
+        },
+        {
+          name: "Dark Blue",
+          value: "blue180",
         },
       ],
     },
