@@ -20,13 +20,15 @@ const Map = (props) => {
       }}
     >
       <Edges size="cmd">
-        <Heading
-          variant="styles.h1"
-          sx={{
-            color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
-          }}
-          children={Parser(heading || "")}
-        />
+        {heading && (
+          <Heading
+            variant="styles.h1"
+            sx={{
+              color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
+            }}
+            children={Parser(heading || "")}
+          />
+        )}
         <Box
           sx={{
             "div > *": {
@@ -36,7 +38,7 @@ const Map = (props) => {
           py={"50px"}
           pr={[0, "100px", "300px"]}
         >
-          <Textarea content={text} />
+          {text && <Textarea content={text} />}
         </Box>
 
         <Box
