@@ -73,17 +73,18 @@ const Tiles = (props) => {
           </Box>
           {option === "1" ? (
             <Grid
-              gap={0}
+              gap={"1px"}
               columns={2}
               sx={{
                 height: 708,
-                px: [0, 30],
+                mx: [0, 0, 30],
+                bg: "#E3E3E3",
               }}
             >
               {cards &&
                 cards.map((o, i) => {
                   return (
-                    <Box key={i} sx={{ border: "1px solid #E3E3E3", p: 24 }}>
+                    <Box key={i} sx={{ bg: "white", p: 24 }}>
                       <Box
                         sx={{
                           position: "relative",
