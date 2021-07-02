@@ -31,6 +31,7 @@ const config = {
           id: "url",
           type: "text",
           label: "Link URL",
+          placeholder: "https://",
         },
       ],
     },

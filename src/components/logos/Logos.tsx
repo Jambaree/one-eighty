@@ -41,7 +41,7 @@ const Logos = (props) => {
           mx: "20px",
           gap: ["50px", "60px", "127px"],
           border: "1px solid transparent",
-          borderImage: "linear-gradient(to top, #122D4C 0%,  #BC001F 100%)",
+          borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
           borderImageSlice: 1,
         }}
         columns={[1, 2, columns]}
