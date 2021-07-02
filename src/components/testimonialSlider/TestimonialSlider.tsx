@@ -51,7 +51,7 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         position: "relative",
-        minHeight: "500px",
+        minHeight: "600px",
         display: "grid",
         gridTemplateColumns: [1, "20% 75% 5%", "20% 75% 5%"],
         "@media (min-width: 1080px)": {
