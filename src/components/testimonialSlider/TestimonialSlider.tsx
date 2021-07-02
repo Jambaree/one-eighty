@@ -1,10 +1,8 @@
 import React from "react"
-import { Box, Heading, Text, Divider } from "theme-ui"
+import { Box, Divider } from "theme-ui"
 import Slider from "react-slick"
-import Parser from "html-react-parser"
 
 // import app components
-import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import Textarea from "../Textarea"
@@ -39,6 +37,10 @@ const TestimonialSlider = (props) => {
             color: "red",
             backgroundColor: "darkBlue",
             opacity: "0.3",
+            "&:hover": {
+              bg: "red",
+              opacity: 1,
+            },
           }}
         />
       </Box>
@@ -117,11 +119,7 @@ const TestimonialSlider = (props) => {
               display: "flex !important",
               justifyContent: "center",
               bottom: 0,
-              // right: 0,
-              // left: 0,
-              // mr: "20px",
               py: "23px",
-              // px: ["10px", "20px", "50px"],
               flexWrap: "nowrap",
               li: {
                 px: "10px",
