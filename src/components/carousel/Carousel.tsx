@@ -16,7 +16,7 @@ const Carousel = (props) => {
   const [nav1, setNav1] = useState()
   const [nav2, setNav2] = useState()
 
-  const settings = {
+  const settingsSlider1 = {
     arrows: true,
     dots: false,
     infinite: true,
@@ -48,6 +48,43 @@ const Carousel = (props) => {
     ],
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
+  }
+
+  const settingsSlider2 = {
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true,
+    arrows: true,
+    prevArrow: "",
+    nextArrow: <RightArrow />,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
 
   return (
@@ -110,14 +147,7 @@ const Carousel = (props) => {
                 }}
               >
                 <Slider
-                  slidesToShow={5}
-                  slidesToScroll={1}
-                  dots={false}
-                  centerMode={true}
-                  focusOnSelect={true}
-                  arrows={true}
-                  prevArrow={""}
-                  nextArrow={<RightArrow />}
+                  {...settingsSlider2}
                   asNavFor={nav1}
                   ref={(slider2) => setNav2(slider2)}
                 >
@@ -172,9 +202,9 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: "80%", mt: 50 }}>
+              <Box sx={{ width: ["95%", "80%", "80%"], mt: 50 }}>
                 <Slider
-                  {...settings}
+                  {...settingsSlider1}
                   asNavFor={nav2}
                   ref={(slider1) => setNav1(slider1)}
                 >
@@ -185,18 +215,19 @@ const Carousel = (props) => {
                           key={i}
                           sx={{
                             display: "flex!important",
+                            flexDirection: ["column", "column", "row"],
                             maxWidth: "100%",
-                            px: 15,
+                            px: [0, 15, 15],
                             m: "0 auto",
                           }}
                         >
                           <Box
                             sx={{
-                              maxWidth: 360,
-                              mr: 88,
+                              maxWidth: ["100%", "100%", "50%"],
                               img: {
                                 objectFit: "contain",
                                 height: 480,
+                                width: 360,
                               },
                             }}
                           >
@@ -212,7 +243,12 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                          <Box sx={{ maxWidth: 360 }}>
+                          <Box
+                            sx={{
+                              maxWidth: ["100%", "100%", "50%"],
+                              pl: [0, 0, 88],
+                            }}
+                          >
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
@@ -221,6 +257,7 @@ const Carousel = (props) => {
                                   pt: 34,
                                   mb: "5px",
                                   color: "blue180",
+                                  width: 360,
                                 }}
                               />
                             )}
