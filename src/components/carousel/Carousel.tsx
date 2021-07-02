@@ -61,6 +61,12 @@ const Carousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             content: "none",
           },
+          ".slick-active img": {
+            filter: "grayscale(100%)",
+          },
+          ".slick-current img": {
+            filter: "none",
+          },
         }}
       >
         <Edges size="md">
