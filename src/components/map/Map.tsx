@@ -33,7 +33,7 @@ const Map = (props) => {
               color: `${backgroundcolor === "blue180" ? "white" : "black"}`,
             },
           }}
-          py={[4, 5, 6]}
+          py={"50px"}
           pr={[0, "100px", "300px"]}
         >
           <Textarea content={text} />
@@ -48,6 +48,7 @@ const Map = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            bg: "white",
           }}
         >
           {image && <GatsbyImage image={image} />}
