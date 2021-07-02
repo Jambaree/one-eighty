@@ -32,25 +32,15 @@ const Tiles = (props) => {
         <Box sx={{ textAlign: "center" }}>
           <Box
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: ["flex-start", "center", "center"],
-              textAlign: ["left", "center", "center"],
-              m: ["unset", "0 auto", "0 auto"],
-              mb: 36,
-              px: [0, 30, 120],
+              textAlign: "left",
+              mb: 112,
             }}
           >
             {headline && (
               <Heading
                 children={Parser(headline)}
-                variant={`styles.h2`}
-                as="h2"
-                sx={{
-                  mb: [41, 24, 24],
-                  width: ["50%", "100%", "100%"],
-                  zIndex: 1,
-                }}
+                variant="styles.h1"
+                as="h1"
               />
             )}
           </Box>
@@ -66,7 +56,9 @@ const Tiles = (props) => {
             >
               {cards &&
                 cards.map((o, i) => {
-                  console.log(o)
+                  const image =
+                    o?.image?.localFile && getImage(o.image.localFile)
+
                   return (
                     <Box
                       key={i}
@@ -91,21 +83,15 @@ const Tiles = (props) => {
                         }}
                       >
                         {o.image && (
-                          <GatsbyImage
-                            image={o.image.url}
-                            alt={o.image.altText}
-                          />
+                          <GatsbyImage image={image} alt={o.image.altText} />
                         )}
                       </Box>
                       <Box
                         sx={{
                           display: "flex",
                           flexDirection: "column",
-                          justifyContent: ["flex-start", "center", "center"],
-                          textAlign: ["left", "center", "center"],
+                          textAlign: "left",
                           maxWidth: "100%",
-                          m: ["unset", "0 auto", "0 auto"],
-                          pr: [30, "unset", "unset"],
                         }}
                       >
                         {o.text && <Textarea content={o.text} />}
@@ -119,18 +105,19 @@ const Tiles = (props) => {
               sx={{
                 height: 708,
                 flexDirection: "column",
-                px: [0, 30],
-                bg: "blue",
+                px: [0, 0, "10%"],
               }}
             >
               {cards &&
                 cards.map((o, i) => {
+                  const image2 =
+                    o?.image?.localFile && getImage(o.image.localFile)
                   return (
-                    <Box key={i}>
+                    <Flex key={i} sx={{ flexDirection: "row", mb: 70 }}>
                       <Box
                         sx={{
                           position: "relative",
-                          width: "100%",
+                          width: "30%",
                           img: {
                             objectFit: "contain",
                             height: 40,
@@ -138,26 +125,19 @@ const Tiles = (props) => {
                         }}
                       >
                         {o.image && (
-                          <GatsbyImage
-                            image={o.image.url}
-                            alt={o.image.altText}
-                          />
+                          <GatsbyImage image={image2} alt={o.image.altText} />
                         )}
                       </Box>
                       <Box
+                        variant="styles.h5"
                         sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: ["flex-start", "center", "center"],
-                          textAlign: ["left", "center", "center"],
-                          maxWidth: "100%",
-                          m: ["unset", "0 auto", "0 auto"],
-                          pr: [30, "unset", "unset"],
+                          maxWidth: "70%",
+                          textAlign: "left",
                         }}
                       >
                         {o.text && <Textarea content={o.text} />}
                       </Box>
-                    </Box>
+                    </Flex>
                   )
                 })}
             </Flex>

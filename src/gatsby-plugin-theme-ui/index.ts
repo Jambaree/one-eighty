@@ -131,6 +131,7 @@ const themeUi = {
       fontWeight: "normal",
       fontSize: 8,
       lineHeight: "40px",
+      color: "blue180",
     },
     h2: {
       variant: "text.heading",
@@ -156,7 +157,13 @@ const themeUi = {
       fontSize: 6,
       lineHeight: "22px",
     },
-    h5: {},
+    h5: {
+      variant: "text.heading",
+      fontWeight: "normal",
+      fontSize: 3,
+      lineHeight: "26px",
+      color: "textGray",
+    },
     h6: {},
     p: {},
     pre: {
