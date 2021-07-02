@@ -122,6 +122,24 @@ export const CollectionQuery = graphql`
                   backgroundcolor
                   text
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Map {
+                  fieldGroupName
+                  backgroundcolor
+                  text
+                  heading
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 1920
+                          placeholder: BLURRED
+                          quality: 100
+                        )
+                      }
+                    }
+                  }
+                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Text {
                   fieldGroupName
                   text
