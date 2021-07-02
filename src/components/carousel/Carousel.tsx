@@ -61,12 +61,6 @@ const Carousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             content: "none",
           },
-          ".slick-active img": {
-            filter: "grayscale(100%)",
-          },
-          ".slick-current img": {
-            filter: "none",
-          },
         }}
       >
         <Edges size="md">
@@ -96,12 +90,25 @@ const Carousel = (props) => {
                   />
                 )}
               </Box>
-              <Box sx={{ width: "100%" }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  ".slick-arrow": {
+                    transform: "translateY(-40px)",
+                  },
+                  img: {
+                    filter: "grayscale(100%)",
+                  },
+                  ".slick-current img": {
+                    filter: "none",
+                  },
+                }}
+              >
                 <Slider
-                  slidesToShow={4}
+                  slidesToShow={5}
                   slidesToScroll={1}
                   dots={false}
-                  centerMode={false}
+                  centerMode={true}
                   focusOnSelect={true}
                   arrows={true}
                   prevArrow={""}
@@ -115,8 +122,8 @@ const Carousel = (props) => {
                         <Box
                           key={i}
                           sx={{
-                            width: "100%",
-                            px: 15,
+                            width: 208,
+                            px: "5px",
                           }}
                         >
                           <Box
@@ -140,7 +147,7 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                          <Box sx={{ maxWidth: 360 }}>
+                          <Box sx={{ maxWidth: 360, mt: "10px" }}>
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
@@ -151,7 +158,7 @@ const Carousel = (props) => {
                               <Heading
                                 children={Parser(o.subheading)}
                                 variant="text.jobTitle"
-                                sx={{ color: "textLightGray" }}
+                                sx={{ color: "textLightGray", mt: "4px" }}
                               />
                             )}
                           </Box>
@@ -207,7 +214,7 @@ const Carousel = (props) => {
                                 variant="styles.h4name"
                                 sx={{
                                   pt: 34,
-                                  // mb: 10,
+                                  mb: "5px",
                                   color: "blue180",
                                 }}
                               />
@@ -217,8 +224,7 @@ const Carousel = (props) => {
                                 children={Parser(o.subheading)}
                                 variant="text.jobTitle"
                                 sx={{
-                                  // pt: 34,
-                                  // mb: 10,
+                                  mb: 20,
                                   color: "blue180",
                                 }}
                               />
