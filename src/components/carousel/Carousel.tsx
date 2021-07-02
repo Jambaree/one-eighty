@@ -72,9 +72,9 @@ const Carousel = (props) => {
                   flexDirection: ["column", "row", "row"],
                   alignItems: "flex-start",
                   p: [
-                    "48px 15px 38px 15px",
-                    "80px 15px",
-                    "100px 15px 76px 15px",
+                    "48px 15px 38px 0px",
+                    "80px 15px 80px 0px",
+                    "100px 15px 76px 0px",
                   ],
                 }}
               >
@@ -93,6 +93,8 @@ const Carousel = (props) => {
               <Box
                 sx={{
                   width: "100%",
+                  pl: "15px",
+
                   ".slick-arrow": {
                     transform: "translateY(-40px)",
                   },
@@ -125,14 +127,14 @@ const Carousel = (props) => {
                         <Box
                           key={i}
                           sx={{
-                            width: 208,
+                            maxWidth: 208,
                             px: "5px",
                           }}
                         >
                           <Box
                             sx={{
-                              maxWidth: 208,
                               img: {
+                                width: "100%",
                                 objectFit: "contain",
                                 height: 172,
                               },
