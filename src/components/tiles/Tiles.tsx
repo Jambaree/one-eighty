@@ -28,8 +28,8 @@ const Tiles = (props) => {
         overflow: "hidden",
       }}
     >
-      <Edges size="lg">
-        <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ textAlign: "center" }}>
+        <Edges size="lg">
           <Box
             sx={{
               textAlign: "left",
@@ -44,63 +44,85 @@ const Tiles = (props) => {
               />
             )}
           </Box>
-          {option === "1" ? (
-            <Grid
-              gap={"1px"}
-              columns={[1, 2, 2]}
-              sx={{
-                height: 708,
-                mx: [10, 20, 30],
-                bg: "#E3E3E3",
-              }}
-            >
-              {cards &&
-                cards.map((o, i) => {
-                  const image =
-                    o?.image?.localFile && getImage(o.image.localFile)
+        </Edges>
+        {option === "1" ? (
+          <Grid
+            gap={"1px"}
+            columns={[1, 2, 2]}
+            sx={{
+              height: 708,
+              bg: "#E3E3E3",
+            }}
+          >
+            {cards &&
+              cards.map((o, i) => {
+                const image = o?.image?.localFile && getImage(o.image.localFile)
 
-                  return (
+                return (
+                  <Box
+                    key={i}
+                    sx={{
+                      bg: "white",
+                      p: [
+                        24,
+                        i === 0
+                          ? "32% 24px 24px 30%"
+                          : i === 1
+                          ? "32% 30% 24px 24px"
+                          : i === 2
+                          ? "24px 24px 0 30%"
+                          : "24px 30% 0 24px",
+                        i === 0
+                          ? "32% 24px 24px 30%"
+                          : i === 1
+                          ? "32% 30% 24px 24px"
+                          : i === 2
+                          ? "24px 24px 0 30%"
+                          : "24px 30% 0 24px",
+                      ],
+                      mb: [
+                        "unset",
+                        i === 0 ? "-15%" : i === 1 ? "-15%" : "unset",
+                        i === 0 ? "-15%" : i === 1 ? "-15%" : "unset",
+                      ],
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      flexWrap: "nowrap",
+                      justifyContent: "flex-start",
+                      alignItems: ["flex-start", "center", "center"],
+                    }}
+                  >
                     <Box
-                      key={i}
                       sx={{
-                        bg: "white",
-                        p: 24,
-                        display: "flex",
-                        flexDirection: "column",
-                        flexWrap: "nowrap",
-                        justifyContent: "flex-end",
-                        alignItems: "center",
+                        position: "relative",
+                        width: "100%",
+                        img: {
+                          objectFit: "contain",
+                          height: 40,
+                        },
                       }}
                     >
-                      <Box
-                        sx={{
-                          position: "relative",
-                          width: "100%",
-                          img: {
-                            objectFit: "contain",
-                            height: 40,
-                          },
-                        }}
-                      >
-                        {o.image && (
-                          <GatsbyImage image={image} alt={o.image.altText} />
-                        )}
-                      </Box>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          textAlign: "left",
-                          maxWidth: "100%",
-                        }}
-                      >
-                        {o.text && <Textarea content={o.text} />}
-                      </Box>
+                      {o.image && (
+                        <GatsbyImage image={image} alt={o.image.altText} />
+                      )}
                     </Box>
-                  )
-                })}
-            </Grid>
-          ) : (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        textAlign: "left",
+                        maxWidth: "100%",
+                      }}
+                    >
+                      {o.text && <Textarea content={o.text} />}
+                    </Box>
+                  </Box>
+                )
+              })}
+          </Grid>
+        ) : (
+          <Edges size="lg">
             <Flex
               sx={{
                 height: 708,
@@ -141,7 +163,9 @@ const Tiles = (props) => {
                   )
                 })}
             </Flex>
-          )}
+          </Edges>
+        )}
+        <Edges size="lg">
           <Box
             sx={{
               gridColumn: 2,
@@ -177,8 +201,8 @@ const Tiles = (props) => {
               </a>
             </Box>
           </Box>
-        </Box>
-      </Edges>
+        </Edges>
+      </Box>
     </Box>
   )
 }
