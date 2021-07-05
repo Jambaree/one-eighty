@@ -51,8 +51,9 @@ const Quote = (props) => {
         <Divider
           color="red"
           sx={{
-            width: ["20px", "40px", "77px"],
+            width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
+            borderBottom: "4px solid",
             transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
           }}
@@ -71,8 +72,9 @@ const Quote = (props) => {
         <Divider
           color="red"
           sx={{
-            width: ["20px", "40px", "77px"],
+            width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
+            borderBottom: "4px solid",
             display: ["none", "block"],
             transform: [null, "translateY(-3px)"],
             "@media (min-width:1150px)": { mr: "112px" },
