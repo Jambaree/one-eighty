@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
-import { Heading } from "theme-ui"
+import { Box } from "theme-ui"
+import { RichText } from "jam-cms"
 
 // import app components
 import Edges from "../Edges"
@@ -16,17 +17,19 @@ const Hero = (props) => {
       <Edges size="cmd">
         <Content>
           {headline && (
-            <Heading
-              as="h1"
+            <Box
               variant="text.heroHeading"
-              children={headline}
               sx={{
-                width: "100%",
-                textAlign: "start",
-                marginBottom: 20,
-                color: "#fff",
+                "*": {
+                  width: "100%",
+                  textAlign: "start",
+                  marginBottom: 20,
+                  color: "#fff",
+                },
               }}
-            />
+            >
+              <RichText children={headline} />
+            </Box>
           )}
         </Content>
       </Edges>
