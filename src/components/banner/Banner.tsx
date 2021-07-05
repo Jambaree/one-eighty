@@ -12,19 +12,27 @@ const Banner = (props) => {
     <Box
       sx={{
         position: "relative",
-        height: 300,
-        width: "100%",
+        height: "auto",
+        maxWidth: "100%",
         overflow: "hidden",
       }}
     >
-      {backgroundimage && (
-        <BackgroundImage
-          image={backgroundimage}
-          alt={backgroundimage.altText}
-        />
-      )}
       <Box
         sx={{
+          height: [180, 240, 300],
+        }}
+      >
+        {backgroundimage && (
+          <BackgroundImage
+            image={backgroundimage}
+            alt={backgroundimage.altText}
+          />
+        )}
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
           bg: "white",
           height: 48,
           width: "100%",
@@ -37,18 +45,16 @@ const Banner = (props) => {
       />
       <Box
         sx={{
-          display: "flex",
-          transform: [
-            "translateY(-100px)",
-            "translateY(-70px)",
-            "translateY(-28px)",
-          ],
-          width: "unset",
-          height: "100%",
+          position: "absolute",
+          top: 38,
+          bottom: 0,
+          left: ["-10px", "-80px", 0],
+          width: "100%",
+          maxHeight: "100%",
           p: "unset",
           svg: {
             height: "100%",
-            maxWidth: ["50%", "50%", "100%"],
+            maxWidth: "100%",
             zIndex: 1,
           },
         }}
