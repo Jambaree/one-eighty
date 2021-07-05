@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Divider } from "theme-ui"
+import { Box, Divider, Text } from "theme-ui"
 import Slider from "react-slick"
 
 // import app components
@@ -51,7 +51,6 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         position: "relative",
-        minHeight: "600px",
         display: "grid",
         gridTemplateColumns: [1, "20% 75% 5%", "20% 75% 5%"],
         "@media (min-width: 1080px)": {
@@ -95,7 +94,7 @@ const TestimonialSlider = (props) => {
           flexDirection: "column",
           background:
             "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
-          backdropFilter: "blur(25px)",
+          backdropFilter: "blur(10px)",
           ".slick-slider": {
             position: "relative",
             height: "100%",
@@ -161,17 +160,33 @@ const TestimonialSlider = (props) => {
                       <Box
                         className="quote-text"
                         sx={{
+                          display: "flex",
+                          flexDirection: "column",
                           textAlign: "left",
-                          pr: ["30px", "50px", "13px"],
-                          pl: ["30px", "50px", "41px"],
-                          py: ["90px", "90px", "153px"],
-                          mx: ["20px", "40px", "77px"],
+                          pr: ["30px", "50px", "15px"],
+                          pl: ["30px", "50px", "40px"],
+                          py: ["90px", "90px", "150px"],
+                          mx: ["20px", "40px", "80px"],
                           "div > *": {
                             color: "blue180",
                           },
                         }}
                       >
                         <Textarea content={o.quote} />
+                        <Text
+                          variant="styles.h4name"
+                          sx={{
+                            color: "blue180",
+                            pt: ["20px", "35px"],
+                            pb: "10px",
+                          }}
+                          children={o.name}
+                        />
+                        <Text
+                          variant="text.companyName"
+                          sx={{ color: "blue180" }}
+                          children={o.companyname}
+                        />
                       </Box>
                       <Divider
                         color="red"
