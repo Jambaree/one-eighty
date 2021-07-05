@@ -6,7 +6,7 @@ import cards from "../../../../components/cards/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
 import logos from "../../../../components/logos/config"
 import partners from "../../../../components/partners/config"
-import cardcarousel from "../../../../components/cardCarousel/config"
+import carousel from "../../../../components/carousel/config"
 import textimagepage from "../../../../components/textImagePage/config"
 import herovideo from "../../../../components/heroVideo/config"
 import banner from "../../../../components/banner/config"
@@ -15,6 +15,7 @@ import topbanner from "../../../../components/topBanner/config"
 import quote from "../../../../components/quote/config"
 import text from "../../../../components/text/config"
 import map from "../../../../components/map/config"
+import quoteslider from "../../../../components/quoteSlider/config"
 
 const config = {
   id: "default",
@@ -42,7 +43,7 @@ const config = {
             testimonialslider,
             logos,
             partners,
-            cardcarousel,
+            carousel,
             textimagepage,
             herovideo,
             banner,
@@ -51,6 +52,7 @@ const config = {
             quote,
             text,
             map,
+            quoteslider,
           }),
         },
       ],

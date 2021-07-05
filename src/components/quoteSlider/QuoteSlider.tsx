@@ -1,14 +1,16 @@
 import React from "react"
-import { Box, Divider, Text } from "theme-ui"
+import { Box, Heading, Text, Divider } from "theme-ui"
 import Slider from "react-slick"
+import Parser from "html-react-parser"
 
 // import app components
+import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
 
-const TestimonialSlider = (props) => {
+const QuoteSlider = (props) => {
   const { image, slide } = props
 
   const settings = {
@@ -20,7 +22,7 @@ const TestimonialSlider = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: true,
-    customPaging: () => (
+    customPaging: (i) => (
       <Box
         className="clickableArea"
         sx={{
@@ -29,19 +31,11 @@ const TestimonialSlider = (props) => {
           whiteSpace: "nowrap",
         }}
       >
-        <Box
+        <Text
+          variant="quoteSliderOptions"
+          sx={{ width: "100%" }}
           className="current"
-          sx={{
-            width: "8px",
-            height: "8px",
-            color: "red",
-            backgroundColor: "darkBlue",
-            opacity: "0.3",
-            "&:hover": {
-              bg: "red",
-              opacity: 1,
-            },
-          }}
+          children={slide[i]?.title}
         />
       </Box>
     ),
@@ -51,6 +45,7 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         position: "relative",
+        minHeight: "500px",
         display: "grid",
         gridTemplateColumns: [1, "20% 75% 5%", "20% 75% 5%"],
         "@media (min-width: 1080px)": {
@@ -94,7 +89,7 @@ const TestimonialSlider = (props) => {
           flexDirection: "column",
           background:
             "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
-          backdropFilter: "blur(10px)",
+          backdropFilter: "blur(25px)",
           ".slick-slider": {
             position: "relative",
             height: "100%",
@@ -116,15 +111,19 @@ const TestimonialSlider = (props) => {
             ".slick-dots": {
               position: "absolute",
               display: "flex !important",
-              justifyContent: "center",
+              justifyContent: "flex-end",
               bottom: 0,
-              py: "23px",
+              right: 0,
+              mr: "20px",
+              py: "15px",
+              px: ["10px", "20px", "50px"],
               flexWrap: "nowrap",
               li: {
-                px: "10px",
+                px: ["20px", "30px"],
               },
               ".slick-active .current": {
-                opacity: 1,
+                textDecoration: "underline",
+                textUnderlineOffset: "0.5em",
               },
             },
           },
@@ -160,33 +159,18 @@ const TestimonialSlider = (props) => {
                       <Box
                         className="quote-text"
                         sx={{
-                          display: "flex",
-                          flexDirection: "column",
                           textAlign: "left",
-                          pr: ["30px", "50px", "15px"],
-                          pl: ["30px", "50px", "40px"],
-                          py: ["90px", "90px", "150px"],
-                          mx: ["20px", "40px", "80px"],
+                          pr: ["30px", "50px", "13px"],
+                          pl: ["30px", "50px", "41px"],
+                          pt: ["60px", "90px", "153px"],
+                          pb: ["80px", "60px", "137px"],
+                          mx: ["20px", "40px", "77px"],
                           "div > *": {
                             color: "blue180",
                           },
                         }}
                       >
                         <Textarea content={o.quote} />
-                        <Text
-                          variant="styles.h4name"
-                          sx={{
-                            color: "blue180",
-                            pt: ["20px", "35px"],
-                            pb: "10px",
-                          }}
-                          children={o.name}
-                        />
-                        <Text
-                          variant="text.companyName"
-                          sx={{ color: "blue180" }}
-                          children={o.companyname}
-                        />
                       </Box>
                       <Divider
                         color="red"
@@ -217,6 +201,16 @@ const TestimonialSlider = (props) => {
           height: "100%",
           zIndex: -2,
           "&:before": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background:
+              "linear-gradient(44.5deg, #8E0000 -31.34%, #122D4C 68.46%)",
+            mixBlendMode: "color",
             transform: "matrix(-1, 0, 0, 1, 0, 0)",
           },
         }}
@@ -234,4 +228,4 @@ const TestimonialSlider = (props) => {
   )
 }
 
-export default TestimonialSlider
+export default QuoteSlider

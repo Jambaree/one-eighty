@@ -1,6 +1,6 @@
 const config = {
-  id: "testimonialslider",
-  label: "Testimonial Slider",
+  id: "quoteslider",
+  label: "Quote Slider",
   fields: [
     {
       id: "image",
@@ -19,15 +19,9 @@ const config = {
           rows: 4,
         },
         {
-          id: "name",
+          id: "title",
           type: "text",
-          label: "Name",
-          rows: 1,
-        },
-        {
-          id: "companyname",
-          type: "text",
-          label: "Company Name",
+          label: "Title",
           rows: 1,
         },
       ],
