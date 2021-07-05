@@ -5,20 +5,16 @@ import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
-import Textarea from "../Textarea"
-import BackgroundImage from "../BackgroundImage"
 import Link from "../Link"
-import { formatLink } from "../../utils"
 
 const Logos = (props) => {
-  const { cards, headline, columns, backgroundcolor } = props
+  const { cards, headline, columns } = props
 
   return (
     <Container
       sx={{
-        bg: backgroundcolor,
-        pt: ["70px", "90px", "117px"],
-        pb: ["120px", "180px", "236px"],
+        pt: ["70px", "90px", "120px"],
+        pb: ["120px", "180px", "240px"],
       }}
     >
       <Edges size="cmd">
@@ -26,20 +22,20 @@ const Logos = (props) => {
           <Heading
             variant="styles.h1"
             sx={{
-              color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
+              color: "blue180",
               pb: "75px",
             }}
-            children={Parser(headline || "")}
+            children={Parser(headline)}
           />
         )}
       </Edges>
       <Grid
         sx={{
-          py: ["30px", "64px"],
+          py: ["30px", "65px"],
           px: ["30px", "70px", "90px"],
-          "@media (min-width:1200px)": { px: "138px" },
+          "@media (min-width:1200px)": { px: "140px" },
           mx: "20px",
-          gap: ["50px", "60px", "127px"],
+          gap: ["50px", "60px", "130px"],
           border: "1px solid transparent",
           borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
           borderImageSlice: 1,
@@ -57,15 +53,15 @@ const Logos = (props) => {
               }}
             >
               {o.logo ? (
-                <Link activeStyle={{}} to={formatLink(o.url)}>
+                <Link activeStyle={{}} to={o.url}>
                   <Box
                     sx={{
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      width: "186px",
+                      width: "185px",
                       height: "85px",
-                      svg: { width: "186px", height: "85px" },
+                      svg: { width: "185px", height: "85px" },
                     }}
                   >
                     {o.logo?.svg ? (
@@ -76,18 +72,17 @@ const Logos = (props) => {
                         alt={o.logo?.altText}
                         objectFit="contain"
                         objectPosition="0"
-                        className="w-22 h-10 text-secondary-contrast "
                       />
                     )}
                   </Box>
                 </Link>
               ) : (
-                <Link activeStyle={{}} to={formatLink(o.url)}>
+                <Link activeStyle={{}} to={o.url}>
                   <Text
                     variant="styles.h4"
                     sx={{
                       color: "termsPrivacy",
-                      width: "186px",
+                      width: "185px",
                       height: "85px",
                       "&:hover": { color: "red", cursor: "pointer" },
                     }}
