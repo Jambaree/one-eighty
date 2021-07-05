@@ -51,6 +51,7 @@ const Logos = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                height: "85px",
               }}
             >
               {o.logo ? (
