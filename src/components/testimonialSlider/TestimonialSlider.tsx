@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Divider } from "theme-ui"
+import { Box, Divider, Text } from "theme-ui"
 import Slider from "react-slick"
 
 // import app components
@@ -160,6 +160,8 @@ const TestimonialSlider = (props) => {
                       <Box
                         className="quote-text"
                         sx={{
+                          display: "flex",
+                          flexDirection: "column",
                           textAlign: "left",
                           pr: ["30px", "50px", "15px"],
                           pl: ["30px", "50px", "40px"],
@@ -171,6 +173,20 @@ const TestimonialSlider = (props) => {
                         }}
                       >
                         <Textarea content={o.quote} />
+                        <Text
+                          variant="styles.h4name"
+                          sx={{
+                            color: "blue180",
+                            pt: ["20px", "35px"],
+                            pb: "10px",
+                          }}
+                          children={o.name}
+                        />
+                        <Text
+                          variant="text.companyName"
+                          sx={{ color: "blue180" }}
+                          children={o.companyname}
+                        />
                       </Box>
                       <Divider
                         color="red"
