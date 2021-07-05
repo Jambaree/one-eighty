@@ -8,11 +8,6 @@ const config = {
       label: "Text",
     },
     {
-      id: "heading",
-      type: "text",
-      label: "Heading",
-    },
-    {
       id: "image",
       type: "image",
       label: "Map Image",

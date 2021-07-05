@@ -126,9 +126,9 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   backgroundcolor
                   text
-                  heading
                   image {
                     altText
+                    svg
                     localFile {
                       childImageSharp {
                         gatsbyImageData(

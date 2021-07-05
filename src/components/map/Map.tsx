@@ -6,7 +6,6 @@ import Parser from "html-react-parser"
 // import app components
 import Edges from "../Edges"
 import Textarea from "../Textarea"
-import BackgroundImage from "../BackgroundImage"
 
 const Map = (props) => {
   const { text, heading, image, backgroundcolor } = props
@@ -15,8 +14,8 @@ const Map = (props) => {
     <Container
       sx={{
         bg: backgroundcolor,
-        pt: ["150px", "200px", "273px"],
-        pb: ["70px", "90px", "117px"],
+        pt: ["150px", "200px", "270px"],
+        pb: ["70px", "90px", "120px"],
       }}
     >
       <Edges size="cmd">
@@ -50,7 +49,6 @@ const Map = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            bg: "white",
           }}
         >
           {image && <GatsbyImage image={image} />}
