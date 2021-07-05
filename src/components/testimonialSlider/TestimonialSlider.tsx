@@ -51,7 +51,6 @@ const TestimonialSlider = (props) => {
     <Box
       sx={{
         position: "relative",
-        minHeight: "600px",
         display: "grid",
         gridTemplateColumns: [1, "20% 75% 5%", "20% 75% 5%"],
         "@media (min-width: 1080px)": {
@@ -162,10 +161,10 @@ const TestimonialSlider = (props) => {
                         className="quote-text"
                         sx={{
                           textAlign: "left",
-                          pr: ["30px", "50px", "13px"],
-                          pl: ["30px", "50px", "41px"],
-                          py: ["90px", "90px", "153px"],
-                          mx: ["20px", "40px", "77px"],
+                          pr: ["30px", "50px", "15px"],
+                          pl: ["30px", "50px", "40px"],
+                          py: ["90px", "90px", "150px"],
+                          mx: ["20px", "40px", "80px"],
                           "div > *": {
                             color: "blue180",
                           },
