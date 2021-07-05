@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
-import { Box, Heading } from "theme-ui"
+import { Box } from "theme-ui"
+import { RichText } from "jam-cms"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import BackgroundVideo from "../BackgroundVideo"
-import Textarea from "../Textarea"
 
 const Hero = (props) => {
   const { headline, image, filevideo } = props
@@ -20,7 +20,7 @@ const Hero = (props) => {
             <Box
               variant="text.heroHeading"
               sx={{
-                h1: {
+                "*": {
                   width: "100%",
                   textAlign: "start",
                   marginBottom: 20,
@@ -28,7 +28,7 @@ const Hero = (props) => {
                 },
               }}
             >
-              <Textarea content={headline} />
+              <RichText children={headline} />
             </Box>
           )}
         </Content>
