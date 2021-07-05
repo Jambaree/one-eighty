@@ -25,7 +25,7 @@ const Map = (props) => {
             sx={{
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             }}
-            children={Parser(heading || "")}
+            children={Parser(heading)}
           />
         )}
         <Box
