@@ -1,6 +1,6 @@
 const config = {
-  id: "testimonialslider",
-  label: "Testimonial Slider",
+  id: "quoteslider",
+  label: "Quote Slider",
   fields: [
     {
       id: "image",
@@ -17,6 +17,12 @@ const config = {
           type: "wysiwyg",
           label: "Quote",
           rows: 4,
+        },
+        {
+          id: "title",
+          type: "text",
+          label: "Title",
+          rows: 1,
         },
       ],
     },
