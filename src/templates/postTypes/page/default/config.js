@@ -14,7 +14,7 @@ import addresses from "../../../../components/addresses/config"
 import topbanner from "../../../../components/topBanner/config"
 import quote from "../../../../components/quote/config"
 import text from "../../../../components/text/config"
-import map from "../../../../components/map/config"
+import content from "../../../../components/content/config"
 import quoteslider from "../../../../components/quoteSlider/config"
 
 const config = {
@@ -51,7 +51,7 @@ const config = {
             topbanner,
             quote,
             text,
-            map,
+            content,
             quoteslider,
           }),
         },

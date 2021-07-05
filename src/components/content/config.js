@@ -1,6 +1,6 @@
 const config = {
-  id: "map",
-  label: "Map",
+  id: "content",
+  label: "Content",
   fields: [
     {
       id: "text",

@@ -7,7 +7,7 @@ import Parser from "html-react-parser"
 import Edges from "../Edges"
 import Textarea from "../Textarea"
 
-const Map = (props) => {
+const Content = (props) => {
   const { text, heading, image, backgroundcolor } = props
 
   return (
@@ -25,7 +25,7 @@ const Map = (props) => {
             sx={{
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             }}
-            children={Parser(heading)}
+            children={Parser(heading || "")}
           />
         )}
         <Box
@@ -39,7 +39,6 @@ const Map = (props) => {
         >
           {text && <Textarea content={text} />}
         </Box>
-
         <Box
           sx={{
             width: "100%",
@@ -58,4 +57,4 @@ const Map = (props) => {
   )
 }
 
-export default Map
+export default Content
