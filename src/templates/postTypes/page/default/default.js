@@ -11,7 +11,7 @@ import cards from "../../../../components/cards/Cards"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
-import cardcarousel from "../../../../components/cardCarousel/CardCarousel"
+import carousel from "../../../../components/carousel/Carousel"
 import textimagepage from "../../../../components/textImagePage/TextImagePage"
 import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
@@ -19,6 +19,7 @@ import addresses from "../../../../components/addresses/Addresses"
 import topbanner from "../../../../components/topBanner/TopBanner"
 import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
+import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
 
 const blocks = {
   textimage,
@@ -28,7 +29,7 @@ const blocks = {
   testimonialslider,
   logos,
   partners,
-  cardcarousel,
+  carousel,
   textimagepage,
   herovideo,
   banner,
@@ -36,6 +37,7 @@ const blocks = {
   topbanner,
   quote,
   text,
+  quoteslider,
 }
 
 const Template = (props) => {
@@ -194,6 +196,25 @@ export const CollectionQuery = graphql`
                     quote
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Quoteslider {
+                  fieldGroupName
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 1920
+                          placeholder: BLURRED
+                          quality: 100
+                        )
+                      }
+                    }
+                  }
+                  slide {
+                    quote
+                    title
+                  }
+                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Topbanner {
                   fieldGroupName
                   headline
@@ -279,14 +300,13 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Cardcarousel {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Carousel {
                   fieldGroupName
                   headline
-                  headlinestyle
-                  subheading
                   cards {
                     fieldGroupName
                     heading
+                    subheading
                     text
                     image {
                       altText

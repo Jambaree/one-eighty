@@ -21,6 +21,7 @@ const themeUi = {
   },
   colors: {
     textGray: "#353535",
+    textLightGray: "#7C7C7C",
     termsPrivacy: "#B3B3B3",
     blue180: "#1F3D60",
     white: "#FFFFFF",
@@ -48,6 +49,14 @@ const themeUi = {
       fontFamily: "body",
       fontWeight: "normal",
       fontSize: 1,
+      lineHeight: "16px",
+      letterSpacing: "0.04em",
+      textTransform: "uppercase",
+    },
+    quoteSliderOptions: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: ["10px", 1],
       lineHeight: "16px",
       letterSpacing: "0.04em",
       textTransform: "uppercase",
@@ -145,7 +154,13 @@ const themeUi = {
       lineHeight: "22px",
     },
     h5: {},
-    h6: {},
+    h6: {
+      variant: "text.heading",
+      fontWeight: "bold",
+      fontSize: 4,
+      lineHeight: "22px",
+      color: "blue180",
+    },
     p: {},
     pre: {
       fontFamily: "monospace",
