@@ -9,7 +9,7 @@ const config = {
     },
     {
       id: "headline",
-      type: "text",
+      type: "wysiwyg",
       label: "Headline",
       rows: 3,
     },

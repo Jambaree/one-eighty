@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
-import { Heading } from "theme-ui"
+import { Box, Heading } from "theme-ui"
 
 // import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import BackgroundVideo from "../BackgroundVideo"
+import Textarea from "../Textarea"
 
 const Hero = (props) => {
   const { headline, image, filevideo } = props
@@ -16,17 +17,19 @@ const Hero = (props) => {
       <Edges size="cmd">
         <Content>
           {headline && (
-            <Heading
-              as="h1"
+            <Box
               variant="text.heroHeading"
-              children={headline}
               sx={{
-                width: "100%",
-                textAlign: "start",
-                marginBottom: 20,
-                color: "#fff",
+                h1: {
+                  width: "100%",
+                  textAlign: "start",
+                  marginBottom: 20,
+                  color: "#fff",
+                },
               }}
-            />
+            >
+              <Textarea content={headline} />
+            </Box>
           )}
         </Content>
       </Edges>
