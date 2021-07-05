@@ -21,11 +21,13 @@ const themeUi = {
   },
   colors: {
     textGray: "#353535",
+    textLightGray: "#7C7C7C",
     termsPrivacy: "#B3B3B3",
     blue180: "#1F3D60",
     white: "#FFFFFF",
     black: "#000000",
     red: "#E0092D",
+    darkBlue: "#233B48",
   },
   text: {
     heading: {
@@ -47,6 +49,14 @@ const themeUi = {
       fontFamily: "body",
       fontWeight: "normal",
       fontSize: 1,
+      lineHeight: "16px",
+      letterSpacing: "0.04em",
+      textTransform: "uppercase",
+    },
+    quoteSliderOptions: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: ["10px", 1],
       lineHeight: "16px",
       letterSpacing: "0.04em",
       textTransform: "uppercase",
@@ -164,7 +174,13 @@ const themeUi = {
       lineHeight: "26px",
       color: "textGray",
     },
-    h6: {},
+    h6: {
+      variant: "text.heading",
+      fontWeight: "bold",
+      fontSize: 4,
+      lineHeight: "22px",
+      color: "blue180",
+    },
     p: {},
     pre: {
       fontFamily: "monospace",
