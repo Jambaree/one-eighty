@@ -26,6 +26,7 @@ const themeUi = {
     white: "#FFFFFF",
     black: "#000000",
     red: "#E0092D",
+    darkBlue: "#233B48",
   },
   text: {
     heading: {

@@ -179,14 +179,20 @@ export const CollectionQuery = graphql`
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Testimonialslider {
                   fieldGroupName
-                  backgroundcolor
-                  accentcolor
-                  headline
-                  subheading
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 1920
+                          placeholder: BLURRED
+                          quality: 100
+                        )
+                      }
+                    }
+                  }
                   slide {
                     fieldGroupName
-                    name
-                    position
                     quote
                   }
                 }
