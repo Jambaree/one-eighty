@@ -2,7 +2,7 @@
 import textimage from "../../../../components/textImage/config"
 import hero from "../../../../components/hero/config"
 import introduction from "../../../../components/introduction/config"
-import cards from "../../../../components/cards/config"
+import tiles from "../../../../components/tiles/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
 import logos from "../../../../components/logos/config"
 import partners from "../../../../components/partners/config"
@@ -39,7 +39,7 @@ const config = {
             textimage,
             hero,
             introduction,
-            cards,
+            tiles,
             testimonialslider,
             logos,
             partners,
