@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
 import Textarea from "../Textarea"
+import Button from "../Button"
 import Edges from "../Edges"
 import theme from "../../theme"
 
@@ -21,219 +22,212 @@ const Tiles = (props) => {
 
   return (
     <>
-      {headline}
-
-      {items &&
-        items.map((o, i) => {
-          let component
-
-          switch (o.style) {
-            case "grid":
-              component = <Grid>....</Grid>
-              break
-
-            case "list":
-              component = <List>...</List>
-              break
-          }
-
-          return (
-            <Box sx={{ display: i === option ? "block" : "none" }}>
-              {component}
+      <Box
+        sx={{
+          pt: [100, 100, 100],
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <Box sx={{ textAlign: "center" }}>
+          <Edges size="lg">
+            <Box
+              sx={{
+                textAlign: "left",
+              }}
+            >
+              {headline && (
+                <Heading
+                  children={Parser(headline)}
+                  variant="styles.h1"
+                  as="h1"
+                />
+              )}
             </Box>
-          )
-        })}
+          </Edges>
 
-      {items &&
-        items.length > 1 &&
-        items.map((o, i) => (
-          <Button onClick={() => setOption(i)}>{o.title}</Button>
-        ))}
+          {items &&
+            items.map((o, i) => {
+              let component
+
+              switch (o.style) {
+                case "grid":
+                  component = (
+                    <Grid
+                      gap={"1px"}
+                      columns={[1, 2, 2]}
+                      sx={{
+                        height: ["auto", 708, 708],
+                        bg: ["white", "#E3E3E3", "#E3E3E3"],
+                      }}
+                    >
+                      {o.cards &&
+                        o.cards.map((o, i) => {
+                          const image =
+                            o?.image?.localFile && getImage(o.image.localFile)
+
+                          return (
+                            <Box
+                              key={i}
+                              sx={{
+                                bg: "white",
+                                p: "48px 24px",
+                                height: ["auto", 354, 354],
+                                display: "flex",
+                                overflow: "scroll",
+                                borderBottom: [
+                                  "1px solid #E3E3E3",
+                                  "unset",
+                                  "unset",
+                                ],
+                              }}
+                            >
+                              <Box
+                                sx={{
+                                  width: "100%",
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  flexWrap: "nowrap",
+                                  justifyContent: [
+                                    "flex-start",
+                                    i > 1 ? "flex-start" : "flex-end",
+                                    i > 1 ? "flex-start" : "flex-end",
+                                  ],
+                                  alignItems:
+                                    i === 0 || i === 2
+                                      ? ["flex-start", "flex-start", "flex-end"]
+                                      : "flex-start",
+                                }}
+                              >
+                                <Box
+                                  sx={{
+                                    position: "relative",
+                                    maxWidth: ["100%", 432, 432],
+                                    width: "100%",
+                                    textAlign: "left",
+                                    img: {
+                                      objectFit: "contain",
+                                      height: 40,
+                                      mb: "12px",
+                                    },
+                                  }}
+                                >
+                                  {o.image && (
+                                    <GatsbyImage
+                                      image={image}
+                                      alt={o.image.altText}
+                                    />
+                                  )}
+                                </Box>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    textAlign: "left",
+                                    width: "100%",
+                                    maxWidth: ["100%", "100%", 432],
+                                  }}
+                                >
+                                  {o.text && <Textarea content={o.text} />}
+                                </Box>
+                              </Box>
+                            </Box>
+                          )
+                        })}
+                    </Grid>
+                  )
+                  break
+
+                case "list":
+                  component = (
+                    <Edges size="lg">
+                      <Flex
+                        sx={{
+                          mt: 115,
+                          height: "auto",
+                          flexDirection: "column",
+                          px: [0, 0, "10%"],
+                        }}
+                      >
+                        {o.cards &&
+                          o.cards.map((o, i) => {
+                            const image2 =
+                              o.image?.localFile && getImage(o.image.localFile)
+                            return (
+                              <Flex
+                                key={i}
+                                sx={{
+                                  flexDirection: "row",
+                                  mb: 70,
+                                }}
+                              >
+                                <Box
+                                  sx={{
+                                    position: "relative",
+                                    width: "30%",
+                                    img: {
+                                      objectFit: "contain",
+                                      height: 40,
+                                    },
+                                  }}
+                                >
+                                  {o.image && (
+                                    <GatsbyImage
+                                      image={image2}
+                                      alt={o.image.altText}
+                                    />
+                                  )}
+                                </Box>
+                                <Box
+                                  variant="styles.h5"
+                                  sx={{
+                                    maxWidth: "70%",
+                                    textAlign: "left",
+                                  }}
+                                >
+                                  {o.text && <Textarea content={o.text} />}
+                                </Box>
+                              </Flex>
+                            )
+                          })}
+                      </Flex>
+                    </Edges>
+                  )
+                  break
+              }
+
+              return (
+                <Box sx={{ display: i === option ? "block" : "none" }}>
+                  {component}
+                </Box>
+              )
+            })}
+        </Box>
+      </Box>
+      <Edges size="lg">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            mb: [100],
+          }}
+        >
+          {items &&
+            items.length > 1 &&
+            items.map((o, i) => (
+              <Box
+                onClick={() => setOption(i)}
+                variant="links.hyperlink"
+                sx={{ mr: 24, textDecoration: i === option && "underline" }}
+              >
+                {o.title}
+              </Box>
+            ))}
+        </Box>
+      </Edges>
     </>
   )
-
-  // return (
-  //   <Box
-  //     sx={{
-  //       pt: [100, 100, 100],
-  //       pb: [100, 164, 200],
-  //       position: "relative",
-  //       overflow: "hidden",
-  //     }}
-  //   >
-  //     <Box sx={{ textAlign: "center" }}>
-  //       <Edges size="lg">
-  //         <Box
-  //           sx={{
-  //             textAlign: "left",
-  //             mb: option === "2" ? 112 : [24, 0, 0],
-  //           }}
-  //         >
-  //           {headline && (
-  //             <Heading
-  //               children={Parser(headline)}
-  //               variant="styles.h1"
-  //               as="h1"
-  //             />
-  //           )}
-  //         </Box>
-  //       </Edges>
-  //       {option === "1" ? (
-  //         <Grid
-  //           gap={"1px"}
-  //           columns={[1, 2, 2]}
-  //           sx={{
-  //             height: 708,
-  //             bg: "#E3E3E3",
-  //           }}
-  //         >
-  //           {cards &&
-  //             cards.map((o, i) => {
-  //               const image = o?.image?.localFile && getImage(o.image.localFile)
-
-  //               return (
-  //                 <Box
-  //                   key={i}
-  //                   sx={{
-  //                     bg: "white",
-  //                     p: 24,
-  //                     height: "100%",
-  //                     display: "flex",
-  //                   }}
-  //                 >
-  //                   <Box
-  //                     sx={{
-  //                       width: "100%",
-  //                       display: "flex",
-  //                       flexDirection: "column",
-  //                       flexWrap: "nowrap",
-  //                       justifyContent: [
-  //                         "flex-start",
-  //                         i > 1 ? "flex-start" : "flex-end",
-  //                         i > 1 ? "flex-start" : "flex-end",
-  //                       ],
-  //                       alignItems:
-  //                         i === 0 || i === 2
-  //                           ? ["flex-start", "flex-start", "flex-end"]
-  //                           : "flex-start",
-  //                     }}
-  //                   >
-  //                     <Box
-  //                       sx={{
-  //                         position: "relative",
-  //                         maxWidth: 432,
-  //                         width: ["100%", "85%", "50%"],
-  //                         img: {
-  //                           objectFit: "contain",
-  //                           height: 40,
-  //                           mb: "12px",
-  //                         },
-  //                       }}
-  //                     >
-  //                       {o.image && (
-  //                         <GatsbyImage image={image} alt={o.image.altText} />
-  //                       )}
-  //                     </Box>
-  //                     <Box
-  //                       sx={{
-  //                         display: "flex",
-  //                         flexDirection: "column",
-  //                         textAlign: "left",
-  //                         width: ["100%", "85%", "50%"],
-  //                         maxWidth: 432,
-  //                       }}
-  //                     >
-  //                       {o.text && <Textarea content={o.text} />}
-  //                     </Box>
-  //                   </Box>
-  //                 </Box>
-  //               )
-  //             })}
-  //         </Grid>
-  //       ) : (
-  //         <Edges size="lg">
-  //           <Flex
-  //             sx={{
-  //               height: 708,
-  //               flexDirection: "column",
-  //               px: [0, 0, "10%"],
-  //             }}
-  //           >
-  //             {cards &&
-  //               cards.map((o, i) => {
-  //                 const image2 =
-  //                   o?.image?.localFile && getImage(o.image.localFile)
-  //                 return (
-  //                   <Flex key={i} sx={{ flexDirection: "row", mb: 70 }}>
-  //                     <Box
-  //                       sx={{
-  //                         position: "relative",
-  //                         width: "30%",
-  //                         img: {
-  //                           objectFit: "contain",
-  //                           height: 40,
-  //                         },
-  //                       }}
-  //                     >
-  //                       {o.image && (
-  //                         <GatsbyImage image={image2} alt={o.image.altText} />
-  //                       )}
-  //                     </Box>
-  //                     <Box
-  //                       variant="styles.h5"
-  //                       sx={{
-  //                         maxWidth: "70%",
-  //                         textAlign: "left",
-  //                       }}
-  //                     >
-  //                       {o.text && <Textarea content={o.text} />}
-  //                     </Box>
-  //                   </Flex>
-  //                 )
-  //               })}
-  //           </Flex>
-  //         </Edges>
-  //       )}
-  //       <Edges size="lg">
-  //         <Box
-  //           sx={{
-  //             gridColumn: 2,
-  //             display: "flex",
-  //             justifyContent: "flex-end",
-  //           }}
-  //         >
-  //           <Box
-  //             variant="links.hyperlink"
-  //             sx={{
-  //               mr: "12px",
-  //               a: {
-  //                 color: "black",
-  //                 textDecoration: option === "1" && "underline",
-  //               },
-  //             }}
-  //           >
-  //             <a onClick={handleClick} name="1">
-  //               Option 1
-  //             </a>
-  //           </Box>
-  //           <Box
-  //             variant="links.hyperlink"
-  //             sx={{
-  //               a: {
-  //                 color: "black",
-  //                 textDecoration: option === "2" && "underline",
-  //               },
-  //             }}
-  //           >
-  //             <a onClick={handleClick} name="2">
-  //               Option 2
-  //             </a>
-  //           </Box>
-  //         </Box>
-  //       </Edges>
-  //     </Box>
-  //   </Box>
-  // )
 }
 
 export default Tiles

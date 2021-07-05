@@ -146,18 +146,22 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Tiles {
                   fieldGroupName
                   headline
-                  cards {
-                    fieldGroupName
-                    text
-                    image {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 55
-                            placeholder: BLURRED
-                            quality: 100
-                          )
+                  items {
+                    title
+                    style
+                    cards {
+                      fieldGroupName
+                      text
+                      image {
+                        altText
+                        localFile {
+                          childImageSharp {
+                            gatsbyImageData(
+                              width: 55
+                              placeholder: BLURRED
+                              quality: 100
+                            )
+                          }
                         }
                       }
                     }
