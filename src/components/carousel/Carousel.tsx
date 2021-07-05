@@ -26,27 +26,6 @@ const Carousel = (props) => {
     slidesToScroll: 1,
     pauseOnHover: false,
     fade: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          prevArrow: "",
-        },
-      },
-    ],
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
   }
@@ -173,15 +152,10 @@ const Carousel = (props) => {
                               },
                             }}
                           >
-                            {o.image ? (
+                            {o.image && (
                               <GatsbyImage
                                 image={o.image}
                                 alt={o.image?.altText}
-                              />
-                            ) : (
-                              <GatsbyImage
-                                image={o.defaultimage}
-                                alt={o.defaultimage?.altText}
                               />
                             )}
                           </Box>

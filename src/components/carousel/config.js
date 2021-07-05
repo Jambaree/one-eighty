@@ -33,13 +33,6 @@ const config = {
           type: "image",
           label: "Image",
         },
-        {
-          id: "defaultimage",
-          type: "image",
-          label: "Default Image",
-          instructions:
-            "This will only be used if a main image is not uploaded",
-        },
       ],
     },
   ],
