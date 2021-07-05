@@ -180,6 +180,8 @@ export const CollectionQuery = graphql`
                   slide {
                     fieldGroupName
                     quote
+                    name
+                    companyname
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Quoteslider {

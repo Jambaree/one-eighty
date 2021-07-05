@@ -91,6 +91,14 @@ const themeUi = {
       lineHeight: "24px",
       letterSpacing: "0.01em",
     },
+    companyName: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: 2,
+      lineHeight: "18px",
+      letterSpacing: "0.02em",
+      textTransform: "uppercase",
+    },
   },
   buttons: {
     // primary: {
