@@ -8,20 +8,47 @@ const config = {
       label: "Headline",
     },
     {
-      id: "cards",
+      id: "items",
       type: "repeater",
-      label: "Cards",
+      label: "Items",
       items: [
         {
-          id: "image",
-          type: "image",
-          label: "Image",
+          id: "title",
+          type: "text",
+          label: "Title",
         },
         {
-          id: "text",
-          type: "wysiwyg",
-          label: "Text",
-          rows: 4,
+          id: "style",
+          type: "select",
+          label: "Style",
+          options: [
+            {
+              name: "Grid",
+              value: "grid",
+            },
+            {
+              name: "List",
+              value: "list",
+            },
+          ],
+        },
+        {
+          id: "cards",
+          type: "repeater",
+          label: "Cards",
+          items: [
+            {
+              id: "image",
+              type: "image",
+              label: "Image",
+            },
+            {
+              id: "text",
+              type: "wysiwyg",
+              label: "Text",
+              rows: 4,
+            },
+          ],
         },
       ],
     },
