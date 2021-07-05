@@ -38,8 +38,6 @@ const Logos = (props) => {
         position: "relative",
       }}
     >
-      {/* <PlumGraphic /> */}
-
       <Edges size="lg">
         <Box
           sx={{
@@ -66,8 +64,6 @@ const Logos = (props) => {
             },
           }}
         >
-          {/* <HexagonsGraphic /> */}
-
           {headline && (
             <Heading
               children={Parser(headline)}
@@ -223,8 +219,6 @@ const Logos = (props) => {
             />
           )}
         </Grid>
-
-        {/* <BottomHexagonGraphic /> */}
       </Edges>
     </Box>
   )
@@ -256,9 +250,7 @@ const PlumGraphic = () => {
             left: 0,
           },
         }}
-      >
-        {/* <CutHexagonPlum /> */}
-      </Box>
+      ></Box>
     </Edges>
   )
 }
@@ -278,9 +270,7 @@ const HexagonsGraphic = () => {
         top: 0,
         left: "calc(100% + 5px)",
       }}
-    >
-      {/* <HexagonGroupFlaxTurquoise /> */}
-    </Box>
+    ></Box>
   )
 }
 
@@ -294,8 +284,6 @@ const BottomHexagonGraphic = () => {
         width: 185,
         height: 106,
       }}
-    >
-      {/* <CutHexagonFlax /> */}
-    </Box>
+    ></Box>
   )
 }
