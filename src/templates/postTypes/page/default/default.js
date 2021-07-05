@@ -322,18 +322,6 @@ export const CollectionQuery = graphql`
                         }
                       }
                     }
-                    defaultimage {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 350
-                            placeholder: BLURRED
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
