@@ -38,7 +38,7 @@ const Logos = (props) => {
         position: "relative",
       }}
     >
-      <PlumGraphic />
+      {/* <PlumGraphic /> */}
 
       <Edges size="lg">
         <Box
@@ -66,7 +66,7 @@ const Logos = (props) => {
             },
           }}
         >
-          <HexagonsGraphic />
+          {/* <HexagonsGraphic /> */}
 
           {headline && (
             <Heading
@@ -224,7 +224,7 @@ const Logos = (props) => {
           )}
         </Grid>
 
-        <BottomHexagonGraphic />
+        {/* <BottomHexagonGraphic /> */}
       </Edges>
     </Box>
   )
