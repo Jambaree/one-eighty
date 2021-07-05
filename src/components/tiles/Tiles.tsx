@@ -33,7 +33,7 @@ const Tiles = (props) => {
           <Box
             sx={{
               textAlign: "left",
-              mb: 112,
+              mb: option === "2" ? 112 : [24, 0, 0],
             }}
           >
             {headline && (
@@ -66,44 +66,52 @@ const Tiles = (props) => {
                       p: 24,
                       height: "100%",
                       display: "flex",
-                      flexDirection: "column",
-                      flexWrap: "nowrap",
-                      justifyContent: [
-                        "flex-start",
-                        i > 1 ? "flex-start" : "flex-end",
-                        i > 1 ? "flex-start" : "flex-end",
-                      ],
-                      alignItems:
-                        i === 0 || i === 2
-                          ? ["flex-start", "flex-end", "flex-end"]
-                          : ["flex-start", "flex-start", "flex-start"],
                     }}
                   >
                     <Box
                       sx={{
-                        position: "relative",
-                        maxWidth: 432,
-                        width: ["100%", "85%", "50%"],
-                        img: {
-                          objectFit: "contain",
-                          height: 40,
-                        },
-                      }}
-                    >
-                      {o.image && (
-                        <GatsbyImage image={image} alt={o.image.altText} />
-                      )}
-                    </Box>
-                    <Box
-                      sx={{
+                        width: "100%",
                         display: "flex",
                         flexDirection: "column",
-                        textAlign: "left",
-                        width: ["100%", "85%", "50%"],
-                        maxWidth: 432,
+                        flexWrap: "nowrap",
+                        justifyContent: [
+                          "flex-start",
+                          i > 1 ? "flex-start" : "flex-end",
+                          i > 1 ? "flex-start" : "flex-end",
+                        ],
+                        alignItems:
+                          i === 0 || i === 2
+                            ? ["flex-start", "flex-start", "flex-end"]
+                            : "flex-start",
                       }}
                     >
-                      {o.text && <Textarea content={o.text} />}
+                      <Box
+                        sx={{
+                          position: "relative",
+                          maxWidth: 432,
+                          width: ["100%", "85%", "50%"],
+                          img: {
+                            objectFit: "contain",
+                            height: 40,
+                            mb: "12px",
+                          },
+                        }}
+                      >
+                        {o.image && (
+                          <GatsbyImage image={image} alt={o.image.altText} />
+                        )}
+                      </Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          textAlign: "left",
+                          width: ["100%", "85%", "50%"],
+                          maxWidth: 432,
+                        }}
+                      >
+                        {o.text && <Textarea content={o.text} />}
+                      </Box>
                     </Box>
                   </Box>
                 )
