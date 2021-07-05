@@ -94,7 +94,7 @@ const TestimonialSlider = (props) => {
           flexDirection: "column",
           background:
             "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
-          backdropFilter: "blur(25px)",
+          backdropFilter: "blur(10px)",
           ".slick-slider": {
             position: "relative",
             height: "100%",
