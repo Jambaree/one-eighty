@@ -19,6 +19,7 @@ import addresses from "../../../../components/addresses/Addresses"
 import topbanner from "../../../../components/topBanner/TopBanner"
 import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
+import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
 
 const blocks = {
@@ -37,6 +38,7 @@ const blocks = {
   topbanner,
   quote,
   text,
+  content,
   quoteslider,
 }
 
@@ -121,6 +123,24 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   backgroundcolor
                   text
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Content {
+                  fieldGroupName
+                  backgroundcolor
+                  text
+                  image {
+                    altText
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 1920
+                          placeholder: BLURRED
+                          quality: 100
+                        )
+                      }
+                    }
+                  }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Text {
                   fieldGroupName
