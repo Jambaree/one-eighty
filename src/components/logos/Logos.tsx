@@ -32,11 +32,12 @@ const Logos = (props) => {
       </Edges>
       <Grid
         sx={{
-          py: ["30px", "65px"],
-          px: ["30px", "70px", "90px"],
-          "@media (min-width:1200px)": { px: "140px" },
+          py: "60px",
+          px: ["60px", "70px", "90px"],
+          gap: "60px",
+          "@media (min-width:1200px)": { px: "140px", gap: "130px" },
           mx: "20px",
-          gap: ["50px", "60px", "130px"],
+
           border: "1px solid transparent",
           borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
           borderImageSlice: 1,
@@ -61,10 +62,10 @@ const Logos = (props) => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      width: "185px",
+                      maxWidth: "185px",
                       height: "85px",
                       "&:hover": { cursor: "pointer" },
-                      svg: { width: "185px", height: "85px" },
+                      svg: { maxWidth: "185px", height: "85px" },
                     }}
                   >
                     {o.logo?.svg ? (
@@ -85,7 +86,7 @@ const Logos = (props) => {
                     variant="styles.h4"
                     sx={{
                       color: "termsPrivacy",
-                      width: "185px",
+                      maxWidth: "185px",
                       height: "85px",
                       "&:hover": { color: "red", cursor: "pointer" },
                     }}
