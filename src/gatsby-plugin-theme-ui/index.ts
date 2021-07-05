@@ -21,11 +21,13 @@ const themeUi = {
   },
   colors: {
     textGray: "#353535",
+    textLightGray: "#7C7C7C",
     termsPrivacy: "#B3B3B3",
     blue180: "#1F3D60",
     white: "#FFFFFF",
     black: "#000000",
     red: "#E0092D",
+    darkBlue: "#233B48",
   },
   text: {
     heading: {
@@ -88,6 +90,14 @@ const themeUi = {
       fontSize: 2,
       lineHeight: "24px",
       letterSpacing: "0.01em",
+    },
+    companyName: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: 2,
+      lineHeight: "18px",
+      letterSpacing: "0.02em",
+      textTransform: "uppercase",
     },
   },
   buttons: {
@@ -152,7 +162,13 @@ const themeUi = {
       lineHeight: "22px",
     },
     h5: {},
-    h6: {},
+    h6: {
+      variant: "text.heading",
+      fontWeight: "bold",
+      fontSize: 4,
+      lineHeight: "22px",
+      color: "blue180",
+    },
     p: {},
     pre: {
       fontFamily: "monospace",

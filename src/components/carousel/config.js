@@ -1,37 +1,11 @@
 const config = {
-  id: "cardcarousel",
-  label: "Card Carousel",
+  id: "carousel",
+  label: "Carousel",
   fields: [
     {
       id: "headline",
       type: "text",
       label: "Headline",
-    },
-    {
-      id: "headlinestyle",
-      type: "select",
-      label: "Headline Style",
-      defaultValue: "h2",
-      options: [
-        {
-          name: "H1",
-          value: "h1",
-        },
-        {
-          name: "H2",
-          value: "h2",
-        },
-        {
-          name: "H3",
-          value: "h3",
-        },
-      ],
-    },
-    {
-      id: "subheading",
-      type: "text",
-      label: "Sub Heading",
-      rows: 3,
     },
     {
       id: "cards",
@@ -42,6 +16,11 @@ const config = {
           id: "heading",
           type: "text",
           label: "Heading",
+        },
+        {
+          id: "subheading",
+          type: "text",
+          label: "Sub Heading",
         },
         {
           id: "text",

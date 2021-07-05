@@ -3,55 +3,9 @@ const config = {
   label: "Testimonial Slider",
   fields: [
     {
-      id: "backgroundcolor",
-      type: "select",
-      label: "Background Color",
-      defaultValue: "White",
-      options: [
-        {
-          name: "White",
-          value: "#ffffff",
-        },
-        {
-          name: "Flax",
-          value: "#E5D282",
-        },
-        {
-          name: "Light Turquoise",
-          value: "#A8E6E4",
-        },
-        {
-          name: "Light Almond",
-          value: "#F5F4F1",
-        },
-      ],
-    },
-    {
-      id: "accentcolor",
-      type: "select",
-      label: "Accent Color",
-      defaultValue: "Charcoal",
-      options: [
-        {
-          name: "Charcoal",
-          value: "#2D4052",
-        },
-        {
-          name: "Coral",
-          value: "#E86140",
-        },
-      ],
-    },
-    {
-      id: "headline",
-      type: "text",
-      label: "Headline",
-    },
-    {
-      id: "subheading",
-      type: "text",
-      label: "Subheading",
-      rows: 2,
+      id: "image",
+      type: "image",
+      label: "Background Image",
     },
     {
       id: "slide",
@@ -60,7 +14,7 @@ const config = {
       items: [
         {
           id: "quote",
-          type: "text",
+          type: "wysiwyg",
           label: "Quote",
           rows: 4,
         },
@@ -68,14 +22,13 @@ const config = {
           id: "name",
           type: "text",
           label: "Name",
+          rows: 1,
         },
-
         {
-          id: "position",
+          id: "companyname",
           type: "text",
-          label: "Position",
-          instructions:
-            "Type the professional position of the person who gave this quote",
+          label: "Company Name",
+          rows: 1,
         },
       ],
     },

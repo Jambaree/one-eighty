@@ -6,7 +6,7 @@ import cards from "../../../../components/cards/config"
 import testimonialslider from "../../../../components/testimonialSlider/config"
 import logos from "../../../../components/logos/config"
 import partners from "../../../../components/partners/config"
-import cardcarousel from "../../../../components/cardCarousel/config"
+import carousel from "../../../../components/carousel/config"
 import textimagepage from "../../../../components/textImagePage/config"
 import herovideo from "../../../../components/heroVideo/config"
 import banner from "../../../../components/banner/config"
@@ -42,7 +42,7 @@ const config = {
             testimonialslider,
             logos,
             partners,
-            cardcarousel,
+            carousel,
             textimagepage,
             herovideo,
             banner,
