@@ -6,6 +6,7 @@ import Parser from "html-react-parser"
 // import app components
 import Edges from "../Edges"
 import Link from "../Link"
+import { formatLink } from "../../utils"
 
 const Logos = (props) => {
   const { cards, headline, columns } = props
@@ -61,6 +62,7 @@ const Logos = (props) => {
                       alignItems: "center",
                       width: "185px",
                       height: "85px",
+                      "&:hover": { cursor: "pointer" },
                       svg: { width: "185px", height: "85px" },
                     }}
                   >
