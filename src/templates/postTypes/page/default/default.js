@@ -238,42 +238,20 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   columns
                   headline
-                  subheading
                   cards {
-                    imagetype
                     fieldGroupName
                     text
+                    url
                     logo {
-                      svg
                       altText
+                      svg
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            width: 244
+                            width: 550
                             placeholder: BLURRED
                             quality: 100
                           )
-                        }
-                      }
-                    }
-                    modal {
-                      fieldGroupName
-                      modaltext
-                      modallink {
-                        target
-                        title
-                        url
-                      }
-                      modalimage {
-                        altText
-                        localFile {
-                          childImageSharp {
-                            gatsbyImageData(
-                              width: 244
-                              placeholder: BLURRED
-                              quality: 100
-                            )
-                          }
                         }
                       }
                     }
