@@ -89,7 +89,7 @@ const QuoteSlider = (props) => {
           flexDirection: "column",
           background:
             "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
-          backdropFilter: "blur(25px)",
+          backdropFilter: "blur(10px)",
           ".slick-slider": {
             position: "relative",
             height: "100%",
@@ -146,7 +146,7 @@ const QuoteSlider = (props) => {
                       <Divider
                         color="red"
                         sx={{
-                          width: ["20px", "40px", "77px"],
+                          width: ["20px", "40px", "80px"],
                           my: "auto",
                           display: ["none", "block"],
                           position: "absolute",
@@ -160,11 +160,11 @@ const QuoteSlider = (props) => {
                         className="quote-text"
                         sx={{
                           textAlign: "left",
-                          pr: ["30px", "50px", "13px"],
-                          pl: ["30px", "50px", "41px"],
-                          pt: ["60px", "90px", "153px"],
-                          pb: ["80px", "60px", "137px"],
-                          mx: ["20px", "40px", "77px"],
+                          pr: ["30px", "50px", "15px"],
+                          pl: ["30px", "50px", "40px"],
+                          pt: ["60px", "90px", "155px"],
+                          pb: ["80px", "60px", "140px"],
+                          mx: ["20px", "40px", "80px"],
                           "div > *": {
                             color: "blue180",
                           },
@@ -175,7 +175,7 @@ const QuoteSlider = (props) => {
                       <Divider
                         color="red"
                         sx={{
-                          width: ["20px", "40px", "77px"],
+                          width: ["20px", "40px", "80px"],
                           my: "auto",
                           display: ["none", "block"],
                           position: "absolute",

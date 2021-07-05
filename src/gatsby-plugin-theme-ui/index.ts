@@ -39,7 +39,7 @@ const themeUi = {
     paragraph: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: "16px",
+      fontSize: 2,
       lineHeight: "24px",
       letterSpacing: "0.01em",
       color: "textGray",
@@ -119,11 +119,24 @@ const themeUi = {
   },
   forms: {},
   links: {
-    // hyperlink: {
-    //   "&:hover": {},
-    //   "&:focus": {},
-    //   "&:disabled": {},
-    // },
+    hyperlink: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: 2,
+      lineHeight: "24px",
+      letterSpacing: "0.01em",
+      textTransform: "uppercase",
+      textDecoration: "none",
+      color: "black",
+
+      "&:hover": {
+        textDecoration: "underline",
+      },
+      "&:focus": {
+        textDecoration: "underline",
+      },
+      "&:disabled": {},
+    },
   },
   styles: {
     root: {
@@ -136,6 +149,7 @@ const themeUi = {
       fontWeight: "normal",
       fontSize: 8,
       lineHeight: "40px",
+      color: "blue180",
     },
     h2: {
       variant: "text.heading",
@@ -161,7 +175,13 @@ const themeUi = {
       fontSize: 6,
       lineHeight: "22px",
     },
-    h5: {},
+    h5: {
+      variant: "text.heading",
+      fontWeight: "normal",
+      fontSize: 3,
+      lineHeight: "26px",
+      color: "textGray",
+    },
     h6: {
       variant: "text.heading",
       fontWeight: "bold",

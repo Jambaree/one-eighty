@@ -7,7 +7,7 @@ import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
 import introduction from "../../../../components/introduction/Introduction"
-import cards from "../../../../components/cards/Cards"
+import tiles from "../../../../components/tiles/Tiles"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import logos from "../../../../components/logos/Logos"
 import partners from "../../../../components/partners/Partners"
@@ -26,7 +26,7 @@ const blocks = {
   textimage,
   hero,
   introduction,
-  cards,
+  tiles,
   testimonialslider,
   logos,
   partners,
@@ -163,35 +163,25 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Cards {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tiles {
                   fieldGroupName
-                  columns
                   headline
-                  headlinestyle
-                  subheading
-                  mainbutton {
-                    target
+                  items {
                     title
-                    url
-                  }
-                  cards {
-                    fieldGroupName
-                    headline
-                    text
-                    link {
-                      target
-                      title
-                      url
-                    }
-                    image {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 550
-                            placeholder: BLURRED
-                            quality: 100
-                          )
+                    style
+                    cards {
+                      fieldGroupName
+                      text
+                      image {
+                        altText
+                        localFile {
+                          childImageSharp {
+                            gatsbyImageData(
+                              width: 55
+                              placeholder: BLURRED
+                              quality: 100
+                            )
+                          }
                         }
                       }
                     }
@@ -248,42 +238,20 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   columns
                   headline
-                  subheading
                   cards {
-                    imagetype
                     fieldGroupName
                     text
+                    url
                     logo {
-                      svg
                       altText
+                      svg
                       localFile {
                         childImageSharp {
                           gatsbyImageData(
-                            width: 244
+                            width: 550
                             placeholder: BLURRED
                             quality: 100
                           )
-                        }
-                      }
-                    }
-                    modal {
-                      fieldGroupName
-                      modaltext
-                      modallink {
-                        target
-                        title
-                        url
-                      }
-                      modalimage {
-                        altText
-                        localFile {
-                          childImageSharp {
-                            gatsbyImageData(
-                              width: 244
-                              placeholder: BLURRED
-                              quality: 100
-                            )
-                          }
                         }
                       }
                     }
@@ -331,18 +299,6 @@ export const CollectionQuery = graphql`
                     subheading
                     text
                     image {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 350
-                            placeholder: BLURRED
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
-                    defaultimage {
                       altText
                       localFile {
                         childImageSharp {

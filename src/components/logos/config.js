@@ -13,29 +13,6 @@ const config = {
       label: "Headline",
     },
     {
-      id: "subheading",
-      type: "text",
-      label: "Subheading",
-      rows: 2,
-    },
-    {
-      id: "divider",
-      type: "select",
-      label: "Divider",
-      instructions: "Display a dividing line?", // optional
-      defaultValue: "False",
-      options: [
-        {
-          name: "True",
-          value: true,
-        },
-        {
-          name: "False",
-          value: false,
-        },
-      ],
-    },
-    {
       id: "cards",
       type: "repeater",
       label: "Cards",
@@ -46,48 +23,15 @@ const config = {
           label: "Image",
         },
         {
-          id: "imagetype",
-          type: "select",
-          label: "Image Type",
-          instructions: "Is this image a portrait or a logo?", // optional
-          defaultValue: "logo",
-          options: [
-            {
-              name: "Portrait",
-              value: "portrait",
-            },
-            {
-              name: "Logo",
-              value: "logo",
-            },
-          ],
-        },
-        {
           id: "text",
-          type: "wysiwyg",
-          label: "Text",
+          type: "text",
+          label: "Company Name",
         },
         {
-          id: "modal",
-          label: "Modal",
-          type: "group",
-          fields: [
-            {
-              id: "modaltext",
-              type: "wysiwyg",
-              label: "Modal Text",
-            },
-            {
-              id: "modallink",
-              type: "link",
-              label: "Modal Link",
-            },
-            {
-              id: "modalimage",
-              type: "image",
-              label: "Modal Image",
-            },
-          ],
+          id: "url",
+          type: "text",
+          label: "Link URL",
+          placeholder: "https://",
         },
       ],
     },

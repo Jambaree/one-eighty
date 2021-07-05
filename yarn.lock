@@ -8375,17 +8375,17 @@ gatsby-source-gravityforms@^1.0.17:
     nanoid "^3.1.20"
     oauth-signature "^1.5.0"
 
-gatsby-source-jam-cms@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-jam-cms/-/gatsby-source-jam-cms-1.8.2.tgz#4199bb1eba1d6b64531619144b8c67d7607e99a0"
-  integrity sha512-R7Jnxg1koBVpEaRpvj5ebcrOaHLWSDhpYON4SeQcl1Sb0zydEFQEqPK16lx7ZbWLH1nyHnyCfeHy/P0DGEwYFA==
+gatsby-source-jam-cms@^1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/gatsby-source-jam-cms/-/gatsby-source-jam-cms-1.8.5.tgz#6d74760efacdaf328725535f08af9b7d80904d57"
+  integrity sha512-RxV++f3ipzqip9z73Q3M6BOhqjnAmlo9x+lkzJe2eXMPkRnUNJ51QfiQyyWCJQnJ6u/8qGPCKSD5cXYzqRs2uA==
   dependencies:
     "@babel/register" "^7.13.16"
     axios "^0.21.1"
     babel-preset-gatsby "^1.5.0"
     cross-env "7.0.3"
     gatsby "3.4.0"
-    jam-cms "1.8.2"
+    jam-cms "1.8.5"
     react-helmet "^6.1.0"
     styled-components "^5.2.3"
 
@@ -10603,10 +10603,10 @@ iterall@^1.2.1, iterall@^1.3.0:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.3.0.tgz#afcb08492e2915cbd8a0884eb93a8c94d0d72fea"
   integrity sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==
 
-jam-cms@1.8.2, jam-cms@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/jam-cms/-/jam-cms-1.8.2.tgz#b34e9dbe510cbe4110f640d8518eae6663abafa8"
-  integrity sha512-f9ImGN6Xuswzig/uFJE9B2z6ZEQ6uH12m+yk4wYqEFJvn/HWRMbiRWVU+0X3tXTv85CKxbdCcGg2Jd345oeVYw==
+jam-cms@1.8.5, jam-cms@^1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/jam-cms/-/jam-cms-1.8.5.tgz#8916ffb2cd8b183289b6827e2e5c16605e730080"
+  integrity sha512-9BgddFKgODGtuaJjwSofVyMNSgNmtoy5o2QKNOYUEm9zjFJZQSvEoKBS+TYOLlvuCo7g2uSYSCTXIvjq3rGXFQ==
   dependencies:
     "@ant-design/icons" "^4.6.2"
     "@babel/polyfill" "^7.12.1"

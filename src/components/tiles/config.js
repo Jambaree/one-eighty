@@ -1,0 +1,58 @@
+const config = {
+  id: "tiles",
+  label: "Tiles",
+  fields: [
+    {
+      id: "headline",
+      type: "text",
+      label: "Headline",
+    },
+    {
+      id: "items",
+      type: "repeater",
+      label: "Items",
+      items: [
+        {
+          id: "title",
+          type: "text",
+          label: "Title",
+        },
+        {
+          id: "style",
+          type: "select",
+          label: "Style",
+          options: [
+            {
+              name: "Grid",
+              value: "grid",
+            },
+            {
+              name: "List",
+              value: "list",
+            },
+          ],
+        },
+        {
+          id: "cards",
+          type: "repeater",
+          label: "Cards",
+          items: [
+            {
+              id: "image",
+              type: "image",
+              label: "Image",
+            },
+            {
+              id: "text",
+              type: "wysiwyg",
+              label: "Text",
+              rows: 4,
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}
+
+export default config
