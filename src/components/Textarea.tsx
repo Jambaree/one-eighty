@@ -1,87 +1,18 @@
 import React from "react"
-import Parser from "html-react-parser"
 import styled from "@emotion/styled"
-import { Themed, Text } from "theme-ui"
-
-const components = {
-  h1: <Themed.h1 />,
-  h2: <Themed.h2 />,
-  h3: <Themed.h3 />,
-  h4: <Themed.h4 />,
-  h5: <Themed.h5 />,
-  h6: <Themed.h6 />,
-}
-
-function updateLinksInHTML(html) {
-  let newHTML = html
-  let url
-
-  const key = `P&gmIv9]]zNSihq`
-
-  // Perform ring swap
-  url = new RegExp(`${process.env.GATSBY_WP}/wp-content/`, "gi")
-  newHTML = newHTML.replace(url, key)
-
-  // Links
-  url = new RegExp(`${process.env.GATSBY_WP}`, "gi")
-  newHTML = newHTML.replace(url, "")
-
-  url = new RegExp(`${key}`, "gi")
-  newHTML = newHTML.replace(url, `${process.env.GATSBY_WP}/wp-content/`)
-
-  return newHTML
-}
+import { Text } from "theme-ui"
+import { RichText } from "jam-cms"
 
 const Textarea = (props) => {
   const { content, ...rest } = props
 
-  if (typeof content === "string" || content instanceof String) {
-    let contentString = content
-      .toString()
-      .trim()
-      // remove default html tags
-      .replace("<html>", "")
-      .replace("</html>", "")
-      .replace("<head>", "")
-      .replace("</head>", "")
-      .replace("<body>", "")
-      .replace("</body>", "")
-      // remove line breaks to fix table errors
-      .replace(/(\r\n|\n|\r)/gm, "")
-      // wrap table into div to make it responsive
-      .replace(/<table/g, "<div class='table-wrapper'><table")
-      .replace(/\/table>/g, "/table></div>")
-      // wrap iframe into div to make it responsive
-      .replace(/<iframe/g, "<div class='iframe-wrapper'><iframe")
-      .replace(/\/iframe>/g, "/iframe></div>")
-
-    contentString = updateLinksInHTML(contentString)
-
-    const parse = (string) => {
-      return (
-        typeof string === "string" &&
-        Parser(string, {
-          replace: (domNode) => {
-            if (domNode.type === "tag" && components[domNode.name]) {
-              return React.cloneElement(components[domNode.name], {
-                children: domNode.children.map((o) => parse(o.data)),
-              })
-            }
-          },
-        })
-      )
-    }
-
-    return (
-      <Container {...rest}>
-        <Text variant="text.paragraph" as="div">
-          {parse(contentString)}
-        </Text>
-      </Container>
-    )
-  } else {
-    return null
-  }
+  return (
+    <Container {...rest}>
+      <Text variant="text.paragraph" as="div">
+        <RichText children={content} />
+      </Text>
+    </Container>
+  )
 }
 
 const Container = styled.div`
