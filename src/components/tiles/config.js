@@ -8,47 +8,35 @@ const config = {
       label: "Headline",
     },
     {
-      id: "items",
+      id: "style",
+      type: "select",
+      label: "Style",
+      options: [
+        {
+          name: "Grid",
+          value: "grid",
+        },
+        {
+          name: "List",
+          value: "list",
+        },
+      ],
+    },
+    {
+      id: "cards",
       type: "repeater",
-      label: "Items",
+      label: "Cards",
       items: [
         {
-          id: "title",
-          type: "text",
-          label: "Title",
+          id: "image",
+          type: "image",
+          label: "Image",
         },
         {
-          id: "style",
-          type: "select",
-          label: "Style",
-          options: [
-            {
-              name: "Grid",
-              value: "grid",
-            },
-            {
-              name: "List",
-              value: "list",
-            },
-          ],
-        },
-        {
-          id: "cards",
-          type: "repeater",
-          label: "Cards",
-          items: [
-            {
-              id: "image",
-              type: "image",
-              label: "Image",
-            },
-            {
-              id: "text",
-              type: "wysiwyg",
-              label: "Text",
-              rows: 4,
-            },
-          ],
+          id: "text",
+          type: "wysiwyg",
+          label: "Text",
+          rows: 4,
         },
       ],
     },
