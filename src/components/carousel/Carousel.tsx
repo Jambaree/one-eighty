@@ -253,7 +253,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box id="slider1" sx={{ width: ["100%", "90%", "80%"], mt: 75 }}>
+              <Box id="slider1" sx={{ width: ["100%", "90%", "87%"], mt: 75 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
@@ -280,7 +280,7 @@ const Carousel = (props) => {
                               img: {
                                 objectFit: "contain!important",
                                 height: "auto",
-                                width: 360,
+                                width: 375,
                                 borderBottom: "1px solid",
                                 borderColor: "darkBlue",
                               },
@@ -296,7 +296,7 @@ const Carousel = (props) => {
                           <Box
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
-                              pl: [0, 0, 88],
+                              pl: [0, 0, 70],
                             }}
                           >
                             {o.heading && (
@@ -325,6 +325,8 @@ const Carousel = (props) => {
                               <Box
                                 variant="text.paragraph"
                                 sx={{
+                                  width: 360,
+                                  maxWidth: "100%",
                                   lineHeight: "25px",
                                 }}
                               >
