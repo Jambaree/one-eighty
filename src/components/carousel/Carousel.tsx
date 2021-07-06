@@ -235,7 +235,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: ["100%", "90%", "80%"], mt: 50 }}>
+              <Box sx={{ width: ["100%", "90%", "80%"], mt: 75 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
