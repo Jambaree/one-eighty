@@ -114,6 +114,9 @@ const Carousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             content: "none",
           },
+          "#slider1 .slick-arrow": {
+            top: 84,
+          },
         }}
       >
         <Edges size="md">
@@ -243,7 +246,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: ["100%", "90%", "80%"], mt: 75 }}>
+              <Box id="slider1" sx={{ width: ["100%", "90%", "80%"], mt: 75 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
