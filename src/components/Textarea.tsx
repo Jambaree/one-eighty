@@ -108,24 +108,6 @@ const Container = styled.div`
     }
   }
 
-  h1 {
-    font-size: 8;
-    line-height: 40px;
-    color: ${({ theme }) => theme.colors.blue180};
-  }
-
-  h2 {
-    font-size: 9;
-    line-height: 60px;
-    font-weight: "light";
-  }
-
-  h3 {
-    font-size: 7;
-    line-height: 42px;
-    font-weight: "light";
-  }
-
   p {
     margin-bottom: 12px;
 
