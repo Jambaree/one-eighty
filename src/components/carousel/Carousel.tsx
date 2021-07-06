@@ -11,6 +11,7 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import LeftArrow from "../../icons/arrow-left.svg"
 import RightArrow from "../../icons/arrow-right.svg"
+import Textarea from "../Textarea"
 
 const Carousel = (props) => {
   const { headline, cards } = props
@@ -315,13 +316,14 @@ const Carousel = (props) => {
                               />
                             )}
                             {o.text && (
-                              <Text
-                                children={Parser(o.text)}
+                              <Box
                                 variant="text.paragraph"
                                 sx={{
                                   lineHeight: "25px",
                                 }}
-                              />
+                              >
+                                <Textarea content={o.text} />
+                              </Box>
                             )}
                           </Box>
                         </Box>
