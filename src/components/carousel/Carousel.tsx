@@ -274,6 +274,8 @@ const Carousel = (props) => {
                                 objectFit: "contain!important",
                                 height: 360,
                                 width: 360,
+                                borderBottom: "1px solid",
+                                borderColor: "darkBlue",
                               },
                             }}
                           >
