@@ -19,7 +19,7 @@ const Banner = (props) => {
     >
       <Box
         sx={{
-          height: [180, 240, 300],
+          height: [180, 250, 250],
         }}
       >
         {backgroundimage && (
@@ -32,29 +32,14 @@ const Banner = (props) => {
       <Box
         sx={{
           position: "absolute",
-          top: 0,
-          bg: "white",
-          height: 48,
-          width: "100%",
-          clipPath: [
-            "polygon(0 0, 60% 0, 60% calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
-            "polygon(0 0, 60% 0, 60% calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
-            "polygon(0 0, calc(100% - 480px) 0, calc(100% - 480px) calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
-          ],
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          top: 38,
+          top: ["-55px", "-20px", "-20px"],
           bottom: 0,
-          left: ["-10px", "-80px", 0],
-          width: "100%",
-          maxHeight: "100%",
+          left: 0,
+          maxWidth: ["75%", "70%", "60%"],
           p: "unset",
           svg: {
-            height: "100%",
-            maxWidth: "100%",
+            width: "100%",
+            objectFit: "contain",
             zIndex: 1,
           },
         }}
