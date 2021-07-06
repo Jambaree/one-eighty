@@ -65,6 +65,12 @@ const Quote = (props) => {
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             },
+            "*": {
+              variant: "text.heading",
+              fontWeight: "light",
+              fontSize: 7,
+              lineHeight: "42px",
+            },
           }}
         >
           <Textarea content={text} />
