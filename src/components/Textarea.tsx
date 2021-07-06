@@ -109,6 +109,8 @@ const Container = styled.div`
   }
 
   p {
+    margin-bottom: 12px;
+
     &:first-child {
       margin-top: 0;
     }
@@ -124,16 +126,16 @@ const Container = styled.div`
 
   a {
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.coral}!important;
+    color: ${({ theme }) => theme.colors.blue180}!important;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.coralDark};
+      color: ${({ theme }) => theme.colors.darkBlue};
     }
     &:focus {
-      color: ${({ theme }) => theme.colors.coralLight};
+      color: ${({ theme }) => theme.colors.darkBlue};
     }
     &:disabled {
-      color: ${({ theme }) => theme.colors.black25};
+      color: ${({ theme }) => theme.colors.textLightGray};
     }
   }
 
