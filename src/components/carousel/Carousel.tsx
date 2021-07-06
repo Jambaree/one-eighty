@@ -134,8 +134,8 @@ const Carousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant={`styles.h2`}
-                    as="h2"
+                    variant="styles.h1"
+                    as="h1"
                     sx={{
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
