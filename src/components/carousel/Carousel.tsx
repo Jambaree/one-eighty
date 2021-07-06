@@ -305,7 +305,7 @@ const Carousel = (props) => {
                                 variant="styles.h4name"
                                 sx={{
                                   pt: 34,
-                                  mb: "5px",
+                                  mb: "10px",
                                   color: "blue180",
                                   width: 360,
                                 }}
