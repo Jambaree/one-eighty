@@ -204,28 +204,6 @@ const Tiles = (props) => {
             })}
         </Box>
       </Box>
-      <Edges size="lg">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            mb: [100],
-          }}
-        >
-          {items &&
-            items.length > 1 &&
-            items.map((o, i) => (
-              <Box
-                onClick={() => setOption(i)}
-                variant="links.hyperlink"
-                sx={{ mr: 24, textDecoration: i === option && "underline" }}
-              >
-                {o.title}
-              </Box>
-            ))}
-        </Box>
-      </Edges>
     </>
   )
 }
