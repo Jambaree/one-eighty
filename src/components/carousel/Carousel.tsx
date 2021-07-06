@@ -155,9 +155,16 @@ const Carousel = (props) => {
                   },
                   img: {
                     filter: "grayscale(100%)",
+                    border: "none",
+                    borderImage: "none",
+                    borderImageSlice: "none",
                   },
                   ".slick-current img": {
                     filter: "none",
+                    border: "1px solid transparent",
+                    borderImage:
+                      "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
+                    borderImageSlice: 1,
                   },
                   ".slick-list::before": {
                     content: "''",
@@ -201,9 +208,10 @@ const Carousel = (props) => {
                         >
                           <Box
                             sx={{
+                              width: 172,
+
                               img: {
-                                width: 172,
-                                objectFit: "contain!important",
+                                width: "100%",
                                 height: 172,
                               },
                             }}
