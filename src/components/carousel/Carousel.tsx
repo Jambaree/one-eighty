@@ -5,6 +5,7 @@ import { GatsbyImage } from "jam-cms"
 import Parser from "html-react-parser"
 
 // import app components
+import theme from "../../theme"
 import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
@@ -28,6 +29,27 @@ const Carousel = (props) => {
     fade: true,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          dots: true,
+          arrows: false,
+          customPaging: () => (
+            <div style={{ margin: "24px 0" }}>
+              <div
+                style={{
+                  height: "6px",
+                  width: "6px",
+                  borderRadius: "100%",
+                  backgroundColor: theme.colors.textLightGray,
+                }}
+              />
+            </div>
+          ),
+        },
+      },
+    ],
   }
 
   const settingsSlider2 = {
@@ -37,7 +59,7 @@ const Carousel = (props) => {
     centerMode: true,
     focusOnSelect: true,
     arrows: true,
-    prevArrow: "",
+    prevArrow: <LeftArrow />,
     nextArrow: <RightArrow />,
     responsive: [
       {
@@ -62,6 +84,20 @@ const Carousel = (props) => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          dots: true,
+          arrows: false,
+          customPaging: () => (
+            <div style={{ margin: "24px 0" }}>
+              <div
+                style={{
+                  height: "6px",
+                  width: "6px",
+                  borderRadius: "100%",
+                  backgroundColor: theme.colors.textLightGray,
+                }}
+              />
+            </div>
+          ),
         },
       },
     ],
@@ -123,8 +159,28 @@ const Carousel = (props) => {
                   ".slick-current img": {
                     filter: "none",
                   },
-                  ".slick-slide:not(.slick-active)": {
-                    opacity: 0.5,
+                  ".slick-list::before": {
+                    content: "''",
+                    position: "absolute",
+                    background: [
+                      "linear-gradient(90deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.53125) 70.76%, rgba(255, 255, 255, 0) 100%)",
+                    ],
+                    zIndex: 1,
+                    height: 258,
+                    width: [12, 225, 225],
+                    left: 0,
+                  },
+                  ".slick-list::after": {
+                    content: '""',
+                    position: "absolute",
+                    background: [
+                      "linear-gradient(90deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.53125) 70.76%, rgba(255, 255, 255, 0) 100%)",
+                    ],
+                    transform: "rotate(180deg)",
+                    height: 258,
+                    width: [80, 225, 225],
+                    top: 0,
+                    right: 0,
                   },
                 }}
               >
@@ -146,8 +202,8 @@ const Carousel = (props) => {
                           <Box
                             sx={{
                               img: {
-                                width: "100%",
-                                objectFit: "contain",
+                                width: 172,
+                                objectFit: "contain!important",
                                 height: 172,
                               },
                             }}
@@ -179,7 +235,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: ["95%", "90%", "80%"], mt: 50 }}>
+              <Box sx={{ width: ["100%", "90%", "80%"], mt: 75 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
@@ -202,22 +258,18 @@ const Carousel = (props) => {
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
                               m: "0 auto",
+
                               img: {
-                                objectFit: "contain",
-                                height: 480,
+                                objectFit: "contain!important",
+                                height: 360,
                                 width: 360,
                               },
                             }}
                           >
-                            {o.image ? (
+                            {o.image && (
                               <GatsbyImage
                                 image={o.image}
                                 alt={o.image?.altText}
-                              />
-                            ) : (
-                              <GatsbyImage
-                                image={o.defaultimage}
-                                alt={o.defaultimage?.altText}
                               />
                             )}
                           </Box>
