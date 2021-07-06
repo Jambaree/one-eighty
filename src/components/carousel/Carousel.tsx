@@ -74,11 +74,13 @@ const Carousel = (props) => {
       }}
     >
       <Box
-        sx={{
-          ".slick-next:before, .slick-prev:before": {
-            content: "none",
-          },
-        }}
+        sx={
+          {
+            // ".slick-next:before, .slick-prev:before": {
+            //   content: "none",
+            // },
+          }
+        }
       >
         <Edges size="md">
           <Box sx={{ pb: 125 }}>
@@ -123,8 +125,26 @@ const Carousel = (props) => {
                   ".slick-current img": {
                     filter: "none",
                   },
-                  ".slick-slide:not(.slick-active)": {
-                    opacity: 0.5,
+                  ".slick-list::before": {
+                    content: "''",
+                    position: "absolute",
+                    background:
+                      "linear-gradient(90deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.53125) 70.76%, rgba(255, 255, 255, 0) 100%)",
+                    zIndex: 1,
+                    height: 258,
+                    width: 225,
+                    left: 0,
+                  },
+                  ".slick-list::after": {
+                    content: '""',
+                    position: "absolute",
+                    background:
+                      "linear-gradient(90deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.53125) 70.76%, rgba(255, 255, 255, 0) 100%)",
+                    transform: "rotate(180deg)",
+                    height: 258,
+                    width: 225,
+                    top: 0,
+                    right: 0,
                   },
                 }}
               >
@@ -146,8 +166,8 @@ const Carousel = (props) => {
                           <Box
                             sx={{
                               img: {
-                                width: "100%",
-                                objectFit: "contain",
+                                width: 172,
+                                objectFit: "contain!important",
                                 height: 172,
                               },
                             }}
@@ -202,22 +222,18 @@ const Carousel = (props) => {
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
                               m: "0 auto",
+
                               img: {
-                                objectFit: "contain",
+                                objectFit: "contain!important",
                                 height: 480,
                                 width: 360,
                               },
                             }}
                           >
-                            {o.image ? (
+                            {o.image && (
                               <GatsbyImage
                                 image={o.image}
                                 alt={o.image?.altText}
-                              />
-                            ) : (
-                              <GatsbyImage
-                                image={o.defaultimage}
-                                alt={o.defaultimage?.altText}
                               />
                             )}
                           </Box>
