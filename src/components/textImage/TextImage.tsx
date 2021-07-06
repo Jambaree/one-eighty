@@ -32,11 +32,6 @@ const TextImage = (props) => {
             height: [480, "auto", "auto"],
             maxHeight: 480,
             zIndex: 1,
-            clipPath: [
-              "unset",
-              "unset",
-              "polygon(0 0, 100% 0%, 100% 100%, 0% 100%, 0% calc(100% - 24px), 180px calc(100% - 24px), 180px calc(100% - 48px), 90px calc(100% - 48px), 90px calc(100% - 24px), 0% calc(100% - 24px), 0 0)",
-            ],
           }}
         >
           {image && imageData && (
@@ -65,11 +60,6 @@ const TextImage = (props) => {
             justifyContent: "flex-end",
             backgroundColor: "blue180",
             zIndex: 2,
-            clipPath: [
-              "unset",
-              "unset",
-              "polygon(0 0%, 100% 0%, 100% calc(100% - 48px), calc(100% - 90px) calc(100% - 48px), calc(100% - 90px) calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0% 100%);",
-            ],
           }}
         >
           {headline && (
