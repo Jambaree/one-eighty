@@ -227,7 +227,13 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                          <Box sx={{ maxWidth: 360, mt: "10px" }}>
+                          <Box
+                            sx={{
+                              maxWidth: 360,
+                              mt: "10px",
+                              textAlign: "center",
+                            }}
+                          >
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
