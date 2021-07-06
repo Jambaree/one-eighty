@@ -15,7 +15,7 @@ const TextImage = (props) => {
     <Box sx={{ bg: "blue180" }}>
       <Box
         sx={{
-          height: ["auto", "auto", 480],
+          height: ["auto"],
           maxHeight: 800,
           position: "relative",
           display: "flex",
@@ -29,7 +29,7 @@ const TextImage = (props) => {
           sx={{
             width: ["100%", "100%", "calc(40% + 90px)"],
             overflow: "hidden",
-            height: [480, "auto", "auto"],
+            height: [480],
             maxHeight: 480,
             zIndex: 1,
           }}
@@ -41,6 +41,7 @@ const TextImage = (props) => {
               style={{
                 maxWidth: "100%",
                 width: "100%",
+                height: "100%",
                 objectFit: "contain",
               }}
             />
@@ -58,7 +59,7 @@ const TextImage = (props) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-end",
-            backgroundColor: "blue180",
+            backgroundColor: "transparent",
             zIndex: 2,
           }}
         >
@@ -71,6 +72,7 @@ const TextImage = (props) => {
                 width: "70%",
                 pb: 83,
                 pt: [70, 70, "unset"],
+                pr: "12px",
                 color: "white",
               }}
             />
