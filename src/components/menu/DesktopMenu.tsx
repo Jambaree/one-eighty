@@ -136,7 +136,7 @@ const MenuButton = (props: MenuButtonProps) => {
         variant="text.primaryNav"
         onClick={onOpen}
         sx={{
-          color: theme.colors.black,
+          color: active ? theme.colors.red : theme.colors.black,
           height: theme.headerHeight,
           cursor: "pointer",
           display: "flex",
