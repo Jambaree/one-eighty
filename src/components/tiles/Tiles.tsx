@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { Box, Grid, Heading, Flex } from "theme-ui"
 import Parser from "html-react-parser"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "jam-cms"
 
 // import app components
 import Textarea from "../Textarea"
@@ -9,6 +9,8 @@ import Edges from "../Edges"
 
 const Tiles = (props) => {
   const { headline, style, cards } = props
+
+  let lastItem = cards.length - 1
 
   return (
     <>
@@ -37,33 +39,32 @@ const Tiles = (props) => {
           </Edges>
 
           {cards && style === "grid" ? (
-            <Grid
-              gap={"1px"}
-              columns={[1, 2, 2]}
-              sx={{
-                height: ["auto", 708, 708],
-                // bg: ["white", "#E3E3E3", "#E3E3E3"],
-              }}
-            >
+            <Grid gap={"1px"} columns={[1, 2, 2]}>
               {cards &&
                 cards.map((o, i) => {
-                  const image =
-                    o?.image?.localFile && getImage(o.image.localFile)
                   return (
                     <Box
                       key={i}
                       sx={{
                         bg: "white",
                         p: "48px 24px",
-                        height: ["auto", 354, 354],
+                        minHeight: ["auto", 354, 354],
                         display: "flex",
-                        overflow: "scroll",
-                        borderBottom:
-                          i === 0
-                            ? "1px solid #E3E3E3"
-                            : i === 1
-                            ? "1px solid #E3E3E3"
-                            : ["1px solid #E3E3E3", "unset", "unset"],
+                        borderBottom: [
+                          i !== lastItem && "1px solid #E3E3E3",
+                          lastItem % 2 === 0 && i === lastItem
+                            ? "none"
+                            : lastItem % 2 !== 0 &&
+                              (i === lastItem || i === lastItem - 1)
+                            ? "none"
+                            : "1px solid #E3E3E3",
+                          lastItem % 2 === 0 && i === lastItem
+                            ? "none"
+                            : lastItem % 2 !== 0 &&
+                              (i === lastItem || i === lastItem - 1)
+                            ? "none"
+                            : "1px solid #E3E3E3",
+                        ],
                         borderRight:
                           i === 0
                             ? [
@@ -71,7 +72,7 @@ const Tiles = (props) => {
                                 "1px solid #E3E3E3",
                                 "1px solid #E3E3E3",
                               ]
-                            : i === 2
+                            : i % 2 === 0
                             ? [
                                 "unset",
                                 "1px solid #E3E3E3",
@@ -92,7 +93,7 @@ const Tiles = (props) => {
                             i > 1 ? "flex-start" : "flex-end",
                           ],
                           alignItems:
-                            i === 0 || i === 2
+                            i === 0 || i % 2 === 0
                               ? ["flex-start", "flex-start", "flex-end"]
                               : "flex-start",
                         }}
@@ -110,9 +111,15 @@ const Tiles = (props) => {
                             },
                           }}
                         >
-                          {o.image && (
-                            <GatsbyImage image={image} alt={o.image.altText} />
-                          )}
+                          {o.image &&
+                            (o.image?.svg ? (
+                              Parser(o.image.svg)
+                            ) : (
+                              <GatsbyImage
+                                image={o.image}
+                                alt={o.image.altText || ""}
+                              />
+                            ))}
                         </Box>
                         <Box
                           sx={{
@@ -143,8 +150,6 @@ const Tiles = (props) => {
               >
                 {cards &&
                   cards.map((o, i) => {
-                    const image2 =
-                      o.image?.localFile && getImage(o.image.localFile)
                     return (
                       <Flex
                         key={i}
@@ -164,11 +169,13 @@ const Tiles = (props) => {
                           }}
                         >
                           {o.image && (
-                            <GatsbyImage image={image2} alt={o.image.altText} />
+                            <GatsbyImage
+                              image={o.image}
+                              alt={o.image.altText}
+                            />
                           )}
                         </Box>
                         <Box
-                          variant="styles.h5"
                           sx={{
                             maxWidth: "70%",
                             textAlign: "left",

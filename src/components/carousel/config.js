@@ -15,16 +15,16 @@ const config = {
         {
           id: "heading",
           type: "text",
-          label: "Heading",
+          label: "Name",
         },
         {
           id: "subheading",
           type: "text",
-          label: "Sub Heading",
+          label: "Position",
         },
         {
           id: "text",
-          type: "text",
+          type: "wysiwyg",
           label: "Text",
           rows: 6,
         },
