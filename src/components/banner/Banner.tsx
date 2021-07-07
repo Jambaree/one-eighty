@@ -2,7 +2,7 @@ import React from "react"
 import { Box } from "theme-ui"
 
 // import app components
-import Stacked from "../../icons/one-eighty-stacked1.png"
+import Stacked from "../../icons/one-eighty-stacked.svg"
 import BackgroundImage from "../BackgroundImage"
 
 const Banner = (props) => {
@@ -26,7 +26,7 @@ const Banner = (props) => {
     >
       <Box
         sx={{
-          height: 260,
+          height: [180, 250, 250],
           "&:before": {
             content: "''",
             position: "absolute",
@@ -51,18 +51,19 @@ const Banner = (props) => {
       <Box
         sx={{
           position: "absolute",
+          top: ["-55px", "-20px", "-20px"],
           bottom: 0,
           left: 0,
+          maxWidth: ["75%", "70%", "60%"],
           p: "unset",
-          img: {
+          svg: {
             width: "100%",
-            maxHeight: "100%",
             objectFit: "contain",
             zIndex: 1,
           },
         }}
       >
-        <img src={Stacked} alt="One Eighty Logo" />
+        <Stacked />
       </Box>
     </Box>
   )
