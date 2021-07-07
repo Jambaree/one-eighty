@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { Box, Grid, Heading, Flex } from "theme-ui"
 import Parser from "html-react-parser"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "jam-cms"
 
 // import app components
 import Textarea from "../Textarea"
@@ -42,9 +42,6 @@ const Tiles = (props) => {
             <Grid gap={"1px"} columns={[1, 2, 2]}>
               {cards &&
                 cards.map((o, i) => {
-                  const image =
-                    o?.image?.localFile && getImage(o.image.localFile)
-
                   return (
                     <Box
                       key={i}
@@ -119,8 +116,8 @@ const Tiles = (props) => {
                               Parser(o.image.svg)
                             ) : (
                               <GatsbyImage
-                                image={image}
-                                alt={o.image.altText}
+                                image={o.image}
+                                alt={o.image.altText || ""}
                               />
                             ))}
                         </Box>
@@ -152,8 +149,6 @@ const Tiles = (props) => {
               >
                 {cards &&
                   cards.map((o, i) => {
-                    const image2 =
-                      o.image?.localFile && getImage(o.image.localFile)
                     return (
                       <Flex
                         key={i}
@@ -173,7 +168,10 @@ const Tiles = (props) => {
                           }}
                         >
                           {o.image && (
-                            <GatsbyImage image={image2} alt={o.image.altText} />
+                            <GatsbyImage
+                              image={o.image}
+                              alt={o.image.altText}
+                            />
                           )}
                         </Box>
                         <Box
