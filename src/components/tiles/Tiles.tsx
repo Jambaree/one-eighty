@@ -10,6 +10,8 @@ import Edges from "../Edges"
 const Tiles = (props) => {
   const { headline, style, cards } = props
 
+  let lastItem = cards.length - 1
+
   return (
     <>
       <Box
@@ -41,14 +43,14 @@ const Tiles = (props) => {
               gap={"1px"}
               columns={[1, 2, 2]}
               sx={{
-                height: ["auto", 708, 708],
-                // bg: ["white", "#E3E3E3", "#E3E3E3"],
+                height: "auto",
               }}
             >
               {cards &&
                 cards.map((o, i) => {
                   const image =
                     o?.image?.localFile && getImage(o.image.localFile)
+
                   return (
                     <Box
                       key={i}
@@ -57,13 +59,21 @@ const Tiles = (props) => {
                         p: "48px 24px",
                         height: ["auto", 354, 354],
                         display: "flex",
-                        overflow: "scroll",
-                        borderBottom:
-                          i === 0
-                            ? "1px solid #E3E3E3"
-                            : i === 1
-                            ? "1px solid #E3E3E3"
-                            : ["1px solid #E3E3E3", "unset", "unset"],
+                        borderBottom: [
+                          i !== lastItem && "1px solid #E3E3E3",
+                          lastItem % 2 === 0 && i === lastItem
+                            ? "none"
+                            : lastItem % 2 !== 0 &&
+                              (i === lastItem || i === lastItem - 1)
+                            ? "none"
+                            : "1px solid #E3E3E3",
+                          lastItem % 2 === 0 && i === lastItem
+                            ? "none"
+                            : lastItem % 2 !== 0 &&
+                              (i === lastItem || i === lastItem - 1)
+                            ? "none"
+                            : "1px solid #E3E3E3",
+                        ],
                         borderRight:
                           i === 0
                             ? [
@@ -71,7 +81,7 @@ const Tiles = (props) => {
                                 "1px solid #E3E3E3",
                                 "1px solid #E3E3E3",
                               ]
-                            : i === 2
+                            : i % 2 === 0
                             ? [
                                 "unset",
                                 "1px solid #E3E3E3",
@@ -92,7 +102,7 @@ const Tiles = (props) => {
                             i > 1 ? "flex-start" : "flex-end",
                           ],
                           alignItems:
-                            i === 0 || i === 2
+                            i === 0 || i % 2 === 0
                               ? ["flex-start", "flex-start", "flex-end"]
                               : "flex-start",
                         }}
@@ -110,7 +120,9 @@ const Tiles = (props) => {
                             },
                           }}
                         >
-                          {o.image && (
+                          {o.image && o.image?.subtype.includes("svg") ? (
+                            Parser(o.image.url)
+                          ) : (
                             <GatsbyImage image={image} alt={o.image.altText} />
                           )}
                         </Box>
