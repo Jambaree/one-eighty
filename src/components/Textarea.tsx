@@ -1,16 +1,15 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { Text } from "theme-ui"
 import { RichText } from "jam-cms"
+
+import theme from "../theme"
 
 const Textarea = (props) => {
   const { content, ...rest } = props
 
   return (
     <Container {...rest}>
-      <Text variant="text.paragraph" as="div">
-        <RichText children={content} />
-      </Text>
+      <RichText children={content} />
     </Container>
   )
 }
@@ -30,11 +29,11 @@ const Container = styled.div`
   h4,
   h5,
   h6 {
-    &:first-child {
+    &:first-of-type {
       margin-top: 0;
     }
 
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       margin-top: 2rem;
     }
   }
@@ -42,11 +41,11 @@ const Container = styled.div`
   p {
     margin-bottom: 12px;
 
-    &:first-child {
+    &:first-of-type {
       margin-top: 0;
     }
 
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       margin-top: 1rem;
     }
 
@@ -57,16 +56,16 @@ const Container = styled.div`
 
   a {
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.blue180}!important;
+    color: ${theme.colors.blue180}!important;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.darkBlue};
+      color: ${theme.colors.darkBlue};
     }
     &:focus {
-      color: ${({ theme }) => theme.colors.darkBlue};
+      color: ${theme.colors.darkBlue};
     }
     &:disabled {
-      color: ${({ theme }) => theme.colors.textLightGray};
+      color: ${theme.colors.textLightGray};
     }
   }
 
