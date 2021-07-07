@@ -143,6 +143,10 @@ const themeUi = {
       fontFamily: "body",
       fontStyle: "normal",
       color: "black",
+
+      p: {
+        variant: "text.body",
+      },
       h1: {
         variant: "text.heading",
         fontWeight: "normal",
