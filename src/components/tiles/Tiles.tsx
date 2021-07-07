@@ -48,7 +48,7 @@ const Tiles = (props) => {
                       sx={{
                         bg: "white",
                         p: "48px 24px",
-                        height: ["auto", 354, 354],
+                        minHeight: ["auto", 354, 354],
                         display: "flex",
                         borderBottom: [
                           i !== lastItem && "1px solid #E3E3E3",
@@ -175,7 +175,6 @@ const Tiles = (props) => {
                           )}
                         </Box>
                         <Box
-                          variant="styles.h5"
                           sx={{
                             maxWidth: "70%",
                             textAlign: "left",
