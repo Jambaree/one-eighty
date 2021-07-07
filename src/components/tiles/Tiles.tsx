@@ -121,6 +121,7 @@ const Tiles = (props) => {
                             textAlign: "left",
                             width: "100%",
                             maxWidth: ["100%", "100%", 432],
+                            mt: 21,
                           }}
                         >
                           {o.text && <Textarea content={o.text} />}
