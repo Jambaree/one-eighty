@@ -17,6 +17,7 @@ const Tiles = (props) => {
       <Box
         sx={{
           pt: [100, 100, 100],
+          mb: [125, 175, 225],
           position: "relative",
           overflow: "hidden",
         }}
