@@ -120,8 +120,8 @@ const Tiles = (props) => {
                             },
                           }}
                         >
-                          {o.image && o.image?.subtype.includes("svg") ? (
-                            Parser(o.image.url)
+                          {o.image && o.image?.svg ? (
+                            Parser(o.image.svg)
                           ) : (
                             <GatsbyImage image={image} alt={o.image.altText} />
                           )}
