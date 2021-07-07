@@ -138,7 +138,7 @@ const Carousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant="styles.h1"
+                    variant="styles.root.h1"
                     as="h1"
                     sx={{
                       pb: ["24px", "unset", "unset"],
@@ -227,7 +227,7 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                          <Box
+                           <Box
                             sx={{
                               maxWidth: 360,
                               mt: "10px",
@@ -237,7 +237,7 @@ const Carousel = (props) => {
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
-                                variant="styles.h6"
+                                variant="styles.root.h6"
                               />
                             )}
                             {o.subheading && (

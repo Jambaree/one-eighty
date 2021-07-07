@@ -17,6 +17,7 @@ const Tiles = (props) => {
       <Box
         sx={{
           pt: [100, 100, 100],
+          mb: [125, 175, 225],
           position: "relative",
           overflow: "hidden",
         }}
@@ -31,7 +32,7 @@ const Tiles = (props) => {
               {headline && (
                 <Heading
                   children={Parser(headline)}
-                  variant="styles.h1"
+                  variant="styles.root.h1"
                   as="h1"
                 />
               )}
@@ -128,6 +129,7 @@ const Tiles = (props) => {
                             textAlign: "left",
                             width: "100%",
                             maxWidth: ["100%", "100%", 432],
+                            mt: 21,
                           }}
                         >
                           {o.text && <Textarea content={o.text} />}
