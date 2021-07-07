@@ -32,7 +32,7 @@ const Tiles = (props) => {
               {headline && (
                 <Heading
                   children={Parser(headline)}
-                  variant="styles.h1"
+                  variant="styles.root.h1"
                   as="h1"
                 />
               )}
