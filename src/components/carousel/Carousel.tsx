@@ -11,6 +11,7 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import LeftArrow from "../../icons/arrow-left.svg"
 import RightArrow from "../../icons/arrow-right.svg"
+import Textarea from "../Textarea"
 
 const Carousel = (props) => {
   const { headline, cards } = props
@@ -114,6 +115,9 @@ const Carousel = (props) => {
           ".slick-next:before, .slick-prev:before": {
             content: "none",
           },
+          "#slider1 .slick-arrow": {
+            top: 84,
+          },
         }}
       >
         <Edges size="md">
@@ -134,8 +138,8 @@ const Carousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant="styles.root.h2"
-                    as="h2"
+                    variant="styles.root.h1"
+                    as="h1"
                     sx={{
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
@@ -155,9 +159,16 @@ const Carousel = (props) => {
                   },
                   img: {
                     filter: "grayscale(100%)",
+                    border: "none",
+                    borderImage: "none",
+                    borderImageSlice: "none",
                   },
                   ".slick-current img": {
                     filter: "none",
+                    border: "1px solid transparent",
+                    borderImage:
+                      "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
+                    borderImageSlice: 1,
                   },
                   ".slick-list::before": {
                     content: "''",
@@ -201,9 +212,10 @@ const Carousel = (props) => {
                         >
                           <Box
                             sx={{
+                              width: 172,
+
                               img: {
-                                width: 172,
-                                objectFit: "contain!important",
+                                width: "100%",
                                 height: 172,
                               },
                             }}
@@ -215,7 +227,13 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                          <Box sx={{ maxWidth: 360, mt: "10px" }}>
+                           <Box
+                            sx={{
+                              maxWidth: 360,
+                              mt: "10px",
+                              textAlign: "center",
+                            }}
+                          >
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
@@ -235,7 +253,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: ["100%", "90%", "80%"], mt: 75 }}>
+              <Box id="slider1" sx={{ width: ["100%", "90%", "87%"], mt: 75 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
@@ -261,8 +279,10 @@ const Carousel = (props) => {
 
                               img: {
                                 objectFit: "contain!important",
-                                height: 360,
-                                width: 360,
+                                height: "auto",
+                                width: 375,
+                                borderBottom: "1px solid",
+                                borderColor: "darkBlue",
                               },
                             }}
                           >
@@ -276,7 +296,7 @@ const Carousel = (props) => {
                           <Box
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
-                              pl: [0, 0, 88],
+                              pl: [0, 0, 70],
                             }}
                           >
                             {o.heading && (
@@ -285,7 +305,7 @@ const Carousel = (props) => {
                                 variant="styles.h4name"
                                 sx={{
                                   pt: 34,
-                                  mb: "5px",
+                                  mb: "10px",
                                   color: "blue180",
                                   width: 360,
                                 }}
@@ -302,13 +322,16 @@ const Carousel = (props) => {
                               />
                             )}
                             {o.text && (
-                              <Text
-                                children={Parser(o.text)}
+                              <Box
                                 variant="text.paragraph"
                                 sx={{
+                                  width: 360,
+                                  maxWidth: "100%",
                                   lineHeight: "25px",
                                 }}
-                              />
+                              >
+                                <Textarea content={o.text} />
+                              </Box>
                             )}
                           </Box>
                         </Box>
