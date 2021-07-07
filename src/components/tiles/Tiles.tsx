@@ -39,13 +39,7 @@ const Tiles = (props) => {
           </Edges>
 
           {cards && style === "grid" ? (
-            <Grid
-              gap={"1px"}
-              columns={[1, 2, 2]}
-              sx={{
-                height: "auto",
-              }}
-            >
+            <Grid gap={"1px"} columns={[1, 2, 2]}>
               {cards &&
                 cards.map((o, i) => {
                   const image =
@@ -120,11 +114,15 @@ const Tiles = (props) => {
                             },
                           }}
                         >
-                          {o.image && o.image?.svg ? (
-                            Parser(o.image.svg)
-                          ) : (
-                            <GatsbyImage image={image} alt={o.image.altText} />
-                          )}
+                          {o.image &&
+                            (o.image?.svg ? (
+                              Parser(o.image.svg)
+                            ) : (
+                              <GatsbyImage
+                                image={image}
+                                alt={o.image.altText}
+                              />
+                            ))}
                         </Box>
                         <Box
                           sx={{
