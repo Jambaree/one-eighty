@@ -1,8 +1,6 @@
-import React, { useState } from "react"
-import { IconButton, Box, Flex, Text, Button, Container } from "theme-ui"
-import { motion, AnimatePresence } from "framer-motion"
+import React from "react"
+import { Box, Flex, Container } from "theme-ui"
 import Parser from "html-react-parser"
-import { Close } from "mdi-material-ui"
 
 import Edges from "../Edges"
 import Link from "../Link"
