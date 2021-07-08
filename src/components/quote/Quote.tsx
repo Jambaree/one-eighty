@@ -1,9 +1,7 @@
 import React from "react"
-import { Box, Text, Container, Divider } from "theme-ui"
-import themeUi from "../../gatsby-plugin-theme-ui"
+import { Box, Container, Divider } from "theme-ui"
 
 // import app components
-import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Quote = (props) => {
