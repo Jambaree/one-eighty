@@ -52,6 +52,14 @@ const themeUi = {
       lineHeight: "16px",
       letterSpacing: "0.04em",
       textTransform: "uppercase",
+      cursor: "pointer",
+
+      "&:hover": {
+        color: "red",
+      },
+      "&:focus": {
+        color: "red",
+      },
     },
     quoteSliderOptions: {
       fontFamily: "body",
@@ -122,12 +130,9 @@ const themeUi = {
     hyperlink: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: 2,
-      lineHeight: "24px",
       letterSpacing: "0.01em",
-      textTransform: "uppercase",
       textDecoration: "none",
-      color: "black",
+      color: "red",
 
       "&:hover": {
         textDecoration: "underline",
@@ -146,6 +151,9 @@ const themeUi = {
 
       p: {
         variant: "text.body",
+      },
+      a: {
+        variant: "links.hyperlink",
       },
       h1: {
         variant: "text.heading",
