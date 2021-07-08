@@ -53,7 +53,6 @@ const Hero = (props) => {
 
 const Container = styled.div`
   position: relative;
-  z-index: 0;
   height: ${({ theme: { headerHeight } }) => `calc(100vh - ${headerHeight})`};
   display: flex;
   align-items: center;
@@ -65,7 +64,6 @@ const MediaContainer = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
 `
 
 const BackgroundVideoContainer = styled.div`
@@ -74,12 +72,11 @@ const BackgroundVideoContainer = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
 `
 
 const Content = styled.div`
   position: relative;
-  z-index: 4;
+  z-index: 1;
   max-width: 580px;
   display: flex;
   flex-wrap: wrap;

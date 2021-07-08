@@ -161,10 +161,10 @@ const Menu = styled.div`
 
   position: fixed;
   top: ${theme.headerHeight};
-  width: 100%;
-  height: 100vh;
+  width: calc(50%);
+  height: calc(100vh - 60px);
   right: 0;
-  z-index: -2;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -172,7 +172,6 @@ const Menu = styled.div`
   background: ${theme.colors.blue180};
   padding-top: 32px;
   padding-bottom: 32px;
-  max-height: calc(100vh - 60px);
   overflow-y: auto;
 
   @media (min-width: 1024px) {
