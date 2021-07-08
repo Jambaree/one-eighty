@@ -49,6 +49,7 @@ const Hero = (props) => {
 
 const Container = styled.div`
   position: relative;
+  z-index: 0;
   height: ${({ theme: { headerHeight } }) => `calc(100vh - ${headerHeight})`};
   display: flex;
   align-items: center;
