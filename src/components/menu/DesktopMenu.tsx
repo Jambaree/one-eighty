@@ -27,21 +27,21 @@ const DesktopMenu = (props: Props) => {
   const [activeMenuIndex, setActiveMenuIndex] = useState(null)
 
   const handleOpen = (itemIndex: number, hasSubMenu?: boolean) => {
-    if (!hasSubMenu) {
-      setActiveMenuIndex(null)
-      return
-    }
+    // if (!hasSubMenu) {
+    //   setActiveMenuIndex(null)
+    //   return
+    // }
 
     if (itemIndex === activeMenuIndex) {
-      setActiveMenuIndex(null)
+      // setActiveMenuIndex(null)
     } else {
       setActiveMenuIndex(itemIndex)
     }
   }
 
-  const handleClose = () => {
-    setActiveMenuIndex(null)
-  }
+  // const handleClose = () => {
+  //   setActiveMenuIndex(null)
+  // }
 
   return (
     <Container
@@ -87,7 +87,7 @@ const DesktopMenu = (props: Props) => {
                     onOpen={() =>
                       handleOpen(index, !!(item?.children?.length > 0))
                     }
-                    onClose={handleClose}
+                    // onClose={handleClose}
                   />
                 )
               })}
