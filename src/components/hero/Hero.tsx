@@ -3,15 +3,15 @@ import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Box } from "theme-ui"
 import { RichText } from "jam-cms"
+import { Parallax } from "react-parallax"
 
 // import app components
 import Edges from "../Edges"
-import BackgroundImage from "../BackgroundImage"
 import BackgroundVideo from "../BackgroundVideo"
 
 const Hero = (props) => {
   const { headline, image, filevideo } = props
-
+  console.log(image)
   return (
     <Container>
       <Edges size="cmd">
@@ -41,7 +41,11 @@ const Hero = (props) => {
             />
           </BackgroundVideoContainer>
         )}
-        {image && <BackgroundImage image={image} sx={{ zIndex: 1 }} />}
+        {image && (
+          <Parallax bgImage={image.url} strength={500}>
+            <div style={{ height: `calc(100vh - 60px)` }} />
+          </Parallax>
+        )}
       </MediaContainer>
     </Container>
   )
