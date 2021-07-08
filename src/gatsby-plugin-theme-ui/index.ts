@@ -130,8 +130,6 @@ const themeUi = {
     hyperlink: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: 2,
-      lineHeight: "24px",
       letterSpacing: "0.01em",
       textDecoration: "none",
       color: "red",
@@ -155,7 +153,7 @@ const themeUi = {
         variant: "text.body",
       },
       a: {
-        // variant: "links.hyperlink",
+        variant: "links.hyperlink",
       },
       h1: {
         variant: "text.heading",
