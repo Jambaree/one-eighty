@@ -164,7 +164,7 @@ const Menu = styled.div`
   width: calc(50%);
   height: calc(100vh - 60px);
   right: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
