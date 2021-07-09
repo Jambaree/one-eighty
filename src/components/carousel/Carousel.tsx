@@ -19,7 +19,7 @@ const Carousel = (props) => {
   const [nav2, setNav2] = useState()
 
   const settingsSlider1 = {
-    arrows: true,
+    arrows: false,
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
@@ -28,8 +28,6 @@ const Carousel = (props) => {
     slidesToScroll: 1,
     pauseOnHover: false,
     fade: true,
-    nextArrow: <RightArrow />,
-    prevArrow: <LeftArrow />,
     responsive: [
       {
         breakpoint: 480,
@@ -227,7 +225,7 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                           <Box
+                          <Box
                             sx={{
                               maxWidth: 360,
                               mt: "10px",
