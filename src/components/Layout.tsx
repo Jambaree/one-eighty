@@ -27,7 +27,7 @@ const Layout = (props) => {
         </Helmet>
 
         <Seo
-          siteTitle={"SnapAV"}
+          siteTitle={"One Eighty"}
           href={uri}
           seo={data?.wpPage?.seo || data?.wpPost?.seo}
         />
