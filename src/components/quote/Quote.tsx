@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Container, Divider } from "theme-ui"
 import { useInView } from "react-intersection-observer"
 import { jsx, css, keyframes } from "@emotion/react"
@@ -8,7 +8,10 @@ import Textarea from "../Textarea"
 
 const Quote = (props) => {
   const { text, backgroundcolor } = props
-  const { ref, inView, entry } = useInView({})
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+  })
+  const [animated, setAnimated] = useState(false)
 
   const fadeInLeft = keyframes`
     from {
@@ -70,6 +73,7 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
+          overflow: "hidden",
         }}
       >
         <Divider
@@ -81,8 +85,7 @@ const Quote = (props) => {
             transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
 
-            animation: inView ? `${fadeInLeft} 2s ease` : "none",
-            animationDuration: "4s",
+            animation: inView ? `${fadeInLeft} .8s ease` : "none",
           }}
         />
         <Box
@@ -105,8 +108,7 @@ const Quote = (props) => {
             display: ["none", "block"],
             transform: [null, "translateY(-3px)"],
 
-            animation: inView ? `${fadeInRight} 2s ease` : "none",
-            animationDuration: "4s",
+            animation: inView ? `${fadeInRight} .8s ease` : "none",
 
             "@media (min-width:1150px)": { mr: "112px" },
           }}

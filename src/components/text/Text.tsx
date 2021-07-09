@@ -9,7 +9,9 @@ import Textarea from "../Textarea"
 
 const Text = (props) => {
   const { text } = props
-  const { ref, inView, entry } = useInView({})
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+  })
 
   const fadeInUp = keyframes`
     from {
@@ -28,7 +30,7 @@ const Text = (props) => {
       <Edges size="cmd">
         <Box
           sx={{
-            animation: inView ? `${fadeInUp} 2s ease` : "none",
+            animation: inView ? `${fadeInUp} .8s ease` : "none",
             py: [4, 5, 6],
             pr: [0, "100px", "300px"],
           }}
