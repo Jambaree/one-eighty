@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Container, Divider } from "theme-ui"
 
 // import app components
@@ -6,9 +6,15 @@ import Textarea from "../Textarea"
 
 const Quote = (props) => {
   const { text, backgroundcolor } = props
+  const [active, setActive] = useState(false)
+
+  const fadeIn = () => {
+    setActive(true)
+  }
 
   return (
     <Container
+      onMouseOver={fadeIn}
       sx={{
         position: "relative",
         my: "50px",
@@ -44,6 +50,9 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
+
+          transition: "transform 2s",
+          transform: active ? "none" : "translateX(-1500px)",
         }}
       >
         <Divider
@@ -54,6 +63,9 @@ const Quote = (props) => {
             borderBottom: "4px solid",
             transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
+
+            transition: "opacity 6s",
+            opacity: active ? 1 : 0,
           }}
         />
         <Box
@@ -75,6 +87,10 @@ const Quote = (props) => {
             borderBottom: "4px solid",
             display: ["none", "block"],
             transform: [null, "translateY(-3px)"],
+
+            transition: "opacity 6s",
+            opacity: active ? 1 : 0,
+
             "@media (min-width:1150px)": { mr: "112px" },
           }}
         />
