@@ -1,20 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
 import { Box, Container, Divider } from "theme-ui"
+import { useInView } from "react-intersection-observer"
 
 // import app components
 import Textarea from "../Textarea"
 
 const Quote = (props) => {
   const { text, backgroundcolor } = props
-  const [active, setActive] = useState(false)
-
-  const fadeIn = () => {
-    setActive(true)
-  }
+  const { ref, inView, entry } = useInView({})
 
   return (
     <Container
-      onMouseOver={fadeIn}
+      ref={ref}
       sx={{
         position: "relative",
         my: "50px",
@@ -50,22 +47,17 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
-
-          transition: "transform 2s",
-          transform: active ? "none" : "translateX(-1500px)",
         }}
       >
         <Divider
           color="red"
+          className={inView ? "animate__fadeInLeft" : null}
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
-
-            transition: "opacity 6s",
-            opacity: active ? 1 : 0,
           }}
         />
         <Box
@@ -81,15 +73,13 @@ const Quote = (props) => {
         </Box>
         <Divider
           color="red"
+          className={inView ? "animate__animated animate__fadeInRight" : null}
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
             transform: [null, "translateY(-3px)"],
-
-            transition: "opacity 6s",
-            opacity: active ? 1 : 0,
 
             "@media (min-width:1150px)": { mr: "112px" },
           }}
