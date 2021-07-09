@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Box, Container, Divider } from "theme-ui"
 import { useInView } from "react-intersection-observer"
 import { jsx, css, keyframes } from "@emotion/react"
@@ -11,7 +11,6 @@ const Quote = (props) => {
   const { ref, inView, entry } = useInView({
     triggerOnce: true,
   })
-  const [animated, setAnimated] = useState(false)
 
   const fadeInLeft = keyframes`
     from {

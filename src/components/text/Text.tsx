@@ -16,7 +16,7 @@ const Text = (props) => {
   const fadeInUp = keyframes`
     from {
       opacity: 0;
-      transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 50px, 0);
     }
   
     to {
@@ -34,8 +34,6 @@ const Text = (props) => {
             py: [4, 5, 6],
             pr: [0, "100px", "300px"],
           }}
-          py={[4, 5, 6]}
-          pr={[0, "100px", "300px"]}
         >
           <Textarea content={text} />
         </Box>
