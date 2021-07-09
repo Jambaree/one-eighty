@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Container, Divider } from "theme-ui"
 import { useInView } from "react-intersection-observer"
+import { jsx, css, keyframes } from "@emotion/react"
 
 // import app components
 import Textarea from "../Textarea"
@@ -8,6 +9,28 @@ import Textarea from "../Textarea"
 const Quote = (props) => {
   const { text, backgroundcolor } = props
   const { ref, inView, entry } = useInView({})
+
+  const fadeInLeft = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }`
+
+  const fadeInRight = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }`
 
   return (
     <Container
@@ -51,13 +74,15 @@ const Quote = (props) => {
       >
         <Divider
           color="red"
-          className={inView ? "animate__fadeInLeft" : null}
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
+
+            animation: inView ? `${fadeInLeft} 2s ease` : "none",
+            animationDuration: "4s",
           }}
         />
         <Box
@@ -73,13 +98,15 @@ const Quote = (props) => {
         </Box>
         <Divider
           color="red"
-          className={inView ? "animate__animated animate__fadeInRight" : null}
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
             transform: [null, "translateY(-3px)"],
+
+            animation: inView ? `${fadeInRight} 2s ease` : "none",
+            animationDuration: "4s",
 
             "@media (min-width:1150px)": { mr: "112px" },
           }}
