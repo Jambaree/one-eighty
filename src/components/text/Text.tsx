@@ -11,6 +11,7 @@ const Text = (props) => {
   const { text } = props
   const { ref, inView, entry } = useInView({
     triggerOnce: true,
+    threshold: 0.25,
   })
 
   const fadeInUp = keyframes`
