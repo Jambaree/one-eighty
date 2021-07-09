@@ -82,7 +82,6 @@ const Quote = (props) => {
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
-            transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
 
             animation: inView ? `${fadeInLeft} .8s ease` : "none",
@@ -106,7 +105,6 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
-            transform: [null, "translateY(-3px)"],
 
             animation: inView ? `${fadeInRight} .8s ease` : "none",
 
