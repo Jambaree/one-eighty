@@ -91,7 +91,6 @@ const MenuButton = (props: MenuButtonProps) => {
 
   return (
     <Box
-      variant="text.primaryNav"
       sx={{
         height: theme.headerHeight,
         display: "flex",
@@ -103,7 +102,9 @@ const MenuButton = (props: MenuButtonProps) => {
         p: "unset",
       }}
     >
-      <Link {...linkProps}>{Parser(title || "")}</Link>
+      <Box variant="text.primaryNav">
+        <Link {...linkProps}>{Parser(title || "")}</Link>
+      </Box>
     </Box>
   )
 }
