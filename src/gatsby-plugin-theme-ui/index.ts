@@ -52,7 +52,6 @@ const themeUi = {
       lineHeight: "16px",
       letterSpacing: "0.04em",
       textTransform: "uppercase",
-      cursor: "pointer",
 
       "&:hover": {
         color: "red",
