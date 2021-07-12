@@ -1,16 +1,42 @@
 import React from "react"
-import { Box, Text, Container, Divider } from "theme-ui"
-import themeUi from "../../gatsby-plugin-theme-ui"
+import { Box, Container, Divider } from "theme-ui"
+import { useInView } from "react-intersection-observer"
+import { jsx, css, keyframes } from "@emotion/react"
 
 // import app components
-import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Quote = (props) => {
   const { text, backgroundcolor } = props
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+  })
+
+  const fadeInLeft = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }`
+
+  const fadeInRight = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }`
 
   return (
     <Container
+      ref={ref}
       sx={{
         position: "relative",
         my: "50px",
@@ -46,6 +72,7 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
+          overflow: "hidden",
         }}
       >
         <Divider
@@ -54,8 +81,9 @@ const Quote = (props) => {
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
-            transform: [null, "translateY(-3px)"],
             display: ["none", "block"],
+
+            animation: inView ? `${fadeInLeft} .8s ease` : "none",
           }}
         />
         <Box
@@ -76,7 +104,9 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
-            transform: [null, "translateY(-3px)"],
+
+            animation: inView ? `${fadeInRight} .8s ease` : "none",
+
             "@media (min-width:1150px)": { mr: "112px" },
           }}
         />

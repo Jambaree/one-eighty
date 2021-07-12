@@ -135,10 +135,10 @@ const themeUi = {
       color: "red",
 
       "&:hover": {
-        textDecoration: "underline",
+        textDecoration: "none",
       },
       "&:focus": {
-        textDecoration: "underline",
+        textDecoration: "none",
       },
       "&:disabled": {},
     },
