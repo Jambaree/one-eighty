@@ -19,7 +19,7 @@ const Quote = (props) => {
 
   to {
     visibility: hidden;
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-250%, 0, 0);
   }`
 
   const slideOutRight = keyframes`
@@ -29,7 +29,7 @@ const Quote = (props) => {
 
   to {
     visibility: hidden;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(250%, 0, 0);
   }`
 
   return (
@@ -86,6 +86,11 @@ const Quote = (props) => {
           sx={{
             px: ["30px", 0],
             maxWidth: "708px",
+            minHeight: "134px",
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             },
@@ -96,12 +101,12 @@ const Quote = (props) => {
               position: "absolute",
               zIndex: 0,
               height: "100%",
-              width: "75%",
+              width: "100vw",
               bg: "red",
               left: 0,
               top: 0,
 
-              animation: inView ? `${slideOutLeft} 4s ease forwards` : "none",
+              animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
             }}
           />
           <Textarea content={text} />
@@ -109,13 +114,13 @@ const Quote = (props) => {
             sx={{
               position: "absolute",
               height: "100%",
-              width: "25%",
+              width: "100vw",
               bg: "red",
               zIndex: 0,
               right: 0,
               top: 0,
 
-              animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
+              animation: inView ? `${slideOutLeft} 4s ease forwards` : "none",
             }}
           />
         </Box>
