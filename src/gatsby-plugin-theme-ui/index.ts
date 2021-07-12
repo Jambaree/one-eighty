@@ -57,7 +57,7 @@ const themeUi = {
       "&:hover": {
         color: "red",
       },
-      "&:focus": {
+      "a:focus": {
         color: "red",
       },
     },
