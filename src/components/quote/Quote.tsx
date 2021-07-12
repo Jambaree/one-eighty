@@ -12,27 +12,25 @@ const Quote = (props) => {
     triggerOnce: true,
   })
 
-  const fadeInLeft = keyframes`
+  const fadeOutLeft = keyframes`
     from {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
+    opacity: 1;
+  }
 
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }`
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }`
 
-  const fadeInRight = keyframes`
+  const fadeOutRight = keyframes`
     from {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
+    opacity: 1;
+  }
 
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }`
+  to {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }`
 
   return (
     <Container
@@ -75,6 +73,17 @@ const Quote = (props) => {
           overflow: "hidden",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            zIndex: 3,
+            height: "134px",
+            width: "100%",
+            bg: "red",
+
+            animation: inView ? `${fadeOutLeft} .8s ease forwards` : "none",
+          }}
+        />
         <Divider
           color="red"
           sx={{
@@ -82,8 +91,6 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
-
-            animation: inView ? `${fadeInLeft} .8s ease` : "none",
           }}
         />
         <Box
@@ -97,6 +104,7 @@ const Quote = (props) => {
         >
           <Textarea content={text} />
         </Box>
+
         <Divider
           color="red"
           sx={{
@@ -105,9 +113,18 @@ const Quote = (props) => {
             borderBottom: "4px solid",
             display: ["none", "block"],
 
-            animation: inView ? `${fadeInRight} .8s ease` : "none",
-
             "@media (min-width:1150px)": { mr: "112px" },
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            height: "134px",
+            width: "25%",
+            bg: "red",
+            zIndex: 3,
+
+            animation: inView ? `${fadeOutRight} .8s ease forwards` : "none",
           }}
         />
       </Box>
