@@ -12,23 +12,23 @@ const Quote = (props) => {
     triggerOnce: true,
   })
 
-  const fadeOutLeft = keyframes`
+  const slideOutLeft = keyframes`
     from {
-    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    opacity: 0;
+    visibility: hidden;
     transform: translate3d(-100%, 0, 0);
   }`
 
-  const fadeOutRight = keyframes`
+  const slideOutRight = keyframes`
     from {
-    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    opacity: 0;
+    visibility: hidden;
     transform: translate3d(100%, 0, 0);
   }`
 
@@ -73,17 +73,6 @@ const Quote = (props) => {
           overflow: "hidden",
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            zIndex: 3,
-            height: "134px",
-            width: "100%",
-            bg: "red",
-
-            animation: inView ? `${fadeOutLeft} .8s ease forwards` : "none",
-          }}
-        />
         <Divider
           color="red"
           sx={{
@@ -102,7 +91,33 @@ const Quote = (props) => {
             },
           }}
         >
+          <Box
+            sx={{
+              position: "absolute",
+              zIndex: 0,
+              height: "134px",
+              width: "calc(100% - 384px)",
+              bg: "red",
+              left: 0,
+              top: "-5px",
+
+              animation: inView ? `${slideOutLeft} 4s ease forwards` : "none",
+            }}
+          />
           <Textarea content={text} />
+          <Box
+            sx={{
+              position: "absolute",
+              height: "134px",
+              width: "calc(384px)",
+              bg: "red",
+              zIndex: 0,
+              right: 0,
+              top: "-5px",
+
+              animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
+            }}
+          />
         </Box>
 
         <Divider
@@ -114,17 +129,6 @@ const Quote = (props) => {
             display: ["none", "block"],
 
             "@media (min-width:1150px)": { mr: "112px" },
-          }}
-        />
-        <Box
-          sx={{
-            position: "absolute",
-            height: "134px",
-            width: "25%",
-            bg: "red",
-            zIndex: 3,
-
-            animation: inView ? `${fadeOutRight} .8s ease forwards` : "none",
           }}
         />
       </Box>
