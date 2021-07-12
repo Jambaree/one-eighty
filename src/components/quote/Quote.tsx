@@ -12,27 +12,25 @@ const Quote = (props) => {
     triggerOnce: true,
   })
 
-  const fadeInLeft = keyframes`
+  const slideOutLeft = keyframes`
     from {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
+    transform: translate3d(0, 0, 0);
+  }
 
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }`
+  to {
+    visibility: hidden;
+    transform: translate3d(-250%, 0, 0);
+  }`
 
-  const fadeInRight = keyframes`
+  const slideOutRight = keyframes`
     from {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
+    transform: translate3d(0, 0, 0);
+  }
 
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }`
+  to {
+    visibility: hidden;
+    transform: translate3d(250%, 0, 0);
+  }`
 
   return (
     <Container
@@ -42,6 +40,7 @@ const Quote = (props) => {
         my: "50px",
         py: "50px",
         bg: backgroundcolor,
+        overflow: "hidden",
       }}
     >
       <Box
@@ -72,7 +71,6 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
-          overflow: "hidden",
         }}
       >
         <Divider
@@ -82,21 +80,51 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
-
-            animation: inView ? `${fadeInLeft} .8s ease` : "none",
           }}
         />
         <Box
           sx={{
             px: ["30px", 0],
             maxWidth: "708px",
+            minHeight: "134px",
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             },
           }}
         >
+          <Box
+            sx={{
+              position: "absolute",
+              zIndex: 0,
+              height: "100%",
+              width: "100vw",
+              bg: "red",
+              left: 0,
+              top: 0,
+
+              animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
+            }}
+          />
           <Textarea content={text} />
+          <Box
+            sx={{
+              position: "absolute",
+              height: "100%",
+              width: "100vw",
+              bg: "red",
+              zIndex: 0,
+              right: 0,
+              top: 0,
+
+              animation: inView ? `${slideOutLeft} 4s ease forwards` : "none",
+            }}
+          />
         </Box>
+
         <Divider
           color="red"
           sx={{
@@ -104,8 +132,6 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
-
-            animation: inView ? `${fadeInRight} .8s ease` : "none",
 
             "@media (min-width:1150px)": { mr: "112px" },
           }}
