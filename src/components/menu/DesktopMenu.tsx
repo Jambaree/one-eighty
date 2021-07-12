@@ -103,7 +103,9 @@ const MenuButton = (props: MenuButtonProps) => {
       }}
     >
       <Box variant="text.primaryNav">
-        <Link {...linkProps}>{Parser(title || "")}</Link>
+        <Link {...linkProps}>
+          <Box py="8px">{Parser(title || "")}</Box>
+        </Link>
       </Box>
     </Box>
   )
