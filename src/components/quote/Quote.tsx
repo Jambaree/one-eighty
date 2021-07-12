@@ -40,6 +40,7 @@ const Quote = (props) => {
         my: "50px",
         py: "50px",
         bg: backgroundcolor,
+        overflow: "hidden",
       }}
     >
       <Box
@@ -70,7 +71,6 @@ const Quote = (props) => {
           justifyContent: "flex-end",
           alignItems: "center",
           flexWrap: "nowrap",
-          overflow: "hidden",
         }}
       >
         <Divider
@@ -95,11 +95,11 @@ const Quote = (props) => {
             sx={{
               position: "absolute",
               zIndex: 0,
-              height: "134px",
-              width: "calc(100% - 384px)",
+              height: "100%",
+              width: "75%",
               bg: "red",
               left: 0,
-              top: "-5px",
+              top: 0,
 
               animation: inView ? `${slideOutLeft} 4s ease forwards` : "none",
             }}
@@ -108,12 +108,12 @@ const Quote = (props) => {
           <Box
             sx={{
               position: "absolute",
-              height: "134px",
-              width: "calc(384px)",
+              height: "100%",
+              width: "25%",
               bg: "red",
               zIndex: 0,
               right: 0,
-              top: "-5px",
+              top: 0,
 
               animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
             }}
