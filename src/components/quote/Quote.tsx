@@ -32,6 +32,16 @@ const Quote = (props) => {
     transform: translate3d(250%, 0, 0);
   }`
 
+  const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
+
   return (
     <Container
       ref={ref}
@@ -80,6 +90,9 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
+
+            animation: inView ? `${fadeIn} 2s ease forwards` : "none",
+            animationDelay: ".3s",
           }}
         />
         <Box
@@ -99,7 +112,7 @@ const Quote = (props) => {
           <Box
             sx={{
               position: "absolute",
-              zIndex: 0,
+              zIndex: 1,
               height: "100%",
               width: "100vw",
               bg: "red",
@@ -109,14 +122,21 @@ const Quote = (props) => {
               animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
             }}
           />
-          <Textarea content={text} />
+          <Box
+            sx={{
+              animation: inView ? `${fadeIn} 2s ease forwards` : "none",
+              animationDelay: ".2s",
+            }}
+          >
+            <Textarea content={text} />
+          </Box>
           <Box
             sx={{
               position: "absolute",
               height: "100%",
               width: "100vw",
               bg: "red",
-              zIndex: 0,
+              zIndex: 1,
               right: 0,
               top: 0,
 
@@ -132,6 +152,9 @@ const Quote = (props) => {
             mx: ["10px", "25px"],
             borderBottom: "4px solid",
             display: ["none", "block"],
+
+            animation: inView ? `${fadeIn} 2s ease forwards` : "none",
+            animationDelay: ".3s",
 
             "@media (min-width:1150px)": { mr: "112px" },
           }}
