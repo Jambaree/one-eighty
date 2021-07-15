@@ -105,7 +105,7 @@ const Tiles = (props) => {
                             maxWidth: ["100%", 432, 432],
                             width: "100%",
                             textAlign: "left",
-                            img: {
+                            "svg, img": {
                               objectFit: "contain",
                               height: 40,
                               mb: "12px",
