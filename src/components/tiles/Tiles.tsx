@@ -88,15 +88,16 @@ const Tiles = (props) => {
                           display: "flex",
                           flexDirection: "column",
                           flexWrap: "nowrap",
-                          justifyContent: [
-                            "flex-start",
-                            i > 1 ? "flex-start" : "flex-end",
-                            i > 1 ? "flex-start" : "flex-end",
-                          ],
+                          justifyContent: "flex-start",
                           alignItems:
                             i === 0 || i % 2 === 0
                               ? ["flex-start", "flex-start", "flex-end"]
                               : "flex-start",
+                          pt: [
+                            0,
+                            i < 2 ? "30%" : "unset",
+                            i < 2 ? "20%" : "unset",
+                          ],
                         }}
                       >
                         <Box
