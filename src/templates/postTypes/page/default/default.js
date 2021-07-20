@@ -298,6 +298,25 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tool {
+                  fieldGroupName
+                  headline
+                  text
+                  image {
+                    altText
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: CONSTRAINED
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 80
+                        )
+                      }
+                    }
+                  }
+                }
               }
             }
             fieldGroupName
