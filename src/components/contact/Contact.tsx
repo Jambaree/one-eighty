@@ -45,7 +45,7 @@ const Contact = (props) => {
               as="h1"
               sx={{
                 color: "white",
-                mb: "16px",
+                mb: "18px",
               }}
             />
           )}
@@ -54,7 +54,10 @@ const Contact = (props) => {
               <Textarea content={address} />
             </Box>
           )}
-          <Box variant="text.body" sx={{ color: "white", mb: "16px" }}>
+          <Box
+            variant="text.body"
+            sx={{ a: { color: "white" }, mb: "27px", color: "white" }}
+          >
             {phoneone && (
               <a href={"tel:" + Parser(phoneone)}>{Parser(phoneone)}</a>
             )}
