@@ -8,7 +8,7 @@ import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Text = (props) => {
-  const { text } = props
+  const { text, lightdark, extrapadding } = props
   const { ref, inView, entry } = useInView({
     triggerOnce: true,
     threshold: 0.25,
@@ -27,7 +27,14 @@ const Text = (props) => {
   `
 
   return (
-    <Box ref={ref}>
+    <Box
+      ref={ref}
+      sx={{
+        bg: lightdark === "dark" && "blue180",
+        color: lightdark === "dark" && "white",
+        pb: extrapadding ? 125 : 25,
+      }}
+    >
       <Edges size="cmd">
         <Box
           sx={{
