@@ -56,7 +56,16 @@ const Contact = (props) => {
           )}
           <Box
             variant="text.body"
-            sx={{ a: { color: "white" }, mb: "27px", color: "white" }}
+            sx={{
+              a: {
+                color: "white",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              },
+              mb: "27px",
+              color: "white",
+            }}
           >
             {phoneone && (
               <a href={"tel:" + Parser(phoneone)}>{Parser(phoneone)}</a>
