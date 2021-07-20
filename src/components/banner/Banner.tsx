@@ -6,7 +6,7 @@ import Stacked from "../../icons/one-eighty-stacked.svg"
 import BackgroundImage from "../BackgroundImage"
 
 const Banner = (props) => {
-  const { backgroundimage, gradient } = props
+  const { backgroundimage, gradient, mt } = props
 
   const effect =
     gradient === "1"
@@ -22,11 +22,13 @@ const Banner = (props) => {
         height: "auto",
         maxWidth: "100%",
         overflow: "hidden",
+        mt: mt && 120,
       }}
     >
       <Box
         sx={{
           height: [180, 250, 250],
+
           "&:before": {
             content: "''",
             position: "absolute",
@@ -35,6 +37,7 @@ const Banner = (props) => {
             left: 0,
             width: "100%",
             height: "100%",
+
             background: effect,
             mixBlendMode: "color",
             transform: "matrix(-1, 0, 0, 1, 0, 0)",
