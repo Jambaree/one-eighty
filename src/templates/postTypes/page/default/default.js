@@ -17,6 +17,7 @@ import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
 import tool from "../../../../components/tool/Tool"
 import contact from "../../../../components/contact/Contact"
+import numlist from "../../../../components/numList/NumList"
 
 const blocks = {
   textimage,
@@ -32,6 +33,7 @@ const blocks = {
   quoteslider,
   tool,
   contact,
+  numlist,
 }
 
 const Template = (props) => {
@@ -316,6 +318,10 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Numlist {
+                  fieldGroupName
+                  text
                 }
               }
             }
