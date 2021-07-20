@@ -275,6 +275,27 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Contact {
+                  fieldGroupName
+                  headline
+                  address
+                  phoneone
+                  phonetwo
+                  email
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 1920
+                        )
+                      }
+                    }
+                  }
+                }
               }
             }
             fieldGroupName
