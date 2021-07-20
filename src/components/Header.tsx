@@ -62,7 +62,7 @@ const Header = (props) => {
               position: "relative",
               zIndex: 2,
               textDecoration: "none",
-              ".a": { fill: "charcoalDark" },
+              ".a": { fill: "black" },
             }}
           >
             <Link to="/">

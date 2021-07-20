@@ -14,14 +14,14 @@ const Content = (props) => {
     <Container
       sx={{
         bg: backgroundcolor,
-        pt: ["150px", "200px", "270px"],
+        pt: ["50px", "150px", "270px"],
         pb: ["70px", "90px", "120px"],
       }}
     >
       <Edges size="cmd">
         {heading && (
           <Heading
-            variant="styles.h1"
+            variant="styles.root.h1"
             sx={{
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             }}

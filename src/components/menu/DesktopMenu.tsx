@@ -1,8 +1,6 @@
-import React, { useState } from "react"
-import { IconButton, Box, Flex, Text, Button, Container } from "theme-ui"
-import { motion, AnimatePresence } from "framer-motion"
+import React from "react"
+import { Box, Flex, Container } from "theme-ui"
 import Parser from "html-react-parser"
-import { Close } from "mdi-material-ui"
 
 import Edges from "../Edges"
 import Link from "../Link"
@@ -23,25 +21,6 @@ interface Props {
 
 const DesktopMenu = (props: Props) => {
   const { items } = props
-
-  const [activeMenuIndex, setActiveMenuIndex] = useState(null)
-
-  const handleOpen = (itemIndex: number, hasSubMenu?: boolean) => {
-    if (!hasSubMenu) {
-      setActiveMenuIndex(null)
-      return
-    }
-
-    if (itemIndex === activeMenuIndex) {
-      setActiveMenuIndex(null)
-    } else {
-      setActiveMenuIndex(itemIndex)
-    }
-  }
-
-  const handleClose = () => {
-    setActiveMenuIndex(null)
-  }
 
   return (
     <Container
@@ -79,17 +58,7 @@ const DesktopMenu = (props: Props) => {
           >
             {items &&
               items.map((item: MenuItem, index: number) => {
-                return (
-                  <MenuButton
-                    key={item.key}
-                    item={item}
-                    active={index === activeMenuIndex}
-                    onOpen={() =>
-                      handleOpen(index, !!(item?.children?.length > 0))
-                    }
-                    onClose={handleClose}
-                  />
-                )
+                return <MenuButton key={index} item={item} />
               })}
           </Flex>
         </Flex>
@@ -101,160 +70,43 @@ const DesktopMenu = (props: Props) => {
 export default DesktopMenu
 
 interface MenuButtonProps {
-  active?: boolean
   item?: MenuItem
-  onOpen?: () => void // this is how to define a function type
-  onClose?: () => void
 }
 
 const MenuButton = (props: MenuButtonProps) => {
   const {
     item: { title, children, url },
-    onClose,
-    onOpen,
-    active,
   } = props
 
   const linkProps =
     children?.length === 0
       ? {
-          as: Link, // make Button function as a Link if no children
           to: url,
           activeStyle: {
-            "&:before": {
-              opacity: 1,
-            },
+            color: theme.colors.red,
           },
+          activeClassName: "current",
         }
       : {}
 
   return (
-    <>
-      <Button
-        {...linkProps}
-        ml="48px"
-        variant="text.primaryNav"
-        onClick={onOpen}
-        sx={{
-          color: theme.colors.black,
-          height: theme.headerHeight,
-          cursor: "pointer",
-          display: "flex",
-          position: "relative",
-          flexDirection: "row",
-          alignItems: "center",
-          m: "unset",
-          mr: 26,
-          p: "unset",
-
-          "&:hover": {
-            "&:before": {
-              opacity: 1,
-            },
-          },
-          "&:before": {
-            pointerEvents: "none",
-            content: "''",
-            opacity: active ? 1 : 0,
-            transition: "opacity 150ms ease-in-out",
-            position: "absolute",
-            bottom: 0,
-            left: "45%",
-            transform: "translateX(-50%)",
-            height: 9,
-            width: 40,
-            zIndex: 1,
-          },
-        }}
-      >
-        {Parser(title || "")}
-      </Button>
-
-      <AnimatePresence>
-        {active && children?.length > 0 && (
-          <SubMenu items={children} onClose={onClose} />
-        )}
-      </AnimatePresence>
-    </>
-  )
-}
-
-const SubMenu = (props: { items?: MenuItem[]; onClose?: () => void }) => {
-  // the types can also be defined ^here^ instead of creating an interface
-  const { items, onClose } = props
-
-  return (
-    <>
-      <Box // click away listener
-        onClick={onClose}
-        sx={{
-          zIndex: -1,
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          width: "100%",
-          height: "100vh",
-        }}
-      />
-
-      <motion.div
-        initial={{ opacity: 0, y: "-100%" }}
-        animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-        exit={{ opacity: 0, y: "-100%", transition: { duration: 0.3 } }}
-        style={{
-          zIndex: -1,
-          display: "flex",
-          padding: "85px 85px 55px",
-          background: theme.colors.blue180,
-          position: "absolute",
-          flexDirection: "column",
-          right: 0,
-          top: theme.headerHeight,
-          maxHeight: `calc(100vh - ${theme.headerHeight})`,
-          width: "50%",
-          overflow: "auto",
-        }}
-      >
-        <IconButton
-          onClick={onClose}
-          color="white"
-          sx={{
-            cursor: "pointer",
-            position: "absolute",
-            top: 40,
-            right: 40,
-            "> svg": {
-              width: "35px",
-              height: "35px",
-            },
-          }}
-        >
-          <Close />
-        </IconButton>
-
-        {items &&
-          items.map((item: MenuItem, index: number) => (
-            <Link
-              key={index}
-              to={item.url}
-              onClick={onClose}
-              aria-label={item.title}
-              title={item.title}
-              style={{
-                display: "inline-block",
-                marginBottom: "40px",
-                color: theme.colors.textGray,
-                "&:hover": {},
-              }}
-            >
-              <Text variant="desktopSubMenuItem" color="inherit">
-                {Parser(item.title || "")}
-              </Text>
-            </Link>
-          ))}
-      </motion.div>
-    </>
+    <Box
+      sx={{
+        height: theme.headerHeight,
+        display: "flex",
+        position: "relative",
+        flexDirection: "row",
+        alignItems: "center",
+        m: "unset",
+        mr: 26,
+        p: "unset",
+      }}
+    >
+      <Box variant="text.primaryNav">
+        <Link {...linkProps}>
+          <Box py="8px">{Parser(title || "")}</Box>
+        </Link>
+      </Box>
+    </Box>
   )
 }

@@ -5,11 +5,13 @@ import { GatsbyImage } from "jam-cms"
 import Parser from "html-react-parser"
 
 // import app components
+import theme from "../../theme"
 import Edges from "../Edges"
 import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import LeftArrow from "../../icons/arrow-left.svg"
 import RightArrow from "../../icons/arrow-right.svg"
+import Textarea from "../Textarea"
 
 const Carousel = (props) => {
   const { headline, cards } = props
@@ -17,7 +19,7 @@ const Carousel = (props) => {
   const [nav2, setNav2] = useState()
 
   const settingsSlider1 = {
-    arrows: true,
+    arrows: false,
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
@@ -26,8 +28,27 @@ const Carousel = (props) => {
     slidesToScroll: 1,
     pauseOnHover: false,
     fade: true,
-    nextArrow: <RightArrow />,
-    prevArrow: <LeftArrow />,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          dots: true,
+          arrows: false,
+          customPaging: () => (
+            <div style={{ margin: "24px 0" }}>
+              <div
+                style={{
+                  height: "6px",
+                  width: "6px",
+                  borderRadius: "100%",
+                  backgroundColor: theme.colors.textLightGray,
+                }}
+              />
+            </div>
+          ),
+        },
+      },
+    ],
   }
 
   const settingsSlider2 = {
@@ -37,7 +58,7 @@ const Carousel = (props) => {
     centerMode: true,
     focusOnSelect: true,
     arrows: true,
-    prevArrow: "",
+    prevArrow: <LeftArrow />,
     nextArrow: <RightArrow />,
     responsive: [
       {
@@ -62,6 +83,20 @@ const Carousel = (props) => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          dots: true,
+          arrows: false,
+          customPaging: () => (
+            <div style={{ margin: "24px 0" }}>
+              <div
+                style={{
+                  height: "6px",
+                  width: "6px",
+                  borderRadius: "100%",
+                  backgroundColor: theme.colors.textLightGray,
+                }}
+              />
+            </div>
+          ),
         },
       },
     ],
@@ -77,6 +112,9 @@ const Carousel = (props) => {
         sx={{
           ".slick-next:before, .slick-prev:before": {
             content: "none",
+          },
+          "#slider1 .slick-arrow": {
+            top: 84,
           },
         }}
       >
@@ -98,8 +136,8 @@ const Carousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant={`styles.h2`}
-                    as="h2"
+                    variant="styles.root.h1"
+                    as="h1"
                     sx={{
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
@@ -119,12 +157,39 @@ const Carousel = (props) => {
                   },
                   img: {
                     filter: "grayscale(100%)",
+                    border: "none",
+                    borderImage: "none",
+                    borderImageSlice: "none",
                   },
                   ".slick-current img": {
                     filter: "none",
+                    border: "1px solid transparent",
+                    borderImage:
+                      "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
+                    borderImageSlice: 1,
                   },
-                  ".slick-slide:not(.slick-active)": {
-                    opacity: 0.5,
+                  ".slick-list::before": {
+                    content: "''",
+                    position: "absolute",
+                    background: [
+                      "linear-gradient(90deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.53125) 70.76%, rgba(255, 255, 255, 0) 100%)",
+                    ],
+                    zIndex: 1,
+                    height: 258,
+                    width: [12, 225, 225],
+                    left: 0,
+                  },
+                  ".slick-list::after": {
+                    content: '""',
+                    position: "absolute",
+                    background: [
+                      "linear-gradient(90deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.53125) 70.76%, rgba(255, 255, 255, 0) 100%)",
+                    ],
+                    transform: "rotate(180deg)",
+                    height: 258,
+                    width: [80, 225, 225],
+                    top: 0,
+                    right: 0,
                   },
                 }}
               >
@@ -145,9 +210,10 @@ const Carousel = (props) => {
                         >
                           <Box
                             sx={{
+                              width: 172,
+
                               img: {
                                 width: "100%",
-                                objectFit: "contain",
                                 height: 172,
                               },
                             }}
@@ -159,11 +225,17 @@ const Carousel = (props) => {
                               />
                             )}
                           </Box>
-                          <Box sx={{ maxWidth: 360, mt: "10px" }}>
+                          <Box
+                            sx={{
+                              maxWidth: 360,
+                              mt: "10px",
+                              textAlign: "center",
+                            }}
+                          >
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
-                                variant="styles.h6"
+                                variant="styles.root.h6"
                               />
                             )}
                             {o.subheading && (
@@ -179,7 +251,7 @@ const Carousel = (props) => {
                     })}
                 </Slider>
               </Box>
-              <Box sx={{ width: ["95%", "90%", "80%"], mt: 50 }}>
+              <Box id="slider1" sx={{ width: ["100%", "90%", "87%"], mt: 75 }}>
                 <Slider
                   {...settingsSlider1}
                   asNavFor={nav2}
@@ -202,29 +274,27 @@ const Carousel = (props) => {
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
                               m: "0 auto",
+
                               img: {
-                                objectFit: "contain",
-                                height: 480,
-                                width: 360,
+                                objectFit: "contain!important",
+                                height: "auto",
+                                width: 375,
+                                borderBottom: "1px solid",
+                                borderColor: "darkBlue",
                               },
                             }}
                           >
-                            {o.image ? (
+                            {o.image && (
                               <GatsbyImage
                                 image={o.image}
                                 alt={o.image?.altText}
-                              />
-                            ) : (
-                              <GatsbyImage
-                                image={o.defaultimage}
-                                alt={o.defaultimage?.altText}
                               />
                             )}
                           </Box>
                           <Box
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
-                              pl: [0, 0, 88],
+                              pl: [0, 0, 70],
                             }}
                           >
                             {o.heading && (
@@ -233,7 +303,7 @@ const Carousel = (props) => {
                                 variant="styles.h4name"
                                 sx={{
                                   pt: 34,
-                                  mb: "5px",
+                                  mb: "10px",
                                   color: "blue180",
                                   width: 360,
                                 }}
@@ -250,13 +320,16 @@ const Carousel = (props) => {
                               />
                             )}
                             {o.text && (
-                              <Text
-                                children={Parser(o.text)}
+                              <Box
                                 variant="text.paragraph"
                                 sx={{
+                                  width: 360,
+                                  maxWidth: "100%",
                                   lineHeight: "25px",
                                 }}
-                              />
+                              >
+                                <Textarea content={o.text} />
+                              </Box>
                             )}
                           </Box>
                         </Box>

@@ -6,7 +6,14 @@ import Stacked from "../../icons/one-eighty-stacked.svg"
 import BackgroundImage from "../BackgroundImage"
 
 const Banner = (props) => {
-  const { backgroundimage } = props
+  const { backgroundimage, gradient } = props
+
+  const effect =
+    gradient === "1"
+      ? "linear-gradient(320.38deg, #8E0000 -31.59%, #122D4C 68%)"
+      : gradient === "2"
+      ? "linear-gradient(320.38deg, #8E0000 -31.59%, rgba(18, 45, 76, 0) 68%)"
+      : !gradient && false
 
   return (
     <Box
@@ -19,7 +26,19 @@ const Banner = (props) => {
     >
       <Box
         sx={{
-          height: [180, 240, 300],
+          height: [180, 250, 250],
+          "&:before": {
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: effect,
+            mixBlendMode: "color",
+            transform: "matrix(-1, 0, 0, 1, 0, 0)",
+          },
         }}
       >
         {backgroundimage && (
@@ -32,29 +51,14 @@ const Banner = (props) => {
       <Box
         sx={{
           position: "absolute",
-          top: 0,
-          bg: "white",
-          height: 48,
-          width: "100%",
-          clipPath: [
-            "polygon(0 0, 60% 0, 60% calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
-            "polygon(0 0, 60% 0, 60% calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
-            "polygon(0 0, calc(100% - 480px) 0, calc(100% - 480px) calc(100% - 24px), 100% calc(100% - 24px), 100% 100%, 0 100%, 0 0)",
-          ],
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          top: 38,
+          top: ["-55px", "-20px", "-20px"],
           bottom: 0,
-          left: ["-10px", "-80px", 0],
-          width: "100%",
-          maxHeight: "100%",
+          left: 0,
+          maxWidth: ["75%", "70%", "60%"],
           p: "unset",
           svg: {
-            height: "100%",
-            maxWidth: "100%",
+            width: "100%",
+            objectFit: "contain",
             zIndex: 1,
           },
         }}
