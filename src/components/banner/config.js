@@ -27,6 +27,23 @@ const config = {
         },
       ],
     },
+    {
+      id: "mt",
+      type: "select",
+      label: "Top Margin",
+      defaultValue: false,
+      instructions: "Is more margin top needed?", // optional
+      options: [
+        {
+          name: "No",
+          value: false,
+        },
+        {
+          name: "Yes",
+          value: true,
+        },
+      ],
+    },
   ],
 }
 
