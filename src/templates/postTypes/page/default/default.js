@@ -15,6 +15,7 @@ import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
 import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
+import tool from "../../../../components/tool/Tool"
 import contact from "../../../../components/contact/Contact"
 
 const blocks = {
@@ -29,6 +30,7 @@ const blocks = {
   text,
   content,
   quoteslider,
+  tool,
   contact,
 }
 
@@ -291,6 +293,25 @@ export const CollectionQuery = graphql`
                           placeholder: BLURRED
                           quality: 100
                           width: 1920
+                        )
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tool {
+                  fieldGroupName
+                  headline
+                  text
+                  image {
+                    altText
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: CONSTRAINED
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 80
                         )
                       }
                     }
