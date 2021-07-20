@@ -1,12 +1,14 @@
 import React from "react"
-import { Box, Heading } from "theme-ui"
+import { Box, Heading, Link } from "theme-ui"
 import Parser from "html-react-parser"
+// import { Link as GatsbyLink } from "gatsby"
 
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
 import theme from "../../theme"
 import BackgroundImage from "../BackgroundImage"
+import Textarea from "../Textarea"
 
 const Contact = (props) => {
   const { image, headline, address, phoneone, phonetwo, email } = props
@@ -30,25 +32,43 @@ const Contact = (props) => {
         sx={{
           bg: "blue180",
           height: 480,
-          width: "50%",
+          width: ["100%", "75%", "50%"],
           position: "relative",
           zIndex: 2,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "flex-end",
         }}
       >
-        {headline && (
-          <Heading
-            children={Parser(headline)}
-            variant="styles.root.h1"
-            as="h1"
-            sx={{
-              width: "70%",
-              pb: 83,
-              pt: [70, 70, "unset"],
-              pr: "12px",
-              color: "white",
-            }}
-          />
-        )}
+        <Box sx={{ minWidth: ["100%", "100%", 440], px: 24 }}>
+          {headline && (
+            <Heading
+              children={Parser(headline)}
+              variant="styles.root.h1"
+              as="h1"
+              sx={{
+                color: "white",
+                mb: "16px",
+              }}
+            />
+          )}
+          {address && (
+            <Box sx={{ color: "white", mb: "16px" }}>
+              <Textarea content={address} />
+            </Box>
+          )}
+          <Box variant="text.body" sx={{ color: "white", mb: "16px" }}>
+            {phoneone && (
+              <a href={"tel:" + Parser(phoneone)}>{Parser(phoneone)}</a>
+            )}
+            {" / "}
+            {phonetwo && (
+              <a href={"tel:" + Parser(phonetwo)}>{Parser(phonetwo)}</a>
+            )}
+            {" / "}
+            {email && <a href={"mailto:" + Parser(email)}>{Parser(email)}</a>}
+          </Box>
+        </Box>
       </Box>
     </Box>
   )
