@@ -217,6 +217,7 @@ const Carousel = (props) => {
                               img: {
                                 width: "100%",
                                 height: 172,
+                                objectPosition: "center top",
                               },
                             }}
                           >
