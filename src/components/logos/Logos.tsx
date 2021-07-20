@@ -21,7 +21,7 @@ const Logos = (props) => {
       <Edges size="cmd">
         {headline && (
           <Heading
-            variant="styles.h1"
+            variant="styles.root.h1"
             sx={{
               color: "blue180",
               pb: "75px",
@@ -83,7 +83,7 @@ const Logos = (props) => {
               ) : (
                 <Link activeStyle={{}} to={o.url}>
                   <Text
-                    variant="styles.h4"
+                    variant="styles.root.h4"
                     sx={{
                       color: "termsPrivacy",
                       maxWidth: "185px",

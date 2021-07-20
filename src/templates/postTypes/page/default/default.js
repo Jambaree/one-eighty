@@ -6,40 +6,34 @@ import { Box } from "theme-ui"
 import Layout from "../../../../components/Layout"
 import textimage from "../../../../components/textImage/TextImage"
 import hero from "../../../../components/hero/Hero"
-import introduction from "../../../../components/introduction/Introduction"
 import tiles from "../../../../components/tiles/Tiles"
 import testimonialslider from "../../../../components/testimonialSlider/TestimonialSlider"
 import logos from "../../../../components/logos/Logos"
-import partners from "../../../../components/partners/Partners"
 import carousel from "../../../../components/carousel/Carousel"
-import textimagepage from "../../../../components/textImagePage/TextImagePage"
-import herovideo from "../../../../components/heroVideo/HeroVideo"
 import banner from "../../../../components/banner/Banner"
-import addresses from "../../../../components/addresses/Addresses"
-import topbanner from "../../../../components/topBanner/TopBanner"
 import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
 import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
+import tool from "../../../../components/tool/Tool"
+import contact from "../../../../components/contact/Contact"
+import numlist from "../../../../components/numList/NumList"
 
 const blocks = {
   textimage,
   hero,
-  introduction,
   tiles,
   testimonialslider,
   logos,
-  partners,
   carousel,
-  textimagepage,
-  herovideo,
   banner,
-  addresses,
-  topbanner,
   quote,
   text,
   content,
   quoteslider,
+  tool,
+  contact,
+  numlist,
 }
 
 const Template = (props) => {
@@ -113,12 +107,7 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Introduction {
-                  fieldGroupName
-                  backgroundcolor
-                  headline
-                  text
-                }
+
                 ... on WpDefaultTemplate_Acf_Content_Flex_Quote {
                   fieldGroupName
                   backgroundcolor
@@ -145,6 +134,8 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Text {
                   fieldGroupName
                   text
+                  lightdark
+                  extrapadding
                 }
 
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
@@ -225,13 +216,7 @@ export const CollectionQuery = graphql`
                     title
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Topbanner {
-                  fieldGroupName
-                  headline
-                  text
-                  color
-                  bannerbackground
-                }
+
                 ... on WpDefaultTemplate_Acf_Content_Flex_Logos {
                   fieldGroupName
                   columns
@@ -256,38 +241,6 @@ export const CollectionQuery = graphql`
                   }
                 }
 
-                ... on WpDefaultTemplate_Acf_Content_Flex_Partners {
-                  fieldGroupName
-                  backgroundcolor
-                  columns
-                  headline
-                  subheading
-                  mainbutton {
-                    target
-                    title
-                    url
-                  }
-                  cards {
-                    fieldGroupName
-                    link {
-                      target
-                      title
-                      url
-                    }
-                    icon {
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 350
-                            placeholder: BLURRED
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
-                  }
-                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Carousel {
                   fieldGroupName
                   headline
@@ -310,51 +263,10 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Textimagepage {
-                  fieldGroupName
-                  mainheadline
-                  subheading
-                  mainlink {
-                    target
-                    title
-                    url
-                  }
-                  textimage {
-                    fieldGroupName
-                    alignment
-                    headline
-                    text
-                    link {
-                      target
-                      title
-                      url
-                    }
-                    image {
-                      svg
-                      altText
-                      localFile {
-                        childImageSharp {
-                          gatsbyImageData(
-                            width: 250
-                            placeholder: BLURRED
-                            quality: 100
-                          )
-                        }
-                      }
-                    }
-                  }
-                }
 
-                ... on WpDefaultTemplate_Acf_Content_Flex_Herovideo {
-                  fieldGroupName
-                  headline
-                  headlinestyle
-                  subheading
-                  videoalignment
-                  videolink
-                }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Banner {
                   fieldGroupName
+                  gradient
                   backgroundimage {
                     altText
                     sourceUrl
@@ -369,14 +281,49 @@ export const CollectionQuery = graphql`
                     }
                   }
                 }
-                ... on WpDefaultTemplate_Acf_Content_Flex_Addresses {
+                ... on WpDefaultTemplate_Acf_Content_Flex_Contact {
                   fieldGroupName
-                  columns
-                  backgroundcolor
-                  address {
-                    fieldGroupName
-                    contactinfo
+                  headline
+                  address
+                  phoneone
+                  phonetwo
+                  email
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 1920
+                        )
+                      }
+                    }
                   }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tool {
+                  fieldGroupName
+                  headline
+                  text
+                  image {
+                    altText
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: CONSTRAINED
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 80
+                        )
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Numlist {
+                  fieldGroupName
+                  text
                 }
               }
             }

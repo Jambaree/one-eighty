@@ -21,7 +21,7 @@ const Content = (props) => {
       <Edges size="cmd">
         {heading && (
           <Heading
-            variant="styles.h1"
+            variant="styles.root.h1"
             sx={{
               color: `${backgroundcolor === "blue180" ? "white" : "blue180"}`,
             }}

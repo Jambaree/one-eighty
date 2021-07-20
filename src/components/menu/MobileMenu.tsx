@@ -162,16 +162,16 @@ const Menu = styled.div`
   position: fixed;
   top: ${theme.headerHeight};
   width: calc(50%);
+  height: calc(100vh - 60px);
   right: 0;
-  z-index: -2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  background: var(--theme-ui-colors-blue180);
+  background: ${theme.colors.blue180};
   padding-top: 32px;
   padding-bottom: 32px;
-  max-height: calc(100vh - var(--theme-ui-headerHeight));
   overflow-y: auto;
 
   @media (min-width: 1024px) {

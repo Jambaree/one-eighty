@@ -52,6 +52,14 @@ const themeUi = {
       lineHeight: "16px",
       letterSpacing: "0.04em",
       textTransform: "uppercase",
+      cursor: "pointer",
+
+      "&:hover": {
+        color: "red",
+      },
+      "a:focus": {
+        color: "red",
+      },
     },
     quoteSliderOptions: {
       fontFamily: "body",
@@ -122,18 +130,15 @@ const themeUi = {
     hyperlink: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: 2,
-      lineHeight: "24px",
       letterSpacing: "0.01em",
-      textTransform: "uppercase",
       textDecoration: "none",
-      color: "black",
+      color: "red",
 
       "&:hover": {
-        textDecoration: "underline",
+        textDecoration: "none",
       },
       "&:focus": {
-        textDecoration: "underline",
+        textDecoration: "none",
       },
       "&:disabled": {},
     },
@@ -143,76 +148,82 @@ const themeUi = {
       fontFamily: "body",
       fontStyle: "normal",
       color: "black",
-    },
-    h1: {
-      variant: "text.heading",
-      fontWeight: "normal",
-      fontSize: 8,
-      lineHeight: "40px",
-      color: "blue180",
-    },
-    h2: {
-      variant: "text.heading",
-      fontWeight: "light",
-      fontSize: 9,
-      lineHeight: "60px",
-    },
-    h3: {
-      variant: "text.heading",
-      fontWeight: "light",
-      fontSize: 7,
-      lineHeight: "42px",
-    },
-    h4: {
-      variant: "text.heading",
-      fontWeight: "normal",
-      fontSize: 3,
-      lineHeight: "26px",
+
+      p: {
+        variant: "text.body",
+      },
+      a: {
+        variant: "links.hyperlink",
+      },
+      h1: {
+        variant: "text.heading",
+        fontWeight: "normal",
+        fontSize: 8,
+        lineHeight: "40px",
+        color: "blue180",
+      },
+      h2: {
+        variant: "text.heading",
+        fontWeight: "light",
+        fontSize: 9,
+        lineHeight: "60px",
+      },
+      h3: {
+        variant: "text.heading",
+        fontWeight: "light",
+        fontSize: 7,
+        lineHeight: "42px",
+      },
+      h4: {
+        variant: "text.heading",
+        fontWeight: "normal",
+        fontSize: 3,
+        lineHeight: "26px",
+      },
+      h5: {
+        variant: "text.heading",
+        fontWeight: "normal",
+        fontSize: 3,
+        lineHeight: "26px",
+        color: "textGray",
+      },
+      h6: {
+        variant: "text.heading",
+        fontWeight: "bold",
+        fontSize: 4,
+        lineHeight: "22px",
+        color: "blue180",
+      },
+      pre: {
+        fontFamily: "monospace",
+        overflowX: "auto",
+        code: {
+          color: "inherit",
+        },
+      },
+      code: {
+        fontFamily: "monospace",
+        fontSize: "inherit",
+      },
+      table: {
+        width: "100%",
+        borderCollapse: "separate",
+        borderSpacing: 0,
+      },
+      th: {
+        textAlign: "left",
+        borderBottomStyle: "solid",
+      },
+      td: {
+        textAlign: "left",
+        borderBottomStyle: "solid",
+      },
     },
     h4name: {
       variant: "text.heading",
       fontWeight: "normal",
       fontSize: 6,
       lineHeight: "22px",
-    },
-    h5: {
-      variant: "text.heading",
-      fontWeight: "normal",
-      fontSize: 3,
-      lineHeight: "26px",
-      color: "textGray",
-    },
-    h6: {
-      variant: "text.heading",
-      fontWeight: "bold",
-      fontSize: 4,
-      lineHeight: "22px",
-      color: "blue180",
-    },
-    p: {},
-    pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
-      code: {
-        color: "inherit",
-      },
-    },
-    code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
-    },
-    table: {
-      width: "100%",
-      borderCollapse: "separate",
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
     },
   },
 }

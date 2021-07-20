@@ -19,7 +19,7 @@ const Carousel = (props) => {
   const [nav2, setNav2] = useState()
 
   const settingsSlider1 = {
-    arrows: true,
+    arrows: false,
     dots: false,
     infinite: true,
     autoplaySpeed: 8000,
@@ -28,8 +28,6 @@ const Carousel = (props) => {
     slidesToScroll: 1,
     pauseOnHover: false,
     fade: true,
-    nextArrow: <RightArrow />,
-    prevArrow: <LeftArrow />,
     responsive: [
       {
         breakpoint: 480,
@@ -138,7 +136,7 @@ const Carousel = (props) => {
                 {headline && (
                   <Heading
                     children={Parser(headline)}
-                    variant="styles.h1"
+                    variant="styles.root.h1"
                     as="h1"
                     sx={{
                       pb: ["24px", "unset", "unset"],
@@ -238,7 +236,7 @@ const Carousel = (props) => {
                             {o.heading && (
                               <Heading
                                 children={Parser(o.heading)}
-                                variant="styles.h6"
+                                variant="styles.root.h6"
                               />
                             )}
                             {o.subheading && (

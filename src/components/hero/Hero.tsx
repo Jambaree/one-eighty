@@ -60,7 +60,6 @@ const MediaContainer = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
 `
 
 const BackgroundVideoContainer = styled.div`
@@ -69,12 +68,11 @@ const BackgroundVideoContainer = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
 `
 
 const Content = styled.div`
   position: relative;
-  z-index: 4;
+  z-index: 2;
   max-width: 580px;
   display: flex;
   flex-wrap: wrap;
