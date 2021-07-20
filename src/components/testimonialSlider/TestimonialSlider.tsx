@@ -216,8 +216,19 @@ const TestimonialSlider = (props) => {
           width: "100%",
           height: "100%",
           zIndex: -2,
+
           "&:before": {
-            transform: "matrix(-1, 0, 0, 1, 0, 0)",
+            content: "''",
+            position: "absolute",
+            zIndex: 2,
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background:
+              "linear-gradient(50.73deg, #8E0000 -53.59%, #122D4C 61.82%)",
+            mixBlendMode: "color",
+            transform: "rotate(180deg)",
           },
         }}
       >
