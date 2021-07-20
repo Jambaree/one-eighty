@@ -15,6 +15,7 @@ import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
 import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
+import contact from "../../../../components/contact/Contact"
 
 const blocks = {
   textimage,
@@ -28,6 +29,7 @@ const blocks = {
   text,
   content,
   quoteslider,
+  contact,
 }
 
 const Template = (props) => {
@@ -268,6 +270,27 @@ export const CollectionQuery = graphql`
                           width: 1920
                           layout: FULL_WIDTH
                           quality: 100
+                        )
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Contact {
+                  fieldGroupName
+                  headline
+                  address
+                  phoneone
+                  phonetwo
+                  email
+                  image {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: FULL_WIDTH
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 1920
                         )
                       }
                     }
