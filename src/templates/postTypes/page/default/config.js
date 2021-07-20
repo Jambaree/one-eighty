@@ -11,6 +11,7 @@ import text from "../../../../components/text/config"
 import content from "../../../../components/content/config"
 import quoteslider from "../../../../components/quoteSlider/config"
 import tool from "../../../../components/tool/config"
+import contact from "../../../../components/contact/config"
 
 const config = {
   id: "default",
@@ -43,6 +44,7 @@ const config = {
             content,
             quoteslider,
             tool,
+            contact,
           }),
         },
       ],
