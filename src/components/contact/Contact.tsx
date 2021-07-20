@@ -1,9 +1,6 @@
 import React from "react"
-import { Box, Heading, Link } from "theme-ui"
+import { Box, Heading } from "theme-ui"
 import Parser from "html-react-parser"
-// import { Link as GatsbyLink } from "gatsby"
-
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
 import theme from "../../theme"
