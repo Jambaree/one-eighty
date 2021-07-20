@@ -15,6 +15,7 @@ import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
 import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
+import contact from "../../../../components/contact/Contact"
 
 const blocks = {
   textimage,
@@ -28,6 +29,7 @@ const blocks = {
   text,
   content,
   quoteslider,
+  contact,
 }
 
 const Template = (props) => {
