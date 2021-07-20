@@ -1,7 +1,7 @@
 import React from "react"
 import { Box } from "theme-ui"
 import { useInView } from "react-intersection-observer"
-import { jsx, css, keyframes } from "@emotion/react"
+import { keyframes } from "@emotion/react"
 
 // import app components
 import Edges from "../Edges"
@@ -9,7 +9,7 @@ import Textarea from "../Textarea"
 
 const Text = (props) => {
   const { text, lightdark, extrapadding } = props
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.25,
   })
