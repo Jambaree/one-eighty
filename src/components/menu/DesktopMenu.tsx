@@ -37,6 +37,7 @@ const DesktopMenu = (props: Props) => {
         <Flex
           sx={{
             position: "relative",
+            justifyContent: "space-between",
           }}
         >
           <Box
