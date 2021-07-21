@@ -28,7 +28,7 @@ const Contact = (props) => {
       <Box
         sx={{
           bg: "blue180",
-          height: 480,
+          height: [`calc(50vh - ${theme.headerHeight})`, 480, 480],
           width: ["100%", "75%", "50%"],
           position: "relative",
           zIndex: 2,
