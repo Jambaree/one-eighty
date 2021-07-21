@@ -24,6 +24,23 @@ const config = {
         },
       ],
     },
+    {
+      id: "mb",
+      type: "select",
+      label: "Bottom Margin",
+      defaultValue: false,
+      instructions: "Is more margin needed?", // optional
+      options: [
+        {
+          name: "No",
+          value: false,
+        },
+        {
+          name: "Yes",
+          value: true,
+        },
+      ],
+    },
   ],
 }
 

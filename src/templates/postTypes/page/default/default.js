@@ -112,6 +112,7 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   backgroundcolor
                   text
+                  mb
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Content {
                   fieldGroupName
