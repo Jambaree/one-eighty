@@ -54,6 +54,7 @@ const Tool = (props) => {
                 sx={{
                   position: "relative",
                   maxWidth: ["100%", "20%", "20%"],
+                  maxHeight: 80,
                   textAlign: ["center", "right", "right"],
                   mr: [0, 43, 43],
                   my: [12, 0, 0],
@@ -61,6 +62,7 @@ const Tool = (props) => {
                   img: {
                     objectFit: "contain",
                     height: 55,
+                    width: 80,
                   },
                 }}
               >
