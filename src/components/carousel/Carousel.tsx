@@ -106,6 +106,7 @@ const Carousel = (props) => {
     <Box
       sx={{
         position: "relative",
+        mt: 100,
       }}
     >
       <Box
