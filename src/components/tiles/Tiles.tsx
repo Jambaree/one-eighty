@@ -108,7 +108,7 @@ const Tiles = (props) => {
                             textAlign: "left",
                             "svg, img": {
                               objectFit: "contain",
-                              height: 40,
+                              height: 50,
                               mb: "12px",
                             },
                           }}
@@ -164,9 +164,9 @@ const Tiles = (props) => {
                           sx={{
                             position: "relative",
                             width: "30%",
-                            img: {
+                            "img, svg": {
                               objectFit: "contain",
-                              height: 40,
+                              height: 50,
                             },
                           }}
                         >

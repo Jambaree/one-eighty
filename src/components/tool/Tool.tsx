@@ -61,7 +61,7 @@ const Tool = (props) => {
 
                   "img, svg": {
                     objectFit: "contain",
-                    height: 40,
+                    height: 50,
                   },
                 }}
               >
