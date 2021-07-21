@@ -73,10 +73,11 @@ const BackgroundVideoContainer = styled.div`
 const Content = styled.div`
   position: relative;
   z-index: 2;
-  max-width: 580px;
+  max-width: 550px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding-bottom: 185px;
 `
 
 export default Hero
