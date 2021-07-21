@@ -47,7 +47,6 @@ const TextImage = (props) => {
             />
           )}
         </Box>
-
         <Box
           sx={{
             position: ["unset", "unset", "absolute"],
@@ -55,9 +54,10 @@ const TextImage = (props) => {
             right: "unset",
             width: ["100%", null, "60%"],
             height: "100%",
+            px: "5.5%",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "left",
             justifyContent: "flex-end",
             backgroundColor: "transparent",
             zIndex: 2,
@@ -69,10 +69,9 @@ const TextImage = (props) => {
               variant="styles.root.h1"
               as="h1"
               sx={{
-                width: ["90%", "70%", "70%"],
                 pb: 83,
                 pt: [70, 70, "unset"],
-                pr: [0, "12px", "12px"],
+                pr: [0, "12px", "46px"],
                 color: "white",
               }}
             />
