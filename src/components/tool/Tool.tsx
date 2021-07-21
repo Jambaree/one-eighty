@@ -25,6 +25,7 @@ const Tool = (props) => {
             width: ["100%", "50%", "50%"],
             mb: 28,
             pl: ["unset", "17%", "15%"],
+            py: "4px",
             textAlign: ["center", "left", "left"],
           }}
         >
@@ -58,9 +59,9 @@ const Tool = (props) => {
                   mr: [0, 43, 43],
                   my: [12, 0, 0],
 
-                  img: {
+                  "img, svg": {
                     objectFit: "contain",
-                    height: 55,
+                    height: 40,
                   },
                 }}
               >

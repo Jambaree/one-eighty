@@ -1,10 +1,10 @@
 import React from "react"
 import { Box, Heading } from "theme-ui"
 import Parser from "html-react-parser"
-
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
+import theme from "../../theme"
 
 const TextImage = (props) => {
   const { image, headline } = props
@@ -29,7 +29,7 @@ const TextImage = (props) => {
           sx={{
             width: ["100%", "100%", "calc(40% + 90px)"],
             overflow: "hidden",
-            height: [480],
+            height: [`calc(50vh - ${theme.headerHeight})`, 480, 480],
             maxHeight: 480,
             zIndex: 1,
           }}
@@ -69,10 +69,10 @@ const TextImage = (props) => {
               variant="styles.root.h1"
               as="h1"
               sx={{
-                width: "70%",
+                width: ["90%", "70%", "70%"],
                 pb: 83,
                 pt: [70, 70, "unset"],
-                pr: "12px",
+                pr: [0, "12px", "12px"],
                 color: "white",
               }}
             />
