@@ -128,6 +128,9 @@ const Quote = (props) => {
             sx={{
               animation: inView ? `${fadeIn} 2s ease forwards` : "none",
               animationDelay: ".2s",
+              "*": {
+                mb: 0,
+              },
             }}
           >
             <Textarea content={text} />
