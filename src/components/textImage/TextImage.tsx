@@ -69,10 +69,10 @@ const TextImage = (props) => {
               variant="styles.root.h1"
               as="h1"
               sx={{
-                width: "70%",
+                width: ["90%", "70%", "70%"],
                 pb: 83,
                 pt: [70, 70, "unset"],
-                pr: "12px",
+                pr: [0, "12px", "12px"],
                 color: "white",
               }}
             />
