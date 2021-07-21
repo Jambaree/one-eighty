@@ -10,7 +10,9 @@ import quote from "../../../../components/quote/config"
 import text from "../../../../components/text/config"
 import content from "../../../../components/content/config"
 import quoteslider from "../../../../components/quoteSlider/config"
+import tool from "../../../../components/tool/config"
 import contact from "../../../../components/contact/config"
+import numlist from "../../../../components/numList/config"
 
 const config = {
   id: "default",
@@ -42,7 +44,9 @@ const config = {
             text,
             content,
             quoteslider,
+            tool,
             contact,
+            numlist,
           }),
         },
       ],

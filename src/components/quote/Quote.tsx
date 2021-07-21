@@ -46,9 +46,11 @@ const Quote = (props) => {
     <Container
       ref={ref}
       sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-end",
         position: "relative",
-        my: "50px",
-        py: "50px",
+        mb: 56,
         bg: backgroundcolor,
         overflow: "hidden",
       }}

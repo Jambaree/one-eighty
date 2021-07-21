@@ -15,7 +15,9 @@ import quote from "../../../../components/quote/Quote"
 import text from "../../../../components/text/Text"
 import content from "../../../../components/content/Content"
 import quoteslider from "../../../../components/quoteSlider/QuoteSlider"
+import tool from "../../../../components/tool/Tool"
 import contact from "../../../../components/contact/Contact"
+import numlist from "../../../../components/numList/NumList"
 
 const blocks = {
   textimage,
@@ -29,7 +31,9 @@ const blocks = {
   text,
   content,
   quoteslider,
+  tool,
   contact,
+  numlist,
 }
 
 const Template = (props) => {
@@ -130,6 +134,8 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Text {
                   fieldGroupName
                   text
+                  lightdark
+                  extrapadding
                 }
 
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {
@@ -261,6 +267,7 @@ export const CollectionQuery = graphql`
                 ... on WpDefaultTemplate_Acf_Content_Flex_Banner {
                   fieldGroupName
                   gradient
+                  mt
                   backgroundimage {
                     altText
                     sourceUrl
@@ -295,6 +302,29 @@ export const CollectionQuery = graphql`
                       }
                     }
                   }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Tool {
+                  fieldGroupName
+                  headline
+                  text
+                  image {
+                    altText
+                    svg
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: CONSTRAINED
+                          placeholder: BLURRED
+                          quality: 100
+                          width: 80
+                        )
+                      }
+                    }
+                  }
+                }
+                ... on WpDefaultTemplate_Acf_Content_Flex_Numlist {
+                  fieldGroupName
+                  text
                 }
               }
             }
