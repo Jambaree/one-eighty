@@ -6,7 +6,6 @@ import Parser from "html-react-parser"
 // import app components
 import Edges from "../Edges"
 import Link from "../Link"
-import { formatLink } from "../../utils"
 
 const Logos = (props) => {
   const { cards, headline, columns } = props
@@ -18,7 +17,7 @@ const Logos = (props) => {
         pb: ["120px", "180px", "240px"],
       }}
     >
-      <Edges size="cmd">
+      <Edges size="lg">
         {headline && (
           <Heading
             variant="styles.root.h1"
@@ -35,7 +34,7 @@ const Logos = (props) => {
           py: "60px",
           px: ["60px", "70px", "90px"],
           gap: "60px",
-          "@media (min-width:1200px)": { px: "140px", gap: "130px" },
+          "@media (min-width:1200px)": { px: "3%", gap: "130px" },
           mx: "20px",
 
           border: "1px solid transparent",
