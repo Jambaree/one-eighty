@@ -18,7 +18,7 @@ const Content = (props) => {
         pb: ["70px", "90px", "120px"],
       }}
     >
-      <Edges size="cmd">
+      <Edges size="lg">
         {heading && (
           <Heading
             variant="styles.root.h1"
@@ -33,9 +33,9 @@ const Content = (props) => {
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "black"}`,
             },
+            width: "53%",
+            py: 50,
           }}
-          py={"50px"}
-          pr={[0, "100px", "300px"]}
         >
           {text && <Textarea content={text} />}
         </Box>
