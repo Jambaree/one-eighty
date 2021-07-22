@@ -73,18 +73,21 @@ const TextImage = (props) => {
           ml: "auto",
         }}
       >
-        {image && imageData && (
-          <GatsbyImage
-            image={imageData}
-            alt={image?.altText || ""}
-            style={{
-              maxWidth: "100%",
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
-        )}
+        {image &&
+          (image.svg
+            ? Parser(image.svg)
+            : imageData && (
+                <GatsbyImage
+                  image={imageData}
+                  alt={image?.altText || ""}
+                  style={{
+                    maxWidth: "100%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              ))}
       </Box>
     </Box>
   )
