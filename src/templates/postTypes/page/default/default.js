@@ -294,6 +294,7 @@ export const CollectionQuery = graphql`
                   email
                   image {
                     altText
+                    svg
                     localFile {
                       childImageSharp {
                         gatsbyImageData(
