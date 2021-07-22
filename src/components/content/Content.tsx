@@ -48,6 +48,8 @@ const Content = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            background: "rgba(255, 255, 255, 0.2)",
+            p: "12px",
           }}
         >
           {image && <GatsbyImage image={image} />}
