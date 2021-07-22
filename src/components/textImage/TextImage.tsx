@@ -29,10 +29,10 @@ const TextImage = (props) => {
               width: "48%",
             },
             "@media (min-width:1400px)": {
-              width: "38%",
+              width: "36%",
             },
             "@media (min-width:1900px)": {
-              width: "34%",
+              width: "26%",
             },
           }}
         >
