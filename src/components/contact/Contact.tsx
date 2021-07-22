@@ -18,7 +18,8 @@ const Contact = (props) => {
         svg: {
           width: "100%",
           height: `calc(100vh - ${theme.headerHeight})`,
-          objectFit: "contain",
+          objectFit: "cover",
+          objectPosition: "50%",
           position: "absolute",
           zIndex: 1,
         },
