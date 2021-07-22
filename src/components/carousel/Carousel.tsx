@@ -62,13 +62,7 @@ const Carousel = (props) => {
     nextArrow: <RightArrow />,
     responsive: [
       {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 800,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 3,
         },
@@ -76,7 +70,7 @@ const Carousel = (props) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
       {
@@ -148,7 +142,7 @@ const Carousel = (props) => {
               </Box>
               <Box
                 sx={{
-                  width: "85%",
+                  width: ["100%", "100%", "85%"],
                   m: "0 auto",
 
                   ".slick-arrow": {
