@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import app components
 import theme from "../../theme"
+import Edges from "../Edges"
 
 const TextImage = (props) => {
   const { image, headline } = props
@@ -13,70 +14,65 @@ const TextImage = (props) => {
 
   return (
     <Box sx={{ bg: "blue180" }}>
+      <Edges size="lg">
+        <Box
+          sx={{
+            height: "auto",
+            maxHeight: 800,
+            position: ["relative", "relative", "absolute"],
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              width: ["100%", null, "50%"],
+              height: 480,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+              backgroundColor: "transparent",
+              zIndex: 2,
+            }}
+          >
+            {headline && (
+              <Heading
+                children={Parser(headline)}
+                variant="styles.root.h1"
+                as="h1"
+                sx={{
+                  pb: 83,
+                  pt: [70, 70, "unset"],
+                  pr: [0, "8px", "50px"],
+                  color: "white",
+                }}
+              />
+            )}
+          </Box>
+        </Box>
+      </Edges>
       <Box
         sx={{
-          height: ["auto"],
-          maxHeight: 800,
-          position: "relative",
-          display: "flex",
-          flexDirection: ["column-reverse", "column-reverse", "row-reverse"],
-          alignItems: "center",
-          justifyContent: "space-between",
+          width: ["100%", "100%", "50%"],
           overflow: "hidden",
+          height: [`calc(50vh - ${theme.headerHeight})`, 480, 480],
+          maxHeight: 480,
+          zIndex: 1,
+          ml: "auto",
         }}
       >
-        <Box
-          sx={{
-            width: ["100%", "100%", "50%"],
-            overflow: "hidden",
-            height: [`calc(50vh - ${theme.headerHeight})`, 480, 480],
-            maxHeight: 480,
-            zIndex: 1,
-          }}
-        >
-          {image && imageData && (
-            <GatsbyImage
-              image={imageData}
-              alt={image?.altText || ""}
-              style={{
-                maxWidth: "100%",
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-              }}
-            />
-          )}
-        </Box>
-        <Box
-          sx={{
-            position: ["unset", "unset", "absolute"],
-            left: ["unset", "unset", 0],
-            right: "unset",
-            width: ["100%", null, "50%"],
-            height: "100%",
-            pl: "5.5%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "left",
-            justifyContent: "flex-end",
-            backgroundColor: "transparent",
-            zIndex: 2,
-          }}
-        >
-          {headline && (
-            <Heading
-              children={Parser(headline)}
-              variant="styles.root.h1"
-              as="h1"
-              sx={{
-                pb: 83,
-                pt: [70, 70, "unset"],
-                pr: [0, "8px", "50px"],
-                color: "white",
-              }}
-            />
-          )}
-        </Box>
+        {image && imageData && (
+          <GatsbyImage
+            image={imageData}
+            alt={image?.altText || ""}
+            style={{
+              maxWidth: "100%",
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        )}
       </Box>
     </Box>
   )
