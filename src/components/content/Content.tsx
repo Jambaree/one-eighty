@@ -33,7 +33,7 @@ const Content = (props) => {
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "black"}`,
             },
-            width: "53%",
+            width: ["100%", "75%", "53%"],
             py: 50,
           }}
         >
@@ -48,6 +48,8 @@ const Content = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            background: "rgba(255, 255, 255, 0.2)",
+            p: "12px",
           }}
         >
           {image && <GatsbyImage image={image} />}
