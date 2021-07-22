@@ -35,12 +35,12 @@ const Text = (props) => {
         pb: extrapadding ? 125 : 25,
       }}
     >
-      <Edges size="cmd">
+      <Edges size="lg">
         <Box
           sx={{
             animation: inView ? `${fadeInUp} .8s ease` : "none",
             py: [4, 5, 6],
-            pr: [0, "100px", "300px"],
+            width: "65%",
           }}
         >
           <Textarea content={text} />
