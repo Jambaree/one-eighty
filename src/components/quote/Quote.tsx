@@ -1,14 +1,14 @@
 import React from "react"
 import { Box, Container, Divider } from "theme-ui"
 import { useInView } from "react-intersection-observer"
-import { jsx, css, keyframes } from "@emotion/react"
+import { keyframes } from "@emotion/react"
 
 // import app components
 import Textarea from "../Textarea"
 
 const Quote = (props) => {
-  const { text, backgroundcolor } = props
-  const { ref, inView, entry } = useInView({
+  const { text, backgroundcolor, mb } = props
+  const { ref, inView } = useInView({
     triggerOnce: true,
   })
 
@@ -50,7 +50,7 @@ const Quote = (props) => {
         alignItems: "center",
         justifyContent: "flex-end",
         position: "relative",
-        mb: 56,
+        mb: mb ? 270 : 56,
         bg: backgroundcolor,
         overflow: "hidden",
       }}
@@ -90,7 +90,7 @@ const Quote = (props) => {
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
-            borderBottom: "4px solid",
+            borderBottom: "2px solid",
             display: ["none", "block"],
 
             animation: inView ? `${fadeIn} 2s ease forwards` : "none",
@@ -128,6 +128,9 @@ const Quote = (props) => {
             sx={{
               animation: inView ? `${fadeIn} 2s ease forwards` : "none",
               animationDelay: ".2s",
+              "*": {
+                mb: 0,
+              },
             }}
           >
             <Textarea content={text} />
@@ -152,7 +155,7 @@ const Quote = (props) => {
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
-            borderBottom: "4px solid",
+            borderBottom: "2px solid",
             display: ["none", "block"],
 
             animation: inView ? `${fadeIn} 2s ease forwards` : "none",

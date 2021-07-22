@@ -14,7 +14,7 @@ const Hero = (props) => {
 
   return (
     <Container>
-      <Edges size="cmd">
+      <Edges size="lg">
         <Content>
           {headline && (
             <Box

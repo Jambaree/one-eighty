@@ -27,7 +27,7 @@ const TextImage = (props) => {
       >
         <Box
           sx={{
-            width: ["100%", "100%", "calc(40% + 90px)"],
+            width: ["100%", "100%", "50%"],
             overflow: "hidden",
             height: [`calc(50vh - ${theme.headerHeight})`, 480, 480],
             maxHeight: 480,
@@ -47,17 +47,17 @@ const TextImage = (props) => {
             />
           )}
         </Box>
-
         <Box
           sx={{
             position: ["unset", "unset", "absolute"],
             left: ["unset", "unset", 0],
             right: "unset",
-            width: ["100%", null, "60%"],
+            width: ["100%", null, "50%"],
             height: "100%",
+            pl: "5.5%",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "left",
             justifyContent: "flex-end",
             backgroundColor: "transparent",
             zIndex: 2,
@@ -69,10 +69,9 @@ const TextImage = (props) => {
               variant="styles.root.h1"
               as="h1"
               sx={{
-                width: ["90%", "70%", "70%"],
                 pb: 83,
                 pt: [70, 70, "unset"],
-                pr: [0, "12px", "12px"],
+                pr: [0, "8px", "8px"],
                 color: "white",
               }}
             />
