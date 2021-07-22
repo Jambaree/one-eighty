@@ -90,9 +90,9 @@ const Quote = (props) => {
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
+            mt: "15px",
             borderBottom: "2px solid",
             display: ["none", "block"],
-
             animation: inView ? `${fadeIn} 2s ease forwards` : "none",
             animationDelay: ".3s",
           }}
@@ -155,9 +155,9 @@ const Quote = (props) => {
           sx={{
             width: ["20px", "40px", "135px"],
             mx: ["10px", "25px"],
+            mt: "15px",
             borderBottom: "2px solid",
             display: ["none", "block"],
-
             animation: inView ? `${fadeIn} 2s ease forwards` : "none",
             animationDelay: ".3s",
 
