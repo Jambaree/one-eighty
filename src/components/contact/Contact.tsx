@@ -11,7 +11,18 @@ const Contact = (props) => {
   const { image, headline, address, phoneone, phonetwo, email } = props
 
   return (
-    <Box sx={{ height: `calc(100vh - ${theme.headerHeight})` }}>
+    <Box
+      sx={{
+        height: `calc(100vh - ${theme.headerHeight})`,
+        svg: {
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+          position: "absolute",
+          zIndex: 1,
+        },
+      }}
+    >
       {image &&
         (image.svg ? (
           Parser(image?.svg)
