@@ -71,7 +71,7 @@ const TextImage = (props) => {
               sx={{
                 pb: 83,
                 pt: [70, 70, "unset"],
-                pr: [0, "8px", "8px"],
+                pr: [0, "8px", "50px"],
                 color: "white",
               }}
             />
