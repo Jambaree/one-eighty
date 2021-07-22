@@ -21,12 +21,24 @@ const TextImage = (props) => {
             maxHeight: 800,
             position: ["relative", "relative", "absolute"],
             overflow: "hidden",
+
+            "@media (min-width:830px)": {
+              width: "50%",
+            },
+            "@media (min-width:1000px)": {
+              width: "48%",
+            },
+            "@media (min-width:1400px)": {
+              width: "38%",
+            },
+            "@media (min-width:1900px)": {
+              width: "34%",
+            },
           }}
         >
           <Box
             sx={{
               position: "relative",
-              width: ["100%", null, "50%"],
               height: 480,
               display: "flex",
               flexDirection: "column",
