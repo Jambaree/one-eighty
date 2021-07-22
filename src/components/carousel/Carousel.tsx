@@ -119,7 +119,7 @@ const Carousel = (props) => {
           },
         }}
       >
-        <Edges size="md">
+        <Edges size="lg">
           <Box sx={{ pb: 125 }}>
             <Box>
               <Box
@@ -142,16 +142,14 @@ const Carousel = (props) => {
                     sx={{
                       pb: ["24px", "unset", "unset"],
                       pr: "10px",
-                      pl: [0, "15px", "30px"],
                     }}
                   />
                 )}
               </Box>
               <Box
                 sx={{
-                  width: "100%",
-                  pl: [0, "15px", "15px"],
-                  pr: [24, 0, 0],
+                  width: "85%",
+                  m: "0 auto",
 
                   ".slick-arrow": {
                     transform: "translateY(-40px)",
