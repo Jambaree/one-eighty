@@ -9,7 +9,7 @@ const NumberedList = (props) => {
   const { text } = props
 
   return (
-    <Edges size="cmd">
+    <Edges size="lg">
       <Box
         variant="styles.root.h5"
         sx={{
