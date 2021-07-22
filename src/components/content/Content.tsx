@@ -33,7 +33,7 @@ const Content = (props) => {
             "div > *": {
               color: `${backgroundcolor === "blue180" ? "white" : "black"}`,
             },
-            width: "53%",
+            width: ["100%", "75%", "53%"],
             py: 50,
           }}
         >

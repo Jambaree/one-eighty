@@ -40,7 +40,7 @@ const Text = (props) => {
           sx={{
             animation: inView ? `${fadeInUp} .8s ease` : "none",
             py: [4, 5, 6],
-            width: "65%",
+            width: ["100%", "65%", "65%"],
           }}
         >
           <Textarea content={text} />
