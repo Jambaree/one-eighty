@@ -14,10 +14,9 @@ const Contact = (props) => {
     <Box
       sx={{
         height: `calc(100vh - ${theme.headerHeight})`,
-
         svg: {
           width: "100%",
-          height: `calc(100vh - ${theme.headerHeight})`,
+          height: "100%",
           objectFit: "contain",
           position: "absolute",
           zIndex: 1,
