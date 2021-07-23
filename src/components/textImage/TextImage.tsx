@@ -23,13 +23,13 @@ const TextImage = (props) => {
             overflow: "hidden",
 
             "@media (min-width:830px)": {
-              width: "50%",
-            },
-            "@media (min-width:1000px)": {
               width: "48%",
             },
+            "@media (min-width:1000px)": {
+              width: "46%",
+            },
             "@media (min-width:1400px)": {
-              width: "36%",
+              width: "35%",
             },
             "@media (min-width:1900px)": {
               width: "26%",
