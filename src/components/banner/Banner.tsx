@@ -1,6 +1,5 @@
 import React from "react"
 import { Box } from "theme-ui"
-import Parser from "html-react-parser"
 
 // import app components
 import Stacked from "../../icons/one-eighty-stacked.svg"
@@ -45,15 +44,12 @@ const Banner = (props) => {
           },
         }}
       >
-        {backgroundimage &&
-          (backgroundimage.svg ? (
-            Parser(backgroundimage?.svg)
-          ) : (
-            <BackgroundImage
-              image={backgroundimage}
-              alt={backgroundimage.altText}
-            />
-          ))}
+        {backgroundimage && (
+          <BackgroundImage
+            image={backgroundimage}
+            alt={backgroundimage.altText}
+          />
+        )}
       </Box>
       <Box
         sx={{

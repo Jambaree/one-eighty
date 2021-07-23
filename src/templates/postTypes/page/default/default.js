@@ -272,7 +272,6 @@ export const CollectionQuery = graphql`
                   mt
                   backgroundimage {
                     altText
-                    svg
                     sourceUrl
                     localFile {
                       childImageSharp {
