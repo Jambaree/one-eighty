@@ -144,7 +144,6 @@ export const CollectionQuery = graphql`
                   headline
                   image {
                     altText
-                    svg
                     localFile {
                       childImageSharp {
                         gatsbyImageData(
