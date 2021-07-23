@@ -12,22 +12,19 @@ const Contact = (props) => {
 
   return (
     <Box sx={{ height: `calc(100vh - ${theme.headerHeight})` }}>
-      {image &&
-        (image.svg ? (
-          Parser(image?.svg)
-        ) : (
-          <BackgroundImage
-            image={image}
-            alt={image?.altText || ""}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              position: "absolute",
-              zIndex: 1,
-            }}
-          />
-        ))}
+      {image && (
+        <BackgroundImage
+          image={image}
+          alt={image?.altText || ""}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            position: "absolute",
+            zIndex: 1,
+          }}
+        />
+      )}
       <Box
         sx={{
           bg: "blue180",
