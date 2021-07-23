@@ -85,24 +85,22 @@ const QuoteSlider = (props) => {
           position: "relative",
           display: "flex",
           justifyContent: "center",
+          my: ["100px", 0],
           flexDirection: "column",
           background:
             "linear-gradient(270deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.9) 32.29%, #FFFFFF 50.8%, rgba(255, 255, 255, 0.9) 69.27%, rgba(255, 255, 255, 0.65) 100%)",
           backdropFilter: "blur(10px)",
-
           ".slick-slider": {
             position: "relative",
             height: "100%",
             my: "auto",
             display: "flex !important",
-
             ".slick-list": {
               textAlign: "center",
               position: "relative",
               my: "auto",
               display: "flex",
               flexDirection: "column",
-
               ".slick-track": {
                 height: "100%",
                 my: "auto",
@@ -110,7 +108,6 @@ const QuoteSlider = (props) => {
                 alignItems: "center",
               },
             },
-
             ".slick-dots": {
               position: "absolute",
               display: "flex !important",
@@ -218,17 +215,14 @@ const QuoteSlider = (props) => {
           },
         }}
       >
-        {image &&
-          (image.svg ? (
-            Parser(image?.svg)
-          ) : (
-            <BackgroundImage
-              image={image}
-              sx={{
-                zIndex: -3,
-              }}
-            />
-          ))}
+        {image && (
+          <BackgroundImage
+            image={image}
+            sx={{
+              zIndex: -3,
+            }}
+          />
+        )}
       </Box>
     </Box>
   )
