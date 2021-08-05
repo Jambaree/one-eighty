@@ -39,7 +39,7 @@ const themeUi = {
     paragraph: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: 2,
+      fontSize: "17px",
       lineHeight: "24px",
       letterSpacing: "0.01em",
       color: "textGray",
@@ -95,7 +95,7 @@ const themeUi = {
     body: {
       fontFamily: "body",
       fontWeight: "normal",
-      fontSize: 2,
+      fontSize: "17px",
       lineHeight: "24px",
       letterSpacing: "0.01em",
     },
