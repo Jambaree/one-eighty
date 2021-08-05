@@ -23,9 +23,29 @@ const config = {
       label: "Phone 1",
     },
     {
-      id: "phonetwo",
+      id: "facebook",
       type: "text",
-      label: "Phone 2",
+      label: "Facebook",
+    },
+    {
+      id: "instagram",
+      type: "text",
+      label: "Instagram",
+    },
+    {
+      id: "linkedin",
+      type: "text",
+      label: "LinkedIn",
+    },
+    {
+      id: "twitter",
+      type: "text",
+      label: "Twitter",
+    },
+    {
+      id: "youtube",
+      type: "text",
+      label: "Youtube",
     },
     {
       id: "email",

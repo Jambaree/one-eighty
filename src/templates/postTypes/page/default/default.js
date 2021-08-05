@@ -289,7 +289,11 @@ export const CollectionQuery = graphql`
                   headline
                   address
                   phoneone
-                  phonetwo
+                  instagram
+                  facebook
+                  linkedin
+                  twitter
+                  youtube
                   email
                   image {
                     altText

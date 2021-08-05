@@ -6,9 +6,21 @@ import Parser from "html-react-parser"
 import theme from "../../theme"
 import BackgroundImage from "../BackgroundImage"
 import Textarea from "../Textarea"
+import Socials from "../Socials"
 
 const Contact = (props) => {
-  const { image, headline, address, phoneone, phonetwo, email } = props
+  const {
+    image,
+    headline,
+    address,
+    phoneone,
+    email,
+    instagram,
+    facebook,
+    linkedin,
+    twitter,
+    youtube,
+  } = props
 
   return (
     <Box sx={{ height: `calc(100vh - ${theme.headerHeight})` }}>
@@ -71,11 +83,28 @@ const Contact = (props) => {
               <a href={"tel:" + Parser(phoneone)}>{Parser(phoneone)}</a>
             )}
             {" / "}
-            {phonetwo && (
-              <a href={"tel:" + Parser(phonetwo)}>{Parser(phonetwo)}</a>
-            )}
-            {" / "}
             {email && <a href={"mailto:" + Parser(email)}>{Parser(email)}</a>}
+          </Box>
+          <Box
+            variant="text.body"
+            sx={{
+              a: {
+                color: "white",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              },
+              mb: "27px",
+              color: "white",
+              "@media (min-width: 640px)": {
+                transform: "translateX(-10px)",
+              },
+            }}
+          >
+            <Socials
+              color="white"
+              socials={{ instagram, facebook, linkedin, twitter, youtube }}
+            />
           </Box>
         </Box>
       </Box>
