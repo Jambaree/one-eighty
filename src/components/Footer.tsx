@@ -7,12 +7,20 @@ import Parser from "html-react-parser"
 import Logo from "../icons/footer-logo.svg"
 import Link from "../components/Link"
 import { formatLink } from "../utils"
+import Socials from "./Socials"
 
 const Footer = (props) => {
   const {
     pageContext: {
       themeOptions: {
-        footer: { footermenu, legalmenu },
+        footer: {
+          footermenu,
+          legalmenu,
+          facebook,
+          instagram,
+          twitter,
+          linkedin,
+        },
       },
     },
   } = props
@@ -89,6 +97,11 @@ const Footer = (props) => {
                 </Link>
               )
             })}
+          <Socials
+            color="white"
+            socials={{ instagram, facebook, linkedin, twitter }}
+          />
+
           {legalmenu &&
             legalmenu.map((o, i) => {
               return (
