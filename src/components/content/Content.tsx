@@ -14,8 +14,7 @@ const Content = (props) => {
     <Container
       sx={{
         bg: backgroundcolor,
-        pt: ["50px", "150px", "270px"],
-        pb: ["70px", "90px", "120px"],
+        py: [4, 5, 6],
       }}
     >
       <Edges size="lg">
