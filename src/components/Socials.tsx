@@ -8,6 +8,7 @@ import FacebookIcon from "../icons/facebook.svg"
 import TwitterIcon from "../icons/twitter.svg"
 import InstagramIcon from "../icons/instagram.svg"
 import LinkedIn from "../icons/linkedin.svg"
+import Youtube from "../icons/youtube.svg"
 import Link from "../components/Link"
 import { ThemeCard } from "@theme-ui/style-guide"
 import theme from "../theme"
@@ -15,7 +16,7 @@ import theme from "../theme"
 const Socials: React.FC<Props> = (props: Props) => {
   const {
     color,
-    socials: { instagram, facebook, linkedin, twitter },
+    socials: { instagram, facebook, linkedin, twitter, youtube },
   } = props
 
   return (
@@ -91,6 +92,30 @@ const Socials: React.FC<Props> = (props: Props) => {
             }}
           >
             <LinkedIn />
+          </IconButton>
+        </LinkButton>
+      )}
+      {youtube && (
+        <LinkButton
+          color={color}
+          to={linkedin}
+          target="_blank"
+          rel="noreferrer nofollow"
+          aria-label="Linkedin"
+        >
+          <IconButton
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+                svg: {
+                  path: {
+                    fill: "red",
+                  },
+                },
+              },
+            }}
+          >
+            <Youtube />
           </IconButton>
         </LinkButton>
       )}

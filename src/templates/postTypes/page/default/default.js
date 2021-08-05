@@ -137,6 +137,7 @@ export const CollectionQuery = graphql`
                   text
                   lightdark
                   extrapadding
+                  fade
                 }
 
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {

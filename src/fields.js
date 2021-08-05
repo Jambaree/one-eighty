@@ -69,6 +69,11 @@ const fields = {
           label: "Twitter",
         },
         {
+          id: "youtube",
+          type: "text",
+          label: "Youtube",
+        },
+        {
           id: "legalmenu",
           type: "menu",
           label: "Legal Menu",

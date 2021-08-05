@@ -8,7 +8,7 @@ import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Text = (props) => {
-  const { text, lightdark, extrapadding } = props
+  const { text, lightdark, extrapadding, fade } = props
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.25,
@@ -25,6 +25,14 @@ const Text = (props) => {
       transform: translate3d(0, 0, 0);
     }
   `
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+  
+    to {
+      opacity: 1;
+    }
+  `
 
   return (
     <Box
@@ -38,7 +46,11 @@ const Text = (props) => {
       <Edges size="lg">
         <Box
           sx={{
-            animation: inView ? `${fadeInUp} .8s ease` : "none",
+            animation: inView
+              ? `${fade === "fadein" ? fadeIn : fadeInUp} ${
+                  fade === "fadein" ? "5s ease" : ".8s ease"
+                }`
+              : "none",
             py: [4, 5, 6],
             width: ["100%", "65%", "65%"],
           }}

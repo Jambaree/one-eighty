@@ -20,6 +20,7 @@ const Footer = (props) => {
           instagram,
           twitter,
           linkedin,
+          youtube,
         },
       },
     },
@@ -99,7 +100,7 @@ const Footer = (props) => {
             })}
           <Socials
             color="white"
-            socials={{ instagram, facebook, linkedin, twitter }}
+            socials={{ instagram, facebook, linkedin, twitter, youtube }}
           />
 
           {legalmenu &&
