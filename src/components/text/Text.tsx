@@ -11,7 +11,7 @@ const Text = (props) => {
   const { text, lightdark, extrapadding, fade } = props
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: fade === "fadein" ? 0 : 0.25,
   })
 
   const fadeInUp = keyframes`
@@ -31,6 +31,7 @@ const Text = (props) => {
   
     to {
       opacity: 1;
+     
     }
   `
 
