@@ -20,6 +20,23 @@ const config = {
       ],
     },
     {
+      id: "fade",
+      type: "select",
+      label: "FadeIn or FadeUp",
+      defaultValue: "fadeup",
+      instructions: "Choose the preferred fade animation for text", // optional
+      options: [
+        {
+          name: "FadeUp",
+          value: "fadeup",
+        },
+        {
+          name: "FadeIn",
+          value: "fadein",
+        },
+      ],
+    },
+    {
       id: "text",
       type: "wysiwyg",
       label: "Text",

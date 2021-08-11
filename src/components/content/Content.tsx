@@ -14,8 +14,7 @@ const Content = (props) => {
     <Container
       sx={{
         bg: backgroundcolor,
-        pt: ["50px", "150px", "270px"],
-        pb: ["70px", "90px", "120px"],
+        py: [4, 5, 6],
       }}
     >
       <Edges size="lg">
@@ -34,7 +33,7 @@ const Content = (props) => {
               color: `${backgroundcolor === "blue180" ? "white" : "black"}`,
             },
             width: ["100%", "75%", "53%"],
-            py: 50,
+            pb: 50,
           }}
         >
           {text && <Textarea content={text} />}

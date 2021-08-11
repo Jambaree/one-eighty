@@ -1,70 +1,137 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { graphql, useStaticQuery } from "gatsby"
+import { IconButton } from "theme-ui"
 
 // import app components
 import FacebookIcon from "../icons/facebook.svg"
 import TwitterIcon from "../icons/twitter.svg"
 import InstagramIcon from "../icons/instagram.svg"
-import YoutubeIcon from "../icons/youtube.svg"
-
-interface Props {
-  socials?: {
-    instagram?: string
-    facebook?: string
-    youtube?: string
-    twitter?: string
-  }
-}
+import LinkedIn from "../icons/linkedin.svg"
+import Youtube from "../icons/youtube.svg"
+import Link from "../components/Link"
+import { ThemeCard } from "@theme-ui/style-guide"
+import theme from "../theme"
 
 const Socials: React.FC<Props> = (props: Props) => {
   const {
-    socials: { instagram, facebook, youtube, twitter },
+    color,
+    socials: { instagram, facebook, linkedin, twitter, youtube },
   } = props
 
   return (
     <Container>
       {facebook && (
-        <Link
-          href={facebook}
+        <LinkButton
+          color={color}
+          to={facebook}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Facebook"
         >
-          <FacebookIcon />
-        </Link>
+          <IconButton
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+                svg: {
+                  path: {
+                    fill: "red",
+                  },
+                },
+              },
+            }}
+          >
+            <FacebookIcon />
+          </IconButton>
+        </LinkButton>
       )}
 
       {instagram && (
-        <Link
-          href={instagram}
+        <LinkButton
+          color={color}
+          to={instagram}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
         >
-          <InstagramIcon />
-        </Link>
+          <IconButton
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+                svg: {
+                  path: {
+                    fill: "red",
+                  },
+                },
+              },
+            }}
+          >
+            <InstagramIcon />
+          </IconButton>
+        </LinkButton>
       )}
 
-      {youtube && (
-        <Link
-          href={youtube}
+      {linkedin && (
+        <LinkButton
+          color={color}
+          to={linkedin}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
         >
-          <YoutubeIcon />
-        </Link>
+          <IconButton
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+                svg: {
+                  path: {
+                    fill: "red",
+                  },
+                },
+              },
+            }}
+          >
+            <LinkedIn />
+          </IconButton>
+        </LinkButton>
+      )}
+      {youtube && (
+        <LinkButton
+          color={color}
+          to={linkedin}
+          target="_blank"
+          rel="noreferrer nofollow"
+          aria-label="Linkedin"
+        >
+          <IconButton
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+                svg: {
+                  path: {
+                    fill: "red",
+                  },
+                },
+              },
+            }}
+          >
+            <Youtube />
+          </IconButton>
+        </LinkButton>
       )}
 
       {twitter && (
-        <Link
-          href={twitter}
+        <LinkButton
+          color={color}
+          to={twitter}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Twitter"
         >
-          <TwitterIcon />
-        </Link>
+          <IconButton>
+            <TwitterIcon />
+          </IconButton>
+        </LinkButton>
       )}
     </Container>
   )
@@ -72,20 +139,32 @@ const Socials: React.FC<Props> = (props: Props) => {
 
 const Container = styled.div`
   display: flex;
+  @media (max-width: 640px) {
+    transform: translateX(-10px);
+  }
+  &:hover {
+    cursor: pointer;
+  }
 `
 
-const Link = styled.a`
+const LinkButton = styled(Link)`
   text-decoration: none;
   display: inline-block;
-  margin-right: 18px;
-  cursor: pointer;
-
+  margin: 0 5px;
+  &:hover {
+    cursor: pointer;
+    svg {
+      path {
+        fill: ${theme.colors.red};
+      }
+    }
+  }
   svg {
-    width: 20px;
-    height: 20px;
-
     path {
       fill: ${(props) => props.color};
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
 `

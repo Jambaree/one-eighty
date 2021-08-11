@@ -121,7 +121,7 @@ const Quote = (props) => {
               left: 0,
               top: 0,
 
-              animation: inView ? `${slideOutRight} 4s ease forwards` : "none",
+              animation: inView ? `${slideOutRight} 8s ease forwards` : "none",
             }}
           />
           <Box
@@ -145,7 +145,7 @@ const Quote = (props) => {
               right: 0,
               top: 0,
 
-              animation: inView ? `${slideOutLeft} 4s ease forwards` : "none",
+              animation: inView ? `${slideOutLeft} 8s ease forwards` : "none",
             }}
           />
         </Box>

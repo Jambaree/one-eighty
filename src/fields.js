@@ -49,6 +49,31 @@ const fields = {
           label: "Footer Menu",
         },
         {
+          id: "facebook",
+          type: "text",
+          label: "Facebook",
+        },
+        {
+          id: "instagram",
+          type: "text",
+          label: "Instagram",
+        },
+        {
+          id: "linkedin",
+          type: "text",
+          label: "LinkedIn",
+        },
+        {
+          id: "twitter",
+          type: "text",
+          label: "Twitter",
+        },
+        {
+          id: "youtube",
+          type: "text",
+          label: "Youtube",
+        },
+        {
           id: "legalmenu",
           type: "menu",
           label: "Legal Menu",
