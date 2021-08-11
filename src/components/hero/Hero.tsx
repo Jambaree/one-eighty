@@ -68,12 +68,12 @@ const BackgroundVideoContainer = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 `
 
 const Content = styled.div`
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 550px;
   display: flex;
   flex-wrap: wrap;
