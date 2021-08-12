@@ -139,9 +139,7 @@ const Socials: React.FC<Props> = (props: Props) => {
 
 const Container = styled.div`
   display: flex;
-  @media (max-width: 640px) {
-    transform: translateX(-10px);
-  }
+  transform: translateX(-5px);
   &:hover {
     cursor: pointer;
   }
@@ -150,7 +148,7 @@ const Container = styled.div`
 const LinkButton = styled(Link)`
   text-decoration: none;
   display: inline-block;
-  margin: 0 5px;
+  margin: 0;
   &:hover {
     cursor: pointer;
     svg {

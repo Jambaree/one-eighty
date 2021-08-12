@@ -62,10 +62,18 @@ const Footer = (props) => {
             },
           }}
         >
-          <Box sx={{ my: [null, "auto"], pb: ["10px", null] }}>
-            <GatsbyLink to="/">
-              <Logo />
-            </GatsbyLink>
+          <Box sx={{ mt: [null, "auto"] }}>
+            <Box sx={{ pb: ["10px", "25px"] }}>
+              <GatsbyLink to="/">
+                <Logo />
+              </GatsbyLink>
+            </Box>
+            <Box sx={{ pb: ["5px", 0] }}>
+              <Socials
+                color="white"
+                socials={{ instagram, facebook, linkedin, twitter, youtube }}
+              />
+            </Box>
           </Box>
         </Box>
         <Box
@@ -98,10 +106,6 @@ const Footer = (props) => {
                 </Link>
               )
             })}
-          <Socials
-            color="white"
-            socials={{ instagram, facebook, linkedin, twitter, youtube }}
-          />
 
           {legalmenu &&
             legalmenu.map((o, i) => {

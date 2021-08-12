@@ -173,6 +173,7 @@ const Content = (props) => {
           sx={{
             width: "100%",
             height: "100%",
+            minHeight: !sections?.[sector]?.image && "800px",
             "@media (max-width:1200px)": { ml: 0 },
             ml: "400px",
             position: "relative",
