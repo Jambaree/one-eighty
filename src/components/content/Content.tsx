@@ -41,7 +41,7 @@ const Content = (props) => {
               color: `${backgroundcolor === "blue180" ? "white" : "black"}`,
             },
             width: ["100%", "75%", "53%"],
-            pb: 50,
+            pb: 90,
           }}
         >
           {text && <Textarea content={text} />}
