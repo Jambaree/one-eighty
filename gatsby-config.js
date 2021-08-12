@@ -36,7 +36,7 @@ const gatsbyConfig = {
           google: [
             {
               family: "Barlow Semi Condensed",
-              variants: ["200", "300", "400", "500", "700"],
+              variants: ["200", "300", "400", "500", "600", "700"],
             },
           ],
         },

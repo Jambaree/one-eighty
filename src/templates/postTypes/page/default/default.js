@@ -118,16 +118,21 @@ export const CollectionQuery = graphql`
                   fieldGroupName
                   backgroundcolor
                   text
-                  image {
-                    altText
-                    svg
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(
-                          width: 1920
-                          placeholder: BLURRED
-                          quality: 100
-                        )
+                  sections {
+                    fieldGroupName
+                    sectorname
+                    projects
+                    image {
+                      altText
+                      svg
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            width: 1920
+                            placeholder: BLURRED
+                            quality: 100
+                          )
+                        }
                       }
                     }
                   }
