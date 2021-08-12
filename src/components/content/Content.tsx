@@ -74,7 +74,7 @@ const Content = (props) => {
               flexDirection: "column",
               alignItems: "flex-end",
               gridTemplateColumns: "40% 60%",
-              "@media (max-width:830px)": { gridTemplateColumns: "20% 80%" },
+              "@media (max-width:830px)": { gridTemplateColumns: "10% 90%" },
               gridTemplateRows: "1fr",
             }}
           >
