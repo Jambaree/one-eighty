@@ -55,7 +55,6 @@ const Content = (props) => {
         }}
       >
         <Box
-          bg="black"
           sx={{
             height: "450px",
             width: "500px",
@@ -63,7 +62,18 @@ const Content = (props) => {
             position: "relative",
             left: 0,
             top: "30%",
-            zIndex: 1,
+            zIndex: 2,
+            "&:before": {
+              content: "''",
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              background: "rgba(0, 0, 0, 0.6)",
+              mixBlendMode: "soft-light",
+            },
           }}
         >
           <Box
