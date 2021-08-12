@@ -62,17 +62,17 @@ const Content = (props) => {
             position: "relative",
             left: 0,
             top: "30%",
-            zIndex: 2,
-            "&:before": {
+            zIndex: 10,
+            "&:after": {
               content: "''",
-              width: "100%",
-              height: "100%",
               position: "absolute",
               top: 0,
               left: 0,
-              zIndex: 1,
+              width: "100%",
+              height: "100%",
               background: "rgba(0, 0, 0, 0.6)",
-              mixBlendMode: "soft-light",
+              mixBlendMode: "multiply",
+              zIndex: -10,
             },
           }}
         >
