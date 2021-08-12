@@ -59,10 +59,12 @@ const Content = (props) => {
             height: "450px",
             width: "500px",
             "@media (max-width:830px)": { width: "100%" },
-            position: "relative",
+            position: "absolute",
+            "@media (max-width:1200px)": { position: "relative" },
+
             left: 0,
             top: "30%",
-            zIndex: 10,
+            zIndex: 2,
             "&:after": {
               content: "''",
               position: "absolute",
@@ -171,7 +173,8 @@ const Content = (props) => {
           sx={{
             width: "100%",
             height: "100%",
-
+            "@media (max-width:1200px)": { ml: 0 },
+            ml: "400px",
             position: "relative",
             display: "flex",
             justifyContent: "flex-end",
