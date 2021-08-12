@@ -8,7 +8,7 @@ import Edges from "../Edges"
 import Textarea from "../Textarea"
 
 const Content = (props) => {
-  const { text, heading, image, backgroundcolor, sections } = props
+  const { text, heading, backgroundcolor, sections } = props
 
   const [sector, setSector] = useState(0)
 
