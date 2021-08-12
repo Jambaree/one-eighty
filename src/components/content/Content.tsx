@@ -126,7 +126,7 @@ const Content = (props) => {
                         <Label
                           key={i}
                           onClick={() => setSector(i)}
-                          sx={{ color: "white", pb: 15 }}
+                          sx={{ color: "white", pb: 15, alignItems: "center" }}
                         >
                           <Radio
                             name="dark-mode"

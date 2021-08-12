@@ -153,6 +153,9 @@ const themeUi = {
   forms: {
     label: {
       color: "white",
+      "&:hover": {
+        cursor: "pointer",
+      },
     },
     radio: {
       color: "white",
