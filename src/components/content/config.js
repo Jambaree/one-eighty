@@ -8,9 +8,26 @@ const config = {
       label: "Text",
     },
     {
-      id: "image",
-      type: "image",
-      label: "Map Image",
+      id: "sections",
+      type: "repeater",
+      label: "Sections",
+      items: [
+        {
+          id: "sectorname",
+          type: "text",
+          label: "Sector Name",
+        },
+        {
+          id: "projects",
+          type: "text",
+          label: "Projects",
+        },
+        {
+          id: "image",
+          type: "image",
+          label: "Map Image",
+        },
+      ],
     },
     {
       id: "backgroundcolor",

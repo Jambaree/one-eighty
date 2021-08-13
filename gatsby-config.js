@@ -36,7 +36,7 @@ const gatsbyConfig = {
           google: [
             {
               family: "Barlow Semi Condensed",
-              variants: ["200", "300", "400", "500", "700"],
+              variants: ["200", "300", "400", "500", "600", "700"],
             },
           ],
         },
@@ -194,7 +194,15 @@ if (process.env.GATSBY_RECAPTCHA) {
 
 if (process.env.NODE_ENV === "production") {
   gatsbyConfig.plugins.push("gatsby-plugin-remove-serviceworker")
-  // gatsbyConfig.plugins.push("gatsby-plugin-favicon")
+  gatsbyConfig.plugins.push({
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `one-eighty`,
+      short_name: `one-eighty`,
+      start_url: `/`,
+      icon: `src/favicon.png`,
+    },
+  })
 }
 
 module.exports = gatsbyConfig

@@ -14,6 +14,7 @@ const themeUi = {
     normal: 400,
     bold: 500,
     boldest: 700,
+    semiBold: 600,
   },
   lineHeights: {
     body: 1.8,
@@ -107,6 +108,30 @@ const themeUi = {
       letterSpacing: "0.02em",
       textTransform: "uppercase",
     },
+    FilterMapHeading: {
+      fontFamily: "body",
+      fontWeight: "semiBold",
+      fontSize: 2,
+      lineHeight: "18px",
+      letterSpacing: "0.02em",
+      textTransform: "uppercase",
+    },
+    sectorName: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: "32px",
+      lineHeight: "42px",
+      letterSpacing: "1%",
+      textTransform: "capitalize",
+    },
+    projectNumber: {
+      fontFamily: "body",
+      fontWeight: "normal",
+      fontSize: "20px",
+      lineHeight: "26px",
+      letterSpacing: "4%",
+      textTransform: "uppercase",
+    },
   },
   buttons: {
     // primary: {
@@ -125,7 +150,24 @@ const themeUi = {
     //   },
     // },
   },
-  forms: {},
+  forms: {
+    label: {
+      color: "white",
+      "&:hover": {
+        cursor: "pointer",
+      },
+    },
+    radio: {
+      color: "white",
+      "&:focus": {
+        color: "white",
+      },
+      "&:hover": {
+        color: "white",
+        cursor: "pointer",
+      },
+    },
+  },
   links: {
     hyperlink: {
       fontFamily: "body",

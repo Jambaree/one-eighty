@@ -40,7 +40,7 @@ const Contact = (props) => {
       <Box
         sx={{
           bg: "blue180",
-          height: [`calc(50vh - ${theme.headerHeight})`, 480, 480],
+          height: [`calc(50vh - ${theme.headerHeight})`, 480, 500],
           width: ["100%", "75%", "50%"],
           position: "relative",
           zIndex: 2,
@@ -75,7 +75,7 @@ const Contact = (props) => {
                   textDecoration: "underline",
                 },
               },
-              mb: "27px",
+              mb: "50px",
               color: "white",
             }}
           >
@@ -84,27 +84,18 @@ const Contact = (props) => {
             )}
             {" / "}
             {email && <a href={"mailto:" + Parser(email)}>{Parser(email)}</a>}
-          </Box>
-          <Box
-            variant="text.body"
-            sx={{
-              a: {
-                color: "white",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              },
-              mb: "27px",
-              color: "white",
-              "@media (min-width: 640px)": {
-                transform: "translateX(-10px)",
-              },
-            }}
-          >
-            <Socials
-              color="white"
-              socials={{ instagram, facebook, linkedin, twitter, youtube }}
-            />
+            <Box
+              sx={{
+                display: "inline-block",
+                ml: "25px",
+                transform: "translateY(3px)",
+              }}
+            >
+              <Socials
+                color="white"
+                socials={{ instagram, facebook, linkedin, twitter, youtube }}
+              />
+            </Box>
           </Box>
         </Box>
       </Box>
