@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Text, Divider } from "theme-ui"
+import { Box, Text, Divider } from "theme-ui"
 import Slider from "react-slick"
 
 // import app components
