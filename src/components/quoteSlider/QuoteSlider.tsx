@@ -1,7 +1,6 @@
 import React from "react"
 import { Box, Heading, Text, Divider } from "theme-ui"
 import Slider from "react-slick"
-import Parser from "html-react-parser"
 
 // import app components
 import Edges from "../Edges"
