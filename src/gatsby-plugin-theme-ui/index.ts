@@ -134,21 +134,42 @@ const themeUi = {
     },
   },
   buttons: {
-    // primary: {
-    //   "&:hover": {},
-    //   "&:focus": {},
-    //   "&:disabled": {},
-    // },
-    // navButton: {},
-    // icon: {},
-    // entryfield: {
-    //   field: {
-    //     "&:placeholder": {},
-    //     "&:hover": {},
-    //     ":focus": {},
-    //     "&:disabled": {},
-    //   },
-    // },
+    primary: {
+      "&:hover": { cursor: "pointer", bg: "white", color: "blue180" },
+      "&:focus": {},
+      "&:disabled": {},
+      bg: "transparent",
+      border: "1px solid rgba(255, 255, 255, 0.6)",
+      boxSizing: "border-box",
+      fontStyle: "normal",
+      fontWeight: "normal",
+      fontSize: "24px",
+      lineHeight: "24px",
+      borderRadius: 0,
+    },
+    secondary: {
+      "&:hover": { cursor: "pointer", bg: "blue180", color: "white" },
+      "&:focus": {},
+      "&:disabled": {},
+      bg: "transparent",
+      border: "1px solid black",
+      boxSizing: "border-box",
+      fontStyle: "normal",
+      fontWeight: "normal",
+      fontSize: "24px",
+      lineHeight: "24px",
+      borderRadius: 0,
+    },
+    navButton: {},
+    icon: {},
+    entryfield: {
+      field: {
+        "&:placeholder": {},
+        "&:hover": {},
+        ":focus": {},
+        "&:disabled": {},
+      },
+    },
   },
   forms: {
     label: {
