@@ -17,7 +17,14 @@ const Logos = (props) => {
         pb: ["120px", "180px", "240px"],
       }}
     >
-      <Edges size="lg">
+      <Box
+        sx={{
+          mx: "5%",
+          "@media (min-width: 1080px)": {
+            mx: "8%",
+          },
+        }}
+      >
         {headline && (
           <Heading
             variant="styles.root.h1"
@@ -97,7 +104,7 @@ const Logos = (props) => {
               </Box>
             ))}
         </Grid>
-      </Edges>
+      </Box>
     </Container>
   )
 }
