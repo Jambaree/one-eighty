@@ -22,81 +22,82 @@ const Logos = (props) => {
           <Heading
             variant="styles.root.h1"
             sx={{
+              px: ["60px", "70px", "90px"],
               color: "blue180",
               pb: "75px",
             }}
             children={Parser(headline)}
           />
         )}
-      </Edges>
-      <Grid
-        sx={{
-          py: "60px",
-          px: ["60px", "70px", "90px"],
-          gap: "60px",
-          "@media (min-width:1200px)": { px: "3%", gap: "130px" },
-          mx: "20px",
+        <Grid
+          sx={{
+            py: "60px",
+            px: ["60px", "70px", "90px"],
+            gap: "60px",
+            "@media (min-width:1200px)": { px: "3%", gap: "130px" },
+            mx: "20px",
 
-          border: "1px solid transparent",
-          borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
-          borderImageSlice: 1,
-        }}
-        columns={[1, 2, columns]}
-      >
-        {cards &&
-          cards.map((o, i) => (
-            <Box
-              key={i}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "85px",
-              }}
-            >
-              {o.logo ? (
-                <Link activeStyle={{}} to={o.url}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      maxWidth: "185px",
-                      height: "85px",
-                      "&:hover": { cursor: "pointer" },
-                      svg: { maxWidth: "185px", height: "85px" },
-                    }}
-                  >
-                    {o.logo?.svg ? (
-                      Parser(o.logo.svg)
-                    ) : (
-                      <GatsbyImage
-                        image={o.logo}
-                        alt={o.logo?.altText}
-                        objectFit="contain"
-                        objectPosition="0"
-                      />
-                    )}
-                  </Box>
-                </Link>
-              ) : (
-                <Link activeStyle={{}} to={o.url}>
-                  <Text
-                    variant="styles.root.h4"
-                    sx={{
-                      color: "termsPrivacy",
-                      maxWidth: "185px",
-                      height: "85px",
-                      "&:hover": { color: "red", cursor: "pointer" },
-                    }}
-                  >
-                    {Parser(o.text || "")}
-                  </Text>
-                </Link>
-              )}
-            </Box>
-          ))}
-      </Grid>
+            border: "1px solid transparent",
+            borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
+            borderImageSlice: 1,
+          }}
+          columns={[1, 2, columns]}
+        >
+          {cards &&
+            cards.map((o, i) => (
+              <Box
+                key={i}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "85px",
+                }}
+              >
+                {o.logo ? (
+                  <Link activeStyle={{}} to={o.url}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        maxWidth: "185px",
+                        height: "85px",
+                        "&:hover": { cursor: "pointer" },
+                        svg: { maxWidth: "185px", height: "85px" },
+                      }}
+                    >
+                      {o.logo?.svg ? (
+                        Parser(o.logo.svg)
+                      ) : (
+                        <GatsbyImage
+                          image={o.logo}
+                          alt={o.logo?.altText}
+                          objectFit="contain"
+                          objectPosition="0"
+                        />
+                      )}
+                    </Box>
+                  </Link>
+                ) : (
+                  <Link activeStyle={{}} to={o.url}>
+                    <Text
+                      variant="styles.root.h4"
+                      sx={{
+                        color: "termsPrivacy",
+                        maxWidth: "185px",
+                        height: "85px",
+                        "&:hover": { color: "red", cursor: "pointer" },
+                      }}
+                    >
+                      {Parser(o.text || "")}
+                    </Text>
+                  </Link>
+                )}
+              </Box>
+            ))}
+        </Grid>
+      </Edges>
     </Container>
   )
 }
