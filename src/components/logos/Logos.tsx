@@ -42,7 +42,6 @@ const Logos = (props) => {
             px: ["60px", "70px", "90px"],
             gap: "60px",
             "@media (min-width:1200px)": { px: "3%", gap: "130px" },
-            mx: "20px",
 
             border: "1px solid transparent",
             borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
