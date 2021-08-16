@@ -53,7 +53,7 @@ const Text = (props) => {
                   fade === "fadein" ? "5s ease" : ".8s ease"
                 }`
               : "none",
-            py: [4, 5, 6],
+            py: [4, "50px"],
             width: ["100%", "65%", "65%"],
             "div > *": {
               color: lightdark === "dark" && "white",
