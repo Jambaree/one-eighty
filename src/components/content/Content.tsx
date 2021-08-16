@@ -177,11 +177,11 @@ const Content = (props) => {
             ml: "400px",
             position: "relative",
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "space-between",
             alignItems: "center",
             p: "12px",
-            "gatsby-image-wrapper": {
-              maxWidth: "1070px",
+            ".gatsby-image-wrapper": {
+              maxWidth: "800px",
             },
           }}
         >
