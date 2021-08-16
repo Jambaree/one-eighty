@@ -172,6 +172,7 @@ const Content = (props) => {
           sx={{
             minHeight: !sections?.[sector]?.image && "800px",
             "@media (max-width:1200px)": { ml: 0 },
+            height: `calc(100vh - 100px)`,
             ml: "400px",
             position: "relative",
             display: "flex",
@@ -180,8 +181,7 @@ const Content = (props) => {
             p: "12px",
             ".gatsby-image-wrapper": {
               maxWidth: "800px",
-              height: [`calc(100% - 100px)`, "100%"],
-              width: [`calc(100% - 100px)`, "100%"],
+              width: "100%",
             },
           }}
         >
