@@ -170,7 +170,7 @@ const Content = (props) => {
 
         <Box
           sx={{
-            height: `calc(100vh - 200px)`,
+            height: `calc(100% - 200px)`,
             minHeight: !sections?.[sector]?.image && "800px",
             "@media (max-width:1200px)": { ml: 0 },
             ml: "400px",
