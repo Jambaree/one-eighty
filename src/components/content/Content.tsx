@@ -61,9 +61,8 @@ const Content = (props) => {
             "@media (max-width:830px)": { width: "100%" },
             position: "absolute",
             "@media (max-width:1200px)": { position: "relative" },
-
             left: 0,
-            top: "30%",
+            top: "50%",
             zIndex: 2,
             "&:after": {
               content: "''",
