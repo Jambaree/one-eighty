@@ -189,7 +189,9 @@ const Content = (props) => {
           {sections?.[sector]?.image && (
             <GatsbyImage
               image={sections?.[sector]?.image}
-              style={{ objectFit: "contain" }}
+              objectFit={`contain`}
+              height={`fit-content`}
+              alt={sections?.[sector]?.image.alt}
             />
           )}
         </Box>
