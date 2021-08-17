@@ -4,7 +4,6 @@ import { Box, Heading, Container, Grid, Text } from "theme-ui"
 import Parser from "html-react-parser"
 
 // import app components
-import Edges from "../Edges"
 import Link from "../Link"
 
 const Logos = (props) => {
