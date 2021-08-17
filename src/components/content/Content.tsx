@@ -182,11 +182,15 @@ const Content = (props) => {
             ".gatsby-image-wrapper": {
               maxWidth: "800px",
               width: "100%",
+              maxHeight: "100%",
             },
           }}
         >
           {sections?.[sector]?.image && (
-            <GatsbyImage image={sections?.[sector]?.image} />
+            <GatsbyImage
+              image={sections?.[sector]?.image}
+              style={{ objectFit: "contain" }}
+            />
           )}
         </Box>
       </Box>
