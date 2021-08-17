@@ -143,6 +143,14 @@ export const CollectionQuery = graphql`
                   lightdark
                   extrapadding
                   fade
+                  buttons {
+                    fieldGroupName
+                    link {
+                      target
+                      title
+                      url
+                    }
+                  }
                 }
 
                 ... on WpDefaultTemplate_Acf_Content_Flex_Textimage {

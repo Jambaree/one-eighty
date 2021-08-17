@@ -61,9 +61,8 @@ const Content = (props) => {
             "@media (max-width:830px)": { width: "100%" },
             position: "absolute",
             "@media (max-width:1200px)": { position: "relative" },
-
             left: 0,
-            top: "30%",
+            top: "50%",
             zIndex: 2,
             "&:after": {
               content: "''",
@@ -171,23 +170,29 @@ const Content = (props) => {
 
         <Box
           sx={{
-            width: "100%",
-            height: "100%",
             minHeight: !sections?.[sector]?.image && "800px",
             "@media (max-width:1200px)": { ml: 0 },
+            height: `calc(100vh - 100px)`,
             ml: "400px",
             position: "relative",
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "space-between",
             alignItems: "center",
             p: "12px",
-            "gatsby-image-wrapper": {
-              maxWidth: "1070px",
+            ".gatsby-image-wrapper": {
+              maxWidth: "800px",
+              width: "100%",
+              maxHeight: "100%",
             },
           }}
         >
           {sections?.[sector]?.image && (
-            <GatsbyImage image={sections?.[sector]?.image} />
+            <GatsbyImage
+              image={sections?.[sector]?.image}
+              objectFit={`contain`}
+              height={`fit-content`}
+              alt={sections?.[sector]?.image.alt}
+            />
           )}
         </Box>
       </Box>

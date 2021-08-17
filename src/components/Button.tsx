@@ -6,7 +6,14 @@ import { Button as ThemeButton, Spinner } from "theme-ui"
 // import app components
 import { formatLink } from "../utils"
 
-const Button = ({ children, to, loading, disabled, ...rest }) => {
+const Button = ({
+  children,
+  to,
+  loading,
+  disabled,
+  customeVariant,
+  ...rest
+}) => {
   // Fixes bug where front page url ('/') is returning WP url
   const formattedLink = formatLink(to)
 
@@ -15,9 +22,13 @@ const Button = ({ children, to, loading, disabled, ...rest }) => {
       {...rest}
       loading={loading ? 1 : 0}
       sx={{
-        variant: "buttons.primary",
+        variant: `${customeVariant ? customeVariant : "buttons.primary"}`,
         position: "relative",
         cursor: "pointer",
+        textAlign: "center",
+        minWidth: "270px",
+        height: "52px",
+        py: "10px",
         ".btn-loader": {
           position: "absolute",
           opacity: 0,

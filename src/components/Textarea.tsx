@@ -30,7 +30,7 @@ const Container = styled.div`
   h5,
   h6 {
     &:first-of-type {
-      margin-top: 0;
+      margin-top: 40px;
     }
 
     &:not(:first-of-type) {
@@ -39,10 +39,10 @@ const Container = styled.div`
   }
 
   p {
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
 
     &:first-of-type {
-      margin-top: 0;
+      margin-top: 30px;
     }
 
     &:not(:first-of-type) {
@@ -50,7 +50,7 @@ const Container = styled.div`
     }
 
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: 30px !important;
     }
   }
 
@@ -89,6 +89,7 @@ const Container = styled.div`
     margin-bottom: 20px;
     max-width: 100%;
     height: auto;
+    margin-top: 2rem;
 
     &.alignright {
       float: right;

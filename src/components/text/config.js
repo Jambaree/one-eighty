@@ -3,6 +3,19 @@ const config = {
   label: "Text",
   fields: [
     {
+      id: "buttons",
+      type: "repeater",
+      label: "Buttons",
+      items: [
+        {
+          id: "link",
+          type: "link",
+          label: "Link",
+        },
+      ],
+    },
+
+    {
       id: "lightdark",
       type: "select",
       label: "Light or Dark",
