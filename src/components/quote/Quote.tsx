@@ -100,7 +100,7 @@ const Quote = (props) => {
         <Box
           sx={{
             px: ["30px", 0],
-            maxWidth: "708px",
+            maxWidth: "740px",
             minHeight: "134px",
             position: "relative",
             display: "flex",
