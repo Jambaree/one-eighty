@@ -49,7 +49,7 @@ const Tiles = (props) => {
                       key={i}
                       sx={{
                         bg: "white",
-                        p: "15px 24px 15px 24px",
+                        p: "15px 24px 30px 24px",
                         minHeight: ["auto", 170, 170],
                         display: "flex",
                         borderBottom: [
@@ -85,7 +85,6 @@ const Tiles = (props) => {
                     >
                       <Box
                         sx={{
-                          maxHeight: "100px",
                           width: "100%",
                           display: "flex",
                           flexDirection: "column",
