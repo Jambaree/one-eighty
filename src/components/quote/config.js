@@ -25,6 +25,23 @@ const config = {
       ],
     },
     {
+      id: "width",
+      type: "select",
+      label: "Block Width",
+      defaultValue: "normal",
+      instructions: "Choose a Block Width", // optional
+      options: [
+        {
+          name: "Normal",
+          value: "normal",
+        },
+        {
+          name: "Large",
+          value: "large",
+        },
+      ],
+    },
+    {
       id: "mb",
       type: "select",
       label: "Bottom Margin",

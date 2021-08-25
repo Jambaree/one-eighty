@@ -44,6 +44,17 @@ const fields = {
       hide: true,
       fields: [
         {
+          id: "phone",
+          type: "text",
+          label: "Phone Number",
+        },
+        {
+          id: "email",
+          type: "text",
+          label: "Email Address",
+          rows: 3,
+        },
+        {
           id: "footermenu",
           type: "menu",
           label: "Footer Menu",

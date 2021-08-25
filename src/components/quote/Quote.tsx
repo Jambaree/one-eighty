@@ -7,7 +7,7 @@ import { keyframes } from "@emotion/react"
 import Textarea from "../Textarea"
 
 const Quote = (props) => {
-  const { text, backgroundcolor, mb } = props
+  const { text, backgroundcolor, mb, width } = props
   const { ref, inView } = useInView({
     triggerOnce: true,
   })
@@ -100,7 +100,7 @@ const Quote = (props) => {
         <Box
           sx={{
             px: ["30px", 0],
-            maxWidth: "708px",
+            maxWidth: width === "large" ? "900px" : "740px",
             minHeight: "134px",
             position: "relative",
             display: "flex",
