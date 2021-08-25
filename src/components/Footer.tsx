@@ -77,7 +77,7 @@ const Footer = (props) => {
                   sx={{
                     textDecoration: "none",
                     color: "white",
-                    "&:hover": { color: "primary" },
+                    "&:hover": { color: "red", cursor: "pointer" },
                   }}
                   href={`tel:${phone}`}
                 >
@@ -92,7 +92,7 @@ const Footer = (props) => {
                   sx={{
                     textDecoration: "none",
                     color: "white",
-                    "&:hover": { color: "primary" },
+                    "&:hover": { color: "red", cursor: "pointer" },
                   }}
                   href={`mailto:${email}`}
                 >
