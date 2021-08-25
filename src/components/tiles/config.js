@@ -34,7 +34,7 @@ const config = {
         },
         {
           id: "text",
-          type: "wysiwyg",
+          type: "text",
           label: "Text",
           rows: 4,
         },

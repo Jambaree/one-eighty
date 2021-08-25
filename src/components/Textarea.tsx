@@ -27,6 +27,7 @@ const Container = styled.div`
   h2,
   h3,
   h4,
+  h5,
   h6 {
     &:first-of-type {
       margin-top: 40px;

@@ -27,6 +27,7 @@ const Tiles = (props) => {
             <Box
               sx={{
                 textAlign: "left",
+                mb: "30px",
               }}
             >
               {headline && (
@@ -49,7 +50,7 @@ const Tiles = (props) => {
                       sx={{
                         bg: "white",
                         p: "15px 24px 15px 24px",
-                        minHeight: ["auto", 250, 250],
+                        minHeight: ["auto", 170, 170],
                         display: "flex",
                         borderBottom: [
                           i !== lastItem && "1px solid #E3E3E3",
@@ -84,11 +85,12 @@ const Tiles = (props) => {
                     >
                       <Box
                         sx={{
+                          maxHeight: "100px",
                           width: "100%",
                           display: "flex",
                           flexDirection: "column",
                           flexWrap: "nowrap",
-                          justifyContent: "flex-start",
+                          justifyContent: "center",
                           alignItems:
                             i === 0 || i % 2 === 0
                               ? ["flex-start", "flex-start", "flex-end"]
@@ -132,7 +134,7 @@ const Tiles = (props) => {
                             maxWidth: ["100%", "100%", 432],
                           }}
                         >
-                          {o.text && <Textarea content={o.text} />}
+                          {o.text && <Heading as="h5" children={o.text} />}
                         </Box>
                       </Box>
                     </Box>
