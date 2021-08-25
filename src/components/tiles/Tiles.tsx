@@ -17,7 +17,7 @@ const Tiles = (props) => {
       <Box
         sx={{
           pt: 50,
-          mb: 50,
+          mb: 20,
           position: "relative",
           overflow: "hidden",
         }}
@@ -48,7 +48,7 @@ const Tiles = (props) => {
                       key={i}
                       sx={{
                         bg: "white",
-                        p: "40px 24px",
+                        p: "15px 24px 15px 24px",
                         minHeight: ["auto", 250, 250],
                         display: "flex",
                         borderBottom: [
@@ -95,8 +95,8 @@ const Tiles = (props) => {
                               : "flex-start",
                           pt: [
                             0,
-                            i < 2 ? "15%" : "unset",
-                            i < 2 ? "10%" : "unset",
+                            i < 2 ? "13%" : "unset",
+                            i < 2 ? "8%" : "unset",
                           ],
                         }}
                       >
