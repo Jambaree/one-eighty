@@ -52,7 +52,7 @@ const Carousel = (props) => {
   }
 
   const settingsSlider2 = {
-    slidesToShow: 5,
+    slidesToShow: 4.99,
     slidesToScroll: 1,
     infinite: true,
     dots: false,
@@ -184,6 +184,9 @@ const Carousel = (props) => {
                     width: [80, 225, 225],
                     top: 0,
                     right: 0,
+                  },
+                  "@media (min-width:1300px)": {
+                    ".slick-slide": { transform: "translate(100%,0)" },
                   },
                 }}
               >
