@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Box, Flex, Grid, Text } from "theme-ui"
+import { Container, Box, Flex, Grid, Text, Link as ThemeLink } from "theme-ui"
 import { Link as GatsbyLink } from "gatsby"
 import Parser from "html-react-parser"
 
@@ -21,6 +21,8 @@ const Footer = (props) => {
           twitter,
           linkedin,
           youtube,
+          phone,
+          email,
         },
       },
     },
@@ -68,6 +70,36 @@ const Footer = (props) => {
                 <Logo />
               </GatsbyLink>
             </Box>
+            <Box>
+              {phone && (
+                <ThemeLink
+                  variant="footerNav"
+                  sx={{
+                    textDecoration: "none",
+                    color: "white",
+                    "&:hover": { color: "primary" },
+                  }}
+                  href={`tel:${phone}`}
+                >
+                  T : {phone}
+                </ThemeLink>
+              )}
+            </Box>
+            <Box sx={{ pb: "10px" }}>
+              {email && (
+                <ThemeLink
+                  variant="footerNav"
+                  sx={{
+                    textDecoration: "none",
+                    color: "white",
+                    "&:hover": { color: "primary" },
+                  }}
+                  href={`mailto:${email}`}
+                >
+                  Email : {email}
+                </ThemeLink>
+              )}
+            </Box>
             <Box sx={{ pb: ["5px", 0] }}>
               <Socials
                 color="white"
@@ -78,16 +110,18 @@ const Footer = (props) => {
         </Box>
         <Box
           sx={{
+            maxHeight: "100px",
             height: "100%",
             gridColumnStart: 2,
             gridColumnEnd: 3,
             gridRowStart: 1,
             gridRowEnd: 2,
             display: "flex",
-            alignItems: ["flex-start", "flex-end"],
-            justifyContent: "center",
+            alignItems: "flex-start",
+            justifyContent: "flex-start",
             flexDirection: "column",
             px: "30px",
+            flexWrap: ["wrap", "wrap-reverse"],
           }}
         >
           {footermenu &&
@@ -97,8 +131,10 @@ const Footer = (props) => {
                   <Text
                     variant="footerNav"
                     sx={{
+                      textAlign: "right",
                       color: "white",
                       "&:hover": { color: "red", cursor: "pointer" },
+                      pl: [0, "30px"],
                     }}
                   >
                     {Parser(o.title || "")}
