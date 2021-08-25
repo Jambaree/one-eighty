@@ -81,7 +81,7 @@ const Footer = (props) => {
                   }}
                   href={`tel:${phone}`}
                 >
-                  T : {phone}
+                  {phone}
                 </ThemeLink>
               )}
             </Box>
@@ -96,7 +96,7 @@ const Footer = (props) => {
                   }}
                   href={`mailto:${email}`}
                 >
-                  Email : {email}
+                  {email}
                 </ThemeLink>
               )}
             </Box>
