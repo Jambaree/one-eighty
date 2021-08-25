@@ -117,11 +117,11 @@ const Footer = (props) => {
             gridRowStart: 1,
             gridRowEnd: 2,
             display: "flex",
-            alignItems: "flex-start",
+            alignItems: ["flex-start", "flex-start", "flex-end"],
             justifyContent: "flex-start",
             flexDirection: "column",
-            px: "30px",
-            flexWrap: ["wrap", "wrap-reverse"],
+            px: ["30px", 0, "30px"],
+            flexWrap: "wrap",
           }}
         >
           {footermenu &&
@@ -134,7 +134,6 @@ const Footer = (props) => {
                       textAlign: "right",
                       color: "white",
                       "&:hover": { color: "red", cursor: "pointer" },
-                      pl: [0, "30px"],
                     }}
                   >
                     {Parser(o.title || "")}
