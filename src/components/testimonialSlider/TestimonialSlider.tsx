@@ -15,11 +15,11 @@ const TestimonialSlider = (props) => {
     arrows: false,
     dots: true,
     infinite: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnHover: true,
+    pauseOnHover: false,
     customPaging: () => (
       <Box
         className="clickableArea"
