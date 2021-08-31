@@ -15,7 +15,7 @@ const TestimonialSlider = (props) => {
     arrows: false,
     dots: true,
     infinite: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 12000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
