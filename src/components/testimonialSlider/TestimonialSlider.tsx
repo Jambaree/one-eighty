@@ -187,6 +187,13 @@ const TestimonialSlider = (props) => {
                           sx={{ color: "blue180" }}
                           children={o.companyname}
                         />
+                        {o.companyname2 && (
+                          <Text
+                            variant="text.companyName"
+                            sx={{ color: "blue180", pt: "5px" }}
+                            children={o.companyname2}
+                          />
+                        )}
                       </Box>
                       <Divider
                         color="red"
