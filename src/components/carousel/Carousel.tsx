@@ -211,7 +211,8 @@ const Carousel = (props) => {
                               m: "0 auto",
 
                               img: {
-                                width: "100%",
+                                width: 172,
+                                minWidth: 172,
                                 height: 172,
                                 objectPosition: "center top",
                               },
@@ -273,7 +274,9 @@ const Carousel = (props) => {
                             sx={{
                               maxWidth: ["100%", "100%", "50%"],
                               m: "0 auto",
-
+                              ".gatsby-image-wrapper": {
+                                maxHeight: 375,
+                              },
                               img: {
                                 objectFit: "contain!important",
                                 height: "auto",
