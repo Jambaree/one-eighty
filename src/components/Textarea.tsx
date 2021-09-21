@@ -59,10 +59,10 @@ const Container = styled.div`
     color: ${theme.colors.blue180}!important;
 
     &:hover {
-      color: ${theme.colors.darkBlue};
+      color: ${theme.colors.red} !important;
     }
     &:focus {
-      color: ${theme.colors.darkBlue};
+      color: ${theme.colors.red};
     }
     &:disabled {
       color: ${theme.colors.textLightGray};
