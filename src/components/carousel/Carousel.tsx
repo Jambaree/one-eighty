@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Box, Heading, Text } from "theme-ui"
+import { Box, Heading } from "theme-ui"
 import Slider from "react-slick"
 import { GatsbyImage } from "jam-cms"
 import Parser from "html-react-parser"
