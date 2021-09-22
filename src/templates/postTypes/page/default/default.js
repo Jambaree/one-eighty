@@ -211,6 +211,7 @@ export const CollectionQuery = graphql`
                     quote
                     name
                     companyname
+                    companyname2
                   }
                 }
                 ... on WpDefaultTemplate_Acf_Content_Flex_Quoteslider {

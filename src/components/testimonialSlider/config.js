@@ -30,6 +30,12 @@ const config = {
           label: "Company Name",
           rows: 1,
         },
+        {
+          id: "companyname2",
+          type: "text",
+          label: "Company Name 2",
+          rows: 1,
+        },
       ],
     },
   ],
