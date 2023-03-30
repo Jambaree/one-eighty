@@ -1,10 +1,10 @@
+"use client"
 import React from "react"
-import { Link } from "gatsby"
+import Link from "next/link"
 import Parser from "html-react-parser"
 import { Button as ThemeButton, Spinner } from "theme-ui"
 
 // import app components
-import { formatLink } from "../utils"
 
 const Button = ({
   children,
@@ -14,13 +14,9 @@ const Button = ({
   customeVariant,
   ...rest
 }) => {
-  // Fixes bug where front page url ('/') is returning WP url
-  const formattedLink = formatLink(to)
-
   const element = (
     <ThemeButton
       {...rest}
-      loading={loading ? 1 : 0}
       sx={{
         variant: `${customeVariant ? customeVariant : "buttons.primary"}`,
         position: "relative",
@@ -53,19 +49,16 @@ const Button = ({
   if (to) {
     if (disabled) {
       return element
-    } else if (formattedLink.includes("http")) {
+    } else if (to.includes("http")) {
       return (
-        <a href={formattedLink} target="_blank" rel="noreferrer">
+        <a href={to} target="_blank" rel="noreferrer">
           {element}
         </a>
       )
-    } else if (
-      formattedLink.includes("tel:") ||
-      formattedLink.includes("mailto:")
-    ) {
-      return <a href={formattedLink}>{element}</a>
+    } else if (to.includes("tel:") || to.includes("mailto:")) {
+      return <a href={to}>{element}</a>
     } else {
-      return <Link to={formattedLink}>{element}</Link>
+      return <Link href={to}>{element}</Link>
     }
   } else {
     return element

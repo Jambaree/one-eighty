@@ -1,33 +1,26 @@
+"use client"
 import React from "react"
-import { Container, Box, Flex, Grid, Text, Link as ThemeLink } from "theme-ui"
-import { Link as GatsbyLink } from "gatsby"
+import { Container, Box, Text, Link as ThemeLink } from "theme-ui"
+
 import Parser from "html-react-parser"
 
 // import app components
-import Logo from "../icons/footer-logo.svg"
-import Link from "../components/Link"
-import { formatLink } from "../utils"
+import Logo from "@/icons/footer-logo.svg"
+import Link from "next/link"
+
 import Socials from "./Socials"
 
-const Footer = (props) => {
-  const {
-    pageContext: {
-      themeOptions: {
-        footer: {
-          footermenu,
-          legalmenu,
-          facebook,
-          instagram,
-          twitter,
-          linkedin,
-          youtube,
-          phone,
-          email,
-        },
-      },
-    },
-  } = props
-
+const Footer = ({
+  items,
+  facebook,
+  instagram,
+  twitter,
+  linkedin,
+  youtube,
+  phone,
+  email,
+}) => {
+  const { legalmenu } = items
   return (
     <Container bg="blue180">
       <Box
@@ -66,9 +59,9 @@ const Footer = (props) => {
         >
           <Box sx={{ mt: [null, "auto"] }}>
             <Box sx={{ pb: ["10px", "25px"] }}>
-              <GatsbyLink to="/">
+              <Link href="/">
                 <Logo />
-              </GatsbyLink>
+              </Link>
             </Box>
             <Box>
               {phone && (
@@ -124,10 +117,10 @@ const Footer = (props) => {
             flexWrap: "wrap",
           }}
         >
-          {footermenu &&
-            footermenu.map((o, i) => {
+          {items &&
+            items?.map((o, i) => {
               return (
-                <Link key={i} activeStyle={{}} to={formatLink(o.url)}>
+                <Link key={i} href={o?.path}>
                   <Text
                     variant="footerNav"
                     sx={{
@@ -136,7 +129,7 @@ const Footer = (props) => {
                       "&:hover": { color: "red", cursor: "pointer" },
                     }}
                   >
-                    {Parser(o.title || "")}
+                    {Parser(o.label || "")}
                   </Text>
                 </Link>
               )
@@ -145,7 +138,7 @@ const Footer = (props) => {
           {legalmenu &&
             legalmenu.map((o, i) => {
               return (
-                <Link key={i} activeStyle={{}} to={formatLink(o.url)}>
+                <Link key={i} href={o.url}>
                   <Text
                     variant="footerNav"
                     sx={{

@@ -1,102 +1,108 @@
-import React, { useEffect } from "react"
-import HamburgerMenu from "react-hamburger-menu"
+"use client"
+import React, { useEffect, useState } from "react"
+
 import { Container, Box, Flex } from "theme-ui"
-import { Link } from "gatsby"
+import Link from "next/link"
 
 // import app components
 import theme from "../theme"
 import Edges from "./Edges"
 import DesktopMenu from "./menu/DesktopMenu"
 import MobileMenu from "./menu/MobileMenu"
-
-import { useStore } from "../store"
-
-import Logo from "../icons/logo.svg"
+import HamburgerMenu from "@/icons/hamburger.svg"
+import CloseIcon from "@/icons/close.svg"
+import Logo from "@/icons/logo.svg"
 
 const Header = (props) => {
-  const {
-    path,
-    pageContext: {
-      themeOptions: {
-        header: { menu },
-      },
-    },
-  } = props
-
-  const [
-    {
-      appState: { menu: menuActive },
-    },
-    dispatch,
-  ] = useStore()
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    dispatch({ type: "SET_MENU", payload: false })
-  }, [path, dispatch])
+    window?.document && isOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible")
+  }, [isOpen])
+  const { items } = props
 
   return (
-    <Container
-      sx={{
-        background: "#fff",
-        height: theme.headerHeight,
-        position: "fixed",
-        left: 0,
-        top: 0,
-        width: ["100%", "100%", "100%"],
-        zIndex: 3,
-        display: "flex",
-        alignItems: "center",
-        borderBottom: "1px solid #D3D3D3",
-      }}
-    >
-      <Edges size="lg">
-        <Flex
-          sx={{
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Box
-            pr={2}
+    <div className="relative">
+      <Container
+        sx={{
+          background: "#fff",
+          height: theme.headerHeight,
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: ["100%", "100%", "100%"],
+          zIndex: 3,
+          display: "flex",
+          alignItems: "center",
+          borderBottom: "1px solid #D3D3D3",
+        }}
+      >
+        <Edges size="lg">
+          <Flex
             sx={{
-              position: "relative",
-              zIndex: 2,
-              textDecoration: "none",
-              ".a": { fill: "black" },
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
             }}
           >
-            <Link to="/">
-              <Logo
-                style={{ height: "auto", width: "136px", marginBottom: "-4px" }}
-              />
-            </Link>
-          </Box>
+            <Box
+              pr={2}
+              sx={{
+                position: "relative",
+                zIndex: 2,
+                textDecoration: "none",
+                ".a": { fill: "black" },
+              }}
+            >
+              <Link href="/">
+                <Logo
+                  style={{
+                    height: "auto",
+                    width: "136px",
+                    marginBottom: "-4px",
+                  }}
+                />
+              </Link>
+            </Box>
 
-          <DesktopMenu items={menu} />
+            <DesktopMenu items={items} />
 
-          <Box
-            sx={{
-              transform: "translateX(15px)",
-              cursor: "pointer",
-              "@media (min-width: 1024px)": { display: "none" },
-            }}
-            p={15}
-            onClick={() => dispatch({ type: "TOGGLE_MENU" })}
-          >
-            <HamburgerMenu
-              color={menuActive ? theme.colors.blue180 : theme.colors.black}
-              isOpen={menuActive}
-              width={26}
-              height={15}
-              strokeWidth={2}
-              menuClicked={() => ""}
-            />
-          </Box>
-
-          <MobileMenu items={menu} />
-        </Flex>
-      </Edges>
-    </Container>
+            <Box
+              sx={{
+                transform: "translateX(15px)",
+                cursor: "pointer",
+                "@media (min-width: 1024px)": { display: "none" },
+              }}
+              p={15}
+            >
+              {!isOpen ? (
+                <HamburgerMenu
+                  className="w-[30px] h-[30px]"
+                  onClick={() => {
+                    setIsOpen(!isOpen)
+                  }}
+                />
+              ) : (
+                <CloseIcon
+                  className="w-[30px] h-[30px] mt-[15px] "
+                  onClick={() => {
+                    setIsOpen(!isOpen)
+                  }}
+                />
+              )}
+            </Box>
+          </Flex>
+        </Edges>
+      </Container>
+      <Box
+        className=" flex"
+        sx={{ "@media (min-width: 1024px)": { display: "none" } }}
+      >
+        <MobileMenu isOpen={isOpen} menu={items} />
+      </Box>
+    </div>
   )
 }
 

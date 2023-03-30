@@ -1,7 +1,7 @@
+"use client"
 import React from "react"
 import styled from "@emotion/styled"
-import { RichText } from "jam-cms"
-
+import Parser from "html-react-parser"
 import theme from "../theme"
 
 const Textarea = (props) => {
@@ -9,7 +9,7 @@ const Textarea = (props) => {
 
   return (
     <Container {...rest}>
-      <RichText children={content} />
+      <div children={Parser(content)} />
     </Container>
   )
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import { GatsbyImage } from 'jam-cms';
+import React from "react"
+import Image from "next/image"
 
 const Images = (props) => {
-  const { columns, gallery } = props;
+  const { columns, gallery } = props
 
   return (
     <div className="py-8">
@@ -14,18 +14,18 @@ const Images = (props) => {
             return (
               <div key={i}>
                 {image && (
-                  <GatsbyImage
-                    image={image}
+                  <Image
+                    src={image.sourceUrl}
                     alt={image.altText}
-                    style={{ width: '100%', height: '100%' }}
+                    style={{ width: "100%", height: "100%" }}
                   />
                 )}
               </div>
-            );
+            )
           })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Images;
+export default Images

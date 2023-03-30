@@ -1,111 +1,99 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { css } from "@emotion/css"
-import { Link } from "gatsby"
-import Parser from "html-react-parser"
-import { Text } from "theme-ui"
+"use client"
+import React, { useState } from "react"
 
-// import app components
-import { useStore } from "../../store"
-import { formatLink } from "../../utils"
-import theme from "../../theme"
+import Edges from "@/components/Edges"
+import Link from "next/link"
+import Button from "@/components/Button"
 
-interface Props {
-  items?: [any]
-}
+import { motion } from "framer-motion"
 
-const MobileMenu: React.FC<Props> = (props: Props) => {
-  const { items } = props
-
-  const [
-    {
-      appState: { menu },
+const MobileMenu = ({ isOpen, menu }) => {
+  const sideVariants = {
+    closed: {
+      x: "100%",
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: -1,
+        type: `tween`,
+        stiffness: 50,
+        duration: 0.3,
+      },
     },
-    dispatch,
-  ] = useStore()
+    open: {
+      x: 0,
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: 1,
+        type: `tween`,
+        stiffness: 50,
+        duration: 0.3,
+      },
+    },
+  }
+  const itemVariants = {
+    closed: {
+      opacity: 0,
+    },
+    open: {
+      opacity: 1,
+    },
+  }
 
-  const handleCloseMenu = () => dispatch({ type: "SET_MENU", payload: false })
+  const [subMenuIsOpen, setSubMenuIsOpen] = useState(false)
+
+  const handleSubMenu = (subMenuIsOpen, childItems, index) => {
+    if (childItems.length <= 0) {
+      setSubMenuIsOpen(false)
+      subMenuIsOpen(false)
+    } else {
+      setSubMenuIsOpen(!subMenuIsOpen)
+    }
+  }
 
   return (
-    <>
-      <Menu {...props} menuState={menu}>
-        {items &&
-          items.map(({ key: id, url, title, children }) => {
-            return (
-              <MenuItem key={id}>
-                <MenuLink
-                  to={formatLink(url)}
-                  onClick={handleCloseMenu}
-                  activeClassName="active"
-                  activeStyle={{ color: "red" }}
-                >
-                  <Text variant="text.primaryNav">
-                    {title && Parser(title)}
-                  </Text>
-                </MenuLink>
-              </MenuItem>
-            )
-          })}
-      </Menu>
-    </>
+    <div>
+      {isOpen && (
+        <motion.aside
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          exit={{
+            width: 0,
+            transition: { delay: 0.7, duration: 0.3 },
+          }}
+        >
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={sideVariants}
+            className="fixed z-[9999999999] h-full w-full bg-[#1F3D60] justify-center"
+          >
+            <Edges size="lg">
+              <motion.div variants={itemVariants} className="mt-[60px]">
+                {menu?.map((item, index) => (
+                  <div key={index}>
+                    <Link
+                      onClick={() => {
+                        handleSubMenu(
+                          subMenuIsOpen,
+                          item?.childItems?.nodes,
+                          index
+                        )
+                      }}
+                      href={item?.path || "/"}
+                      className=" uppercase text-white  leading-[24px] pb-[35px] flex flex-row justify-center ml-[15px] text-[14px]"
+                    >
+                      {item.label}
+                    </Link>
+                  </div>
+                ))}
+              </motion.div>
+            </Edges>
+          </motion.div>
+        </motion.aside>
+      )}
+    </div>
   )
 }
-
-const Menu = styled.div`
-  ${(props: any) =>
-    props.menuState
-      ? `
-          transform: translateX(0);
-          opacity: 1;
-        `
-      : `
-          transform: translateX(120%);
-          opacity: 0;
-        `};
-
-  position: fixed;
-  top: ${theme.headerHeight};
-  width: 100%;
-  height: calc(100vh - 60px);
-  right: 0;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  background: ${theme.colors.blue180};
-  padding-top: 32px;
-  padding-bottom: 32px;
-  overflow-y: auto;
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-`
-
-const item = css`
-  position: relative;
-  color: #fff;
-  text-decoration: none;
-  width: 100%;
-`
-
-const MenuItem = styled.div`
-  padding: 0 30px;
-  margin-bottom: 40px;
-  ${item};
-  color: #fff;
-`
-
-const MenuLink = styled(Link)`
-  ${item};
-  color: #fff;
-  /* &.active {
-    color: ${theme.colors.red};
-  } */
-  &:hover {
-    color: ${theme.colors.termsPrivacy};
-  }
-`
 
 export default MobileMenu

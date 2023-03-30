@@ -1,25 +1,23 @@
+"use client"
 import React from "react"
 import Parser from "html-react-parser"
 import { Flex, Box } from "theme-ui"
+import { getMenuItems } from "@jambaree/next-wordpress"
 
 // import app components
-import Link from "../Link"
-import useMenuItems from "./useMenuItems"
-import { formatLink } from "../../utils"
+import Link from "next/link"
 
-const FooterMenu = (props) => {
-  const items = useMenuItems("footer-menu")
+export default function FooterMenu(props) {
+  // const items = await getMenuItems({ id: "footer-menu" })
 
   return (
     <Flex as="nav" {...props}>
-      {items &&
-        items.map(({ id, url, label }) => (
+      {/* {items &&
+        items?.map(({ id, url, label }) => (
           <Box p={3}>
-            <Link to={formatLink(url)}>{Parser(label)}</Link>
+            <Link href={formatLink(url)}>{Parser(label)}</Link>
           </Box>
-        ))}
+        ))} */}
     </Flex>
   )
 }
-
-export default FooterMenu

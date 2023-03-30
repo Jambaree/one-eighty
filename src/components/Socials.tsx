@@ -1,16 +1,17 @@
+"use client"
 import React from "react"
 import styled from "@emotion/styled"
-import { graphql, useStaticQuery } from "gatsby"
+
 import { IconButton } from "theme-ui"
 
 // import app components
-import FacebookIcon from "../icons/facebook.svg"
-import TwitterIcon from "../icons/twitter.svg"
-import InstagramIcon from "../icons/instagram.svg"
-import LinkedIn from "../icons/linkedin.svg"
-import Youtube from "../icons/youtube.svg"
-import Link from "../components/Link"
-import { ThemeCard } from "@theme-ui/style-guide"
+import FacebookIcon from "@/icons/facebook.svg"
+import TwitterIcon from "@/icons/twitter.svg"
+import InstagramIcon from "@/icons/instagram.svg"
+import LinkedIn from "@/icons/linkedin.svg"
+import Youtube from "@/icons/youtube.svg"
+import Link from "next/link"
+
 import theme from "../theme"
 
 const Socials: React.FC<Props> = (props: Props) => {
@@ -24,7 +25,7 @@ const Socials: React.FC<Props> = (props: Props) => {
       {facebook && (
         <LinkButton
           color={color}
-          to={facebook}
+          href={facebook}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Facebook"
@@ -49,7 +50,7 @@ const Socials: React.FC<Props> = (props: Props) => {
       {instagram && (
         <LinkButton
           color={color}
-          to={instagram}
+          href={instagram}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
@@ -74,7 +75,7 @@ const Socials: React.FC<Props> = (props: Props) => {
       {linkedin && (
         <LinkButton
           color={color}
-          to={linkedin}
+          href={linkedin}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
@@ -98,7 +99,7 @@ const Socials: React.FC<Props> = (props: Props) => {
       {youtube && (
         <LinkButton
           color={color}
-          to={linkedin}
+          href={linkedin}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Linkedin"
@@ -123,7 +124,7 @@ const Socials: React.FC<Props> = (props: Props) => {
       {twitter && (
         <LinkButton
           color={color}
-          to={twitter}
+          href={twitter}
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Twitter"

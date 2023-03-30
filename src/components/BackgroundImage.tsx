@@ -1,6 +1,7 @@
+"use client"
 import React from "react"
 import styled from "@emotion/styled"
-import { GatsbyImage } from "jam-cms"
+import Image from "next/image"
 
 const BackgroundImage = (props) => {
   const {
@@ -15,14 +16,14 @@ const BackgroundImage = (props) => {
   return (
     <Container {...rest} animated={animated}>
       {image && (
-        <GatsbyImage
-          image={image}
+        <Image
+          src={image.sourceUrl}
+          fill
+          priority
           style={{
             objectFit: backgroundSize || `cover`,
             objectPosition: `50% ${verticalAlignment || "50%"}`,
           }}
-          objectFit={backgroundSize || `cover`}
-          objectPosition={`50% ${verticalAlignment || "50%"}`}
           alt={alt}
           {...rest}
         />
@@ -56,26 +57,6 @@ const Container = styled.div`
     );
     opacity: ${(props) => (!props.overlay ? 0 : 1)};
   }
-
-  .gatsby-image-wrapper {
-    width: 100%;
-    height: 100%;
-  }
-
-  ${(props) =>
-    props.animated &&
-    `
-    .gatsby-image-wrapper {
-      transition: ease all 0.8s;
-      transform: scale(1);
-    }
-
-    &:hover {
-      .gatsby-image-wrapper {
-        transform: scale(1.02);
-      }
-    }
-  `}
 `
 
 export default BackgroundImage

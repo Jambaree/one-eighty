@@ -1,3 +1,4 @@
+"use client"
 import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/css"
@@ -8,14 +9,15 @@ import BackgroundImage from "./BackgroundImage"
 
 const BackgroundVideo = (props) => {
   const {
+    loop = true,
+    height = "100%",
     src,
-    autoPlay,
-    loop,
-    muted,
+    autoPlay = true,
+    muted = true,
     children,
-    overlay,
+    overlay = 0.2,
     contentStyle,
-    center,
+    center = true,
     placeholder,
     controls,
     ...rest
@@ -53,15 +55,6 @@ const BackgroundVideo = (props) => {
       )}
     </Container>
   )
-}
-
-BackgroundVideo.defaultProps = {
-  loop: true,
-  autoPlay: true,
-  muted: true,
-  overlay: 0.2,
-  center: true,
-  height: "100%",
 }
 
 const fullSize = css`

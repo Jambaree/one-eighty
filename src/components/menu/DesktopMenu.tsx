@@ -1,25 +1,14 @@
+"use client"
 import React from "react"
 import { Box, Flex, Container } from "theme-ui"
 import Parser from "html-react-parser"
 
 import Edges from "../Edges"
-import Link from "../Link"
+import Link from "next/link"
 import theme from "../../theme"
+import { usePathname } from "next/navigation"
 
-interface MenuItem {
-  key: number
-  title?: string // the "?" makes this optional
-  postID?: number
-  postTypeID?: string
-  url?: string
-  children?: MenuItem[] // array of MenuItem, can also be written as Array<MenuItem>
-}
-
-interface Props {
-  items?: MenuItem[] // or Array<MenuItem>
-}
-
-const DesktopMenu = (props: Props) => {
+const DesktopMenu = (props) => {
   const { items } = props
 
   return (
@@ -58,7 +47,7 @@ const DesktopMenu = (props: Props) => {
             }}
           >
             {items &&
-              items.map((item: MenuItem, index: number) => {
+              items.map((item, index: number) => {
                 return <MenuButton key={index} item={item} />
               })}
           </Flex>
@@ -70,26 +59,11 @@ const DesktopMenu = (props: Props) => {
 
 export default DesktopMenu
 
-interface MenuButtonProps {
-  item?: MenuItem
-}
-
-const MenuButton = (props: MenuButtonProps) => {
+const MenuButton = (props) => {
   const {
-    item: { title, children, url },
+    item: { label, children, path },
   } = props
-
-  const linkProps =
-    children?.length === 0
-      ? {
-          to: url,
-          activeStyle: {
-            color: theme.colors.red,
-          },
-          activeClassName: "current",
-        }
-      : {}
-
+  const pathname = usePathname()
   return (
     <Box
       sx={{
@@ -104,8 +78,15 @@ const MenuButton = (props: MenuButtonProps) => {
       }}
     >
       <Box variant="text.primaryNav">
-        <Link {...linkProps}>
-          <Box py="8px">{Parser(title || "")}</Box>
+        <Link
+          href={path}
+          className={
+            path.includes(pathname) && pathname !== "/"
+              ? "text-[#DF092D]"
+              : "text-[#000000D9] hover:text-[#DF092D]"
+          }
+        >
+          <Box py="8px">{Parser(label || "")}</Box>
         </Link>
       </Box>
     </Box>
