@@ -221,7 +221,9 @@ const Carousel = (props) => {
                           >
                             {o.image && (
                               <Image
-                                fill
+                                width={172}
+                                height={172}
+                                className="object-cover"
                                 src={o.image.sourceUrl}
                                 alt={o.image?.altText}
                               />
@@ -280,7 +282,8 @@ const Carousel = (props) => {
                           >
                             {o.image && (
                               <Image
-                                fill
+                                width={372}
+                                height={500}
                                 src={o.image.sourceUrl}
                                 alt={o.image?.altText}
                               />
