@@ -11,7 +11,7 @@ export default async function DefaultPageTemplate({
   searchParams,
 }) {
   const { page } = await getData({
-    variables: { uri },
+    variables: { id: uri, idType: "URI" },
     query,
     isPreview,
     searchParams,
@@ -37,8 +37,8 @@ export default async function DefaultPageTemplate({
 }
 
 const query = /* GraphQL */ `
-  query DefaultPage($uri: ID!) {
-    page(id: $uri, idType: URI) {
+  query DefaultPage($id: ID!, $idType: PageIdType) {
+    page(id: $id, idType: $idType) {
       title
       slug
       uri
