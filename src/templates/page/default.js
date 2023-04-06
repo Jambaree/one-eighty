@@ -5,8 +5,17 @@ import { notFound } from "next/navigation"
 
 // import app components
 
-export default async function DefaultPageTemplate({ uri }) {
-  const { page } = await getData({ variables: { uri }, query })
+export default async function DefaultPageTemplate({
+  uri,
+  isPreview,
+  searchParams,
+}) {
+  const { page } = await getData({
+    variables: { uri },
+    query,
+    isPreview,
+    searchParams,
+  })
 
   if (!page) {
     notFound()

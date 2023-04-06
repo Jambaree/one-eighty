@@ -11,7 +11,11 @@ export default async function PageTemplate(props) {
       {/* this is needed  */}
       {/* more info here: https://beta.nextjs.org/docs/configuring/typescript */}
       {/* @ts-expect-error Server Component */}
-      <WordpressTemplate {...props} templates={templates} />
+      <WordpressTemplate
+        templates={templates}
+        params={props.params}
+        searchParams={props.searchParams}
+      />
     </>
   )
 }
