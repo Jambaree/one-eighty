@@ -13,7 +13,7 @@ const nextConfig = {
   },
   images: {
     //enter the domain or subdomain where you have WordPress installed
-    domains: ["images.unsplash.com", "oneeightydev.wpengine.com"],
+    domains: ["images.unsplash.com", "oneeightylive.wpengine.com"],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
