@@ -29,7 +29,7 @@
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.2.0",
     "mdi-material-ui": "^6.22.1",
-    "next": "^13.2.4",
+    "next": "^13.4.2",
     "object-fit-images": "^3.2.4",
     "postcss": "^8.4.21",
     "prop-types": "^15.7.2",
