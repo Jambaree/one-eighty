@@ -20,6 +20,6 @@ export default async function PageTemplate(props) {
   )
 }
 
-// export const revalidate = "force-cache"
+export const revalidate = "force-cache"
 
 export { generateStaticParams, generateMetadata }
