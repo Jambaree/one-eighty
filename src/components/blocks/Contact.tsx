@@ -4,7 +4,7 @@ import { Box, Heading } from "theme-ui"
 import Parser from "html-react-parser"
 
 // import app components
-import theme from "../../theme"
+// import theme from "../../theme"
 import BackgroundImage from "../BackgroundImage"
 import Textarea from "../Textarea"
 import Socials from "../Socials"
@@ -24,7 +24,7 @@ const Contact = (props) => {
   } = props
 
   return (
-    <Box sx={{ height: `calc(100vh - ${theme.headerHeight})` }}>
+    <Box sx={{ height: `calc(100vh - 60px)` }}>
       {image && (
         <BackgroundImage
           image={image}
@@ -41,7 +41,7 @@ const Contact = (props) => {
       <Box
         sx={{
           bg: "blue180",
-          height: [`calc(50vh - ${theme.headerHeight})`, 480, 500],
+          height: [`calc(50vh - 60px)`, 480, 500],
           width: ["100%", "75%", "50%"],
           position: "relative",
           zIndex: 2,
@@ -54,7 +54,6 @@ const Contact = (props) => {
           {headline && (
             <Heading
               children={Parser(headline)}
-              variant="styles.root.h1"
               as="h1"
               sx={{
                 color: "white",
