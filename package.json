@@ -8,7 +8,6 @@
   ],
   "dependencies": {
     "@emotion/react": "^11.11.4",
-    "@material-ui/core": "^4.11.4",
     "@nextwp/core": "^0.0.2",
     "@svgr/webpack": "^7.0.0",
     "autoprefixer": "^10.4.14",
