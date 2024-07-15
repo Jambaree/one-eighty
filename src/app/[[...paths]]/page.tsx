@@ -1,23 +1,27 @@
+import type { RouteParams, SearchParams } from "@nextwp/core"
 import {
   WordpressTemplate,
-  generateStaticParams,
-  generateMetadata,
-} from "@jambaree/next-wordpress"
+  generateStaticParams as nextWpStaticParams,
+} from "@nextwp/core"
 import templates from "@/templates"
 
-export default async function PageTemplate(props) {
+export default function PageRoute(props: {
+  params: RouteParams
+  searchParams?: SearchParams
+}) {
   return (
-    <>
-      {/* this is needed  */}
-      {/* more info here: https://beta.nextjs.org/docs/configuring/typescript */}
-      {/* @ts-expect-error Server Component */}
-      <WordpressTemplate
-        templates={templates}
-        params={props.params}
-        searchParams={props.searchParams}
-      />
-    </>
+    <WordpressTemplate
+      params={props.params}
+      searchParams={props.searchParams}
+      templates={templates}
+    />
   )
 }
 
-export { generateStaticParams, generateMetadata }
+export { generateMetadata } from "@nextwp/core"
+
+export async function generateStaticParams() {
+  return nextWpStaticParams({
+    postTypes: ["pages", "posts"],
+  })
+}

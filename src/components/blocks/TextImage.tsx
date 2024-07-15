@@ -8,8 +8,8 @@ import Image from "next/image"
 import theme from "../../theme"
 import Edges from "../Edges"
 
-const Textimage = (props) => {
-  const { image, headline } = props
+const TextImage = (props) => {
+  const { edit_image, headline } = props
 
   return (
     <Box sx={{ bg: "blue180" }}>
@@ -72,12 +72,12 @@ const Textimage = (props) => {
           ml: "auto",
         }}
       >
-        {image && (
+        {edit_image && (
           <Image
             height={480}
             width={1200}
-            src={image?.sourceUrl}
-            alt={image?.altText || ""}
+            src={edit_image?.url}
+            alt={edit_image?.altText || ""}
             style={{
               maxWidth: "100%",
               width: "100%",
@@ -91,4 +91,4 @@ const Textimage = (props) => {
   )
 }
 
-export default Textimage
+export default TextImage

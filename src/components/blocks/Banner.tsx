@@ -23,7 +23,7 @@ const Banner = (props) => {
         height: "auto",
         maxWidth: "100%",
         overflow: "hidden",
-        mt: mt && 120,
+        mt: mt === 0 && 120,
       }}
     >
       <Box

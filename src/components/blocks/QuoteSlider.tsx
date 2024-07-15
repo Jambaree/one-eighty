@@ -9,7 +9,7 @@ import "../../styles/slick/slick-theme.css"
 import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
 
-const Quoteslider = (props) => {
+const QuoteSlider = (props) => {
   const { image, slide } = props
 
   const settings = {
@@ -227,4 +227,4 @@ const Quoteslider = (props) => {
   )
 }
 
-export default Quoteslider
+export default QuoteSlider

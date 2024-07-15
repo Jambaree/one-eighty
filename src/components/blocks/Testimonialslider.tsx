@@ -8,10 +8,9 @@ import "../../styles/slick/slick.css"
 import "../../styles/slick/slick-theme.css"
 import Textarea from "../Textarea"
 import BackgroundImage from "../BackgroundImage"
-import Parser from "html-react-parser"
 
-const Testimonialslider = (props) => {
-  const { image, slide } = props
+const TestimonialSlider = (props) => {
+  const { background_image, slide } = props
 
   const settings = {
     arrows: false,
@@ -241,9 +240,9 @@ const Testimonialslider = (props) => {
           },
         }}
       >
-        {image && (
+        {background_image && (
           <BackgroundImage
-            image={image}
+            image={background_image}
             sx={{
               zIndex: -3,
             }}
@@ -254,4 +253,4 @@ const Testimonialslider = (props) => {
   )
 }
 
-export default Testimonialslider
+export default TestimonialSlider

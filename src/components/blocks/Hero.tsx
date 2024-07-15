@@ -33,9 +33,9 @@ const Hero = (props) => {
         </Content>
       </Edges>
       <MediaContainer>
-        {filevideo?.mediaItemUrl && (
+        {filevideo?.url && (
           <BackgroundVideoContainer>
-            <BackgroundVideo src={filevideo?.mediaItemUrl} />
+            <BackgroundVideo src={filevideo?.url} />
           </BackgroundVideoContainer>
         )}
         {image && <BackgroundImage image={image} sx={{ zIndex: 1 }} />}

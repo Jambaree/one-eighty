@@ -43,7 +43,7 @@ const Text = (props) => {
       sx={{
         bg: lightdark === "dark" && "blue180",
         color: lightdark === "dark" && "white",
-        pb: extrapadding ? 125 : 25,
+        pb: extrapadding === 0 ? 125 : 25,
       }}
     >
       <Edges size="lg">

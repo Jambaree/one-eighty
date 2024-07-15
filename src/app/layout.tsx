@@ -4,7 +4,7 @@ import "./globals.css"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ThemeWrapper from "./themeWrapper"
-import { getMenuItems, getData } from "@jambaree/next-wordpress"
+import { getMenuItems, getOptionsPage } from "@nextwp/core"
 import { Barlow_Semi_Condensed } from "next/font/google"
 
 const barlow = Barlow_Semi_Condensed({
@@ -18,13 +18,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const headerItems = await getMenuItems({ id: "menu" })
-  const footerItems = await getMenuItems({ id: "footermenu" })
-  const {
-    themeOptions: {
-      options: { footer },
-    },
-  } = await getData({ query })
+  const headerItems = await getMenuItems({ slug: "menu" })
+  const footerItems = await getMenuItems({ slug: "footermenu" })
+  const { footer } = await getOptionsPage({ slug: "nextwp" })
 
   return (
     <html lang="en" className={`${barlow.variable}`}>

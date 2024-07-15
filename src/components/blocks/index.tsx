@@ -1,29 +1,29 @@
-import Textimage from "./TextImage"
+import TextImage from "./TextImage"
 import Hero from "./Hero"
 import Tiles from "./Tiles"
-import Testimonialslider from "./Testimonialslider"
+import TestimonialSlider from "./Testimonialslider"
 import Logos from "./Logos"
 import Carousel from "./Carousel"
 import Banner from "./Banner"
 import Quote from "./Quote"
 import Text from "./Text"
 import Content from "./Content"
-import Quoteslider from "./QuoteSlider"
+import QuoteSlider from "./QuoteSlider"
 import Tool from "./Tool"
 import Contact from "./Contact"
 import NumList from "./NumList"
 export {
-  Textimage,
+  TextImage,
   Hero,
   Tiles,
-  Testimonialslider,
+  TestimonialSlider,
   Logos,
   Carousel,
   Banner,
   Quote,
   Text,
   Content,
-  Quoteslider,
+  QuoteSlider,
   Tool,
   Contact,
   NumList,

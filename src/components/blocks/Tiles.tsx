@@ -119,7 +119,7 @@ const Tiles = (props) => {
                             <Image
                               width={72}
                               height={50}
-                              src={o?.image?.sourceUrl}
+                              src={o?.image?.url}
                               alt={o.image.altText || ""}
                             />
                           )}

@@ -1,6 +1,7 @@
-import DefaultPageTemplate from "./page/default"
+import type { Templates } from "@nextwp/core"
+import { DefaultPageTemplate } from "./page/default"
 
-const templates = {
+const templates: Templates = {
   page: {
     default: DefaultPageTemplate,
   },

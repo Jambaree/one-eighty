@@ -181,7 +181,7 @@ const Content = (props) => {
             <Image
               width={800}
               height={720}
-              src={sections?.[sector]?.image.sourceUrl}
+              src={sections?.[sector]?.image.url}
               alt={sections?.[sector]?.image.alt}
             />
           )}

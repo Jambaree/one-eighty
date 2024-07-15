@@ -69,7 +69,7 @@ const Tool = (props) => {
                   <Image
                     width={72}
                     height={50}
-                    src={image.sourceUrl}
+                    src={image.url}
                     alt={image.altText || ""}
                   />
                 )}

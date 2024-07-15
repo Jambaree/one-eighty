@@ -17,7 +17,7 @@ const BackgroundImage = (props) => {
     <Container {...rest} animated={animated}>
       {image && (
         <Image
-          src={image.sourceUrl}
+          src={image.url}
           fill
           priority
           style={{

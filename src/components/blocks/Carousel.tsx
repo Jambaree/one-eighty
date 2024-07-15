@@ -16,6 +16,7 @@ import Textarea from "../Textarea"
 
 const Carousel = (props) => {
   const { headline, cards } = props
+
   const [nav1, setNav1] = useState()
   const [nav2, setNav2] = useState()
 
@@ -224,7 +225,7 @@ const Carousel = (props) => {
                                 width={172}
                                 height={172}
                                 className="object-cover"
-                                src={o.image.sourceUrl}
+                                src={o.image.url}
                                 alt={o.image?.altText}
                               />
                             )}
@@ -284,7 +285,7 @@ const Carousel = (props) => {
                               <Image
                                 width={372}
                                 height={500}
-                                src={o.image.sourceUrl}
+                                src={o.image.url}
                                 alt={o.image?.altText}
                               />
                             )}

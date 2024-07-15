@@ -51,7 +51,7 @@ const Quote = (props) => {
         alignItems: "center",
         justifyContent: "flex-end",
         position: "relative",
-        mb: mb ? 270 : 56,
+        mb: mb === 0 ? 270 : 56,
         bg: backgroundcolor,
         overflow: "hidden",
       }}

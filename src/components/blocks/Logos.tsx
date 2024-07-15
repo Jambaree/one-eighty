@@ -36,6 +36,7 @@ const Logos = (props) => {
             children={Parser(headline)}
           />
         )}
+
         <Grid
           sx={{
             py: "60px",
@@ -47,7 +48,7 @@ const Logos = (props) => {
             borderImage: "linear-gradient(to left, #122D4C 20%,  #BC001F 80%)",
             borderImageSlice: 1,
           }}
-          columns={[1, 2, columns]}
+          columns={[1, 2, 4]}
         >
           {cards &&
             cards.map((o, i) => (
@@ -76,7 +77,7 @@ const Logos = (props) => {
                       <Image
                         width={144}
                         height={85}
-                        src={o?.logo?.sourceUrl}
+                        src={o?.logo?.url}
                         alt={o.logo?.altText}
                       />
                     </Box>
