@@ -1,3 +1,159 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.textarea-container {
+  clear: both;
+}
+
+.textarea-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.textarea-container h1,
+.textarea-container h2,
+.textarea-container h3,
+.textarea-container h4,
+.textarea-container h5,
+.textarea-container h6 {
+  margin-top: 2rem;
+}
+
+.textarea-container h1:first-of-type,
+.textarea-container h2:first-of-type,
+.textarea-container h3:first-of-type,
+.textarea-container h4:first-of-type,
+.textarea-container h5:first-of-type,
+.textarea-container h6:first-of-type {
+  margin-top: 40px;
+}
+
+.textarea-container p {
+  margin-bottom: 1rem;
+}
+
+.textarea-container p:first-of-type {
+  margin-top: 30px;
+}
+
+.textarea-container p:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+.textarea-container p:last-child {
+  margin-bottom: 30px !important;
+}
+
+.textarea-container a {
+  text-decoration: underline;
+  color: #1f3d60 !important;
+}
+
+.textarea-container a:hover,
+.textarea-container a:focus {
+  color: #e0092d !important;
+}
+
+.textarea-container a:disabled {
+  color: #7c7c7c;
+}
+
+.textarea-container figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.textarea-container ul,
+.textarea-container ol {
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.textarea-container ul li {
+  list-style: disc;
+}
+
+.textarea-container img {
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.textarea-container img.alignright {
+  float: right;
+  margin-left: 20px !important;
+}
+
+.textarea-container img.alignleft {
+  float: left;
+  margin-right: 20px !important;
+}
+
+.textarea-container img.size-medium {
+  width: 300px;
+}
+
+.textarea-container img.size-thumbnail {
+  width: 150px;
+}
+
+.textarea-container img.size-full,
+.textarea-container img.fullwidth {
+  width: 100%;
+}
+
+@media (max-width: 420px) {
+  .textarea-container img {
+    width: 100% !important;
+  }
+}
+
+.textarea-container .table-wrapper {
+  max-width: 100%;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.textarea-container table {
+  border-collapse: collapse;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  width: 100%;
+}
+
+.textarea-container td,
+.textarea-container th {
+  text-align: left;
+  padding-left: 1.06667rem;
+  padding-right: 1.06667rem;
+  padding-top: 0.8rem;
+  padding-bottom: calc(0.8rem - 1px);
+}
+
+.textarea-container th:first-of-type,
+.textarea-container td:first-of-type {
+  padding-left: 0.8rem;
+}
+
+.textarea-container .iframe-wrapper {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.textarea-container .iframe-wrapper iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

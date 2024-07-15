@@ -1,10 +1,6 @@
 "use client"
 import React from "react"
-import styled from "@emotion/styled"
-import { css } from "@emotion/css"
 import { Container } from "theme-ui"
-
-// import app components
 import BackgroundImage from "./BackgroundImage"
 
 const BackgroundVideo = (props) => {
@@ -29,81 +25,44 @@ const BackgroundVideo = (props) => {
       sx={{ position: "relative", height: "100%", width: "100%" }}
     >
       {!!src && (
-        <Video
+        <video
           id="background-video"
           autoPlay={autoPlay}
           loop={loop}
           muted={muted}
           controls={controls}
+          className="relative w-full h-full object-cover z-10"
         >
           <source src={src} type="video/mp4" />
           <source src={src} type="video/ogg" />
           Your browser does not support the video tag.
-        </Video>
+        </video>
       )}
       {!!placeholder && (
-        <PlaceholderImage
-          position="absolute"
-          bg={placeholder.url ? placeholder.url : placeholder}
+        <BackgroundImage
+          image={placeholder.url ? placeholder.url : placeholder}
+          className="absolute inset-0"
         />
       )}
 
       {children && (
-        <Content style={contentStyle} center={center} overlay={overlay}>
+        <div
+          style={contentStyle}
+          className={`absolute inset-0 flex ${
+            center ? "justify-center items-center text-center" : ""
+          } p-8 text-white`}
+        >
+          {overlay && (
+            <div
+              className="absolute inset-0 bg-black"
+              style={{ opacity: overlay, zIndex: -1 }}
+            />
+          )}
           {children}
-        </Content>
+        </div>
       )}
     </Container>
   )
 }
-
-const fullSize = css`
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-`
-
-const Video = styled.video`
-  position: relative;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: 1;
-`
-
-const Content = styled.div`
-  ${(props) =>
-    !!props.overlay &&
-    css`
-      &::after {
-        content: "";
-        position: absolute;
-        ${fullSize}
-        background: rgba(0,0,0, ${props.overlay});
-        z-index: -1;
-      }
-    `}
-  ${(props) =>
-    props.center &&
-    css`
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    `}
-
-  position: absolute;
-  ${fullSize}
-  height: 100%;
-  z-index: 1;
-  padding: 30px;
-  color: white;
-`
-
-const PlaceholderImage = styled(BackgroundImage)`
-  z-index: 0;
-`
 
 export default BackgroundVideo

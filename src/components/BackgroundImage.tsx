@@ -1,6 +1,5 @@
 "use client"
 import React from "react"
-import styled from "@emotion/styled"
 import Image from "next/image"
 
 const BackgroundImage = (props) => {
@@ -10,11 +9,13 @@ const BackgroundImage = (props) => {
     backgroundSize,
     verticalAlignment,
     animated,
+    darkness,
+    overlay,
     ...rest
   } = props
 
   return (
-    <Container {...rest} animated={animated}>
+    <div className={`absolute inset-0 w-full overflow-hidden`} {...rest}>
       {image && (
         <Image
           src={image.url}
@@ -28,35 +29,16 @@ const BackgroundImage = (props) => {
           {...rest}
         />
       )}
-    </Container>
+      <div
+        className={`absolute inset-0 bg-black ${
+          overlay ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          backgroundColor: `rgba(0, 0, 0, ${darkness ? darkness : 0.15})`,
+        }}
+      />
+    </div>
   )
 }
-
-const Container = styled.div`
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(
-      0,
-      0,
-      0,
-      ${(props) => (!!props.darkness ? props.darkness : 0.15)}
-    );
-    opacity: ${(props) => (!props.overlay ? 0 : 1)};
-  }
-`
 
 export default BackgroundImage

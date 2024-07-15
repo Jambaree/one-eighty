@@ -1,8 +1,5 @@
 "use client"
-import styled from "@emotion/styled"
 import { Box } from "theme-ui"
-
-// import app components
 import Edges from "../Edges"
 import BackgroundImage from "../BackgroundImage"
 import BackgroundVideo from "../BackgroundVideo"
@@ -12,9 +9,9 @@ const Hero = (props) => {
   const { headline, image, filevideo } = props
 
   return (
-    <Container>
+    <div className="relative flex items-center h-[calc(100vh-60px)]">
       <Edges size="lg">
-        <Content>
+        <div className="relative z-50 max-w-lg flex flex-wrap justify-start pb-48">
           {headline && (
             <Box
               variant="text.heroHeading"
@@ -30,52 +27,18 @@ const Hero = (props) => {
               <div children={Parser(headline)} />
             </Box>
           )}
-        </Content>
+        </div>
       </Edges>
-      <MediaContainer>
+      <div className="absolute inset-0 w-full h-full">
         {filevideo?.url && (
-          <BackgroundVideoContainer>
+          <div className="absolute inset-0 w-full h-full z-40">
             <BackgroundVideo src={filevideo?.url} />
-          </BackgroundVideoContainer>
+          </div>
         )}
-        {image && <BackgroundImage image={image} sx={{ zIndex: 1 }} />}
-      </MediaContainer>
-    </Container>
+        {image && <BackgroundImage image={image} className="z-20" />}
+      </div>
+    </div>
   )
 }
-
-const Container = styled.div`
-  position: relative;
-  height: calc(100vh - 60px);
-  display: flex;
-  align-items: center;
-`
-
-const MediaContainer = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-`
-
-const BackgroundVideoContainer = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-`
-
-const Content = styled.div`
-  position: relative;
-  z-index: 3;
-  max-width: 550px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-bottom: 185px;
-`
 
 export default Hero

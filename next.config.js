@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const wpBaseUrl = process.env.NEXT_PUBLIC_WP_URL?.replace(
+  "https://",
+  ""
+)?.replace("http://", "")
+
 const nextConfig = {
   transpilePackages: ["@nextwp/core"],
   webpack(config) {
@@ -11,10 +17,28 @@ const nextConfig = {
   },
 
   images: {
-    //enter the domain or subdomain where you have WordPress installed
-    domains: ["images.unsplash.com", "oneeightylive.wpengine.com"],
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: wpBaseUrl,
+      },
+      {
+        protocol: "http",
+        hostname: wpBaseUrl,
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "tailwindui.com",
+      },
+      {
+        protocol: "https",
+        hostname: "secure.gravatar.com",
+      },
+    ],
   },
   typescript: {
     // !! WARN !!

@@ -7,8 +7,7 @@
     "Caleb Barnes <caleb@bare.ca> (https://github.com/calebbarnes)"
   ],
   "dependencies": {
-    "@emotion/css": "^11.1.3",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/react": "^11.11.4",
     "@material-ui/core": "^4.11.4",
     "@nextwp/core": "^0.0.2",
     "@svgr/webpack": "^7.0.0",
@@ -42,6 +41,5 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  },
-  "devDependencies": {}
+  }
 }

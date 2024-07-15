@@ -1,18 +1,12 @@
 "use client"
 import React from "react"
-import styled from "@emotion/styled"
-
 import { IconButton } from "theme-ui"
-
-// import app components
 import FacebookIcon from "@/icons/facebook.svg"
 import TwitterIcon from "@/icons/twitter.svg"
 import InstagramIcon from "@/icons/instagram.svg"
 import LinkedIn from "@/icons/linkedin.svg"
 import Youtube from "@/icons/youtube.svg"
 import Link from "next/link"
-
-import theme from "../theme"
 
 const Socials: React.FC<Props> = (props: Props) => {
   const {
@@ -21,151 +15,53 @@ const Socials: React.FC<Props> = (props: Props) => {
   } = props
 
   return (
-    <Container>
+    <div className="flex transform -translate-x-1.5">
       {facebook && (
-        <LinkButton
-          color={color}
-          href={facebook}
-          target="_blank"
-          rel="noreferrer nofollow"
-          aria-label="Facebook"
-        >
-          <IconButton
-            sx={{
-              "&:hover": {
-                cursor: "pointer",
-                svg: {
-                  path: {
-                    fill: "red",
-                  },
-                },
-              },
-            }}
-          >
-            <FacebookIcon />
-          </IconButton>
+        <LinkButton color={color} href={facebook} ariaLabel="Facebook">
+          <FacebookIcon />
         </LinkButton>
       )}
-
       {instagram && (
-        <LinkButton
-          color={color}
-          href={instagram}
-          target="_blank"
-          rel="noreferrer nofollow"
-          aria-label="Linkedin"
-        >
-          <IconButton
-            sx={{
-              "&:hover": {
-                cursor: "pointer",
-                svg: {
-                  path: {
-                    fill: "red",
-                  },
-                },
-              },
-            }}
-          >
-            <InstagramIcon />
-          </IconButton>
+        <LinkButton color={color} href={instagram} ariaLabel="Instagram">
+          <InstagramIcon />
         </LinkButton>
       )}
-
       {linkedin && (
-        <LinkButton
-          color={color}
-          href={linkedin}
-          target="_blank"
-          rel="noreferrer nofollow"
-          aria-label="Linkedin"
-        >
-          <IconButton
-            sx={{
-              "&:hover": {
-                cursor: "pointer",
-                svg: {
-                  path: {
-                    fill: "red",
-                  },
-                },
-              },
-            }}
-          >
-            <LinkedIn />
-          </IconButton>
+        <LinkButton color={color} href={linkedin} ariaLabel="LinkedIn">
+          <LinkedIn />
         </LinkButton>
       )}
       {youtube && (
-        <LinkButton
-          color={color}
-          href={linkedin}
-          target="_blank"
-          rel="noreferrer nofollow"
-          aria-label="Linkedin"
-        >
-          <IconButton
-            sx={{
-              "&:hover": {
-                cursor: "pointer",
-                svg: {
-                  path: {
-                    fill: "red",
-                  },
-                },
-              },
-            }}
-          >
-            <Youtube />
-          </IconButton>
+        <LinkButton color={color} href={youtube} ariaLabel="YouTube">
+          <Youtube />
         </LinkButton>
       )}
-
       {twitter && (
-        <LinkButton
-          color={color}
-          href={twitter}
-          target="_blank"
-          rel="noreferrer nofollow"
-          aria-label="Twitter"
-        >
-          <IconButton>
-            <TwitterIcon />
-          </IconButton>
+        <LinkButton color={color} href={twitter} ariaLabel="Twitter">
+          <TwitterIcon />
         </LinkButton>
       )}
-    </Container>
+    </div>
   )
 }
 
-const Container = styled.div`
-  display: flex;
-  transform: translateX(-5px);
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-const LinkButton = styled(Link)`
-  text-decoration: none;
-  display: inline-block;
-  margin: 0;
-  &:hover {
-    cursor: pointer;
-    svg {
-      path {
-        fill: ${theme.colors.red};
-      }
-    }
-  }
-  svg {
-    path {
-      fill: ${(props) => props.color};
-    }
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`
+const LinkButton = ({ href, color, children, ariaLabel }) => (
+  <Link
+    href={href}
+    target="_blank"
+    rel="noreferrer nofollow"
+    aria-label={ariaLabel}
+    className="inline-block no-underline m-0 group"
+  >
+    <IconButton className="hover:cursor-pointer">
+      {React.cloneElement(children, {
+        className: "transition-colors",
+        style: { fill: color },
+        onMouseEnter: (e) => (e.currentTarget.style.fill = "#E0092D"),
+        onMouseLeave: (e) => (e.currentTarget.style.fill = color),
+      })}
+    </IconButton>
+  </Link>
+)
 
 export default Socials
