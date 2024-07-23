@@ -15,7 +15,7 @@ const QuoteSlider = (props) => {
   const settings = {
     arrows: false,
     dots: true,
-    infinite: true,
+    infinite: false,
     autoplaySpeed: 8000,
     autoplay: true,
     slidesToShow: 1,
