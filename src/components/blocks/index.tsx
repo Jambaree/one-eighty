@@ -12,8 +12,10 @@ import QuoteSlider from "./QuoteSlider"
 import Tool from "./Tool"
 import Contact from "./Contact"
 import NumList from "./NumList"
+import JobPostings from "./JobPostings"
 export {
   TextImage,
+  JobPostings,
   Hero,
   Tiles,
   TestimonialSlider,
