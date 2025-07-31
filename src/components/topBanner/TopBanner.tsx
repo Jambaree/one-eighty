@@ -3,7 +3,6 @@ import React from "react"
 import { Box, Text, Heading } from "theme-ui"
 import Parser from "html-react-parser"
 
-// import app components
 import Hexagon from "../Hexagon"
 import theme from "../../theme"
 
